@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///./src/pages/index.tsx"],"names":["IndexPage"],"mappings":"2FAAA,wEAEe,SAASA,IACtB,OAAO","file":"component---src-pages-index-tsx-f47211bf59d51eec43b6.js","sourcesContent":["import React from 'react'\n\nexport default function IndexPage() {\n  return <div>Hello World</div>\n}\n"],"sourceRoot":""}
