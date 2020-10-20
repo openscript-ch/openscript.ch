@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: Build website
-        run: yarn build
+        run: yarn build:with-prefix
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:

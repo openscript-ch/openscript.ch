@@ -7,6 +7,7 @@
     "start": "gatsby develop",
     "develop": "gatsby develop",
     "build": "gatsby build",
+    "build:with-prefix": "gatsby build --prefix-path",
     "build:types": "graphql-codegen --config codegen.yml",
     "clean": "gatsby clean",
     "check:types": "tsc --noEmit",
