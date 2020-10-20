@@ -1,0 +1,11 @@
+schema: http://localhost:8000/___graphql
+documents:
+  - ./src/**/*.{ts,tsx}
+  - ./node_modules/gatsby*/!(node_modules)/**/*.js
+generates:
+  ./graphql-types.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+    config:
+      numericEnums: true
