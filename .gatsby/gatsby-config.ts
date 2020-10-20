@@ -21,7 +21,7 @@ const configuration: ITSConfigFn<'config'> = ({ projectRoot }) => ({
         background_color: `#6A4A3C`,
         theme_color: `#EB6841`,
         display: `standalone`,
-        icon: `static/favicon.ico`
+        icon: `static/favicon.png`
       }
     },
 
