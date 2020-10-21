@@ -14,15 +14,26 @@ const configuration: ITSConfigFn<'config'> = ({ projectRoot }) => ({
     'gatsby-plugin-sharp',
     'gatsby-plugin-svgr',
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        name: `openscript GmbH`,
-        short_name: `openscript GmbH`,
-        start_url: `/`,
-        background_color: `#6A4A3C`,
-        theme_color: `#EB6841`,
-        display: `standalone`,
-        icon: `static/favicon.png`
+        name: 'openscript GmbH',
+        short_name: 'openscript GmbH',
+        start_url: '/',
+        background_color: '#539350',
+        theme_color: '#ede9df',
+        display: 'standalone',
+        icon: 'static/favicons/favicon.png',
+        icons: [
+          {
+            src: 'static/favicons/favicon192.png',
+            sizes: '192x192',
+            type: 'image/png'
+          }, {
+            src: 'static/favicons/favicon512.png',
+            sizes: '512x512',
+            type: 'image/png'
+          }
+        ]
       }
     },
 
