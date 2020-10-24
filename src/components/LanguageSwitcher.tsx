@@ -14,7 +14,7 @@ export function LanguageSwitcher({ paths }: LanguageSwitcherProps) {
     <ul>
       {Object.keys(paths).map((language) => {
         return (
-          <li>
+          <li key={language}>
             <Link to={paths[language]}>
               <FormattedMessage id={language} />
             </Link>
