@@ -1,5 +1,10 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 
 export default function IndexPage() {
-  return <div>Hello World</div>;
+  return (
+    <div>
+      <FormattedMessage id="meta.hello" />
+    </div>
+  );
 }
