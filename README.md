@@ -1,1 +1,8 @@
 # openscript.ch
+
+Feel free to checkout how our website is built, but don't copy our content and brand.
+
+## Getting started
+
+1. Clone repository
+1. Install dependencies

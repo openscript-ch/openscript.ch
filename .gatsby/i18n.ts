@@ -23,12 +23,13 @@ export const contentTranslation: Translation = {
     'meta.languageName': 'Deutsch',
     'meta.title': 'openscript GmbH',
     'meta.hello': 'Hallo Welt!',
-
+    'page.index.title': 'Startseite'
   },
   'en': {
     ...localeTranslation,
     'meta.languageName': 'English',
     'meta.title': 'openscript GmbH',
-    'meta.hello': 'Hello World!'
+    'meta.hello': 'Hello World!',
+    'page.index.title': 'Homepage'
   }
 }

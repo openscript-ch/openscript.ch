@@ -1,11 +1,15 @@
 import { graphql, StaticQuery } from 'gatsby';
 import React, { Fragment, PropsWithChildren } from 'react';
+import { useIntl } from 'react-intl';
 import { DefaultLayoutQuery, SitePageContext } from '../../graphql-types';
 import { LanguageSwitcher } from '../components/LanguageSwitcher';
+import { PageHead } from '../components/PageHead';
 
-type DefaultLayoutProps = PropsWithChildren<{ pageContext: SitePageContext }>;
+type DefaultLayoutProps = PropsWithChildren<{ pageContext: SitePageContext; title: string }>;
 
-export function DefaultLayout({ pageContext, children }: DefaultLayoutProps) {
+export function DefaultLayout({ pageContext, title, children }: DefaultLayoutProps) {
+  const intl = useIntl();
+  const titleSuffix = intl.formatMessage({ id: 'meta.title' });
   return (
     <StaticQuery
       query={graphql`
@@ -17,6 +21,7 @@ export function DefaultLayout({ pageContext, children }: DefaultLayoutProps) {
       `}
       render={(data: DefaultLayoutQuery) => (
         <Fragment>
+          <PageHead locale={pageContext.language} title={`${title} - ${titleSuffix}`} />
           <LanguageSwitcher paths={pageContext.alternativeLanguagePaths} />
           <main>{children}</main>
           <footer>{data.siteBuildMetadata?.buildTime}</footer>
