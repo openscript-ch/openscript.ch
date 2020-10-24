@@ -5,6 +5,8 @@ import { useIntl } from 'react-intl';
 import { DefaultLayoutQuery, SitePageContext } from '../../graphql-types';
 import { LanguageSwitcher } from '../components/LanguageSwitcher';
 import { PageHead } from '../components/PageHead';
+import { DefaultFooter } from './default/Footer';
+import { DefaultHeader } from './default/Header';
 
 type DefaultLayoutProps = PropsWithChildren<{ pageContext: SitePageContext; title: string }>;
 
@@ -30,9 +32,10 @@ export function DefaultLayout({ pageContext, title, children }: DefaultLayoutPro
         <Fragment>
           <PageHead locale={pageContext.language} title={`${title} - ${titleSuffix}`} />
           <Global styles={DefaultLayoutStyle} />
+          <DefaultHeader />
           <LanguageSwitcher paths={pageContext.alternativeLanguagePaths} />
           <main>{children}</main>
-          <footer>{data.siteBuildMetadata?.buildTime}</footer>
+          <DefaultFooter />
         </Fragment>
       )}
     />
