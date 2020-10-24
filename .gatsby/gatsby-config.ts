@@ -11,6 +11,7 @@ const configuration: ITSConfigFn<'config'> = ({ projectRoot }) => ({
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
     'gatsby-plugin-svgr',
+    'gatsby-plugin-emotion',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

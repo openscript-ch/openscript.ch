@@ -1,3 +1,4 @@
+import { css, Global } from '@emotion/core';
 import { graphql, StaticQuery } from 'gatsby';
 import React, { Fragment, PropsWithChildren } from 'react';
 import { useIntl } from 'react-intl';
@@ -6,6 +7,12 @@ import { LanguageSwitcher } from '../components/LanguageSwitcher';
 import { PageHead } from '../components/PageHead';
 
 type DefaultLayoutProps = PropsWithChildren<{ pageContext: SitePageContext; title: string }>;
+
+const DefaultLayoutStyle = css`
+  body {
+    margin: 0;
+  }
+`;
 
 export function DefaultLayout({ pageContext, title, children }: DefaultLayoutProps) {
   const intl = useIntl();
@@ -22,6 +29,7 @@ export function DefaultLayout({ pageContext, title, children }: DefaultLayoutPro
       render={(data: DefaultLayoutQuery) => (
         <Fragment>
           <PageHead locale={pageContext.language} title={`${title} - ${titleSuffix}`} />
+          <Global styles={DefaultLayoutStyle} />
           <LanguageSwitcher paths={pageContext.alternativeLanguagePaths} />
           <main>{children}</main>
           <footer>{data.siteBuildMetadata?.buildTime}</footer>
