@@ -2,7 +2,9 @@ import { ITSConfigFn } from 'gatsby-plugin-ts-config';
 
 const configuration: ITSConfigFn<'config'> = ({ projectRoot }) => ({
   pathPrefix: '/openscript.ch', // TODO: Remove when it runs at the domains root
-  siteMetadata: {},
+  siteMetadata: {
+    topNavigation: ['/', '/about']
+  },
   plugins: [
     // Plugins
     'gatsby-plugin-emotion',

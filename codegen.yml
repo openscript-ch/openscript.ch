@@ -9,3 +9,5 @@ generates:
       - typescript-operations
     config:
       numericEnums: true
+      maybeValue: T
+      avoidOptionals: true

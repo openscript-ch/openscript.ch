@@ -7,7 +7,7 @@ import { contentTranslation, defaultLanguage, Language } from './i18n';
 type WrapPageElement = GatsbyBrowser['wrapPageElement'] | GatsbySSR['wrapPageElement'];
 
 export const wrapPageElement: WrapPageElement = ({ element, props }) => {
-  const pageContext: SitePageContext = props.pageContext;
+  const pageContext = props.pageContext as SitePageContext;
   const currentLocale = (pageContext.language ?? defaultLanguage) as Language;
   return (
     <IntlProvider locale={currentLocale} messages={contentTranslation[currentLocale]}>

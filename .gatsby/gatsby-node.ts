@@ -1,12 +1,12 @@
 import { ITSConfigFn } from 'gatsby-plugin-ts-config';
-import { defaultLanguage, languages, slugTranslation } from './i18n';
+import { defaultLanguage, Language, languages, slugTranslation } from './i18n';
 
 const trimRightSlash = (path: string) => {
   return path === '/' ? path : path.replace(/\/$/, '');
 }
 
 const generateTranslatedPaths = (path: string) => {
-  const paths: { [key: string]: string } = {};
+  const paths: { language: Language, path: string }[] = [];
 
   languages.forEach((language) => {
     const trimmedPath = trimRightSlash(path);
@@ -14,7 +14,7 @@ const generateTranslatedPaths = (path: string) => {
     if (language !== defaultLanguage) {
       newPath = `/${language}${newPath}`;
     }
-    paths[language] = newPath;
+    paths.push({ language, path: newPath });
   })
 
   return paths;
@@ -30,10 +30,10 @@ const node: ITSConfigFn<'node'> = () => ({
 
     deletePage(page);
 
-    Object.keys(paths).forEach((language) => {
-      const { [language]: currentPath, ...alternativeLanguagePaths } = paths;
-      const context = { ...page.context, language, alternativeLanguagePaths };
-      createPage({ ...page, path: currentPath, context });
+    paths.forEach((path) => {
+      const alternativeLanguagePaths = paths.filter((p) => p.language !== path.language);
+      const context = { ...page.context, language: path.language, alternativeLanguagePaths };
+      createPage({ ...page, path: path.path, context });
     })
   }
 });

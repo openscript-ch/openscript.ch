@@ -1,5 +1,9 @@
 import React from 'react';
+import { SitePageContext } from '../../graphql-types';
+import { DefaultLayout } from '../layouts/default';
 
-export default function AboutPage() {
-  return <div>About</div>;
+type AboutPageProps = { pageContext: SitePageContext };
+
+export default function AboutPage({ pageContext }: AboutPageProps) {
+  return <DefaultLayout pageContext={pageContext}>About</DefaultLayout>;
 }

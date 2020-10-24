@@ -3,7 +3,7 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
 export type LanguageSwitcherProps = {
-  paths?: { [key: string]: string };
+  paths?: { language: string; path: string }[];
 };
 
 export function LanguageSwitcher({ paths }: LanguageSwitcherProps) {
@@ -12,11 +12,11 @@ export function LanguageSwitcher({ paths }: LanguageSwitcherProps) {
   }
   return (
     <ul>
-      {Object.keys(paths).map((language) => {
+      {paths.map((p) => {
         return (
-          <li key={language}>
-            <Link to={paths[language]}>
-              <FormattedMessage id={language} />
+          <li key={p.language}>
+            <Link to={p.path}>
+              <FormattedMessage id={p.language} />
             </Link>
           </li>
         );
