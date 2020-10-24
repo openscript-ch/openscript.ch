@@ -3063,15 +3063,8 @@ export type DefaultLayoutQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type DefaultLayoutQuery = (
   { __typename?: 'Query' }
-  & { sitePage: Maybe<(
-    { __typename?: 'SitePage' }
-    & { context: Maybe<(
-      { __typename?: 'SitePageContext' }
-      & Pick<SitePageContext, 'language'>
-      & { alternativeLanguagePaths: Maybe<Array<Maybe<(
-        { __typename?: 'SitePageContextAlternativeLanguagePaths' }
-        & Pick<SitePageContextAlternativeLanguagePaths, 'language' | 'path'>
-      )>>> }
-    )> }
+  & { siteBuildMetadata: Maybe<(
+    { __typename?: 'SiteBuildMetadata' }
+    & Pick<SiteBuildMetadata, 'buildTime'>
   )> }
 );

@@ -10,14 +10,8 @@ export function DefaultLayout({ pageContext, children }: DefaultLayoutProps) {
     <StaticQuery
       query={graphql`
         query DefaultLayout {
-          sitePage {
-            context {
-              language
-              alternativeLanguagePaths {
-                language
-                path
-              }
-            }
+          siteBuildMetadata {
+            buildTime
           }
         }
       `}
@@ -25,6 +19,7 @@ export function DefaultLayout({ pageContext, children }: DefaultLayoutProps) {
         <Fragment>
           <LanguageSwitcher paths={pageContext.alternativeLanguagePaths} />
           <main>{children}</main>
+          <footer>{data.siteBuildMetadata?.buildTime}</footer>
         </Fragment>
       )}
     />
