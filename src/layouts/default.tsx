@@ -30,7 +30,11 @@ export function DefaultLayout({ pageContext, title, children }: DefaultLayoutPro
       `}
       render={(data: DefaultLayoutQuery) => (
         <Fragment>
-          <PageHead locale={pageContext.language} title={`${title} - ${titleSuffix}`} />
+          <PageHead
+            alternativeLanguagePaths={pageContext.alternativeLanguagePaths}
+            locale={pageContext.language}
+            title={`${title} - ${titleSuffix}`}
+          />
           <Global styles={DefaultLayoutStyle} />
           <DefaultHeader />
           <LanguageSwitcher paths={pageContext.alternativeLanguagePaths} />
