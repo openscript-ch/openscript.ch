@@ -3063,8 +3063,8 @@ export type DefaultLayoutQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type DefaultLayoutQuery = (
   { __typename?: 'Query' }
-  & { siteBuildMetadata: Maybe<(
-    { __typename?: 'SiteBuildMetadata' }
-    & Pick<SiteBuildMetadata, 'buildTime'>
+  & { site: Maybe<(
+    { __typename?: 'Site' }
+    & Pick<Site, 'buildTime'>
   )> }
 );

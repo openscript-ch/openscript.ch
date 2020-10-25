@@ -6,6 +6,7 @@
     "eamodio.gitlens",
     "vscode-icons-team.vscode-icons",
     "mgmcdermott.vscode-language-babel",
-    "dbaeumer.vscode-eslint"
+    "dbaeumer.vscode-eslint",
+    "jpoissonnier.vscode-styled-components"
   ]
 }
