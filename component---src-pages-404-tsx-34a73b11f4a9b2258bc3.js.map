@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///./src/pages/404.tsx"],"names":["NotFoundPage"],"mappings":"gLAEe,SAASA,IACtB,OAAO","file":"component---src-pages-404-tsx-34a73b11f4a9b2258bc3.js","sourcesContent":["import React from 'react';\n\nexport default function NotFoundPage() {\n  return <div>404</div>;\n}\n"],"sourceRoot":""}
