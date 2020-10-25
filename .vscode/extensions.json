@@ -5,6 +5,7 @@
     "mikestead.dotenv",
     "eamodio.gitlens",
     "vscode-icons-team.vscode-icons",
-    "mgmcdermott.vscode-language-babel"
+    "mgmcdermott.vscode-language-babel",
+    "dbaeumer.vscode-eslint"
   ]
 }

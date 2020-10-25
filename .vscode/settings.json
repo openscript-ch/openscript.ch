@@ -15,5 +15,8 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "debug.node.autoAttach": "on"
+  "debug.node.autoAttach": "on",
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "gitlens.advanced.telemetry.enabled": false
 }
