@@ -22,7 +22,7 @@ const DefaultLayoutStyle = css`
     scroll-behavior: smooth;
     display: flex;
     min-height: 100%;
-    background: linear-gradient(to bottom, #ddd, #fff 20rem);
+    background: linear-gradient(to bottom, #ddd, #fff 20rem) no-repeat;
   }
 
   #___gatsby,
