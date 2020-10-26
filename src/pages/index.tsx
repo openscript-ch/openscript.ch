@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormattedMessage, useIntl } from 'react-intl';
+import { useIntl } from 'react-intl';
 import { SitePageContext } from '../../graphql-types';
 import { DefaultLayout } from '../layouts/default';
 import { ValueSection } from '../components/ValueSection';

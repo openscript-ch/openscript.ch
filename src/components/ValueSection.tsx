@@ -9,10 +9,17 @@ const StyledSection = styled.section`
     font-size: 3rem;
     font-weight: 100;
     font-family: Prompt;
+    line-height: 1.1;
 
     & > strong {
       font-weight: normal;
       display: block;
+    }
+
+    & > ul {
+      li {
+        margin-bottom: 1rem;
+      }
     }
   }
 `;
