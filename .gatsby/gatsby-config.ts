@@ -13,6 +13,7 @@ const configuration: ITSConfigFn<'config'> = ({ projectRoot }) => ({
     'gatsby-plugin-sharp',
     'gatsby-plugin-svgr',
     'gatsby-plugin-robots-txt',
+    'gatsby-plugin-sitemap',
     'gatsby-plugin-emotion',
     {
       resolve: 'gatsby-plugin-manifest',
