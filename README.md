@@ -6,3 +6,5 @@ Feel free to checkout how our website is built, but don't copy our content and b
 
 1. Clone repository
 1. Install dependencies
+1. Run `yarn start`
+1. Go to http://localhost:8000

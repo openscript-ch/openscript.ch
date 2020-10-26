@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import { ReactComponent as Logo } from '../../../static/logo.svg';
 
 const StyledHeader = styled.header`
   display: flex;
@@ -8,18 +7,15 @@ const StyledHeader = styled.header`
   justify-content: space-between;
 `;
 
-const StyledLogo = styled(Logo)`
-  height: 2rem;
-`;
-
 type DefaultHeaderProps = {
   languageSwitcher: JSX.Element;
+  logo: JSX.Element;
 };
 
-export function DefaultHeader({ languageSwitcher }: DefaultHeaderProps) {
+export function DefaultHeader({ languageSwitcher, logo }: DefaultHeaderProps) {
   return (
     <StyledHeader>
-      <StyledLogo />
+      {logo}
       {languageSwitcher}
     </StyledHeader>
   );

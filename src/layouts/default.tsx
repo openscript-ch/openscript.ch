@@ -5,11 +5,10 @@ import { useIntl } from 'react-intl';
 import { DefaultLayoutQuery, SitePageContext } from '../../graphql-types';
 import { BuildInfo } from '../components/BuildInfo';
 import { LanguageSwitcher } from '../components/LanguageSwitcher';
+import { Logo } from '../components/Logo';
 import { PageHead } from '../components/PageHead';
 import { DefaultFooter } from './default/Footer';
 import { DefaultHeader } from './default/Header';
-
-type DefaultLayoutProps = PropsWithChildren<{ pageContext: SitePageContext; title: string }>;
 
 const DefaultLayoutStyle = css`
   html {
@@ -55,6 +54,8 @@ const DefaultLayoutStyle = css`
   }
 `;
 
+type DefaultLayoutProps = PropsWithChildren<{ pageContext: SitePageContext; title: string }>;
+
 export function DefaultLayout({ pageContext, title, children }: DefaultLayoutProps) {
   const intl = useIntl();
   const titleSuffix = intl.formatMessage({ id: 'meta.title' });
@@ -75,7 +76,10 @@ export function DefaultLayout({ pageContext, title, children }: DefaultLayoutPro
             title={`${title} - ${titleSuffix}`}
           />
           <Global styles={DefaultLayoutStyle} />
-          <DefaultHeader languageSwitcher={<LanguageSwitcher paths={pageContext.alternativeLanguagePaths} />} />
+          <DefaultHeader
+            languageSwitcher={<LanguageSwitcher paths={pageContext.alternativeLanguagePaths} />}
+            logo={<Logo homePath={`/`} />}
+          />
           <main>{children}</main>
           <DefaultFooter buildInfo={<BuildInfo buildDateTime={data.site.buildTime} />} />
         </div>
