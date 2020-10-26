@@ -11,7 +11,7 @@
     "build:types": "graphql-codegen --config codegen.yml",
     "clean": "gatsby clean",
     "check:types": "tsc --noEmit",
-    "check:format": "eslint . --ignore-path .gitignore --ext .ts,.tsx,.js"
+    "check:format": "eslint . --ext .ts,.tsx,.js"
   },
   "dependencies": {
     "@babel/core": "^7.12.3",
