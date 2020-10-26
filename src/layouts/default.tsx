@@ -1,7 +1,7 @@
 import { css, Global } from '@emotion/core';
 import { graphql, StaticQuery } from 'gatsby';
 import React, { PropsWithChildren } from 'react';
-import { FormattedDate, FormattedTime, useIntl } from 'react-intl';
+import { useIntl } from 'react-intl';
 import { DefaultLayoutQuery, SitePageContext } from '../../graphql-types';
 import { BuildInfo } from '../components/BuildInfo';
 import { LanguageSwitcher } from '../components/LanguageSwitcher';

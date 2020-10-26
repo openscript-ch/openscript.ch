@@ -3,6 +3,7 @@ import { ITSConfigFn } from 'gatsby-plugin-ts-config';
 const configuration: ITSConfigFn<'config'> = ({ projectRoot }) => ({
   pathPrefix: '/openscript.ch', // TODO: Remove when it runs at the domains root
   siteMetadata: {
+    siteUrl: 'https://openscript.ch',
     topNavigation: ['/', '/about']
   },
   plugins: [
@@ -11,6 +12,7 @@ const configuration: ITSConfigFn<'config'> = ({ projectRoot }) => ({
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
     'gatsby-plugin-svgr',
+    'gatsby-plugin-robots-txt',
     'gatsby-plugin-emotion',
     {
       resolve: 'gatsby-plugin-manifest',
