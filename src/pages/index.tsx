@@ -2,7 +2,6 @@ import React from 'react';
 import { useIntl } from 'react-intl';
 import { SitePageContext, IndexPageQuery } from '../../graphql-types';
 import { DefaultLayout } from '../layouts/default';
-import { ValueSection } from '../components/ValueSection';
 import { graphql } from 'gatsby';
 
 type IndexPageProps = { data: IndexPageQuery; pageContext: SitePageContext };
