@@ -18,5 +18,6 @@
   "debug.node.autoAttach": "on",
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
-  "gitlens.advanced.telemetry.enabled": false
+  "gitlens.advanced.telemetry.enabled": false,
+  "cSpell.language": "en,de"
 }
