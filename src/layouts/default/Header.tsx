@@ -5,6 +5,7 @@ const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: var(--white-alternate-color);
 `;
 
 type DefaultHeaderProps = {

@@ -4,6 +4,8 @@ const configuration: ITSConfigFn<'config'> = ({ projectRoot }) => ({
   pathPrefix: '/openscript.ch', // TODO: Remove when it runs at the domains root
   siteMetadata: {
     siteUrl: 'https://openscript.ch',
+    phone: '+41 44 520 54 67',
+    email: 'hi@openscript.ch',
     topNavigation: ['/about']
   },
   plugins: [

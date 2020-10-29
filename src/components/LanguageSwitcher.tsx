@@ -1,6 +1,13 @@
+import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+
+const StyledList = styled.ul`
+  list-style: none;
+  margin: 0;
+  padding: 0;
+`;
 
 export type LanguageSwitcherProps = {
   paths?: { language: string; path: string }[];
@@ -11,7 +18,7 @@ export function LanguageSwitcher({ paths }: LanguageSwitcherProps) {
     return null;
   }
   return (
-    <ul>
+    <StyledList>
       {paths.map((p) => {
         return (
           <li key={p.language}>
@@ -21,6 +28,6 @@ export function LanguageSwitcher({ paths }: LanguageSwitcherProps) {
           </li>
         );
       })}
-    </ul>
+    </StyledList>
   );
 }

@@ -11,6 +11,15 @@ import { DefaultFooter } from './default/Footer';
 import { DefaultHeader } from './default/Header';
 
 const DefaultLayoutStyle = css`
+  :root {
+    --white-color: #ede9df;
+    --white-alternate-color: #dbd4c3;
+    --black-color: #231f20;
+    --primary-color: #539350;
+    --primary-alternate-color: #7ad975;
+    --secondary-color: #fa5100;
+  }
+
   html {
     height: 100%;
   }
@@ -22,7 +31,8 @@ const DefaultLayoutStyle = css`
     scroll-behavior: smooth;
     display: flex;
     min-height: 100%;
-    background: linear-gradient(to bottom, #ddd, #fff 20rem) no-repeat;
+    background: var(--white-color);
+    color: var(--black-color);
   }
 
   #___gatsby,
@@ -34,11 +44,21 @@ const DefaultLayoutStyle = css`
   #wrapper {
     width: 100%;
     display: grid;
-    grid-template-rows: 5rem auto 2rem;
+    grid-template-rows: 5rem auto 7rem;
     grid-template-areas:
       'header header'
       'main main'
       'footer footer';
+
+    & > * {
+      padding: 0 15%;
+    }
+
+    @media screen and (max-width: 60rem) {
+      & > * {
+        padding: 0 2rem;
+      }
+    }
   }
 
   header {
@@ -51,6 +71,15 @@ const DefaultLayoutStyle = css`
 
   footer {
     grid-area: footer;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--primary-color);
+
+    &:hover {
+      color: var(--secondary-color);
+    }
   }
 `;
 
