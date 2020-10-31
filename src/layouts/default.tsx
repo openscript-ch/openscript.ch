@@ -128,7 +128,7 @@ export function DefaultLayout({ pageContext, title, children }: DefaultLayoutPro
           <Global styles={DefaultLayoutStyle} />
           <DefaultHeader
             languageSwitcher={<LanguageSwitcher paths={pageContext.alternativeLanguagePaths} />}
-            logo={<Logo homePath={`/`} />}
+            logo={<Logo homePath={`/${pageContext.language !== 'de' ? `${pageContext.language}/` : ''}`} />}
           />
           <main>{children}</main>
           <DefaultFooter buildInfo={<BuildInfo buildDateTime={data.site.buildTime} />} />
