@@ -11,8 +11,8 @@ export default function IndexPage({ data, pageContext }: IndexPageProps) {
   const title = intl.formatMessage({ id: 'page.index.title' });
   return (
     <DefaultLayout pageContext={pageContext} title={title}>
-      {data.values.nodes.map((value) => {
-        return <div dangerouslySetInnerHTML={{ __html: value.html }} />;
+      {data.values.nodes.map((value, index) => {
+        return <div key={index} dangerouslySetInnerHTML={{ __html: value.html }} />;
       })}
     </DefaultLayout>
   );

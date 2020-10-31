@@ -18,6 +18,9 @@ const DefaultLayoutStyle = css`
     --primary-color: #539350;
     --primary-alternate-color: #7ad975;
     --secondary-color: #fa5100;
+    --heading-font: 'Prompt', 'Roboto', sans-serif;
+    --paragraph-font: 'PT Sans', 'Roboto', sans-serif;
+    --code-font: 'IBM Plex Mono', monospace;
   }
 
   html {
@@ -33,6 +36,7 @@ const DefaultLayoutStyle = css`
     min-height: 100%;
     background: var(--white-color);
     color: var(--black-color);
+    font-family: var(--paragraph-font);
   }
 
   #___gatsby,
@@ -80,6 +84,23 @@ const DefaultLayoutStyle = css`
     &:hover {
       color: var(--secondary-color);
     }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--heading-font);
+    font-weight: 400;
+  }
+
+  pre,
+  code,
+  samp,
+  kbd {
+    font-family: var(--code-font);
   }
 `;
 
