@@ -1,6 +1,10 @@
 import styled from '@emotion/styled';
 import React from 'react';
 
+const HorizontalLayout = styled.div`
+  display: flex;
+`;
+
 const StyledHeader = styled.header`
   display: flex;
   align-items: center;
@@ -9,15 +13,19 @@ const StyledHeader = styled.header`
 `;
 
 type DefaultHeaderProps = {
+  contactBar: JSX.Element;
   languageSwitcher: JSX.Element;
   logo: JSX.Element;
 };
 
-export function DefaultHeader({ languageSwitcher, logo }: DefaultHeaderProps) {
+export function DefaultHeader({ contactBar, languageSwitcher, logo }: DefaultHeaderProps) {
   return (
     <StyledHeader>
       {logo}
-      {languageSwitcher}
+      <HorizontalLayout>
+        {contactBar}
+        {languageSwitcher}
+      </HorizontalLayout>
     </StyledHeader>
   );
 }

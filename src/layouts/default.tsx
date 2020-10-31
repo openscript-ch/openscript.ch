@@ -4,6 +4,7 @@ import React, { PropsWithChildren } from 'react';
 import { useIntl } from 'react-intl';
 import { DefaultLayoutQuery, SitePageContext } from '../../graphql-types';
 import { BuildInfo } from '../components/BuildInfo';
+import { ContactBar } from '../components/ContactBar';
 import { LanguageSwitcher } from '../components/LanguageSwitcher';
 import { Logo } from '../components/Logo';
 import { PageHead } from '../components/PageHead';
@@ -115,6 +116,10 @@ export function DefaultLayout({ pageContext, title, children }: DefaultLayoutPro
         query DefaultLayout {
           site {
             buildTime
+            siteMetadata {
+              phone
+              email
+            }
           }
         }
       `}
@@ -127,6 +132,7 @@ export function DefaultLayout({ pageContext, title, children }: DefaultLayoutPro
           />
           <Global styles={DefaultLayoutStyle} />
           <DefaultHeader
+            contactBar={<ContactBar phone={data.site.siteMetadata.phone} email={data.site.siteMetadata.email} />}
             languageSwitcher={<LanguageSwitcher paths={pageContext.alternativeLanguagePaths} />}
             logo={<Logo homePath={`/${pageContext.language !== 'de' ? `${pageContext.language}/` : ''}`} />}
           />
