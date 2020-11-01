@@ -21,10 +21,10 @@ export function ContactBar({ phone, email }: ContactBarProps) {
   return (
     <StyledList>
       <li>
-        <a href={`mailto:${email}`}>{email}</a>
+        <a href={`tel:${phone.replace(/\s/g, '')}`}>{phone}</a>
       </li>
       <li>
-        <a href={`tel:${phone.replace(/\s/g, '')}`}>{phone}</a>
+        <a href={`mailto:${email}`}>{email}</a>
       </li>
     </StyledList>
   );
