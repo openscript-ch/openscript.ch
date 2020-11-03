@@ -3,6 +3,7 @@ import { useIntl } from 'react-intl';
 import { SitePageContext, IndexPageQuery } from '../../graphql-types';
 import { DefaultLayout } from '../layouts/default';
 import { graphql } from 'gatsby';
+import { Ticker } from '../components/Ticker';
 
 type IndexPageProps = { data: IndexPageQuery; pageContext: SitePageContext };
 
@@ -14,6 +15,7 @@ export default function IndexPage({ data, pageContext }: IndexPageProps) {
       {data.values.nodes.map((value, index) => {
         return <div key={index} dangerouslySetInnerHTML={{ __html: value.html }} />;
       })}
+      <Ticker slides={[]} />
     </DefaultLayout>
   );
 }
