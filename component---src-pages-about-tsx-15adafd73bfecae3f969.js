@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{"2l/u":function(t,e,n){"use strict";n.r(e),n.d(e,"default",(function(){return c}));n("q1tI");var a=n("dDsW"),o=n("Th6I"),u=n("qKvR");function c(t){var e=t.pageContext,n=Object(a.a)().formatMessage({id:"page.about.title"});return Object(u.c)(o.a,{pageContext:e,title:n},"About")}}}]);
+//# sourceMappingURL=component---src-pages-about-tsx-15adafd73bfecae3f969.js.map
