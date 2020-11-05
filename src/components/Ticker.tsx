@@ -8,26 +8,31 @@ const Viewport = styled.section`
 
 const Container = styled.div`
   display: flex;
+  height: 100%;
 `;
 
 const Slide = styled.div`
   position: relative;
+  height: 100%;
 `;
 
 export type TickerProps = {
+  className?: string;
   slides: JSX.Element[];
+  speed?: number;
 };
 
-export function Ticker({ slides }: TickerProps) {
+export function Ticker({ className, slides, speed }: TickerProps) {
   const [tickerRef, ticker] = useEmblaCarousel({ loop: true, dragFree: true, containScroll: 'trimSnaps' });
   const animationRef = useRef(0);
+  const currentSpeed = speed || -0.1;
 
   const animate = useCallback(() => {
     if (!ticker || !animationRef.current) {
       return;
     }
     const engine = ticker.dangerouslyGetEngine();
-    engine.location.add(-0.1);
+    engine.location.add(currentSpeed);
     engine.target.set(engine.location);
     engine.scrollLooper.loop([engine.location, engine.target], -1);
     engine.slideLooper.loop(ticker.slideNodes());
@@ -54,7 +59,7 @@ export function Ticker({ slides }: TickerProps) {
   }, [ticker, startAutoScrolling, stopAutoScrolling, slides]);
 
   return (
-    <Viewport ref={tickerRef}>
+    <Viewport className={className} ref={tickerRef}>
       <Container>
         {slides.map((s, i) => {
           return <Slide key={i}>{s}</Slide>;
