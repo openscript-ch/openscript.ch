@@ -24,9 +24,9 @@ const generateTranslatedPaths = (path: string) => {
 const node: ITSConfigFn<'node'> = () => ({
   onCreateNode: async ({ node, actions, getNode }) => {
     const { createNodeField } = actions;
-    const fileSystemNode = getNode(node.parent);
 
-    if (node.internal.type === 'MarkdownRemark') {
+    if (node.internal.type === 'MarkdownRemark' && node.parent) {
+      const fileSystemNode = getNode(node.parent);
       const { name, relativeDirectory } = fileSystemNode as FileSystemNode;
       const nameMatch = name.match(/^(\w+)(.+)?\.(\w+)$/);
       const slug = nameMatch && nameMatch[1] ? nameMatch[1] : name;
