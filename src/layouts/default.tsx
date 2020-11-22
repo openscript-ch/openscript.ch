@@ -111,7 +111,7 @@ type DefaultLayoutProps = PropsWithChildren<{ pageContext: SitePageContext; titl
 
 export function DefaultLayout({ pageContext, title, children }: DefaultLayoutProps) {
   const intl = useIntl();
-  const titleSuffix = intl.formatMessage({ id: 'meta.title' });
+  const siteTitle = intl.formatMessage({ id: 'meta.title' });
   return (
     <StaticQuery
       query={graphql`
@@ -130,13 +130,14 @@ export function DefaultLayout({ pageContext, title, children }: DefaultLayoutPro
           <PageHead
             alternativeLanguagePaths={pageContext.alternativeLanguagePaths}
             locale={pageContext.language}
-            title={`${title} - ${titleSuffix}`}
+            title={`${title} - ${siteTitle}`}
           />
           <Global styles={DefaultLayoutStyle} />
           <DefaultHeader
             contactBar={<ContactBar phone={data.site.siteMetadata.phone} email={data.site.siteMetadata.email} />}
             languageSwitcher={<LanguageSwitcher paths={pageContext.alternativeLanguagePaths} />}
             logo={<Logo homePath={`/${pageContext.language !== 'de' ? `${pageContext.language}/` : ''}`} />}
+            siteTitle={siteTitle}
           />
           <main>{children}</main>
           <DefaultFooter buildInfo={<BuildInfo buildDateTime={data.site.buildTime} />} />
