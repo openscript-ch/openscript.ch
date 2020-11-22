@@ -4,8 +4,8 @@
   "description": "The website of a small software company.",
   "version": "0.1.0",
   "scripts": {
-    "start": "gatsby develop",
-    "develop": "gatsby develop",
+    "start": "INTERNAL_STATUS_PORT=25252 gatsby develop",
+    "develop": "INTERNAL_STATUS_PORT=25252 gatsby develop",
     "build": "gatsby build",
     "build:with-prefix": "gatsby build --prefix-paths",
     "build:types": "graphql-codegen --config codegen.yml",
