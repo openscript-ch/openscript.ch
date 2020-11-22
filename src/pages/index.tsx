@@ -1,5 +1,5 @@
 import React from 'react';
-import { useIntl } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 import { SitePageContext, IndexPageQuery } from '../../graphql-types';
 import { DefaultLayout } from '../layouts/default';
 import { graphql } from 'gatsby';
@@ -42,18 +42,23 @@ type IndexPageProps = { data: IndexPageQuery; pageContext: SitePageContext };
 export default function IndexPage({ data, pageContext }: IndexPageProps) {
   const intl = useIntl();
   const title = intl.formatMessage({ id: 'page.index.title' });
-  let references = data.references.nodes.map((value, index) => (
+  const references = data.references.nodes.map((value, index) => (
     <Reference key={index}>
-      <Img fixed={value.frontmatter.logo.childImageSharp.fixed} />
+      <Img fixed={{ ...value.frontmatter.logo.childImageSharp.fixed }} />
     </Reference>
   ));
-  references = [...references, ...references, ...references, ...references, ...references, ...references, ...references];
 
   return (
     <DefaultLayout pageContext={pageContext} title={title}>
+      <h2>
+        <FormattedMessage id="page.index.section.values" />
+      </h2>
       {data.values.nodes.map((value, index) => {
         return <div key={index} dangerouslySetInnerHTML={{ __html: value.html }} />;
       })}
+      <h2>
+        <FormattedMessage id="page.index.section.references" />
+      </h2>
       <ReferenceTicker slides={references} speed={-0.04} />
     </DefaultLayout>
   );
@@ -80,7 +85,7 @@ export const query = graphql`
           title
           logo {
             childImageSharp {
-              fixed(height: 64) {
+              fixed(height: 48) {
                 ...GatsbyImageSharpFixed
               }
             }

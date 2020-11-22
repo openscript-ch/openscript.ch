@@ -22,12 +22,16 @@ export const contentTranslation: Translation = {
     ...localeTranslation,
     'meta.languageName': 'Deutsch',
     'meta.title': 'openscript GmbH',
-    'page.index.title': 'Startseite'
+    'page.index.title': 'Startseite',
+    'page.index.section.values': 'Werte',
+    'page.index.section.references': 'Referenzen',
   },
   'en': {
     ...localeTranslation,
     'meta.languageName': 'English',
     'meta.title': 'openscript GmbH',
-    'page.index.title': 'Homepage'
+    'page.index.title': 'Homepage',
+    'page.index.section.values': 'Values',
+    'page.index.section.references': 'References',
   }
 }

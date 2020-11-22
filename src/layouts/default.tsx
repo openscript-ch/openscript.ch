@@ -57,7 +57,7 @@ const DefaultLayoutStyle = css`
 
     & > * {
       box-sizing: border-box;
-      width: 100%;
+      width: 100vw;
       padding: 0 15%;
     }
 

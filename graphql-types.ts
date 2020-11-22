@@ -13,6 +13,16 @@ export type Scalars = {
   JSON: any;
 };
 
+export type BlurredOptions = {
+  /** Width of the generated low-res preview. Default is 20px */
+  width: Maybe<Scalars['Int']>;
+  /**
+   * Force the output format for the low-res preview. Default is to use the same
+   * format as the input. You should rarely need to change this
+   */
+  toFormat: Maybe<ImageFormat>;
+};
+
 export type BooleanQueryOperatorInput = {
   eq: Maybe<Scalars['Boolean']>;
   ne: Maybe<Scalars['Boolean']>;
@@ -554,7 +564,7 @@ export enum FileFieldsEnum {
   childImageSharp___sizes___originalName = 75,
   childImageSharp___sizes___presentationWidth = 76,
   childImageSharp___sizes___presentationHeight = 77,
-  childImageSharp___gatsbyImage___imageData = 78,
+  childImageSharp___gatsbyImageData = 78,
   childImageSharp___original___width = 79,
   childImageSharp___original___height = 80,
   childImageSharp___original___src = 81,
@@ -690,44 +700,44 @@ export enum FileFieldsEnum {
   internal___type = 211,
   childMarkdownRemark___id = 212,
   childMarkdownRemark___frontmatter___title = 213,
-  childMarkdownRemark___frontmatter___order = 214,
-  childMarkdownRemark___frontmatter___logo___sourceInstanceName = 215,
-  childMarkdownRemark___frontmatter___logo___absolutePath = 216,
-  childMarkdownRemark___frontmatter___logo___relativePath = 217,
-  childMarkdownRemark___frontmatter___logo___extension = 218,
-  childMarkdownRemark___frontmatter___logo___size = 219,
-  childMarkdownRemark___frontmatter___logo___prettySize = 220,
-  childMarkdownRemark___frontmatter___logo___modifiedTime = 221,
-  childMarkdownRemark___frontmatter___logo___accessTime = 222,
-  childMarkdownRemark___frontmatter___logo___changeTime = 223,
-  childMarkdownRemark___frontmatter___logo___birthTime = 224,
-  childMarkdownRemark___frontmatter___logo___root = 225,
-  childMarkdownRemark___frontmatter___logo___dir = 226,
-  childMarkdownRemark___frontmatter___logo___base = 227,
-  childMarkdownRemark___frontmatter___logo___ext = 228,
-  childMarkdownRemark___frontmatter___logo___name = 229,
-  childMarkdownRemark___frontmatter___logo___relativeDirectory = 230,
-  childMarkdownRemark___frontmatter___logo___dev = 231,
-  childMarkdownRemark___frontmatter___logo___mode = 232,
-  childMarkdownRemark___frontmatter___logo___nlink = 233,
-  childMarkdownRemark___frontmatter___logo___uid = 234,
-  childMarkdownRemark___frontmatter___logo___gid = 235,
-  childMarkdownRemark___frontmatter___logo___rdev = 236,
-  childMarkdownRemark___frontmatter___logo___ino = 237,
-  childMarkdownRemark___frontmatter___logo___atimeMs = 238,
-  childMarkdownRemark___frontmatter___logo___mtimeMs = 239,
-  childMarkdownRemark___frontmatter___logo___ctimeMs = 240,
-  childMarkdownRemark___frontmatter___logo___atime = 241,
-  childMarkdownRemark___frontmatter___logo___mtime = 242,
-  childMarkdownRemark___frontmatter___logo___ctime = 243,
-  childMarkdownRemark___frontmatter___logo___birthtime = 244,
-  childMarkdownRemark___frontmatter___logo___birthtimeMs = 245,
-  childMarkdownRemark___frontmatter___logo___blksize = 246,
-  childMarkdownRemark___frontmatter___logo___blocks = 247,
-  childMarkdownRemark___frontmatter___logo___publicURL = 248,
-  childMarkdownRemark___frontmatter___logo___id = 249,
-  childMarkdownRemark___frontmatter___logo___children = 250,
-  childMarkdownRemark___frontmatter___website = 251,
+  childMarkdownRemark___frontmatter___logo___sourceInstanceName = 214,
+  childMarkdownRemark___frontmatter___logo___absolutePath = 215,
+  childMarkdownRemark___frontmatter___logo___relativePath = 216,
+  childMarkdownRemark___frontmatter___logo___extension = 217,
+  childMarkdownRemark___frontmatter___logo___size = 218,
+  childMarkdownRemark___frontmatter___logo___prettySize = 219,
+  childMarkdownRemark___frontmatter___logo___modifiedTime = 220,
+  childMarkdownRemark___frontmatter___logo___accessTime = 221,
+  childMarkdownRemark___frontmatter___logo___changeTime = 222,
+  childMarkdownRemark___frontmatter___logo___birthTime = 223,
+  childMarkdownRemark___frontmatter___logo___root = 224,
+  childMarkdownRemark___frontmatter___logo___dir = 225,
+  childMarkdownRemark___frontmatter___logo___base = 226,
+  childMarkdownRemark___frontmatter___logo___ext = 227,
+  childMarkdownRemark___frontmatter___logo___name = 228,
+  childMarkdownRemark___frontmatter___logo___relativeDirectory = 229,
+  childMarkdownRemark___frontmatter___logo___dev = 230,
+  childMarkdownRemark___frontmatter___logo___mode = 231,
+  childMarkdownRemark___frontmatter___logo___nlink = 232,
+  childMarkdownRemark___frontmatter___logo___uid = 233,
+  childMarkdownRemark___frontmatter___logo___gid = 234,
+  childMarkdownRemark___frontmatter___logo___rdev = 235,
+  childMarkdownRemark___frontmatter___logo___ino = 236,
+  childMarkdownRemark___frontmatter___logo___atimeMs = 237,
+  childMarkdownRemark___frontmatter___logo___mtimeMs = 238,
+  childMarkdownRemark___frontmatter___logo___ctimeMs = 239,
+  childMarkdownRemark___frontmatter___logo___atime = 240,
+  childMarkdownRemark___frontmatter___logo___mtime = 241,
+  childMarkdownRemark___frontmatter___logo___ctime = 242,
+  childMarkdownRemark___frontmatter___logo___birthtime = 243,
+  childMarkdownRemark___frontmatter___logo___birthtimeMs = 244,
+  childMarkdownRemark___frontmatter___logo___blksize = 245,
+  childMarkdownRemark___frontmatter___logo___blocks = 246,
+  childMarkdownRemark___frontmatter___logo___publicURL = 247,
+  childMarkdownRemark___frontmatter___logo___id = 248,
+  childMarkdownRemark___frontmatter___logo___children = 249,
+  childMarkdownRemark___frontmatter___website = 250,
+  childMarkdownRemark___frontmatter___order = 251,
   childMarkdownRemark___excerpt = 252,
   childMarkdownRemark___rawMarkdownBody = 253,
   childMarkdownRemark___fileAbsolutePath = 254,
@@ -878,9 +888,10 @@ export enum ImageFit {
 
 export enum ImageFormat {
   NO_CHANGE = 0,
-  JPG = 1,
-  PNG = 2,
-  WEBP = 3
+  AUTO = 1,
+  JPG = 2,
+  PNG = 3,
+  WEBP = 4
 }
 
 export enum ImageLayout {
@@ -892,7 +903,7 @@ export enum ImageLayout {
 export enum ImagePlaceholder {
   DOMINANT_COLOR = 0,
   TRACED_SVG = 1,
-  BASE64 = 2,
+  BLURRED = 2,
   NONE = 3
 }
 
@@ -904,7 +915,7 @@ export type ImageSharp = Node & {
   fluid: Maybe<ImageSharpFluid>;
   /** @deprecated Sizes was deprecated in Gatsby v2. It's been renamed to "fluid" https://example.com/write-docs-and-fix-this-example-link */
   sizes: Maybe<ImageSharpSizes>;
-  gatsbyImage: Maybe<ImageSharpGatsbyImage>;
+  gatsbyImageData: Scalars['JSON'];
   original: Maybe<ImageSharpOriginal>;
   resize: Maybe<ImageSharpResize>;
   id: Scalars['ID'];
@@ -1010,34 +1021,24 @@ export type ImageSharpSizesArgs = {
 };
 
 
-export type ImageSharpGatsbyImageArgs = {
+export type ImageSharpGatsbyImageDataArgs = {
   layout?: Maybe<ImageLayout>;
   maxWidth: Maybe<Scalars['Int']>;
   maxHeight: Maybe<Scalars['Int']>;
   width: Maybe<Scalars['Int']>;
   height: Maybe<Scalars['Int']>;
-  placeholder: Maybe<ImagePlaceholder>;
+  placeholder?: Maybe<ImagePlaceholder>;
+  blurredOptions: Maybe<BlurredOptions>;
   tracedSVGOptions: Maybe<Potrace>;
-  webP?: Maybe<Scalars['Boolean']>;
+  formats?: Maybe<Array<Maybe<ImageFormat>>>;
   outputPixelDensities: Maybe<Array<Maybe<Scalars['Float']>>>;
   sizes?: Maybe<Scalars['String']>;
-  base64Width: Maybe<Scalars['Int']>;
-  grayscale?: Maybe<Scalars['Boolean']>;
-  jpegProgressive?: Maybe<Scalars['Boolean']>;
-  pngCompressionSpeed?: Maybe<Scalars['Int']>;
-  duotone: Maybe<DuotoneGradient>;
   quality: Maybe<Scalars['Int']>;
-  jpegQuality: Maybe<Scalars['Int']>;
-  pngQuality: Maybe<Scalars['Int']>;
-  webpQuality: Maybe<Scalars['Int']>;
-  toFormat?: Maybe<ImageFormat>;
-  toFormatBase64?: Maybe<ImageFormat>;
-  cropFocus?: Maybe<ImageCropFocus>;
-  fit?: Maybe<ImageFit>;
+  jpgOptions: Maybe<JpgOptions>;
+  pngOptions: Maybe<PngOptions>;
+  webpOptions: Maybe<WebPOptions>;
+  transformOptions: Maybe<TransformOptions>;
   background?: Maybe<Scalars['String']>;
-  rotate?: Maybe<Scalars['Int']>;
-  trim?: Maybe<Scalars['Float']>;
-  srcSetBreakpoints?: Maybe<Array<Maybe<Scalars['Int']>>>;
 };
 
 
@@ -1137,7 +1138,7 @@ export enum ImageSharpFieldsEnum {
   sizes___originalName = 41,
   sizes___presentationWidth = 42,
   sizes___presentationHeight = 43,
-  gatsbyImage___imageData = 44,
+  gatsbyImageData = 44,
   original___width = 45,
   original___height = 46,
   original___src = 47,
@@ -1240,7 +1241,7 @@ export type ImageSharpFilterInput = {
   resolutions: Maybe<ImageSharpResolutionsFilterInput>;
   fluid: Maybe<ImageSharpFluidFilterInput>;
   sizes: Maybe<ImageSharpSizesFilterInput>;
-  gatsbyImage: Maybe<ImageSharpGatsbyImageFilterInput>;
+  gatsbyImageData: Maybe<JsonQueryOperatorInput>;
   original: Maybe<ImageSharpOriginalFilterInput>;
   resize: Maybe<ImageSharpResizeFilterInput>;
   id: Maybe<StringQueryOperatorInput>;
@@ -1305,15 +1306,6 @@ export type ImageSharpFluidFilterInput = {
   originalName: Maybe<StringQueryOperatorInput>;
   presentationWidth: Maybe<IntQueryOperatorInput>;
   presentationHeight: Maybe<IntQueryOperatorInput>;
-};
-
-export type ImageSharpGatsbyImage = {
-  __typename?: 'ImageSharpGatsbyImage';
-  imageData: Scalars['JSON'];
-};
-
-export type ImageSharpGatsbyImageFilterInput = {
-  imageData: Maybe<JsonQueryOperatorInput>;
 };
 
 export type ImageSharpGroupConnection = {
@@ -1455,6 +1447,11 @@ export type IntQueryOperatorInput = {
   nin: Maybe<Array<Maybe<Scalars['Int']>>>;
 };
 
+export type JpgOptions = {
+  quality: Maybe<Scalars['Int']>;
+  progressive: Maybe<Scalars['Boolean']>;
+};
+
 
 export type JsonQueryOperatorInput = {
   eq: Maybe<Scalars['JSON']>;
@@ -1582,41 +1579,41 @@ export type MarkdownRemarkFields = {
 export enum MarkdownRemarkFieldsEnum {
   id = 0,
   frontmatter___title = 1,
-  frontmatter___order = 2,
-  frontmatter___logo___sourceInstanceName = 3,
-  frontmatter___logo___absolutePath = 4,
-  frontmatter___logo___relativePath = 5,
-  frontmatter___logo___extension = 6,
-  frontmatter___logo___size = 7,
-  frontmatter___logo___prettySize = 8,
-  frontmatter___logo___modifiedTime = 9,
-  frontmatter___logo___accessTime = 10,
-  frontmatter___logo___changeTime = 11,
-  frontmatter___logo___birthTime = 12,
-  frontmatter___logo___root = 13,
-  frontmatter___logo___dir = 14,
-  frontmatter___logo___base = 15,
-  frontmatter___logo___ext = 16,
-  frontmatter___logo___name = 17,
-  frontmatter___logo___relativeDirectory = 18,
-  frontmatter___logo___dev = 19,
-  frontmatter___logo___mode = 20,
-  frontmatter___logo___nlink = 21,
-  frontmatter___logo___uid = 22,
-  frontmatter___logo___gid = 23,
-  frontmatter___logo___rdev = 24,
-  frontmatter___logo___ino = 25,
-  frontmatter___logo___atimeMs = 26,
-  frontmatter___logo___mtimeMs = 27,
-  frontmatter___logo___ctimeMs = 28,
-  frontmatter___logo___atime = 29,
-  frontmatter___logo___mtime = 30,
-  frontmatter___logo___ctime = 31,
-  frontmatter___logo___birthtime = 32,
-  frontmatter___logo___birthtimeMs = 33,
-  frontmatter___logo___blksize = 34,
-  frontmatter___logo___blocks = 35,
-  frontmatter___logo___publicURL = 36,
+  frontmatter___logo___sourceInstanceName = 2,
+  frontmatter___logo___absolutePath = 3,
+  frontmatter___logo___relativePath = 4,
+  frontmatter___logo___extension = 5,
+  frontmatter___logo___size = 6,
+  frontmatter___logo___prettySize = 7,
+  frontmatter___logo___modifiedTime = 8,
+  frontmatter___logo___accessTime = 9,
+  frontmatter___logo___changeTime = 10,
+  frontmatter___logo___birthTime = 11,
+  frontmatter___logo___root = 12,
+  frontmatter___logo___dir = 13,
+  frontmatter___logo___base = 14,
+  frontmatter___logo___ext = 15,
+  frontmatter___logo___name = 16,
+  frontmatter___logo___relativeDirectory = 17,
+  frontmatter___logo___dev = 18,
+  frontmatter___logo___mode = 19,
+  frontmatter___logo___nlink = 20,
+  frontmatter___logo___uid = 21,
+  frontmatter___logo___gid = 22,
+  frontmatter___logo___rdev = 23,
+  frontmatter___logo___ino = 24,
+  frontmatter___logo___atimeMs = 25,
+  frontmatter___logo___mtimeMs = 26,
+  frontmatter___logo___ctimeMs = 27,
+  frontmatter___logo___atime = 28,
+  frontmatter___logo___mtime = 29,
+  frontmatter___logo___ctime = 30,
+  frontmatter___logo___birthtime = 31,
+  frontmatter___logo___birthtimeMs = 32,
+  frontmatter___logo___blksize = 33,
+  frontmatter___logo___blocks = 34,
+  frontmatter___logo___publicURL = 35,
+  frontmatter___logo___childImageSharp___gatsbyImageData = 36,
   frontmatter___logo___childImageSharp___id = 37,
   frontmatter___logo___childImageSharp___children = 38,
   frontmatter___logo___id = 39,
@@ -1645,109 +1642,110 @@ export enum MarkdownRemarkFieldsEnum {
   frontmatter___logo___childMarkdownRemark___tableOfContents = 62,
   frontmatter___logo___childMarkdownRemark___children = 63,
   frontmatter___website = 64,
-  excerpt = 65,
-  rawMarkdownBody = 66,
-  fileAbsolutePath = 67,
-  fields___language = 68,
-  fields___filename = 69,
-  fields___kind = 70,
-  html = 71,
-  htmlAst = 72,
-  excerptAst = 73,
-  headings = 74,
-  headings___id = 75,
-  headings___value = 76,
-  headings___depth = 77,
-  timeToRead = 78,
-  tableOfContents = 79,
-  wordCount___paragraphs = 80,
-  wordCount___sentences = 81,
-  wordCount___words = 82,
-  parent___id = 83,
-  parent___parent___id = 84,
-  parent___parent___parent___id = 85,
-  parent___parent___parent___children = 86,
-  parent___parent___children = 87,
-  parent___parent___children___id = 88,
-  parent___parent___children___children = 89,
-  parent___parent___internal___content = 90,
-  parent___parent___internal___contentDigest = 91,
-  parent___parent___internal___description = 92,
-  parent___parent___internal___fieldOwners = 93,
-  parent___parent___internal___ignoreType = 94,
-  parent___parent___internal___mediaType = 95,
-  parent___parent___internal___owner = 96,
-  parent___parent___internal___type = 97,
-  parent___children = 98,
-  parent___children___id = 99,
-  parent___children___parent___id = 100,
-  parent___children___parent___children = 101,
-  parent___children___children = 102,
-  parent___children___children___id = 103,
-  parent___children___children___children = 104,
-  parent___children___internal___content = 105,
-  parent___children___internal___contentDigest = 106,
-  parent___children___internal___description = 107,
-  parent___children___internal___fieldOwners = 108,
-  parent___children___internal___ignoreType = 109,
-  parent___children___internal___mediaType = 110,
-  parent___children___internal___owner = 111,
-  parent___children___internal___type = 112,
-  parent___internal___content = 113,
-  parent___internal___contentDigest = 114,
-  parent___internal___description = 115,
-  parent___internal___fieldOwners = 116,
-  parent___internal___ignoreType = 117,
-  parent___internal___mediaType = 118,
-  parent___internal___owner = 119,
-  parent___internal___type = 120,
-  children = 121,
-  children___id = 122,
-  children___parent___id = 123,
-  children___parent___parent___id = 124,
-  children___parent___parent___children = 125,
-  children___parent___children = 126,
-  children___parent___children___id = 127,
-  children___parent___children___children = 128,
-  children___parent___internal___content = 129,
-  children___parent___internal___contentDigest = 130,
-  children___parent___internal___description = 131,
-  children___parent___internal___fieldOwners = 132,
-  children___parent___internal___ignoreType = 133,
-  children___parent___internal___mediaType = 134,
-  children___parent___internal___owner = 135,
-  children___parent___internal___type = 136,
-  children___children = 137,
-  children___children___id = 138,
-  children___children___parent___id = 139,
-  children___children___parent___children = 140,
-  children___children___children = 141,
-  children___children___children___id = 142,
-  children___children___children___children = 143,
-  children___children___internal___content = 144,
-  children___children___internal___contentDigest = 145,
-  children___children___internal___description = 146,
-  children___children___internal___fieldOwners = 147,
-  children___children___internal___ignoreType = 148,
-  children___children___internal___mediaType = 149,
-  children___children___internal___owner = 150,
-  children___children___internal___type = 151,
-  children___internal___content = 152,
-  children___internal___contentDigest = 153,
-  children___internal___description = 154,
-  children___internal___fieldOwners = 155,
-  children___internal___ignoreType = 156,
-  children___internal___mediaType = 157,
-  children___internal___owner = 158,
-  children___internal___type = 159,
-  internal___content = 160,
-  internal___contentDigest = 161,
-  internal___description = 162,
-  internal___fieldOwners = 163,
-  internal___ignoreType = 164,
-  internal___mediaType = 165,
-  internal___owner = 166,
-  internal___type = 167
+  frontmatter___order = 65,
+  excerpt = 66,
+  rawMarkdownBody = 67,
+  fileAbsolutePath = 68,
+  fields___language = 69,
+  fields___filename = 70,
+  fields___kind = 71,
+  html = 72,
+  htmlAst = 73,
+  excerptAst = 74,
+  headings = 75,
+  headings___id = 76,
+  headings___value = 77,
+  headings___depth = 78,
+  timeToRead = 79,
+  tableOfContents = 80,
+  wordCount___paragraphs = 81,
+  wordCount___sentences = 82,
+  wordCount___words = 83,
+  parent___id = 84,
+  parent___parent___id = 85,
+  parent___parent___parent___id = 86,
+  parent___parent___parent___children = 87,
+  parent___parent___children = 88,
+  parent___parent___children___id = 89,
+  parent___parent___children___children = 90,
+  parent___parent___internal___content = 91,
+  parent___parent___internal___contentDigest = 92,
+  parent___parent___internal___description = 93,
+  parent___parent___internal___fieldOwners = 94,
+  parent___parent___internal___ignoreType = 95,
+  parent___parent___internal___mediaType = 96,
+  parent___parent___internal___owner = 97,
+  parent___parent___internal___type = 98,
+  parent___children = 99,
+  parent___children___id = 100,
+  parent___children___parent___id = 101,
+  parent___children___parent___children = 102,
+  parent___children___children = 103,
+  parent___children___children___id = 104,
+  parent___children___children___children = 105,
+  parent___children___internal___content = 106,
+  parent___children___internal___contentDigest = 107,
+  parent___children___internal___description = 108,
+  parent___children___internal___fieldOwners = 109,
+  parent___children___internal___ignoreType = 110,
+  parent___children___internal___mediaType = 111,
+  parent___children___internal___owner = 112,
+  parent___children___internal___type = 113,
+  parent___internal___content = 114,
+  parent___internal___contentDigest = 115,
+  parent___internal___description = 116,
+  parent___internal___fieldOwners = 117,
+  parent___internal___ignoreType = 118,
+  parent___internal___mediaType = 119,
+  parent___internal___owner = 120,
+  parent___internal___type = 121,
+  children = 122,
+  children___id = 123,
+  children___parent___id = 124,
+  children___parent___parent___id = 125,
+  children___parent___parent___children = 126,
+  children___parent___children = 127,
+  children___parent___children___id = 128,
+  children___parent___children___children = 129,
+  children___parent___internal___content = 130,
+  children___parent___internal___contentDigest = 131,
+  children___parent___internal___description = 132,
+  children___parent___internal___fieldOwners = 133,
+  children___parent___internal___ignoreType = 134,
+  children___parent___internal___mediaType = 135,
+  children___parent___internal___owner = 136,
+  children___parent___internal___type = 137,
+  children___children = 138,
+  children___children___id = 139,
+  children___children___parent___id = 140,
+  children___children___parent___children = 141,
+  children___children___children = 142,
+  children___children___children___id = 143,
+  children___children___children___children = 144,
+  children___children___internal___content = 145,
+  children___children___internal___contentDigest = 146,
+  children___children___internal___description = 147,
+  children___children___internal___fieldOwners = 148,
+  children___children___internal___ignoreType = 149,
+  children___children___internal___mediaType = 150,
+  children___children___internal___owner = 151,
+  children___children___internal___type = 152,
+  children___internal___content = 153,
+  children___internal___contentDigest = 154,
+  children___internal___description = 155,
+  children___internal___fieldOwners = 156,
+  children___internal___ignoreType = 157,
+  children___internal___mediaType = 158,
+  children___internal___owner = 159,
+  children___internal___type = 160,
+  internal___content = 161,
+  internal___contentDigest = 162,
+  internal___description = 163,
+  internal___fieldOwners = 164,
+  internal___ignoreType = 165,
+  internal___mediaType = 166,
+  internal___owner = 167,
+  internal___type = 168
 }
 
 export type MarkdownRemarkFieldsFilterInput = {
@@ -1778,16 +1776,16 @@ export type MarkdownRemarkFilterInput = {
 export type MarkdownRemarkFrontmatter = {
   __typename?: 'MarkdownRemarkFrontmatter';
   title: Maybe<Scalars['String']>;
-  order: Maybe<Scalars['Int']>;
   logo: Maybe<File>;
   website: Maybe<Scalars['String']>;
+  order: Maybe<Scalars['Int']>;
 };
 
 export type MarkdownRemarkFrontmatterFilterInput = {
   title: Maybe<StringQueryOperatorInput>;
-  order: Maybe<IntQueryOperatorInput>;
   logo: Maybe<FileFilterInput>;
   website: Maybe<StringQueryOperatorInput>;
+  order: Maybe<IntQueryOperatorInput>;
 };
 
 export type MarkdownRemarkGroupConnection = {
@@ -1846,6 +1844,11 @@ export type PageInfo = {
   pageCount: Scalars['Int'];
   perPage: Maybe<Scalars['Int']>;
   totalCount: Scalars['Int'];
+};
+
+export type PngOptions = {
+  quality: Maybe<Scalars['Int']>;
+  compressionSpeed: Maybe<Scalars['Int']>;
 };
 
 export type Potrace = {
@@ -2044,7 +2047,7 @@ export type QueryImageSharpArgs = {
   resolutions: Maybe<ImageSharpResolutionsFilterInput>;
   fluid: Maybe<ImageSharpFluidFilterInput>;
   sizes: Maybe<ImageSharpSizesFilterInput>;
-  gatsbyImage: Maybe<ImageSharpGatsbyImageFilterInput>;
+  gatsbyImageData: Maybe<JsonQueryOperatorInput>;
   original: Maybe<ImageSharpOriginalFilterInput>;
   resize: Maybe<ImageSharpResizeFilterInput>;
   id: Maybe<StringQueryOperatorInput>;
@@ -2618,137 +2621,138 @@ export enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___icons___src = 77,
   pluginCreator___pluginOptions___icons___sizes = 78,
   pluginCreator___pluginOptions___icons___type = 79,
-  pluginCreator___pluginOptions___cache_busting_mode = 80,
-  pluginCreator___pluginOptions___include_favicon = 81,
-  pluginCreator___pluginOptions___legacy = 82,
-  pluginCreator___pluginOptions___theme_color_in_head = 83,
-  pluginCreator___pluginOptions___cacheDigest = 84,
-  pluginCreator___pluginOptions___path = 85,
-  pluginCreator___pluginOptions___maxWidth = 86,
-  pluginCreator___pluginOptions___quality = 87,
-  pluginCreator___pluginOptions___linkImagesToOriginal = 88,
-  pluginCreator___pluginOptions___showCaptions = 89,
-  pluginCreator___pluginOptions___markdownCaptions = 90,
-  pluginCreator___pluginOptions___sizeByPixelDensity = 91,
-  pluginCreator___pluginOptions___backgroundColor = 92,
-  pluginCreator___pluginOptions___withWebp = 93,
-  pluginCreator___pluginOptions___tracedSVG = 94,
-  pluginCreator___pluginOptions___loading = 95,
-  pluginCreator___pluginOptions___disableBgImageOnAlpha = 96,
-  pluginCreator___pluginOptions___disableBgImage = 97,
-  pluginCreator___pluginOptions___configDir = 98,
-  pluginCreator___pluginOptions___tsNode = 99,
-  pluginCreator___pluginOptions___pathCheck = 100,
-  pluginCreator___pluginOptions___allExtensions = 101,
-  pluginCreator___pluginOptions___isTSX = 102,
-  pluginCreator___pluginOptions___jsxPragma = 103,
-  pluginCreator___nodeAPIs = 104,
-  pluginCreator___browserAPIs = 105,
-  pluginCreator___ssrAPIs = 106,
-  pluginCreator___pluginFilepath = 107,
-  pluginCreator___packageJson___name = 108,
-  pluginCreator___packageJson___description = 109,
-  pluginCreator___packageJson___version = 110,
-  pluginCreator___packageJson___main = 111,
-  pluginCreator___packageJson___license = 112,
-  pluginCreator___packageJson___dependencies = 113,
-  pluginCreator___packageJson___dependencies___name = 114,
-  pluginCreator___packageJson___dependencies___version = 115,
-  pluginCreator___packageJson___devDependencies = 116,
-  pluginCreator___packageJson___devDependencies___name = 117,
-  pluginCreator___packageJson___devDependencies___version = 118,
-  pluginCreator___packageJson___peerDependencies = 119,
-  pluginCreator___packageJson___peerDependencies___name = 120,
-  pluginCreator___packageJson___peerDependencies___version = 121,
-  pluginCreator___packageJson___keywords = 122,
-  pluginCreatorId = 123,
-  componentPath = 124,
-  id = 125,
-  parent___id = 126,
-  parent___parent___id = 127,
-  parent___parent___parent___id = 128,
-  parent___parent___parent___children = 129,
-  parent___parent___children = 130,
-  parent___parent___children___id = 131,
-  parent___parent___children___children = 132,
-  parent___parent___internal___content = 133,
-  parent___parent___internal___contentDigest = 134,
-  parent___parent___internal___description = 135,
-  parent___parent___internal___fieldOwners = 136,
-  parent___parent___internal___ignoreType = 137,
-  parent___parent___internal___mediaType = 138,
-  parent___parent___internal___owner = 139,
-  parent___parent___internal___type = 140,
-  parent___children = 141,
-  parent___children___id = 142,
-  parent___children___parent___id = 143,
-  parent___children___parent___children = 144,
-  parent___children___children = 145,
-  parent___children___children___id = 146,
-  parent___children___children___children = 147,
-  parent___children___internal___content = 148,
-  parent___children___internal___contentDigest = 149,
-  parent___children___internal___description = 150,
-  parent___children___internal___fieldOwners = 151,
-  parent___children___internal___ignoreType = 152,
-  parent___children___internal___mediaType = 153,
-  parent___children___internal___owner = 154,
-  parent___children___internal___type = 155,
-  parent___internal___content = 156,
-  parent___internal___contentDigest = 157,
-  parent___internal___description = 158,
-  parent___internal___fieldOwners = 159,
-  parent___internal___ignoreType = 160,
-  parent___internal___mediaType = 161,
-  parent___internal___owner = 162,
-  parent___internal___type = 163,
-  children = 164,
-  children___id = 165,
-  children___parent___id = 166,
-  children___parent___parent___id = 167,
-  children___parent___parent___children = 168,
-  children___parent___children = 169,
-  children___parent___children___id = 170,
-  children___parent___children___children = 171,
-  children___parent___internal___content = 172,
-  children___parent___internal___contentDigest = 173,
-  children___parent___internal___description = 174,
-  children___parent___internal___fieldOwners = 175,
-  children___parent___internal___ignoreType = 176,
-  children___parent___internal___mediaType = 177,
-  children___parent___internal___owner = 178,
-  children___parent___internal___type = 179,
-  children___children = 180,
-  children___children___id = 181,
-  children___children___parent___id = 182,
-  children___children___parent___children = 183,
-  children___children___children = 184,
-  children___children___children___id = 185,
-  children___children___children___children = 186,
-  children___children___internal___content = 187,
-  children___children___internal___contentDigest = 188,
-  children___children___internal___description = 189,
-  children___children___internal___fieldOwners = 190,
-  children___children___internal___ignoreType = 191,
-  children___children___internal___mediaType = 192,
-  children___children___internal___owner = 193,
-  children___children___internal___type = 194,
-  children___internal___content = 195,
-  children___internal___contentDigest = 196,
-  children___internal___description = 197,
-  children___internal___fieldOwners = 198,
-  children___internal___ignoreType = 199,
-  children___internal___mediaType = 200,
-  children___internal___owner = 201,
-  children___internal___type = 202,
-  internal___content = 203,
-  internal___contentDigest = 204,
-  internal___description = 205,
-  internal___fieldOwners = 206,
-  internal___ignoreType = 207,
-  internal___mediaType = 208,
-  internal___owner = 209,
-  internal___type = 210
+  pluginCreator___pluginOptions___legacy = 80,
+  pluginCreator___pluginOptions___theme_color_in_head = 81,
+  pluginCreator___pluginOptions___cache_busting_mode = 82,
+  pluginCreator___pluginOptions___crossOrigin = 83,
+  pluginCreator___pluginOptions___include_favicon = 84,
+  pluginCreator___pluginOptions___cacheDigest = 85,
+  pluginCreator___pluginOptions___path = 86,
+  pluginCreator___pluginOptions___maxWidth = 87,
+  pluginCreator___pluginOptions___quality = 88,
+  pluginCreator___pluginOptions___linkImagesToOriginal = 89,
+  pluginCreator___pluginOptions___showCaptions = 90,
+  pluginCreator___pluginOptions___markdownCaptions = 91,
+  pluginCreator___pluginOptions___sizeByPixelDensity = 92,
+  pluginCreator___pluginOptions___backgroundColor = 93,
+  pluginCreator___pluginOptions___withWebp = 94,
+  pluginCreator___pluginOptions___tracedSVG = 95,
+  pluginCreator___pluginOptions___loading = 96,
+  pluginCreator___pluginOptions___disableBgImageOnAlpha = 97,
+  pluginCreator___pluginOptions___disableBgImage = 98,
+  pluginCreator___pluginOptions___configDir = 99,
+  pluginCreator___pluginOptions___tsNode = 100,
+  pluginCreator___pluginOptions___pathCheck = 101,
+  pluginCreator___pluginOptions___allExtensions = 102,
+  pluginCreator___pluginOptions___isTSX = 103,
+  pluginCreator___pluginOptions___jsxPragma = 104,
+  pluginCreator___nodeAPIs = 105,
+  pluginCreator___browserAPIs = 106,
+  pluginCreator___ssrAPIs = 107,
+  pluginCreator___pluginFilepath = 108,
+  pluginCreator___packageJson___name = 109,
+  pluginCreator___packageJson___description = 110,
+  pluginCreator___packageJson___version = 111,
+  pluginCreator___packageJson___main = 112,
+  pluginCreator___packageJson___license = 113,
+  pluginCreator___packageJson___dependencies = 114,
+  pluginCreator___packageJson___dependencies___name = 115,
+  pluginCreator___packageJson___dependencies___version = 116,
+  pluginCreator___packageJson___devDependencies = 117,
+  pluginCreator___packageJson___devDependencies___name = 118,
+  pluginCreator___packageJson___devDependencies___version = 119,
+  pluginCreator___packageJson___peerDependencies = 120,
+  pluginCreator___packageJson___peerDependencies___name = 121,
+  pluginCreator___packageJson___peerDependencies___version = 122,
+  pluginCreator___packageJson___keywords = 123,
+  pluginCreatorId = 124,
+  componentPath = 125,
+  id = 126,
+  parent___id = 127,
+  parent___parent___id = 128,
+  parent___parent___parent___id = 129,
+  parent___parent___parent___children = 130,
+  parent___parent___children = 131,
+  parent___parent___children___id = 132,
+  parent___parent___children___children = 133,
+  parent___parent___internal___content = 134,
+  parent___parent___internal___contentDigest = 135,
+  parent___parent___internal___description = 136,
+  parent___parent___internal___fieldOwners = 137,
+  parent___parent___internal___ignoreType = 138,
+  parent___parent___internal___mediaType = 139,
+  parent___parent___internal___owner = 140,
+  parent___parent___internal___type = 141,
+  parent___children = 142,
+  parent___children___id = 143,
+  parent___children___parent___id = 144,
+  parent___children___parent___children = 145,
+  parent___children___children = 146,
+  parent___children___children___id = 147,
+  parent___children___children___children = 148,
+  parent___children___internal___content = 149,
+  parent___children___internal___contentDigest = 150,
+  parent___children___internal___description = 151,
+  parent___children___internal___fieldOwners = 152,
+  parent___children___internal___ignoreType = 153,
+  parent___children___internal___mediaType = 154,
+  parent___children___internal___owner = 155,
+  parent___children___internal___type = 156,
+  parent___internal___content = 157,
+  parent___internal___contentDigest = 158,
+  parent___internal___description = 159,
+  parent___internal___fieldOwners = 160,
+  parent___internal___ignoreType = 161,
+  parent___internal___mediaType = 162,
+  parent___internal___owner = 163,
+  parent___internal___type = 164,
+  children = 165,
+  children___id = 166,
+  children___parent___id = 167,
+  children___parent___parent___id = 168,
+  children___parent___parent___children = 169,
+  children___parent___children = 170,
+  children___parent___children___id = 171,
+  children___parent___children___children = 172,
+  children___parent___internal___content = 173,
+  children___parent___internal___contentDigest = 174,
+  children___parent___internal___description = 175,
+  children___parent___internal___fieldOwners = 176,
+  children___parent___internal___ignoreType = 177,
+  children___parent___internal___mediaType = 178,
+  children___parent___internal___owner = 179,
+  children___parent___internal___type = 180,
+  children___children = 181,
+  children___children___id = 182,
+  children___children___parent___id = 183,
+  children___children___parent___children = 184,
+  children___children___children = 185,
+  children___children___children___id = 186,
+  children___children___children___children = 187,
+  children___children___internal___content = 188,
+  children___children___internal___contentDigest = 189,
+  children___children___internal___description = 190,
+  children___children___internal___fieldOwners = 191,
+  children___children___internal___ignoreType = 192,
+  children___children___internal___mediaType = 193,
+  children___children___internal___owner = 194,
+  children___children___internal___type = 195,
+  children___internal___content = 196,
+  children___internal___contentDigest = 197,
+  children___internal___description = 198,
+  children___internal___fieldOwners = 199,
+  children___internal___ignoreType = 200,
+  children___internal___mediaType = 201,
+  children___internal___owner = 202,
+  children___internal___type = 203,
+  internal___content = 204,
+  internal___contentDigest = 205,
+  internal___description = 206,
+  internal___fieldOwners = 207,
+  internal___ignoreType = 208,
+  internal___mediaType = 209,
+  internal___owner = 210,
+  internal___type = 211
 }
 
 export type SitePageFilterInput = {
@@ -2960,49 +2964,50 @@ export enum SitePluginFieldsEnum {
   pluginOptions___icons___src = 127,
   pluginOptions___icons___sizes = 128,
   pluginOptions___icons___type = 129,
-  pluginOptions___cache_busting_mode = 130,
-  pluginOptions___include_favicon = 131,
-  pluginOptions___legacy = 132,
-  pluginOptions___theme_color_in_head = 133,
-  pluginOptions___cacheDigest = 134,
-  pluginOptions___path = 135,
-  pluginOptions___maxWidth = 136,
-  pluginOptions___quality = 137,
-  pluginOptions___linkImagesToOriginal = 138,
-  pluginOptions___showCaptions = 139,
-  pluginOptions___markdownCaptions = 140,
-  pluginOptions___sizeByPixelDensity = 141,
-  pluginOptions___backgroundColor = 142,
-  pluginOptions___withWebp = 143,
-  pluginOptions___tracedSVG = 144,
-  pluginOptions___loading = 145,
-  pluginOptions___disableBgImageOnAlpha = 146,
-  pluginOptions___disableBgImage = 147,
-  pluginOptions___configDir = 148,
-  pluginOptions___tsNode = 149,
-  pluginOptions___pathCheck = 150,
-  pluginOptions___allExtensions = 151,
-  pluginOptions___isTSX = 152,
-  pluginOptions___jsxPragma = 153,
-  nodeAPIs = 154,
-  browserAPIs = 155,
-  ssrAPIs = 156,
-  pluginFilepath = 157,
-  packageJson___name = 158,
-  packageJson___description = 159,
-  packageJson___version = 160,
-  packageJson___main = 161,
-  packageJson___license = 162,
-  packageJson___dependencies = 163,
-  packageJson___dependencies___name = 164,
-  packageJson___dependencies___version = 165,
-  packageJson___devDependencies = 166,
-  packageJson___devDependencies___name = 167,
-  packageJson___devDependencies___version = 168,
-  packageJson___peerDependencies = 169,
-  packageJson___peerDependencies___name = 170,
-  packageJson___peerDependencies___version = 171,
-  packageJson___keywords = 172
+  pluginOptions___legacy = 130,
+  pluginOptions___theme_color_in_head = 131,
+  pluginOptions___cache_busting_mode = 132,
+  pluginOptions___crossOrigin = 133,
+  pluginOptions___include_favicon = 134,
+  pluginOptions___cacheDigest = 135,
+  pluginOptions___path = 136,
+  pluginOptions___maxWidth = 137,
+  pluginOptions___quality = 138,
+  pluginOptions___linkImagesToOriginal = 139,
+  pluginOptions___showCaptions = 140,
+  pluginOptions___markdownCaptions = 141,
+  pluginOptions___sizeByPixelDensity = 142,
+  pluginOptions___backgroundColor = 143,
+  pluginOptions___withWebp = 144,
+  pluginOptions___tracedSVG = 145,
+  pluginOptions___loading = 146,
+  pluginOptions___disableBgImageOnAlpha = 147,
+  pluginOptions___disableBgImage = 148,
+  pluginOptions___configDir = 149,
+  pluginOptions___tsNode = 150,
+  pluginOptions___pathCheck = 151,
+  pluginOptions___allExtensions = 152,
+  pluginOptions___isTSX = 153,
+  pluginOptions___jsxPragma = 154,
+  nodeAPIs = 155,
+  browserAPIs = 156,
+  ssrAPIs = 157,
+  pluginFilepath = 158,
+  packageJson___name = 159,
+  packageJson___description = 160,
+  packageJson___version = 161,
+  packageJson___main = 162,
+  packageJson___license = 163,
+  packageJson___dependencies = 164,
+  packageJson___dependencies___name = 165,
+  packageJson___dependencies___version = 166,
+  packageJson___devDependencies = 167,
+  packageJson___devDependencies___name = 168,
+  packageJson___devDependencies___version = 169,
+  packageJson___peerDependencies = 170,
+  packageJson___peerDependencies___name = 171,
+  packageJson___peerDependencies___version = 172,
+  packageJson___keywords = 173
 }
 
 export type SitePluginFilterInput = {
@@ -3122,10 +3127,11 @@ export type SitePluginPluginOptions = {
   display: Maybe<Scalars['String']>;
   icon: Maybe<Scalars['String']>;
   icons: Maybe<Array<Maybe<SitePluginPluginOptionsIcons>>>;
-  cache_busting_mode: Maybe<Scalars['String']>;
-  include_favicon: Maybe<Scalars['Boolean']>;
   legacy: Maybe<Scalars['Boolean']>;
   theme_color_in_head: Maybe<Scalars['Boolean']>;
+  cache_busting_mode: Maybe<Scalars['String']>;
+  crossOrigin: Maybe<Scalars['String']>;
+  include_favicon: Maybe<Scalars['Boolean']>;
   cacheDigest: Maybe<Scalars['String']>;
   path: Maybe<Scalars['String']>;
   maxWidth: Maybe<Scalars['Int']>;
@@ -3168,10 +3174,11 @@ export type SitePluginPluginOptionsFilterInput = {
   display: Maybe<StringQueryOperatorInput>;
   icon: Maybe<StringQueryOperatorInput>;
   icons: Maybe<SitePluginPluginOptionsIconsFilterListInput>;
-  cache_busting_mode: Maybe<StringQueryOperatorInput>;
-  include_favicon: Maybe<BooleanQueryOperatorInput>;
   legacy: Maybe<BooleanQueryOperatorInput>;
   theme_color_in_head: Maybe<BooleanQueryOperatorInput>;
+  cache_busting_mode: Maybe<StringQueryOperatorInput>;
+  crossOrigin: Maybe<StringQueryOperatorInput>;
+  include_favicon: Maybe<BooleanQueryOperatorInput>;
   cacheDigest: Maybe<StringQueryOperatorInput>;
   path: Maybe<StringQueryOperatorInput>;
   maxWidth: Maybe<IntQueryOperatorInput>;
@@ -3310,6 +3317,19 @@ export type StringQueryOperatorInput = {
   nin: Maybe<Array<Maybe<Scalars['String']>>>;
   regex: Maybe<Scalars['String']>;
   glob: Maybe<Scalars['String']>;
+};
+
+export type TransformOptions = {
+  grayscale: Maybe<Scalars['Boolean']>;
+  duotone: Maybe<DuotoneGradient>;
+  rotate: Maybe<Scalars['Int']>;
+  trim: Maybe<Scalars['Float']>;
+  cropFocus: Maybe<ImageCropFocus>;
+  fit: Maybe<ImageFit>;
+};
+
+export type WebPOptions = {
+  quality: Maybe<Scalars['Int']>;
 };
 
 export type GatsbyImageSharpFixedFragment = (
