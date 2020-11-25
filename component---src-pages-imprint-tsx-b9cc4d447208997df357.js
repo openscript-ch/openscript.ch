@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{fCK6:function(t,e,n){"use strict";n.r(e),n.d(e,"default",(function(){return c})),n.d(e,"query",(function(){return o}));n("q1tI");var r=n("dDsW"),a=n("Th6I"),i=n("qKvR");function c(t){var e=t.data,n=t.pageContext,c=Object(r.a)().formatMessage({id:"page.imprint.title"});return Object(i.c)(a.a,{pageContext:n,title:c},Object(i.c)("section",{dangerouslySetInnerHTML:{__html:e.imprint.html}}))}var o="1378785196"}}]);
+//# sourceMappingURL=component---src-pages-imprint-tsx-b9cc4d447208997df357.js.map
