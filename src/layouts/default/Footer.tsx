@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 import React from 'react';
+import { FormattedDate, FormattedMessage } from 'react-intl';
+import { LocalizedLink } from '../../components/LocalizedLink';
 
 const StyledFooter = styled.footer`
   display: flex;
@@ -8,10 +10,25 @@ const StyledFooter = styled.footer`
   background-color: var(--white-alternate-color);
 `;
 
+const FooterMenu = styled.nav``;
+
 type DefaultFooterProps = {
   buildInfo: JSX.Element;
 };
 
 export function DefaultFooter({ buildInfo }: DefaultFooterProps) {
-  return <StyledFooter>{buildInfo}</StyledFooter>;
+  return (
+    <StyledFooter>
+      {buildInfo}
+      <FooterMenu>
+        <ul>
+          <li>
+            <LocalizedLink to={'/imprint'}>
+              <FormattedMessage id="page.imprint.title" />
+            </LocalizedLink>
+          </li>
+        </ul>
+      </FooterMenu>
+    </StyledFooter>
+  );
 }
