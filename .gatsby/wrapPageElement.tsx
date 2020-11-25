@@ -10,7 +10,7 @@ export const wrapPageElement: WrapPageElement = ({ element, props }) => {
   const pageContext = props.pageContext as SitePageContext;
   const currentLocale = (pageContext.language ?? defaultLanguage) as Language;
   return (
-    <IntlProvider locale={currentLocale} messages={contentTranslation[currentLocale]}>
+    <IntlProvider locale={currentLocale} messages={contentTranslation[currentLocale]} defaultLocale={defaultLanguage}>
       {element}
     </IntlProvider>
   );

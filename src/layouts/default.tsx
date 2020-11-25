@@ -136,7 +136,7 @@ export function DefaultLayout({ pageContext, title, children }: DefaultLayoutPro
           <DefaultHeader
             contactBar={<ContactBar phone={data.site.siteMetadata.phone} email={data.site.siteMetadata.email} />}
             languageSwitcher={<LanguageSwitcher paths={pageContext.alternativeLanguagePaths} />}
-            logo={<Logo homePath={`/${pageContext.language !== 'de' ? `${pageContext.language}/` : ''}`} />}
+            logo={<Logo homePath={'/'} />}
             siteTitle={siteTitle}
           />
           <main>{children}</main>
