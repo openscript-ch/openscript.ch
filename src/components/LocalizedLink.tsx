@@ -8,7 +8,8 @@ type LocalizedLinkProps = React.PropsWithChildren<{
 
 export function LocalizedLink({ to, children }: LocalizedLinkProps) {
   const intl = useIntl();
-  const localizedPath = to !== '/' ? intl.formatMessage({ id: to }) : '/';
+  const getSlug = () => (intl.messages[to] ? intl.formatMessage({ id: to }) : to);
+  const localizedPath = to !== '/' ? getSlug() : '/';
   const prefixedPath = intl.defaultLocale === intl.locale ? localizedPath : `/${intl.locale}${localizedPath}`;
   return <Link to={prefixedPath}>{children}</Link>;
 }
