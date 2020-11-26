@@ -133,8 +133,13 @@ export function DefaultLayout({ pageContext, title, children }: DefaultLayoutPro
           />
           <Global styles={DefaultLayoutStyle} />
           <DefaultHeader
-            contactBar={<ContactBar phone={data.site.siteMetadata.phone} email={data.site.siteMetadata.email} />}
-            languageSwitcher={<LanguageSwitcher paths={pageContext.alternativeLanguagePaths} />}
+            contactBar={
+              <ContactBar
+                phone={data.site.siteMetadata.phone}
+                email={data.site.siteMetadata.email}
+                language={<LanguageSwitcher paths={pageContext.alternativeLanguagePaths} />}
+              />
+            }
             logo={<Logo homePath={'/'} />}
             siteTitle={siteTitle}
           />

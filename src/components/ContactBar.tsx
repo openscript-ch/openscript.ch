@@ -15,9 +15,10 @@ const StyledList = styled.ul`
 export type ContactBarProps = {
   phone: string;
   email: string;
+  language: JSX.Element;
 };
 
-export function ContactBar({ phone, email }: ContactBarProps) {
+export function ContactBar({ phone, email, language }: ContactBarProps) {
   return (
     <StyledList>
       <li>
@@ -26,6 +27,7 @@ export function ContactBar({ phone, email }: ContactBarProps) {
       <li>
         <a href={`mailto:${email}`}>{email}</a>
       </li>
+      <li>{language}</li>
     </StyledList>
   );
 }
