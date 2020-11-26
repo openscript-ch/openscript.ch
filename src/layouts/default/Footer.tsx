@@ -8,6 +8,12 @@ const StyledFooter = styled.footer`
   align-items: center;
   justify-content: space-between;
   background-color: var(--white-alternate-color);
+
+  nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
 `;
 
 const FooterMenu = styled.nav``;
