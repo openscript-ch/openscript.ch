@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import { FormattedDate, FormattedMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import { LocalizedLink } from '../../components/LocalizedLink';
 
 const StyledFooter = styled.footer`

@@ -21,13 +21,7 @@ const ReferenceTicker = styled(Ticker)`
 
   &:after {
     content: '';
-    background: linear-gradient(
-      to right,
-      var(--white-color) 0,
-      rgba(255, 255, 255, 0.1) 25%,
-      rgba(255, 255, 255, 0.1) 75%,
-      var(--white-color) 100%
-    );
+    background: linear-gradient(to right, var(--white-color) 0, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 75%, var(--white-color) 100%);
     position: absolute;
     top: 0;
     right: 0;
