@@ -41,8 +41,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "react-intl": "^5.10.6",
-    "react-use": "^15.3.4"
+    "react-intl": "^5.10.6"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
