@@ -4,7 +4,7 @@ import React, { PropsWithChildren } from 'react';
 import { useIntl } from 'react-intl';
 import { DefaultLayoutQuery, SitePageContext } from '../../graphql-types';
 import { BuildInfo } from '../components/BuildInfo';
-import { ContactBar } from '../components/ContactBar';
+import { NavigationBar } from '../components/NavigationBar';
 import { LanguageSwitcher } from '../components/LanguageSwitcher';
 import { Logo } from '../components/Logo';
 import { PageHead } from '../components/PageHead';
@@ -69,6 +69,13 @@ const DefaultLayoutStyle = css`
 
   header {
     grid-area: header;
+    position: relative;
+
+    nav {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
   }
 
   main {
@@ -133,11 +140,12 @@ export function DefaultLayout({ pageContext, title, children }: DefaultLayoutPro
           />
           <Global styles={DefaultLayoutStyle} />
           <DefaultHeader
-            contactBar={
-              <ContactBar
+            navigationBar={
+              <NavigationBar
                 phone={data.site.siteMetadata.phone}
                 email={data.site.siteMetadata.email}
                 language={<LanguageSwitcher paths={pageContext.alternativeLanguagePaths} />}
+                collapseWidth="45rem"
               />
             }
             logo={<Logo homePath={'/'} />}

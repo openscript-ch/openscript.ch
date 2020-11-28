@@ -13,17 +13,17 @@ const SiteHeading = styled.h1`
 `;
 
 type DefaultHeaderProps = {
-  contactBar: JSX.Element;
+  navigationBar: JSX.Element;
   logo: JSX.Element;
   siteTitle: string;
 };
 
-export function DefaultHeader({ contactBar, logo, siteTitle }: DefaultHeaderProps) {
+export function DefaultHeader({ navigationBar, logo, siteTitle }: DefaultHeaderProps) {
   return (
     <StyledHeader>
       {logo}
       <SiteHeading>{siteTitle}</SiteHeading>
-      {contactBar}
+      {navigationBar}
     </StyledHeader>
   );
 }
