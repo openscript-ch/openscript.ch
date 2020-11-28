@@ -32,9 +32,6 @@ export function Ticker({ className, slides, speed }: TickerProps) {
       return;
     }
     const engine = ticker.dangerouslyGetEngine();
-    if (!engine.slideLooper.canLoop()) {
-      return;
-    }
     engine.location.add(currentSpeed);
     engine.target.set(engine.location);
     engine.scrollLooper.loop([engine.location, engine.target], -1);
@@ -53,7 +50,7 @@ export function Ticker({ className, slides, speed }: TickerProps) {
   }, []);
 
   useEffect(() => {
-    if (slides.length > 0) {
+    if (slides.length > 0 && ticker?.dangerouslyGetEngine().slideLooper.canLoop()) {
       ticker?.on('pointerDown', stopAutoScrolling);
       ticker?.on('pointerUp', () => ticker.clickAllowed() && startAutoScrolling());
       ticker?.on('settle', startAutoScrolling);
@@ -64,6 +61,12 @@ export function Ticker({ className, slides, speed }: TickerProps) {
   return (
     <Viewport className={className} ref={tickerRef}>
       <Container>
+        {slides.map((s, i) => {
+          return <Slide key={i}>{s}</Slide>;
+        })}
+        {slides.map((s, i) => {
+          return <Slide key={i}>{s}</Slide>;
+        })}
         {slides.map((s, i) => {
           return <Slide key={i}>{s}</Slide>;
         })}

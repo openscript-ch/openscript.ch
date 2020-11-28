@@ -5,6 +5,7 @@ const BurgerButtonBase = styled.div`
   display: block;
   background: transparent;
   width: 2rem;
+  margin: 1rem;
   cursor: pointer;
 
   &:before,
@@ -12,9 +13,9 @@ const BurgerButtonBase = styled.div`
   &:after {
     content: '';
     display: block;
-    height: 0.3rem;
+    height: 4px;
     background-color: var(--primary-color);
-    margin: 0.26rem 0;
+    margin: 4px 0;
     transition: 0.2s;
   }
 
@@ -25,7 +26,7 @@ const BurgerButtonBase = styled.div`
   }
 
   &.active:before {
-    transform: translateY(0.56rem) rotate(140deg);
+    transform: translateY(8px) rotate(135deg);
   }
 
   &.active div {
@@ -33,7 +34,7 @@ const BurgerButtonBase = styled.div`
   }
 
   &.active:after {
-    transform: translateY(-0.56rem) rotate(-140deg);
+    transform: translateY(-8px) rotate(-135deg);
   }
 `;
 

@@ -26,11 +26,23 @@ const DefaultLayoutStyle = css`
 
   html {
     height: 100%;
+    font-size: 18px;
+  }
+
+  @media (max-width: 60rem) {
+    html {
+      font-size: 12pt;
+    }
+  }
+
+  @media (max-width: 30rem) {
+    html {
+      font-size: 11pt;
+    }
   }
 
   body {
     margin: 0;
-    font-size: 14pt;
     min-height: 100%;
     scroll-behavior: smooth;
     display: flex;
@@ -51,16 +63,17 @@ const DefaultLayoutStyle = css`
     display: grid;
     grid-template-rows: 5rem auto 7rem;
     grid-template-areas:
-      'header header'
-      'main main'
-      'footer footer';
+      'header'
+      'main'
+      'footer';
 
     & > * {
       box-sizing: border-box;
       padding: 0 15%;
+      max-width: 100vw;
     }
 
-    @media screen and (max-width: 60rem) {
+    @media (max-width: 60rem) {
       & > * {
         padding: 0 2rem;
       }

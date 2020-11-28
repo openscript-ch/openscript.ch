@@ -19,15 +19,17 @@ const Reference = styled.div`
 const ReferenceTicker = styled(Ticker)`
   position: relative;
 
-  &:after {
-    content: '';
-    background: linear-gradient(to right, var(--white-color) 0, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 75%, var(--white-color) 100%);
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    pointer-events: none;
+  @media (min-width: 30rem) {
+    &:after {
+      content: '';
+      background: linear-gradient(to right, var(--white-color) 0, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 75%, var(--white-color) 100%);
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      pointer-events: none;
+    }
   }
 `;
 
