@@ -78,6 +78,12 @@ const DefaultLayoutStyle = css`
         padding: 0 2rem;
       }
     }
+
+    @media (max-width: 20rem) {
+      & > * {
+        padding: 0 1rem;
+      }
+    }
   }
 
   header {
@@ -88,6 +94,7 @@ const DefaultLayoutStyle = css`
       display: flex;
       align-items: center;
       height: 100%;
+      margin-left: 1rem;
     }
   }
 

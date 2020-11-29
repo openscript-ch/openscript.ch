@@ -5,7 +5,6 @@ const BurgerButtonBase = styled.div`
   display: block;
   background: transparent;
   width: 2rem;
-  margin: 1rem;
   cursor: pointer;
 
   &:before,
