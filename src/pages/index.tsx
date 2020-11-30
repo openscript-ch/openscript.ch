@@ -7,6 +7,7 @@ import { Ticker } from '../components/Ticker';
 import Img from 'gatsby-image';
 import styled from '@emotion/styled';
 import { Offers } from '../layouts/default/sections/Offers';
+import { ReactComponent as Checkmark } from '../../static/checkmark.svg';
 
 const Reference = styled.div`
   margin-left: 2rem;
@@ -14,6 +15,24 @@ const Reference = styled.div`
 
   &:hover {
     filter: none;
+  }
+`;
+
+const ValuesSections = styled.section`
+  min-height: 60vh;
+  padding: 5vh;
+  box-sizing: border-box;
+
+  h2 {
+    font-size: 2rem;
+    margin: 0.5em 0;
+    display: flex;
+    align-items: center;
+
+    svg {
+      max-height: 0.8em;
+      margin-right: 0.6em;
+    }
   }
 `;
 
@@ -47,21 +66,21 @@ export default function IndexPage({ data, pageContext }: IndexPageProps) {
 
   return (
     <DefaultLayout pageContext={pageContext} title={title}>
-      <section>
-        <h2>
-          <FormattedMessage id="page.index.section.values" />
-        </h2>
+      <ValuesSections>
         {data.values.nodes.map((value, index) => {
-          return <div key={index} dangerouslySetInnerHTML={{ __html: value.html }} />;
+          return (
+            <h2 key={index}>
+              <Checkmark></Checkmark>
+              <div dangerouslySetInnerHTML={{ __html: value.frontmatter.title }} />
+            </h2>
+          );
         })}
-      </section>
+      </ValuesSections>
       <Offers />
-      <section>
-        <h2>
-          <FormattedMessage id="page.index.section.references" />
-        </h2>
-        <ReferenceTicker slides={references} speed={-0.03} copy={10} />
-      </section>
+      <h2>
+        <FormattedMessage id="page.index.section.references" />
+      </h2>
+      <ReferenceTicker slides={references} speed={-0.04} />
     </DefaultLayout>
   );
 }
@@ -73,6 +92,10 @@ export const query = graphql`
       sort: { fields: frontmatter___order }
     ) {
       nodes {
+        frontmatter {
+          title
+          illustration
+        }
         fileAbsolutePath
         fields {
           language

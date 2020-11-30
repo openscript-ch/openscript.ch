@@ -1,8 +1,8 @@
 ---
 order: 1
+title: Nachhaltige <strong>Zusammenarbeit</strong>
+illustration: collaboration.png
 ---
-
-### Nachhaltige <strong>Zusammenarbeit</strong>
 
 - Wir kollaborieren auf Augenhöhe, egal ob Partner, Kunde oder Mitarbeitender
 - Wir entwickeln Ideen gemeinschaftlich weiter
