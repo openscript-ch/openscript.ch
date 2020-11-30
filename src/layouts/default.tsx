@@ -61,6 +61,7 @@ const DefaultLayoutStyle = css`
   #wrapper {
     width: 100%;
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-rows: 5rem auto 7rem;
     grid-template-areas:
       'header'
@@ -69,18 +70,18 @@ const DefaultLayoutStyle = css`
 
     & > * {
       box-sizing: border-box;
-      padding: 0 15%;
-      max-width: 100vw;
+      max-width: 100%;
     }
 
-    @media (max-width: 60rem) {
-      & > * {
+    & > *:not(main),
+    & > main > section {
+      padding: 0 15%;
+
+      @media (max-width: 60rem) {
         padding: 0 2rem;
       }
-    }
 
-    @media (max-width: 20rem) {
-      & > * {
+      @media (max-width: 20rem) {
         padding: 0 1rem;
       }
     }
