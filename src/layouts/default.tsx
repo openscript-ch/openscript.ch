@@ -75,7 +75,11 @@ const DefaultLayoutStyle = css`
 
     & > *:not(main),
     & > main > section {
-      padding: 0 15%;
+      padding: 0 20%;
+
+      @media (max-width: 100rem) {
+        padding: 0 15%;
+      }
 
       @media (max-width: 60rem) {
         padding: 0 2rem;
@@ -84,6 +88,11 @@ const DefaultLayoutStyle = css`
       @media (max-width: 20rem) {
         padding: 0 1rem;
       }
+    }
+
+    & > main > section {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
     }
   }
 
@@ -124,6 +133,7 @@ const DefaultLayoutStyle = css`
   h6 {
     font-family: var(--heading-font);
     font-weight: 400;
+    margin-top: 0;
   }
 
   pre,
