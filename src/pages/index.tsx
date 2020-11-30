@@ -6,6 +6,7 @@ import { graphql } from 'gatsby';
 import { Ticker } from '../components/Ticker';
 import Img from 'gatsby-image';
 import styled from '@emotion/styled';
+import { Offers } from '../layouts/default/sections/Offers';
 
 const Reference = styled.div`
   margin-left: 2rem;
@@ -54,16 +55,12 @@ export default function IndexPage({ data, pageContext }: IndexPageProps) {
           return <div key={index} dangerouslySetInnerHTML={{ __html: value.html }} />;
         })}
       </section>
-      <section>
-        <h2>
-          <FormattedMessage id="page.index.section.offers" />
-        </h2>
-      </section>
+      <Offers />
       <section>
         <h2>
           <FormattedMessage id="page.index.section.references" />
         </h2>
-        <ReferenceTicker slides={references} speed={-0.04} copy={10} />
+        <ReferenceTicker slides={references} speed={-0.03} copy={10} />
       </section>
     </DefaultLayout>
   );
