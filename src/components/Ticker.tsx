@@ -20,9 +20,10 @@ export type TickerProps = {
   className?: string;
   slides: JSX.Element[];
   speed?: number;
+  copy?: number;
 };
 
-export function Ticker({ className, slides, speed }: TickerProps) {
+export function Ticker({ className, slides, speed, copy = 1 }: TickerProps) {
   const [tickerRef, ticker] = useEmblaCarousel({ loop: true, dragFree: true, containScroll: 'trimSnaps' });
   const animationRef = useRef(0);
   const currentSpeed = speed || -0.1;
@@ -58,16 +59,12 @@ export function Ticker({ className, slides, speed }: TickerProps) {
     }
   }, [ticker, startAutoScrolling, stopAutoScrolling, slides]);
 
+  const currentSlides = [...Array(copy)].map(() => slides).flat();
+
   return (
     <Viewport className={className} ref={tickerRef}>
       <Container>
-        {slides.map((s, i) => {
-          return <Slide key={i}>{s}</Slide>;
-        })}
-        {slides.map((s, i) => {
-          return <Slide key={i}>{s}</Slide>;
-        })}
-        {slides.map((s, i) => {
+        {currentSlides.map((s, i) => {
           return <Slide key={i}>{s}</Slide>;
         })}
       </Container>

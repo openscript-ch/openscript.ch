@@ -46,16 +46,25 @@ export default function IndexPage({ data, pageContext }: IndexPageProps) {
 
   return (
     <DefaultLayout pageContext={pageContext} title={title}>
-      <h2>
-        <FormattedMessage id="page.index.section.values" />
-      </h2>
-      {data.values.nodes.map((value, index) => {
-        return <div key={index} dangerouslySetInnerHTML={{ __html: value.html }} />;
-      })}
-      <h2>
-        <FormattedMessage id="page.index.section.references" />
-      </h2>
-      <ReferenceTicker slides={references} speed={-0.04} />
+      <section>
+        <h2>
+          <FormattedMessage id="page.index.section.values" />
+        </h2>
+        {data.values.nodes.map((value, index) => {
+          return <div key={index} dangerouslySetInnerHTML={{ __html: value.html }} />;
+        })}
+      </section>
+      <section>
+        <h2>
+          <FormattedMessage id="page.index.section.offers" />
+        </h2>
+      </section>
+      <section>
+        <h2>
+          <FormattedMessage id="page.index.section.references" />
+        </h2>
+        <ReferenceTicker slides={references} speed={-0.04} copy={10} />
+      </section>
     </DefaultLayout>
   );
 }
