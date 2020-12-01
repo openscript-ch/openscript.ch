@@ -16,6 +16,7 @@ const DefaultLayoutStyle = css`
     --white-color: #ede9df;
     --white-alternate-color: #dbd4c3;
     --black-color: #231f20;
+    --black-alternate-color: #2c2a2a;
     --primary-color: #539350;
     --primary-alternate-color: #7ad975;
     --secondary-color: #fa5100;
@@ -47,7 +48,7 @@ const DefaultLayoutStyle = css`
     scroll-behavior: smooth;
     display: flex;
     min-height: 100%;
-    background: var(--white-color);
+    background: var(--white-alternate-color);
     color: var(--black-color);
     font-family: var(--paragraph-font);
   }

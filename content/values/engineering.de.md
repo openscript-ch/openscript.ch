@@ -1,5 +1,7 @@
 ---
 order: 3
+title: Nachhaltige <strong>Softwareentwicklung</strong>
+illustration: collaboration.png
 ---
 
 ### Nachhaltige <strong>Softwareentwicklung</strong>

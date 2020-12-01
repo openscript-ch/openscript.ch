@@ -1,5 +1,7 @@
 ---
 order: 2
+title: Nachhaltige <strong>Gesellschaft</strong>
+illustration: collaboration.png
 ---
 
 ### Nachhaltige <strong>Gesellschaft</strong>
