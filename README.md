@@ -20,4 +20,6 @@ This project is based on [gatsby-starter-dogmatism](https://github.com/openscrip
 
 ## License
 
-All content (text, images, photos, illustrations and other media) as well as the brand is the property of openscript Ltd. (CH). The software which is utilized to generate the website is licensed as stated in the [LICENSE](./LICENSE) file.
+All content (text, images, photos, illustrations and other media) as well as the brand is the property of openscript Ltd. (CH). The software which is utilized to generate the website is licensed as stated in the [LICENSE](./LICENSE) file. Additionally the following licenses are applied:
+
+- Font `2MASS J1808`: Licensed to use by openscript Ltd via fontbundles.
