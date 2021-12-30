@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-generic-page-tsx",
+    "path": "/de/pages/questions/first-question",
+    "result": {"data":{"markdownRemark":{"id":"21ce07f8-cea8-5965-ab83-d4919b451330","html":"<p>de</p>"}},"pageContext":{"id":"21ce07f8-cea8-5965-ab83-d4919b451330","translations":[],"locale":"de-CH","prefix":"de"}},
+    "staticQueryHashes": ["1770277726","953814312"]}

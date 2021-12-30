@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-generic-page-tsx",
+    "path": "/de/pages",
+    "result": {"data":{"markdownRemark":{"id":"44ef3295-6081-51d8-af3c-40c78b0daff3","html":"<p>Eine <a href=\"./pages/another\">andere Seite</a>.</p>"}},"pageContext":{"id":"44ef3295-6081-51d8-af3c-40c78b0daff3","translations":[{"locale":"en-US","path":"/pages"},{"locale":"zh-CN","path":"/zh/pages"}],"locale":"de-CH","prefix":"de"}},
+    "staticQueryHashes": ["1770277726","953814312"]}
