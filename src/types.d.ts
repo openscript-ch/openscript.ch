@@ -6,6 +6,11 @@ declare module '@emotion/react' {
   export interface Theme {
     primaryColor: string;
     secondaryColor: string;
+    backgroundColor: string;
+    blackColor: string;
+    whiteColor: string;
+    darkerSibling: string;
+    brighterSibling: string;
     breakpoints: {
       tiny: string;
       small: string;
