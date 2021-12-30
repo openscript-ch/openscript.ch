@@ -46,7 +46,7 @@ jobs:
       - name: Build website
         run: yarn build:with-prefix
         env:
-          PATH_PREFIX: '/gatsby-starter-dogmatism'
+          PATH_PREFIX: '/openscript.ch'
           CI: true
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
