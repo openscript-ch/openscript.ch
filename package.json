@@ -5,6 +5,7 @@
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
   "author": "openscript",
+  "workspaces": ["plugins/gatsby-plugin-i18n-l10n"],
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",

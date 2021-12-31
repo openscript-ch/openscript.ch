@@ -31,8 +31,6 @@ jobs:
             ${{ runner.os }}-yarn-
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-      - name: Install plugin dependencies
-        run: (cd plugins/gatsby-plugin-i18n-l10n && yarn install --frozen-lockfile )
       - name: Caching Gatsby
         id: gatsby-cache-build
         uses: actions/cache@v2
