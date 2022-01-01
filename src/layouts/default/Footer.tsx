@@ -4,7 +4,7 @@ const footerStyle = (theme: Theme) => css`
   display: flex;
   align-items: center;
   height: 2rem;
-  background-color: ${theme.secondaryColor};
+  background-color: ${theme.primaryColor};
 `;
 
 type FooterProps = {

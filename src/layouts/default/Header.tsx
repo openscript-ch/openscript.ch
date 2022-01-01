@@ -1,17 +1,8 @@
 import { css, Theme } from '@emotion/react';
-import { LocalizedLink } from '../../../plugins/gatsby-plugin-i18n-l10n';
-import LanguageSelector from './LanguageSelector';
-import MainNavigation from './MainNavigation';
+import { NavigationBar } from './NavigationBar';
+import { TopBar } from './TopBar';
 
-const headerStyle = (theme: Theme) => css`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 6rem;
-  font-size: 2rem;
-  font-weight: bold;
-  background-color: ${theme.secondaryColor};
-`;
+const headerStyle = (theme: Theme) => css``;
 
 type HeaderProps = {
   title: string;
@@ -20,9 +11,8 @@ type HeaderProps = {
 export function Header({ title }: HeaderProps) {
   return (
     <header css={headerStyle}>
-      <LocalizedLink to="/">{title}</LocalizedLink>
-      <MainNavigation />
-      <LanguageSelector />
+      <TopBar />
+      <NavigationBar title={title} />
     </header>
   );
 }

@@ -1,18 +1,14 @@
 import { css, Theme } from '@emotion/react';
 import {
-  PTSans700EOT,
-  PTSans700italicEOT,
   PTSans700italicTTF,
   PTSans700italicWOFF,
   PTSans700italicWOFF2,
   PTSans700TTF,
   PTSans700WOFF,
   PTSans700WOFF2,
-  PTSansitalicEOT,
   PTSansitalicTTF,
   PTSansitalicWOFF,
   PTSansitalicWOFF2,
-  PTSansregularEOT,
   PTSansregularTTF,
   PTSansregularWOFF,
   PTSansregularWOFF2,
@@ -68,9 +64,7 @@ export const defaultStyles = (theme: Theme) => css`
 
   @font-face {
     font-family: 'PT Sans';
-    src: url(${PTSans700italicEOT});
-    src: local('') url(${PTSans700italicWOFF2}) format('woff2'), url(${PTSans700italicWOFF}) format('woff'),
-      url(${PTSans700italicTTF}) format('truetype');
+    src: url(${PTSans700italicWOFF2}) format('woff2'), url(${PTSans700italicWOFF}) format('woff'), url(${PTSans700italicTTF}) format('truetype');
     font-style: italic;
     font-weight: 700;
     font-display: swap;
@@ -93,7 +87,6 @@ export const defaultStyles = (theme: Theme) => css`
     font-family: ${theme.fonts.general};
   }
 
-  header,
   main,
   footer {
     padding: 0 10%;
