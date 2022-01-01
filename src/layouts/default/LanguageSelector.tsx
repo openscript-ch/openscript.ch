@@ -5,8 +5,6 @@ import { FormattedMessage } from 'react-intl';
 import { PageContext } from '../../wrapPageElement';
 
 const languageSelectorStyles = css`
-  font-size: 1.4rem;
-
   ul {
     margin: 0;
     padding: 0;

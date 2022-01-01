@@ -2,6 +2,12 @@
 import '@emotion/react';
 import { GatsbyBrowser, GatsbySSR, PluginOptions } from 'gatsby';
 
+declare module '*.svg' {
+  import { PureComponent, SVGProps } from 'react';
+
+  export class ReactComponent extends PureComponent<SVGProps<SVGSVGElement>> {}
+}
+
 declare module '@emotion/react' {
   export interface Theme {
     primaryColor: string;

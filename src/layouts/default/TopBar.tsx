@@ -1,9 +1,11 @@
 import { css, Theme } from '@emotion/react';
 import { darken } from 'polished';
+import LanguageSelector from './LanguageSelector';
 
 const topBarStyle = (theme: Theme) => css`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 2rem;
   background-color: ${darken(0.05, theme.primaryColor)};
   padding: 0 10%;
@@ -13,6 +15,10 @@ const topBarStyle = (theme: Theme) => css`
   @media (max-width: ${theme.breakpoints.tiny}) {
     padding: 0 1rem;
   }
+
+  h1 {
+    font-size: 1rem;
+  }
 `;
 
 type TopBarProps = {
@@ -20,5 +26,10 @@ type TopBarProps = {
 };
 
 export function TopBar({ title }: TopBarProps) {
-  return <div css={topBarStyle}>{title}</div>;
+  return (
+    <div css={topBarStyle}>
+      <h1>{title}</h1>
+      <LanguageSelector />
+    </div>
+  );
 }

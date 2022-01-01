@@ -1,7 +1,7 @@
 import { css, Theme } from '@emotion/react';
 import { LocalizedLink } from '../../../plugins/gatsby-plugin-i18n-l10n';
-import LanguageSelector from './LanguageSelector';
 import MainNavigation from './MainNavigation';
+import { ReactComponent as Brand } from '../../images/brand.svg';
 
 const navigationBarStyle = (theme: Theme) => css`
   display: flex;
@@ -17,6 +17,16 @@ const navigationBarStyle = (theme: Theme) => css`
   @media (max-width: ${theme.breakpoints.tiny}) {
     padding: 0 1rem;
   }
+
+  svg {
+    fill: ${theme.backgroundColor};
+    width: auto;
+    height: 3rem;
+  }
+`;
+
+const brandLinkStyle = css`
+  display: inline-flex;
 `;
 
 type NavigationBarProps = {};
@@ -24,9 +34,10 @@ type NavigationBarProps = {};
 export function NavigationBar() {
   return (
     <div css={navigationBarStyle}>
-      <LocalizedLink to="/">Logo</LocalizedLink>
+      <LocalizedLink to="/" css={brandLinkStyle}>
+        <Brand />
+      </LocalizedLink>
       <MainNavigation />
-      <LanguageSelector />
     </div>
   );
 }

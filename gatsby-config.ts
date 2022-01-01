@@ -50,6 +50,7 @@ const configuration = withMetaConfig(({ projectRoot }) => {
       },
 
       // Plugins
+      `gatsby-plugin-svgr`,
       `gatsby-plugin-react-helmet`,
       `gatsby-plugin-image`,
       {
