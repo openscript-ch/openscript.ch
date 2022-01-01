@@ -19,14 +19,12 @@ const navigationBarStyle = (theme: Theme) => css`
   }
 `;
 
-type NavigationBarProps = {
-  title: string;
-};
+type NavigationBarProps = {};
 
-export function NavigationBar({ title }: NavigationBarProps) {
+export function NavigationBar() {
   return (
     <div css={navigationBarStyle}>
-      <LocalizedLink to="/">{title}</LocalizedLink>
+      <LocalizedLink to="/">Logo</LocalizedLink>
       <MainNavigation />
       <LanguageSelector />
     </div>

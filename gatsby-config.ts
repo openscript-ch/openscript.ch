@@ -12,7 +12,7 @@ const configuration = withMetaConfig(({ projectRoot }) => {
   return {
     pathPrefix: process.env.PATH_PREFIX || '/',
     siteMetadata: {
-      title: `Gatsby Starter Dogmatism`,
+      title: `openscript GmbH`,
       description: `This is a quite opinionated Gatsby starter.`,
       author: `openscript`,
       siteUrl: process.env.SITE_URL || `https://example.com`,

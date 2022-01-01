@@ -85,6 +85,7 @@ export const defaultStyles = (theme: Theme) => css`
     flex-grow: 1;
     min-height: 100%;
     font-family: ${theme.fonts.general};
+    background-color: ${theme.backgroundColor};
   }
 
   main,

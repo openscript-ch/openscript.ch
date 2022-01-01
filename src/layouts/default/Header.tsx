@@ -11,8 +11,8 @@ type HeaderProps = {
 export function Header({ title }: HeaderProps) {
   return (
     <header css={headerStyle}>
-      <TopBar />
-      <NavigationBar title={title} />
+      <TopBar title={title} />
+      <NavigationBar />
     </header>
   );
 }
