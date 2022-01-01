@@ -11,6 +11,10 @@ declare module '@emotion/react' {
     whiteColor: string;
     darkerSibling: string;
     brighterSibling: string;
+    fonts: {
+      general: string;
+      headings: string;
+    };
     breakpoints: {
       tiny: string;
       small: string;

@@ -8,6 +8,10 @@ export const defaultTheme: Theme = {
   whiteColor: '#ffffff',
   darkerSibling: '10%',
   brighterSibling: '10%',
+  fonts: {
+    general: '"PT Sans", sans-serif',
+    headings: '"2MASS J1808", sans-serif',
+  },
   breakpoints: {
     tiny: '1280px',
     small: '1440px',
