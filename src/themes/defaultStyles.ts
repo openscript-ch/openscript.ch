@@ -105,4 +105,12 @@ export const defaultStyles = (theme: Theme) => css`
   h6 {
     font-family: ${theme.fonts.headings};
   }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      color: ${theme.secondaryColor};
+    }
+  }
 `;

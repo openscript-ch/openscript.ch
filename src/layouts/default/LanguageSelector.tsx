@@ -1,10 +1,10 @@
-import { css } from '@emotion/react';
+import { css, Theme } from '@emotion/react';
 import { Link } from 'gatsby';
 import { useContext } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { PageContext } from '../../wrapPageElement';
 
-const languageSelectorStyles = css`
+const languageSelectorStyles = (theme: Theme) => css`
   ul {
     margin: 0;
     padding: 0;
@@ -13,6 +13,14 @@ const languageSelectorStyles = css`
     li {
       display: inline;
       margin-left: 1rem;
+    }
+
+    a {
+      color: ${theme.backgroundColor};
+
+      &:hover {
+        color: ${theme.secondaryColor};
+      }
     }
   }
 `;

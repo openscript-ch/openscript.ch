@@ -7,6 +7,14 @@ const navStyle = (theme: Theme) => css`
     padding: 0;
     margin: 0;
     font-size: 1.4rem;
+
+    a {
+      color: ${theme.backgroundColor};
+
+      &:hover {
+        color: ${theme.secondaryColor};
+      }
+    }
   }
 `;
 
