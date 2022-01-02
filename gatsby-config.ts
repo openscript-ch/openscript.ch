@@ -17,7 +17,7 @@ const configuration = withMetaConfig(({ projectRoot }) => {
       email: `<a href="mailto:hi@openscript.ch">hi@openscript.ch</a>`,
       address: `<a href="https://www.openstreetmap.org/way/43938793"><ul><li><strong>openscript GmbH</strong></li><li>Europa-Strasse 30</li><li>8153 Glattbrugg</li></ul></a>`,
       author: `openscript GmbH`,
-      siteUrl: process.env.SITE_URL || `https://example.com`,
+      siteUrl: process.env.SITE_URL || `https://openscript.ch`,
       version: packageJson.version,
       project: packageJson.name,
     },
