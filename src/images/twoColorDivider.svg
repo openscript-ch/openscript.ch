@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="46" style="-webkit-print-color-adjust:exact" version="1.1" viewBox="-2.4142 -2.4142 1600 46" xmlns="http://www.w3.org/2000/svg">
+ <g id="upper" transform="translate(-2.4142 -2.4142)">
+  <path d="m0 40 264-40h1336v46h-1600z" />
+ </g>
+ <g id="lower" transform="translate(-2.4142 -2.4142)">
+  <path d="m0 46 264-40 1336 40z" />
+ </g>
+</svg>

@@ -8,6 +8,7 @@ import { Document } from './default/Document';
 import { Footer } from './default/Footer';
 import { Header } from './default/Header';
 import { Main } from './default/Main';
+import { TwoColorDivider } from './default/TwoColorDivider';
 
 const query = graphql`
   query DefaultLayout {
@@ -43,6 +44,7 @@ export function DefaultLayout({ children, theme }: DefaultLayoutProps) {
         phone={data.site?.siteMetadata?.phone || ''}
         email={data.site?.siteMetadata?.email || ''}
       />
+      <TwoColorDivider />
       <Main>{children}</Main>
       <Footer
         address={data.site?.siteMetadata?.address || ''}
