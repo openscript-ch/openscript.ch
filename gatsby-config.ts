@@ -1,7 +1,6 @@
 import { withMetaConfig } from 'gatsby-ts';
 import deCHMessages from './content/i18n/de-CH.json';
 import enUSMessages from './content/i18n/en-US.json';
-import zhCNMessages from './content/i18n/zh-CN.json';
 import packageJson from './package.json';
 
 require('dotenv').config({
