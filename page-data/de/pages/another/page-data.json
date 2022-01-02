@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-generic-page-tsx",
     "path": "/de/pages/another",
     "result": {"data":{"markdownRemark":{"id":"7dc3d674-d54c-55b7-8f37-337dc6667399","html":"<p>another</p>"}},"pageContext":{"id":"7dc3d674-d54c-55b7-8f37-337dc6667399","translations":[],"locale":"de-CH","prefix":"de"}},
-    "staticQueryHashes": ["1770277726","3303960102"]}
+    "staticQueryHashes": ["1256713454","1770277726"]}
