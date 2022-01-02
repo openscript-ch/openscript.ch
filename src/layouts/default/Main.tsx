@@ -1,7 +1,7 @@
 import { css, Theme } from '@emotion/react';
 import { PropsWithChildren } from 'react';
 
-const mainStyle = (theme: Theme) => css`
+const mainStyle = css`
   padding-top: 1rem;
   padding-bottom: 1rem;
 `;

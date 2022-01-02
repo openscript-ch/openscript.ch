@@ -1,12 +1,16 @@
 /// <reference types="@emotion/react/types/css-prop" />
 import '@emotion/react';
 import { GatsbyBrowser, GatsbySSR, PluginOptions } from 'gatsby';
+import { PureComponent, SVGProps } from 'react';
 
 declare module '*.svg' {
-  import { PureComponent, SVGProps } from 'react';
-
   export class ReactComponent extends PureComponent<SVGProps<SVGSVGElement>> {}
 }
+declare module '*.svg';
+declare module '*.ttf';
+declare module '*.eot';
+declare module '*.woff';
+declare module '*.woff2';
 
 declare module '@emotion/react' {
   export interface Theme {

@@ -15,6 +15,8 @@ const query = graphql`
       siteMetadata {
         author
         description
+        phone
+        email
         siteUrl
         title
         version
@@ -35,7 +37,11 @@ export function DefaultLayout({ children, theme }: DefaultLayoutProps) {
     <ThemeProvider theme={theme || defaultTheme}>
       <Document title={data.site?.siteMetadata?.title || ''} />
       <Global styles={defaultStyles} />
-      <Header title={data.site?.siteMetadata?.title || ''} />
+      <Header
+        title={data.site?.siteMetadata?.title || ''}
+        phone={data.site?.siteMetadata?.phone || ''}
+        email={data.site?.siteMetadata?.email || ''}
+      />
       <Main>{children}</Main>
       <Footer author={data.site?.siteMetadata?.project || ''} version={data.site?.siteMetadata?.version || ''} />
     </ThemeProvider>

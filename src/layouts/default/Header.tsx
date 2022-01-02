@@ -2,16 +2,16 @@ import { css, Theme } from '@emotion/react';
 import { NavigationBar } from './NavigationBar';
 import { TopBar } from './TopBar';
 
-const headerStyle = (theme: Theme) => css``;
-
 type HeaderProps = {
   title: string;
+  phone: string;
+  email: string;
 };
 
-export function Header({ title }: HeaderProps) {
+export function Header({ title, phone, email }: HeaderProps) {
   return (
-    <header css={headerStyle}>
-      <TopBar title={title} />
+    <header>
+      <TopBar title={title} phone={phone} email={email} />
       <NavigationBar />
     </header>
   );

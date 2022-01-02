@@ -2674,6 +2674,8 @@ export enum SiteFieldsEnum {
   Port = 'port',
   SiteMetadataAuthor = 'siteMetadata___author',
   SiteMetadataDescription = 'siteMetadata___description',
+  SiteMetadataEmail = 'siteMetadata___email',
+  SiteMetadataPhone = 'siteMetadata___phone',
   SiteMetadataProject = 'siteMetadata___project',
   SiteMetadataSiteUrl = 'siteMetadata___siteUrl',
   SiteMetadataTitle = 'siteMetadata___title',
@@ -3464,6 +3466,8 @@ export type SiteSiteMetadata = {
   __typename?: 'SiteSiteMetadata';
   author?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
+  email?: Maybe<Scalars['String']>;
+  phone?: Maybe<Scalars['String']>;
   project?: Maybe<Scalars['String']>;
   siteUrl?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
@@ -3473,6 +3477,8 @@ export type SiteSiteMetadata = {
 export type SiteSiteMetadataFilterInput = {
   author?: InputMaybe<StringQueryOperatorInput>;
   description?: InputMaybe<StringQueryOperatorInput>;
+  email?: InputMaybe<StringQueryOperatorInput>;
+  phone?: InputMaybe<StringQueryOperatorInput>;
   project?: InputMaybe<StringQueryOperatorInput>;
   siteUrl?: InputMaybe<StringQueryOperatorInput>;
   title?: InputMaybe<StringQueryOperatorInput>;
@@ -3545,10 +3551,10 @@ export type AllGenericPagesQuery = { __typename?: 'Query', allMarkdownRemark: { 
 export type DefaultLayoutQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type DefaultLayoutQuery = { __typename?: 'Query', site?: { __typename?: 'Site', siteMetadata?: { __typename?: 'SiteSiteMetadata', author?: string | null | undefined, description?: string | null | undefined, siteUrl?: string | null | undefined, title?: string | null | undefined, version?: string | null | undefined, project?: string | null | undefined } | null | undefined } | null | undefined };
+export type DefaultLayoutQuery = { __typename?: 'Query', site?: { __typename?: 'Site', siteMetadata?: { __typename?: 'SiteSiteMetadata', author?: string | null | undefined, description?: string | null | undefined, phone?: string | null | undefined, email?: string | null | undefined, siteUrl?: string | null | undefined, title?: string | null | undefined, version?: string | null | undefined, project?: string | null | undefined } | null | undefined } | null | undefined };
 
 export type IndexPageQueryVariables = Exact<{
-  locale?: Maybe<Scalars['String']>;
+  locale?: InputMaybe<Scalars['String']>;
 }>;
 
 

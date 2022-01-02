@@ -3,16 +3,21 @@ import { Link } from 'gatsby';
 import { useContext } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { PageContext } from '../../wrapPageElement';
+import { Arrow } from './Arrow';
 
 const languageSelectorStyles = (theme: Theme) => css`
+  display: flex;
+  align-items: center;
+
   ul {
+    display: inline-flex;
     margin: 0;
     padding: 0;
     list-style: none;
 
     li {
       display: inline;
-      margin-left: 1rem;
+      margin-left: 0.8rem;
     }
   }
 `;

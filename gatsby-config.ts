@@ -14,6 +14,8 @@ const configuration = withMetaConfig(({ projectRoot }) => {
     siteMetadata: {
       title: `openscript GmbH`,
       description: `This is a quite opinionated Gatsby starter.`,
+      phone: `<a href="tel:+41445205467">+41 44 520 54 67</a>`,
+      email: `<a href="mailto:hi@openscript.ch">hi@openscript.ch</a>`,
       author: `openscript`,
       siteUrl: process.env.SITE_URL || `https://example.com`,
       version: packageJson.version,
