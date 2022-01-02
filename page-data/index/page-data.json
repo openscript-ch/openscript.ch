@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-pages-index-tsx",
     "path": "/",
-    "result": {"data":{"slogans":{"html":"<p>English</p>"}},"pageContext":{"locale":"en-US","translations":[{"locale":"de-CH","path":"/de"},{"locale":"zh-CN","path":"/zh"}],"prefix":"en"}},
+    "result": {"data":{"slogans":{"html":"<p>English</p>"}},"pageContext":{"locale":"en-US","translations":[{"locale":"de-CH","path":"/de"}],"prefix":"en"}},
     "staticQueryHashes": ["1256713454","1770277726"]}
