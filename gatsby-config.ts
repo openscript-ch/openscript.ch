@@ -102,12 +102,6 @@ const configuration = withMetaConfig(({ projectRoot }) => {
               slugs: {},
               messages: deCHMessages,
             },
-            {
-              locale: `zh-CN`,
-              prefix: `zh`,
-              slugs: {},
-              messages: zhCNMessages,
-            },
           ],
         },
       },
