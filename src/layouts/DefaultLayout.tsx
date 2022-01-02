@@ -17,6 +17,7 @@ const query = graphql`
         description
         phone
         email
+        address
         siteUrl
         title
         version
@@ -43,7 +44,11 @@ export function DefaultLayout({ children, theme }: DefaultLayoutProps) {
         email={data.site?.siteMetadata?.email || ''}
       />
       <Main>{children}</Main>
-      <Footer author={data.site?.siteMetadata?.project || ''} version={data.site?.siteMetadata?.version || ''} />
+      <Footer
+        address={data.site?.siteMetadata?.address || ''}
+        phone={data.site?.siteMetadata?.phone || ''}
+        email={data.site?.siteMetadata?.email || ''}
+      />
     </ThemeProvider>
   );
 }

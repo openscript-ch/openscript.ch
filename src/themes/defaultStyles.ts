@@ -84,6 +84,7 @@ export const defaultStyles = (theme: Theme) => css`
     flex-direction: column;
     flex-grow: 1;
     min-height: 100%;
+    min-width: 800px;
     font-family: ${theme.fonts.general};
     background-color: ${theme.backgroundColor};
   }
