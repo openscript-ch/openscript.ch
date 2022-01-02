@@ -1,5 +1,6 @@
 import { css, Theme } from '@emotion/react';
 import { darken } from 'polished';
+import { LocalizedLink } from '../../../plugins/gatsby-plugin-i18n-l10n';
 import LanguageSelector from './LanguageSelector';
 
 const topBarStyle = (theme: Theme) => css`
@@ -16,8 +17,16 @@ const topBarStyle = (theme: Theme) => css`
     padding: 0 1rem;
   }
 
+  a {
+    color: ${theme.backgroundColor};
+
+    &:hover {
+      color: ${theme.secondaryColor};
+    }
+  }
+
   h1 {
-    font-size: 1rem;
+    font-size: 0.6rem;
   }
 `;
 
@@ -28,7 +37,9 @@ type TopBarProps = {
 export function TopBar({ title }: TopBarProps) {
   return (
     <div css={topBarStyle}>
-      <h1>{title}</h1>
+      <LocalizedLink to="/">
+        <h1>{title}</h1>
+      </LocalizedLink>
       <LanguageSelector />
     </div>
   );

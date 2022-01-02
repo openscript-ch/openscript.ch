@@ -14,14 +14,6 @@ const languageSelectorStyles = (theme: Theme) => css`
       display: inline;
       margin-left: 1rem;
     }
-
-    a {
-      color: ${theme.backgroundColor};
-
-      &:hover {
-        color: ${theme.secondaryColor};
-      }
-    }
   }
 `;
 

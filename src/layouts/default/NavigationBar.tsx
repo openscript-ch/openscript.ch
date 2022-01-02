@@ -25,8 +25,12 @@ const navigationBarStyle = (theme: Theme) => css`
   }
 `;
 
-const brandLinkStyle = css`
+const brandLinkStyle = (theme: Theme) => css`
   display: inline-flex;
+
+  svg:hover {
+    fill: ${theme.secondaryColor};
+  }
 `;
 
 type NavigationBarProps = {};
