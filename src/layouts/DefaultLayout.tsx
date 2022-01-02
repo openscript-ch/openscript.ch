@@ -46,6 +46,7 @@ export function DefaultLayout({ children, theme }: DefaultLayoutProps) {
       />
       <TwoColorDivider />
       <Main>{children}</Main>
+      <TwoColorDivider flipVertical />
       <Footer
         address={data.site?.siteMetadata?.address || ''}
         phone={data.site?.siteMetadata?.phone || ''}
