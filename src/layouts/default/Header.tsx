@@ -12,7 +12,7 @@ export function Header({ title, phone, email }: HeaderProps) {
   return (
     <header>
       <TopBar title={title} phone={phone} email={email} />
-      <NavigationBar />
+      <NavigationBar phone={phone} email={email} />
     </header>
   );
 }

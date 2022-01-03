@@ -18,7 +18,7 @@ const navigationBarStyle = (theme: Theme) => css`
     padding: 0 1rem;
   }
 
-  svg {
+  > * > svg {
     fill: ${theme.backgroundColor};
     width: auto;
     height: 3rem;
@@ -33,15 +33,18 @@ const brandLinkStyle = (theme: Theme) => css`
   }
 `;
 
-type NavigationBarProps = {};
+type NavigationBarProps = {
+  phone: string;
+  email: string;
+};
 
-export function NavigationBar() {
+export function NavigationBar({ phone, email }: NavigationBarProps) {
   return (
     <div css={navigationBarStyle}>
       <LocalizedLink to="/" css={brandLinkStyle}>
         <Brand />
       </LocalizedLink>
-      <MainNavigation />
+      <MainNavigation phone={phone} email={email} asBurgerMenu />
     </div>
   );
 }
