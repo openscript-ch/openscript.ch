@@ -1,0 +1,14 @@
+services:
+  openscript-ch:
+    container_name: openscript-ch
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+      args:
+        VARIANT: 16-bullseye
+    volumes:
+      - devdata:/workspace
+    command: sleep infinity
+
+volumes:
+  devdata:
