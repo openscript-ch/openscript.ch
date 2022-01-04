@@ -15,7 +15,7 @@ const topBarStyle = (theme: Theme) => css`
   font-weight: bold;
   color: ${theme.backgroundColor};
 
-  @media (max-width: ${theme.breakpoints.tiny}) {
+  @media (max-width: ${theme.breakpoints.medium}) {
     padding: 0 1rem;
   }
 

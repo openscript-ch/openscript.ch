@@ -13,9 +13,9 @@ export const defaultTheme: Theme = {
     headings: '"2MASS J1808", sans-serif',
   },
   breakpoints: {
-    tiny: '1280px',
-    small: '1440px',
-    medium: '1600px',
+    tiny: '400px',
+    small: '600px',
+    medium: '1280px',
     big: '1920px',
     huge: '2560px',
   },

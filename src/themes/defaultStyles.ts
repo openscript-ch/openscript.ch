@@ -96,7 +96,7 @@ export const defaultStyles = (theme: Theme) => css`
   footer {
     padding: 0 10%;
 
-    @media (max-width: ${theme.breakpoints.tiny}) {
+    @media (max-width: ${theme.breakpoints.medium}) {
       padding: 0 1rem;
     }
   }
