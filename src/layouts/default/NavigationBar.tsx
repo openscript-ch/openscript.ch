@@ -41,9 +41,11 @@ type NavigationBarProps = {
 };
 
 export function NavigationBar({ phone, email }: NavigationBarProps) {
-  const [showBurgerMenu, setShowBurgerMenu] = React.useState(false);
+  const widthMatch = window.matchMedia(`(max-width: ${defaultTheme.breakpoints.small})`);
 
-  window.matchMedia(`(max-width: ${defaultTheme.breakpoints.small})`).addEventListener('change', ({ matches }) => {
+  const [showBurgerMenu, setShowBurgerMenu] = React.useState(widthMatch.matches);
+
+  widthMatch.addEventListener('change', ({ matches }) => {
     setShowBurgerMenu(matches);
   });
 
