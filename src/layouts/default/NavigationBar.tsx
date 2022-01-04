@@ -2,6 +2,8 @@ import { css, Theme } from '@emotion/react';
 import { LocalizedLink } from '../../../plugins/gatsby-plugin-i18n-l10n';
 import MainNavigation from './MainNavigation';
 import { ReactComponent as Brand } from '../../images/brand.svg';
+import { defaultTheme } from '../../themes/defaultTheme';
+import React from 'react';
 
 const navigationBarStyle = (theme: Theme) => css`
   display: flex;
@@ -14,7 +16,7 @@ const navigationBarStyle = (theme: Theme) => css`
 
   padding: 0 10%;
 
-  @media (max-width: ${theme.breakpoints.tiny}) {
+  @media (max-width: ${theme.breakpoints.medium}) {
     padding: 0 1rem;
   }
 
@@ -39,12 +41,18 @@ type NavigationBarProps = {
 };
 
 export function NavigationBar({ phone, email }: NavigationBarProps) {
+  const [showBurgerMenu, setShowBurgerMenu] = React.useState(false);
+
+  window.matchMedia(`(max-width: ${defaultTheme.breakpoints.small})`).addEventListener('change', ({ matches }) => {
+    setShowBurgerMenu(matches);
+  });
+
   return (
     <div css={navigationBarStyle}>
       <LocalizedLink to="/" css={brandLinkStyle}>
         <Brand />
       </LocalizedLink>
-      <MainNavigation phone={phone} email={email} asBurgerMenu />
+      <MainNavigation phone={phone} email={email} asBurgerMenu={showBurgerMenu} />
     </div>
   );
 }
