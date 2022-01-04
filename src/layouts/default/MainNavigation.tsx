@@ -37,9 +37,12 @@ const navStyle = (theme: Theme) => css`
     justify-content: space-between;
     background-color: ${theme.backgroundColor};
 
+    ul {
+      display: block;
+    }
+
     > ul {
       margin-top: 10rem;
-      display: block;
 
       li {
         width: 100%;
