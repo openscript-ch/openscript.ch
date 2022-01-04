@@ -1,8 +1,8 @@
 import { css, Theme } from '@emotion/react';
 import { Markup } from 'interweave';
 import { darken } from 'polished';
-import React from 'react';
 import { LocalizedLink } from '../../../plugins/gatsby-plugin-i18n-l10n';
+import { useMatchMediaWidth } from '../../hooks/match-media';
 import { defaultTheme } from '../../themes/defaultTheme';
 import { Arrow } from './Arrow';
 import LanguageSelector from './LanguageSelector';
@@ -61,13 +61,7 @@ type TopBarProps = {
 };
 
 export function TopBar({ title, phone, email }: TopBarProps) {
-  const widthMatch = window.matchMedia(`(max-width: ${defaultTheme.breakpoints.small})`);
-
-  const [hideLinks, setHideLinks] = React.useState(widthMatch.matches);
-
-  widthMatch.addEventListener('change', ({ matches }) => {
-    setHideLinks(matches);
-  });
+  const hideLinks = useMatchMediaWidth(defaultTheme.breakpoints.small);
 
   return (
     <div css={topBarStyle}>
