@@ -13,6 +13,8 @@ const navStyle = (theme: Theme) => css`
     padding: 0;
     margin: 0;
     font-size: 1.4rem;
+    display: flex;
+    gap: 1rem;
 
     a {
       color: ${theme.backgroundColor};
@@ -37,6 +39,7 @@ const navStyle = (theme: Theme) => css`
 
     > ul {
       margin-top: 10rem;
+      display: block;
 
       li {
         width: 100%;
