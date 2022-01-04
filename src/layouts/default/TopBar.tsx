@@ -1,7 +1,9 @@
 import { css, Theme } from '@emotion/react';
 import { Markup } from 'interweave';
 import { darken } from 'polished';
+import React from 'react';
 import { LocalizedLink } from '../../../plugins/gatsby-plugin-i18n-l10n';
+import { defaultTheme } from '../../themes/defaultTheme';
 import { Arrow } from './Arrow';
 import LanguageSelector from './LanguageSelector';
 
@@ -59,19 +61,29 @@ type TopBarProps = {
 };
 
 export function TopBar({ title, phone, email }: TopBarProps) {
+  const widthMatch = window.matchMedia(`(max-width: ${defaultTheme.breakpoints.small})`);
+
+  const [hideLinks, setHideLinks] = React.useState(widthMatch.matches);
+
+  widthMatch.addEventListener('change', ({ matches }) => {
+    setHideLinks(matches);
+  });
+
   return (
     <div css={topBarStyle}>
       <LocalizedLink to="/">
         <h1>{title}</h1>
       </LocalizedLink>
-      <nav>
-        <Arrow rotation={270} />
-        <Markup content={phone} />
-        <Arrow rotation={310} />
-        <Markup content={email} />
-        <LanguageSelector />
-        <Arrow />
-      </nav>
+      {!hideLinks && (
+        <nav>
+          <Arrow rotation={270} />
+          <Markup content={phone} />
+          <Arrow rotation={310} />
+          <Markup content={email} />
+          <LanguageSelector />
+          <Arrow />
+        </nav>
+      )}
     </div>
   );
 }
