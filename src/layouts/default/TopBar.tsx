@@ -28,7 +28,7 @@ const topBarStyle = (theme: Theme) => css`
   }
 
   h1 {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
   }
 
   & > nav {

@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.194.0/containers/typescript-node
 {
-  "name": "Gatsby Starter Dogmatism",
+  "name": "openscript.ch",
   "service": "openscript-ch",
   "dockerComposeFile": "docker-compose.yml",
   "workspaceFolder": "/workspace",

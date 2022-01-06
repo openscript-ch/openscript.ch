@@ -1,5 +1,5 @@
 {
-  "include": ["./src/**/*", "./.gatsby/**/*", "./*.ts", "./plugins/**/*"],
+  "include": ["./src/**/*", "./*.ts", "./plugins/**/*"],
   "files": ["./src/types.d.ts"],
   "compilerOptions": {
     "target": "ESNext",
