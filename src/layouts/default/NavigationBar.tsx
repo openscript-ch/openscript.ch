@@ -2,8 +2,6 @@ import { css, Theme } from '@emotion/react';
 import { LocalizedLink } from '../../../plugins/gatsby-plugin-i18n-l10n';
 import MainNavigation from './MainNavigation';
 import { ReactComponent as Brand } from '../../images/brand.svg';
-import { defaultTheme } from '../../themes/defaultTheme';
-import { useMatchMediaWidth } from '../../hooks/match-media';
 
 const navigationBarStyle = (theme: Theme) => css`
   display: flex;
@@ -41,14 +39,12 @@ type NavigationBarProps = {
 };
 
 export function NavigationBar({ phone, email }: NavigationBarProps) {
-  const showBurgerMenu = useMatchMediaWidth(defaultTheme.breakpoints.small);
-
   return (
     <div css={navigationBarStyle}>
       <LocalizedLink to="/" css={brandLinkStyle}>
         <Brand />
       </LocalizedLink>
-      <MainNavigation phone={phone} email={email} asBurgerMenu={showBurgerMenu} />
+      <MainNavigation phone={phone} email={email} />
     </div>
   );
 }

@@ -8,6 +8,10 @@ import { BurgerButton } from './BurgerButton';
 import LanguageSelector from './LanguageSelector';
 
 const navStyle = (theme: Theme) => css`
+  @media screen and (max-width: ${defaultTheme.breakpoints.small}) {
+    display: none;
+  }
+
   ul {
     list-style: none;
     padding: 0;
@@ -25,7 +29,11 @@ const navStyle = (theme: Theme) => css`
     }
   }
 
-  &.overlay {
+  .bottom-section {
+    display: none;
+  }
+
+  &.open {
     position: fixed;
     top: 0;
     left: 0;
@@ -83,50 +91,46 @@ const navStyle = (theme: Theme) => css`
 `;
 
 type MainNavigationProps = {
-  asBurgerMenu: boolean;
   phone: string;
   email: string;
 };
 
-export default function MainNavigation({ asBurgerMenu, phone, email }: MainNavigationProps) {
+export default function MainNavigation({ phone, email }: MainNavigationProps) {
   const [isOpen, setIsOpen] = React.useState(false);
   const toggleOpen = () => setIsOpen(!isOpen);
 
   return (
     <>
-      {asBurgerMenu && <BurgerButton isOpen={isOpen} onClick={toggleOpen} />}
-      {(!asBurgerMenu || isOpen) && (
-        <nav css={navStyle} className={asBurgerMenu ? 'overlay' : ''}>
+      <BurgerButton isOpen={isOpen} onClick={toggleOpen} />
+
+      <nav css={navStyle} className={isOpen ? 'open' : ''}>
+        <ul>
+          <li>
+            <LocalizedLink to="/pages">Joho</LocalizedLink>
+          </li>
+          <li>
+            <LocalizedLink to="/pages">Joho</LocalizedLink>
+          </li>
+          <li>
+            <LocalizedLink to="/pages">Joho</LocalizedLink>
+          </li>
+        </ul>
+
+        <div className="bottom-section">
+          <Arrow rotation={300} />
           <ul>
             <li>
-              <LocalizedLink to="/pages">Joho</LocalizedLink>
+              <LanguageSelector />
             </li>
             <li>
-              <LocalizedLink to="/pages">Joho</LocalizedLink>
+              <Markup content={phone} />
             </li>
             <li>
-              <LocalizedLink to="/pages">Joho</LocalizedLink>
+              <Markup content={email} />
             </li>
           </ul>
-
-          {asBurgerMenu && (
-            <div className="bottom-section">
-              <Arrow rotation={300} />
-              <ul>
-                <li>
-                  <LanguageSelector />
-                </li>
-                <li>
-                  <Markup content={phone} />
-                </li>
-                <li>
-                  <Markup content={email} />
-                </li>
-              </ul>
-            </div>
-          )}
-        </nav>
-      )}
+        </div>
+      </nav>
     </>
   );
 }

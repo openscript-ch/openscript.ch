@@ -12,6 +12,11 @@ const BurgerButtonContainer = styled.button`
   height: 2rem;
   width: 3rem;
   z-index: 30;
+  display: none;
+
+  @media screen and (max-width: ${defaultTheme.breakpoints.small}) {
+    display: block;
+  }
 
   div,
   &::after,
