@@ -2,13 +2,12 @@ import { css, Theme } from '@emotion/react';
 import { Markup } from 'interweave';
 import React from 'react';
 import { LocalizedLink } from '../../../plugins/gatsby-plugin-i18n-l10n';
-import { defaultTheme } from '../../themes/defaultTheme';
 import { Arrow } from './Arrow';
 import { BurgerButton } from './BurgerButton';
 import LanguageSelector from './LanguageSelector';
 
 const navStyle = (theme: Theme) => css`
-  @media screen and (max-width: ${defaultTheme.breakpoints.small}) {
+  @media screen and (max-width: ${theme.breakpoints.small}) {
     display: none;
   }
 
@@ -63,7 +62,7 @@ const navStyle = (theme: Theme) => css`
           display: block;
           width: 100%;
           padding: 1rem;
-          color: ${defaultTheme.blackColor};
+          color: ${theme.blackColor};
         }
       }
     }
@@ -83,7 +82,7 @@ const navStyle = (theme: Theme) => css`
         margin: 0;
         a {
           font-size: 1.2rem;
-          color: ${defaultTheme.blackColor};
+          color: ${theme.blackColor};
         }
       }
     }

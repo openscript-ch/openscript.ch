@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { defaultTheme } from '../../themes/defaultTheme';
 
 const BurgerButtonContainer = styled.button`
   width: 2.5rem;
@@ -14,7 +13,7 @@ const BurgerButtonContainer = styled.button`
   z-index: 30;
   display: none;
 
-  @media screen and (max-width: ${defaultTheme.breakpoints.small}) {
+  @media screen and (max-width: ${props => props.theme.breakpoints.small}) {
     display: block;
   }
 
@@ -24,7 +23,7 @@ const BurgerButtonContainer = styled.button`
     width: 100%;
     height: 0.3rem;
     border-radius: 0.1rem;
-    background-color: ${defaultTheme.backgroundColor};
+    background-color: ${props => props.theme.backgroundColor};
     transition: top 0.05s 0.1s, bottom 0.05s 0.1s, transform 0.1s;
     content: '';
     display: block;
@@ -36,7 +35,7 @@ const BurgerButtonContainer = styled.button`
     div,
     &::after,
     &::before {
-      background-color: ${defaultTheme.secondaryColor};
+      background-color: ${props => props.theme.secondaryColor};
     }
   }
 
@@ -62,7 +61,7 @@ const BurgerButtonContainer = styled.button`
     &::after {
       top: 40%;
       bottom: 40%;
-      background-color: ${defaultTheme.secondaryColor};
+      background-color: ${props => props.theme.secondaryColor};
       // reverse transition
       transition: transform 0.1s 0.05s, top 0.05s, bottom 0.05s;
     }
