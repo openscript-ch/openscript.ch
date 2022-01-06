@@ -6,5 +6,8 @@
   "i18n-ally.sortKeys": true,
   "i18n-ally.sourceLanguage": "en-US",
   "i18n-ally.displayLanguage": "en-US",
-  "workbench.iconTheme": "vscode-icons"
+  "workbench.iconTheme": "vscode-icons",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
 }

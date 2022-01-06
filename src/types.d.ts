@@ -1,40 +1,3 @@
-/// <reference types="@emotion/react/types/css-prop" />
-import '@emotion/react';
-import { GatsbyBrowser, GatsbySSR, PluginOptions } from 'gatsby';
-import { PureComponent, SVGProps } from 'react';
-
-declare module '*.svg' {
-  export class ReactComponent extends PureComponent<SVGProps<SVGSVGElement>> {}
-}
-declare module '*.svg';
-declare module '*.ttf';
-declare module '*.eot';
-declare module '*.woff';
-declare module '*.woff2';
-
-declare module '@emotion/react' {
-  export interface Theme {
-    primaryColor: string;
-    secondaryColor: string;
-    backgroundColor: string;
-    blackColor: string;
-    whiteColor: string;
-    darkerSibling: string;
-    brighterSibling: string;
-    fonts: {
-      general: string;
-      headings: string;
-    };
-    breakpoints: {
-      tiny: string;
-      small: string;
-      medium: string;
-      big: string;
-      huge: string;
-    };
-  }
-}
-
 export type Translation = {
   locale: string;
   path: string;
@@ -49,6 +12,8 @@ type AlternativeLanguagePath = {
   locale?: Maybe<Scalars['String']>;
   path?: Maybe<Scalars['String']>;
 };
+
+import { GatsbyBrowser, GatsbySSR, PluginOptions } from 'gatsby';
 
 type GatsbyBrowserWrapPageElementParams = Parameters<GatsbyBrowser['wrapPageElement']>;
 type GatsbySSRWrapPageElementParams = Parameters<GatsbySSR['wrapPageElement']>;
