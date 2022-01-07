@@ -1,6 +1,6 @@
-import styled from '@emotion/styled';
+import { css, Theme } from '@emotion/react';
 
-const BurgerButtonContainer = styled.button`
+const burgerButtonStyles = (theme: Theme) => css`
   width: 2.5rem;
   border: none;
   outline: none;
@@ -13,7 +13,7 @@ const BurgerButtonContainer = styled.button`
   z-index: 30;
   display: none;
 
-  @media screen and (max-width: ${props => props.theme.breakpoints.small}) {
+  @media screen and (max-width: ${theme.breakpoints.small}) {
     display: block;
   }
 
@@ -23,7 +23,7 @@ const BurgerButtonContainer = styled.button`
     width: 100%;
     height: 0.3rem;
     border-radius: 0.1rem;
-    background-color: ${props => props.theme.backgroundColor};
+    background-color: ${theme.backgroundColor};
     transition: top 0.05s 0.1s, bottom 0.05s 0.1s, transform 0.1s;
     content: '';
     display: block;
@@ -35,7 +35,7 @@ const BurgerButtonContainer = styled.button`
     div,
     &::after,
     &::before {
-      background-color: ${props => props.theme.secondaryColor};
+      background-color: ${theme.secondaryColor};
     }
   }
 
@@ -61,7 +61,7 @@ const BurgerButtonContainer = styled.button`
     &::after {
       top: 40%;
       bottom: 40%;
-      background-color: ${props => props.theme.secondaryColor};
+      background-color: ${theme.secondaryColor};
       // reverse transition
       transition: transform 0.1s 0.05s, top 0.05s, bottom 0.05s;
     }
@@ -82,8 +82,8 @@ type BurgerButtonProps = {
 
 export function BurgerButton({ isOpen, onClick }: BurgerButtonProps) {
   return (
-    <BurgerButtonContainer className={isOpen ? 'open' : ''} onClick={onClick}>
+    <button css={burgerButtonStyles} className={isOpen ? 'open' : ''} onClick={onClick}>
       <div />
-    </BurgerButtonContainer>
+    </button>
   );
 }
