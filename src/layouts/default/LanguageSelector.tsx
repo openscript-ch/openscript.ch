@@ -3,7 +3,6 @@ import { Link } from 'gatsby';
 import { useContext } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { PageContext } from '../../wrapPageElement';
-import { Arrow } from './Arrow';
 
 const languageSelectorStyles = (theme: Theme) => css`
   display: flex;

@@ -1,4 +1,3 @@
-import { css, Theme } from '@emotion/react';
 import { NavigationBar } from './NavigationBar';
 import { TopBar } from './TopBar';
 
