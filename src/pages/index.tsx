@@ -13,14 +13,9 @@ const SectionWrapper = styled.div`
 `;
 
 const SliderContainer = styled.div`
-  max-width: 100%;
   overflow: hidden;
   position: relative;
   width: 100%;
-  svg {
-    min-width: 300%;
-    height: auto;
-  }
 `;
 
 const TextBox = styled.div`
@@ -51,6 +46,11 @@ const SlidesContainer = styled.div`
   > div {
     overflow: visible;
     min-width: calc(100% / 3);
+
+    svg {
+      min-width: 300%;
+      height: auto;
+    }
   }
 `;
 
@@ -82,7 +82,7 @@ export default function IndexPage({ data }: PageProps<IndexPageQuery, SitePageCo
     <DefaultLayout>
       <Markup content={data.slogans?.html} />
       <SectionWrapper>
-        <TextBox>
+        <TextBox className={selectedSnap === 2 ? 'right' : ''}>
           <h2>{textBoxContents[selectedSnap]?.title}</h2>
           <p>{textBoxContents[selectedSnap]?.text}</p>
         </TextBox>
