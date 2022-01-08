@@ -1,4 +1,3 @@
-import { useTheme } from '@emotion/react';
 import { graphql, PageProps } from 'gatsby';
 import { Markup } from 'interweave';
 import { IndexPageQuery } from '../../graphql-types';
