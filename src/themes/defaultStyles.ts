@@ -92,13 +92,19 @@ export const defaultStyles = (theme: Theme) => css`
     background-color: ${theme.backgroundColor};
   }
 
-  main,
+  main section,
   footer {
     padding: 0 10%;
 
     @media (max-width: ${theme.breakpoints.medium}) {
       padding: 0 1rem;
     }
+  }
+
+  main section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    min-height: 30rem;
   }
 
   h1,
