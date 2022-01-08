@@ -1,6 +1,6 @@
 import { css, Theme, useTheme } from '@emotion/react';
 import { PropsWithChildren } from 'react';
-import { DividedSection } from '../../components/DividedSection';
+import { DividedSection } from '../components/DividedSection';
 
 const sectionStyle = (theme: Theme) => css`
   background-color: ${theme.whiteColor};
@@ -8,7 +8,7 @@ const sectionStyle = (theme: Theme) => css`
 
 type Props = PropsWithChildren<{}>;
 
-export function CooperationSection({ children }: Props) {
+export function ReferencesSection({ children }: Props) {
   const theme = useTheme();
 
   return (

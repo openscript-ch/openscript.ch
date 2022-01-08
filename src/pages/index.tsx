@@ -3,10 +3,10 @@ import { Markup } from 'interweave';
 import { IndexPageQuery } from '../../graphql-types';
 import { DefaultLayout } from '../layouts/DefaultLayout';
 import { SitePageContext } from '../types';
-import { CooperationSection } from './sections/CooperationSection';
-import { ExchangeSection } from './sections/ExchangeSection';
-import { ReferencesSection } from './sections/ReferencesSection';
-import { ValuesSection } from './sections/ValuesSection';
+import { CooperationSection } from '../sections/CooperationSection';
+import { ExchangeSection } from '../sections/ExchangeSection';
+import { ReferencesSection } from '../sections/ReferencesSection';
+import { ValuesSection } from '../sections/ValuesSection';
 
 export default function IndexPage({ data }: PageProps<IndexPageQuery, SitePageContext>) {
   return (

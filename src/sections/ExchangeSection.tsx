@@ -1,6 +1,6 @@
 import { useTheme } from '@emotion/react';
 import { PropsWithChildren } from 'react';
-import { DividedSection } from '../../components/DividedSection';
+import { DividedSection } from '../components/DividedSection';
 
 type Props = PropsWithChildren<{}>;
 

@@ -1,6 +1,6 @@
 import { css, useTheme } from '@emotion/react';
 import { PropsWithChildren, useState } from 'react';
-import { DividedSection } from '../../components/DividedSection';
+import { DividedSection } from '../components/DividedSection';
 import { ReactComponent as Illustration } from '../../../content/statics/illustration.svg';
 import useEmblaCarousel from 'embla-carousel-react';
 import styled from '@emotion/styled';
