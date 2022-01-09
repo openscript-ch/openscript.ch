@@ -75,6 +75,15 @@ export function ValuesSection({ values }: Props) {
           <div className="carousel-slide">
             <IllustrationGraphic viewBox="2155.666666666 0 1077.833333333 1080" />
           </div>
+          <div className="carousel-slide">
+            <IllustrationGraphic viewBox="0 0 1077.833333333 1080" />
+          </div>
+          <div className="carousel-slide">
+            <IllustrationGraphic viewBox="1077.833333333 0 1077.833333333 1080" />
+          </div>
+          <div className="carousel-slide">
+            <IllustrationGraphic viewBox="2155.666666666 0 1077.833333333 1080" />
+          </div>
         </div>
       </div>
     </DividedSection>
