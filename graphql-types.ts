@@ -3561,7 +3561,7 @@ export type IndexPageQueryVariables = Exact<{
 }>;
 
 
-export type IndexPageQuery = { __typename?: 'Query', slogans?: { __typename?: 'MarkdownRemark', html?: string | null | undefined } | null | undefined };
+export type IndexPageQuery = { __typename?: 'Query', values: { __typename?: 'MarkdownRemarkConnection', nodes: Array<{ __typename?: 'MarkdownRemark', html?: string | null | undefined, frontmatter?: { __typename?: 'MarkdownRemarkFrontmatter', title?: string | null | undefined } | null | undefined }> } };
 
 export type GenericPageQueryVariables = Exact<{
   id: Scalars['String'];

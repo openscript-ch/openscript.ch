@@ -4,6 +4,8 @@ import { DividedSection } from '../components/DividedSection';
 import { ReactComponent as Illustration } from '../../content/statics/illustration.svg';
 import useEmblaCarousel from 'embla-carousel-react';
 import styled from '@emotion/styled';
+import { IndexPageQuery } from '../../graphql-types';
+import { Markup } from 'interweave';
 
 const SectionWrapper = styled.div`
   position: relative;
@@ -53,28 +55,20 @@ const SlidesContainer = styled.div`
 
 const sectionStyle = css``;
 
-type Props = PropsWithChildren<{}>;
+type Props = {
+  values: IndexPageQuery['values'];
+};
 
-export function ValuesSection({ children }: Props) {
+export function ValuesSection({ values }: Props) {
   const theme = useTheme();
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, skipSnaps: false });
 
   const [selectedSnap, setSelectedSnap] = useState(0);
 
-  const textBoxContents: { title: string; text: string }[] = [
-    {
-      title: 'Title 1',
-      text: 'asdklfskfjsd flkjs fdlskjf sdlfjsd flskj lkfj alfkjdsa flkjdsaflsdjf sdlkfj ',
-    },
-    {
-      title: 'Title 2',
-      text: 'asdfopsfpodifimsfsdaöfjdsf lkdsf dsfj sdflkjsd flkdsj flsdjfj ',
-    },
-    {
-      title: 'Title 3',
-      text: 'öaslfkjs fsjf sdkfjs dflkjsd flksdjfsldafkjd lk asdfasdfdsfdsfsdafsadf ',
-    },
-  ];
+  const textBoxContents: { title?: string | null; text?: JSX.Element }[] = values.nodes.map(node => ({
+    title: node.frontmatter?.title,
+    text: <Markup content={node.html} />,
+  }));
 
   emblaApi?.on('select', () => {
     setSelectedSnap(emblaApi?.selectedScrollSnap() ?? 0);
@@ -88,7 +82,6 @@ export function ValuesSection({ children }: Props) {
           <p>{textBoxContents[selectedSnap]?.text}</p>
         </TextBox>
         <SliderContainer>
-          <GradientOverlay />
           <OverflowContainer ref={emblaRef}>
             <SlidesContainer>
               <div>
