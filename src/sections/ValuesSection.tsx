@@ -54,7 +54,7 @@ export function ValuesSection({ values }: Props) {
   emblaApi?.scrollSnapList();
 
   emblaApi?.on('select', () => {
-    setSelectedSnap(emblaApi?.selectedScrollSnap() ?? 0);
+    setSelectedSnap(emblaApi?.selectedScrollSnap() % 3 ?? 0);
   });
 
   return (
