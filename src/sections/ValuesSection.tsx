@@ -1,59 +1,41 @@
 import { css, useTheme } from '@emotion/react';
-import { PropsWithChildren, useState } from 'react';
+import { useState } from 'react';
 import { DividedSection } from '../components/DividedSection';
-import { ReactComponent as Illustration } from '../../content/statics/illustration.svg';
+import { ReactComponent as IllustrationGraphic } from '../../content/statics/illustration.svg';
 import useEmblaCarousel from 'embla-carousel-react';
-import styled from '@emotion/styled';
 import { IndexPageQuery } from '../../graphql-types';
 import { Markup } from 'interweave';
 
-const SectionWrapper = styled.div`
-  position: relative;
-`;
-
-const SliderContainer = styled.div`
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-`;
-
-const TextBox = styled.div`
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 20rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  z-index: 2;
-`;
-
-const GradientOverlay = styled.span`
-  position: absolute;
-  inset: -10rem 0;
-  background: radial-gradient(transparent, ${props => props.theme.backgroundColor} 45%);
-  pointer-events: none;
-  z-index: 1;
-`;
-
-const OverflowContainer = styled.div``;
-
-const SlidesContainer = styled.div`
+const sectionStyle = css`
   display: flex;
   align-items: center;
-  height: 30vh;
 
-  > div {
-    overflow: visible;
-    min-width: calc(100% / 3);
-
-    svg {
-      min-width: 300%;
-      height: auto;
-    }
+  aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
   }
 `;
 
-const sectionStyle = css``;
+const carouselStyle = css`
+  overflow: hidden;
+  width: 70%;
+  mask-image: radial-gradient(closest-side, rgba(0, 0, 0, 1) 70%, transparent);
+
+  .carousel-container {
+    display: flex;
+  }
+
+  .carousel-slide {
+    position: relative;
+    display: flex;
+  }
+
+  svg {
+    height: 30rem;
+  }
+`;
 
 type Props = {
   values: IndexPageQuery['values'];
@@ -61,7 +43,7 @@ type Props = {
 
 export function ValuesSection({ values }: Props) {
   const theme = useTheme();
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, skipSnaps: false });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, dragFree: true });
 
   const [selectedSnap, setSelectedSnap] = useState(0);
 
@@ -69,6 +51,7 @@ export function ValuesSection({ values }: Props) {
     title: node.frontmatter?.title,
     text: <Markup content={node.html} />,
   }));
+  emblaApi?.scrollSnapList();
 
   emblaApi?.on('select', () => {
     setSelectedSnap(emblaApi?.selectedScrollSnap() ?? 0);
@@ -76,23 +59,24 @@ export function ValuesSection({ values }: Props) {
 
   return (
     <DividedSection upperColor={theme.backgroundColor} lowerColor={theme.whiteColor} css={sectionStyle}>
-      <SectionWrapper>
-        <TextBox className={selectedSnap === 2 ? 'right' : ''}>
-          <h2>{textBoxContents[selectedSnap]?.title}</h2>
-          <p>{textBoxContents[selectedSnap]?.text}</p>
-        </TextBox>
-        <SliderContainer>
-          <OverflowContainer ref={emblaRef}>
-            <SlidesContainer>
-              <div>
-                <Illustration />
-              </div>
-              <div></div>
-              <div></div>
-            </SlidesContainer>
-          </OverflowContainer>
-        </SliderContainer>
-      </SectionWrapper>
+      <aside>
+        <h2>{textBoxContents[selectedSnap]?.title}</h2>
+        {textBoxContents[selectedSnap]?.text}
+      </aside>
+
+      <div css={carouselStyle} ref={emblaRef}>
+        <div className="carousel-container">
+          <div className="carousel-slide">
+            <IllustrationGraphic viewBox="0 0 1077.833333333 1080" />
+          </div>
+          <div className="carousel-slide">
+            <IllustrationGraphic viewBox="1077.833333333 0 1077.833333333 1080" />
+          </div>
+          <div className="carousel-slide">
+            <IllustrationGraphic viewBox="2155.666666666 0 1077.833333333 1080" />
+          </div>
+        </div>
+      </div>
     </DividedSection>
   );
 }
