@@ -43,7 +43,7 @@ type Props = {
 
 export function ValuesSection({ values }: Props) {
   const theme = useTheme();
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, dragFree: true });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, dragFree: false });
 
   const [selectedSnap, setSelectedSnap] = useState(0);
 
