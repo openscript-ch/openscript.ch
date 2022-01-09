@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { NavigationBar } from './NavigationBar';
 import { TopBar } from './TopBar';
 
@@ -9,9 +10,11 @@ type HeaderProps = {
 
 export function Header({ title, phone, email }: HeaderProps) {
   return (
-    <header>
+    <Fragment>
       <TopBar title={title} phone={phone} email={email} />
-      <NavigationBar phone={phone} email={email} />
-    </header>
+      <header>
+        <NavigationBar phone={phone} email={email} />
+      </header>
+    </Fragment>
   );
 }

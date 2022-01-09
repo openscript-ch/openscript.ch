@@ -5,7 +5,7 @@ import { Arrow } from './Arrow';
 const footerStyle = (theme: Theme) => css`
   display: flex;
   align-items: center;
-  height: 8rem;
+  min-height: 10rem;
   background-color: ${theme.primaryColor};
   color: ${theme.backgroundColor};
   overflow: hidden;
@@ -13,6 +13,7 @@ const footerStyle = (theme: Theme) => css`
   div {
     display: flex;
     flex-direction: column;
+
     ul {
       list-style: none;
       padding: 0;
@@ -33,8 +34,8 @@ const footerStyle = (theme: Theme) => css`
     width: 4rem;
     height: auto;
     margin-right: 1rem;
+    margin-bottom: 1.2rem;
     align-self: flex-end;
-    margin-bottom: 0.25rem;
   }
 `;
 

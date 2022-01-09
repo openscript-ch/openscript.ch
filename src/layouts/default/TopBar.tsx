@@ -6,6 +6,9 @@ import { Arrow } from './Arrow';
 import LanguageSelector from './LanguageSelector';
 
 const topBarStyle = (theme: Theme) => css`
+  position: sticky;
+  z-index: 20;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
