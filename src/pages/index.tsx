@@ -11,7 +11,7 @@ export default function IndexPage({ data }: PageProps<IndexPageQuery, SitePageCo
   return (
     <DefaultLayout>
       <ValuesSection values={data.values} />
-      <CooperationSection>Cooperation Section</CooperationSection>
+      <CooperationSection you={data.cooperationYou} us={data.cooperationUs} />
       <ExchangeSection>Exchange Section</ExchangeSection>
       <ReferencesSection>References Section</ReferencesSection>
       <section>FAQ Section</section>
@@ -29,6 +29,18 @@ export const query = graphql`
           link
         }
       }
+    }
+    cooperationYou: markdownRemark(fields: { locale: { eq: $locale }, kind: { eq: "sections/cooperation" }, filename: { glob: "*you*" } }) {
+      frontmatter {
+        title
+      }
+      html
+    }
+    cooperationUs: markdownRemark(fields: { locale: { eq: $locale }, kind: { eq: "sections/cooperation" }, filename: { glob: "*us*" } }) {
+      frontmatter {
+        title
+      }
+      html
     }
   }
 `;

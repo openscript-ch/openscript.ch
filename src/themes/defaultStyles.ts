@@ -108,12 +108,15 @@ export const defaultStyles = (theme: Theme) => css`
   }
 
   main section {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
     min-height: 30rem;
   }
 
-  h1,
+  h1 {
+    font-family: ${theme.fonts.headings};
+  }
+
   h2,
   h3,
   h4,
