@@ -8,11 +8,6 @@ import { Arrow } from '../layouts/default/Arrow';
 const sectionStyle = (theme: Theme) => css`
   display: flex;
   gap: 1rem;
-  flex-wrap: wrap;
-
-  > * {
-    min-width: 18rem;
-  }
 
   .text-box {
     flex: 2;
@@ -40,6 +35,15 @@ const sectionStyle = (theme: Theme) => css`
       &:hover > * {
         fill: ${theme.secondaryColor} !important;
       }
+    }
+  }
+
+  @media screen and (max-width: ${theme.breakpoints.small}) {
+    flex-direction: column;
+
+    .text-box svg {
+      transform: rotate(0);
+      margin-inline: auto;
     }
   }
 `;
