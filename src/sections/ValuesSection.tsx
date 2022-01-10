@@ -52,7 +52,7 @@ const sectionStyle = (theme: Theme) => css`
 
     aside {
       width: 100%;
-      margin-top: -6rem;
+      margin-top: -4rem;
     }
   }
 `;
@@ -79,6 +79,14 @@ const carouselStyle = (theme: Theme) => css`
 
   svg {
     height: 30rem;
+
+    @media screen and (max-width: ${theme.breakpoints.small}) {
+      height: 25rem;
+    }
+
+    @media screen and (max-width: ${theme.breakpoints.tiny}) {
+      height: 20rem;
+    }
   }
 `;
 
