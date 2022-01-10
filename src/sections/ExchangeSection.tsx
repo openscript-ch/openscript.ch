@@ -22,6 +22,14 @@ const sectionStyle = (theme: Theme) => css`
       text-align: center;
     }
   }
+
+  svg {
+    a {
+      &:hover > * {
+        fill: ${theme.secondaryColor} !important;
+      }
+    }
+  }
 `;
 
 type Props = {
