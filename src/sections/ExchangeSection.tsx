@@ -3,6 +3,7 @@ import { Markup } from 'interweave';
 import { IndexPageQuery } from '../../graphql-types';
 import { DividedSection } from '../components/DividedSection';
 import { ReactComponent as Logos } from '../../content/statics/logos.svg';
+import { Arrow } from '../layouts/default/Arrow';
 
 const sectionStyle = (theme: Theme) => css`
   display: flex;
@@ -17,13 +18,22 @@ const sectionStyle = (theme: Theme) => css`
   .text-box {
     background-color: ${theme.whiteColor};
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
 
     h2 {
       text-align: center;
     }
+
+    svg {
+      width: 4rem;
+      height: auto;
+      margin-top: auto;
+      margin-left: auto;
+    }
   }
 
-  svg {
+  > svg {
     a {
       &:hover > * {
         fill: ${theme.secondaryColor} !important;
@@ -44,6 +54,8 @@ export function ExchangeSection({ exchange }: Props) {
       <div className="text-box">
         <h2>{exchange?.frontmatter?.title}</h2>
         <Markup content={exchange?.html} />
+
+        <Arrow rotation={240} />
       </div>
       <Logos />
     </DividedSection>
