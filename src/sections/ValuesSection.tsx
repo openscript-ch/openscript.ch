@@ -5,10 +5,31 @@ import { ReactComponent as IllustrationGraphic } from '../../content/statics/ill
 import useEmblaCarousel from 'embla-carousel-react';
 import { IndexPageQuery } from '../../graphql-types';
 import { Markup } from 'interweave';
+import { Arrow } from '../layouts/default/Arrow';
 
 const sectionStyle = (theme: Theme) => css`
   display: flex;
   align-items: center;
+
+  button {
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+    &:first-child {
+      margin-right: 2rem;
+    }
+
+    &:last-child {
+      margin-left: 2rem;
+    }
+
+    svg {
+      width: 1.5rem;
+      height: auto;
+    }
+  }
 
   aside {
     display: flex;
@@ -23,7 +44,7 @@ const sectionStyle = (theme: Theme) => css`
 
     aside {
       width: 100%;
-      margin-top: -8rem;
+      margin-top: -6rem;
     }
   }
 `;
@@ -75,6 +96,9 @@ export function ValuesSection({ values }: Props) {
 
   return (
     <DividedSection upperColor={theme.backgroundColor} lowerColor={theme.whiteColor} css={sectionStyle}>
+      <button onClick={() => emblaApi?.scrollPrev()}>
+        <Arrow rotation={90} />
+      </button>
       <aside>
         <h2>{textBoxContents[selectedSnap]?.title}</h2>
         {textBoxContents[selectedSnap]?.text}
@@ -102,6 +126,9 @@ export function ValuesSection({ values }: Props) {
           </div>
         </div>
       </div>
+      <button onClick={() => emblaApi?.scrollNext()}>
+        <Arrow rotation={270} />
+      </button>
     </DividedSection>
   );
 }
