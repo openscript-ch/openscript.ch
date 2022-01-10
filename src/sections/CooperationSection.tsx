@@ -9,12 +9,19 @@ import { LocalizedLink } from '../../plugins/gatsby-plugin-i18n-l10n';
 const sectionStyle = (theme: Theme) => css`
   background-color: ${theme.whiteColor};
   display: flex;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: ${theme.breakpoints.medium}) {
+    gap: 0 2rem;
+  }
 
   div:nth-of-type(1),
   div:nth-of-type(3) {
     background-color: ${theme.backgroundColor};
-    width: 100%;
     padding: 2rem;
+    flex-grow: 1;
+    flex-basis: 0;
+    min-width: 10rem;
   }
 
   div:nth-of-type(2) {
@@ -23,6 +30,9 @@ const sectionStyle = (theme: Theme) => css`
     justify-content: flex-end;
 
     a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
     }
 
@@ -38,6 +48,15 @@ const sectionStyle = (theme: Theme) => css`
     &:hover {
       svg.cooperation-graphic {
         fill: ${theme.secondaryColor};
+      }
+    }
+
+    @media screen and (max-width: ${theme.breakpoints.medium}) {
+      order: 1;
+      min-width: 100%;
+
+      svg:first-of-type {
+        display: none;
       }
     }
   }
