@@ -1,4 +1,4 @@
-import { css, useTheme } from '@emotion/react';
+import { css, Theme, useTheme } from '@emotion/react';
 import { useState } from 'react';
 import { DividedSection } from '../components/DividedSection';
 import { ReactComponent as IllustrationGraphic } from '../../content/statics/illustration.svg';
@@ -6,7 +6,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { IndexPageQuery } from '../../graphql-types';
 import { Markup } from 'interweave';
 
-const sectionStyle = css`
+const sectionStyle = (theme: Theme) => css`
   display: flex;
   align-items: center;
 
@@ -17,13 +17,27 @@ const sectionStyle = css`
     width: 30%;
     z-index: 1;
   }
+
+  @media screen and (max-width: ${theme.breakpoints.medium}) {
+    flex-direction: column-reverse;
+
+    aside {
+      width: 100%;
+      margin-top: -8rem;
+    }
+  }
 `;
 
-const carouselStyle = css`
+const carouselStyle = (theme: Theme) => css`
   overflow: hidden;
   width: calc(70% + 10rem);
   mask-image: radial-gradient(closest-side, rgba(0, 0, 0, 1) 20%, transparent);
   margin-left: -10rem;
+
+  @media screen and (max-width: ${theme.breakpoints.medium}) {
+    width: 100%;
+    margin: 0;
+  }
 
   .carousel-container {
     display: flex;
