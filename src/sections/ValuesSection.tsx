@@ -31,16 +31,24 @@ const sectionStyle = (theme: Theme) => css`
     }
   }
 
+  .slider-content {
+    display: flex;
+    min-width: 0;
+  }
+
   aside {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-block: auto;
     width: 30%;
     z-index: 1;
   }
 
   @media screen and (max-width: ${theme.breakpoints.medium}) {
-    flex-direction: column-reverse;
+    .slider-content {
+      flex-direction: column-reverse;
+    }
 
     aside {
       width: 100%;
@@ -99,30 +107,32 @@ export function ValuesSection({ values }: Props) {
       <button onClick={() => emblaApi?.scrollPrev()}>
         <Arrow rotation={90} />
       </button>
-      <aside>
-        <h2>{textBoxContents[selectedSnap]?.title}</h2>
-        {textBoxContents[selectedSnap]?.text}
-      </aside>
+      <div className="slider-content">
+        <aside>
+          <h2>{textBoxContents[selectedSnap]?.title}</h2>
+          {textBoxContents[selectedSnap]?.text}
+        </aside>
 
-      <div css={carouselStyle} ref={emblaRef}>
-        <div className="carousel-container">
-          <div className="carousel-slide">
-            <IllustrationGraphic viewBox="0 0 1077.833333333 1080" />
-          </div>
-          <div className="carousel-slide">
-            <IllustrationGraphic viewBox="1077.833333333 0 1077.833333333 1080" />
-          </div>
-          <div className="carousel-slide">
-            <IllustrationGraphic viewBox="2155.666666666 0 1077.833333333 1080" />
-          </div>
-          <div className="carousel-slide">
-            <IllustrationGraphic viewBox="0 0 1077.833333333 1080" />
-          </div>
-          <div className="carousel-slide">
-            <IllustrationGraphic viewBox="1077.833333333 0 1077.833333333 1080" />
-          </div>
-          <div className="carousel-slide">
-            <IllustrationGraphic viewBox="2155.666666666 0 1077.833333333 1080" />
+        <div css={carouselStyle} ref={emblaRef}>
+          <div className="carousel-container">
+            <div className="carousel-slide">
+              <IllustrationGraphic viewBox="0 0 1077.833333333 1080" />
+            </div>
+            <div className="carousel-slide">
+              <IllustrationGraphic viewBox="1077.833333333 0 1077.833333333 1080" />
+            </div>
+            <div className="carousel-slide">
+              <IllustrationGraphic viewBox="2155.666666666 0 1077.833333333 1080" />
+            </div>
+            <div className="carousel-slide">
+              <IllustrationGraphic viewBox="0 0 1077.833333333 1080" />
+            </div>
+            <div className="carousel-slide">
+              <IllustrationGraphic viewBox="1077.833333333 0 1077.833333333 1080" />
+            </div>
+            <div className="carousel-slide">
+              <IllustrationGraphic viewBox="2155.666666666 0 1077.833333333 1080" />
+            </div>
           </div>
         </div>
       </div>
