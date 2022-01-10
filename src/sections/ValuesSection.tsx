@@ -80,15 +80,7 @@ const carouselStyle = (theme: Theme) => css`
   }
 
   svg {
-    height: 30rem;
-
-    @media screen and (max-width: ${theme.breakpoints.small}) {
-      height: 25rem;
-    }
-
-    @media screen and (max-width: ${theme.breakpoints.tiny}) {
-      height: 20rem;
-    }
+    height: clamp(20rem, 30vw, 30rem);
   }
 `;
 
