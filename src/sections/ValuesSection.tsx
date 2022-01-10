@@ -15,13 +15,15 @@ const sectionStyle = css`
     flex-direction: column;
     justify-content: center;
     width: 30%;
+    z-index: 1;
   }
 `;
 
 const carouselStyle = css`
   overflow: hidden;
-  width: 70%;
-  mask-image: radial-gradient(closest-side, rgba(0, 0, 0, 1) 70%, transparent);
+  width: calc(70% + 10rem);
+  mask-image: radial-gradient(closest-side, rgba(0, 0, 0, 1) 20%, transparent);
+  margin-left: -10rem;
 
   .carousel-container {
     display: flex;
@@ -43,7 +45,7 @@ type Props = {
 
 export function ValuesSection({ values }: Props) {
   const theme = useTheme();
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, dragFree: false });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
   const [selectedSnap, setSelectedSnap] = useState(0);
 
