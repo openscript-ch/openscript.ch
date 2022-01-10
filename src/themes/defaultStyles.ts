@@ -129,6 +129,8 @@ export const defaultStyles = (theme: Theme) => css`
 
   a {
     text-decoration: none;
+    color: ${theme.blackColor};
+    font-weight: 700;
 
     &:hover {
       color: ${theme.secondaryColor};

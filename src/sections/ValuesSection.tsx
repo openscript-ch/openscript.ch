@@ -6,6 +6,8 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { IndexPageQuery } from '../../graphql-types';
 import { Markup } from 'interweave';
 import { Arrow } from '../layouts/default/Arrow';
+import { LocalizedLink } from '../../plugins/gatsby-plugin-i18n-l10n';
+import { useIntl } from 'react-intl';
 
 const sectionStyle = (theme: Theme) => css`
   display: flex;
@@ -98,10 +100,13 @@ export function ValuesSection({ values }: Props) {
   const theme = useTheme();
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
+  const { formatMessage } = useIntl();
+
   const [selectedSnap, setSelectedSnap] = useState(0);
 
-  const textBoxContents: { title?: string | null; text?: JSX.Element }[] = values.nodes.map(node => ({
+  const textBoxContents: { title?: string | null; link?: string | null; text?: JSX.Element }[] = values.nodes.map(node => ({
     title: node.frontmatter?.title,
+    link: node.frontmatter?.link,
     text: <Markup content={node.html} />,
   }));
   emblaApi?.scrollSnapList();
@@ -119,6 +124,9 @@ export function ValuesSection({ values }: Props) {
         <aside>
           <h2>{textBoxContents[selectedSnap]?.title}</h2>
           {textBoxContents[selectedSnap]?.text}
+          <LocalizedLink to={textBoxContents[selectedSnap].link ?? ''}>
+            {formatMessage({ id: 'action.learnMore' })} <Arrow rotation={270} />
+          </LocalizedLink>
         </aside>
 
         <div css={carouselStyle} ref={emblaRef}>

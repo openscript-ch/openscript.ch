@@ -667,6 +667,7 @@ export enum FileFieldsEnum {
   ChildMarkdownRemarkFieldsTranslationsLocale = 'childMarkdownRemark___fields___translations___locale',
   ChildMarkdownRemarkFieldsTranslationsPath = 'childMarkdownRemark___fields___translations___path',
   ChildMarkdownRemarkFileAbsolutePath = 'childMarkdownRemark___fileAbsolutePath',
+  ChildMarkdownRemarkFrontmatterLink = 'childMarkdownRemark___frontmatter___link',
   ChildMarkdownRemarkFrontmatterTitle = 'childMarkdownRemark___frontmatter___title',
   ChildMarkdownRemarkHeadings = 'childMarkdownRemark___headings',
   ChildMarkdownRemarkHeadingsDepth = 'childMarkdownRemark___headings___depth',
@@ -803,6 +804,7 @@ export enum FileFieldsEnum {
   ChildrenMarkdownRemarkFieldsTranslationsLocale = 'childrenMarkdownRemark___fields___translations___locale',
   ChildrenMarkdownRemarkFieldsTranslationsPath = 'childrenMarkdownRemark___fields___translations___path',
   ChildrenMarkdownRemarkFileAbsolutePath = 'childrenMarkdownRemark___fileAbsolutePath',
+  ChildrenMarkdownRemarkFrontmatterLink = 'childrenMarkdownRemark___frontmatter___link',
   ChildrenMarkdownRemarkFrontmatterTitle = 'childrenMarkdownRemark___frontmatter___title',
   ChildrenMarkdownRemarkHeadings = 'childrenMarkdownRemark___headings',
   ChildrenMarkdownRemarkHeadingsDepth = 'childrenMarkdownRemark___headings___depth',
@@ -1781,6 +1783,7 @@ export enum MarkdownRemarkFieldsEnum {
   FieldsTranslationsLocale = 'fields___translations___locale',
   FieldsTranslationsPath = 'fields___translations___path',
   FileAbsolutePath = 'fileAbsolutePath',
+  FrontmatterLink = 'frontmatter___link',
   FrontmatterTitle = 'frontmatter___title',
   Headings = 'headings',
   HeadingsDepth = 'headings___depth',
@@ -1893,10 +1896,12 @@ export type MarkdownRemarkFilterListInput = {
 
 export type MarkdownRemarkFrontmatter = {
   __typename?: 'MarkdownRemarkFrontmatter';
+  link?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
 };
 
 export type MarkdownRemarkFrontmatterFilterInput = {
+  link?: InputMaybe<StringQueryOperatorInput>;
   title?: InputMaybe<StringQueryOperatorInput>;
 };
 
@@ -3561,7 +3566,7 @@ export type IndexPageQueryVariables = Exact<{
 }>;
 
 
-export type IndexPageQuery = { __typename?: 'Query', values: { __typename?: 'MarkdownRemarkConnection', nodes: Array<{ __typename?: 'MarkdownRemark', html?: string | null | undefined, frontmatter?: { __typename?: 'MarkdownRemarkFrontmatter', title?: string | null | undefined } | null | undefined }> } };
+export type IndexPageQuery = { __typename?: 'Query', values: { __typename?: 'MarkdownRemarkConnection', nodes: Array<{ __typename?: 'MarkdownRemark', html?: string | null | undefined, frontmatter?: { __typename?: 'MarkdownRemarkFrontmatter', title?: string | null | undefined, link?: string | null | undefined } | null | undefined }> } };
 
 export type GenericPageQueryVariables = Exact<{
   id: Scalars['String'];
