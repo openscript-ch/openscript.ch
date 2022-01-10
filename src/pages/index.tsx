@@ -30,7 +30,7 @@ export const query = graphql`
         }
       }
     }
-    exchange: markdownRemark(fields: { kind: { eq: "sections/exchange" }, locale: { eq: "de-CH" } }) {
+    exchange: markdownRemark(fields: { kind: { eq: "sections/exchange" }, locale: { eq: $locale } }) {
       html
       frontmatter {
         title
