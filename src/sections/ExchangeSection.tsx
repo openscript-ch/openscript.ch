@@ -11,11 +11,11 @@ const sectionStyle = (theme: Theme) => css`
   flex-wrap: wrap;
 
   > * {
-    flex: 1;
-    min-width: 20rem;
+    min-width: 18rem;
   }
 
   .text-box {
+    flex: 2;
     background-color: ${theme.whiteColor};
     padding: 1rem;
     display: flex;
@@ -34,6 +34,8 @@ const sectionStyle = (theme: Theme) => css`
   }
 
   > svg {
+    flex: 3;
+    max-height: 20rem;
     a {
       &:hover > * {
         fill: ${theme.secondaryColor} !important;
