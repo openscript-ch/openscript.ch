@@ -72,6 +72,8 @@ export const defaultStyles = (theme: Theme) => css`
 
   * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
 
   html {
@@ -118,6 +120,11 @@ export const defaultStyles = (theme: Theme) => css`
   h5,
   h6 {
     font-family: ${theme.fonts.headings};
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin-bottom: 0.5rem;
   }
 
   a {
