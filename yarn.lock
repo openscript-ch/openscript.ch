@@ -6774,6 +6774,11 @@ elegant-spinner@^1.0.1:
   resolved "https://registry.yarnpkg.com/elegant-spinner/-/elegant-spinner-1.0.1.tgz#db043521c95d7e303fd8f345bedc3349cfb0729e"
   integrity sha1-2wQ1IcldfjA/2PNFvtwzSc+wcp4=
 
+embla-carousel-autoplay@^6.0.2:
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/embla-carousel-autoplay/-/embla-carousel-autoplay-6.0.2.tgz#cfd49ed70b3f0b89d53fe371ef98c7f9d29753cf"
+  integrity sha512-S9R0GoX0D+fuKwtl6ITSSYYO2dE0eT7nQ0vhKojEBcW5sW048vLPGaZttm2Xsm52YsyaFmAmd59nseTx7n/3Gg==
+
 embla-carousel-react@^6.0.2:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/embla-carousel-react/-/embla-carousel-react-6.0.2.tgz#86de4481f949d1bf003d2c071cac135e3e7f01b5"

@@ -1,13 +1,15 @@
-import { css, Theme, useTheme } from '@emotion/react';
+import React from 'react';
 import { useState } from 'react';
+import { useIntl } from 'react-intl';
+import { css, Theme, useTheme } from '@emotion/react';
 import { DividedSection } from '../components/DividedSection';
 import { ReactComponent as IllustrationGraphic } from '../../content/statics/illustration.svg';
 import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 import { IndexPageQuery } from '../../graphql-types';
 import { Markup } from 'interweave';
 import { Arrow } from '../layouts/default/Arrow';
 import { LocalizedLink } from '../../plugins/gatsby-plugin-i18n-l10n';
-import { useIntl } from 'react-intl';
 
 const sectionStyle = (theme: Theme) => css`
   display: flex;
@@ -90,7 +92,9 @@ type Props = {
 
 export function ValuesSection({ values }: Props) {
   const theme = useTheme();
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+
+  const autoplay = React.useRef(Autoplay({ delay: 4000, stopOnInteraction: false }, emblaRoot => emblaRoot.parentElement));
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [autoplay.current]);
 
   const { formatMessage } = useIntl();
 
