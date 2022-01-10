@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-pages-index-tsx",
     "path": "/",
-    "result": {"data":{"values":{"nodes":[{"html":"<p>We take pragmatic approaches and sometimes go unconventional.</p>","frontmatter":{"title":"Adaptability"}},{"html":"<p>We approach projects like friends.</p>","frontmatter":{"title":"Companionship"}},{"html":"<p>We look for sustainability in cooperation and projects.</p>","frontmatter":{"title":"Sustainability"}}]}},"pageContext":{"locale":"en-US","translations":[{"locale":"de-CH","path":"/de"}],"prefix":"en"}},
+    "result": {"data":{"values":{"nodes":[{"html":"<p>We take pragmatic approaches and sometimes go unconventional.</p>","frontmatter":{"title":"Adaptability","link":"/adaptability"}},{"html":"<p>We approach projects like friends.</p>","frontmatter":{"title":"Companionship","link":"/companionship"}},{"html":"<p>We look for sustainability in cooperation and projects.</p>","frontmatter":{"title":"Sustainability","link":"/sustainability"}}]}},"pageContext":{"locale":"en-US","translations":[{"locale":"de-CH","path":"/de"}],"prefix":"en"}},
     "staticQueryHashes": ["1256713454","1770277726"]}
