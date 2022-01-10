@@ -12,7 +12,7 @@ export default function IndexPage({ data }: PageProps<IndexPageQuery, SitePageCo
     <DefaultLayout>
       <ValuesSection values={data.values} />
       <CooperationSection you={data.cooperationYou} us={data.cooperationUs} />
-      <ExchangeSection>Exchange Section</ExchangeSection>
+      <ExchangeSection exchange={data.exchange} />
       <ReferencesSection>References Section</ReferencesSection>
       <section>FAQ Section</section>
     </DefaultLayout>
@@ -41,6 +41,12 @@ export const query = graphql`
         title
       }
       html
+    }
+    exchange: markdownRemark(fields: { kind: { eq: "sections/exchange" }, locale: { eq: $locale } }) {
+      html
+      frontmatter {
+        title
+      }
     }
   }
 `;
