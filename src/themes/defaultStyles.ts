@@ -120,7 +120,7 @@ export const defaultStyles = (theme: Theme) => css`
   h5,
   h6 {
     font-family: ${theme.fonts.headings};
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
 
   p {
