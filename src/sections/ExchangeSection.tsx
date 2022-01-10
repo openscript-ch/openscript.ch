@@ -8,14 +8,9 @@ import { Arrow } from '../layouts/default/Arrow';
 const sectionStyle = (theme: Theme) => css`
   display: flex;
   gap: 1rem;
-  flex-wrap: wrap;
-
-  > * {
-    flex: 1;
-    min-width: 20rem;
-  }
 
   .text-box {
+    flex: 2;
     background-color: ${theme.whiteColor};
     padding: 1rem;
     display: flex;
@@ -34,10 +29,21 @@ const sectionStyle = (theme: Theme) => css`
   }
 
   > svg {
+    flex: 3;
+    max-height: 20rem;
     a {
       &:hover > * {
         fill: ${theme.secondaryColor} !important;
       }
+    }
+  }
+
+  @media screen and (max-width: ${theme.breakpoints.small}) {
+    flex-direction: column;
+
+    .text-box svg {
+      transform: rotate(0);
+      margin-inline: auto;
     }
   }
 `;
