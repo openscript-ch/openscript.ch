@@ -667,6 +667,7 @@ export enum FileFieldsEnum {
   ChildMarkdownRemarkFieldsTranslationsLocale = 'childMarkdownRemark___fields___translations___locale',
   ChildMarkdownRemarkFieldsTranslationsPath = 'childMarkdownRemark___fields___translations___path',
   ChildMarkdownRemarkFileAbsolutePath = 'childMarkdownRemark___fileAbsolutePath',
+  ChildMarkdownRemarkFrontmatterAnsweredBy = 'childMarkdownRemark___frontmatter___answeredBy',
   ChildMarkdownRemarkFrontmatterLink = 'childMarkdownRemark___frontmatter___link',
   ChildMarkdownRemarkFrontmatterTitle = 'childMarkdownRemark___frontmatter___title',
   ChildMarkdownRemarkHeadings = 'childMarkdownRemark___headings',
@@ -804,6 +805,7 @@ export enum FileFieldsEnum {
   ChildrenMarkdownRemarkFieldsTranslationsLocale = 'childrenMarkdownRemark___fields___translations___locale',
   ChildrenMarkdownRemarkFieldsTranslationsPath = 'childrenMarkdownRemark___fields___translations___path',
   ChildrenMarkdownRemarkFileAbsolutePath = 'childrenMarkdownRemark___fileAbsolutePath',
+  ChildrenMarkdownRemarkFrontmatterAnsweredBy = 'childrenMarkdownRemark___frontmatter___answeredBy',
   ChildrenMarkdownRemarkFrontmatterLink = 'childrenMarkdownRemark___frontmatter___link',
   ChildrenMarkdownRemarkFrontmatterTitle = 'childrenMarkdownRemark___frontmatter___title',
   ChildrenMarkdownRemarkHeadings = 'childrenMarkdownRemark___headings',
@@ -1783,6 +1785,7 @@ export enum MarkdownRemarkFieldsEnum {
   FieldsTranslationsLocale = 'fields___translations___locale',
   FieldsTranslationsPath = 'fields___translations___path',
   FileAbsolutePath = 'fileAbsolutePath',
+  FrontmatterAnsweredBy = 'frontmatter___answeredBy',
   FrontmatterLink = 'frontmatter___link',
   FrontmatterTitle = 'frontmatter___title',
   Headings = 'headings',
@@ -1896,11 +1899,13 @@ export type MarkdownRemarkFilterListInput = {
 
 export type MarkdownRemarkFrontmatter = {
   __typename?: 'MarkdownRemarkFrontmatter';
+  answeredBy?: Maybe<Scalars['String']>;
   link?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
 };
 
 export type MarkdownRemarkFrontmatterFilterInput = {
+  answeredBy?: InputMaybe<StringQueryOperatorInput>;
   link?: InputMaybe<StringQueryOperatorInput>;
   title?: InputMaybe<StringQueryOperatorInput>;
 };
@@ -3566,7 +3571,7 @@ export type IndexPageQueryVariables = Exact<{
 }>;
 
 
-export type IndexPageQuery = { __typename?: 'Query', values: { __typename?: 'MarkdownRemarkConnection', nodes: Array<{ __typename?: 'MarkdownRemark', html?: string | null | undefined, frontmatter?: { __typename?: 'MarkdownRemarkFrontmatter', title?: string | null | undefined, link?: string | null | undefined } | null | undefined }> }, cooperationYou?: { __typename?: 'MarkdownRemark', html?: string | null | undefined, frontmatter?: { __typename?: 'MarkdownRemarkFrontmatter', title?: string | null | undefined } | null | undefined } | null | undefined, cooperationUs?: { __typename?: 'MarkdownRemark', html?: string | null | undefined, frontmatter?: { __typename?: 'MarkdownRemarkFrontmatter', title?: string | null | undefined } | null | undefined } | null | undefined, exchange?: { __typename?: 'MarkdownRemark', html?: string | null | undefined, frontmatter?: { __typename?: 'MarkdownRemarkFrontmatter', title?: string | null | undefined } | null | undefined } | null | undefined };
+export type IndexPageQuery = { __typename?: 'Query', values: { __typename?: 'MarkdownRemarkConnection', nodes: Array<{ __typename?: 'MarkdownRemark', html?: string | null | undefined, frontmatter?: { __typename?: 'MarkdownRemarkFrontmatter', title?: string | null | undefined, link?: string | null | undefined } | null | undefined }> }, cooperationYou?: { __typename?: 'MarkdownRemark', html?: string | null | undefined, frontmatter?: { __typename?: 'MarkdownRemarkFrontmatter', title?: string | null | undefined } | null | undefined } | null | undefined, cooperationUs?: { __typename?: 'MarkdownRemark', html?: string | null | undefined, frontmatter?: { __typename?: 'MarkdownRemarkFrontmatter', title?: string | null | undefined } | null | undefined } | null | undefined, exchange?: { __typename?: 'MarkdownRemark', html?: string | null | undefined, frontmatter?: { __typename?: 'MarkdownRemarkFrontmatter', title?: string | null | undefined } | null | undefined } | null | undefined, questions: { __typename?: 'MarkdownRemarkConnection', nodes: Array<{ __typename?: 'MarkdownRemark', html?: string | null | undefined, frontmatter?: { __typename?: 'MarkdownRemarkFrontmatter', title?: string | null | undefined, answeredBy?: string | null | undefined } | null | undefined }> } };
 
 export type GenericPageQueryVariables = Exact<{
   id: Scalars['String'];
