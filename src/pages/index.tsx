@@ -14,7 +14,7 @@ export default function IndexPage({ data }: PageProps<IndexPageQuery, SitePageCo
       <ValuesSection values={data.values} />
       <CooperationSection you={data.cooperationYou} us={data.cooperationUs} />
       <ExchangeSection exchange={data.exchange} />
-      <ReferencesSection>References Section</ReferencesSection>
+      <ReferencesSection softwareReferences={data.softwareReferences} />
       <QuestionsSection questions={data.questions} />
     </DefaultLayout>
   );
@@ -55,6 +55,17 @@ export const query = graphql`
         frontmatter {
           title
           answeredBy
+        }
+      }
+    }
+    softwareReferences: allMarkdownRemark(filter: { fields: { locale: { eq: $locale }, kind: { eq: "sections/references/software" } } }) {
+      nodes {
+        html
+        frontmatter {
+          title
+          icon {
+            publicURL
+          }
         }
       }
     }
