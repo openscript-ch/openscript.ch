@@ -94,6 +94,10 @@ export const defaultStyles = (theme: Theme) => css`
     background-color: ${theme.backgroundColor};
   }
 
+  main {
+    hyphens: auto;
+  }
+
   main section,
   footer {
     padding: 0 20%;
