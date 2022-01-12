@@ -1,4 +1,5 @@
-import { Theme } from '@emotion/react';
+import { css, Theme } from '@emotion/react';
+import { convertThemeToCSSVariables } from './helper';
 
 export const defaultTheme: Theme = {
   primaryColor: '#539350',
@@ -20,3 +21,30 @@ export const defaultTheme: Theme = {
     huge: '2560px',
   },
 };
+
+export const cssVariables: Theme = {
+  primaryColor: '--primary-color',
+  secondaryColor: '--secondary-color',
+  backgroundColor: '--background-color',
+  blackColor: '--black-color',
+  whiteColor: '--white-color',
+  darkerSibling: '--darker-sibling',
+  brighterSibling: '--brighter-sibling',
+  fonts: {
+    general: '--fonts-general',
+    headings: '--fonts-headings',
+  },
+  breakpoints: {
+    tiny: '--breakpoints-tiny',
+    small: '--breakpoints-small',
+    medium: '--breakpoints-medium',
+    big: '--breakpoints-big',
+    huge: '--breakpoints-huge',
+  },
+};
+
+export const defaultCSSVariables = css`
+  :root {
+    ${convertThemeToCSSVariables(defaultTheme)}
+  }
+`;

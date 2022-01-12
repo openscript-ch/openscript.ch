@@ -19,8 +19,11 @@ import {
   TwoMASSJ1808NormalWOFF,
   TwoMASSJ1808NormalWOFF2,
 } from '../fonts/fonts';
+import { defaultCSSVariables } from './defaultTheme';
 
 export const defaultStyles = (theme: Theme) => css`
+  ${defaultCSSVariables}
+
   @font-face {
     font-family: '2MASS J1808';
     src: url(${TwoMASSJ1808NormalWOFF2}) format('woff2'), url(${TwoMASSJ1808NormalWOFF}) format('woff'),

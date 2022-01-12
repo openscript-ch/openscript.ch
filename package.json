@@ -14,6 +14,7 @@
     "@svgr/webpack": "^6.1.2",
     "embla-carousel-autoplay": "^6.0.2",
     "embla-carousel-react": "^6.0.2",
+    "fast-case": "^1.6.0",
     "gatsby": "^4.4.0",
     "gatsby-plugin-emotion": "^7.4.0",
     "gatsby-plugin-image": "^2.4.0",
