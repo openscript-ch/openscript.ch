@@ -32,6 +32,7 @@ const sectionStyle = (theme: Theme) => css`
 
   .slider-content {
     display: flex;
+    flex: 1;
     min-width: 0;
   }
 
