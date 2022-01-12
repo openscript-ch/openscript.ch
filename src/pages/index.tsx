@@ -13,7 +13,7 @@ export default function IndexPage({ data }: PageProps<IndexPageQuery, SitePageCo
       <ValuesSection values={data.values} />
       <CooperationSection you={data.cooperationYou} us={data.cooperationUs} />
       <ExchangeSection exchange={data.exchange} />
-      <ReferencesSection softwareReferences={data.softwareReferences} />
+      <ReferencesSection softwareReferences={data.softwareReferences} companyReferences={data.companyReferences} />
       <section>FAQ Section</section>
     </DefaultLayout>
   );
@@ -57,6 +57,18 @@ export const query = graphql`
             publicURL
           }
         }
+      }
+    }
+    companyReferences: allMarkdownRemark(filter: { fields: { kind: { eq: "sections/references/companies" } } }) {
+      nodes {
+        frontmatter {
+          title
+          logo {
+            publicURL
+          }
+          link
+        }
+        html
       }
     }
   }
