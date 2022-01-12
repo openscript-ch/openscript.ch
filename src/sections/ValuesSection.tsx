@@ -16,11 +16,6 @@ const sectionStyle = (theme: Theme) => css`
   align-items: center;
 
   button {
-    background: none;
-    outline: none;
-    border: none;
-    cursor: pointer;
-
     &:first-child {
       margin-right: 2rem;
     }

@@ -2,11 +2,6 @@ import { css, Theme } from '@emotion/react';
 
 const burgerButtonStyles = (theme: Theme) => css`
   width: 2.5rem;
-  border: none;
-  outline: none;
-  background: none;
-  padding: 0;
-  cursor: pointer;
   position: relative;
   height: 2rem;
   width: 3rem;

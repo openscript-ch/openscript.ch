@@ -4,8 +4,28 @@ import { useRef } from 'react';
 import { IndexPageQuery } from '../../graphql-types';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
+import { Arrow } from '../layouts/default/Arrow';
+import { useIntl } from 'react-intl';
 
-const sectionStyle = (theme: Theme) => css``;
+const sectionStyle = (theme: Theme) => css`
+  .navigation-row {
+    display: flex;
+    gap: 1rem;
+
+    > div {
+      flex: 1;
+
+      button {
+        margin-left: auto;
+      }
+
+      &:first-child {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+`;
 
 const carouselStyle = (theme: Theme) => css`
   overflow: hidden;
@@ -52,6 +72,8 @@ type Props = {
 };
 
 export function QuestionsSection({ questions }: Props) {
+  const { formatMessage } = useIntl();
+
   const autoplay = useRef(Autoplay({ delay: 8000, stopOnInteraction: false }, emblaRoot => emblaRoot.parentElement));
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, axis: 'y' }, [autoplay.current]);
 
@@ -68,6 +90,19 @@ export function QuestionsSection({ questions }: Props) {
               <span>– {q.frontmatter?.answeredBy} –</span>
             </div>
           ))}
+        </div>
+      </div>
+      <div className="navigation-row">
+        <div>
+          <button className="link-button" onClick={() => emblaApi?.scrollPrev()}>
+            <Arrow rotation={180} /> {formatMessage({ id: 'action.previous' })}
+          </button>
+        </div>
+        |
+        <div>
+          <button className="link-button" onClick={() => emblaApi?.scrollNext()}>
+            {formatMessage({ id: 'action.next' })} <Arrow />
+          </button>
         </div>
       </div>
     </section>

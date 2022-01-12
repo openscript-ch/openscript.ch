@@ -133,7 +133,16 @@ export const defaultStyles = (theme: Theme) => css`
     margin-bottom: 0.5rem;
   }
 
-  a {
+  button {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    min-width: 0;
+  }
+
+  a,
+  button {
     text-decoration: none;
     color: ${theme.blackColor};
     font-weight: 700;
