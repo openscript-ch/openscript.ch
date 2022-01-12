@@ -6,6 +6,7 @@ import { CooperationSection } from '../sections/CooperationSection';
 import { ExchangeSection } from '../sections/ExchangeSection';
 import { ReferencesSection } from '../sections/ReferencesSection';
 import { ValuesSection } from '../sections/ValuesSection';
+import { QuestionsSection } from '../sections/QuestionsSection';
 
 export default function IndexPage({ data }: PageProps<IndexPageQuery, SitePageContext>) {
   return (
@@ -14,7 +15,7 @@ export default function IndexPage({ data }: PageProps<IndexPageQuery, SitePageCo
       <CooperationSection you={data.cooperationYou} us={data.cooperationUs} />
       <ExchangeSection exchange={data.exchange} />
       <ReferencesSection softwareReferences={data.softwareReferences} companyReferences={data.companyReferences} />
-      <section>FAQ Section</section>
+      <QuestionsSection questions={data.questions} />
     </DefaultLayout>
   );
 }
@@ -46,6 +47,15 @@ export const query = graphql`
       html
       frontmatter {
         title
+      }
+    }
+    questions: allMarkdownRemark(filter: { fields: { locale: { eq: $locale }, kind: { eq: "sections/questions" } } }) {
+      nodes {
+        html
+        frontmatter {
+          title
+          answeredBy
+        }
       }
     }
     softwareReferences: allMarkdownRemark(filter: { fields: { locale: { eq: $locale }, kind: { eq: "sections/references/software" } } }) {

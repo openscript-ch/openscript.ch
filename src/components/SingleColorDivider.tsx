@@ -17,9 +17,11 @@ export function SingleColorDivider({ flipVertically, flipHorizontally, upperColo
         z-index: 10;
         transform: scaleY(${flipVertically ? '-1' : '1'}) scaleX(${flipHorizontally ? '-1' : '1'});
         background-color: ${flipVertically ? lowerColor : upperColor};
+        margin-bottom: -1px; // anti aliasing bottom gap fix
 
         path:nth-of-type(1) {
           fill: ${flipVertically ? upperColor : lowerColor};
+          transform: translateY(1px); // anti aliasing bottom gap fix
         }
       `}
     />

@@ -1,4 +1,4 @@
-import React from 'react';
+import { useRef } from 'react';
 import { useState } from 'react';
 import { useIntl } from 'react-intl';
 import { css, Theme, useTheme } from '@emotion/react';
@@ -93,7 +93,7 @@ type Props = {
 export function ValuesSection({ values }: Props) {
   const theme = useTheme();
 
-  const autoplay = React.useRef(Autoplay({ delay: 4000, stopOnInteraction: false }, emblaRoot => emblaRoot.parentElement));
+  const autoplay = useRef(Autoplay({ delay: 4000, stopOnInteraction: false }, emblaRoot => emblaRoot.parentElement));
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [autoplay.current]);
 
   const { formatMessage } = useIntl();
