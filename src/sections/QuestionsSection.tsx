@@ -65,7 +65,7 @@ export function QuestionsSection({ questions }: Props) {
               <blockquote>
                 <Markup content={q.html} />
               </blockquote>
-              <span>{q.frontmatter?.answeredBy}</span>
+              <span>– {q.frontmatter?.answeredBy} –</span>
             </div>
           ))}
         </div>
