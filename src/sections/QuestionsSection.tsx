@@ -82,8 +82,8 @@ export function QuestionsSection({ questions }: Props) {
       </button>
       <div css={carouselStyle} ref={emblaRef}>
         <div className="carousel-container">
-          {questions.nodes.map(q => (
-            <div className="carousel-slide">
+          {questions.nodes.map((q, i) => (
+            <div className="carousel-slide" key={q.frontmatter?.title || i}>
               <h2>{q.frontmatter?.title}</h2>
               <blockquote>
                 <Markup content={q.html} />

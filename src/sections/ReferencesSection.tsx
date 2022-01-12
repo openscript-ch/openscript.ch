@@ -61,8 +61,8 @@ export function ReferencesSection({ softwareReferences, companyReferences }: Pro
   return (
     <DividedSection upperColor={theme.whiteColor} lowerColor={theme.backgroundColor} flipVertically css={sectionStyle}>
       <div className="software-references">
-        {softwareReferences.nodes.map(reference => (
-          <div className="reference-box">
+        {softwareReferences.nodes.map((reference, i) => (
+          <div className="reference-box" key={reference.frontmatter?.title || i}>
             <img src={reference.frontmatter?.icon?.publicURL ?? ''} alt={reference.frontmatter?.title ?? ''} />
             <h3>{reference.frontmatter?.title}</h3>
             <Markup content={reference.html} />
@@ -71,8 +71,8 @@ export function ReferencesSection({ softwareReferences, companyReferences }: Pro
       </div>
 
       <div className="company-references">
-        {companyReferences.nodes.map(reference => (
-          <a href={reference.frontmatter?.link ?? ''} target="_blank">
+        {companyReferences.nodes.map((reference, i) => (
+          <a href={reference.frontmatter?.link ?? ''} target="_blank" key={reference.frontmatter?.title || i}>
             <img src={reference.frontmatter?.logo?.publicURL ?? ''} alt={reference.html?.toString()} />
             <Markup content={reference.html} />
           </a>
