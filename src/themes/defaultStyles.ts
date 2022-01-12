@@ -114,7 +114,6 @@ export const defaultStyles = (theme: Theme) => css`
   main section {
     padding-top: 5rem;
     padding-bottom: 5rem;
-    min-height: 30rem;
   }
 
   h1 {

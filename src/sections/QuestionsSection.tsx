@@ -13,6 +13,7 @@ const carouselStyle = (theme: Theme) => css`
   display: flex;
 
   .carousel-container {
+    height: 20rem;
   }
 
   .carousel-slide {
@@ -22,6 +23,23 @@ const carouselStyle = (theme: Theme) => css`
     justify-content: center;
     position: relative;
     height: 100%;
+
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '"';
+      position: absolute;
+      font-size: 4rem;
+    }
+
+    &::before {
+      inset: 0 auto auto 0;
+    }
+
+    &::after {
+      inset: auto 0 0 auto;
+    }
 
     h2 {
       text-align: center;
