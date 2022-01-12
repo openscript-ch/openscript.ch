@@ -121,6 +121,10 @@ export const defaultStyles = (theme: Theme) => css`
     padding-bottom: 5rem;
   }
 
+  footer {
+    padding-block: 1rem;
+  }
+
   h1 {
     font-family: ${theme.fonts.headings};
   }
