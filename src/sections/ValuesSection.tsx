@@ -16,12 +16,12 @@ const sectionStyle = (theme: Theme) => css`
   align-items: center;
 
   button {
-    &:first-child {
-      margin-right: 2rem;
+    &:first-of-type {
+      margin-right: var(${theme.variables.gutter});
     }
 
-    &:last-child {
-      margin-left: 2rem;
+    &:last-of-type {
+      margin-left: var(${theme.variables.gutter});
     }
 
     svg {

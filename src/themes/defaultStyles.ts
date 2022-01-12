@@ -89,7 +89,7 @@ export const defaultStyles = (theme: Theme) => css`
   #gatsby-focus-wrapper,
   main {
     margin: 0;
-    font-size: 14px;
+    font-size: 16px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -125,7 +125,7 @@ export const defaultStyles = (theme: Theme) => css`
   }
 
   footer {
-    padding-block: 1rem;
+    padding-block: var(${theme.variables.gutter});
   }
 
   h1 {

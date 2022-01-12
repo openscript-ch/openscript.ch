@@ -10,7 +10,7 @@ import { useIntl } from 'react-intl';
 const sectionStyle = (theme: Theme) => css`
   .navigation-row {
     display: flex;
-    gap: 1rem;
+    gap: var(${theme.variables.gutter});
 
     > div {
       flex: 1;
@@ -93,20 +93,20 @@ export function QuestionsSection({ questions }: Props) {
               <blockquote>
                 <Markup content={q.html} />
               </blockquote>
-              <span>– {q.frontmatter?.answeredBy} –</span>
+              <span className="author">&mdash; {q.frontmatter?.answeredBy}</span>
             </div>
           ))}
         </div>
       </div>
       <div className="navigation-row">
         <div>
-          <button className="link-button" onClick={() => emblaApi?.scrollPrev()}>
+          <button onClick={() => emblaApi?.scrollPrev()}>
             <Arrow rotation={180} /> {formatMessage({ id: 'action.previous' })}
           </button>
         </div>
         |
         <div>
-          <button className="link-button" onClick={() => emblaApi?.scrollNext()}>
+          <button onClick={() => emblaApi?.scrollNext()}>
             {formatMessage({ id: 'action.next' })} <Arrow />
           </button>
         </div>

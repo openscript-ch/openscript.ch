@@ -7,12 +7,12 @@ import { Arrow } from '../layouts/default/Arrow';
 
 const sectionStyle = (theme: Theme) => css`
   display: flex;
-  gap: 1rem;
+  gap: var(${theme.variables.gutter});
 
   .text-box {
     flex: 2;
     background-color: ${theme.whiteColor};
-    padding: 1rem;
+    padding: var(${theme.variables.gutter});
     display: flex;
     flex-direction: column;
 
@@ -23,7 +23,7 @@ const sectionStyle = (theme: Theme) => css`
     svg {
       width: 4rem;
       height: auto;
-      margin-top: auto;
+      margin-top: var(${theme.variables.gutter});
       margin-left: auto;
     }
   }

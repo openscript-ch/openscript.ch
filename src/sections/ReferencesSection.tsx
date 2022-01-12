@@ -9,11 +9,11 @@ const sectionStyle = (theme: Theme) => css`
   .software-references,
   .company-references {
     display: grid;
-    gap: 1rem;
+    gap: var(${theme.variables.gutter});
     grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
 
     > * {
-      padding: 1rem;
+      padding: var(${theme.variables.gutter});
       background-color: ${theme.backgroundColor};
     }
   }
@@ -22,10 +22,14 @@ const sectionStyle = (theme: Theme) => css`
     .reference-box {
       img {
         display: block;
-        height: 10rem;
+        height: 8rem;
         width: auto;
         margin-inline: auto;
-        margin-bottom: 1rem;
+        margin-bottom: var(${theme.variables.gutter});
+      }
+
+      h3 {
+        min-height: 7rem;
       }
     }
   }
@@ -40,7 +44,7 @@ const sectionStyle = (theme: Theme) => css`
         margin-inline: auto;
         height: 3rem;
         width: auto;
-        margin-bottom: 0.5rem;
+        margin-bottom: var(${theme.variables.gutter});
       }
     }
   }

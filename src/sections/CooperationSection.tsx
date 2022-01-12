@@ -12,13 +12,13 @@ const sectionStyle = (theme: Theme) => css`
   flex-wrap: wrap;
 
   @media screen and (max-width: ${theme.breakpoints.medium}) {
-    gap: 0 2rem;
+    gap: 0 var(${theme.variables.gutter});
   }
 
   div:nth-of-type(1),
   div:nth-of-type(3) {
     background-color: ${theme.backgroundColor};
-    padding: 2rem;
+    padding: var(${theme.variables.gutter});
     flex-grow: 1;
     flex-basis: 0;
     min-width: 10rem;
@@ -38,7 +38,7 @@ const sectionStyle = (theme: Theme) => css`
 
     svg:first-of-type {
       width: 2rem;
-      height: 2rem;
+      height: auto;
     }
 
     svg.cooperation-graphic {
