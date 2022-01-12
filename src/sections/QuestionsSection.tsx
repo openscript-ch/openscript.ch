@@ -8,22 +8,12 @@ import { Arrow } from '../layouts/default/Arrow';
 import { useIntl } from 'react-intl';
 
 const sectionStyle = (theme: Theme) => css`
-  .navigation-row {
-    display: flex;
-    gap: var(${theme.variables.gutter});
+  display: flex;
+  flex-direction: column;
 
-    > div {
-      flex: 1;
-
-      button {
-        margin-left: auto;
-      }
-
-      &:first-child {
-        display: flex;
-        justify-content: flex-end;
-      }
-    }
+  button svg {
+    height: 1.5rem;
+    width: auto;
   }
 `;
 
@@ -31,10 +21,11 @@ const carouselStyle = (theme: Theme) => css`
   overflow: hidden;
   height: 100%;
   display: flex;
+  margin: var(${theme.variables.gutter}) auto;
+  mask-image: linear-gradient(transparent, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, transparent);
 
   .carousel-container {
     height: 20rem;
-    margin-inline: auto;
   }
 
   .carousel-slide {
@@ -42,33 +33,34 @@ const carouselStyle = (theme: Theme) => css`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
     height: 100%;
 
     position: relative;
-
-    &::before,
-    &::after {
-      content: '"';
-      position: absolute;
-      font-size: 4rem;
-      color: ${theme.secondaryColor};
-    }
-
-    &::before {
-      inset: 0 auto auto 0;
-    }
-
-    &::after {
-      inset: auto 0 0 auto;
-    }
 
     h2 {
       text-align: center;
     }
 
     blockquote {
-      margin-bottom: 1rem;
+      margin: calc(var(${theme.variables.gutter}) * 2) 0;
+      position: relative;
+
+      &::before,
+      &::after {
+        content: '"';
+        position: absolute;
+        font-size: 4rem;
+        color: ${theme.secondaryColor};
+        margin: 0 calc(var(${theme.variables.gutter}) * -1);
+      }
+
+      &::before {
+        inset: auto auto 0 0;
+      }
+
+      &::after {
+        inset: 0 0 auto auto;
+      }
     }
   }
 `;
@@ -85,6 +77,9 @@ export function QuestionsSection({ questions }: Props) {
 
   return (
     <section css={sectionStyle}>
+      <button onClick={() => emblaApi?.scrollPrev()}>
+        <Arrow rotation={180} />
+      </button>
       <div css={carouselStyle} ref={emblaRef}>
         <div className="carousel-container">
           {questions.nodes.map(q => (
@@ -98,19 +93,9 @@ export function QuestionsSection({ questions }: Props) {
           ))}
         </div>
       </div>
-      <div className="navigation-row">
-        <div>
-          <button onClick={() => emblaApi?.scrollPrev()}>
-            <Arrow rotation={180} /> {formatMessage({ id: 'action.previous' })}
-          </button>
-        </div>
-        |
-        <div>
-          <button onClick={() => emblaApi?.scrollNext()}>
-            {formatMessage({ id: 'action.next' })} <Arrow />
-          </button>
-        </div>
-      </div>
+      <button onClick={() => emblaApi?.scrollNext()}>
+        <Arrow />
+      </button>
     </section>
   );
 }
