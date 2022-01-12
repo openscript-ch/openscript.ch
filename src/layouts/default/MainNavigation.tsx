@@ -1,6 +1,7 @@
 import { css, Theme } from '@emotion/react';
 import { Markup } from 'interweave';
 import React from 'react';
+import { useLockBodyScroll } from 'react-use';
 import { LocalizedLink } from '../../../plugins/gatsby-plugin-i18n-l10n';
 import { Arrow } from './Arrow';
 import { BurgerButton } from './BurgerButton';
@@ -34,11 +35,8 @@ const navStyle = (theme: Theme) => css`
 
   &.open {
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
     z-index: 20;
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -96,7 +94,11 @@ type MainNavigationProps = {
 
 export default function MainNavigation({ phone, email }: MainNavigationProps) {
   const [isOpen, setIsOpen] = React.useState(false);
-  const toggleOpen = () => setIsOpen(!isOpen);
+  useLockBodyScroll(isOpen);
+
+  const toggleOpen = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <>

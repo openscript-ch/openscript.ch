@@ -1,4 +1,5 @@
 import { css, Theme } from '@emotion/react';
+import { lighten } from 'polished';
 import {
   PTSans700italicTTF,
   PTSans700italicWOFF,
@@ -97,6 +98,10 @@ export const defaultStyles = (theme: Theme) => css`
     background-color: ${theme.backgroundColor};
   }
 
+  ::selection {
+    background: ${lighten(0.1, theme.primaryColor)};
+  }
+
   main {
     hyphens: auto;
   }
@@ -117,7 +122,10 @@ export const defaultStyles = (theme: Theme) => css`
   main section {
     padding-top: 5rem;
     padding-bottom: 5rem;
-    min-height: 30rem;
+  }
+
+  footer {
+    padding-block: 1rem;
   }
 
   h1 {
@@ -137,7 +145,16 @@ export const defaultStyles = (theme: Theme) => css`
     margin-bottom: 0.5rem;
   }
 
-  a {
+  button {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    min-width: 0;
+  }
+
+  a,
+  button {
     text-decoration: none;
     color: ${theme.blackColor};
     font-weight: 700;

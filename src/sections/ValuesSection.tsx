@@ -1,4 +1,4 @@
-import React from 'react';
+import { useRef } from 'react';
 import { useState } from 'react';
 import { useIntl } from 'react-intl';
 import { css, Theme, useTheme } from '@emotion/react';
@@ -16,11 +16,6 @@ const sectionStyle = (theme: Theme) => css`
   align-items: center;
 
   button {
-    background: none;
-    outline: none;
-    border: none;
-    cursor: pointer;
-
     &:first-child {
       margin-right: 2rem;
     }
@@ -37,6 +32,7 @@ const sectionStyle = (theme: Theme) => css`
 
   .slider-content {
     display: flex;
+    flex: 1;
     min-width: 0;
   }
 
@@ -93,7 +89,7 @@ type Props = {
 export function ValuesSection({ values }: Props) {
   const theme = useTheme();
 
-  const autoplay = React.useRef(Autoplay({ delay: 4000, stopOnInteraction: false }, emblaRoot => emblaRoot.parentElement));
+  const autoplay = useRef(Autoplay({ delay: 4000, stopOnInteraction: false }, emblaRoot => emblaRoot.parentElement));
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [autoplay.current]);
 
   const { formatMessage } = useIntl();
