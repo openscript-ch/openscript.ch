@@ -98,7 +98,11 @@ const configuration = withMetaConfig(({ projectRoot }) => {
             {
               locale: `de-CH`,
               prefix: `de`,
-              slugs: {},
+              slugs: {
+                '/past': '/vergangenheit',
+                '/present': '/gegenwart',
+                '/future': '/zukunft',
+              },
               messages: deCHMessages,
             },
           ],

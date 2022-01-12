@@ -2,5 +2,8 @@
   "action.learnMore": "Learn more",
   "action.next": "Next",
   "action.previous": "Previous",
-  "language": "English"
+  "language": "English",
+  "menu.future": "Future",
+  "menu.past": "Past",
+  "menu.present": "Present"
 }

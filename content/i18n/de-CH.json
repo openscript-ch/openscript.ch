@@ -2,5 +2,8 @@
   "action.learnMore": "Mehr erfahren",
   "action.next": "Nächste",
   "action.previous": "Vorherige",
-  "language": "Deutsch"
+  "language": "Deutsch",
+  "menu.future": "Zukunft",
+  "menu.past": "Vergangenheit",
+  "menu.present": "Gegenwart"
 }

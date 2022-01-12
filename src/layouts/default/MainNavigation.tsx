@@ -1,6 +1,7 @@
 import { css, Theme } from '@emotion/react';
 import { Markup } from 'interweave';
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import { useLockBodyScroll } from 'react-use';
 import { LocalizedLink } from '../../../plugins/gatsby-plugin-i18n-l10n';
 import { Arrow } from './Arrow';
@@ -107,13 +108,19 @@ export default function MainNavigation({ phone, email }: MainNavigationProps) {
       <nav css={navStyle} className={isOpen ? 'open' : ''}>
         <ul>
           <li>
-            <LocalizedLink to="/pages">Joho</LocalizedLink>
+            <LocalizedLink to="/future">
+              <FormattedMessage id="menu.future" />
+            </LocalizedLink>
           </li>
           <li>
-            <LocalizedLink to="/pages">Joho</LocalizedLink>
+            <LocalizedLink to="/present">
+              <FormattedMessage id="menu.present" />
+            </LocalizedLink>
           </li>
           <li>
-            <LocalizedLink to="/pages">Joho</LocalizedLink>
+            <LocalizedLink to="/past">
+              <FormattedMessage id="menu.past" />
+            </LocalizedLink>
           </li>
         </ul>
 
