@@ -34,6 +34,7 @@ const carouselStyle = (theme: Theme) => css`
 
   .carousel-container {
     height: 20rem;
+    margin-inline: auto;
   }
 
   .carousel-slide {
@@ -51,6 +52,7 @@ const carouselStyle = (theme: Theme) => css`
       content: '"';
       position: absolute;
       font-size: 4rem;
+      color: ${theme.secondaryColor};
     }
 
     &::before {
@@ -63,6 +65,10 @@ const carouselStyle = (theme: Theme) => css`
 
     h2 {
       text-align: center;
+    }
+
+    blockquote {
+      margin-bottom: 1rem;
     }
   }
 `;
