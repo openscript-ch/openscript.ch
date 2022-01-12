@@ -9,6 +9,7 @@ export const defaultTheme: Theme = {
   whiteColor: '#ffffff',
   darkerSibling: '10%',
   brighterSibling: '10%',
+  gutter: '2rem',
   fonts: {
     general: '"PT Sans", sans-serif',
     headings: '"2MASS J1808", sans-serif',
@@ -22,7 +23,7 @@ export const defaultTheme: Theme = {
   },
 };
 
-export const cssVariables: Theme = {
+export const defaultCssVariables: Theme = {
   primaryColor: '--primary-color',
   secondaryColor: '--secondary-color',
   backgroundColor: '--background-color',
@@ -30,6 +31,7 @@ export const cssVariables: Theme = {
   whiteColor: '--white-color',
   darkerSibling: '--darker-sibling',
   brighterSibling: '--brighter-sibling',
+  gutter: '--gutter',
   fonts: {
     general: '--fonts-general',
     headings: '--fonts-headings',
@@ -45,6 +47,6 @@ export const cssVariables: Theme = {
 
 export const defaultCSSVariables = css`
   :root {
-    ${convertThemeToCSSVariables(defaultTheme)}
+    ${convertThemeToCSSVariables(defaultTheme, defaultCssVariables)}
   }
 `;

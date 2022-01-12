@@ -1,35 +1,25 @@
 import { Theme } from '@emotion/react';
-import { decamelize } from 'fast-case';
 
-const flatten = (obj: Record<string, any>): Record<string, any> => {
-  const result: any = {};
+export const flattenObject = (input: Record<string, any>) => {
+  const flattened: Record<string, any> = {};
 
-  const transform = (wrapper: any, p?: string) => {
-    switch (typeof wrapper) {
-      case 'object':
-        p = p ? p + '-' : '';
-        for (const item in wrapper) {
-          transform(wrapper[item], p + item);
-        }
-        break;
-      default:
-        if (p) {
-          result[`--${decamelize(p).replaceAll('_', '-')}`] = wrapper;
-        }
-        break;
+  Object.keys(input).forEach(key => {
+    if (typeof input[key] === 'object' && input[key] !== null) {
+      Object.assign(flattened, flattenObject(input[key]));
+    } else {
+      flattened[key] = input[key];
     }
-  };
+  });
 
-  transform(obj);
-
-  return result;
+  return flattened;
 };
 
-export const convertThemeToCSSVariables = (input: Theme) => {
-  const flattenedObject = flatten(input);
+export const convertThemeToCSSVariables = (theme: Theme, variables: Theme) => {
+  const flattenedTheme = flattenObject(theme);
+  const flattenedVariables = flattenObject(variables);
   const returnValue: string[] = [];
-  for (const [key, value] of Object.entries(flattenedObject)) {
-    returnValue.push(`${key}: ${value};`);
+  for (const [key, value] of Object.entries(flattenedTheme)) {
+    returnValue.push(`${flattenedVariables[key]}: ${value};`);
   }
   return returnValue;
 };
