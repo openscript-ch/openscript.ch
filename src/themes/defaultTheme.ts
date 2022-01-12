@@ -21,32 +21,31 @@ export const defaultTheme: Theme = {
     big: '1920px',
     huge: '2560px',
   },
-};
-
-export const defaultCssVariables: Theme = {
-  primaryColor: '--primary-color',
-  secondaryColor: '--secondary-color',
-  backgroundColor: '--background-color',
-  blackColor: '--black-color',
-  whiteColor: '--white-color',
-  darkerSibling: '--darker-sibling',
-  brighterSibling: '--brighter-sibling',
-  gutter: '--gutter',
-  fonts: {
-    general: '--fonts-general',
-    headings: '--fonts-headings',
-  },
-  breakpoints: {
-    tiny: '--breakpoints-tiny',
-    small: '--breakpoints-small',
-    medium: '--breakpoints-medium',
-    big: '--breakpoints-big',
-    huge: '--breakpoints-huge',
+  variables: {
+    primaryColor: '--primary-color',
+    secondaryColor: '--secondary-color',
+    backgroundColor: '--background-color',
+    blackColor: '--black-color',
+    whiteColor: '--white-color',
+    darkerSibling: '--darker-sibling',
+    brighterSibling: '--brighter-sibling',
+    gutter: '--gutter',
+    fonts: {
+      general: '--fonts-general',
+      headings: '--fonts-headings',
+    },
+    breakpoints: {
+      tiny: '--breakpoints-tiny',
+      small: '--breakpoints-small',
+      medium: '--breakpoints-medium',
+      big: '--breakpoints-big',
+      huge: '--breakpoints-huge',
+    },
   },
 };
 
 export const defaultCSSVariables = css`
   :root {
-    ${convertThemeToCSSVariables(defaultTheme, defaultCssVariables)}
+    ${convertThemeToCSSVariables(defaultTheme)}
   }
 `;

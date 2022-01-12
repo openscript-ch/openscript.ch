@@ -22,5 +22,6 @@ declare module '@emotion/react' {
       big: string;
       huge: string;
     };
+    variables: Omit<Theme, 'variables'>;
   }
 }

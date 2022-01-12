@@ -14,7 +14,7 @@ export const flattenObject = (input: Record<string, any>) => {
   return flattened;
 };
 
-export const convertThemeToCSSVariables = (theme: Theme, variables: Theme) => {
+export const convertThemeToCSSVariables = ({ variables, ...theme }: Theme) => {
   const flattenedTheme = flattenObject(theme);
   const flattenedVariables = flattenObject(variables);
   const returnValue: string[] = [];
