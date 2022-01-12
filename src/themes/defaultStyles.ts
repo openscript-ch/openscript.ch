@@ -1,4 +1,5 @@
 import { css, Theme } from '@emotion/react';
+import { lighten } from 'polished';
 import {
   PTSans700italicTTF,
   PTSans700italicWOFF,
@@ -92,6 +93,10 @@ export const defaultStyles = (theme: Theme) => css`
     min-height: 100%;
     font-family: ${theme.fonts.general};
     background-color: ${theme.backgroundColor};
+  }
+
+  ::selection {
+    background: ${lighten(0.1, theme.primaryColor)};
   }
 
   main {
