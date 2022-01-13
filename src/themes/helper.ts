@@ -18,6 +18,7 @@ export const convertThemeToCSSVariables = ({ variables, ...theme }: Theme) => {
   const flattenedTheme = flattenObject(theme);
   const flattenedVariables = flattenObject(variables);
   const returnValue: string[] = [];
+  // eslint-disable-next-line no-restricted-syntax
   for (const [key, value] of Object.entries(flattenedTheme)) {
     returnValue.push(`${flattenedVariables[key]}: ${value};`);
   }

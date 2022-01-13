@@ -5,7 +5,6 @@ const node: GatsbyNode = {
   createPages: async args => {
     await CreateGenericPages(args);
   },
-  onCreateNode: async args => {},
 };
 
 export default node;

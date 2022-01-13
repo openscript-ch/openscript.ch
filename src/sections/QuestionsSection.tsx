@@ -1,13 +1,12 @@
 import { css, Theme } from '@emotion/react';
 import { Markup } from 'interweave';
 import { useRef } from 'react';
-import { IndexPageQuery } from '../../graphql-types';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { Arrow } from '../layouts/default/Arrow';
-import { useIntl } from 'react-intl';
+import { IndexPageQuery } from '../../graphql-types';
 
-const sectionStyle = (theme: Theme) => css`
+const sectionStyle = () => css`
   display: flex;
   flex-direction: column;
 
@@ -70,14 +69,12 @@ type Props = {
 };
 
 export function QuestionsSection({ questions }: Props) {
-  const { formatMessage } = useIntl();
-
   const autoplay = useRef(Autoplay({ delay: 8000, stopOnInteraction: false }, emblaRoot => emblaRoot.parentElement));
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, axis: 'y' }, [autoplay.current]);
 
   return (
     <section css={sectionStyle}>
-      <button onClick={() => emblaApi?.scrollPrev()}>
+      <button type="button" onClick={() => emblaApi?.scrollPrev()}>
         <Arrow rotation={180} />
       </button>
       <div css={carouselStyle} ref={emblaRef}>
@@ -93,7 +90,7 @@ export function QuestionsSection({ questions }: Props) {
           ))}
         </div>
       </div>
-      <button onClick={() => emblaApi?.scrollNext()}>
+      <button type="button" onClick={() => emblaApi?.scrollNext()}>
         <Arrow />
       </button>
     </section>
