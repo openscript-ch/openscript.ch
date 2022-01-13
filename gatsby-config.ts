@@ -81,6 +81,19 @@ const configuration = withMetaConfig(({ projectRoot }) => {
           icon: `content/statics/icon.png`, // This path is relative to the root of the site.
         },
       },
+      {
+        resolve: 'gatsby-plugin-google-gtag',
+        options: {
+          trackingIds: ['G-JF5L52XZZ6'],
+          gtagConfig: {
+            anonymize_ip: true,
+            cookie_expires: 0,
+          },
+          pluginConfig: {
+            head: false,
+          },
+        },
+      },
       // this (optional) plugin enables Progressive Web App + Offline functionality
       // To learn more, visit: https://gatsby.dev/offline
       // `gatsby-plugin-offline`,
