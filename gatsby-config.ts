@@ -55,6 +55,7 @@ const configuration = withMetaConfig(({ projectRoot }) => {
       `gatsby-plugin-svgr`,
       `gatsby-plugin-react-helmet`,
       `gatsby-plugin-image`,
+      `gatsby-plugin-robots-txt`,
       {
         resolve: `gatsby-plugin-emotion`,
         options: {
