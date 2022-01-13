@@ -1,8 +1,8 @@
 import { css, Theme, useTheme } from '@emotion/react';
+import { Markup } from 'interweave';
 import { DividedSection } from '../components/DividedSection';
 import { ReactComponent as CooperationGraphic } from '../../content/statics/cooperation.svg';
 import { IndexPageQuery } from '../../graphql-types';
-import { Markup } from 'interweave';
 import { Arrow } from '../layouts/default/Arrow';
 import { LocalizedLink } from '../../plugins/gatsby-plugin-i18n-l10n';
 

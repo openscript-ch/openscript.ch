@@ -1,13 +1,12 @@
-import { useRef } from 'react';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useIntl } from 'react-intl';
 import { css, Theme, useTheme } from '@emotion/react';
-import { DividedSection } from '../components/DividedSection';
-import { ReactComponent as IllustrationGraphic } from '../../content/statics/illustration.svg';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
-import { IndexPageQuery } from '../../graphql-types';
 import { Markup } from 'interweave';
+import { DividedSection } from '../components/DividedSection';
+import { ReactComponent as IllustrationGraphic } from '../../content/statics/illustration.svg';
+import { IndexPageQuery } from '../../graphql-types';
 import { Arrow } from '../layouts/default/Arrow';
 import { LocalizedLink } from '../../plugins/gatsby-plugin-i18n-l10n';
 
@@ -104,12 +103,15 @@ export function ValuesSection({ values }: Props) {
   emblaApi?.scrollSnapList();
 
   emblaApi?.on('select', () => {
-    setSelectedSnap(emblaApi?.selectedScrollSnap() % 3 ?? 0);
+    const currentSnap = emblaApi?.selectedScrollSnap();
+    if (!Number.isNaN(currentSnap)) {
+      setSelectedSnap(currentSnap % 3 ?? 0);
+    }
   });
 
   return (
     <DividedSection upperColor={theme.backgroundColor} lowerColor={theme.whiteColor} css={sectionStyle}>
-      <button onClick={() => emblaApi?.scrollPrev()}>
+      <button type="button" onClick={() => emblaApi?.scrollPrev()}>
         <Arrow rotation={90} />
       </button>
       <div className="slider-content">
@@ -144,7 +146,7 @@ export function ValuesSection({ values }: Props) {
           </div>
         </div>
       </div>
-      <button onClick={() => emblaApi?.scrollNext()}>
+      <button type="button" onClick={() => emblaApi?.scrollNext()}>
         <Arrow rotation={270} />
       </button>
     </DividedSection>

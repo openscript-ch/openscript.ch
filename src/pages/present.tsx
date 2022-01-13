@@ -1,8 +1,6 @@
-import { PageProps } from 'gatsby';
 import { DefaultLayout } from '../layouts/DefaultLayout';
-import { SitePageContext } from '../types';
 
-export default function PastPage({}: PageProps<{}, SitePageContext>) {
+export default function PastPage() {
   return (
     <DefaultLayout>
       <section>

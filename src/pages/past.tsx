@@ -1,8 +1,6 @@
-import { PageProps } from 'gatsby';
 import { DefaultLayout } from '../layouts/DefaultLayout';
-import { SitePageContext } from '../types';
 
-export default function ReferencesPage({}: PageProps<{}, SitePageContext>) {
+export default function ReferencesPage() {
   return (
     <DefaultLayout>
       <section>

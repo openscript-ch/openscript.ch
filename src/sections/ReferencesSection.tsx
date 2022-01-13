@@ -72,7 +72,7 @@ export function ReferencesSection({ softwareReferences, companyReferences }: Pro
 
       <div className="company-references">
         {companyReferences.nodes.map((reference, i) => (
-          <a href={reference.frontmatter?.link ?? ''} target="_blank" key={reference.frontmatter?.title || i}>
+          <a href={reference.frontmatter?.link ?? ''} target="_blank" key={reference.frontmatter?.title || i} rel="noreferrer">
             <img src={reference.frontmatter?.logo?.publicURL ?? ''} alt={reference.html?.toString()} />
             <Markup content={reference.html} />
           </a>

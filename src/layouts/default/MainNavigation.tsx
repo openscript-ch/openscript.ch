@@ -1,6 +1,6 @@
 import { css, Theme } from '@emotion/react';
 import { Markup } from 'interweave';
-import React from 'react';
+import { Fragment, useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { useLockBodyScroll } from 'react-use';
 import { LocalizedLink } from '../../../plugins/gatsby-plugin-i18n-l10n';
@@ -19,7 +19,7 @@ const navStyle = (theme: Theme) => css`
     margin: 0;
     font-size: 1.4rem;
     display: flex;
-    gap: 1rem;
+    gap: var(${theme.variables.gutter});
 
     a {
       color: ${theme.backgroundColor};
@@ -94,7 +94,7 @@ type MainNavigationProps = {
 };
 
 export default function MainNavigation({ phone, email }: MainNavigationProps) {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   useLockBodyScroll(isOpen);
 
   const toggleOpen = () => {
@@ -102,7 +102,7 @@ export default function MainNavigation({ phone, email }: MainNavigationProps) {
   };
 
   return (
-    <>
+    <Fragment>
       <BurgerButton isOpen={isOpen} onClick={toggleOpen} />
 
       <nav css={navStyle} className={isOpen ? 'open' : ''}>
@@ -139,6 +139,6 @@ export default function MainNavigation({ phone, email }: MainNavigationProps) {
           </ul>
         </div>
       </nav>
-    </>
+    </Fragment>
   );
 }

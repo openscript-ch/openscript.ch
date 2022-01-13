@@ -1,8 +1,6 @@
-import { PageProps } from 'gatsby';
 import { DefaultLayout } from '../layouts/DefaultLayout';
-import { SitePageContext } from '../types';
 
-export default function FuturePage({}: PageProps<{}, SitePageContext>) {
+export default function FuturePage() {
   return (
     <DefaultLayout>
       <section>

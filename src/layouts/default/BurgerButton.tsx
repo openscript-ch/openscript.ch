@@ -77,7 +77,7 @@ type BurgerButtonProps = {
 
 export function BurgerButton({ isOpen, onClick }: BurgerButtonProps) {
   return (
-    <button css={burgerButtonStyles} className={isOpen ? 'open' : ''} onClick={onClick}>
+    <button type="button" css={burgerButtonStyles} className={isOpen ? 'open' : ''} onClick={onClick}>
       <div />
     </button>
   );

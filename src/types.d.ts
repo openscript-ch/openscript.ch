@@ -1,3 +1,5 @@
+import { GatsbyBrowser, GatsbySSR, PluginOptions } from 'gatsby';
+
 export type Translation = {
   locale: string;
   path: string;
@@ -12,8 +14,6 @@ type AlternativeLanguagePath = {
   locale?: Maybe<Scalars['String']>;
   path?: Maybe<Scalars['String']>;
 };
-
-import { GatsbyBrowser, GatsbySSR, PluginOptions } from 'gatsby';
 
 type GatsbyBrowserWrapPageElementParams = Parameters<GatsbyBrowser['wrapPageElement']>;
 type GatsbySSRWrapPageElementParams = Parameters<GatsbySSR['wrapPageElement']>;

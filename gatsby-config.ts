@@ -55,6 +55,8 @@ const configuration = withMetaConfig(({ projectRoot }) => {
       `gatsby-plugin-svgr`,
       `gatsby-plugin-react-helmet`,
       `gatsby-plugin-image`,
+      `gatsby-plugin-sitemap`,
+      `gatsby-plugin-robots-txt`,
       {
         resolve: `gatsby-plugin-emotion`,
         options: {
@@ -79,6 +81,19 @@ const configuration = withMetaConfig(({ projectRoot }) => {
           icon: `content/statics/icon.png`, // This path is relative to the root of the site.
         },
       },
+      {
+        resolve: 'gatsby-plugin-google-gtag',
+        options: {
+          trackingIds: ['G-JF5L52XZZ6'],
+          gtagConfig: {
+            anonymize_ip: true,
+            cookie_expires: 0,
+          },
+          pluginConfig: {
+            head: false,
+          },
+        },
+      },
       // this (optional) plugin enables Progressive Web App + Offline functionality
       // To learn more, visit: https://gatsby.dev/offline
       // `gatsby-plugin-offline`,
@@ -87,7 +102,7 @@ const configuration = withMetaConfig(({ projectRoot }) => {
       {
         resolve: `gatsby-plugin-i18n-l10n`,
         options: {
-          defaultLocale: `en-US`,
+          defaultLocale: `de-CH`,
           locales: [
             {
               locale: `en-US`,
@@ -102,6 +117,7 @@ const configuration = withMetaConfig(({ projectRoot }) => {
                 '/past': '/vergangenheit',
                 '/present': '/gegenwart',
                 '/future': '/zukunft',
+                '/imprint': '/impressum',
               },
               messages: deCHMessages,
             },
