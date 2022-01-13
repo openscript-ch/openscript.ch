@@ -77,7 +77,7 @@ export function CooperationSection({ you, us }: Props) {
         <Markup content={you?.html} />
       </div>
       <div>
-        <LocalizedLink to="#">
+        <LocalizedLink to="/future">
           <Arrow />
           <CooperationGraphic className="cooperation-graphic" />
         </LocalizedLink>
