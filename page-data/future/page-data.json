@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-pages-future-tsx",
-    "path": "/future",
-    "result": {"pageContext":{"locale":"en-US","translations":[{"locale":"de-CH","path":"/de/zukunft"}],"prefix":"en"}},
-    "staticQueryHashes": ["1256713454","1770277726"]}

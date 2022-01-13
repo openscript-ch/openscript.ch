@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkopenscript_ch=self.webpackChunkopenscript_ch||[]).push([[218],{5947:function(n,t,u){u.r(t),u.d(t,{default:function(){return i}});var e=u(1709),c=u(945),r=u(3431);function i(){return(0,r.tZ)(c.H,null,"404",(0,r.tZ)(e.Z,{id:"language"}))}}}]);
+//# sourceMappingURL=component---src-pages-404-tsx-ea2b3a95065c3b4e6299.js.map

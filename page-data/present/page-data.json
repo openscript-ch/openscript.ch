@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-pages-present-tsx",
-    "path": "/present",
-    "result": {"pageContext":{"locale":"en-US","translations":[{"locale":"de-CH","path":"/de/gegenwart"}],"prefix":"en"}},
-    "staticQueryHashes": ["1256713454","1770277726"]}

@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-pages-past-tsx",
-    "path": "/past",
-    "result": {"pageContext":{"locale":"en-US","translations":[{"locale":"de-CH","path":"/de/vergangenheit"}],"prefix":"en"}},
-    "staticQueryHashes": ["1256713454","1770277726"]}
