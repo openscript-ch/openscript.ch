@@ -87,7 +87,7 @@ const configuration = withMetaConfig(({ projectRoot }) => {
       {
         resolve: `gatsby-plugin-i18n-l10n`,
         options: {
-          defaultLocale: `en-US`,
+          defaultLocale: `de-CH`,
           locales: [
             {
               locale: `en-US`,
