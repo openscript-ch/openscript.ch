@@ -3,6 +3,8 @@ import { Markup } from 'interweave';
 import { Arrow } from './Arrow';
 import { ReactComponent as Github } from '../../images/Github.svg';
 import { ReactComponent as Linkedin } from '../../images/Linkedin.svg';
+import { LocalizedLink } from '../../../plugins/gatsby-plugin-i18n-l10n';
+import { FormattedMessage } from 'react-intl';
 
 const footerStyle = (theme: Theme) => css`
   display: flex;
@@ -11,6 +13,14 @@ const footerStyle = (theme: Theme) => css`
   background-color: ${theme.primaryColor};
   color: ${theme.backgroundColor};
   overflow: hidden;
+
+  a {
+    color: ${theme.backgroundColor};
+
+    &:hover {
+      color: ${theme.secondaryColor};
+    }
+  }
 
   .address-section {
     display: flex;
@@ -27,14 +37,6 @@ const footerStyle = (theme: Theme) => css`
       }
     }
 
-    a {
-      color: ${theme.backgroundColor};
-
-      &:hover {
-        color: ${theme.secondaryColor};
-      }
-    }
-
     svg {
       width: 4rem;
       height: auto;
@@ -43,10 +45,22 @@ const footerStyle = (theme: Theme) => css`
     }
   }
 
+  nav {
+    display: flex;
+    align-items: center;
+    gap: var(${theme.variables.gutter});
+    font-size: 1.4rem;
+
+    ul {
+      list-style: none;
+      display: flex;
+    }
+  }
+
   .social-media {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: var(${theme.variables.gutter});
 
     svg {
       width: 2rem;
@@ -72,15 +86,27 @@ export function Footer({ address, phone, email }: FooterProps) {
           <Markup content={email} />
         </div>
       </div>
-
-      <div className="social-media">
-        <a href="https://github.com/openscript-ch">
-          <Github />
-        </a>
-        <a href="https://www.linkedin.com/company/openscript/">
-          <Linkedin />
-        </a>
-      </div>
+      <nav>
+        <ul className="links">
+          <li>
+            <LocalizedLink to="/imprint">
+              <FormattedMessage id="menu.imprint" />
+            </LocalizedLink>
+          </li>
+        </ul>
+        <ul className="social-media">
+          <li>
+            <a href="https://github.com/openscript-ch">
+              <Github />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/company/openscript/">
+              <Linkedin />
+            </a>
+          </li>
+        </ul>
+      </nav>
     </footer>
   );
 }

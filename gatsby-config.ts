@@ -102,6 +102,7 @@ const configuration = withMetaConfig(({ projectRoot }) => {
                 '/past': '/vergangenheit',
                 '/present': '/gegenwart',
                 '/future': '/zukunft',
+                '/imprint': '/impressum',
               },
               messages: deCHMessages,
             },
