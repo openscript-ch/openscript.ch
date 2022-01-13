@@ -6,5 +6,8 @@
   "menu.future": "Zukunft",
   "menu.imprint": "Impressum",
   "menu.past": "Vergangenheit",
-  "menu.present": "Gegenwart"
+  "menu.present": "Gegenwart",
+  "page.not-found.action": "Zur Startseite",
+  "page.not-found.content": "Leider konnte die angeforderte Seite nicht gefunden werden.",
+  "page.not-found.title": "Seite nicht gefunden"
 }

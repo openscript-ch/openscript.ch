@@ -6,5 +6,8 @@
   "menu.future": "Future",
   "menu.imprint": "Imprint",
   "menu.past": "Past",
-  "menu.present": "Present"
+  "menu.present": "Present",
+  "page.not-found.action": "To the home page",
+  "page.not-found.content": "Unfortunately the requested page couldn't be found.",
+  "page.not-found.title": "Page not found"
 }
