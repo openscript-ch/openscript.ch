@@ -12,8 +12,6 @@ const navigationBarStyle = (theme: Theme) => css`
   font-weight: bold;
   background-color: ${theme.primaryColor};
 
-  padding: 0 10%;
-
   @media (max-width: ${theme.breakpoints.medium}) {
     padding: 0 1rem;
   }

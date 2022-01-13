@@ -89,13 +89,17 @@ export const defaultStyles = (theme: Theme) => css`
   #gatsby-focus-wrapper,
   main {
     margin: 0;
-    font-size: 16px;
+    font-size: 18px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     min-height: 100%;
     font-family: ${theme.fonts.general};
     background-color: ${theme.backgroundColor};
+
+    @media (max-width: ${theme.breakpoints.big}) {
+      font-size: 16px;
+    }
   }
 
   ::selection {
@@ -106,8 +110,10 @@ export const defaultStyles = (theme: Theme) => css`
     hyphens: auto;
   }
 
-  main section,
-  footer {
+  main > section,
+  header > div,
+  footer,
+  .page-padding {
     padding: 0 20%;
 
     @media (max-width: ${theme.breakpoints.big}) {
