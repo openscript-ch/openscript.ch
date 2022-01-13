@@ -19,7 +19,7 @@ const navStyle = (theme: Theme) => css`
     margin: 0;
     font-size: 1.4rem;
     display: flex;
-    gap: 1rem;
+    gap: var(${theme.variables.gutter});
 
     a {
       color: ${theme.backgroundColor};
