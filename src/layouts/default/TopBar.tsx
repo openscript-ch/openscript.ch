@@ -14,7 +14,6 @@ const topBarStyle = (theme: Theme) => css`
   justify-content: space-between;
   height: 2rem;
   background-color: ${darken(0.05, theme.primaryColor)};
-  padding: 0 10%;
   font-weight: bold;
   color: ${theme.backgroundColor};
 
@@ -67,7 +66,7 @@ type TopBarProps = {
 
 export function TopBar({ title, phone, email }: TopBarProps) {
   return (
-    <div css={topBarStyle}>
+    <div css={topBarStyle} className="page-padding">
       <LocalizedLink to="/">
         <h1>{title}</h1>
       </LocalizedLink>
