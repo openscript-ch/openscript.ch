@@ -16,8 +16,8 @@ export const defaultTheme: Theme = {
   },
   breakpoints: {
     tiny: '400px',
-    small: '600px',
-    medium: '1000px',
+    small: '640px',
+    medium: '1080px',
     big: '1920px',
     huge: '2560px',
   },
