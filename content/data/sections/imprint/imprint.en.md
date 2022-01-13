@@ -18,4 +18,6 @@ The [openscript.ch](https://openscript.ch) website contains links to content mai
 
 ### Data protection
 
+Due to legal requirements, we are obliged in certain cases to pass on your personal data to third parties. This is the case, for example, if there is suspicion of a criminal offense or misuse of this website. We will only pass on your data to law enforcement authorities on the basis of a court order. However, if it is in our own interest that an abuse is cleared up because the users or the website operator themselves are among the injured parties, the judicial order can also be waived.
+
 All requests are logged by the web server and analysed by [Google Analytics](http://www.google.com/intl/de/analytics/).

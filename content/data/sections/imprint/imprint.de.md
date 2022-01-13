@@ -18,6 +18,6 @@ Verweise zu Inhalte Dritter liegen ausserhalb des Verantwortungsbereichs. Die Ve
 
 ### Datenschutz
 
-Aufgrund gesetzlicher Vorgaben bin ich in bestimmten Fällen verpflichtet, Ihre personenbezogenen Daten an Dritte weiterzugeben. Dies ist zum Beispiel der Fall, wenn der Verdacht einer Straftat oder des Missbrauchs dieser Webseite vorliegt. Ich werde Ihre Daten nur auf Grund eines richterlichen Beschlusses an die Strafverfolungsbehörden weitergeben. Falls es jedoch in meinem eigenen Interesse liegt, dass ein Missbrauch aufgeklärt wird, weil die Nutzer oder der Seitenbetreiber selbst zu den Geschädigten gehören, kann auch auf die richterliche Anordnung verzichtet werden.
+Aufgrund gesetzlicher Vorgaben sind wir in bestimmten Fällen verpflichtet, Ihre personenbezogenen Daten an Dritte weiterzugeben. Dies ist zum Beispiel der Fall, wenn der Verdacht einer Straftat oder des Missbrauchs dieser Webseite vorliegt. Wir werden Ihre Daten nur auf Grund eines richterlichen Beschlusses an die Strafverfolungsbehörden weitergeben. Falls es jedoch in unserem eigenen Interesse liegt, dass ein Missbrauch aufgeklärt wird, weil die Nutzer oder der Seitenbetreiber selbst zu den Geschädigten gehören, kann auch auf die richterliche Anordnung verzichtet werden.
 
 Jede Anfrage wird vom Webserver protokolliert. In welcher Form dies etwa geschieht, kann hier in Erfahrung gebracht werden. Die einzelnen Seitenzugriffe werden zusätzlich mit [Google Analytics](http://www.google.ch/intl/de/analytics/) mitgeschnitten.
