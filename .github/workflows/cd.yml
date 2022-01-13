@@ -42,9 +42,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gatsby-build-
       - name: Build website
-        run: yarn build:with-prefix
+        run: yarn build
         env:
-          PATH_PREFIX: '/openscript.ch'
           CI: true
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
