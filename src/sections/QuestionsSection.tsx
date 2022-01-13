@@ -23,8 +23,12 @@ const carouselStyle = (theme: Theme) => css`
   margin: var(${theme.variables.gutter}) auto;
   mask-image: linear-gradient(transparent, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, transparent);
 
+  @media (max-width: ${theme.breakpoints.small}) {
+    mask-image: linear-gradient(transparent, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 90%, transparent);
+  }
+
   .carousel-container {
-    height: 20rem;
+    height: 24rem;
   }
 
   .carousel-slide {
@@ -41,8 +45,9 @@ const carouselStyle = (theme: Theme) => css`
     }
 
     blockquote {
-      margin: calc(var(${theme.variables.gutter}) * 2) 0;
+      margin: calc(var(${theme.variables.gutter}) * 1.5) 0;
       position: relative;
+      max-width: 66%;
 
       &::before,
       &::after {
