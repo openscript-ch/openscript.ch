@@ -8,7 +8,10 @@
   "menu.imprint": "Imprint",
   "menu.past": "Past",
   "menu.present": "Present",
+  "menu.toTheFuture": "To the future",
+  "menu.toThePast": "To the past",
   "menu.toThePresent": "To the present",
+  "menu.togetherAhead": "Get in touch, to shape the future together.",
   "page.not-found.action": "To the home page",
   "page.not-found.content": "Unfortunately the requested page couldn't be found.",
   "page.not-found.title": "Page not found"

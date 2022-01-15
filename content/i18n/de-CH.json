@@ -8,7 +8,10 @@
   "menu.imprint": "Impressum",
   "menu.past": "Vergangenheit",
   "menu.present": "Gegenwart",
+  "menu.toTheFuture": "In die Zukunft",
+  "menu.toThePast": "In die Vergangenheit",
   "menu.toThePresent": "In die Gegenwart",
+  "menu.togetherAhead": "Trete in Kontakt, um gemeinsam die Zukunft zu gestalten.",
   "page.not-found.action": "Zur Startseite",
   "page.not-found.content": "Leider konnte die angeforderte Seite nicht gefunden werden.",
   "page.not-found.title": "Seite nicht gefunden"
