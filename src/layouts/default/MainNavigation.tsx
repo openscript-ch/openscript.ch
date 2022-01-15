@@ -49,6 +49,7 @@ const navStyle = (theme: Theme) => css`
         justify-content: flex-end;
         background-color: white;
         margin-bottom: 0.1rem;
+
         a {
           display: block;
           width: 100%;
@@ -71,6 +72,7 @@ const navStyle = (theme: Theme) => css`
 
       li {
         margin: 0;
+
         a {
           font-size: 1.2rem;
           color: ${theme.blackColor};

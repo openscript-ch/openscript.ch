@@ -26,10 +26,6 @@ const navigationBarStyle = (theme: Theme) => css`
 const brandLinkStyle = (theme: Theme) => css`
   display: inline-flex;
   margin-left: 2.5rem;
-
-  svg:hover {
-    fill: ${theme.secondaryColor};
-  }
 `;
 
 type NavigationBarProps = {
