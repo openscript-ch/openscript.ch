@@ -58,6 +58,8 @@ const footerStyle = (theme: Theme) => css`
   }
 
   .social-media {
+    border-left: 2px solid ${theme.backgroundColor};
+    padding-left: var(${theme.variables.gutter});
     display: flex;
     align-items: center;
     gap: var(${theme.variables.gutter});
