@@ -14,14 +14,6 @@ const footerStyle = (theme: Theme) => css`
   color: ${theme.backgroundColor};
   overflow: hidden;
 
-  a {
-    color: ${theme.backgroundColor};
-
-    &:hover {
-      color: ${theme.secondaryColor};
-    }
-  }
-
   .address-section {
     display: flex;
 

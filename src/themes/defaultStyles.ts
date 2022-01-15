@@ -170,4 +170,19 @@ export const defaultStyles = (theme: Theme) => css`
       color: ${theme.secondaryColor};
     }
   }
+
+  #top-bar a,
+  header a,
+  footer a {
+    color: ${theme.backgroundColor};
+
+    &:hover,
+    &.active {
+      color: ${theme.backgroundColor};
+      text-shadow: 2px 2px 0 ${theme.secondaryColor};
+    }
+  }
+
+  nav a.active {
+  }
 `;

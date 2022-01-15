@@ -20,14 +20,6 @@ const navStyle = (theme: Theme) => css`
     font-size: 1.4rem;
     display: flex;
     gap: var(${theme.variables.gutter});
-
-    a {
-      color: ${theme.backgroundColor};
-
-      &:hover {
-        color: ${theme.secondaryColor} !important;
-      }
-    }
   }
 
   .bottom-section {

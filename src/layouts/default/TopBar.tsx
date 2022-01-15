@@ -21,14 +21,6 @@ const topBarStyle = (theme: Theme) => css`
     padding: 0 1rem;
   }
 
-  a {
-    color: ${theme.backgroundColor};
-
-    &:hover {
-      color: ${theme.secondaryColor};
-    }
-  }
-
   h1 {
     font-size: 0.8rem;
   }
@@ -66,8 +58,8 @@ type TopBarProps = {
 
 export function TopBar({ title, phone, email }: TopBarProps) {
   return (
-    <div css={topBarStyle} className="page-padding">
-      <LocalizedLink to="/">
+    <div css={topBarStyle} id="top-bar" className="page-padding">
+      <LocalizedLink to="/" activeClassName="">
         <h1>{title}</h1>
       </LocalizedLink>
       <nav>
