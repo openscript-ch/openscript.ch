@@ -69,6 +69,7 @@ const navStyle = (theme: Theme) => css`
     position: fixed;
     inset: 0;
     z-index: 20;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
