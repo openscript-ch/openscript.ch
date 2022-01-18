@@ -1,5 +1,6 @@
 import { css, Theme } from '@emotion/react';
 import { Markup } from 'interweave';
+import { darken, lighten } from 'polished';
 import { Fragment, useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { useLockBodyScroll } from 'react-use';
@@ -18,8 +19,46 @@ const navStyle = (theme: Theme) => css`
     padding: 0;
     margin: 0;
     font-size: 1.4rem;
+  }
+
+  > ul {
     display: flex;
     gap: var(${theme.variables.gutter});
+
+    > li {
+      position: relative;
+
+      svg {
+        margin-left: 0.5rem;
+        width: 1rem;
+        height: auto;
+      }
+
+      > ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: -0.5rem;
+        z-index: 20;
+        background-color: ${lighten(0.05, theme.primaryColor)};
+        white-space: nowrap;
+
+        a {
+          display: block;
+          padding: 1rem;
+
+          &:hover {
+            background-color: ${darken(0.05, theme.primaryColor)};
+          }
+        }
+      }
+
+      &:hover {
+        > ul {
+          display: block;
+        }
+      }
+    }
   }
 
   .bottom-section {
@@ -40,21 +79,36 @@ const navStyle = (theme: Theme) => css`
     }
 
     > ul {
-      margin-top: 10rem;
+      margin-top: 9rem;
 
-      li {
+      > li {
         width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
         background-color: white;
-        margin-bottom: 0.1rem;
 
         a {
-          display: block;
           width: 100%;
           padding: 1rem;
           color: ${theme.blackColor};
+          display: flex;
+          justify-content: space-between;
+
+          svg {
+            transform: rotate(270deg);
+          }
+        }
+
+        > ul {
+          position: static;
+          background-color: ${theme.backgroundColor};
+
+          li {
+            margin-left: 1rem;
+
+            a {
+              padding: 0.8rem;
+              background-color: ${theme.backgroundColor};
+            }
+          }
         }
       }
     }
@@ -104,17 +158,61 @@ export default function MainNavigation({ phone, email }: MainNavigationProps) {
           <li>
             <LocalizedLink to="/future">
               <FormattedMessage id="menu.future" />
+              <Arrow />
             </LocalizedLink>
+            <ul>
+              <li>
+                <LocalizedLink to="/future#first">
+                  <FormattedMessage id="menu.first" />
+                </LocalizedLink>
+              </li>
+              <li>
+                <LocalizedLink to="/future#second">
+                  <FormattedMessage id="menu.second" />
+                </LocalizedLink>
+              </li>
+            </ul>
           </li>
           <li>
             <LocalizedLink to="/present">
               <FormattedMessage id="menu.present" />
+              <Arrow />
             </LocalizedLink>
+            <ul>
+              <li>
+                <LocalizedLink to="/present#first">
+                  <FormattedMessage id="menu.first" />
+                </LocalizedLink>
+              </li>
+              <li>
+                <LocalizedLink to="/present#second">
+                  <FormattedMessage id="menu.second" />
+                </LocalizedLink>
+              </li>
+              <li>
+                <LocalizedLink to="/present#third">
+                  <FormattedMessage id="menu.third" />
+                </LocalizedLink>
+              </li>
+            </ul>
           </li>
           <li>
             <LocalizedLink to="/past">
               <FormattedMessage id="menu.past" />
+              <Arrow />
             </LocalizedLink>
+            <ul>
+              <li>
+                <LocalizedLink to="/past#first">
+                  <FormattedMessage id="menu.first" />
+                </LocalizedLink>
+              </li>
+              <li>
+                <LocalizedLink to="/past#second">
+                  <FormattedMessage id="menu.second" />
+                </LocalizedLink>
+              </li>
+            </ul>
           </li>
         </ul>
 
