@@ -60,7 +60,7 @@ const sectionStyle = (theme: Theme) => css`
 const carouselStyle = (theme: Theme) => css`
   overflow: hidden;
   width: calc(70% + 10rem);
-  mask-image: radial-gradient(closest-side, rgba(0, 0, 0, 1) 20%, transparent);
+  mask-image: radial-gradient(closest-side, rgba(0, 0, 0, 1) 50%, transparent);
   margin-left: -10rem;
 
   @media screen and (max-width: ${theme.breakpoints.medium}) {
