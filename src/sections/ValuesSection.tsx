@@ -42,6 +42,7 @@ const sectionStyle = (theme: Theme) => css`
     margin-block: auto;
     width: 30%;
     z-index: 1;
+    text-shadow: 0 0 3px ${theme.backgroundColor};
   }
 
   @media screen and (max-width: ${theme.breakpoints.medium}) {
