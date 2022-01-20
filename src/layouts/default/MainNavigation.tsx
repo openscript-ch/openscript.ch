@@ -1,6 +1,5 @@
 import { css, Theme } from '@emotion/react';
 import { Markup } from 'interweave';
-import { darken, lighten } from 'polished';
 import { Fragment, useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { useLockBodyScroll } from 'react-use';
@@ -21,6 +20,7 @@ const navStyle = (theme: Theme) => css`
 
     > li {
       position: relative;
+      padding: 1rem 0;
 
       svg {
         margin-left: 0.5rem;
@@ -32,18 +32,31 @@ const navStyle = (theme: Theme) => css`
         display: none;
         position: absolute;
         top: 100%;
-        right: -0.5rem;
+        right: 50%;
+        transform: translateX(50%);
         z-index: 20;
-        background-color: ${lighten(0.05, theme.primaryColor)};
+        background-color: ${theme.backgroundColor};
+        box-shadow: 2px 2px 0 ${theme.primaryColor};
         white-space: nowrap;
+
+        &::before {
+          /* triangle */
+          content: '';
+          display: block;
+          position: absolute;
+          top: -0.7rem;
+          right: 50%;
+          transform: translateX(50%);
+          width: 0;
+          height: 0;
+          border-inline: 0.7rem solid transparent;
+          border-bottom: 0.7rem solid ${theme.backgroundColor};
+        }
 
         a {
           display: block;
           padding: 1rem;
-
-          &:hover {
-            background-color: ${darken(0.05, theme.primaryColor)};
-          }
+          color: ${theme.blackColor};
         }
       }
 
@@ -79,6 +92,7 @@ const navStyle = (theme: Theme) => css`
       > li {
         width: 100%;
         background-color: white;
+        padding: 0;
 
         a {
           width: 100%;
@@ -94,7 +108,13 @@ const navStyle = (theme: Theme) => css`
 
         > ul {
           position: static;
+          transform: unset;
           background-color: ${theme.backgroundColor};
+          box-shadow: none;
+
+          &::before {
+            content: unset;
+          }
 
           li {
             margin-left: 1rem;
