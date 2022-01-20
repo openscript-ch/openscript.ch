@@ -1,7 +1,7 @@
 import { css, Theme, useTheme } from '@emotion/react';
 import { Fragment, PropsWithChildren } from 'react';
 import { LocalizedLink } from '../../plugins/gatsby-plugin-i18n-l10n';
-import { DividedSection } from '../components/DividedSection';
+import { DividedSection } from './DividedSection';
 import { Arrow } from '../layouts/default/Arrow';
 
 const forwardAndBackwardSectionStyle = (theme: Theme) => css`
