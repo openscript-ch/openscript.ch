@@ -148,6 +148,10 @@ export const defaultStyles = (theme: Theme) => css`
     margin-bottom: 1rem;
   }
 
+  h2 {
+    margin-top: 0;
+  }
+
   p {
     margin-bottom: 0.5rem;
   }
