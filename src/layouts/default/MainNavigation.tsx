@@ -177,13 +177,13 @@ export default function MainNavigation({ phone, email }: MainNavigationProps) {
             </LocalizedLink>
             <ul>
               <li>
-                <LocalizedLink to="/future#first">
-                  <FormattedMessage id="menu.first" />
+                <LocalizedLink to="/future#collaboration">
+                  <FormattedMessage id="menu.collaboration" />
                 </LocalizedLink>
               </li>
               <li>
-                <LocalizedLink to="/future#second">
-                  <FormattedMessage id="menu.second" />
+                <LocalizedLink to="/future#cooperation">
+                  <FormattedMessage id="menu.cooperation" />
                 </LocalizedLink>
               </li>
             </ul>
@@ -195,18 +195,18 @@ export default function MainNavigation({ phone, email }: MainNavigationProps) {
             </LocalizedLink>
             <ul>
               <li>
-                <LocalizedLink to="/present#first">
-                  <FormattedMessage id="menu.first" />
-                </LocalizedLink>
-              </li>
-              <li>
-                <LocalizedLink to="/present#second">
+                <LocalizedLink to="/present#offers">
                   <FormattedMessage id="menu.second" />
                 </LocalizedLink>
               </li>
               <li>
-                <LocalizedLink to="/present#third">
-                  <FormattedMessage id="menu.third" />
+                <LocalizedLink to="/present#values">
+                  <FormattedMessage id="menu.values" />
+                </LocalizedLink>
+              </li>
+              <li>
+                <LocalizedLink to="/present#team">
+                  <FormattedMessage id="menu.team" />
                 </LocalizedLink>
               </li>
             </ul>
@@ -218,13 +218,13 @@ export default function MainNavigation({ phone, email }: MainNavigationProps) {
             </LocalizedLink>
             <ul>
               <li>
-                <LocalizedLink to="/past#first">
-                  <FormattedMessage id="menu.first" />
+                <LocalizedLink to="/past#formation">
+                  <FormattedMessage id="menu.formation" />
                 </LocalizedLink>
               </li>
               <li>
-                <LocalizedLink to="/past#second">
-                  <FormattedMessage id="menu.second" />
+                <LocalizedLink to="/past#references">
+                  <FormattedMessage id="menu.references" />
                 </LocalizedLink>
               </li>
             </ul>
