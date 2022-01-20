@@ -23,7 +23,7 @@ const navigationBarStyle = (theme: Theme) => css`
   }
 `;
 
-const brandLinkStyle = (theme: Theme) => css`
+const brandLinkStyle = () => css`
   display: inline-flex;
   margin-left: 2.5rem;
 `;

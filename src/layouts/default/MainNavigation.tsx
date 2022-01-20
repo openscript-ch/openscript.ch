@@ -14,15 +14,9 @@ const navStyle = (theme: Theme) => css`
     display: none;
   }
 
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-size: 1.4rem;
-  }
-
   > ul {
     display: flex;
+    font-size: 1.4rem;
     gap: var(${theme.variables.gutter});
 
     > li {

@@ -185,6 +185,8 @@ export const defaultStyles = (theme: Theme) => css`
     }
   }
 
-  nav a.active {
+  nav ul {
+    list-style: none;
+    display: flex;
   }
 `;

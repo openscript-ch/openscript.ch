@@ -34,8 +34,10 @@ const topBarStyle = (theme: Theme) => css`
     }
   }
 
-  & > nav > nav {
-    border-left: 2px solid ${theme.backgroundColor};
+  & > nav > ul > li:not(:last-of-type)::after {
+    content: '/';
+    margin: 0 0.5rem;
+    color: ${theme.secondaryColor};
   }
 `;
 
@@ -52,12 +54,17 @@ export function TopBar({ title, phone, email }: TopBarProps) {
         <h1>{title}</h1>
       </LocalizedLink>
       <nav>
-        {/* <Arrow rotation={270} /> */}
-        <Markup content={phone} />
-        {/* <Arrow rotation={310} /> */}
-        <Markup content={email} />
-        <LanguageSelector />
-        {/* <Arrow /> */}
+        <ul>
+          <li>
+            <Markup content={phone} />
+          </li>
+          <li>
+            <Markup content={email} />
+          </li>
+          <li>
+            <LanguageSelector />
+          </li>
+        </ul>
       </nav>
     </div>
   );
