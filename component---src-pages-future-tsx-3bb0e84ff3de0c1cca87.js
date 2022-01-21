@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkgatsby_starter_dogmatism=self.webpackChunkgatsby_starter_dogmatism||[]).push([[231],{1016:function(t,n,u){u.r(n),u.d(n,{default:function(){return s}});var e=u(6459),r=u(945),i=u(3431);function s(t){return(0,e.Z)(t),(0,i.tZ)(r.H,null,(0,i.tZ)("section",null,(0,i.tZ)("h2",null,"Achtung Baustelle"),"Hier wird noch gebaut.."))}},6459:function(t,n,u){function e(t){if(null==t)throw new TypeError("Cannot destructure undefined")}u.d(n,{Z:function(){return e}})}}]);
-//# sourceMappingURL=component---src-pages-future-tsx-3bb0e84ff3de0c1cca87.js.map
