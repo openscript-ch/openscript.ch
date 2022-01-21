@@ -47,10 +47,9 @@ jobs:
         run: yarn build
         env:
           CI: true
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@3.7.1
+      - name: Deploy to Github Pages
+        uses: JamesIves/github-pages-deploy-action@v4.2.2
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: public
-          CLEAN: true
+          branch: gh-pages
+          folder: public
+          clean: true
