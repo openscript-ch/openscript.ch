@@ -4,11 +4,11 @@ import { css, Theme, useTheme } from '@emotion/react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { Markup } from 'interweave';
+import { LocalizedLink } from 'gatsby-plugin-i18n-l10n';
 import { DividedSection } from '../components/DividedSection';
 import { ReactComponent as IllustrationGraphic } from '../../content/statics/illustration.svg';
 import { IndexPageQuery } from '../../graphql-types';
 import { Arrow } from '../layouts/default/Arrow';
-import { LocalizedLink } from '../../plugins/gatsby-plugin-i18n-l10n';
 
 const sectionStyle = (theme: Theme) => css`
   display: flex;

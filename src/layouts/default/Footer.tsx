@@ -1,10 +1,10 @@
 import { css, Theme } from '@emotion/react';
 import { Markup } from 'interweave';
 import { FormattedMessage } from 'react-intl';
+import { LocalizedLink } from 'gatsby-plugin-i18n-l10n';
 import { Arrow } from './Arrow';
 import { ReactComponent as Github } from '../../images/github.svg';
 import { ReactComponent as Linkedin } from '../../images/linkedin.svg';
-import { LocalizedLink } from '../../../plugins/gatsby-plugin-i18n-l10n';
 
 const footerStyle = (theme: Theme) => css`
   display: flex;

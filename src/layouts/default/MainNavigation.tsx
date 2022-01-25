@@ -3,7 +3,7 @@ import { Markup } from 'interweave';
 import { Fragment, useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { useLockBodyScroll } from 'react-use';
-import { LocalizedLink } from '../../../plugins/gatsby-plugin-i18n-l10n';
+import { LocalizedLink } from 'gatsby-plugin-i18n-l10n';
 import { Arrow } from './Arrow';
 import { BurgerButton } from './BurgerButton';
 import LanguageSelector from './LanguageSelector';

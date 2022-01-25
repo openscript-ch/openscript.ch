@@ -1,7 +1,7 @@
 import { css, Theme } from '@emotion/react';
 import { Markup } from 'interweave';
 import { darken } from 'polished';
-import { LocalizedLink } from '../../../plugins/gatsby-plugin-i18n-l10n';
+import { LocalizedLink } from 'gatsby-plugin-i18n-l10n';
 import LanguageSelector from './LanguageSelector';
 
 const topBarStyle = (theme: Theme) => css`

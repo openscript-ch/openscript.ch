@@ -1,5 +1,5 @@
 import { FormattedMessage } from 'react-intl';
-import { LocalizedLink } from '../../plugins/gatsby-plugin-i18n-l10n';
+import { LocalizedLink } from 'gatsby-plugin-i18n-l10n';
 import { DefaultLayout } from '../layouts/DefaultLayout';
 
 export default function NotFound() {

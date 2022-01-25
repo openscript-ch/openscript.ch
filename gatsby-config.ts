@@ -7,6 +7,8 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
+const siteUrl = process.env.SITE_URL || `https://openscript.ch`;
+
 const configuration = withMetaConfig(({ projectRoot }) => {
   return {
     pathPrefix: process.env.PATH_PREFIX || '/',
@@ -17,7 +19,7 @@ const configuration = withMetaConfig(({ projectRoot }) => {
       email: `<a href="mailto:hi@openscript.ch">hi@openscript.ch</a>`,
       address: `<a href="https://www.openstreetmap.org/way/43938793"><ul><li><strong>openscript GmbH</strong></li><li>Europa-Strasse 30</li><li>8153 Glattbrugg</li></ul></a>`,
       author: `openscript GmbH`,
-      siteUrl: process.env.SITE_URL || `https://openscript.ch`,
+      siteUrl,
       version: packageJson.version,
       project: packageJson.name,
     },
@@ -103,6 +105,7 @@ const configuration = withMetaConfig(({ projectRoot }) => {
         resolve: `gatsby-plugin-i18n-l10n`,
         options: {
           defaultLocale: `de-CH`,
+          siteUrl,
           locales: [
             {
               locale: `en-US`,

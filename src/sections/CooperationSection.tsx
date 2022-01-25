@@ -1,10 +1,10 @@
 import { css, Theme, useTheme } from '@emotion/react';
 import { Markup } from 'interweave';
+import { LocalizedLink } from 'gatsby-plugin-i18n-l10n';
 import { DividedSection } from '../components/DividedSection';
 import { ReactComponent as CooperationGraphic } from '../../content/statics/cooperation.svg';
 import { IndexPageQuery } from '../../graphql-types';
 import { Arrow } from '../layouts/default/Arrow';
-import { LocalizedLink } from '../../plugins/gatsby-plugin-i18n-l10n';
 
 const sectionStyle = (theme: Theme) => css`
   background-color: ${theme.whiteColor};
