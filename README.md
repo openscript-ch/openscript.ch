@@ -12,9 +12,7 @@ This project is based on [gatsby-starter-dogmatism](https://github.com/openscrip
 ## Configuration
 
 - [gatsby-config.ts](./.gatsby/gatsby-config.ts):
-
   - `siteMetadata.title`: Set the websites title
-
 - Environment variables:
   - `PATH_PREFIX`: Adds a prefix to all paths. This is useful if you host this project on a subpath like `https://example.github.io/gatsby-starter-dogmatism`.
 
