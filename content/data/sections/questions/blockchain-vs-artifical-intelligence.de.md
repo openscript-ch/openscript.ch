@@ -3,4 +3,4 @@ title: Welches Thema ist wichtiger in naher Zukunft, Blockchain oder Artifical I
 answeredBy: Diego Steiner
 ---
 
-Uh.. eine schwierige Frage.
+Beide Themen von grosser Relevanz. In naher Zukunft sehe ein grosses Potential in Smart Contracts auf der Blockchain.

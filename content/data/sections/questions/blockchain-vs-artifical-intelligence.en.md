@@ -3,4 +3,4 @@ title: Which topic is more important in the near future, Blockchain or Artificia
 answeredBy: Diego Steiner
 ---
 
-Uh.. quite a difficult question.
+Both topics are relevant. I see a lot of potential in smart contracts on the blockchain in the near future
