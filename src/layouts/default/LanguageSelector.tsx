@@ -1,8 +1,6 @@
 import { css } from '@emotion/react';
-import { Link } from 'gatsby';
-import { useContext } from 'react';
-import { FormattedMessage } from 'react-intl';
-import { PageContext } from '../../wrapPageElement';
+import { LanguageSwitcher } from 'gatsby-plugin-i18n-l10n';
+import { useIntl } from 'react-intl';
 
 const languageSelectorStyles = () => css`
   display: flex;
@@ -10,19 +8,7 @@ const languageSelectorStyles = () => css`
 `;
 
 export default function LanguageSelector() {
-  const pageContext = useContext(PageContext);
+  const intl = useIntl();
 
-  return (
-    <nav css={languageSelectorStyles}>
-      <ul>
-        {pageContext.translations?.map(p => (
-          <li key={p.locale}>
-            <Link to={p.path}>
-              <FormattedMessage id={`languages.${p.locale}`} />
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
-  );
+  return <LanguageSwitcher css={languageSelectorStyles} resolveLanguageName={locale => intl.formatMessage({ id: `languages.${locale}` })} />;
 }
