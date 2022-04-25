@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-pages-404-tsx",
     "path": "/404.html",
     "result": {"pageContext":{"locale":"de-CH","translations":[{"locale":"en-US","path":"/en/404"}],"prefix":"de"}},
-    "staticQueryHashes": ["1256713454","1770277726"]}
+    "staticQueryHashes": ["1256713454"]}
