@@ -17,7 +17,7 @@ const configuration: GatsbyConfig = {
     description: `This is a quite opinionated Gatsby starter.`,
     phone: `<a href="tel:+41445205467">+41 44 520 54 67</a>`,
     email: `<a href="mailto:hi@openscript.ch">hi@openscript.ch</a>`,
-    address: `<a href="https://www.openstreetmap.org/way/43938793"><ul><li><strong>openscript GmbH</strong></li><li>Europastrasse 30</li><li>8152 Glattbrugg</li></ul></a>`,
+    address: `<a href="https://www.openstreetmap.org/node/9428042241"><ul><li><strong>openscript GmbH</strong></li><li>Europastrasse 30</li><li>8152 Glattbrugg</li></ul></a>`,
     author: `openscript GmbH`,
     siteUrl,
     version: packageJson.version,
