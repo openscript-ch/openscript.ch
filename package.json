@@ -35,8 +35,8 @@
     "interweave": "13.0.0",
     "limax": "3.0.0",
     "polished": "4.2.2",
-    "react": "18.0.0",
-    "react-dom": "18.0.0",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
     "react-helmet": "6.1.0",
     "react-intl": "5.25.0",
     "react-use": "17.3.2"
@@ -59,7 +59,7 @@
     "eslint-plugin-jsx-a11y": "6.5.1",
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-react": "7.29.4",
-    "eslint-plugin-react-hooks": "4.4.0",
+    "eslint-plugin-react-hooks": "4.5.0",
     "prettier": "2.6.2",
     "ts-node": "10.7.0",
     "typescript": "4.6.3"
