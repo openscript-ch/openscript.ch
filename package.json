@@ -9,7 +9,7 @@
     "@emotion/react": "11.9.0",
     "@emotion/styled": "11.8.1",
     "@svgr/webpack": "6.2.1",
-    "dotenv": "16.0.0",
+    "dotenv": "16.0.1",
     "embla-carousel": "6.2.0",
     "embla-carousel-autoplay": "6.2.0",
     "embla-carousel-react": "6.2.0",
