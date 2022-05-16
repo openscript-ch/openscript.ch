@@ -7339,10 +7339,10 @@ gatsby-plugin-google-gtag@4.13.0:
     "@babel/runtime" "^7.15.4"
     minimatch "^3.1.2"
 
-gatsby-plugin-i18n-l10n@4.6.1:
-  version "4.6.1"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-i18n-l10n/-/gatsby-plugin-i18n-l10n-4.6.1.tgz#3f1c47b2b9dd3833e21f498af61f56fe36964f36"
-  integrity sha512-L+tOiAHLup3kXvNdThyow8V5oSA+NP0c9FVWu0iAl7de7NPKwx4wiymcSSRMgMCe+x9QSDO1Ud+tKejtMIZIYw==
+gatsby-plugin-i18n-l10n@4.6.2:
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-i18n-l10n/-/gatsby-plugin-i18n-l10n-4.6.2.tgz#09a7449f8a9c62b51855db870ca563b2575e6eb3"
+  integrity sha512-FHaTqED9FX10PHpDoaTYIY0dyV+o6WEFQyve2YAqQZqvt8JLP0QHLAV/cBTQDFzA5QbIUTyo4uAHKqSdHvIKJg==
   dependencies:
     limax "^3.0.0"
     path-browserify "^1.0.1"
