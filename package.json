@@ -31,7 +31,7 @@
     "gatsby-source-filesystem": "4.14.0",
     "gatsby-transformer-remark": "5.14.0",
     "gatsby-transformer-sharp": "4.14.0",
-    "graphql": "16.4.0",
+    "graphql": "16.5.0",
     "interweave": "13.0.0",
     "limax": "3.0.0",
     "polished": "4.2.2",
