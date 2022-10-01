@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkopenscript_ch=self.webpackChunkopenscript_ch||[]).push([[231],{1016:function(n,t,u){u.r(t),u.d(t,{default:function(){return l}});var e=u(945),c=u(3431);function l(){return(0,c.tZ)(e.H,null,(0,c.tZ)("section",null,(0,c.tZ)("h2",null,"Achtung Baustelle"),"Hier wird noch gebaut.."))}}}]);
-//# sourceMappingURL=component---src-pages-future-tsx-f6f00c268f9e6d991214.js.map
