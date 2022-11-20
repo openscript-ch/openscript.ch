@@ -6,8 +6,8 @@
   "version": "0.1.0",
   "author": "openscript",
   "dependencies": {
-    "@emotion/react": "11.9.0",
-    "@emotion/styled": "11.8.1",
+    "@emotion/react": "11.10.5",
+    "@emotion/styled": "11.10.5",
     "@svgr/webpack": "6.2.1",
     "dotenv": "16.0.1",
     "embla-carousel": "6.2.0",
