@@ -1,6 +1,0 @@
-node_modules
-public
-plugins
-.cache
-graphql-types.ts
-.eslintrc.js
