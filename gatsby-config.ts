@@ -14,9 +14,12 @@ const siteUrl = process.env.SITE_URL || `https://example.com`;
 const configuration: GatsbyConfig = {
   pathPrefix: process.env.PATH_PREFIX || '/',
   siteMetadata: {
-    title: `Gatsby Starter Dogmatism`,
-    description: `This is a quite opinionated Gatsby starter.`,
-    author: `openscript`,
+    title: `openscript GmbH`,
+    description: `Your companions for adventures in the world of bits and bytes.`,
+    author: `openscript GmbH`,
+    phone: `<a href="tel:+41445205467">+41 44 520 54 67</a>`,
+    email: `<a href="mailto:hi@openscript.ch">hi@openscript.ch</a>`,
+    address: `<a href="https://www.openstreetmap.org/node/9428042241"><ul><li><strong>openscript GmbH</strong></li><li>Europastrasse 30</li><li>8152 Glattbrugg</li></ul></a>`,
     siteUrl,
     version: packageJson.version,
     project: packageJson.name,
