@@ -2,7 +2,6 @@ import { GatsbyConfig } from 'gatsby';
 import path from 'path';
 import deCHMessages from './content/i18n/de-CH.json';
 import enUSMessages from './content/i18n/en-US.json';
-import zhCNMessages from './content/i18n/zh-CN.json';
 import packageJson from './package.json';
 
 require('dotenv').config({
@@ -90,7 +89,7 @@ const configuration: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-i18n-l10n`,
       options: {
-        defaultLocale: `en-US`,
+        defaultLocale: `de-CH`,
         siteUrl,
         locales: [
           {
@@ -102,14 +101,20 @@ const configuration: GatsbyConfig = {
           {
             locale: `de-CH`,
             prefix: `de`,
-            slugs: {},
+            slugs: {
+              '/past': '/vergangenheit',
+              '/past#formation': '/vergangenheit#entstehung',
+              '/past#references': '/vergangenheit#referenzen',
+              '/present': '/gegenwart',
+              '/present#offers': '/gegenwart#angebote',
+              '/present#values': '/gegenwart#werte',
+              '/present#team': '/gegenwart#team',
+              '/future': '/zukunft',
+              '/future#collaboration': '/zukunft#zusammenarbeit',
+              '/future#cooperation': '/zukunft#mitarbeit',
+              '/imprint': '/impressum',
+            },
             messages: deCHMessages,
-          },
-          {
-            locale: `zh-CN`,
-            prefix: `zh`,
-            slugs: {},
-            messages: zhCNMessages,
           },
         ],
       },
