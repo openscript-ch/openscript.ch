@@ -1,1 +1,0 @@
-Eine [andere Seite](./another).

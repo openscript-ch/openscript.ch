@@ -4,7 +4,7 @@
   "i18n-ally.enabledFrameworks": ["react"],
   "i18n-ally.keystyle": "flat",
   "i18n-ally.sortKeys": true,
-  "i18n-ally.sourceLanguage": "en-US",
-  "i18n-ally.displayLanguage": "en-US",
+  "i18n-ally.sourceLanguage": "de-CH",
+  "i18n-ally.displayLanguage": "de-CH",
   "cSpell.words": ["Europastrasse", "Glattbrugg", "openscript"]
 }
