@@ -1,0 +1,80 @@
+{
+  "name": "gatsby-starter-dogmatism",
+  "homepage": "https://github.com/openscript/gatsby-starter-dogmatism",
+  "private": true,
+  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "version": "5.0.0",
+  "author": "openscript",
+  "dependencies": {
+    "@emotion/react": "11.10.5",
+    "@emotion/styled": "11.10.5",
+    "@mdx-js/mdx": "2.1.5",
+    "@mdx-js/react": "2.1.5",
+    "gatsby": "5.0.1",
+    "gatsby-plugin-catch-links": "5.0.0",
+    "gatsby-plugin-emotion": "8.0.0",
+    "gatsby-plugin-i18n-l10n": "5.0.0",
+    "gatsby-plugin-image": "3.0.0",
+    "gatsby-plugin-manifest": "5.0.0",
+    "gatsby-plugin-mdx": "5.0.0",
+    "gatsby-plugin-offline": "6.0.0",
+    "gatsby-plugin-sharp": "5.0.0",
+    "gatsby-remark-autolink-headers": "6.0.0",
+    "gatsby-remark-copy-linked-files": "6.0.0",
+    "gatsby-remark-images": "7.0.0",
+    "gatsby-source-filesystem": "5.0.0",
+    "gatsby-transformer-sharp": "5.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-intl": "6.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.20.2",
+    "@graphql-codegen/cli": "2.13.12",
+    "@graphql-codegen/typescript": "2.8.2",
+    "@graphql-codegen/typescript-operations": "2.5.7",
+    "@types/node": "18.11.9",
+    "@types/react": "18.0.25",
+    "@types/react-dom": "18.0.9",
+    "@typescript-eslint/eslint-plugin": "5.44.0",
+    "@typescript-eslint/parser": "5.44.0",
+    "babel-eslint": "10.1.0",
+    "eslint": "8.28.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-airbnb-typescript": "17.0.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-jsx-a11y": "6.6.1",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-react": "7.31.11",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "prettier": "2.7.1",
+    "ts-node": "10.9.1",
+    "typescript": "4.9.3"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "0BSD",
+  "scripts": {
+    "build": "gatsby build",
+    "build:types": "graphql-codegen --config codegen.yml",
+    "build:with-prefix": "gatsby build --prefix-paths",
+    "check:format": "eslint . --max-warnings 0",
+    "check:types": "tsc --noEmit",
+    "check:watch-types": "tsc --noEmit --watch",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "yarn run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
+}

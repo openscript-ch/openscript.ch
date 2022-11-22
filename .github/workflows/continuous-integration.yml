@@ -1,0 +1,31 @@
+name: Continuous Integration
+
+on: pull_request
+
+jobs:
+  check:
+    name: Run some checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Use nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Check types
+        run: yarn check:types
+
+      - name: Check formatting
+        run: yarn check:format
+
+      - name: Run tests
+        run: yarn test
+
+      - name: Try to build
+        run: yarn build
