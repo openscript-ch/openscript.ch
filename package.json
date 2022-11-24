@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-dogmatism",
-  "homepage": "https://github.com/openscript/gatsby-starter-dogmatism",
+  "name": "openscript.ch",
+  "homepage": "https://github.com/openscript-ch/openscript.ch",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "5.0.0",
+  "description": "openscript GmbHs website",
+  "version": "0.2.0",
   "author": "openscript",
   "dependencies": {
     "@emotion/react": "11.10.5",
@@ -24,6 +24,7 @@
     "gatsby-remark-images": "7.1.0",
     "gatsby-source-filesystem": "5.1.0",
     "gatsby-transformer-sharp": "5.1.0",
+    "polished": "^4.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-intl": "6.2.1"
