@@ -1,6 +1,5 @@
 import { css, Theme } from '@emotion/react';
 import { LocalizedLink } from 'gatsby-plugin-i18n-l10n';
-import { Arrow } from '../../components/Arrow';
 import LanguageSelector from './LanguageSelector';
 import MainNavigation from './MainNavigation';
 
@@ -21,7 +20,6 @@ type HeaderProps = {
 export function Header({ title }: HeaderProps) {
   return (
     <header css={headerStyle}>
-      <Arrow />
       <LocalizedLink to="/">{title}</LocalizedLink>
       <MainNavigation />
       <LanguageSelector />
