@@ -12,7 +12,7 @@ export function Head() {
 }
 
 export const query = graphql`
-  query ($id: String!) {
+  query GenericPages($id: String!) {
     mdx(id: { eq: $id }) {
       id
     }
