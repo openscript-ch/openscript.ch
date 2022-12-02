@@ -1,28 +1,20 @@
-import { css, Theme } from '@emotion/react';
-import { LocalizedLink } from 'gatsby-plugin-i18n-l10n';
-import LanguageSelector from './LanguageSelector';
-import MainNavigation from './MainNavigation';
-
-const headerStyle = (theme: Theme) => css`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 6rem;
-  font-size: 2rem;
-  font-weight: bold;
-  background-color: ${theme.secondaryColor};
-`;
+import { Fragment } from 'react';
+import { NavigationBar } from './NavigationBar';
+import { TopBar } from './TopBar';
 
 type HeaderProps = {
   title: string;
+  phone: string;
+  email: string;
 };
 
-export function Header({ title }: HeaderProps) {
+export function Header({ title, phone, email }: HeaderProps) {
   return (
-    <header css={headerStyle}>
-      <LocalizedLink to="/">{title}</LocalizedLink>
-      <MainNavigation />
-      <LanguageSelector />
-    </header>
+    <Fragment>
+      <TopBar title={title} phone={phone} email={email} />
+      <header>
+        <NavigationBar phone={phone} email={email} />
+      </header>
+    </Fragment>
   );
 }
