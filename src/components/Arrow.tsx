@@ -1,4 +1,5 @@
 import { css, Theme } from '@emotion/react';
+import { Symbol } from './Symbol';
 
 type ArrowProps = {
   rotation?: number;
@@ -6,14 +7,12 @@ type ArrowProps = {
 
 export function Arrow({ rotation = 0 }: ArrowProps) {
   return (
-    <svg
-      version="2.0"
+    <Symbol
+      name="arrow"
       css={(theme: Theme) => css`
         fill: ${theme.secondaryColor};
         transform: rotate(${`${rotation}deg`});
       `}
-    >
-      <use href="/symbols.svg#arrow" />
-    </svg>
+    />
   );
 }

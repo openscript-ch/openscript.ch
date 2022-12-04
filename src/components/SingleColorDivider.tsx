@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { Symbol } from './Symbol';
 
 type SingleColorDividerProps = {
   upperColor: string;
@@ -9,8 +10,8 @@ type SingleColorDividerProps = {
 
 export function SingleColorDivider({ flipVertically, flipHorizontally, upperColor, lowerColor }: SingleColorDividerProps) {
   return (
-    <svg
-      version="2.0"
+    <Symbol
+      name="singleColorDivider"
       css={css`
         width: 100%;
         height: auto;
@@ -24,8 +25,6 @@ export function SingleColorDivider({ flipVertically, flipHorizontally, upperColo
           transform: translateY(1px); // anti aliasing bottom gap fix
         }
       `}
-    >
-      <use href="/symbols.svg#singleColorDivider" />
-    </svg>
+    />
   );
 }
