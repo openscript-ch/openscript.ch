@@ -25,7 +25,7 @@ const navStyle = (theme: Theme) => css`
       svg {
         margin-left: 0.5rem;
         width: 1rem;
-        height: auto;
+        height: 1rem;
       }
 
       > ul {

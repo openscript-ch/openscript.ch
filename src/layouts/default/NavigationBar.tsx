@@ -17,7 +17,7 @@ const navigationBarStyle = (theme: Theme) => css`
 
   > * > svg {
     fill: ${theme.backgroundColor};
-    width: auto;
+    width: 4.5rem;
     height: 3rem;
   }
 `;

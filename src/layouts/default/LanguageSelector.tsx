@@ -3,18 +3,8 @@ import { LanguageSwitcher } from 'gatsby-plugin-i18n-l10n';
 import { useIntl } from 'react-intl';
 
 const languageSelectorStyles = css`
-  font-size: 1.4rem;
-
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-
-    li {
-      display: inline;
-      margin-left: 1rem;
-    }
-  }
+  display: flex;
+  align-items: center;
 `;
 
 export default function LanguageSelector() {

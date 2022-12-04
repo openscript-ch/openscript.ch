@@ -2731,7 +2731,7 @@ export type AllGenericPagesQuery = { __typename?: 'Query', allMdx: { __typename?
 export type DefaultLayoutQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type DefaultLayoutQuery = { __typename?: 'Query', site?: { __typename?: 'Site', siteMetadata?: { __typename?: 'SiteSiteMetadata', author?: string | null, description?: string | null, siteUrl?: string | null, title?: string | null, version?: string | null, project?: string | null } | null } | null };
+export type DefaultLayoutQuery = { __typename?: 'Query', site?: { __typename?: 'Site', siteMetadata?: { __typename?: 'SiteSiteMetadata', author?: string | null, description?: string | null, phone?: string | null, email?: string | null, address?: string | null, siteUrl?: string | null, title?: string | null, version?: string | null, project?: string | null } | null } | null };
 
 export type DocumentSiteMetadataQueryVariables = Exact<{ [key: string]: never; }>;
 
