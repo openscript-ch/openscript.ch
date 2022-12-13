@@ -1,6 +1,6 @@
 import { css, Theme } from '@emotion/react';
 import { LocalizedLink } from 'gatsby-plugin-i18n-l10n';
-import { Symbol } from '../../components/Symbol';
+import { Sprite } from '../../components/Sprite';
 import MainNavigation from './MainNavigation';
 
 const navigationBarStyle = (theme: Theme) => css`
@@ -37,7 +37,7 @@ export function NavigationBar({ phone, email }: NavigationBarProps) {
   return (
     <div css={navigationBarStyle}>
       <LocalizedLink to="/" css={brandLinkStyle}>
-        <Symbol name="brand" />
+        <Sprite name="brand" />
       </LocalizedLink>
       <MainNavigation phone={phone} email={email} />
     </div>

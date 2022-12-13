@@ -2,6 +2,7 @@ import { Global, Theme, ThemeProvider } from '@emotion/react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { PropsWithChildren } from 'react';
 import { DefaultLayoutQuery } from '../../graphql-types';
+import { TwoColorDivider } from '../components/TwoColorDivider';
 import { defaultStyles } from '../themes/defaultStyles';
 import { defaultTheme } from '../themes/defaultTheme';
 import { Footer } from './default/Footer';
@@ -42,7 +43,12 @@ export function DefaultLayout({ children, theme }: DefaultLayoutProps) {
         email={data.site?.siteMetadata?.email || ''}
       />
       <Main>{children}</Main>
-      <Footer author={data.site?.siteMetadata?.project || ''} version={data.site?.siteMetadata?.version || ''} />
+      <TwoColorDivider flipVertical />
+      <Footer
+        address={data.site?.siteMetadata?.address || ''}
+        phone={data.site?.siteMetadata?.phone || ''}
+        email={data.site?.siteMetadata?.email || ''}
+      />
     </ThemeProvider>
   );
 }

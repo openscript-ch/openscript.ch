@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import { Symbol } from './Symbol';
+import { Sprite } from './Sprite';
 
 type SingleColorDividerProps = {
   upperColor: string;
@@ -10,7 +10,7 @@ type SingleColorDividerProps = {
 
 export function SingleColorDivider({ flipVertically, flipHorizontally, upperColor, lowerColor }: SingleColorDividerProps) {
   return (
-    <Symbol
+    <Sprite
       name="singleColorDivider"
       css={css`
         width: 100%;

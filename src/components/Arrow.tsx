@@ -1,5 +1,5 @@
 import { css, Theme } from '@emotion/react';
-import { Symbol } from './Symbol';
+import { Sprite } from './Sprite';
 
 type ArrowProps = {
   rotation?: number;
@@ -7,7 +7,7 @@ type ArrowProps = {
 
 export function Arrow({ rotation = 0 }: ArrowProps) {
   return (
-    <Symbol
+    <Sprite
       name="arrow"
       css={(theme: Theme) => css`
         fill: ${theme.secondaryColor};
