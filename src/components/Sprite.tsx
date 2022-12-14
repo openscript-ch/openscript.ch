@@ -1,4 +1,4 @@
-import SpriteData from '../../static/sprite.json';
+import SpriteData from '../../content/images/sprite.json';
 
 type SpriteProps = {
   name: keyof typeof SpriteData;

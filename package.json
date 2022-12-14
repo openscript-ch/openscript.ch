@@ -59,7 +59,7 @@
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
-    "build:sprite": "svg-sprite -S --Ss sprite.svg --stack-dest . --Sx --stack-example-template src/images/sprite.json.mustache --stack-example-dest sprite.json -l verbose -D static src/images/*.svg",
+    "build:sprite": "svg-sprite -S --Ss sprite.svg --stack-dest . --Sx --stack-example-template content/images/sprite.json.mustache --stack-example-dest ../content/images/sprite.json -l verbose -D static content/images/*.svg",
     "build:with-prefix": "gatsby build --prefix-paths",
     "check:format": "eslint . --max-warnings 0",
     "check:types": "tsc --noEmit",
