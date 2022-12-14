@@ -1,9 +1,8 @@
 import { graphql, PageProps } from 'gatsby';
-import { AllGenericPagesQuery } from '../../graphql-types';
 import { Document } from '../layouts/default/Document';
 import { DefaultLayout } from '../layouts/DefaultLayout';
 
-export default function GenericPage({ children }: PageProps<AllGenericPagesQuery>) {
+export default function GenericPage({ children }: PageProps<Queries.AllGenericPagesQuery>) {
   return <DefaultLayout>{children}</DefaultLayout>;
 }
 

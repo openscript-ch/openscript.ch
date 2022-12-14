@@ -23,6 +23,11 @@ const configuration: GatsbyConfig = {
     version: packageJson.version,
     project: packageJson.name,
   },
+  graphqlTypegen: {
+    typesOutputPath: 'graphql-types.ts',
+    documentSearchPaths: [`./gatsby-node.ts`, `./plugins/**/gatsby-node.ts`, `./src/**/*.ts?(x)`],
+    generateOnBuild: true,
+  },
   plugins: [
     // Sources
     {

@@ -1,6 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import { Fragment } from 'react';
-import { DocumentSiteMetadataQuery } from '../../../graphql-types';
 
 type DocumentProps = {
   title?: string;
@@ -8,7 +7,7 @@ type DocumentProps = {
 };
 
 export function Document({ title, description }: DocumentProps) {
-  const siteMetadataQuery = useStaticQuery<DocumentSiteMetadataQuery>(graphql`
+  const siteMetadataQuery = useStaticQuery<Queries.DocumentSiteMetadataQuery>(graphql`
     query DocumentSiteMetadata {
       site {
         siteMetadata {

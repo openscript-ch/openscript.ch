@@ -1,7 +1,6 @@
 import { Global, Theme, ThemeProvider } from '@emotion/react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { PropsWithChildren } from 'react';
-import { DefaultLayoutQuery } from '../../graphql-types';
 import { TwoColorDivider } from '../components/TwoColorDivider';
 import { defaultStyles } from '../themes/defaultStyles';
 import { defaultTheme } from '../themes/defaultTheme';
@@ -32,7 +31,7 @@ type DefaultLayoutProps = PropsWithChildren<{
 }>;
 
 export function DefaultLayout({ children, theme }: DefaultLayoutProps) {
-  const data = useStaticQuery<DefaultLayoutQuery>(query);
+  const data = useStaticQuery<Queries.DefaultLayoutQuery>(query);
 
   return (
     <ThemeProvider theme={theme || defaultTheme}>
