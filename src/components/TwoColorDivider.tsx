@@ -20,12 +20,9 @@ export function TwoColorDivider({ flipVertical }: TwoColorDividerProps) {
           transform: scaleY(-1);
         `}
 
-        path:nth-of-type(1) {
-          fill: ${theme.primaryColor};
-        }
-
-        path:nth-of-type(2) {
-          fill: ${lighten(0.05, theme.primaryColor)};
+        use {
+          --upper-segment: ${theme.primaryColor};
+          --lower-segment: ${lighten(0.05, theme.primaryColor)};
         }
       `}
     />
