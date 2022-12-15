@@ -4,6 +4,7 @@ import { Document } from '../layouts/default/Document';
 import { DefaultLayout } from '../layouts/DefaultLayout';
 import { CooperationSection } from '../sections/CooperationSection';
 import { ExchangeSection } from '../sections/ExchangeSection';
+import { QuestionsSection } from '../sections/QuestionsSection';
 import { ReferencesSection } from '../sections/ReferencesSection';
 import { ValuesSection } from '../sections/ValuesSection';
 
@@ -14,6 +15,7 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
       <CooperationSection you={data.cooperationYou} us={data.cooperationUs} />
       <ExchangeSection exchange={data.exchange} />
       <ReferencesSection softwareReferences={data.softwareReferences} companyReferences={data.companyReferences} />
+      <QuestionsSection questions={data.questions} />
     </DefaultLayout>
   );
 }
