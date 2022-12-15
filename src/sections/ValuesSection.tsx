@@ -6,9 +6,8 @@ import Autoplay from 'embla-carousel-autoplay';
 import { Markup } from 'interweave';
 import { LocalizedLink } from 'gatsby-plugin-i18n-l10n';
 import { DividedSection } from '../components/DividedSection';
-import { ReactComponent as IllustrationGraphic } from '../../content/statics/illustration.svg';
-import { IndexPageQuery } from '../../graphql-types';
-import { Arrow } from '../layouts/default/Arrow';
+import { Sprite } from '../components/Sprite';
+import { Arrow } from '../components/Arrow';
 
 const sectionStyle = (theme: Theme) => css`
   display: flex;
@@ -83,13 +82,13 @@ const carouselStyle = (theme: Theme) => css`
 `;
 
 type Props = {
-  values: IndexPageQuery['values'];
+  values: Queries.IndexPageQuery['values'];
 };
 
 export function ValuesSection({ values }: Props) {
   const theme = useTheme();
 
-  const autoplay = useRef(Autoplay({ delay: 4000, stopOnInteraction: false }, emblaRoot => emblaRoot.parentElement));
+  const autoplay = useRef(Autoplay({ delay: 4000, stopOnInteraction: false, rootNode: emblaRoot => emblaRoot.parentElement }));
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [autoplay.current]);
 
   const { formatMessage } = useIntl();
@@ -99,7 +98,7 @@ export function ValuesSection({ values }: Props) {
   const textBoxContents: { title?: string | null; link?: string | null; text?: JSX.Element }[] = values.nodes.map(node => ({
     title: node.frontmatter?.title,
     link: node.frontmatter?.link,
-    text: <Markup content={node.html} />,
+    text: <Markup content={node.body} />,
   }));
   emblaApi?.scrollSnapList();
 
@@ -127,22 +126,22 @@ export function ValuesSection({ values }: Props) {
         <div css={carouselStyle} ref={emblaRef}>
           <div className="carousel-container">
             <div className="carousel-slide">
-              <IllustrationGraphic viewBox="0 0 1077.833333333 1080" />
+              <Sprite name="illustration" viewBox="0 0 1077.833333333 1080" />
             </div>
             <div className="carousel-slide">
-              <IllustrationGraphic viewBox="1077.833333333 0 1077.833333333 1080" />
+              <Sprite name="illustration" viewBox="1077.833333333 0 1077.833333333 1080" />
             </div>
             <div className="carousel-slide">
-              <IllustrationGraphic viewBox="2155.666666666 0 1077.833333333 1080" />
+              <Sprite name="illustration" viewBox="2155.666666666 0 1077.833333333 1080" />
             </div>
             <div className="carousel-slide">
-              <IllustrationGraphic viewBox="0 0 1077.833333333 1080" />
+              <Sprite name="illustration" viewBox="0 0 1077.833333333 1080" />
             </div>
             <div className="carousel-slide">
-              <IllustrationGraphic viewBox="1077.833333333 0 1077.833333333 1080" />
+              <Sprite name="illustration" viewBox="1077.833333333 0 1077.833333333 1080" />
             </div>
             <div className="carousel-slide">
-              <IllustrationGraphic viewBox="2155.666666666 0 1077.833333333 1080" />
+              <Sprite name="illustration" viewBox="2155.666666666 0 1077.833333333 1080" />
             </div>
           </div>
         </div>
