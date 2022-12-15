@@ -1,9 +1,8 @@
 import { css, Theme, useTheme } from '@emotion/react';
 import { Markup } from 'interweave';
-import { IndexPageQuery } from '../../graphql-types';
+import { Arrow } from '../components/Arrow';
 import { DividedSection } from '../components/DividedSection';
-import { ReactComponent as Logos } from '../../content/statics/logos.svg';
-import { Arrow } from '../layouts/default/Arrow';
+import { Sprite } from '../components/Sprite';
 
 const sectionStyle = (theme: Theme) => css`
   display: flex;
@@ -31,10 +30,8 @@ const sectionStyle = (theme: Theme) => css`
   > svg {
     flex: 3;
     max-height: 20rem;
-    a {
-      &:hover > * {
-        fill: ${theme.secondaryColor} !important;
-      }
+    a:hover > * {
+      fill: ${theme.secondaryColor} !important;
     }
   }
 
@@ -49,7 +46,7 @@ const sectionStyle = (theme: Theme) => css`
 `;
 
 type Props = {
-  exchange: IndexPageQuery['exchange'];
+  exchange: Queries.IndexPageQuery['exchange'];
 };
 
 export function ExchangeSection({ exchange }: Props) {
@@ -59,11 +56,11 @@ export function ExchangeSection({ exchange }: Props) {
     <DividedSection upperColor={theme.backgroundColor} lowerColor={theme.whiteColor} css={sectionStyle}>
       <div className="text-box">
         <h2>{exchange?.frontmatter?.title}</h2>
-        <Markup content={exchange?.html} />
+        <Markup content={exchange?.body} />
 
         <Arrow rotation={240} />
       </div>
-      <Logos />
+      <Sprite name="logos" />
     </DividedSection>
   );
 }

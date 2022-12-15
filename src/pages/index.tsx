@@ -3,6 +3,7 @@ import { graphql, PageProps } from 'gatsby';
 import { Document } from '../layouts/default/Document';
 import { DefaultLayout } from '../layouts/DefaultLayout';
 import { CooperationSection } from '../sections/CooperationSection';
+import { ExchangeSection } from '../sections/ExchangeSection';
 import { ValuesSection } from '../sections/ValuesSection';
 
 export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
@@ -10,6 +11,7 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
     <DefaultLayout>
       <ValuesSection values={data.values} />
       <CooperationSection you={data.cooperationYou} us={data.cooperationUs} />
+      <ExchangeSection exchange={data.exchange} />
     </DefaultLayout>
   );
 }
