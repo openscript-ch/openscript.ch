@@ -10,7 +10,13 @@ export function Sprite({ name, className, viewBox }: SpriteProps) {
   const dimensions = SpriteData[name];
 
   return (
-    <svg version="2.0" className={className ?? undefined} width={dimensions.width} height={dimensions.height} viewBox={viewBox}>
+    <svg
+      version="2.0"
+      className={className ?? undefined}
+      width={viewBox ? undefined : dimensions.width}
+      height={viewBox ? undefined : dimensions.height}
+      viewBox={viewBox}
+    >
       <use href={`/sprite.svg#${name}`} />
     </svg>
   );
