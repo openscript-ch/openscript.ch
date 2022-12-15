@@ -2,9 +2,14 @@ import { graphql, PageProps } from 'gatsby';
 
 import { Document } from '../layouts/default/Document';
 import { DefaultLayout } from '../layouts/DefaultLayout';
+import { CooperationSection } from '../sections/CooperationSection';
 
-export default function IndexPage({ children }: PageProps) {
-  return <DefaultLayout>{children}</DefaultLayout>;
+export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
+  return (
+    <DefaultLayout>
+      <CooperationSection you={data.cooperationYou} us={data.cooperationUs} />
+    </DefaultLayout>
+  );
 }
 
 export function Head() {
