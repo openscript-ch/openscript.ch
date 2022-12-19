@@ -71,7 +71,7 @@
     "start": "yarn run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "prestart": "yarn run build:sprite",
     "prebuild": "yarn run build:sprite"
   },
