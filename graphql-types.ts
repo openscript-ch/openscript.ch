@@ -2718,13 +2718,6 @@ type GenericPagesQueryVariables = Exact<{
 
 type GenericPagesQuery = { readonly mdx: { readonly id: string } | null };
 
-type ImprintPageQueryVariables = Exact<{
-  locale: InputMaybe<Scalars['String']>;
-}>;
-
-
-type ImprintPageQuery = { readonly content: { readonly id: string } | null };
-
 type IndexPageQueryVariables = Exact<{
   locale: InputMaybe<Scalars['String']>;
 }>;

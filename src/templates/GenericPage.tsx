@@ -3,7 +3,11 @@ import { Document } from '../layouts/default/Document';
 import { DefaultLayout } from '../layouts/DefaultLayout';
 
 export default function GenericPage({ children }: PageProps<Queries.AllGenericPagesQuery>) {
-  return <DefaultLayout>{children}</DefaultLayout>;
+  return (
+    <DefaultLayout>
+      <section>{children}</section>
+    </DefaultLayout>
+  );
 }
 
 export function Head() {

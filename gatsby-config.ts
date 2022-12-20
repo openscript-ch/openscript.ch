@@ -122,6 +122,7 @@ const configuration: GatsbyConfig = {
             messages: deCHMessages,
           },
         ],
+        pathBlacklist: ['/pages'],
       },
     },
   ],
