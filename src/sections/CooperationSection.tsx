@@ -73,7 +73,7 @@ export function CooperationSection({ you, us }: Props) {
     <DividedSection upperColor={theme.whiteColor} lowerColor={theme.backgroundColor} flipVertically css={sectionStyle}>
       <div>
         <h2>{you?.frontmatter?.title}</h2>
-        <Markup content={you?.body} />
+        <Markup content={you?.html} />
       </div>
       <div>
         <LocalizedLink to="/future">
@@ -83,7 +83,7 @@ export function CooperationSection({ you, us }: Props) {
       </div>
       <div>
         <h2>{us?.frontmatter?.title}</h2>
-        <Markup content={us?.body} />
+        <Markup content={us?.html} />
       </div>
     </DividedSection>
   );

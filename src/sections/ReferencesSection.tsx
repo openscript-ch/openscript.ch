@@ -64,7 +64,7 @@ export function ReferencesSection({ softwareReferences, companyReferences }: Pro
           <div className="reference-box" key={reference.frontmatter?.title || i}>
             <img src={reference.frontmatter?.icon?.publicURL ?? ''} alt={reference.frontmatter?.title ?? ''} />
             <h3>{reference.frontmatter?.title}</h3>
-            <Markup content={reference.body} />
+            <Markup content={reference.html} />
           </div>
         ))}
       </div>
@@ -72,8 +72,8 @@ export function ReferencesSection({ softwareReferences, companyReferences }: Pro
       <div className="company-references">
         {companyReferences.nodes.map((reference, i) => (
           <a href={reference.frontmatter?.link ?? ''} target="_blank" key={reference.frontmatter?.title || i} rel="noreferrer">
-            <img src={reference.frontmatter?.logo?.publicURL ?? ''} alt={reference.body?.toString()} />
-            <Markup content={reference.body} />
+            <img src={reference.frontmatter?.logo?.publicURL ?? ''} alt={reference.html?.toString()} />
+            <Markup content={reference.html} />
           </a>
         ))}
       </div>

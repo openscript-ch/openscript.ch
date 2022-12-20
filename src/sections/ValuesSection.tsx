@@ -114,7 +114,7 @@ export function ValuesSection({ values }: Props) {
   const textBoxContents: { title?: string | null; link?: string | null; text?: JSX.Element }[] = values.nodes.map(node => ({
     title: node.frontmatter?.title,
     link: node.frontmatter?.link,
-    text: <Markup content={node.body} />,
+    text: <Markup content={node.html} />,
   }));
   emblaApi?.scrollSnapList();
 

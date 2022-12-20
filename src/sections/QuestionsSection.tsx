@@ -87,7 +87,7 @@ export function QuestionsSection({ questions }: Props) {
             <div className="carousel-slide" key={q.frontmatter?.title || i}>
               <h2>{q.frontmatter?.title}</h2>
               <blockquote>
-                <Markup content={q.body} />
+                <Markup content={q.html} />
               </blockquote>
               <span className="author">&mdash; {q.frontmatter?.answeredBy}</span>
             </div>

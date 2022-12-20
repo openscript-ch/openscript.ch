@@ -56,7 +56,7 @@ export function ExchangeSection({ exchange }: Props) {
     <DividedSection upperColor={theme.backgroundColor} lowerColor={theme.whiteColor} css={sectionStyle}>
       <div className="text-box">
         <h2>{exchange?.frontmatter?.title}</h2>
-        <Markup content={exchange?.body} />
+        <Markup content={exchange?.html} />
 
         <Arrow rotation={240} />
       </div>

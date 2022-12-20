@@ -26,45 +26,45 @@ export function Head() {
 
 export const query = graphql`
   query IndexPage($locale: String) {
-    values: allMdx(filter: { fields: { locale: { eq: $locale }, kind: { eq: "sections/values" } } }) {
+    values: allMarkdownRemark(filter: { fields: { locale: { eq: $locale }, kind: { eq: "sections/values" } } }) {
       nodes {
-        body
+        html
         frontmatter {
           link
           title
         }
       }
     }
-    cooperationYou: mdx(fields: { locale: { eq: $locale }, kind: { eq: "sections/cooperation" }, filename: { glob: "*you*" } }) {
-      body
+    cooperationYou: markdownRemark(fields: { locale: { eq: $locale }, kind: { eq: "sections/cooperation" }, filename: { glob: "*you*" } }) {
+      html
       frontmatter {
         title
       }
     }
-    cooperationUs: mdx(fields: { locale: { eq: $locale }, kind: { eq: "sections/cooperation" }, filename: { glob: "*us*" } }) {
-      body
+    cooperationUs: markdownRemark(fields: { locale: { eq: $locale }, kind: { eq: "sections/cooperation" }, filename: { glob: "*us*" } }) {
+      html
       frontmatter {
         title
       }
     }
-    exchange: mdx(fields: { kind: { eq: "sections/exchange" }, locale: { eq: $locale } }) {
-      body
+    exchange: markdownRemark(fields: { kind: { eq: "sections/exchange" }, locale: { eq: $locale } }) {
+      html
       frontmatter {
         title
       }
     }
-    questions: allMdx(filter: { fields: { locale: { eq: $locale }, kind: { eq: "sections/questions" } } }) {
+    questions: allMarkdownRemark(filter: { fields: { locale: { eq: $locale }, kind: { eq: "sections/questions" } } }) {
       nodes {
-        body
+        html
         frontmatter {
           answeredBy
           title
         }
       }
     }
-    softwareReferences: allMdx(filter: { fields: { locale: { eq: $locale }, kind: { eq: "sections/references/software" } } }) {
+    softwareReferences: allMarkdownRemark(filter: { fields: { locale: { eq: $locale }, kind: { eq: "sections/references/software" } } }) {
       nodes {
-        body
+        html
         frontmatter {
           title
           icon {
@@ -73,9 +73,9 @@ export const query = graphql`
         }
       }
     }
-    companyReferences: allMdx(filter: { fields: { kind: { eq: "sections/references/companies" } } }) {
+    companyReferences: allMarkdownRemark(filter: { fields: { kind: { eq: "sections/references/companies" } } }) {
       nodes {
-        body
+        html
         frontmatter {
           title
           logo {

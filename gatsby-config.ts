@@ -10,6 +10,19 @@ require('dotenv').config({
 
 const siteUrl = process.env.SITE_URL || `https://example.com`;
 
+const remarkPlugins = [
+  'gatsby-remark-copy-linked-files',
+  {
+    resolve: 'gatsby-remark-images',
+    options: {
+      maxWidth: 1140,
+      quality: 90,
+      linkImagesToOriginal: false,
+    },
+  },
+  'gatsby-remark-autolink-headers',
+];
+
 const configuration: GatsbyConfig = {
   pathPrefix: process.env.PATH_PREFIX || '/',
   siteMetadata: {
@@ -47,19 +60,14 @@ const configuration: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
-        extensions: [`.md`, `.mdx`],
-        gatsbyRemarkPlugins: [
-          'gatsby-remark-copy-linked-files',
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 1140,
-              quality: 90,
-              linkImagesToOriginal: false,
-            },
-          },
-          'gatsby-remark-autolink-headers',
-        ],
+        extensions: [`.mdx`],
+        gatsbyRemarkPlugins: remarkPlugins,
+      },
+    },
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: remarkPlugins,
       },
     },
     {
