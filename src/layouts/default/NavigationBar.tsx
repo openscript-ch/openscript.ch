@@ -1,7 +1,7 @@
 import { css, Theme } from '@emotion/react';
 import { LocalizedLink } from 'gatsby-plugin-i18n-l10n';
+import { Sprite } from '../../components/Sprite';
 import MainNavigation from './MainNavigation';
-import { ReactComponent as Brand } from '../../images/brand.svg';
 
 const navigationBarStyle = (theme: Theme) => css`
   display: flex;
@@ -18,7 +18,7 @@ const navigationBarStyle = (theme: Theme) => css`
 
   > * > svg {
     fill: ${theme.backgroundColor};
-    width: auto;
+    width: 4.5rem;
     height: 3rem;
   }
 `;
@@ -37,7 +37,7 @@ export function NavigationBar({ phone, email }: NavigationBarProps) {
   return (
     <div css={navigationBarStyle}>
       <LocalizedLink to="/" css={brandLinkStyle}>
-        <Brand />
+        <Sprite name="brand" />
       </LocalizedLink>
       <MainNavigation phone={phone} email={email} />
     </div>

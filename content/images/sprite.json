@@ -1,0 +1,38 @@
+{
+  "arrow": {
+    "width": "9.387",
+    "height": "10"
+  },
+  "brand": {
+    "width": "52.089",
+    "height": "35.334"
+  },
+  "cooperation": {
+    "width": "279.47",
+    "height": "271.35"
+  },
+  "github": {
+    "width": "66.234",
+    "height": "64.4"
+  },
+  "illustration": {
+    "width": "2000",
+    "height": "668.01"
+  },
+  "linkedin": {
+    "width": "63.928",
+    "height": "63.848"
+  },
+  "logos": {
+    "width": "514",
+    "height": "382"
+  },
+  "singleColorDivider": {
+    "width": "1600",
+    "height": "40"
+  },
+  "twoColorDivider": {
+    "width": "1600",
+    "height": "46"
+  }
+}

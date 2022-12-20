@@ -1,20 +1,12 @@
-# openscript Ltd. <br> Website
+# openscript Ltd. <br> <small>Website</small>
 
 This project is based on [gatsby-starter-dogmatism](https://github.com/openscript/gatsby-starter-dogmatism) and [Gatsby](https://www.gatsbyjs.com/).
 
 ## Getting started
 
-1. **Clone** the repository `git clone https://github.com/openscript-ch/openscript.ch`.
-1. Optionally **open** the new project with Visual Studio Code and [Remote Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers).
+1. **Open** the new project with Visual Studio Code and [Remote Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers).
 1. **Install** the projects dependencies with `yarn install`.
 1. **Run** the project with `yarn develop`.
-
-## Configuration
-
-- [gatsby-config.ts](./.gatsby/gatsby-config.ts):
-  - `siteMetadata.title`: Set the websites title
-- Environment variables:
-  - `PATH_PREFIX`: Adds a prefix to all paths. This is useful if you host this project on a subpath like `https://example.github.io/gatsby-starter-dogmatism`.
 
 ## License
 

@@ -5,7 +5,7 @@
       "name": "Gatsby develop",
       "type": "pwa-node",
       "request": "launch",
-      "program": "${workspaceRoot}/node_modules/.bin/gatsby-ts",
+      "program": "${workspaceRoot}/node_modules/.bin/gatsby",
       "args": ["develop"],
       "runtimeArgs": ["--nolazy"],
       "console": "integratedTerminal"
@@ -14,25 +14,10 @@
       "name": "Gatsby build",
       "type": "pwa-node",
       "request": "launch",
-      "program": "${workspaceRoot}/node_modules/.bin/gatsby-ts",
+      "program": "${workspaceRoot}/node_modules/.bin/gatsby",
       "args": ["build"],
       "runtimeArgs": ["--nolazy"],
       "console": "integratedTerminal"
-    },
-    {
-      "name": "Debug Jest gatsby-plugin-i18n-l10n Tests",
-      "type": "node",
-      "request": "launch",
-      "runtimeArgs": [
-        "--inspect-brk",
-        "${workspaceRoot}/node_modules/.bin/jest",
-        "--runInBand",
-        "--config",
-        "${workspaceRoot}/plugins/gatsby-plugin-i18n-l10n/jest.config.js"
-      ],
-      "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen",
-      "port": 9229
     }
   ]
 }

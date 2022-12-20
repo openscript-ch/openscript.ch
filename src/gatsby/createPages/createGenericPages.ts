@@ -1,12 +1,13 @@
 import { CreatePagesArgs } from 'gatsby';
 import { resolve } from 'path';
-import { AllGenericPagesQuery } from '../../../graphql-types';
+
+const genericPageTemplate = resolve('./src/templates/GenericPage.tsx');
 
 export async function CreateGenericPages({ actions, graphql }: CreatePagesArgs) {
   const { createPage } = actions;
-  const allPages = await graphql<AllGenericPagesQuery>(`
+  const allPages = await graphql<Queries.AllGenericPagesQuery>(`
     query AllGenericPages {
-      allMarkdownRemark(filter: { fields: { kind: { eq: "pages" } } }) {
+      allMdx(filter: { fields: { kind: { eq: "pages" } } }) {
         edges {
           node {
             id
@@ -17,16 +18,19 @@ export async function CreateGenericPages({ actions, graphql }: CreatePagesArgs) 
                 path
               }
             }
+            internal {
+              contentFilePath
+            }
           }
         }
       }
     }
   `);
 
-  allPages.data?.allMarkdownRemark.edges.forEach(p => {
+  allPages.data?.allMdx.edges.forEach(p => {
     if (p.node.fields && p.node.fields.path) {
       createPage({
-        component: resolve('./src/templates/GenericPage.tsx'),
+        component: `${genericPageTemplate}?__contentFilePath=${p.node.internal.contentFilePath}`,
         context: { id: p.node.id, translations: p.node.fields.translations },
         path: p.node.fields.path,
       });

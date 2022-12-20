@@ -14,15 +14,16 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-        with:
-          ref: master
+
       - name: Use nodejs
         uses: actions/setup-node@v3
         with:
-          node-version: '16.x'
+          node-version: '18.x'
+
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
+
       - name: Activate dependency cache
         uses: actions/cache@v3
         id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
@@ -31,8 +32,10 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
+
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+
       - name: Caching Gatsby
         id: gatsby-cache-build
         uses: actions/cache@v3
@@ -40,15 +43,34 @@ jobs:
           path: |
             public
             .cache
-          key: ${{ runner.os }}-gatsby-build-${{ github.run_id }}
+          key: ${{ runner.os }}-gatsby-cache-${{ github.run_id }}
           restore-keys: |
-            ${{ runner.os }}-gatsby-build-
+            ${{ runner.os }}-gatsby-cache-
+
       - name: Build website
-        run: yarn build
+        id: build-website
+        run: yarn build:with-prefix
+        continue-on-error: true
         env:
+          PATH_PREFIX: '/gatsby-starter-dogmatism'
           CI: true
-      - name: Deploy to Github Pages
-        uses: JamesIves/github-pages-deploy-action@v4.3.3
+
+      - name: Clean Gatsby cache
+        id: clean-cache
+        if: steps.build-website.outcome != 'success'
+        run: yarn run gatsby clean
+
+      - name: Build website with clean cache
+        id: build-website-without-cache
+        if: steps.clean-cache.outcome == 'success'
+        run: yarn build:with-prefix
+        env:
+          PATH_PREFIX: '/gatsby-starter-dogmatism'
+          CI: true
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
+        if: steps.build-website.outcome == 'success' || steps.build-website-without-cache.outcome == 'success'
         with:
           branch: gh-pages
           folder: public

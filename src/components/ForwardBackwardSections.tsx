@@ -2,7 +2,7 @@ import { css, Theme, useTheme } from '@emotion/react';
 import { Fragment, PropsWithChildren } from 'react';
 import { LocalizedLink } from 'gatsby-plugin-i18n-l10n';
 import { DividedSection } from './DividedSection';
-import { Arrow } from '../layouts/default/Arrow';
+import { Arrow } from './Arrow';
 
 const forwardAndBackwardSectionStyle = (theme: Theme) => css`
   display: flex;

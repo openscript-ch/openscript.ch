@@ -1,14 +1,12 @@
 import { Global, Theme, ThemeProvider } from '@emotion/react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { PropsWithChildren } from 'react';
-import { DefaultLayoutQuery } from '../../graphql-types';
+import { TwoColorDivider } from '../components/TwoColorDivider';
 import { defaultStyles } from '../themes/defaultStyles';
 import { defaultTheme } from '../themes/defaultTheme';
-import { Document } from './default/Document';
 import { Footer } from './default/Footer';
 import { Header } from './default/Header';
 import { Main } from './default/Main';
-import { TwoColorDivider } from './default/TwoColorDivider';
 
 const query = graphql`
   query DefaultLayout {
@@ -33,11 +31,10 @@ type DefaultLayoutProps = PropsWithChildren<{
 }>;
 
 export function DefaultLayout({ children, theme }: DefaultLayoutProps) {
-  const data = useStaticQuery<DefaultLayoutQuery>(query);
+  const data = useStaticQuery<Queries.DefaultLayoutQuery>(query);
 
   return (
     <ThemeProvider theme={theme || defaultTheme}>
-      <Document title={data.site?.siteMetadata?.title || ''} />
       <Global styles={defaultStyles} />
       <Header
         title={data.site?.siteMetadata?.title || ''}

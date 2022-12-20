@@ -2,9 +2,8 @@ import { css, Theme, useTheme } from '@emotion/react';
 import { Markup } from 'interweave';
 import { LocalizedLink } from 'gatsby-plugin-i18n-l10n';
 import { DividedSection } from '../components/DividedSection';
-import { ReactComponent as CooperationGraphic } from '../../content/statics/cooperation.svg';
-import { IndexPageQuery } from '../../graphql-types';
-import { Arrow } from '../layouts/default/Arrow';
+import { Sprite } from '../components/Sprite';
+import { Arrow } from '../components/Arrow';
 
 const sectionStyle = (theme: Theme) => css`
   background-color: ${theme.whiteColor};
@@ -63,8 +62,8 @@ const sectionStyle = (theme: Theme) => css`
 `;
 
 type Props = {
-  you: IndexPageQuery['cooperationYou'];
-  us: IndexPageQuery['cooperationUs'];
+  you: Queries.IndexPageQuery['cooperationYou'];
+  us: Queries.IndexPageQuery['cooperationUs'];
 };
 
 export function CooperationSection({ you, us }: Props) {
@@ -79,7 +78,7 @@ export function CooperationSection({ you, us }: Props) {
       <div>
         <LocalizedLink to="/future">
           <Arrow />
-          <CooperationGraphic className="cooperation-graphic" />
+          <Sprite name="cooperation" className="cooperation-graphic" />
         </LocalizedLink>
       </div>
       <div>

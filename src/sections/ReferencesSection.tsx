@@ -1,6 +1,5 @@
 import { css, Theme, useTheme } from '@emotion/react';
 import { Markup } from 'interweave';
-import { IndexPageQuery } from '../../graphql-types';
 import { DividedSection } from '../components/DividedSection';
 
 const sectionStyle = (theme: Theme) => css`
@@ -51,8 +50,8 @@ const sectionStyle = (theme: Theme) => css`
 `;
 
 type Props = {
-  softwareReferences: IndexPageQuery['softwareReferences'];
-  companyReferences: IndexPageQuery['companyReferences'];
+  softwareReferences: Queries.IndexPageQuery['softwareReferences'];
+  companyReferences: Queries.IndexPageQuery['companyReferences'];
 };
 
 export function ReferencesSection({ softwareReferences, companyReferences }: Props) {

@@ -1,14 +1,14 @@
 import { graphql, PageProps } from 'gatsby';
-import { IndexPageQuery } from '../../graphql-types';
+
+import { Document } from '../layouts/default/Document';
 import { DefaultLayout } from '../layouts/DefaultLayout';
-import { SitePageContext } from '../types';
 import { CooperationSection } from '../sections/CooperationSection';
 import { ExchangeSection } from '../sections/ExchangeSection';
+import { QuestionsSection } from '../sections/QuestionsSection';
 import { ReferencesSection } from '../sections/ReferencesSection';
 import { ValuesSection } from '../sections/ValuesSection';
-import { QuestionsSection } from '../sections/QuestionsSection';
 
-export default function IndexPage({ data }: PageProps<IndexPageQuery, SitePageContext>) {
+export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
   return (
     <DefaultLayout>
       <ValuesSection values={data.values} />
@@ -20,28 +20,32 @@ export default function IndexPage({ data }: PageProps<IndexPageQuery, SitePageCo
   );
 }
 
+export function Head() {
+  return <Document title="Home" />;
+}
+
 export const query = graphql`
   query IndexPage($locale: String) {
     values: allMarkdownRemark(filter: { fields: { locale: { eq: $locale }, kind: { eq: "sections/values" } } }) {
       nodes {
         html
         frontmatter {
-          title
           link
+          title
         }
       }
     }
     cooperationYou: markdownRemark(fields: { locale: { eq: $locale }, kind: { eq: "sections/cooperation" }, filename: { glob: "*you*" } }) {
+      html
       frontmatter {
         title
       }
-      html
     }
     cooperationUs: markdownRemark(fields: { locale: { eq: $locale }, kind: { eq: "sections/cooperation" }, filename: { glob: "*us*" } }) {
+      html
       frontmatter {
         title
       }
-      html
     }
     exchange: markdownRemark(fields: { kind: { eq: "sections/exchange" }, locale: { eq: $locale } }) {
       html
@@ -53,8 +57,8 @@ export const query = graphql`
       nodes {
         html
         frontmatter {
-          title
           answeredBy
+          title
         }
       }
     }
@@ -71,6 +75,7 @@ export const query = graphql`
     }
     companyReferences: allMarkdownRemark(filter: { fields: { kind: { eq: "sections/references/companies" } } }) {
       nodes {
+        html
         frontmatter {
           title
           logo {
@@ -78,7 +83,6 @@ export const query = graphql`
           }
           link
         }
-        html
       }
     }
   }

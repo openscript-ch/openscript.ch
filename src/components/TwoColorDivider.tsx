@@ -1,6 +1,6 @@
 import { css, Theme } from '@emotion/react';
 import { lighten } from 'polished';
-import { ReactComponent as DividerGraphic } from '../../images/twoColorDivider.svg';
+import { Sprite } from './Sprite';
 
 type TwoColorDividerProps = {
   flipVertical?: boolean;
@@ -8,7 +8,8 @@ type TwoColorDividerProps = {
 
 export function TwoColorDivider({ flipVertical }: TwoColorDividerProps) {
   return (
-    <DividerGraphic
+    <Sprite
+      name="twoColorDivider"
       css={(theme: Theme) => css`
         width: 100%;
         height: auto;
@@ -19,12 +20,9 @@ export function TwoColorDivider({ flipVertical }: TwoColorDividerProps) {
           transform: scaleY(-1);
         `}
 
-        path:nth-of-type(1) {
-          fill: ${theme.primaryColor};
-        }
-
-        path:nth-of-type(2) {
-          fill: ${lighten(0.05, theme.primaryColor)};
+        use {
+          --upper-segment: ${theme.primaryColor};
+          --lower-segment: ${lighten(0.05, theme.primaryColor)};
         }
       `}
     />
