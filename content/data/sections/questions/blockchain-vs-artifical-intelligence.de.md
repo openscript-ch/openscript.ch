@@ -1,6 +1,6 @@
 ---
-title: Welches Thema ist wichtiger in naher Zukunft, Blockchain oder Artifical Intelligence?
+title: Welches Thema ist wichtiger in naher Zukunft, Blockchain oder Künstliche Intelligenz?
 answeredBy: Diego Steiner
 ---
 
-Beide Themen von grosser Relevanz. In naher Zukunft sehe ein grosses Potential in Smart Contracts auf der Blockchain.
+Beide Themen sind sicher von grosser Relevanz. In naher Zukunft sehe ein grosses Potential in Smart Contracts, welche auf der Blockchain basieren.

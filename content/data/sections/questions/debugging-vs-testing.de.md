@@ -3,4 +3,4 @@ title: Welche Aufgabe ist spannender, Debuggen oder automatisierte Tests schreib
 answeredBy: Aaron Stampa
 ---
 
-Mit dem schreiben von automatisierten Tests bin ich nie warm geworden. Ich empfinde es als sehr wichtig, allerdings macht mir Debuggen deutlich mehr Spass.
+Mit dem schreiben von automatisierten Tests bin ich noch nicht so richtig warm geworden, jedoch empfinde ich es als sehr wichtig. Debuggen macht mir deutlich mehr Spass.
