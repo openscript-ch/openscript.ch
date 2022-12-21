@@ -3,4 +3,4 @@ title: What gadget does every software developer need at work?
 answeredBy: Aaron Stampa
 ---
 
-Not being a gadget affine person, I find a height adjustable desk to be a valuable tool in any workplace.
+As I'm not a very gadget affine person, my answer is a height adjustable desk or standing desk for my workplaces.

@@ -1,10 +1,20 @@
 {
-  "i18n-ally.localesPaths": ["content/i18n"],
+  "i18n-ally.localesPaths": [
+    "content/i18n"
+  ],
   "editor.formatOnSave": true,
-  "i18n-ally.enabledFrameworks": ["react"],
+  "i18n-ally.enabledFrameworks": [
+    "react"
+  ],
   "i18n-ally.keystyle": "flat",
   "i18n-ally.sortKeys": true,
   "i18n-ally.sourceLanguage": "de-CH",
   "i18n-ally.displayLanguage": "de-CH",
-  "cSpell.words": ["Europastrasse", "gatsby", "Glattbrugg", "openscript"]
+  "cSpell.words": [
+    "Europastrasse",
+    "gatsby",
+    "Glattbrugg",
+    "openscript"
+  ],
+  "cSpell.language": "de-de, en"
 }
