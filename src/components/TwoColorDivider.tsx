@@ -22,7 +22,7 @@ export function TwoColorDivider({ flipVertical }: TwoColorDividerProps) {
 
         use {
           --upper-segment: ${theme.primaryColor};
-          --lower-segment: ${lighten(0.05, theme.primaryColor)};
+          --lower-segment: ${lighten(theme.brighterSibling, theme.primaryColor)};
         }
       `}
     />
