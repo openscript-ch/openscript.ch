@@ -1,5 +1,5 @@
 ---
-title: Welches Thema ist wichtiger in naher Zukunft, Blockchain oder Artifical Intelligence?
+title: Welches Thema ist wichtiger in naher Zukunft, Blockchain oder Künstliche Intelligenz?
 answeredBy: Diego Steiner
 ---
 

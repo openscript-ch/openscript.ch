@@ -1,5 +1,5 @@
 ---
-title: Which topic is more important in the near future, Blockchain or Artificial Intelligence?
+title: Which topic is more important in the near future, Blockchain or artificial intelligence?
 answeredBy: Diego Steiner
 ---
 
