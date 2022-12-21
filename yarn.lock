@@ -6418,10 +6418,10 @@ gatsby-telemetry@^4.3.1:
     lodash "^4.17.21"
     node-fetch "^2.6.7"
 
-gatsby-transformer-remark@^6.3.1:
-  version "6.3.1"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-6.3.1.tgz#095e6b910a693ce75a33c4683d38c6b45d5910b5"
-  integrity sha512-DF3urW1+Y+Lt8VXtbk1UwNOWZKYZmy9p0I68/W0rlU1aXQufnOcc4cVFh9QXJotLIsAjp23QCeyZ+48FfnXqEg==
+gatsby-transformer-remark@^6.3.2:
+  version "6.3.2"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-6.3.2.tgz#4a630d862c00888f752a1725ca11ddfda69be6d1"
+  integrity sha512-t6+mmSr9zExfnhlsWgefKBPXHwElU/DnjcLkr0Znxo5fQWXMVM8loFUk2p/m2mQH+d+PCIOgb8XaFdaYQnBZ3g==
   dependencies:
     "@babel/runtime" "^7.15.4"
     gatsby-core-utils "^4.3.1"
