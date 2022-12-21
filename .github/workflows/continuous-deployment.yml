@@ -49,10 +49,9 @@ jobs:
 
       - name: Build website
         id: build-website
-        run: yarn build:with-prefix
+        run: yarn build
         continue-on-error: true
         env:
-          PATH_PREFIX: '/gatsby-starter-dogmatism'
           CI: true
 
       - name: Clean Gatsby cache
@@ -63,9 +62,8 @@ jobs:
       - name: Build website with clean cache
         id: build-website-without-cache
         if: steps.clean-cache.outcome == 'success'
-        run: yarn build:with-prefix
+        run: yarn build
         env:
-          PATH_PREFIX: '/gatsby-starter-dogmatism'
           CI: true
 
       - name: Deploy to GitHub Pages
