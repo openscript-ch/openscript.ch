@@ -7,7 +7,7 @@ export async function CreateGenericPages({ actions, graphql }: CreatePagesArgs) 
   const { createPage } = actions;
   const allPages = await graphql<Queries.AllGenericPagesQuery>(`
     query AllGenericPages {
-      allMdx(filter: { fields: { kind: { eq: "pages" } } }) {
+      allMdx(filter: { fields: { kind: { glob: "pages/**" } } }) {
         edges {
           node {
             id
