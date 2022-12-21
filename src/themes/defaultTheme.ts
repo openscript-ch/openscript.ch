@@ -7,8 +7,8 @@ export const defaultTheme: Theme = {
   backgroundColor: '#ede9df',
   blackColor: '#231f20',
   whiteColor: '#ffffff',
-  darkerSibling: '10%',
-  brighterSibling: '10%',
+  darkerSibling: '0.05',
+  brighterSibling: '0.05',
   gutter: '2rem',
   fonts: {
     general: '"PT Sans", sans-serif',
