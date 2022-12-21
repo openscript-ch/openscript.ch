@@ -1,9 +1,11 @@
-declare module '*.svg' {
-  import { PureComponent, SVGProps } from 'react';
-
-  export class ReactComponent extends PureComponent<SVGProps<SVGSVGElement>> {}
+declare module '*.ttf' {
+  export default any;
 }
-declare module '*.ttf';
-declare module '*.eot';
-declare module '*.woff';
-declare module '*.woff2';
+
+declare module '*.woff' {
+  export default any;
+}
+
+declare module '*.woff2' {
+  export default any;
+}

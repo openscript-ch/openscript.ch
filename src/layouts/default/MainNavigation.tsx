@@ -2,11 +2,11 @@ import { css, Theme } from '@emotion/react';
 import { Markup } from 'interweave';
 import { Fragment, useState } from 'react';
 import { FormattedMessage } from 'react-intl';
-import { useLockBodyScroll } from 'react-use';
 import { LocalizedLink } from 'gatsby-plugin-i18n-l10n';
-import { Arrow } from './Arrow';
-import { BurgerButton } from './BurgerButton';
+import { useLockBodyScroll } from 'react-use';
 import LanguageSelector from './LanguageSelector';
+import { BurgerButton } from '../../components/BurgerButton';
+import { Arrow } from '../../components/Arrow';
 
 const navStyle = (theme: Theme) => css`
   @media screen and (max-width: ${theme.breakpoints.small}) {
@@ -25,7 +25,7 @@ const navStyle = (theme: Theme) => css`
       svg {
         margin-left: 0.5rem;
         width: 1rem;
-        height: auto;
+        height: 1rem;
       }
 
       > ul {

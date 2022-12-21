@@ -1,5 +1,5 @@
 import { css, Theme } from '@emotion/react';
-import { ReactComponent as ArrowGraphic } from '../../images/arrow.svg';
+import { Sprite } from './Sprite';
 
 type ArrowProps = {
   rotation?: number;
@@ -7,7 +7,8 @@ type ArrowProps = {
 
 export function Arrow({ rotation = 0 }: ArrowProps) {
   return (
-    <ArrowGraphic
+    <Sprite
+      name="arrow"
       css={(theme: Theme) => css`
         fill: ${theme.secondaryColor};
         transform: rotate(${`${rotation}deg`});

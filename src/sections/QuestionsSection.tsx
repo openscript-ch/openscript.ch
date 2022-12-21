@@ -3,8 +3,7 @@ import { Markup } from 'interweave';
 import { useRef } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
-import { Arrow } from '../layouts/default/Arrow';
-import { IndexPageQuery } from '../../graphql-types';
+import { Arrow } from '../components/Arrow';
 
 const sectionStyle = () => css`
   display: flex;
@@ -70,11 +69,11 @@ const carouselStyle = (theme: Theme) => css`
 `;
 
 type Props = {
-  questions: IndexPageQuery['questions'];
+  questions: Queries.IndexPageQuery['questions'];
 };
 
 export function QuestionsSection({ questions }: Props) {
-  const autoplay = useRef(Autoplay({ delay: 8000, stopOnInteraction: false }, emblaRoot => emblaRoot.parentElement));
+  const autoplay = useRef(Autoplay({ delay: 8000, stopOnInteraction: false, rootNode: emblaRoot => emblaRoot.parentElement }));
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, axis: 'y' }, [autoplay.current]);
 
   return (

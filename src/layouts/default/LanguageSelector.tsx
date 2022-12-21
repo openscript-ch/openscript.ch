@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import { LanguageSwitcher } from 'gatsby-plugin-i18n-l10n';
 import { useIntl } from 'react-intl';
 
-const languageSelectorStyles = () => css`
+const languageSelectorStyles = css`
   display: flex;
   align-items: center;
 `;

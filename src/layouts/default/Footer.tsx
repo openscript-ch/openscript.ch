@@ -2,9 +2,8 @@ import { css, Theme } from '@emotion/react';
 import { Markup } from 'interweave';
 import { FormattedMessage } from 'react-intl';
 import { LocalizedLink } from 'gatsby-plugin-i18n-l10n';
-import { Arrow } from './Arrow';
-import { ReactComponent as Github } from '../../images/github.svg';
-import { ReactComponent as Linkedin } from '../../images/linkedin.svg';
+import { Arrow } from '../../components/Arrow';
+import { Sprite } from '../../components/Sprite';
 
 const footerStyle = (theme: Theme) => css`
   display: flex;
@@ -91,12 +90,12 @@ export function Footer({ address, phone, email }: FooterProps) {
         <ul className="social-media">
           <li>
             <a href="https://github.com/openscript-ch">
-              <Github />
+              <Sprite name="github" />
             </a>
           </li>
           <li>
             <a href="https://www.linkedin.com/company/openscript/">
-              <Linkedin />
+              <Sprite name="linkedin" />
             </a>
           </li>
         </ul>

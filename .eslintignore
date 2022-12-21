@@ -1,6 +1,7 @@
 node_modules
 public
-plugins
+dist
 .cache
+*.js
+__mock__
 graphql-types.ts
-.eslintrc.js

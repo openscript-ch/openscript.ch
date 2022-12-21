@@ -1,21 +1,23 @@
 import { graphql, PageProps } from 'gatsby';
-import { Markup } from 'interweave';
-import { GenericPageQuery } from '../../graphql-types';
+import { Document } from '../layouts/default/Document';
 import { DefaultLayout } from '../layouts/DefaultLayout';
 
-export default function GenericPage({ data }: PageProps<GenericPageQuery>) {
+export default function GenericPage({ children }: PageProps<Queries.AllGenericPagesQuery>) {
   return (
     <DefaultLayout>
-      <Markup content={data.markdownRemark?.html} />
+      <section>{children}</section>
     </DefaultLayout>
   );
 }
 
+export function Head() {
+  return <Document />;
+}
+
 export const query = graphql`
-  query GenericPage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+  query GenericPages($id: String!) {
+    mdx(id: { eq: $id }) {
       id
-      html
     }
   }
 `;

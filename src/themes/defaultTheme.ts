@@ -1,5 +1,5 @@
 import { css, Theme } from '@emotion/react';
-import { convertThemeToCSSVariables } from './helper';
+import { convertThemeToCSSVariables } from './themeHelper';
 
 export const defaultTheme: Theme = {
   primaryColor: '#539350',

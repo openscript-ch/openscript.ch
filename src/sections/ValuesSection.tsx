@@ -6,9 +6,8 @@ import Autoplay from 'embla-carousel-autoplay';
 import { Markup } from 'interweave';
 import { LocalizedLink } from 'gatsby-plugin-i18n-l10n';
 import { DividedSection } from '../components/DividedSection';
-import { ReactComponent as IllustrationGraphic } from '../../content/statics/illustration.svg';
-import { IndexPageQuery } from '../../graphql-types';
-import { Arrow } from '../layouts/default/Arrow';
+import { Sprite } from '../components/Sprite';
+import { Arrow } from '../components/Arrow';
 
 const sectionStyle = (theme: Theme) => css`
   display: flex;
@@ -75,21 +74,37 @@ const carouselStyle = (theme: Theme) => css`
   .carousel-slide {
     position: relative;
     display: flex;
+    height: clamp(20rem, 30vw, 30rem);
+    width: clamp(20rem, 30vw, 30rem);
+
+    &:nth-child(2),
+    &:nth-child(5) {
+      svg {
+        margin-left: calc(clamp(20rem, 30vw, 30rem) * -1);
+      }
+    }
+
+    &:nth-child(3),
+    &:nth-child(6) {
+      svg {
+        margin-left: calc(clamp(20rem, 30vw, 30rem) * -2);
+      }
+    }
   }
 
   svg {
-    height: clamp(20rem, 30vw, 30rem);
+    height: 100%;
   }
 `;
 
 type Props = {
-  values: IndexPageQuery['values'];
+  values: Queries.IndexPageQuery['values'];
 };
 
 export function ValuesSection({ values }: Props) {
   const theme = useTheme();
 
-  const autoplay = useRef(Autoplay({ delay: 4000, stopOnInteraction: false }, emblaRoot => emblaRoot.parentElement));
+  const autoplay = useRef(Autoplay({ delay: 4000, stopOnInteraction: false, rootNode: emblaRoot => emblaRoot.parentElement }));
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [autoplay.current]);
 
   const { formatMessage } = useIntl();
@@ -127,22 +142,22 @@ export function ValuesSection({ values }: Props) {
         <div css={carouselStyle} ref={emblaRef}>
           <div className="carousel-container">
             <div className="carousel-slide">
-              <IllustrationGraphic viewBox="0 0 1077.833333333 1080" />
+              <Sprite name="illustration" />
             </div>
             <div className="carousel-slide">
-              <IllustrationGraphic viewBox="1077.833333333 0 1077.833333333 1080" />
+              <Sprite name="illustration" />
             </div>
             <div className="carousel-slide">
-              <IllustrationGraphic viewBox="2155.666666666 0 1077.833333333 1080" />
+              <Sprite name="illustration" />
             </div>
             <div className="carousel-slide">
-              <IllustrationGraphic viewBox="0 0 1077.833333333 1080" />
+              <Sprite name="illustration" />
             </div>
             <div className="carousel-slide">
-              <IllustrationGraphic viewBox="1077.833333333 0 1077.833333333 1080" />
+              <Sprite name="illustration" />
             </div>
             <div className="carousel-slide">
-              <IllustrationGraphic viewBox="2155.666666666 0 1077.833333333 1080" />
+              <Sprite name="illustration" />
             </div>
           </div>
         </div>
