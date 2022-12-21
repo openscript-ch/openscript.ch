@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-pages-past-tsx",
-    "path": "/vergangenheit",
-    "result": {"pageContext":{"locale":"de-CH","translations":[{"locale":"en-US","path":"/en/past"}],"prefix":"de"}},
-    "staticQueryHashes": ["1256713454"]}
+{"componentChunkName":"component---src-pages-past-tsx","path":"/vergangenheit/","result":{"pageContext":{"locale":"de-CH","translations":[{"locale":"en-US","path":"/en/past"}],"prefix":"de"}},"staticQueryHashes":["1256713454"],"slicesMap":{}}

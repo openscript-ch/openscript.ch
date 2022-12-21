@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-pages-present-tsx",
-    "path": "/gegenwart",
-    "result": {"pageContext":{"locale":"de-CH","translations":[{"locale":"en-US","path":"/en/present"}],"prefix":"de"}},
-    "staticQueryHashes": ["1256713454"]}
+{"componentChunkName":"component---src-pages-present-tsx","path":"/gegenwart/","result":{"pageContext":{"locale":"de-CH","translations":[{"locale":"en-US","path":"/en/present"}],"prefix":"de"}},"staticQueryHashes":["1256713454"],"slicesMap":{}}

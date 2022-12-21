@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-pages-404-tsx",
-    "path": "/404",
-    "result": {"pageContext":{"locale":"de-CH","translations":[{"locale":"en-US","path":"/en/404"}],"prefix":"de"}},
-    "staticQueryHashes": ["1256713454"]}
+{"componentChunkName":"component---src-pages-404-tsx","path":"/404/","result":{"pageContext":{"locale":"de-CH","translations":[{"locale":"en-US","path":"/en/404"}],"prefix":"de"}},"staticQueryHashes":["1256713454"],"slicesMap":{}}

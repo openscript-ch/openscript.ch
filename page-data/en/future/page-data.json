@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-pages-future-tsx",
-    "path": "/en/future",
-    "result": {"pageContext":{"locale":"en-US","translations":[{"locale":"de-CH","path":"/zukunft"}],"prefix":"en"}},
-    "staticQueryHashes": ["1256713454"]}
+{"componentChunkName":"component---src-pages-future-tsx","path":"/en/future/","result":{"pageContext":{"locale":"en-US","translations":[{"locale":"de-CH","path":"/zukunft"}],"prefix":"en"}},"staticQueryHashes":["1256713454"],"slicesMap":{}}

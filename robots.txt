@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://openscript.ch/sitemap/sitemap-index.xml
-Host: https://openscript.ch
