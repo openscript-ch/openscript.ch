@@ -53,7 +53,7 @@ export const query = graphql`
         title
       }
     }
-    strengths: allMarkdownRemark(filter: { fields: { locale: { eq: $locale }, kind: { eq: "sections/strength/services" } } }) {
+    strengths: allMarkdownRemark(filter: { fields: { locale: { eq: $locale }, kind: { eq: "sections/strengths/services" } } }) {
       nodes {
         html
         frontmatter {
