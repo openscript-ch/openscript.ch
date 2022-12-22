@@ -58,6 +58,7 @@ export const query = graphql`
         html
         frontmatter {
           title
+          order
           icon {
             publicURL
           }
