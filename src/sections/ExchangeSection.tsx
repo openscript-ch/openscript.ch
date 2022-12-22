@@ -47,9 +47,10 @@ const sectionStyle = (theme: Theme) => css`
 
 type Props = {
   exchange: Queries.IndexPageQuery['exchange'];
+  strengths: Queries.IndexPageQuery['strengths'];
 };
 
-export function ExchangeSection({ exchange }: Props) {
+export function ExchangeSection({ exchange, strengths }: Props) {
   const theme = useTheme();
 
   return (
