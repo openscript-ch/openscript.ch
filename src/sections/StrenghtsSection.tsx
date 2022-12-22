@@ -8,9 +8,11 @@ type Props = {
 export function StrengthsSection({ strengths }: Props) {
   const [selectedStrength, setSelectedStrength] = useState(strengths.nodes.find(({ frontmatter }) => frontmatter?.order === 1));
 
+  const sortedStrengths = Array.from(strengths.nodes).sort((a, b) => (a.frontmatter?.order ?? 0) - (b.frontmatter?.order ?? 0));
+
   return (
     <article>
-      {strengths.nodes.map(strength => {
+      {sortedStrengths.map(strength => {
         const { order, title } = strength.frontmatter ?? {};
         return (
           <label htmlFor={`${order}`}>
