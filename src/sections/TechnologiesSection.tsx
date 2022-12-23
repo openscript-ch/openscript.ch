@@ -66,23 +66,23 @@ const sectionStyle = (theme: Theme) => css`
 export function TechnologiesSection({ exchange }: Props) {
   const sprites: { name: keyof typeof SpriteData; url: string; size: number }[] = [
     //
-    { name: 'logo-k0s', url: '', size: 0.5 },
-    { name: 'logo-gatsby', url: '', size: 0.8 },
-    { name: 'logo-nestjs', url: '', size: 1.1 },
-    { name: 'logo-graphql', url: '', size: 0.8 },
-    { name: 'logo-supabase', url: '', size: 0.5 },
+    { name: 'logo-k0s', url: 'https://k0sproject.io/', size: 0.5 },
+    { name: 'logo-gatsby', url: 'https://gatsbyjs.com', size: 0.8 },
+    { name: 'logo-nestjs', url: 'https://nestjs.com', size: 1.1 },
+    { name: 'logo-graphql', url: 'https://grapqhl.org', size: 0.8 },
+    { name: 'logo-supabase', url: 'https://supabase.com', size: 0.5 },
     //
-    { name: 'logo-docker', url: '', size: 1 },
-    { name: 'logo-ts', url: '', size: 1.1 },
-    { name: 'logo-react', url: '', size: 1.8 },
-    { name: 'logo-ruby', url: '', size: 1.1 },
-    { name: 'logo-postgres', url: '', size: 1 },
+    { name: 'logo-docker', url: 'https://docker.com', size: 1 },
+    { name: 'logo-ts', url: 'https://typescriptlang.org', size: 1.1 },
+    { name: 'logo-react', url: 'https://reactjs.org', size: 1.8 },
+    { name: 'logo-ruby', url: 'https://ruby-lang.org', size: 1.1 },
+    { name: 'logo-postgres', url: 'https://postgresql.org', size: 1 },
     //
-    { name: 'logo-vscode', url: '', size: 0.5 },
-    { name: 'logo-html', url: '', size: 0.8 },
-    { name: 'logo-css', url: '', size: 1.1 },
-    { name: 'logo-rails', url: '', size: 0.8 },
-    { name: 'logo-gitea', url: '', size: 0.5 },
+    { name: 'logo-vscode', url: 'https://code.visualstudio.com', size: 0.5 },
+    { name: 'logo-html', url: 'https://developer.mozilla.org/en-US/docs/Web/HTML', size: 0.8 },
+    { name: 'logo-css', url: 'https://developer.mozilla.org/en-US/docs/Web/CSS', size: 1.1 },
+    { name: 'logo-rails', url: 'https://rubyonrails.org', size: 0.8 },
+    { name: 'logo-gitea', url: 'https://gitea.io', size: 0.5 },
   ];
 
   const getRandomNumberBetween = (min: number, max: number) => Math.random() * (max - min) + min;
