@@ -66,6 +66,9 @@ export const query = graphql`
               frontmatter {
                 title
                 link
+                icon {
+                  publicURL
+                }
               }
             }
           }
