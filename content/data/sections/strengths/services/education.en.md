@@ -1,6 +1,6 @@
 ---
 title: Education
-icon: ./education.svg
+sprite: education
 order: 2
 ---
 

@@ -7,9 +7,17 @@
     "width": "52.089",
     "height": "35.334"
   },
+  "consulting": {
+    "width": "711",
+    "height": "655"
+  },
   "cooperation": {
     "width": "279.47",
     "height": "271.35"
+  },
+  "education": {
+    "width": "788",
+    "height": "640"
   },
   "github": {
     "width": "66.234",
@@ -30,6 +38,10 @@
   "singleColorDivider": {
     "width": "1600",
     "height": "40"
+  },
+  "software-development": {
+    "width": "128",
+    "height": "67"
   },
   "twoColorDivider": {
     "width": "1600",

@@ -1,6 +1,6 @@
 ---
 title: Consulting
-icon: ./consulting.svg
+sprite: consulting
 order: 3
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Software development
-icon: ./software-development.svg
+sprite: software-development
 skills: [../skills/iam.en.md, '../skills/web-applications.en.md', '../skills/apis.en.md', '../skills/calendar.en.md']
 order: 1
 ---

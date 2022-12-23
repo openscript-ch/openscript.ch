@@ -1,6 +1,6 @@
 ---
 title: Schulung
-icon: ./education.svg
+sprite: education
 order: 2
 ---
 

@@ -1503,6 +1503,7 @@ type MarkdownRemarkFrontmatter = {
   readonly logo: Maybe<File>;
   readonly order: Maybe<Scalars['Int']>;
   readonly skills: Maybe<ReadonlyArray<Maybe<File>>>;
+  readonly sprite: Maybe<Scalars['String']>;
   readonly title: Maybe<Scalars['String']>;
 };
 
@@ -1513,6 +1514,7 @@ type MarkdownRemarkFrontmatterFieldSelector = {
   readonly logo: InputMaybe<FileFieldSelector>;
   readonly order: InputMaybe<FieldSelectorEnum>;
   readonly skills: InputMaybe<FileFieldSelector>;
+  readonly sprite: InputMaybe<FieldSelectorEnum>;
   readonly title: InputMaybe<FieldSelectorEnum>;
 };
 
@@ -1523,6 +1525,7 @@ type MarkdownRemarkFrontmatterFilterInput = {
   readonly logo: InputMaybe<FileFilterInput>;
   readonly order: InputMaybe<IntQueryOperatorInput>;
   readonly skills: InputMaybe<FileFilterListInput>;
+  readonly sprite: InputMaybe<StringQueryOperatorInput>;
   readonly title: InputMaybe<StringQueryOperatorInput>;
 };
 
@@ -1533,6 +1536,7 @@ type MarkdownRemarkFrontmatterSortInput = {
   readonly logo: InputMaybe<FileSortInput>;
   readonly order: InputMaybe<SortOrderEnum>;
   readonly skills: InputMaybe<FileSortInput>;
+  readonly sprite: InputMaybe<SortOrderEnum>;
   readonly title: InputMaybe<SortOrderEnum>;
 };
 
@@ -3114,7 +3118,7 @@ type IndexPageQueryVariables = Exact<{
 }>;
 
 
-type IndexPageQuery = { readonly values: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly link: string | null, readonly title: string | null } | null }> }, readonly cooperationYou: { readonly html: string | null, readonly frontmatter: { readonly title: string | null } | null } | null, readonly cooperationUs: { readonly html: string | null, readonly frontmatter: { readonly title: string | null } | null } | null, readonly exchange: { readonly html: string | null, readonly frontmatter: { readonly title: string | null } | null } | null, readonly strengths: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly order: number | null, readonly icon: { readonly publicURL: string | null } | null, readonly skills: ReadonlyArray<{ readonly childMarkdownRemark: { readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly link: string | null } | null } | null } | null> | null } | null }> }, readonly questions: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly answeredBy: string | null, readonly title: string | null } | null }> }, readonly softwareReferences: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly icon: { readonly publicURL: string | null } | null } | null }> }, readonly companyReferences: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly link: string | null, readonly logo: { readonly publicURL: string | null } | null } | null }> } };
+type IndexPageQuery = { readonly values: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly link: string | null, readonly title: string | null } | null }> }, readonly cooperationYou: { readonly html: string | null, readonly frontmatter: { readonly title: string | null } | null } | null, readonly cooperationUs: { readonly html: string | null, readonly frontmatter: { readonly title: string | null } | null } | null, readonly exchange: { readonly html: string | null, readonly frontmatter: { readonly title: string | null } | null } | null, readonly strengths: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly order: number | null, readonly sprite: string | null, readonly skills: ReadonlyArray<{ readonly childMarkdownRemark: { readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly link: string | null } | null } | null } | null> | null } | null }> }, readonly questions: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly answeredBy: string | null, readonly title: string | null } | null }> }, readonly softwareReferences: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly icon: { readonly publicURL: string | null } | null } | null }> }, readonly companyReferences: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly link: string | null, readonly logo: { readonly publicURL: string | null } | null } | null }> } };
 
 type AllGenericPagesQueryVariables = Exact<{ [key: string]: never; }>;
 

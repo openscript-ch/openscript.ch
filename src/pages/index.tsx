@@ -59,9 +59,7 @@ export const query = graphql`
         frontmatter {
           title
           order
-          icon {
-            publicURL
-          }
+          sprite
           skills {
             childMarkdownRemark {
               html

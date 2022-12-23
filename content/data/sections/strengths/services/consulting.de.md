@@ -1,6 +1,6 @@
 ---
 title: Beraten
-icon: ./consulting.svg
+sprite: consulting
 order: 3
 ---
 
