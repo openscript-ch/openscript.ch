@@ -88,6 +88,10 @@ const strengthContentContainerStyle = (theme: Theme) => css`
       }
     }
   }
+
+  blockquote {
+    font-style: italic;
+  }
 `;
 
 type Props = {
@@ -121,7 +125,9 @@ export function StrengthsSection({ strengths }: Props) {
         );
       })}
       <div css={strengthContentContainerStyle}>
-        <Markup content={selectedStrength?.html} />
+        <blockquote>
+          <Markup content={selectedStrength?.html} />
+        </blockquote>
         <ul>
           {selectedStrength?.frontmatter?.skills?.map(skill => {
             const { title, icon, link } = skill?.childMarkdownRemark?.frontmatter ?? {};
