@@ -1,5 +1,52 @@
+import { Theme } from '@emotion/react';
+import { css } from '@emotion/react';
 import { Markup } from 'interweave';
 import { useState } from 'react';
+import { Sprite, SpriteProps } from '../components/Sprite';
+
+const tabStyle = (theme: Theme) => css`
+  display: inline-block;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 18rem;
+    padding: var(${theme.variables.gutter});
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.2s;
+
+    h4 {
+      font-size: 0.9rem;
+      margin: 0;
+      margin-top: 0.5rem;
+    }
+
+    svg {
+      height: 3rem;
+      width: auto;
+      margin-bottom: 0.5rem;
+      fill: white;
+    }
+  }
+
+  input[type='radio'] {
+    display: none;
+
+    &:checked ~ label,
+    & ~ label:hover {
+      color: var(${theme.variables.secondaryColor});
+      svg {
+        fill: var(${theme.variables.secondaryColor});
+      }
+    }
+
+    &:checked ~ label {
+      background-color: white;
+    }
+  }
+`;
 
 type Props = {
   strengths: Queries.IndexPageQuery['strengths'];
@@ -13,10 +60,9 @@ export function StrengthsSection({ strengths }: Props) {
   return (
     <article>
       {sortedStrengths.map(strength => {
-        const { order, title } = strength.frontmatter ?? {};
+        const { order, title, sprite } = strength.frontmatter ?? {};
         return (
-          <label htmlFor={`${order}`}>
-            {title}
+          <div css={tabStyle}>
             <input
               id={`${order}`}
               checked={selectedStrength?.frontmatter?.order === order}
@@ -24,7 +70,11 @@ export function StrengthsSection({ strengths }: Props) {
               name="services"
               type="radio"
             />
-          </label>
+            <label htmlFor={`${order}`}>
+              <Sprite name={sprite as SpriteProps['name']} />
+              <h4>{title}</h4>
+            </label>
+          </div>
         );
       })}
       <div>
