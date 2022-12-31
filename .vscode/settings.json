@@ -3,6 +3,24 @@
     "content/i18n"
   ],
   "editor.formatOnSave": true,
+  "eslint.options": {
+    "extensions": [
+      ".md",
+      ".mdx",
+      ".js",
+      ".jsx",
+      ".ts",
+      ".tsx",
+    ]
+  },
+  "eslint.validate": [
+    "markdown",
+    "mdx",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
   "i18n-ally.enabledFrameworks": [
     "react"
   ],
