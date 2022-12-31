@@ -5,7 +5,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['*.js', '*.jsx', '*.ts', '*.tsx', '*.json', '*.yml'],
+      files: ['*.js', '*.jsx', '*.ts', '*.tsx'],
       extends: ['plugin:react/recommended', 'airbnb', 'airbnb-typescript', 'plugin:react/jsx-runtime', 'plugin:prettier/recommended'],
       parser: '@typescript-eslint/parser',
       parserOptions: {
