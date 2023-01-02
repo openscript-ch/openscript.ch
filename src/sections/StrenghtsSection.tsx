@@ -27,6 +27,7 @@ const tabsStyle = (theme: Theme) => css`
         font-size: 0.9rem;
         margin: 0;
         margin-top: 0.5rem;
+        text-align: center;
       }
 
       svg {

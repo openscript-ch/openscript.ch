@@ -17,7 +17,8 @@ const sectionStyle = (theme: Theme) => css`
     padding: var(${theme.variables.gutter});
     display: flex;
     flex-direction: column;
-    max-width: 30vw;
+    flex: 1;
+    min-width: 15rem;
 
     svg {
       width: 4rem;
@@ -27,38 +28,51 @@ const sectionStyle = (theme: Theme) => css`
   }
 
   .logos-grid {
-    flex: 1;
+    flex: 2;
     display: grid;
+    place-content: center;
     grid-template-columns: repeat(5, 1fr);
     align-items: center;
     gap: 3rem;
 
     a {
       transition: transform 0.2s;
+      transform-origin: center;
 
       svg {
         transition: transform 0.2s;
         fill: white;
-        width: 5rem;
+        width: 100%;
+        max-width: 4.5rem;
         height: auto;
         cursor: pointer;
-        &:hover {
-          fill: var(${theme.variables.secondaryColor});
-        }
       }
 
       &:hover {
         transform: scale(1.2);
+
+        svg {
+          fill: var(${theme.variables.secondaryColor});
+        }
       }
     }
   }
 
-  @media screen and (max-width: ${theme.breakpoints.small}) {
-    flex-direction: column;
+  @media screen and (max-width: ${theme.breakpoints.medium}) {
+    .logos-grid {
+      gap: 2rem;
+    }
+  }
 
-    .text-box svg {
-      transform: rotate(0);
-      margin-inline: auto;
+  @media screen and (max-width: ${theme.breakpoints.small}) {
+    flex-direction: column-reverse;
+
+    .text-box {
+      flex: 1;
+      svg {
+        transform: rotate(0);
+        margin-inline: auto;
+      }
     }
   }
 `;
@@ -91,16 +105,20 @@ export function TechnologiesSection({ exchange }: Props) {
     <article css={sectionStyle}>
       <div className="logos-grid">
         {sprites.map(sprite => (
-          <a href={sprite.url}>
-            <Sprite
-              name={sprite.name}
-              css={css`
+          <a
+            href={sprite.url}
+            css={css`
+              svg {
                 transform: rotate(${getRandomNumberBetween(-45, 45)}deg) scale(${sprite.size});
-                :hover {
+              }
+              :hover {
+                svg {
                   transform: rotate(0) scale(${sprite.size});
                 }
-              `}
-            />
+              }
+            `}
+          >
+            <Sprite name={sprite.name} />
           </a>
         ))}
       </div>
