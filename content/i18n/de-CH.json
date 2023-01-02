@@ -5,10 +5,10 @@
   "language": "Deutsch",
   "menu.backToTheFuture": "Die Vergangenheit können wir nicht ändern, aber die Zukunft.",
   "menu.collaboration": "Zusammenarbeit",
-  "menu.participation": "Mitarbeit",
   "menu.formation": "Entstehung",
   "menu.future": "Zukunft",
   "menu.imprint": "Impressum",
+  "menu.participation": "Mitarbeit",
   "menu.past": "Vergangenheit",
   "menu.present": "Gegenwart",
   "menu.references": "Referenzen",
@@ -20,7 +20,15 @@
   "menu.toThePresent": "In die Gegenwart",
   "menu.togetherAhead": "Trete in Kontakt, um gemeinsam die Zukunft zu gestalten.",
   "menu.values": "Werte",
+  "page.collaboration.title": "Zusammenarbeit",
+  "page.formation.title": "Entstehung",
   "page.not-found.action": "Zur Startseite",
   "page.not-found.content": "Leider konnte die angeforderte Seite nicht gefunden werden.",
-  "page.not-found.title": "Seite nicht gefunden"
+  "page.not-found.title": "Seite nicht gefunden",
+  "page.participation.title": "Mitarbeit",
+  "page.references.title": "Referenzen",
+  "page.services.title": "Dienstleistungen",
+  "page.strengths.title": "Stärken",
+  "page.team.title": "Team",
+  "page.values.title": "Werte"
 }

@@ -2,7 +2,7 @@ import { FormattedMessage } from 'react-intl';
 import { LocalizedLink } from 'gatsby-plugin-i18n-l10n';
 import { DefaultLayout } from '../layouts/DefaultLayout';
 
-export default function NotFound() {
+export default function NotFoundPage() {
   return (
     <DefaultLayout>
       <section>
