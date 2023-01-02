@@ -7,46 +7,50 @@ import { useIntl } from 'react-intl';
 import { Arrow } from '../components/Arrow';
 import { Sprite, SpriteProps } from '../components/Sprite';
 
-const tabStyle = (theme: Theme) => css`
-  display: inline-block;
+const tabsStyle = (theme: Theme) => css`
+  display: flex;
+  overflow-y: auto;
 
-  label {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 20rem;
-    padding: var(${theme.variables.gutter});
-    cursor: pointer;
-    color: white;
-    transition: background-color 0.2s;
+  > div {
+    flex-basis: 15rem;
+    label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: var(${theme.variables.gutter});
+      cursor: pointer;
+      color: white;
+      transition: background-color 0.2s;
+      height: 100%;
 
-    h4 {
-      font-size: 0.9rem;
-      margin: 0;
-      margin-top: 0.5rem;
-    }
+      h4 {
+        font-size: 0.9rem;
+        margin: 0;
+        margin-top: 0.5rem;
+      }
 
-    svg {
-      height: 3rem;
-      width: auto;
-      margin-bottom: 0.5rem;
-      fill: white;
-    }
-  }
-
-  input[type='radio'] {
-    display: none;
-
-    &:checked ~ label,
-    & ~ label:hover {
-      color: var(${theme.variables.secondaryColor});
       svg {
-        fill: var(${theme.variables.secondaryColor});
+        height: 3rem;
+        width: auto;
+        margin-bottom: 0.5rem;
+        fill: white;
       }
     }
 
-    &:checked ~ label {
-      background-color: white;
+    input[type='radio'] {
+      display: none;
+
+      &:checked ~ label,
+      & ~ label:hover {
+        color: var(${theme.variables.secondaryColor});
+        svg {
+          fill: var(${theme.variables.secondaryColor});
+        }
+      }
+
+      &:checked ~ label {
+        background-color: white;
+      }
     }
   }
 `;
@@ -57,22 +61,18 @@ const strengthContentContainerStyle = (theme: Theme) => css`
   ul {
     list-style: none;
     margin-top: var(${theme.variables.gutter});
+    display: grid;
+    gap: var(${theme.variables.gutter});
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
 
     li {
       display: inline-flex;
       flex-direction: column;
       background-color: var(${theme.variables.backgroundColor});
       padding: 1rem;
-      --box-size: 12rem;
-      width: var(--box-size);
-      height: var(--box-size);
-
-      &:not(:last-child) {
-        margin-right: var(${theme.variables.gutter});
-      }
 
       img {
-        max-height: 40%;
+        max-height: 5rem;
         margin-bottom: 0.5rem;
       }
 
@@ -106,24 +106,26 @@ export function StrengthsSection({ strengths }: Props) {
 
   return (
     <article>
-      {sortedStrengths.map(strength => {
-        const { order, title, sprite } = strength.frontmatter ?? {};
-        return (
-          <div css={tabStyle}>
-            <input
-              id={`${order}`}
-              checked={selectedStrength?.frontmatter?.order === order}
-              onChange={() => setSelectedStrength(strength)}
-              name="services"
-              type="radio"
-            />
-            <label htmlFor={`${order}`}>
-              <Sprite name={sprite as SpriteProps['name']} />
-              <h4>{title}</h4>
-            </label>
-          </div>
-        );
-      })}
+      <div css={tabsStyle}>
+        {sortedStrengths.map(strength => {
+          const { order, title, sprite } = strength.frontmatter ?? {};
+          return (
+            <div>
+              <input
+                id={`${order}`}
+                checked={selectedStrength?.frontmatter?.order === order}
+                onChange={() => setSelectedStrength(strength)}
+                name="services"
+                type="radio"
+              />
+              <label htmlFor={`${order}`}>
+                <Sprite name={sprite as SpriteProps['name']} />
+                <h4>{title}</h4>
+              </label>
+            </div>
+          );
+        })}
+      </div>
       <div css={strengthContentContainerStyle}>
         <blockquote>
           <Markup content={selectedStrength?.html} />
