@@ -1,5 +1,4 @@
-import { Theme } from '@emotion/react';
-import { css } from '@emotion/react';
+import { Theme, css } from '@emotion/react';
 import { LocalizedLink } from 'gatsby-plugin-i18n-l10n';
 import { Markup } from 'interweave';
 import { useState } from 'react';
