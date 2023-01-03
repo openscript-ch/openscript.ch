@@ -176,16 +176,16 @@ export const defaultStyles = (theme: Theme) => css`
   }
 
   #top-bar a,
-  header a,
+  header > a,
+  header > div > nav:not(.open) > ul > li > a,
   footer a {
     color: ${theme.backgroundColor};
     fill: ${theme.backgroundColor};
 
     &:hover,
     &.active {
-      color: ${theme.backgroundColor};
-      text-shadow: 2px 2px 0 ${theme.secondaryColor};
-      fill: ${theme.secondaryColor};
+      color: ${theme.whiteColor};
+      fill: ${theme.whiteColor};
     }
   }
 

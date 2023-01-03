@@ -56,7 +56,6 @@ const navStyle = (theme: Theme) => css`
         a {
           display: block;
           padding: 1rem;
-          color: ${theme.blackColor};
         }
       }
 
@@ -97,9 +96,9 @@ const navStyle = (theme: Theme) => css`
         a {
           width: 100%;
           padding: 1rem;
-          color: ${theme.blackColor};
           display: flex;
           justify-content: space-between;
+          align-items: center;
 
           svg {
             transform: rotate(270deg);
@@ -141,11 +140,6 @@ const navStyle = (theme: Theme) => css`
 
       li {
         margin: 0;
-
-        a {
-          font-size: 1.2rem;
-          color: ${theme.blackColor};
-        }
       }
     }
   }
