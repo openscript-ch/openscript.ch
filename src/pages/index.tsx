@@ -1,6 +1,4 @@
 import { graphql, PageProps } from 'gatsby';
-
-import { Document } from '../layouts/default/Document';
 import { DefaultLayout } from '../layouts/DefaultLayout';
 import { CooperationSection } from '../sections/CooperationSection';
 import { ExchangeSection } from '../sections/ExchangeSection';
@@ -18,10 +16,6 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
       <QuestionsSection questions={data.questions} />
     </DefaultLayout>
   );
-}
-
-export function Head() {
-  return <Document title="Home" />;
 }
 
 export const query = graphql`

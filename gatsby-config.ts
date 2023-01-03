@@ -27,7 +27,7 @@ const configuration: GatsbyConfig = {
   pathPrefix: process.env.PATH_PREFIX || '/',
   siteMetadata: {
     title: `openscript GmbH`,
-    description: `Your companions for adventures in the world of bits and bytes.`,
+    description: `Companions for adventures in the world of bits and bytes.`,
     author: `openscript GmbH`,
     phone: `<a href="tel:+41445205467">+41 44 520 54 67</a>`,
     email: `<a href="mailto:hi@openscript.ch">hi@openscript.ch</a>`,
@@ -98,7 +98,6 @@ const configuration: GatsbyConfig = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
 
-    // Local plugins
     {
       resolve: `gatsby-plugin-i18n-l10n`,
       options: {

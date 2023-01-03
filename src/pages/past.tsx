@@ -1,7 +1,9 @@
 import { css, Theme, useTheme } from '@emotion/react';
+import { graphql, HeadProps } from 'gatsby';
 import { useIntl } from 'react-intl';
 import { DividedSection } from '../components/DividedSection';
 import { ForwardBackwardSections } from '../components/ForwardBackwardSections';
+import { Document } from '../layouts/default/Document';
 import { DefaultLayout } from '../layouts/DefaultLayout';
 
 const contentSectionStyle = (theme: Theme) => css`
@@ -31,3 +33,20 @@ export default function PastPage() {
     </DefaultLayout>
   );
 }
+
+// PageTitle: t(`page.past.title`)
+// PageDescription: t(`page.past.description`)
+export function Head({ data }: HeadProps<Queries.PastPageQuery>) {
+  return <Document title={data.pageTitle?.message || undefined} description={data.pageDescription?.message || undefined} />;
+}
+
+export const query = graphql`
+  query PastPage($locale: String) {
+    pageTitle: translation(locale: { eq: $locale }, key: { eq: "page.past.title" }) {
+      message
+    }
+    pageDescription: translation(locale: { eq: $locale }, key: { eq: "page.past.description" }) {
+      message
+    }
+  }
+`;
