@@ -36,6 +36,8 @@ const sectionStyle = (theme: Theme) => css`
     gap: 3rem;
 
     a {
+      display: flex;
+      justify-content: center;
       transition: transform 0.2s;
       transform-origin: center;
 
