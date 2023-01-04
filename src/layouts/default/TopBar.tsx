@@ -2,8 +2,8 @@ import { css, Theme } from '@emotion/react';
 import { Markup } from 'interweave';
 import { darken } from 'polished';
 import { LocalizedLink } from 'gatsby-plugin-i18n-l10n';
-import LanguageSelector from './LanguageSelector';
 import { useEffect, useState } from 'react';
+import LanguageSelector from './LanguageSelector';
 import { Sprite } from '../../components/Sprite';
 
 const topBarStyle = (showLogo: boolean) => (theme: Theme) =>
@@ -89,10 +89,8 @@ export function TopBar({ title, phone, email }: TopBarProps) {
       if (window.scrollY < HEADER_HEIGHT) {
         setShowLogo(false);
       }
-    } else {
-      if (window.scrollY >= HEADER_HEIGHT) {
-        setShowLogo(true);
-      }
+    } else if (window.scrollY >= HEADER_HEIGHT) {
+      setShowLogo(true);
     }
   };
 
