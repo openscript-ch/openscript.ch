@@ -13,7 +13,7 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
     <DefaultLayout>
       <ValuesSection values={data.values} />
       <CooperationSection you={data.cooperationYou} us={data.cooperationUs} />
-      <ExchangeSection exchange={data.exchange} />
+      <ExchangeSection exchange={data.exchange} strengths={data.strengths} />
       <ReferencesSection softwareReferences={data.softwareReferences} companyReferences={data.companyReferences} />
       <QuestionsSection questions={data.questions} />
     </DefaultLayout>
@@ -51,6 +51,28 @@ export const query = graphql`
       html
       frontmatter {
         title
+      }
+    }
+    strengths: allMarkdownRemark(filter: { fields: { locale: { eq: $locale }, kind: { eq: "sections/strengths/services" } } }) {
+      nodes {
+        html
+        frontmatter {
+          title
+          order
+          sprite
+          skills {
+            childMarkdownRemark {
+              html
+              frontmatter {
+                title
+                link
+                icon {
+                  publicURL
+                }
+              }
+            }
+          }
+        }
       }
     }
     questions: allMarkdownRemark(filter: { fields: { locale: { eq: $locale }, kind: { eq: "sections/questions" } } }) {
