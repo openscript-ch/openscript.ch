@@ -1,5 +1,5 @@
 ---
 title: Schnittstellen
-icon: ./apis.svg
+sprite: apis
 link: /present/strengths#apis
 ---

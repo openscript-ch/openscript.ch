@@ -1931,7 +1931,6 @@ type Query = {
   readonly allSiteFunction: SiteFunctionConnection;
   readonly allSitePage: SitePageConnection;
   readonly allSitePlugin: SitePluginConnection;
-  readonly allTranslation: TranslationConnection;
   readonly directory: Maybe<Directory>;
   readonly file: Maybe<File>;
   readonly imageSharp: Maybe<ImageSharp>;
@@ -1942,7 +1941,6 @@ type Query = {
   readonly siteFunction: Maybe<SiteFunction>;
   readonly sitePage: Maybe<SitePage>;
   readonly sitePlugin: Maybe<SitePlugin>;
-  readonly translation: Maybe<Translation>;
 };
 
 
@@ -2023,14 +2021,6 @@ type Query_allSitePluginArgs = {
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<ReadonlyArray<InputMaybe<SitePluginSortInput>>>;
-};
-
-
-type Query_allTranslationArgs = {
-  filter: InputMaybe<TranslationFilterInput>;
-  limit: InputMaybe<Scalars['Int']>;
-  skip: InputMaybe<Scalars['Int']>;
-  sort: InputMaybe<ReadonlyArray<InputMaybe<TranslationSortInput>>>;
 };
 
 
@@ -2238,17 +2228,6 @@ type Query_sitePluginArgs = {
   resolve: InputMaybe<StringQueryOperatorInput>;
   ssrAPIs: InputMaybe<StringQueryOperatorInput>;
   version: InputMaybe<StringQueryOperatorInput>;
-};
-
-
-type Query_translationArgs = {
-  children: InputMaybe<NodeFilterListInput>;
-  id: InputMaybe<StringQueryOperatorInput>;
-  internal: InputMaybe<InternalFilterInput>;
-  key: InputMaybe<StringQueryOperatorInput>;
-  locale: InputMaybe<StringQueryOperatorInput>;
-  message: InputMaybe<StringQueryOperatorInput>;
-  parent: InputMaybe<NodeFilterInput>;
 };
 
 type Site = Node & {
@@ -3087,132 +3066,6 @@ type TransformOptions = {
   readonly trim: InputMaybe<Scalars['Float']>;
 };
 
-type Translation = Node & {
-  readonly children: ReadonlyArray<Node>;
-  readonly id: Scalars['ID'];
-  readonly internal: Internal;
-  readonly key: Maybe<Scalars['String']>;
-  readonly locale: Maybe<Scalars['String']>;
-  readonly message: Maybe<Scalars['String']>;
-  readonly parent: Maybe<Node>;
-};
-
-type TranslationConnection = {
-  readonly distinct: ReadonlyArray<Scalars['String']>;
-  readonly edges: ReadonlyArray<TranslationEdge>;
-  readonly group: ReadonlyArray<TranslationGroupConnection>;
-  readonly max: Maybe<Scalars['Float']>;
-  readonly min: Maybe<Scalars['Float']>;
-  readonly nodes: ReadonlyArray<Translation>;
-  readonly pageInfo: PageInfo;
-  readonly sum: Maybe<Scalars['Float']>;
-  readonly totalCount: Scalars['Int'];
-};
-
-
-type TranslationConnection_distinctArgs = {
-  field: TranslationFieldSelector;
-};
-
-
-type TranslationConnection_groupArgs = {
-  field: TranslationFieldSelector;
-  limit: InputMaybe<Scalars['Int']>;
-  skip: InputMaybe<Scalars['Int']>;
-};
-
-
-type TranslationConnection_maxArgs = {
-  field: TranslationFieldSelector;
-};
-
-
-type TranslationConnection_minArgs = {
-  field: TranslationFieldSelector;
-};
-
-
-type TranslationConnection_sumArgs = {
-  field: TranslationFieldSelector;
-};
-
-type TranslationEdge = {
-  readonly next: Maybe<Translation>;
-  readonly node: Translation;
-  readonly previous: Maybe<Translation>;
-};
-
-type TranslationFieldSelector = {
-  readonly children: InputMaybe<NodeFieldSelector>;
-  readonly id: InputMaybe<FieldSelectorEnum>;
-  readonly internal: InputMaybe<InternalFieldSelector>;
-  readonly key: InputMaybe<FieldSelectorEnum>;
-  readonly locale: InputMaybe<FieldSelectorEnum>;
-  readonly message: InputMaybe<FieldSelectorEnum>;
-  readonly parent: InputMaybe<NodeFieldSelector>;
-};
-
-type TranslationFilterInput = {
-  readonly children: InputMaybe<NodeFilterListInput>;
-  readonly id: InputMaybe<StringQueryOperatorInput>;
-  readonly internal: InputMaybe<InternalFilterInput>;
-  readonly key: InputMaybe<StringQueryOperatorInput>;
-  readonly locale: InputMaybe<StringQueryOperatorInput>;
-  readonly message: InputMaybe<StringQueryOperatorInput>;
-  readonly parent: InputMaybe<NodeFilterInput>;
-};
-
-type TranslationGroupConnection = {
-  readonly distinct: ReadonlyArray<Scalars['String']>;
-  readonly edges: ReadonlyArray<TranslationEdge>;
-  readonly field: Scalars['String'];
-  readonly fieldValue: Maybe<Scalars['String']>;
-  readonly group: ReadonlyArray<TranslationGroupConnection>;
-  readonly max: Maybe<Scalars['Float']>;
-  readonly min: Maybe<Scalars['Float']>;
-  readonly nodes: ReadonlyArray<Translation>;
-  readonly pageInfo: PageInfo;
-  readonly sum: Maybe<Scalars['Float']>;
-  readonly totalCount: Scalars['Int'];
-};
-
-
-type TranslationGroupConnection_distinctArgs = {
-  field: TranslationFieldSelector;
-};
-
-
-type TranslationGroupConnection_groupArgs = {
-  field: TranslationFieldSelector;
-  limit: InputMaybe<Scalars['Int']>;
-  skip: InputMaybe<Scalars['Int']>;
-};
-
-
-type TranslationGroupConnection_maxArgs = {
-  field: TranslationFieldSelector;
-};
-
-
-type TranslationGroupConnection_minArgs = {
-  field: TranslationFieldSelector;
-};
-
-
-type TranslationGroupConnection_sumArgs = {
-  field: TranslationFieldSelector;
-};
-
-type TranslationSortInput = {
-  readonly children: InputMaybe<NodeSortInput>;
-  readonly id: InputMaybe<SortOrderEnum>;
-  readonly internal: InputMaybe<InternalSortInput>;
-  readonly key: InputMaybe<SortOrderEnum>;
-  readonly locale: InputMaybe<SortOrderEnum>;
-  readonly message: InputMaybe<SortOrderEnum>;
-  readonly parent: InputMaybe<NodeSortInput>;
-};
-
 type WebPOptions = {
   readonly quality: InputMaybe<Scalars['Int']>;
 };
@@ -3265,7 +3118,14 @@ type IndexPageQueryVariables = Exact<{
 }>;
 
 
-type IndexPageQuery = { readonly values: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly link: string | null, readonly title: string | null } | null }> }, readonly cooperationYou: { readonly html: string | null, readonly frontmatter: { readonly title: string | null } | null } | null, readonly cooperationUs: { readonly html: string | null, readonly frontmatter: { readonly title: string | null } | null } | null, readonly exchange: { readonly html: string | null, readonly frontmatter: { readonly title: string | null } | null } | null, readonly strengths: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly order: number | null, readonly sprite: string | null, readonly skills: ReadonlyArray<{ readonly childMarkdownRemark: { readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly link: string | null, readonly icon: { readonly publicURL: string | null } | null } | null } | null } | null> | null } | null }> }, readonly questions: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly answeredBy: string | null, readonly title: string | null } | null }> }, readonly softwareReferences: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly icon: { readonly publicURL: string | null } | null } | null }> }, readonly companyReferences: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly link: string | null, readonly logo: { readonly publicURL: string | null } | null } | null }> } };
+type IndexPageQuery = { readonly values: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly link: string | null, readonly title: string | null } | null }> }, readonly cooperationYou: { readonly html: string | null, readonly frontmatter: { readonly title: string | null } | null } | null, readonly cooperationUs: { readonly html: string | null, readonly frontmatter: { readonly title: string | null } | null } | null, readonly exchange: { readonly html: string | null, readonly frontmatter: { readonly title: string | null } | null } | null, readonly strengths: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly order: number | null, readonly sprite: string | null, readonly skills: ReadonlyArray<{ readonly childMarkdownRemark: { readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly link: string | null, readonly sprite: string | null } | null } | null } | null> | null } | null }> }, readonly questions: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly answeredBy: string | null, readonly title: string | null } | null }> }, readonly softwareReferences: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly icon: { readonly publicURL: string | null } | null } | null }> }, readonly companyReferences: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly link: string | null, readonly logo: { readonly publicURL: string | null } | null } | null }> } };
+
+type StrengthsPageQueryVariables = Exact<{
+  locale: InputMaybe<Scalars['String']>;
+}>;
+
+
+type StrengthsPageQuery = { readonly strengths: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly order: number | null, readonly sprite: string | null, readonly skills: ReadonlyArray<{ readonly childMarkdownRemark: { readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly link: string | null, readonly sprite: string | null } | null } | null } | null> | null } | null }> } };
 
 type AllGenericPagesQueryVariables = Exact<{ [key: string]: never; }>;
 

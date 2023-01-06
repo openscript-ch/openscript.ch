@@ -1,5 +1,5 @@
 ---
 title: Benutzer und Zugriff
-icon: ./iam.svg
+sprite: iam
 link: /present/strengths#iam
 ---

@@ -1,5 +1,5 @@
 ---
 title: Web-Applikationen
-icon: ./web-applications.svg
+sprite: web-applications
 link: /present/strengths#web-applications
 ---

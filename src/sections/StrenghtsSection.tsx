@@ -71,8 +71,10 @@ const strengthContentContainerStyle = (theme: Theme) => css`
       background-color: var(${theme.variables.backgroundColor});
       padding: 1rem;
 
-      img {
-        max-height: 5rem;
+      > svg {
+        height: 5rem;
+        width: auto;
+        fill: ${theme.whiteColor};
         margin-bottom: 0.5rem;
       }
 
@@ -132,10 +134,10 @@ export function StrengthsSection({ strengths }: Props) {
         </blockquote>
         <ul>
           {selectedStrength?.frontmatter?.skills?.map(skill => {
-            const { title, icon, link } = skill?.childMarkdownRemark?.frontmatter ?? {};
+            const { title, sprite, link } = skill?.childMarkdownRemark?.frontmatter ?? {};
             return (
               <li>
-                <img src={icon?.publicURL ?? undefined} alt={`${title}-icon`} />
+                <Sprite name={sprite as SpriteProps['name']} />
                 <h4>{title}</h4>
                 <LocalizedLink to={link ?? ''}>
                   {formatMessage({ id: 'action.learnMore' })} <Arrow rotation={270} />

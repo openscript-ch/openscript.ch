@@ -1,5 +1,5 @@
 ---
 title: Interfaces
-icon: ./apis.svg
+sprite: apis
 link: /present/strengths#apis
 ---

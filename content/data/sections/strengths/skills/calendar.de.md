@@ -1,5 +1,5 @@
 ---
 title: Kalender-Funktionalität
-icon: ./calendar.svg
+sprite: calendar
 link: /present/strengths#calendar
 ---
