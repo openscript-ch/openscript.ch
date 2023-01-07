@@ -37,7 +37,7 @@ export default function PastPage() {
 // PageTitle: t(`page.past.title`)
 // PageDescription: t(`page.past.description`)
 export function Head({ data }: HeadProps<Queries.PastPageQuery>) {
-  return <Document title={data.pageTitle?.message || undefined} description={data.pageDescription?.message || undefined} />;
+  return <Document title={data.pageTitle?.message} description={data.pageDescription?.message} />;
 }
 
 export const query = graphql`

@@ -2,8 +2,8 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { Fragment } from 'react';
 
 type DocumentProps = {
-  title?: string;
-  description?: string;
+  title?: string | null;
+  description?: string | null;
 };
 
 export function Document({ title, description }: DocumentProps) {

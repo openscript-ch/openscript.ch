@@ -1,7 +1,9 @@
 import { css, Theme, useTheme } from '@emotion/react';
+import { graphql, HeadProps } from 'gatsby';
 import { useIntl } from 'react-intl';
 import { DividedSection } from '../components/DividedSection';
 import { ForwardBackwardSections } from '../components/ForwardBackwardSections';
+import { Document } from '../layouts/default/Document';
 import { DefaultLayout } from '../layouts/DefaultLayout';
 
 const contentSectionStyle = (theme: Theme) => css`
@@ -31,3 +33,20 @@ export default function FuturePage() {
     </DefaultLayout>
   );
 }
+
+// PageTitle: t(`page.future.title`)
+// PageDescription: t(`page.future.description`)
+export function Head({ data }: HeadProps<Queries.FuturePageQuery>) {
+  return <Document title={data.pageTitle?.message} description={data.pageDescription?.message} />;
+}
+
+export const query = graphql`
+  query FuturePage($locale: String) {
+    pageTitle: translation(locale: { eq: $locale }, key: { eq: "page.future.title" }) {
+      message
+    }
+    pageDescription: translation(locale: { eq: $locale }, key: { eq: "page.future.description" }) {
+      message
+    }
+  }
+`;

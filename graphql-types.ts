@@ -3211,6 +3211,34 @@ type DocumentSiteMetadataQueryVariables = Exact<{ [key: string]: never; }>;
 
 type DocumentSiteMetadataQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null, readonly description: string | null } | null } | null };
 
+type FutureCollaborationPageQueryVariables = Exact<{
+  locale: InputMaybe<Scalars['String']>;
+}>;
+
+
+type FutureCollaborationPageQuery = { readonly pageTitle: { readonly message: string | null } | null, readonly pageDescription: { readonly message: string | null } | null };
+
+type FuturePageQueryVariables = Exact<{
+  locale: InputMaybe<Scalars['String']>;
+}>;
+
+
+type FuturePageQuery = { readonly pageTitle: { readonly message: string | null } | null, readonly pageDescription: { readonly message: string | null } | null };
+
+type FutureParticipationPageQueryVariables = Exact<{
+  locale: InputMaybe<Scalars['String']>;
+}>;
+
+
+type FutureParticipationPageQuery = { readonly pageTitle: { readonly message: string | null } | null, readonly pageDescription: { readonly message: string | null } | null };
+
+type FutureServicesPageQueryVariables = Exact<{
+  locale: InputMaybe<Scalars['String']>;
+}>;
+
+
+type FutureServicesPageQuery = { readonly pageTitle: { readonly message: string | null } | null, readonly pageDescription: { readonly message: string | null } | null };
+
 type GatsbyImageSharpFixedFragment = { readonly base64: string | null, readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
 
 type GatsbyImageSharpFixed_noBase64Fragment = { readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
@@ -3251,12 +3279,61 @@ type IndexPageQueryVariables = Exact<{
 
 type IndexPageQuery = { readonly values: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly link: string | null, readonly title: string | null } | null }> }, readonly cooperationYou: { readonly html: string | null, readonly frontmatter: { readonly title: string | null } | null } | null, readonly cooperationUs: { readonly html: string | null, readonly frontmatter: { readonly title: string | null } | null } | null, readonly exchange: { readonly html: string | null, readonly frontmatter: { readonly title: string | null } | null } | null, readonly questions: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly answeredBy: string | null, readonly title: string | null } | null }> }, readonly softwareReferences: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly icon: { readonly publicURL: string | null } | null } | null }> }, readonly companyReferences: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly link: string | null, readonly logo: { readonly publicURL: string | null } | null } | null }> } };
 
+type NotFoundPageQueryVariables = Exact<{
+  locale: InputMaybe<Scalars['String']>;
+}>;
+
+
+type NotFoundPageQuery = { readonly pageTitle: { readonly message: string | null } | null, readonly pageDescription: { readonly message: string | null } | null };
+
+type PastFormationPageQueryVariables = Exact<{
+  locale: InputMaybe<Scalars['String']>;
+}>;
+
+
+type PastFormationPageQuery = { readonly pageTitle: { readonly message: string | null } | null, readonly pageDescription: { readonly message: string | null } | null };
+
 type PastPageQueryVariables = Exact<{
   locale: InputMaybe<Scalars['String']>;
 }>;
 
 
 type PastPageQuery = { readonly pageTitle: { readonly message: string | null } | null, readonly pageDescription: { readonly message: string | null } | null };
+
+type PastReferencesPageQueryVariables = Exact<{
+  locale: InputMaybe<Scalars['String']>;
+}>;
+
+
+type PastReferencesPageQuery = { readonly pageTitle: { readonly message: string | null } | null, readonly pageDescription: { readonly message: string | null } | null };
+
+type PresentPageQueryVariables = Exact<{
+  locale: InputMaybe<Scalars['String']>;
+}>;
+
+
+type PresentPageQuery = { readonly pageTitle: { readonly message: string | null } | null, readonly pageDescription: { readonly message: string | null } | null };
+
+type PresentStrengthsPageQueryVariables = Exact<{
+  locale: InputMaybe<Scalars['String']>;
+}>;
+
+
+type PresentStrengthsPageQuery = { readonly pageTitle: { readonly message: string | null } | null, readonly pageDescription: { readonly message: string | null } | null };
+
+type PresentTeamPageQueryVariables = Exact<{
+  locale: InputMaybe<Scalars['String']>;
+}>;
+
+
+type PresentTeamPageQuery = { readonly pageTitle: { readonly message: string | null } | null, readonly pageDescription: { readonly message: string | null } | null };
+
+type PresentValuesPageQueryVariables = Exact<{
+  locale: InputMaybe<Scalars['String']>;
+}>;
+
+
+type PresentValuesPageQuery = { readonly pageTitle: { readonly message: string | null } | null, readonly pageDescription: { readonly message: string | null } | null };
 
 type AllGenericPagesQueryVariables = Exact<{ [key: string]: never; }>;
 
