@@ -6337,10 +6337,10 @@ gatsby-plugin-emotion@8.3.0:
     "@babel/runtime" "^7.15.4"
     "@emotion/babel-preset-css-prop" "^11.2.0"
 
-gatsby-plugin-i18n-l10n@5.2.1:
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-i18n-l10n/-/gatsby-plugin-i18n-l10n-5.2.1.tgz#451cc47ff7d0b3096b3a22599118c05223204874"
-  integrity sha512-VnIBrl3FwlHEuD9DqJtOCB8lWF2UjfARkclLWNz7NPz893OCExGAf4U3LIdtk3kbAmcKEvR10+w0rOUiSztwdw==
+gatsby-plugin-i18n-l10n@5.2.2:
+  version "5.2.2"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-i18n-l10n/-/gatsby-plugin-i18n-l10n-5.2.2.tgz#1bf95d31c786d8bd13ceb07902cc7ed2685c4ed7"
+  integrity sha512-z6lXr3w4z0t7YZWQB42ZIKlJWklhNUxSyVRKkZUCkoWNOVMyEOOS76iWBxUz9elN3rzZZ0HvJtJI5fQA4IA3Fw==
   dependencies:
     limax "^3.0.0"
     path-browserify "^1.0.1"

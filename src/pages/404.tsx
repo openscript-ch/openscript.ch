@@ -1,6 +1,6 @@
 import { FormattedMessage } from 'react-intl';
 import { LocalizedLink } from 'gatsby-plugin-i18n-l10n';
-import { graphql, HeadProps } from 'gatsby';
+import { HeadProps } from 'gatsby';
 import { DefaultLayout } from '../layouts/DefaultLayout';
 import { Document } from '../layouts/default/Document';
 
@@ -9,7 +9,7 @@ export default function NotFoundPage() {
     <DefaultLayout>
       <section>
         <h2>
-          <FormattedMessage id="page.not-found.title" />
+          <FormattedMessage id="page.404.meta.title" />
         </h2>
         <FormattedMessage id="page.not-found.content" tagName="p" />
         <LocalizedLink to="/">
@@ -20,18 +20,6 @@ export default function NotFoundPage() {
   );
 }
 
-// PageTitle: t(`page.not-found.title`)
-export function Head({ data }: HeadProps<Queries.NotFoundPageQuery>) {
-  return <Document title={data.pageTitle?.message} />;
+export function Head({ pageContext }: HeadProps<object, Queries.SitePageContext>) {
+  return <Document metaData={pageContext.metaData} />;
 }
-
-export const query = graphql`
-  query NotFoundPage($locale: String) {
-    pageTitle: translation(locale: { eq: $locale }, key: { eq: "page.not-found.title" }) {
-      message
-    }
-    pageDescription: translation(locale: { eq: $locale }, key: { eq: "page.not-found.description" }) {
-      message
-    }
-  }
-`;

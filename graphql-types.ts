@@ -2154,7 +2154,6 @@ type Query_mdxArgs = {
 type Query_siteArgs = {
   buildTime: InputMaybe<DateQueryOperatorInput>;
   children: InputMaybe<NodeFilterListInput>;
-  flags: InputMaybe<SiteFlagsFilterInput>;
   graphqlTypegen: InputMaybe<SiteGraphqlTypegenFilterInput>;
   host: InputMaybe<StringQueryOperatorInput>;
   id: InputMaybe<StringQueryOperatorInput>;
@@ -2239,7 +2238,6 @@ type Query_translationArgs = {
 type Site = Node & {
   readonly buildTime: Maybe<Scalars['Date']>;
   readonly children: ReadonlyArray<Node>;
-  readonly flags: Maybe<SiteFlags>;
   readonly graphqlTypegen: Maybe<SiteGraphqlTypegen>;
   readonly host: Maybe<Scalars['String']>;
   readonly id: Scalars['ID'];
@@ -2435,7 +2433,6 @@ type SiteEdge = {
 type SiteFieldSelector = {
   readonly buildTime: InputMaybe<FieldSelectorEnum>;
   readonly children: InputMaybe<NodeFieldSelector>;
-  readonly flags: InputMaybe<SiteFlagsFieldSelector>;
   readonly graphqlTypegen: InputMaybe<SiteGraphqlTypegenFieldSelector>;
   readonly host: InputMaybe<FieldSelectorEnum>;
   readonly id: InputMaybe<FieldSelectorEnum>;
@@ -2452,7 +2449,6 @@ type SiteFieldSelector = {
 type SiteFilterInput = {
   readonly buildTime: InputMaybe<DateQueryOperatorInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
-  readonly flags: InputMaybe<SiteFlagsFilterInput>;
   readonly graphqlTypegen: InputMaybe<SiteGraphqlTypegenFilterInput>;
   readonly host: InputMaybe<StringQueryOperatorInput>;
   readonly id: InputMaybe<StringQueryOperatorInput>;
@@ -2464,22 +2460,6 @@ type SiteFilterInput = {
   readonly port: InputMaybe<IntQueryOperatorInput>;
   readonly siteMetadata: InputMaybe<SiteSiteMetadataFilterInput>;
   readonly trailingSlash: InputMaybe<StringQueryOperatorInput>;
-};
-
-type SiteFlags = {
-  readonly DEV_SSR: Maybe<Scalars['Boolean']>;
-};
-
-type SiteFlagsFieldSelector = {
-  readonly DEV_SSR: InputMaybe<FieldSelectorEnum>;
-};
-
-type SiteFlagsFilterInput = {
-  readonly DEV_SSR: InputMaybe<BooleanQueryOperatorInput>;
-};
-
-type SiteFlagsSortInput = {
-  readonly DEV_SSR: InputMaybe<SortOrderEnum>;
 };
 
 type SiteFunction = Node & {
@@ -2746,7 +2726,7 @@ type SitePageConnection_sumArgs = {
 type SitePageContext = {
   readonly locale: Maybe<Scalars['String']>;
   readonly localePagesId: Maybe<Scalars['String']>;
-  readonly metaData: Maybe<SitePageContextMetaData>;
+  readonly metaData: SitePageContextMetaData;
   readonly prefix: Maybe<Scalars['String']>;
 };
 
@@ -3084,7 +3064,6 @@ type SiteSiteMetadataSortInput = {
 type SiteSortInput = {
   readonly buildTime: InputMaybe<SortOrderEnum>;
   readonly children: InputMaybe<NodeSortInput>;
-  readonly flags: InputMaybe<SiteFlagsSortInput>;
   readonly graphqlTypegen: InputMaybe<SiteGraphqlTypegenSortInput>;
   readonly host: InputMaybe<SortOrderEnum>;
   readonly id: InputMaybe<SortOrderEnum>;
@@ -3255,39 +3234,6 @@ type DefaultLayoutQueryVariables = Exact<{ [key: string]: never; }>;
 
 type DefaultLayoutQuery = { readonly site: { readonly siteMetadata: { readonly author: string | null, readonly description: string | null, readonly phone: string | null, readonly email: string | null, readonly address: string | null, readonly siteUrl: string | null, readonly title: string | null, readonly version: string | null, readonly project: string | null } | null } | null };
 
-type DocumentSiteMetadataQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type DocumentSiteMetadataQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null, readonly description: string | null } | null } | null };
-
-type FutureCollaborationPageQueryVariables = Exact<{
-  locale: InputMaybe<Scalars['String']>;
-}>;
-
-
-type FutureCollaborationPageQuery = { readonly pageTitle: { readonly message: string | null } | null, readonly pageDescription: { readonly message: string | null } | null };
-
-type FuturePageQueryVariables = Exact<{
-  locale: InputMaybe<Scalars['String']>;
-}>;
-
-
-type FuturePageQuery = { readonly pageTitle: { readonly message: string | null } | null, readonly pageDescription: { readonly message: string | null } | null };
-
-type FutureParticipationPageQueryVariables = Exact<{
-  locale: InputMaybe<Scalars['String']>;
-}>;
-
-
-type FutureParticipationPageQuery = { readonly pageTitle: { readonly message: string | null } | null, readonly pageDescription: { readonly message: string | null } | null };
-
-type FutureServicesPageQueryVariables = Exact<{
-  locale: InputMaybe<Scalars['String']>;
-}>;
-
-
-type FutureServicesPageQuery = { readonly pageTitle: { readonly message: string | null } | null, readonly pageDescription: { readonly message: string | null } | null };
-
 type GatsbyImageSharpFixedFragment = { readonly base64: string | null, readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
 
 type GatsbyImageSharpFixed_noBase64Fragment = { readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
@@ -3327,62 +3273,6 @@ type IndexPageQueryVariables = Exact<{
 
 
 type IndexPageQuery = { readonly values: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly link: string | null, readonly title: string | null } | null }> }, readonly cooperationYou: { readonly html: string | null, readonly frontmatter: { readonly title: string | null } | null } | null, readonly cooperationUs: { readonly html: string | null, readonly frontmatter: { readonly title: string | null } | null } | null, readonly exchange: { readonly html: string | null, readonly frontmatter: { readonly title: string | null } | null } | null, readonly questions: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly answeredBy: string | null, readonly title: string | null } | null }> }, readonly softwareReferences: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly icon: { readonly publicURL: string | null } | null } | null }> }, readonly companyReferences: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly link: string | null, readonly logo: { readonly publicURL: string | null } | null } | null }> } };
-
-type NotFoundPageQueryVariables = Exact<{
-  locale: InputMaybe<Scalars['String']>;
-}>;
-
-
-type NotFoundPageQuery = { readonly pageTitle: { readonly message: string | null } | null, readonly pageDescription: { readonly message: string | null } | null };
-
-type PastFormationPageQueryVariables = Exact<{
-  locale: InputMaybe<Scalars['String']>;
-}>;
-
-
-type PastFormationPageQuery = { readonly pageTitle: { readonly message: string | null } | null, readonly pageDescription: { readonly message: string | null } | null };
-
-type PastPageQueryVariables = Exact<{
-  locale: InputMaybe<Scalars['String']>;
-}>;
-
-
-type PastPageQuery = { readonly pageTitle: { readonly message: string | null } | null, readonly pageDescription: { readonly message: string | null } | null };
-
-type PastReferencesPageQueryVariables = Exact<{
-  locale: InputMaybe<Scalars['String']>;
-}>;
-
-
-type PastReferencesPageQuery = { readonly pageTitle: { readonly message: string | null } | null, readonly pageDescription: { readonly message: string | null } | null };
-
-type PresentPageQueryVariables = Exact<{
-  locale: InputMaybe<Scalars['String']>;
-}>;
-
-
-type PresentPageQuery = { readonly pageTitle: { readonly message: string | null } | null, readonly pageDescription: { readonly message: string | null } | null };
-
-type PresentStrengthsPageQueryVariables = Exact<{
-  locale: InputMaybe<Scalars['String']>;
-}>;
-
-
-type PresentStrengthsPageQuery = { readonly pageTitle: { readonly message: string | null } | null, readonly pageDescription: { readonly message: string | null } | null };
-
-type PresentTeamPageQueryVariables = Exact<{
-  locale: InputMaybe<Scalars['String']>;
-}>;
-
-
-type PresentTeamPageQuery = { readonly pageTitle: { readonly message: string | null } | null, readonly pageDescription: { readonly message: string | null } | null };
-
-type PresentValuesPageQueryVariables = Exact<{
-  locale: InputMaybe<Scalars['String']>;
-}>;
-
-
-type PresentValuesPageQuery = { readonly pageTitle: { readonly message: string | null } | null, readonly pageDescription: { readonly message: string | null } | null };
 
 type AllGenericPagesQueryVariables = Exact<{ [key: string]: never; }>;
 

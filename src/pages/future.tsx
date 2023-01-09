@@ -1,6 +1,6 @@
 import { css, Theme, useTheme } from '@emotion/react';
-import { graphql, HeadProps } from 'gatsby';
-import { useIntl } from 'react-intl';
+import { HeadProps } from 'gatsby';
+import { FormattedMessage, useIntl } from 'react-intl';
 import { DividedSection } from '../components/DividedSection';
 import { ForwardBackwardSections } from '../components/ForwardBackwardSections';
 import { Document } from '../layouts/default/Document';
@@ -15,7 +15,9 @@ function ContentSection() {
   const theme = useTheme();
   return (
     <DividedSection upperColor={theme.whiteColor} lowerColor={theme.backgroundColor} flipVertically css={contentSectionStyle}>
-      Eine Baustelle.. sag ich ja.
+      <h2>
+        <FormattedMessage id="page.future.meta.title" />
+      </h2>
     </DividedSection>
   );
 }
@@ -34,19 +36,6 @@ export default function FuturePage() {
   );
 }
 
-// PageTitle: t(`page.future.title`)
-// PageDescription: t(`page.future.description`)
-export function Head({ data }: HeadProps<Queries.FuturePageQuery>) {
-  return <Document title={data.pageTitle?.message} description={data.pageDescription?.message} />;
+export function Head({ pageContext }: HeadProps<object, Queries.SitePageContext>) {
+  return <Document metaData={pageContext.metaData} />;
 }
-
-export const query = graphql`
-  query FuturePage($locale: String) {
-    pageTitle: translation(locale: { eq: $locale }, key: { eq: "page.future.title" }) {
-      message
-    }
-    pageDescription: translation(locale: { eq: $locale }, key: { eq: "page.future.description" }) {
-      message
-    }
-  }
-`;

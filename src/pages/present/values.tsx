@@ -1,4 +1,4 @@
-import { graphql, HeadProps } from 'gatsby';
+import { HeadProps } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
 import { Document } from '../../layouts/default/Document';
 import { DefaultLayout } from '../../layouts/DefaultLayout';
@@ -8,26 +8,13 @@ export default function ValuesPage() {
     <DefaultLayout>
       <section>
         <h2>
-          <FormattedMessage id="page.values.title" />
+          <FormattedMessage id="page.present.values.meta.title" />
         </h2>
       </section>
     </DefaultLayout>
   );
 }
 
-// PageTitle: t(`page.present.values.title`)
-// PageDescription: t(`page.present.values.description`)
-export function Head({ data }: HeadProps<Queries.PresentValuesPageQuery>) {
-  return <Document title={data.pageTitle?.message} description={data.pageDescription?.message} />;
+export function Head({ pageContext }: HeadProps<object, Queries.SitePageContext>) {
+  return <Document metaData={pageContext.metaData} />;
 }
-
-export const query = graphql`
-  query PresentValuesPage($locale: String) {
-    pageTitle: translation(locale: { eq: $locale }, key: { eq: "page.present.values.title" }) {
-      message
-    }
-    pageDescription: translation(locale: { eq: $locale }, key: { eq: "page.present.values.description" }) {
-      message
-    }
-  }
-`;

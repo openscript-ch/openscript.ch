@@ -6,7 +6,7 @@ export const customizeSitePageContext = async ({ actions }: CreateSchemaCustomiz
       context: SitePageContext
     }
     type SitePageContext {
-      metaData: SitePageContextMetaData
+      metaData: SitePageContextMetaData!
     }
     type SitePageContextMetaData {
       title: String!

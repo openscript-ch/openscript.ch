@@ -26,7 +26,7 @@ const remarkPlugins = [
 const configuration: GatsbyConfig = {
   pathPrefix: process.env.PATH_PREFIX || '/',
   flags: {
-    DEV_SSR: true,
+    // DEV_SSR: true, // enables server side rendering in development
   },
   siteMetadata: {
     title: `openscript GmbH`,
