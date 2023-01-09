@@ -12,6 +12,7 @@ This project is based on [gatsby-starter-dogmatism](https://github.com/openscrip
 
 - Enable Gatsby SSR during development with the `DEV_SSR` flag in the `gatsby-config.ts`. Be aware that `loadPageDataSync()` isn't implemented for development, so not everything will be run.
   - see https://github.com/gatsbyjs/gatsby/issues/36675
+- Serve build locally with `cd public && python -m http.server 9000` on port 9000.
 
 ## License
 
