@@ -9,9 +9,6 @@
       "args": [
         "develop"
       ],
-      "runtimeArgs": [
-        "--nolazy"
-      ],
       "console": "integratedTerminal"
     },
     {
@@ -21,9 +18,6 @@
       "program": "${workspaceRoot}/node_modules/.bin/gatsby",
       "args": [
         "build"
-      ],
-      "runtimeArgs": [
-        "--nolazy"
       ],
       "console": "integratedTerminal"
     }
