@@ -7,7 +7,7 @@ import { useWindowScroll } from 'react-use';
 import LanguageSelector from './LanguageSelector';
 import { Sprite } from '../../components/Sprite';
 
-const topBarStyle = (showLogo: boolean) => (theme: Theme) =>
+const topBarStyle = (theme: Theme) =>
   css`
     position: sticky;
     z-index: 20;
@@ -40,21 +40,10 @@ const topBarStyle = (showLogo: boolean) => (theme: Theme) =>
         width: 2rem;
         height: auto;
         transition: transform 0.2s, opacity 0.2s;
+        transition-delay: 0.1s;
         opacity: 0;
         transform: translateY(-1rem);
       }
-
-      ${showLogo &&
-      css`
-        #company-name {
-          transform: translateX(0) !important;
-        }
-        svg {
-          transition-delay: 0.1s !important;
-          opacity: 1 !important;
-          transform: translateY(0) !important;
-        }
-      `}
     }
 
     & > nav {
@@ -74,6 +63,19 @@ const topBarStyle = (showLogo: boolean) => (theme: Theme) =>
     }
   `;
 
+const showBrandStyle = css`
+  && {
+    #company-name {
+      transform: translateX(0);
+    }
+    svg {
+      transition-delay: 0.1s;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+`;
+
 type TopBarProps = {
   title: string;
   phone: string;
@@ -83,20 +85,20 @@ type TopBarProps = {
 const HEADER_HEIGHT = 96;
 
 export function TopBar({ title, phone, email }: TopBarProps) {
-  const [showLogo, setShowLogo] = useState(false);
+  const [showBrand, setShowBrand] = useState(false);
   const { y: scrollY } = useWindowScroll();
 
-  if (showLogo) {
+  if (showBrand) {
     if (scrollY < HEADER_HEIGHT) {
-      setShowLogo(false);
+      setShowBrand(false);
     }
   } else if (scrollY >= HEADER_HEIGHT) {
-    setShowLogo(true);
+    setShowBrand(true);
   }
 
   return (
-    <div css={topBarStyle(showLogo)} id="top-bar" className="page-padding">
-      <LocalizedLink to="/" activeClassName="">
+    <div css={topBarStyle} id="top-bar" className="page-padding">
+      <LocalizedLink to="/" activeClassName="" css={showBrand ? showBrandStyle : null}>
         <Sprite name="brand" />
         <div id="company-name">{title}</div>
       </LocalizedLink>
