@@ -1784,18 +1784,22 @@ type MdxFilterListInput = {
 };
 
 type MdxFrontmatter = {
+  readonly description: Maybe<Scalars['String']>;
   readonly title: Maybe<Scalars['String']>;
 };
 
 type MdxFrontmatterFieldSelector = {
+  readonly description: InputMaybe<FieldSelectorEnum>;
   readonly title: InputMaybe<FieldSelectorEnum>;
 };
 
 type MdxFrontmatterFilterInput = {
+  readonly description: InputMaybe<StringQueryOperatorInput>;
   readonly title: InputMaybe<StringQueryOperatorInput>;
 };
 
 type MdxFrontmatterSortInput = {
+  readonly description: InputMaybe<SortOrderEnum>;
   readonly title: InputMaybe<SortOrderEnum>;
 };
 
@@ -2741,21 +2745,49 @@ type SitePageConnection_sumArgs = {
 
 type SitePageContext = {
   readonly locale: Maybe<Scalars['String']>;
+  readonly localePagesId: Maybe<Scalars['String']>;
+  readonly metaData: SitePageContextMetaData;
   readonly prefix: Maybe<Scalars['String']>;
 };
 
 type SitePageContextFieldSelector = {
   readonly locale: InputMaybe<FieldSelectorEnum>;
+  readonly localePagesId: InputMaybe<FieldSelectorEnum>;
+  readonly metaData: InputMaybe<SitePageContextMetaDataFieldSelector>;
   readonly prefix: InputMaybe<FieldSelectorEnum>;
 };
 
 type SitePageContextFilterInput = {
   readonly locale: InputMaybe<StringQueryOperatorInput>;
+  readonly localePagesId: InputMaybe<StringQueryOperatorInput>;
+  readonly metaData: InputMaybe<SitePageContextMetaDataFilterInput>;
   readonly prefix: InputMaybe<StringQueryOperatorInput>;
+};
+
+type SitePageContextMetaData = {
+  readonly description: Scalars['String'];
+  readonly title: Scalars['String'];
+};
+
+type SitePageContextMetaDataFieldSelector = {
+  readonly description: InputMaybe<FieldSelectorEnum>;
+  readonly title: InputMaybe<FieldSelectorEnum>;
+};
+
+type SitePageContextMetaDataFilterInput = {
+  readonly description: InputMaybe<StringQueryOperatorInput>;
+  readonly title: InputMaybe<StringQueryOperatorInput>;
+};
+
+type SitePageContextMetaDataSortInput = {
+  readonly description: InputMaybe<SortOrderEnum>;
+  readonly title: InputMaybe<SortOrderEnum>;
 };
 
 type SitePageContextSortInput = {
   readonly locale: InputMaybe<SortOrderEnum>;
+  readonly localePagesId: InputMaybe<SortOrderEnum>;
+  readonly metaData: InputMaybe<SitePageContextMetaDataSortInput>;
   readonly prefix: InputMaybe<SortOrderEnum>;
 };
 
@@ -3222,11 +3254,6 @@ type DefaultLayoutQueryVariables = Exact<{ [key: string]: never; }>;
 
 type DefaultLayoutQuery = { readonly site: { readonly siteMetadata: { readonly author: string | null, readonly description: string | null, readonly phone: string | null, readonly email: string | null, readonly address: string | null, readonly siteUrl: string | null, readonly title: string | null, readonly version: string | null, readonly project: string | null } | null } | null };
 
-type DocumentSiteMetadataQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type DocumentSiteMetadataQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null, readonly description: string | null } | null } | null };
-
 type GatsbyImageSharpFixedFragment = { readonly base64: string | null, readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
 
 type GatsbyImageSharpFixed_noBase64Fragment = { readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
@@ -3270,7 +3297,7 @@ type IndexPageQuery = { readonly values: { readonly nodes: ReadonlyArray<{ reado
 type AllGenericPagesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type AllGenericPagesQuery = { readonly allMdx: { readonly edges: ReadonlyArray<{ readonly node: { readonly id: string, readonly fields: { readonly path: string | null, readonly translations: ReadonlyArray<{ readonly locale: string | null, readonly path: string | null } | null> | null } | null, readonly internal: { readonly contentFilePath: string | null } } }> } };
+type AllGenericPagesQuery = { readonly allMdx: { readonly edges: ReadonlyArray<{ readonly node: { readonly id: string, readonly frontmatter: { readonly description: string | null, readonly title: string | null } | null, readonly fields: { readonly path: string | null, readonly translations: ReadonlyArray<{ readonly locale: string | null, readonly path: string | null } | null> | null } | null, readonly internal: { readonly contentFilePath: string | null } } }> } };
 
 
 }

@@ -1,5 +1,4 @@
-import { graphql, PageProps } from 'gatsby';
-
+import { graphql, HeadProps, PageProps } from 'gatsby';
 import { Document } from '../layouts/default/Document';
 import { DefaultLayout } from '../layouts/DefaultLayout';
 import { CooperationSection } from '../sections/CooperationSection';
@@ -20,8 +19,8 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
   );
 }
 
-export function Head() {
-  return <Document title="Home" />;
+export function Head({ pageContext }: HeadProps<object, Queries.SitePageContext>) {
+  return <Document metaData={pageContext.metaData} />;
 }
 
 export const query = graphql`

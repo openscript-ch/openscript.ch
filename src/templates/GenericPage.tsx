@@ -1,4 +1,4 @@
-import { graphql, PageProps } from 'gatsby';
+import { graphql, HeadProps, PageProps } from 'gatsby';
 import { Document } from '../layouts/default/Document';
 import { DefaultLayout } from '../layouts/DefaultLayout';
 
@@ -10,8 +10,8 @@ export default function GenericPage({ children }: PageProps<Queries.AllGenericPa
   );
 }
 
-export function Head() {
-  return <Document />;
+export function Head({ pageContext }: HeadProps<object, Queries.SitePageContext>) {
+  return <Document metaData={pageContext.metaData} />;
 }
 
 export const query = graphql`
