@@ -128,6 +128,7 @@ export function TechnologiesSection({ exchange }: Props) {
           const scaling = 0.7 + getCloseToCenterScore(index) ** 4 * 1.1;
           return (
             <a
+              key={sprite.name}
               href={sprite.url}
               css={css`
                 svg {
