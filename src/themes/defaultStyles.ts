@@ -189,6 +189,10 @@ export const defaultStyles = (theme: Theme) => css`
     }
   }
 
+  header ul li ul li a.active {
+    color: ${theme.secondaryColor} !important;
+  }
+
   nav ul {
     list-style: none;
     display: flex;
