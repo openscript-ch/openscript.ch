@@ -7,9 +7,9 @@ export default function ServicesPage() {
   return (
     <DefaultLayout>
       <section>
-        <h2>
+        <h1>
           <FormattedMessage id="page.future.services.meta.title" />
-        </h2>
+        </h1>
       </section>
     </DefaultLayout>
   );

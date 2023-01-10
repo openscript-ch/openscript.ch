@@ -8,9 +8,9 @@ export default function NotFoundPage() {
   return (
     <DefaultLayout>
       <section>
-        <h2>
+        <h1>
           <FormattedMessage id="page.404.meta.title" />
-        </h2>
+        </h1>
         <FormattedMessage id="page.not-found.content" tagName="p" />
         <LocalizedLink to="/">
           <FormattedMessage id="page.not-found.action" />

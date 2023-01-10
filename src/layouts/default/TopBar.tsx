@@ -29,7 +29,7 @@ const topBarStyle = (showLogo: boolean) => (theme: Theme) =>
       align-items: center;
       gap: 0.5rem;
 
-      h1 {
+      #company-name {
         font-size: 0.8rem;
         transform: translateX(-2.5rem);
         transition: transform 0.2s;
@@ -46,7 +46,7 @@ const topBarStyle = (showLogo: boolean) => (theme: Theme) =>
 
       ${showLogo &&
       css`
-        h1 {
+        #company-name {
           transform: translateX(0) !important;
         }
         svg {
@@ -98,7 +98,7 @@ export function TopBar({ title, phone, email }: TopBarProps) {
     <div css={topBarStyle(showLogo)} id="top-bar" className="page-padding">
       <LocalizedLink to="/" activeClassName="">
         <Sprite name="brand" />
-        <h1>{title}</h1>
+        <div id="company-name">{title}</div>
       </LocalizedLink>
       <nav>
         <ul>

@@ -7,9 +7,9 @@ export default function ParticipationPage() {
   return (
     <DefaultLayout>
       <section>
-        <h2>
+        <h1>
           <FormattedMessage id="page.future.participation.meta.title" />
-        </h2>
+        </h1>
       </section>
     </DefaultLayout>
   );
