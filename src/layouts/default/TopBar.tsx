@@ -2,7 +2,8 @@ import { css, Theme } from '@emotion/react';
 import { Markup } from 'interweave';
 import { darken } from 'polished';
 import { LocalizedLink } from 'gatsby-plugin-i18n-l10n';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { useWindowScroll } from 'react-use';
 import LanguageSelector from './LanguageSelector';
 import { Sprite } from '../../components/Sprite';
 
@@ -83,21 +84,15 @@ const HEADER_HEIGHT = 96;
 
 export function TopBar({ title, phone, email }: TopBarProps) {
   const [showLogo, setShowLogo] = useState(false);
+  const { y: scrollY } = useWindowScroll();
 
-  const toggleLogoOnScroll = () => {
-    if (showLogo) {
-      if (window.scrollY < HEADER_HEIGHT) {
-        setShowLogo(false);
-      }
-    } else if (window.scrollY >= HEADER_HEIGHT) {
-      setShowLogo(true);
+  if (showLogo) {
+    if (scrollY < HEADER_HEIGHT) {
+      setShowLogo(false);
     }
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', toggleLogoOnScroll);
-    return () => window.removeEventListener('scroll', toggleLogoOnScroll);
-  });
+  } else if (scrollY >= HEADER_HEIGHT) {
+    setShowLogo(true);
+  }
 
   return (
     <div css={topBarStyle(showLogo)} id="top-bar" className="page-padding">
