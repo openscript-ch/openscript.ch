@@ -7,9 +7,9 @@ export default function StrengthsPage() {
   return (
     <DefaultLayout>
       <section>
-        <h2>
+        <h1>
           <FormattedMessage id="page.present.strengths.meta.title" />
-        </h2>
+        </h1>
       </section>
     </DefaultLayout>
   );

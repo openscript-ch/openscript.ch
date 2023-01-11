@@ -15,9 +15,9 @@ function ContentSection() {
   const theme = useTheme();
   return (
     <DividedSection upperColor={theme.whiteColor} lowerColor={theme.backgroundColor} flipVertically css={contentSectionStyle}>
-      <h2>
+      <h1>
         <FormattedMessage id="page.present.meta.title" />
-      </h2>
+      </h1>
     </DividedSection>
   );
 }

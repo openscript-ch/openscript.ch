@@ -7,9 +7,9 @@ export default function ReferencesPage() {
   return (
     <DefaultLayout>
       <section>
-        <h2>
+        <h1>
           <FormattedMessage id="page.past.references.meta.title" />
-        </h2>
+        </h1>
       </section>
     </DefaultLayout>
   );

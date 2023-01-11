@@ -2,11 +2,12 @@ import { css, Theme } from '@emotion/react';
 import { Markup } from 'interweave';
 import { darken } from 'polished';
 import { LocalizedLink } from 'gatsby-plugin-i18n-l10n';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { useWindowScroll } from 'react-use';
 import LanguageSelector from './LanguageSelector';
 import { Sprite } from '../../components/Sprite';
 
-const topBarStyle = (showLogo: boolean) => (theme: Theme) =>
+const topBarStyle = (theme: Theme) =>
   css`
     position: sticky;
     z-index: 20;
@@ -28,7 +29,7 @@ const topBarStyle = (showLogo: boolean) => (theme: Theme) =>
       align-items: center;
       gap: 0.5rem;
 
-      h1 {
+      #company-name {
         font-size: 0.8rem;
         transform: translateX(-2.5rem);
         transition: transform 0.2s;
@@ -39,21 +40,10 @@ const topBarStyle = (showLogo: boolean) => (theme: Theme) =>
         width: 2rem;
         height: auto;
         transition: transform 0.2s, opacity 0.2s;
+        transition-delay: 0.1s;
         opacity: 0;
         transform: translateY(-1rem);
       }
-
-      ${showLogo &&
-      css`
-        h1 {
-          transform: translateX(0) !important;
-        }
-        svg {
-          transition-delay: 0.1s !important;
-          opacity: 1 !important;
-          transform: translateY(0) !important;
-        }
-      `}
     }
 
     & > nav {
@@ -73,6 +63,19 @@ const topBarStyle = (showLogo: boolean) => (theme: Theme) =>
     }
   `;
 
+const showBrandStyle = css`
+  && {
+    #company-name {
+      transform: translateX(0);
+    }
+    svg {
+      transition-delay: 0.1s;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+`;
+
 type TopBarProps = {
   title: string;
   phone: string;
@@ -82,28 +85,22 @@ type TopBarProps = {
 const HEADER_HEIGHT = 96;
 
 export function TopBar({ title, phone, email }: TopBarProps) {
-  const [showLogo, setShowLogo] = useState(false);
+  const [showBrand, setShowBrand] = useState(false);
+  const { y: scrollY } = useWindowScroll();
 
-  const toggleLogoOnScroll = () => {
-    if (showLogo) {
-      if (window.scrollY < HEADER_HEIGHT) {
-        setShowLogo(false);
-      }
-    } else if (window.scrollY >= HEADER_HEIGHT) {
-      setShowLogo(true);
+  if (showBrand) {
+    if (scrollY < HEADER_HEIGHT) {
+      setShowBrand(false);
     }
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', toggleLogoOnScroll);
-    return () => window.removeEventListener('scroll', toggleLogoOnScroll);
-  });
+  } else if (scrollY >= HEADER_HEIGHT) {
+    setShowBrand(true);
+  }
 
   return (
-    <div css={topBarStyle(showLogo)} id="top-bar" className="page-padding">
-      <LocalizedLink to="/" activeClassName="">
+    <div css={topBarStyle} id="top-bar" className="page-padding">
+      <LocalizedLink to="/" activeClassName="" css={showBrand ? showBrandStyle : null}>
         <Sprite name="brand" />
-        <h1>{title}</h1>
+        <span id="company-name">{title}</span>
       </LocalizedLink>
       <nav>
         <ul>

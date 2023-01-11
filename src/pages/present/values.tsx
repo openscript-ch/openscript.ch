@@ -7,9 +7,9 @@ export default function ValuesPage() {
   return (
     <DefaultLayout>
       <section>
-        <h2>
+        <h1>
           <FormattedMessage id="page.present.values.meta.title" />
-        </h2>
+        </h1>
       </section>
     </DefaultLayout>
   );

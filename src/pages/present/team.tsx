@@ -7,9 +7,9 @@ export default function TeamPage() {
   return (
     <DefaultLayout>
       <section>
-        <h2>
+        <h1>
           <FormattedMessage id="page.present.team.meta.title" />
-        </h2>
+        </h1>
       </section>
     </DefaultLayout>
   );

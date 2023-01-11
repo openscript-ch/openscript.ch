@@ -134,22 +134,32 @@ export const defaultStyles = (theme: Theme) => css`
     padding-block: var(${theme.variables.gutter});
   }
 
-  h1 {
+  #company-name {
     font-family: ${theme.fonts.headings};
   }
 
+  h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
     font-family: ${theme.fonts.headings};
-    margin-top: 1.8rem;
-    margin-bottom: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  h1,
+  h2 {
+    margin-top: 0;
+  }
+
+  section > h2 {
+    margin-top: 3rem;
   }
 
   h2 {
-    margin-top: 0;
+    font-size: 1.25em;
   }
 
   p {
@@ -187,6 +197,10 @@ export const defaultStyles = (theme: Theme) => css`
       color: ${theme.whiteColor};
       fill: ${theme.whiteColor};
     }
+  }
+
+  header ul li ul li a.active {
+    color: ${theme.secondaryColor} !important;
   }
 
   nav ul {

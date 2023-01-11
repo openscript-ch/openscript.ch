@@ -7,9 +7,9 @@ export default function CollaborationPage() {
   return (
     <DefaultLayout>
       <section>
-        <h2>
+        <h1>
           <FormattedMessage id="page.future.collaboration.meta.title" />
-        </h2>
+        </h1>
       </section>
     </DefaultLayout>
   );

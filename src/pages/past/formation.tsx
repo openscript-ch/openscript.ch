@@ -7,9 +7,9 @@ export default function FormationPage() {
   return (
     <DefaultLayout>
       <section>
-        <h2>
+        <h1>
           <FormattedMessage id="page.past.formation.meta.title" />
-        </h2>
+        </h1>
       </section>
     </DefaultLayout>
   );
