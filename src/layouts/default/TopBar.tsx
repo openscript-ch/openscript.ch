@@ -100,7 +100,7 @@ export function TopBar({ title, phone, email }: TopBarProps) {
     <div css={topBarStyle} id="top-bar" className="page-padding">
       <LocalizedLink to="/" activeClassName="" css={showBrand ? showBrandStyle : null}>
         <Sprite name="brand" />
-        <div id="company-name">{title}</div>
+        <span id="company-name">{title}</span>
       </LocalizedLink>
       <nav>
         <ul>
