@@ -27,5 +27,8 @@ jobs:
       - name: Run tests
         run: yarn test
 
+      - name: Submit coverage
+        uses: codecov/codecov-action@v3
+
       - name: Try to build
         run: yarn build
