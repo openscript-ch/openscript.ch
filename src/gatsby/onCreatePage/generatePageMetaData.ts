@@ -27,7 +27,7 @@ function createPageTitle(siteTitle: string, pageTitle?: string) {
   return pageTitle ? `${pageTitle} - ${siteTitle}` : siteTitle;
 }
 
-export async function GeneratePageMetaData({ actions, page, reporter }: CreatePageArgs<Queries.SitePageContext>) {
+export async function generatePageMetaData({ actions, page, reporter }: CreatePageArgs<Queries.SitePageContext>) {
   const { createPage, deletePage } = actions;
   if (!page.context || !page.isCreatedByStatefulCreatePages) {
     return;

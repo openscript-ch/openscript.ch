@@ -1,7 +1,7 @@
 import { GatsbyNode } from 'gatsby';
 import { CreateGenericPages } from './src/gatsby/createPages/createGenericPages';
 import { customizeSitePageContext } from './src/gatsby/createSchemaCustomization/customizeSitePageContext';
-import { GeneratePageMetaData } from './src/gatsby/onCreatePage/generatePageMetaData';
+import { generatePageMetaData } from './src/gatsby/onCreatePage/generatePageMetaData';
 
 export const createPages: GatsbyNode['createPages'] = async args => {
   await CreateGenericPages(args);
@@ -12,5 +12,5 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
 };
 
 export const onCreatePage: GatsbyNode<Record<string, unknown>, Queries.SitePageContext>['onCreatePage'] = async args => {
-  await GeneratePageMetaData(args);
+  await generatePageMetaData(args);
 };
