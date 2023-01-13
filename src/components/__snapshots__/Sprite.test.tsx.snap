@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Sprite /> should match snapshot 1`] = `
+<DocumentFragment>
+  <svg
+    height="10"
+    version="2.0"
+    width="9.387"
+  >
+    <use
+      href="/sprite.svg#arrow"
+    />
+  </svg>
+</DocumentFragment>
+`;
