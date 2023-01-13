@@ -1498,9 +1498,11 @@ type MarkdownRemarkFilterListInput = {
 
 type MarkdownRemarkFrontmatter = {
   readonly answeredBy: Maybe<Scalars['String']>;
+  readonly avatar: Maybe<Scalars['String']>;
   readonly icon: Maybe<File>;
   readonly link: Maybe<Scalars['String']>;
   readonly logo: Maybe<File>;
+  readonly name: Maybe<Scalars['String']>;
   readonly order: Maybe<Scalars['Int']>;
   readonly skills: Maybe<ReadonlyArray<Maybe<File>>>;
   readonly sprite: Maybe<Scalars['String']>;
@@ -1509,9 +1511,11 @@ type MarkdownRemarkFrontmatter = {
 
 type MarkdownRemarkFrontmatterFieldSelector = {
   readonly answeredBy: InputMaybe<FieldSelectorEnum>;
+  readonly avatar: InputMaybe<FieldSelectorEnum>;
   readonly icon: InputMaybe<FileFieldSelector>;
   readonly link: InputMaybe<FieldSelectorEnum>;
   readonly logo: InputMaybe<FileFieldSelector>;
+  readonly name: InputMaybe<FieldSelectorEnum>;
   readonly order: InputMaybe<FieldSelectorEnum>;
   readonly skills: InputMaybe<FileFieldSelector>;
   readonly sprite: InputMaybe<FieldSelectorEnum>;
@@ -1520,9 +1524,11 @@ type MarkdownRemarkFrontmatterFieldSelector = {
 
 type MarkdownRemarkFrontmatterFilterInput = {
   readonly answeredBy: InputMaybe<StringQueryOperatorInput>;
+  readonly avatar: InputMaybe<StringQueryOperatorInput>;
   readonly icon: InputMaybe<FileFilterInput>;
   readonly link: InputMaybe<StringQueryOperatorInput>;
   readonly logo: InputMaybe<FileFilterInput>;
+  readonly name: InputMaybe<StringQueryOperatorInput>;
   readonly order: InputMaybe<IntQueryOperatorInput>;
   readonly skills: InputMaybe<FileFilterListInput>;
   readonly sprite: InputMaybe<StringQueryOperatorInput>;
@@ -1531,9 +1537,11 @@ type MarkdownRemarkFrontmatterFilterInput = {
 
 type MarkdownRemarkFrontmatterSortInput = {
   readonly answeredBy: InputMaybe<SortOrderEnum>;
+  readonly avatar: InputMaybe<SortOrderEnum>;
   readonly icon: InputMaybe<FileSortInput>;
   readonly link: InputMaybe<SortOrderEnum>;
   readonly logo: InputMaybe<FileSortInput>;
+  readonly name: InputMaybe<SortOrderEnum>;
   readonly order: InputMaybe<SortOrderEnum>;
   readonly skills: InputMaybe<FileSortInput>;
   readonly sprite: InputMaybe<SortOrderEnum>;
@@ -3293,6 +3301,13 @@ type IndexPageQueryVariables = Exact<{
 
 
 type IndexPageQuery = { readonly values: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly link: string | null, readonly title: string | null } | null }> }, readonly cooperationYou: { readonly html: string | null, readonly frontmatter: { readonly title: string | null } | null } | null, readonly cooperationUs: { readonly html: string | null, readonly frontmatter: { readonly title: string | null } | null } | null, readonly exchange: { readonly html: string | null, readonly frontmatter: { readonly title: string | null } | null } | null, readonly strengths: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly order: number | null, readonly sprite: string | null, readonly skills: ReadonlyArray<{ readonly childMarkdownRemark: { readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly link: string | null, readonly icon: { readonly publicURL: string | null } | null } | null } | null } | null> | null } | null }> }, readonly questions: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly answeredBy: string | null, readonly title: string | null } | null }> }, readonly softwareReferences: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly icon: { readonly publicURL: string | null } | null } | null }> }, readonly companyReferences: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly link: string | null, readonly logo: { readonly publicURL: string | null } | null } | null }> } };
+
+type TeamPageQueryVariables = Exact<{
+  locale: InputMaybe<Scalars['String']>;
+}>;
+
+
+type TeamPageQuery = { readonly summary: { readonly html: string | null } | null };
 
 type AllGenericPagesQueryVariables = Exact<{ [key: string]: never; }>;
 
