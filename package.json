@@ -12,7 +12,7 @@
     "@mdx-js/react": "2.3.0",
     "embla-carousel-autoplay": "^7.0.9",
     "embla-carousel-react": "^7.0.9",
-    "gatsby": "5.6.0",
+    "gatsby": "5.6.1",
     "gatsby-plugin-catch-links": "5.6.0",
     "gatsby-plugin-emotion": "8.6.0",
     "gatsby-plugin-i18n-l10n": "5.3.0",
