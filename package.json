@@ -36,7 +36,7 @@
     "type-fest": "^3.5.7"
   },
   "devDependencies": {
-    "@babel/core": "7.21.3",
+    "@babel/core": "7.21.4",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@types/mdx": "^2.0.3",
