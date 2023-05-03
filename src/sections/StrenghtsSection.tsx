@@ -103,7 +103,6 @@ type Props = {
 export function StrengthsSection({ strengths }: Props) {
   const { formatMessage } = useIntl();
   const [selectedStrength, setSelectedStrength] = useState(strengths.nodes.find(({ frontmatter }) => frontmatter?.order === 1));
-
   const sortedStrengths = Array.from(strengths.nodes).sort((a, b) => (a.frontmatter?.order ?? 0) - (b.frontmatter?.order ?? 0));
 
   return (
@@ -112,7 +111,7 @@ export function StrengthsSection({ strengths }: Props) {
         {sortedStrengths.map(strength => {
           const { order, title, sprite } = strength.frontmatter ?? {};
           return (
-            <div>
+            <div key={title}>
               <input
                 id={`${order}`}
                 checked={selectedStrength?.frontmatter?.order === order}
