@@ -1,6 +1,7 @@
 ---
 title: Consulting
 sprite: consulting
+skills: ['../skills/project-management.en.md', '../skills/requirements-engineering.en.md']
 order: 3
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: Beraten
 sprite: consulting
+skills: ['../skills/project-management.de.md', '../skills/requirements-engineering.de.md']
 order: 3
 ---
 

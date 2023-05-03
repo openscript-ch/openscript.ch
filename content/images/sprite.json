@@ -15,6 +15,10 @@
     "width": "896",
     "height": "981"
   },
+  "check": {
+    "width": "800",
+    "height": "800"
+  },
   "consulting": {
     "width": "711",
     "height": "655"
@@ -102,6 +106,10 @@
   "logo-vscode": {
     "width": "21",
     "height": "20"
+  },
+  "project-management": {
+    "width": "1073",
+    "height": "1307"
   },
   "singleColorDivider": {
     "width": "1600",
