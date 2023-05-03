@@ -1794,21 +1794,25 @@ type MdxFilterListInput = {
 type MdxFrontmatter = {
   readonly description: Maybe<Scalars['String']>;
   readonly title: Maybe<Scalars['String']>;
+  readonly type: Maybe<Scalars['String']>;
 };
 
 type MdxFrontmatterFieldSelector = {
   readonly description: InputMaybe<FieldSelectorEnum>;
   readonly title: InputMaybe<FieldSelectorEnum>;
+  readonly type: InputMaybe<FieldSelectorEnum>;
 };
 
 type MdxFrontmatterFilterInput = {
   readonly description: InputMaybe<StringQueryOperatorInput>;
   readonly title: InputMaybe<StringQueryOperatorInput>;
+  readonly type: InputMaybe<StringQueryOperatorInput>;
 };
 
 type MdxFrontmatterSortInput = {
   readonly description: InputMaybe<SortOrderEnum>;
   readonly title: InputMaybe<SortOrderEnum>;
+  readonly type: InputMaybe<SortOrderEnum>;
 };
 
 type MdxGroupConnection = {
@@ -3293,7 +3297,7 @@ type GenericPagesQueryVariables = Exact<{
 }>;
 
 
-type GenericPagesQuery = { readonly mdx: { readonly id: string } | null };
+type GenericPagesQuery = { readonly mdx: { readonly id: string, readonly frontmatter: { readonly type: string | null } | null } | null };
 
 type IndexPageQueryVariables = Exact<{
   locale: InputMaybe<Scalars['String']>;

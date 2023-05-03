@@ -3,8 +3,8 @@ import { PropsWithChildren } from 'react';
 
 const summaryParagraphStyle = css`
   font-size: 1.3em;
-  width: 60%;
   margin: 0 auto;
+  line-height: 1.66;
 `;
 
 type SummaryParagraphProps = PropsWithChildren<{}>;
