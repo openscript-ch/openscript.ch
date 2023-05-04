@@ -1498,7 +1498,7 @@ type MarkdownRemarkFilterListInput = {
 
 type MarkdownRemarkFrontmatter = {
   readonly answeredBy: Maybe<Scalars['String']>;
-  readonly avatar: Maybe<Scalars['String']>;
+  readonly avatar: Maybe<File>;
   readonly icon: Maybe<File>;
   readonly link: Maybe<Scalars['String']>;
   readonly logo: Maybe<File>;
@@ -1511,7 +1511,7 @@ type MarkdownRemarkFrontmatter = {
 
 type MarkdownRemarkFrontmatterFieldSelector = {
   readonly answeredBy: InputMaybe<FieldSelectorEnum>;
-  readonly avatar: InputMaybe<FieldSelectorEnum>;
+  readonly avatar: InputMaybe<FileFieldSelector>;
   readonly icon: InputMaybe<FileFieldSelector>;
   readonly link: InputMaybe<FieldSelectorEnum>;
   readonly logo: InputMaybe<FileFieldSelector>;
@@ -1524,7 +1524,7 @@ type MarkdownRemarkFrontmatterFieldSelector = {
 
 type MarkdownRemarkFrontmatterFilterInput = {
   readonly answeredBy: InputMaybe<StringQueryOperatorInput>;
-  readonly avatar: InputMaybe<StringQueryOperatorInput>;
+  readonly avatar: InputMaybe<FileFilterInput>;
   readonly icon: InputMaybe<FileFilterInput>;
   readonly link: InputMaybe<StringQueryOperatorInput>;
   readonly logo: InputMaybe<FileFilterInput>;
@@ -1537,7 +1537,7 @@ type MarkdownRemarkFrontmatterFilterInput = {
 
 type MarkdownRemarkFrontmatterSortInput = {
   readonly answeredBy: InputMaybe<SortOrderEnum>;
-  readonly avatar: InputMaybe<SortOrderEnum>;
+  readonly avatar: InputMaybe<FileSortInput>;
   readonly icon: InputMaybe<FileSortInput>;
   readonly link: InputMaybe<SortOrderEnum>;
   readonly logo: InputMaybe<FileSortInput>;
@@ -3311,7 +3311,7 @@ type TeamPageQueryVariables = Exact<{
 }>;
 
 
-type TeamPageQuery = { readonly summary: { readonly html: string | null } | null };
+type TeamPageQuery = { readonly summary: { readonly html: string | null } | null, readonly team: { readonly nodes: ReadonlyArray<{ readonly fields: { readonly kind: string | null } | null, readonly frontmatter: { readonly name: string | null, readonly avatar: { readonly publicURL: string | null } | null } | null }> } };
 
 type AllGenericPagesQueryVariables = Exact<{ [key: string]: never; }>;
 

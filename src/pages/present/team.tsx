@@ -22,18 +22,52 @@ function TeamHeader({ summary }: { summary?: string | null }) {
   );
 }
 
-const peopleSectionStyle = (theme: Theme) => css`
+const portraitsSectionStyle = (theme: Theme) => css`
   background-color: ${theme.whiteColor};
   flex-grow: 1;
+
+  .portraits {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 3rem;
+    max-width: 100%;
+
+    .portrait {
+      display: flex;
+      flex-direction: column;
+
+      img {
+        width: 100%;
+      }
+
+      p {
+        margin-top: 0.5rem;
+        text-align: center;
+      }
+    }
+  }
 `;
 
-function PeopleSection() {
+function PortraitsSection({ team }: { team: Queries.TeamPageQuery['team']['nodes'] }) {
   const theme = useTheme();
   return (
-    <DividedSection upperColor={theme.whiteColor} lowerColor={theme.backgroundColor} flipVertically css={peopleSectionStyle}>
+    <DividedSection upperColor={theme.whiteColor} lowerColor={theme.backgroundColor} flipVertically css={portraitsSectionStyle}>
       <h2>
         <FormattedMessage id="page.present.team.section.portraits" />
       </h2>
+      <div className="portraits">
+        {team.map(portrait => {
+          if (!portrait.frontmatter || !portrait.frontmatter.name || !portrait.frontmatter.avatar?.publicURL) {
+            return undefined;
+          }
+          return (
+            <div className="portrait">
+              <img src={portrait.frontmatter.avatar.publicURL} alt={portrait.frontmatter.name} />
+              <p>{portrait.frontmatter.name}</p>
+            </div>
+          );
+        })}
+      </div>
     </DividedSection>
   );
 }
@@ -52,7 +86,7 @@ export default function TeamPage({ data }: PageProps<Queries.TeamPageQuery>) {
   return (
     <DefaultLayout CustomMain={ContentMain}>
       <TeamHeader summary={data.summary?.html} />
-      <PeopleSection />
+      <PortraitsSection team={data.team.nodes} />
       <JoinUsSection />
     </DefaultLayout>
   );
@@ -66,6 +100,19 @@ export const query = graphql`
   query TeamPage($locale: String) {
     summary: markdownRemark(fields: { locale: { eq: $locale }, kind: { eq: "sections/summaries" }, filename: { glob: "*team*" } }) {
       html
+    }
+    team: allMarkdownRemark(filter: { fields: { locale: { eq: $locale }, kind: { eq: "sections/team" } } }) {
+      nodes {
+        fields {
+          kind
+        }
+        frontmatter {
+          avatar {
+            publicURL
+          }
+          name
+        }
+      }
     }
   }
 `;
