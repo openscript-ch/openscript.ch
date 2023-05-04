@@ -1,15 +1,21 @@
-import { HeadProps } from 'gatsby';
-import { FormattedMessage } from 'react-intl';
+import { HeadProps, PageProps, graphql } from 'gatsby';
+import { Timeline } from 'react-alternating-timeline';
+import { Markup } from 'interweave';
 import { Document } from '../../layouts/default/Document';
 import { DefaultLayout } from '../../layouts/DefaultLayout';
 
-export default function FormationPage() {
+export default function FormationPage({ data }: PageProps<Queries.FormationPageQuery>) {
   return (
     <DefaultLayout>
       <section>
-        <h1>
-          <FormattedMessage id="page.past.formation.meta.title" />
-        </h1>
+        <Timeline
+          items={data.allMarkdownRemark.nodes.map(node => ({
+            title: node.frontmatter?.title ?? '',
+            date: new Date(node.frontmatter?.date ?? ''),
+            key: node.frontmatter?.date,
+            children: <Markup content={node.html} />,
+          }))}
+        />
       </section>
     </DefaultLayout>
   );
@@ -18,3 +24,17 @@ export default function FormationPage() {
 export function Head({ pageContext }: HeadProps<object, Queries.SitePageContext>) {
   return <Document metaData={pageContext.metaData} />;
 }
+
+export const query = graphql`
+  query FormationPage($locale: String) {
+    allMarkdownRemark(filter: { fields: { locale: { eq: $locale }, kind: { eq: "sections/events" } } }) {
+      nodes {
+        html
+        frontmatter {
+          title
+          date
+        }
+      }
+    }
+  }
+`;
