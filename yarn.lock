@@ -11660,6 +11660,11 @@ rc@1.2.8, rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-alternating-timeline@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-alternating-timeline/-/react-alternating-timeline-2.0.0.tgz#052582efca2ddb7144a96b707bfdafd1f66b75f9"
+  integrity sha512-wqv/IzUmFUN8qcaLQNvu0vCgSXWvB0fapS5o7jDHjLsQ8x01cqqioU0df13ykgANABjdqpan5MXiPtUIaXsd1g==
+
 react-dev-utils@^12.0.1:
   version "12.0.1"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-12.0.1.tgz#ba92edb4a1f379bd46ccd6bcd4e7bc398df33e73"
