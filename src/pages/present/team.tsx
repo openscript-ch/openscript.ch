@@ -85,6 +85,15 @@ const impressionsSectionStyle = (theme: Theme) => css`
     @media (max-width: ${theme.breakpoints.small}) {
       grid-template-columns: 1fr;
     }
+
+    & > * {
+      filter: grayscale(1) brightness(1.2) opacity(0.5);
+      transition: 0.3s;
+
+      &:hover {
+        filter: none;
+      }
+    }
   }
 `;
 
