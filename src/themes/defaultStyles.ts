@@ -146,7 +146,7 @@ export const defaultStyles = (theme: Theme) => css`
   h6 {
     font-family: ${theme.fonts.headings};
     margin-top: 3rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.5em;
   }
 
   h1,
