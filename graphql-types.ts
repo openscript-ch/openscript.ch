@@ -1500,6 +1500,7 @@ type MarkdownRemarkFrontmatter = {
   readonly answeredBy: Maybe<Scalars['String']>;
   readonly avatar: Maybe<File>;
   readonly icon: Maybe<File>;
+  readonly image: Maybe<File>;
   readonly link: Maybe<Scalars['String']>;
   readonly logo: Maybe<File>;
   readonly name: Maybe<Scalars['String']>;
@@ -1513,6 +1514,7 @@ type MarkdownRemarkFrontmatterFieldSelector = {
   readonly answeredBy: InputMaybe<FieldSelectorEnum>;
   readonly avatar: InputMaybe<FileFieldSelector>;
   readonly icon: InputMaybe<FileFieldSelector>;
+  readonly image: InputMaybe<FileFieldSelector>;
   readonly link: InputMaybe<FieldSelectorEnum>;
   readonly logo: InputMaybe<FileFieldSelector>;
   readonly name: InputMaybe<FieldSelectorEnum>;
@@ -1526,6 +1528,7 @@ type MarkdownRemarkFrontmatterFilterInput = {
   readonly answeredBy: InputMaybe<StringQueryOperatorInput>;
   readonly avatar: InputMaybe<FileFilterInput>;
   readonly icon: InputMaybe<FileFilterInput>;
+  readonly image: InputMaybe<FileFilterInput>;
   readonly link: InputMaybe<StringQueryOperatorInput>;
   readonly logo: InputMaybe<FileFilterInput>;
   readonly name: InputMaybe<StringQueryOperatorInput>;
@@ -1539,6 +1542,7 @@ type MarkdownRemarkFrontmatterSortInput = {
   readonly answeredBy: InputMaybe<SortOrderEnum>;
   readonly avatar: InputMaybe<FileSortInput>;
   readonly icon: InputMaybe<FileSortInput>;
+  readonly image: InputMaybe<FileSortInput>;
   readonly link: InputMaybe<SortOrderEnum>;
   readonly logo: InputMaybe<FileSortInput>;
   readonly name: InputMaybe<SortOrderEnum>;
@@ -3311,7 +3315,7 @@ type TeamPageQueryVariables = Exact<{
 }>;
 
 
-type TeamPageQuery = { readonly summary: { readonly html: string | null } | null, readonly team: { readonly nodes: ReadonlyArray<{ readonly fields: { readonly kind: string | null } | null, readonly frontmatter: { readonly name: string | null, readonly avatar: { readonly publicURL: string | null } | null } | null }> } };
+type TeamPageQuery = { readonly summary: { readonly html: string | null } | null, readonly portraits: { readonly nodes: ReadonlyArray<{ readonly fields: { readonly kind: string | null } | null, readonly frontmatter: { readonly name: string | null, readonly avatar: { readonly publicURL: string | null } | null } | null }> }, readonly impressions: { readonly nodes: ReadonlyArray<{ readonly frontmatter: { readonly title: string | null, readonly image: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null }> } };
 
 type AllGenericPagesQueryVariables = Exact<{ [key: string]: never; }>;
 
