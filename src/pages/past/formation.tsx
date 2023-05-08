@@ -17,6 +17,12 @@ export default function FormationPage({ data }: PageProps<Queries.FormationPageQ
               key: node.frontmatter?.date ?? '',
               children: <Markup content={node.html} />,
             }))}
+          styleConfig={{
+            gap: '6rem',
+            offset: {
+              right: '6rem',
+            },
+          }}
         />
       </section>
     </DefaultLayout>
