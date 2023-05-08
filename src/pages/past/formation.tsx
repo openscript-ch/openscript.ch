@@ -9,12 +9,14 @@ export default function FormationPage({ data }: PageProps<Queries.FormationPageQ
     <DefaultLayout>
       <section>
         <Timeline
-          items={data.allMarkdownRemark.nodes.map(node => ({
-            title: node.frontmatter?.title ?? '',
-            date: new Date(node.frontmatter?.date ?? ''),
-            key: node.frontmatter?.date,
-            children: <Markup content={node.html} />,
-          }))}
+          items={Array.from(data.allMarkdownRemark.nodes)
+            .sort((a, b) => a.frontmatter?.date?.localeCompare(b.frontmatter?.date ?? '') ?? 0)
+            .map(node => ({
+              title: node.frontmatter?.title ?? '',
+              date: new Date(node.frontmatter?.date ?? ''),
+              key: node.frontmatter?.date ?? '',
+              children: <Markup content={node.html} />,
+            }))}
         />
       </section>
     </DefaultLayout>
