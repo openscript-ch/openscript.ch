@@ -22,6 +22,9 @@ export default function FormationPage({ data }: PageProps<Queries.FormationPageQ
             offset: {
               right: '6rem',
             },
+            pointer: {
+              offset: '3rem',
+            },
           }}
         />
       </section>
