@@ -8,3 +8,5 @@ Um sich als Firma entwickeln zu können, ist es manchmal notwendig auch ausserha
 Also haben wir uns ein einfaches Pfadiheimn in der nähe von Winterthur gemietet und haben gemeinsam feuer gemacht, gekocht, gegessen und gespielt.
 
 Vor allem haben wir aber Themen rund um openscript besprochen und wie wir uns die Zukunft der Firma vorstellen.
+
+![Firmen Retreat](./company-retreat.jpg 'Firmen Retreat')
