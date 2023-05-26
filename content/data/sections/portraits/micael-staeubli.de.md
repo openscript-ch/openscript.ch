@@ -1,4 +1,4 @@
 ---
 name: Micael Stäubli
-avatar: robin-buehler.svg
+avatar: micael-staeubli.svg
 ---

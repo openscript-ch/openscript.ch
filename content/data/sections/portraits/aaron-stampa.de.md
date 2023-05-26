@@ -1,4 +1,4 @@
 ---
 name: Aaron Stampa
-avatar: robin-buehler.svg
+avatar: aaron-stampa.svg
 ---

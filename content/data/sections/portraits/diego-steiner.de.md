@@ -1,4 +1,4 @@
 ---
 name: Diego Steiner
-avatar: robin-buehler.svg
+avatar: diego-steiner.svg
 ---
