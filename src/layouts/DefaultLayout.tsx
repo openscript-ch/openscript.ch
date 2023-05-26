@@ -1,6 +1,6 @@
 import { Global, Theme, ThemeProvider } from '@emotion/react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { PropsWithChildren } from 'react';
+import { ComponentType, PropsWithChildren } from 'react';
 import { TwoColorDivider } from '../components/TwoColorDivider';
 import { defaultStyles } from '../themes/defaultStyles';
 import { defaultTheme } from '../themes/defaultTheme';
@@ -28,9 +28,10 @@ const query = graphql`
 
 type DefaultLayoutProps = PropsWithChildren<{
   theme?: Theme;
+  CustomMain?: ComponentType<PropsWithChildren>;
 }>;
 
-export function DefaultLayout({ children, theme }: DefaultLayoutProps) {
+export function DefaultLayout({ children, theme, CustomMain = Main }: DefaultLayoutProps) {
   const data = useStaticQuery<Queries.DefaultLayoutQuery>(query);
 
   return (
@@ -42,7 +43,7 @@ export function DefaultLayout({ children, theme }: DefaultLayoutProps) {
         email={data.site?.siteMetadata?.email || ''}
       />
       <TwoColorDivider />
-      <Main>{children}</Main>
+      <CustomMain>{children}</CustomMain>
       <TwoColorDivider flipVertical />
       <Footer
         address={data.site?.siteMetadata?.address || ''}

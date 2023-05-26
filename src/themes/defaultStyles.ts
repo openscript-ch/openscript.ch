@@ -89,7 +89,7 @@ export const defaultStyles = (theme: Theme) => css`
   #gatsby-focus-wrapper,
   main {
     margin: 0;
-    font-size: 18px;
+    font-size: 20px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -98,7 +98,7 @@ export const defaultStyles = (theme: Theme) => css`
     background-color: ${theme.backgroundColor};
 
     @media (max-width: ${theme.breakpoints.big}) {
-      font-size: 16px;
+      font-size: 18px;
     }
   }
 
@@ -146,7 +146,7 @@ export const defaultStyles = (theme: Theme) => css`
   h6 {
     font-family: ${theme.fonts.headings};
     margin-top: 3rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.5em;
   }
 
   h1,

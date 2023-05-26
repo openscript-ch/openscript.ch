@@ -91,7 +91,7 @@
     "width": "21",
     "height": "20"
   },
-  "singleColorDivider": {
+  "single-color-divider": {
     "width": "1600",
     "height": "40"
   },
@@ -99,7 +99,7 @@
     "width": "128",
     "height": "67"
   },
-  "twoColorDivider": {
+  "two-color-divider": {
     "width": "1600",
     "height": "46"
   }

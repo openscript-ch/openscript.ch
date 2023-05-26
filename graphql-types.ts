@@ -1498,9 +1498,12 @@ type MarkdownRemarkFilterListInput = {
 
 type MarkdownRemarkFrontmatter = {
   readonly answeredBy: Maybe<Scalars['String']>;
+  readonly avatar: Maybe<File>;
   readonly icon: Maybe<File>;
+  readonly image: Maybe<File>;
   readonly link: Maybe<Scalars['String']>;
   readonly logo: Maybe<File>;
+  readonly name: Maybe<Scalars['String']>;
   readonly order: Maybe<Scalars['Int']>;
   readonly skills: Maybe<ReadonlyArray<Maybe<File>>>;
   readonly sprite: Maybe<Scalars['String']>;
@@ -1509,9 +1512,12 @@ type MarkdownRemarkFrontmatter = {
 
 type MarkdownRemarkFrontmatterFieldSelector = {
   readonly answeredBy: InputMaybe<FieldSelectorEnum>;
+  readonly avatar: InputMaybe<FileFieldSelector>;
   readonly icon: InputMaybe<FileFieldSelector>;
+  readonly image: InputMaybe<FileFieldSelector>;
   readonly link: InputMaybe<FieldSelectorEnum>;
   readonly logo: InputMaybe<FileFieldSelector>;
+  readonly name: InputMaybe<FieldSelectorEnum>;
   readonly order: InputMaybe<FieldSelectorEnum>;
   readonly skills: InputMaybe<FileFieldSelector>;
   readonly sprite: InputMaybe<FieldSelectorEnum>;
@@ -1520,9 +1526,12 @@ type MarkdownRemarkFrontmatterFieldSelector = {
 
 type MarkdownRemarkFrontmatterFilterInput = {
   readonly answeredBy: InputMaybe<StringQueryOperatorInput>;
+  readonly avatar: InputMaybe<FileFilterInput>;
   readonly icon: InputMaybe<FileFilterInput>;
+  readonly image: InputMaybe<FileFilterInput>;
   readonly link: InputMaybe<StringQueryOperatorInput>;
   readonly logo: InputMaybe<FileFilterInput>;
+  readonly name: InputMaybe<StringQueryOperatorInput>;
   readonly order: InputMaybe<IntQueryOperatorInput>;
   readonly skills: InputMaybe<FileFilterListInput>;
   readonly sprite: InputMaybe<StringQueryOperatorInput>;
@@ -1531,9 +1540,12 @@ type MarkdownRemarkFrontmatterFilterInput = {
 
 type MarkdownRemarkFrontmatterSortInput = {
   readonly answeredBy: InputMaybe<SortOrderEnum>;
+  readonly avatar: InputMaybe<FileSortInput>;
   readonly icon: InputMaybe<FileSortInput>;
+  readonly image: InputMaybe<FileSortInput>;
   readonly link: InputMaybe<SortOrderEnum>;
   readonly logo: InputMaybe<FileSortInput>;
+  readonly name: InputMaybe<SortOrderEnum>;
   readonly order: InputMaybe<SortOrderEnum>;
   readonly skills: InputMaybe<FileSortInput>;
   readonly sprite: InputMaybe<SortOrderEnum>;
@@ -1786,21 +1798,25 @@ type MdxFilterListInput = {
 type MdxFrontmatter = {
   readonly description: Maybe<Scalars['String']>;
   readonly title: Maybe<Scalars['String']>;
+  readonly type: Maybe<Scalars['String']>;
 };
 
 type MdxFrontmatterFieldSelector = {
   readonly description: InputMaybe<FieldSelectorEnum>;
   readonly title: InputMaybe<FieldSelectorEnum>;
+  readonly type: InputMaybe<FieldSelectorEnum>;
 };
 
 type MdxFrontmatterFilterInput = {
   readonly description: InputMaybe<StringQueryOperatorInput>;
   readonly title: InputMaybe<StringQueryOperatorInput>;
+  readonly type: InputMaybe<StringQueryOperatorInput>;
 };
 
 type MdxFrontmatterSortInput = {
   readonly description: InputMaybe<SortOrderEnum>;
   readonly title: InputMaybe<SortOrderEnum>;
+  readonly type: InputMaybe<SortOrderEnum>;
 };
 
 type MdxGroupConnection = {
@@ -2175,12 +2191,14 @@ type Query_siteArgs = {
   buildTime: InputMaybe<DateQueryOperatorInput>;
   children: InputMaybe<NodeFilterListInput>;
   graphqlTypegen: InputMaybe<SiteGraphqlTypegenFilterInput>;
+  host: InputMaybe<StringQueryOperatorInput>;
   id: InputMaybe<StringQueryOperatorInput>;
   internal: InputMaybe<InternalFilterInput>;
   jsxRuntime: InputMaybe<StringQueryOperatorInput>;
   parent: InputMaybe<NodeFilterInput>;
   pathPrefix: InputMaybe<StringQueryOperatorInput>;
   polyfill: InputMaybe<BooleanQueryOperatorInput>;
+  port: InputMaybe<IntQueryOperatorInput>;
   siteMetadata: InputMaybe<SiteSiteMetadataFilterInput>;
   trailingSlash: InputMaybe<StringQueryOperatorInput>;
 };
@@ -2257,12 +2275,14 @@ type Site = Node & {
   readonly buildTime: Maybe<Scalars['Date']>;
   readonly children: ReadonlyArray<Node>;
   readonly graphqlTypegen: Maybe<SiteGraphqlTypegen>;
+  readonly host: Maybe<Scalars['String']>;
   readonly id: Scalars['ID'];
   readonly internal: Internal;
   readonly jsxRuntime: Maybe<Scalars['String']>;
   readonly parent: Maybe<Node>;
   readonly pathPrefix: Maybe<Scalars['String']>;
   readonly polyfill: Maybe<Scalars['Boolean']>;
+  readonly port: Maybe<Scalars['Int']>;
   readonly siteMetadata: Maybe<SiteSiteMetadata>;
   readonly trailingSlash: Maybe<Scalars['String']>;
 };
@@ -2450,12 +2470,14 @@ type SiteFieldSelector = {
   readonly buildTime: InputMaybe<FieldSelectorEnum>;
   readonly children: InputMaybe<NodeFieldSelector>;
   readonly graphqlTypegen: InputMaybe<SiteGraphqlTypegenFieldSelector>;
+  readonly host: InputMaybe<FieldSelectorEnum>;
   readonly id: InputMaybe<FieldSelectorEnum>;
   readonly internal: InputMaybe<InternalFieldSelector>;
   readonly jsxRuntime: InputMaybe<FieldSelectorEnum>;
   readonly parent: InputMaybe<NodeFieldSelector>;
   readonly pathPrefix: InputMaybe<FieldSelectorEnum>;
   readonly polyfill: InputMaybe<FieldSelectorEnum>;
+  readonly port: InputMaybe<FieldSelectorEnum>;
   readonly siteMetadata: InputMaybe<SiteSiteMetadataFieldSelector>;
   readonly trailingSlash: InputMaybe<FieldSelectorEnum>;
 };
@@ -2464,12 +2486,14 @@ type SiteFilterInput = {
   readonly buildTime: InputMaybe<DateQueryOperatorInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
   readonly graphqlTypegen: InputMaybe<SiteGraphqlTypegenFilterInput>;
+  readonly host: InputMaybe<StringQueryOperatorInput>;
   readonly id: InputMaybe<StringQueryOperatorInput>;
   readonly internal: InputMaybe<InternalFilterInput>;
   readonly jsxRuntime: InputMaybe<StringQueryOperatorInput>;
   readonly parent: InputMaybe<NodeFilterInput>;
   readonly pathPrefix: InputMaybe<StringQueryOperatorInput>;
   readonly polyfill: InputMaybe<BooleanQueryOperatorInput>;
+  readonly port: InputMaybe<IntQueryOperatorInput>;
   readonly siteMetadata: InputMaybe<SiteSiteMetadataFilterInput>;
   readonly trailingSlash: InputMaybe<StringQueryOperatorInput>;
 };
@@ -3077,12 +3101,14 @@ type SiteSortInput = {
   readonly buildTime: InputMaybe<SortOrderEnum>;
   readonly children: InputMaybe<NodeSortInput>;
   readonly graphqlTypegen: InputMaybe<SiteGraphqlTypegenSortInput>;
+  readonly host: InputMaybe<SortOrderEnum>;
   readonly id: InputMaybe<SortOrderEnum>;
   readonly internal: InputMaybe<InternalSortInput>;
   readonly jsxRuntime: InputMaybe<SortOrderEnum>;
   readonly parent: InputMaybe<NodeSortInput>;
   readonly pathPrefix: InputMaybe<SortOrderEnum>;
   readonly polyfill: InputMaybe<SortOrderEnum>;
+  readonly port: InputMaybe<SortOrderEnum>;
   readonly siteMetadata: InputMaybe<SiteSiteMetadataSortInput>;
   readonly trailingSlash: InputMaybe<SortOrderEnum>;
 };
@@ -3275,7 +3301,7 @@ type GenericPagesQueryVariables = Exact<{
 }>;
 
 
-type GenericPagesQuery = { readonly mdx: { readonly id: string } | null };
+type GenericPagesQuery = { readonly mdx: { readonly id: string, readonly frontmatter: { readonly type: string | null } | null } | null };
 
 type IndexPageQueryVariables = Exact<{
   locale: InputMaybe<Scalars['String']>;
@@ -3283,6 +3309,13 @@ type IndexPageQueryVariables = Exact<{
 
 
 type IndexPageQuery = { readonly values: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly link: string | null, readonly title: string | null } | null }> }, readonly cooperationYou: { readonly html: string | null, readonly frontmatter: { readonly title: string | null } | null } | null, readonly cooperationUs: { readonly html: string | null, readonly frontmatter: { readonly title: string | null } | null } | null, readonly exchange: { readonly html: string | null, readonly frontmatter: { readonly title: string | null } | null } | null, readonly strengths: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly order: number | null, readonly sprite: string | null, readonly skills: ReadonlyArray<{ readonly childMarkdownRemark: { readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly link: string | null, readonly icon: { readonly publicURL: string | null } | null } | null } | null } | null> | null } | null }> }, readonly questions: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly answeredBy: string | null, readonly title: string | null } | null }> }, readonly softwareReferences: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly icon: { readonly publicURL: string | null } | null } | null }> }, readonly companyReferences: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly link: string | null, readonly logo: { readonly publicURL: string | null } | null } | null }> } };
+
+type TeamPageQueryVariables = Exact<{
+  locale: InputMaybe<Scalars['String']>;
+}>;
+
+
+type TeamPageQuery = { readonly summary: { readonly html: string | null } | null, readonly portraits: { readonly nodes: ReadonlyArray<{ readonly fields: { readonly kind: string | null } | null, readonly frontmatter: { readonly name: string | null, readonly avatar: { readonly publicURL: string | null } | null } | null }> }, readonly impressions: { readonly nodes: ReadonlyArray<{ readonly frontmatter: { readonly title: string | null, readonly image: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null }> } };
 
 type AllGenericPagesQueryVariables = Exact<{ [key: string]: never; }>;
 

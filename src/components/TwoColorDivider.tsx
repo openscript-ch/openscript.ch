@@ -9,7 +9,7 @@ type TwoColorDividerProps = {
 export function TwoColorDivider({ flipVertical }: TwoColorDividerProps) {
   return (
     <Sprite
-      name="twoColorDivider"
+      name="two-color-divider"
       css={(theme: Theme) => css`
         width: 100%;
         height: auto;

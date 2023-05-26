@@ -11,7 +11,7 @@ type SingleColorDividerProps = {
 export function SingleColorDivider({ flipVertically, flipHorizontally, upperColor, lowerColor }: SingleColorDividerProps) {
   return (
     <Sprite
-      name="singleColorDivider"
+      name="single-color-divider"
       css={css`
         width: 100%;
         height: auto;
