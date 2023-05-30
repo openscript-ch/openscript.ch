@@ -1,14 +1,26 @@
 import { HeadProps, PageProps, graphql } from 'gatsby';
 import { Timeline } from 'react-alternating-timeline';
 import { Markup } from 'interweave';
+import { css } from '@emotion/react';
 import { Document } from '../../layouts/default/Document';
 import { DefaultLayout } from '../../layouts/DefaultLayout';
+
+const timelineStyles = css`
+  .small-image {
+    img {
+      margin: 1rem 0;
+      max-height: 8rem;
+      object-fit: contain;
+    }
+  }
+`;
 
 export default function FormationPage({ data }: PageProps<Queries.FormationPageQuery>) {
   return (
     <DefaultLayout>
       <section>
         <Timeline
+          css={timelineStyles}
           items={Array.from(data.allMarkdownRemark.nodes)
             .sort((a, b) => a.frontmatter?.date?.localeCompare(b.frontmatter?.date ?? '') ?? 0)
             .map(node => ({

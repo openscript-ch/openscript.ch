@@ -1,6 +1,6 @@
 ---
 title: Gründung
-date: 1291-01-01
+date: 2020-01-28
 ---
 
 Die Gründung der openscript GmbH!
