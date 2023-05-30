@@ -50,6 +50,7 @@ const topBarStyle = (theme: Theme) =>
       display: flex;
       align-items: center;
       gap: 0.8rem;
+      font-size: 1rem;
 
       @media screen and (max-width: ${theme.breakpoints.small}) {
         display: none;
@@ -58,7 +59,7 @@ const topBarStyle = (theme: Theme) =>
 
     & > nav > ul > li:not(:last-of-type)::after {
       content: '/';
-      margin: 0 0.5rem;
+      margin: 0 0.8rem;
       color: ${theme.secondaryColor};
     }
   `;

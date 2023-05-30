@@ -1,15 +1,44 @@
-import { HeadProps } from 'gatsby';
-import { FormattedMessage } from 'react-intl';
+import { HeadProps, PageProps, graphql } from 'gatsby';
+import { Timeline } from 'react-alternating-timeline';
+import { Markup } from 'interweave';
+import { css } from '@emotion/react';
 import { Document } from '../../layouts/default/Document';
 import { DefaultLayout } from '../../layouts/DefaultLayout';
 
-export default function FormationPage() {
+const timelineStyles = css`
+  .small-image {
+    img {
+      margin: 1rem 0;
+      max-height: 8rem;
+      object-fit: contain;
+    }
+  }
+`;
+
+export default function FormationPage({ data }: PageProps<Queries.FormationPageQuery>) {
   return (
     <DefaultLayout>
       <section>
-        <h1>
-          <FormattedMessage id="page.past.formation.meta.title" />
-        </h1>
+        <Timeline
+          css={timelineStyles}
+          items={Array.from(data.allMarkdownRemark.nodes)
+            .sort((a, b) => a.frontmatter?.date?.localeCompare(b.frontmatter?.date ?? '') ?? 0)
+            .map(node => ({
+              title: node.frontmatter?.title ?? '',
+              date: new Date(node.frontmatter?.date ?? ''),
+              key: node.frontmatter?.date ?? '',
+              children: <Markup content={node.html} />,
+            }))}
+          styleConfig={{
+            gap: '6rem',
+            offset: {
+              right: '6rem',
+            },
+            pointer: {
+              offset: '3rem',
+            },
+          }}
+        />
       </section>
     </DefaultLayout>
   );
@@ -18,3 +47,17 @@ export default function FormationPage() {
 export function Head({ pageContext }: HeadProps<object, Queries.SitePageContext>) {
   return <Document metaData={pageContext.metaData} />;
 }
+
+export const query = graphql`
+  query FormationPage($locale: String) {
+    allMarkdownRemark(filter: { fields: { locale: { eq: $locale }, kind: { eq: "sections/events" } } }) {
+      nodes {
+        html
+        frontmatter {
+          title
+          date
+        }
+      }
+    }
+  }
+`;

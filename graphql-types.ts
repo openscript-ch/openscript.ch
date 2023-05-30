@@ -1499,6 +1499,7 @@ type MarkdownRemarkFilterListInput = {
 type MarkdownRemarkFrontmatter = {
   readonly answeredBy: Maybe<Scalars['String']>;
   readonly avatar: Maybe<File>;
+  readonly date: Maybe<Scalars['Date']>;
   readonly icon: Maybe<File>;
   readonly image: Maybe<File>;
   readonly link: Maybe<Scalars['String']>;
@@ -1510,9 +1511,18 @@ type MarkdownRemarkFrontmatter = {
   readonly title: Maybe<Scalars['String']>;
 };
 
+
+type MarkdownRemarkFrontmatter_dateArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
 type MarkdownRemarkFrontmatterFieldSelector = {
   readonly answeredBy: InputMaybe<FieldSelectorEnum>;
   readonly avatar: InputMaybe<FileFieldSelector>;
+  readonly date: InputMaybe<FieldSelectorEnum>;
   readonly icon: InputMaybe<FileFieldSelector>;
   readonly image: InputMaybe<FileFieldSelector>;
   readonly link: InputMaybe<FieldSelectorEnum>;
@@ -1527,6 +1537,7 @@ type MarkdownRemarkFrontmatterFieldSelector = {
 type MarkdownRemarkFrontmatterFilterInput = {
   readonly answeredBy: InputMaybe<StringQueryOperatorInput>;
   readonly avatar: InputMaybe<FileFilterInput>;
+  readonly date: InputMaybe<DateQueryOperatorInput>;
   readonly icon: InputMaybe<FileFilterInput>;
   readonly image: InputMaybe<FileFilterInput>;
   readonly link: InputMaybe<StringQueryOperatorInput>;
@@ -1541,6 +1552,7 @@ type MarkdownRemarkFrontmatterFilterInput = {
 type MarkdownRemarkFrontmatterSortInput = {
   readonly answeredBy: InputMaybe<SortOrderEnum>;
   readonly avatar: InputMaybe<FileSortInput>;
+  readonly date: InputMaybe<SortOrderEnum>;
   readonly icon: InputMaybe<FileSortInput>;
   readonly image: InputMaybe<FileSortInput>;
   readonly link: InputMaybe<SortOrderEnum>;
@@ -3269,6 +3281,13 @@ type DefaultLayoutQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type DefaultLayoutQuery = { readonly site: { readonly siteMetadata: { readonly author: string | null, readonly description: string | null, readonly phone: string | null, readonly email: string | null, readonly address: string | null, readonly siteUrl: string | null, readonly title: string | null, readonly version: string | null, readonly project: string | null } | null } | null };
+
+type FormationPageQueryVariables = Exact<{
+  locale: InputMaybe<Scalars['String']>;
+}>;
+
+
+type FormationPageQuery = { readonly allMarkdownRemark: { readonly nodes: ReadonlyArray<{ readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly date: string | null } | null }> } };
 
 type GatsbyImageSharpFixedFragment = { readonly base64: string | null, readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
 
