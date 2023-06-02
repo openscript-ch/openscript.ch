@@ -69,7 +69,7 @@ jobs:
           CI: true
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4.4.1
+        uses: JamesIves/github-pages-deploy-action@v4.4.2
         if: steps.build-website.outcome == 'success' || steps.build-website-without-cache.outcome == 'success'
         with:
           branch: gh-pages
