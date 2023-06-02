@@ -1,0 +1,27 @@
+{
+	"name": "openscript-ch",
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:0-20-bullseye",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"streetsidesoftware.code-spell-checker",
+				"streetsidesoftware.code-spell-checker-german",
+				"esbenp.prettier-vscode",
+				"mikestead.dotenv",
+				"eamodio.gitlens",
+				"vscode-icons-team.vscode-icons",
+				"mgmcdermott.vscode-language-babel",
+				"dbaeumer.vscode-eslint",
+				"styled-components.vscode-styled-components",
+				"graphql.vscode-graphql",
+				"lokalise.i18n-ally",
+				"eliostruyf.vscode-front-matter",
+				"unifiedjs.vscode-mdx",
+				"GraphQL.vscode-graphql"
+			]
+		}
+	},
+	"forwardPorts": [
+		8000
+	]
+}
