@@ -81,6 +81,12 @@ jobs:
         env:
           CI: true
 
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        if: steps.build-website.outcome == 'success' || steps.build-website-without-cache.outcome == 'success'
+        with:
+          path: ./public
+
   deploy:
     environment:
       name: github-pages
