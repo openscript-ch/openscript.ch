@@ -1,7 +1,9 @@
 import { css, Theme, useTheme } from '@emotion/react';
-import { useIntl } from 'react-intl';
+import { HeadProps } from 'gatsby';
+import { FormattedMessage, useIntl } from 'react-intl';
 import { DividedSection } from '../components/DividedSection';
 import { ForwardBackwardSections } from '../components/ForwardBackwardSections';
+import { Document } from '../layouts/default/Document';
 import { DefaultLayout } from '../layouts/DefaultLayout';
 
 const contentSectionStyle = (theme: Theme) => css`
@@ -13,7 +15,9 @@ function ContentSection() {
   const theme = useTheme();
   return (
     <DividedSection upperColor={theme.whiteColor} lowerColor={theme.backgroundColor} flipVertically css={contentSectionStyle}>
-      Eine Baustelle.. sag ich ja.
+      <h1>
+        <FormattedMessage id="page.present.meta.title" />
+      </h1>
     </DividedSection>
   );
 }
@@ -30,4 +34,8 @@ export default function PresentPage() {
       </ForwardBackwardSections>
     </DefaultLayout>
   );
+}
+
+export function Head({ pageContext }: HeadProps<object, Queries.SitePageContext>) {
+  return <Document metaData={pageContext.metaData} />;
 }

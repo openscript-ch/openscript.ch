@@ -36,22 +36,37 @@ const sectionStyle = (theme: Theme) => css`
 
   aside {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     margin-block: auto;
     width: 30%;
     z-index: 1;
-    text-shadow: 0 0 3px ${theme.backgroundColor};
+
+    .aside-content {
+      flex: 1;
+    }
+
+    button {
+      display: none;
+    }
   }
 
   @media screen and (max-width: ${theme.breakpoints.medium}) {
+    button {
+      display: none;
+    }
+
     .slider-content {
       flex-direction: column-reverse;
+      margin: 0 calc(-1 * var(${theme.variables.gutter}));
     }
 
     aside {
       width: 100%;
-      margin-top: -4rem;
+      margin: 0;
+
+      button {
+        display: block;
+        margin-inline: var(${theme.variables.gutter});
+      }
     }
   }
 `;
@@ -59,41 +74,49 @@ const sectionStyle = (theme: Theme) => css`
 const carouselStyle = (theme: Theme) => css`
   overflow: hidden;
   width: calc(70% + 10rem);
-  mask-image: radial-gradient(closest-side, rgba(0, 0, 0, 1) 50%, transparent);
+  mask-image: linear-gradient(90deg, transparent 0%, black 40%, black 50%, black 60%, transparent 100%);
   margin-left: -10rem;
-
-  @media screen and (max-width: ${theme.breakpoints.medium}) {
-    width: 100%;
-    margin: 0;
-  }
+  /* magic formula to responsively fit underneath header */
+  margin-top: calc(-1 * (6rem + 2vw));
+  margin-bottom: calc(-1 * (5rem + 2vw));
 
   .carousel-container {
     display: flex;
-  }
 
-  .carousel-slide {
-    position: relative;
-    display: flex;
-    height: clamp(20rem, 30vw, 30rem);
-    width: clamp(20rem, 30vw, 30rem);
+    .carousel-slide {
+      --slide-frame-size: clamp(25rem, 60vw, 50rem);
+      height: var(--slide-frame-size);
+      width: var(--slide-frame-size);
+      flex: 0 0 auto;
+      overflow: hidden;
+      display: flex;
 
-    &:nth-child(2),
-    &:nth-child(5) {
       svg {
-        margin-left: calc(clamp(20rem, 30vw, 30rem) * -1);
+        height: 100%;
+        flex: 1;
+      }
+
+      &:nth-child(2),
+      &:nth-child(5) {
+        svg {
+          margin-left: calc(var(--slide-frame-size) * -1);
+        }
+      }
+
+      &:nth-child(3),
+      &:nth-child(6) {
+        svg {
+          margin-left: calc(var(--slide-frame-size) * -2);
+        }
       }
     }
-
-    &:nth-child(3),
-    &:nth-child(6) {
-      svg {
-        margin-left: calc(clamp(20rem, 30vw, 30rem) * -2);
-      }
-    }
   }
 
-  svg {
-    height: 100%;
+  @media screen and (max-width: ${theme.breakpoints.medium}) {
+    width: 100%;
+    margin-left: 0;
+    mask-image: linear-gradient(black, black, transparent);
+    margin-top: calc(-1 * (5.85rem + 3vw));
   }
 `;
 
@@ -125,18 +148,32 @@ export function ValuesSection({ values }: Props) {
     }
   });
 
+  const renderPrevButton = () => (
+    <button type="button" onClick={() => emblaApi?.scrollPrev()}>
+      <Arrow rotation={90} />
+    </button>
+  );
+
+  const renderNextButton = () => (
+    <button type="button" onClick={() => emblaApi?.scrollNext()}>
+      <Arrow rotation={270} />
+    </button>
+  );
+
   return (
     <DividedSection upperColor={theme.backgroundColor} lowerColor={theme.whiteColor} css={sectionStyle}>
-      <button type="button" onClick={() => emblaApi?.scrollPrev()}>
-        <Arrow rotation={90} />
-      </button>
+      {renderPrevButton()}
       <div className="slider-content">
         <aside>
-          <h2>{textBoxContents[selectedSnap]?.title}</h2>
-          {textBoxContents[selectedSnap]?.text}
-          <LocalizedLink to={textBoxContents[selectedSnap].link ?? ''}>
-            {formatMessage({ id: 'action.learnMore' })} <Arrow rotation={270} />
-          </LocalizedLink>
+          {renderPrevButton()}
+          <div className="aside-content">
+            <h2>{textBoxContents[selectedSnap]?.title}</h2>
+            {textBoxContents[selectedSnap]?.text}
+            <LocalizedLink to={textBoxContents[selectedSnap].link ?? ''}>
+              {formatMessage({ id: 'action.learnMore' })} <Arrow rotation={270} />
+            </LocalizedLink>
+          </div>
+          {renderNextButton()}
         </aside>
 
         <div css={carouselStyle} ref={emblaRef}>
@@ -162,9 +199,7 @@ export function ValuesSection({ values }: Props) {
           </div>
         </div>
       </div>
-      <button type="button" onClick={() => emblaApi?.scrollNext()}>
-        <Arrow rotation={270} />
-      </button>
+      {renderNextButton()}
     </DividedSection>
   );
 }

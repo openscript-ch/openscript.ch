@@ -7,7 +7,6 @@ import { Arrow } from '../components/Arrow';
 
 const sectionStyle = () => css`
   display: flex;
-  flex-direction: column;
 
   button svg {
     height: 1.5rem;
@@ -17,36 +16,29 @@ const sectionStyle = () => css`
 
 const carouselStyle = (theme: Theme) => css`
   overflow: hidden;
-  height: 100%;
-  display: flex;
-  margin: var(${theme.variables.gutter}) auto;
-  mask-image: linear-gradient(transparent, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, transparent);
-
-  @media (max-width: ${theme.breakpoints.small}) {
-    mask-image: linear-gradient(transparent, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 90%, transparent);
-  }
+  flex: 1;
+  mask-image: linear-gradient(90deg, transparent, black 20%, black 80%, transparent);
 
   .carousel-container {
-    height: 24rem;
+    display: flex;
   }
 
   .carousel-slide {
+    flex: 0 0 100%;
+    padding-inline: 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
 
-    position: relative;
-
-    h2 {
+    h3 {
       text-align: center;
     }
 
     blockquote {
       margin: calc(var(${theme.variables.gutter}) * 1.5) 0;
       position: relative;
-      max-width: 66%;
+      max-width: 80%;
 
       &::before,
       &::after {
@@ -66,6 +58,13 @@ const carouselStyle = (theme: Theme) => css`
       }
     }
   }
+
+  @media (max-width: ${theme.breakpoints.small}) {
+    mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+    .carousel-slide {
+      padding-inline: 5%;
+    }
+  }
 `;
 
 type Props = {
@@ -74,18 +73,18 @@ type Props = {
 
 export function QuestionsSection({ questions }: Props) {
   const autoplay = useRef(Autoplay({ delay: 8000, stopOnInteraction: false, rootNode: emblaRoot => emblaRoot.parentElement }));
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, axis: 'y' }, [autoplay.current]);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [autoplay.current]);
 
   return (
     <section css={sectionStyle}>
       <button type="button" onClick={() => emblaApi?.scrollPrev()}>
-        <Arrow rotation={180} />
+        <Arrow rotation={90} />
       </button>
       <div css={carouselStyle} ref={emblaRef}>
         <div className="carousel-container">
           {questions.nodes.map((q, i) => (
             <div className="carousel-slide" key={q.frontmatter?.title || i}>
-              <h2>{q.frontmatter?.title}</h2>
+              <h3>{q.frontmatter?.title}</h3>
               <blockquote>
                 <Markup content={q.html} />
               </blockquote>
@@ -95,7 +94,7 @@ export function QuestionsSection({ questions }: Props) {
         </div>
       </div>
       <button type="button" onClick={() => emblaApi?.scrollNext()}>
-        <Arrow />
+        <Arrow rotation={270} />
       </button>
     </section>
   );

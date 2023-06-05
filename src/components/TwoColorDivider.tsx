@@ -9,7 +9,7 @@ type TwoColorDividerProps = {
 export function TwoColorDivider({ flipVertical }: TwoColorDividerProps) {
   return (
     <Sprite
-      name="twoColorDivider"
+      name="two-color-divider"
       css={(theme: Theme) => css`
         width: 100%;
         height: auto;
@@ -22,7 +22,7 @@ export function TwoColorDivider({ flipVertical }: TwoColorDividerProps) {
 
         use {
           --upper-segment: ${theme.primaryColor};
-          --lower-segment: ${lighten(0.05, theme.primaryColor)};
+          --lower-segment: ${lighten(theme.brighterSibling, theme.primaryColor)};
         }
       `}
     />

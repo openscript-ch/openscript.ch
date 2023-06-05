@@ -8,7 +8,6 @@ const navigationBarStyle = (theme: Theme) => css`
   align-items: center;
   justify-content: space-between;
   height: 6rem;
-  font-size: 2rem;
   font-weight: bold;
   background-color: ${theme.primaryColor};
 

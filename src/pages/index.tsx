@@ -1,5 +1,4 @@
-import { graphql, PageProps } from 'gatsby';
-
+import { graphql, HeadProps, PageProps } from 'gatsby';
 import { Document } from '../layouts/default/Document';
 import { DefaultLayout } from '../layouts/DefaultLayout';
 import { CooperationSection } from '../sections/CooperationSection';
@@ -13,15 +12,15 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
     <DefaultLayout>
       <ValuesSection values={data.values} />
       <CooperationSection you={data.cooperationYou} us={data.cooperationUs} />
-      <ExchangeSection exchange={data.exchange} />
+      <ExchangeSection exchange={data.exchange} strengths={data.strengths} />
       <ReferencesSection softwareReferences={data.softwareReferences} companyReferences={data.companyReferences} />
       <QuestionsSection questions={data.questions} />
     </DefaultLayout>
   );
 }
 
-export function Head() {
-  return <Document title="Home" />;
+export function Head({ pageContext }: HeadProps<object, Queries.SitePageContext>) {
+  return <Document metaData={pageContext.metaData} />;
 }
 
 export const query = graphql`
@@ -51,6 +50,28 @@ export const query = graphql`
       html
       frontmatter {
         title
+      }
+    }
+    strengths: allMarkdownRemark(filter: { fields: { locale: { eq: $locale }, kind: { eq: "sections/strengths/services" } } }) {
+      nodes {
+        html
+        frontmatter {
+          title
+          order
+          sprite
+          skills {
+            childMarkdownRemark {
+              html
+              frontmatter {
+                title
+                link
+                icon {
+                  publicURL
+                }
+              }
+            }
+          }
+        }
       }
     }
     questions: allMarkdownRemark(filter: { fields: { locale: { eq: $locale }, kind: { eq: "sections/questions" } } }) {

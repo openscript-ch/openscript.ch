@@ -1,6 +1,6 @@
 import SpriteData from '../../content/images/sprite.json';
 
-type SpriteProps = {
+export type SpriteProps = {
   name: keyof typeof SpriteData;
   className?: string;
   viewBox?: string;

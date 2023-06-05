@@ -1,6 +1,12 @@
 name: Continuous Integration
 
-on: pull_request
+on:
+  pull_request:
+    branches:
+      - develop
+  push:
+    branches:
+      - develop
 
 jobs:
   check:
@@ -13,7 +19,7 @@ jobs:
       - name: Use nodejs
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
+          node-version: '20.x'
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
@@ -26,6 +32,9 @@ jobs:
 
       - name: Run tests
         run: yarn test
+
+      - name: Submit coverage
+        uses: codecov/codecov-action@v3
 
       - name: Try to build
         run: yarn build

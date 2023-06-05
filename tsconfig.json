@@ -1,9 +1,19 @@
 {
-  "include": ["./src/**/*", "./.gatsby/**/*", "./*.ts", "./plugins/**/*"],
+  "include": [
+    "./src/**/*",
+    "./.gatsby/**/*",
+    "./*.ts",
+    "./plugins/**/*",
+    "./content/**/*",
+  ],
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "lib": ["dom", "ES2017", "ES2019"],
+    "lib": [
+      "dom",
+      "ES2017",
+      "ES2019"
+    ],
     // "allowJs": true,
     // "checkJs": true,
     "jsx": "react-jsx",
@@ -14,6 +24,6 @@
     "noEmit": true,
     "skipLibCheck": true,
     "moduleResolution": "node",
-    "resolveJsonModule": true
-  }
+    "resolveJsonModule": true,
+  },
 }

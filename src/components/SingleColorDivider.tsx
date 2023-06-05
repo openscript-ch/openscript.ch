@@ -11,13 +11,12 @@ type SingleColorDividerProps = {
 export function SingleColorDivider({ flipVertically, flipHorizontally, upperColor, lowerColor }: SingleColorDividerProps) {
   return (
     <Sprite
-      name="singleColorDivider"
+      name="single-color-divider"
       css={css`
         width: 100%;
         height: auto;
         z-index: 10;
         transform: scaleY(${flipVertically ? '-1' : '1'}) scaleX(${flipHorizontally ? '-1' : '1'});
-        background-color: ${flipVertically ? lowerColor : upperColor};
         margin-bottom: -1px; // anti aliasing bottom gap fix
 
         use {
