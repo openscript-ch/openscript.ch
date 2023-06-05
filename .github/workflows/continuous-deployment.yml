@@ -81,12 +81,6 @@ jobs:
         env:
           CI: true
 
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4.4.2
-        if: steps.build-website.outcome == 'success' || steps.build-website-without-cache.outcome == 'success'
-        with:
-          path: ./public
-
   deploy:
     environment:
       name: github-pages
