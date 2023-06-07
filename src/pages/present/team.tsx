@@ -106,14 +106,8 @@ function ImpressionsSection({ impressions }: { impressions: Queries.TeamPageQuer
       </h2>
       <div id="team-impressions">
         {impressions.map(impression => {
-          if (!impression.frontmatter?.image) {
-            return undefined;
-          }
-          const image = getImage(impression.frontmatter?.image.childImageSharp);
-          if (!image) {
-            return undefined;
-          }
-          return <GatsbyImage image={image} alt="" />;
+          const gatsbyImage = getImage(impression?.frontmatter?.image?.childImageSharp || null);
+          return gatsbyImage ? <GatsbyImage image={gatsbyImage} alt="" /> : undefined;
         })}
       </div>
     </section>
