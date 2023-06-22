@@ -50,13 +50,14 @@ const sectionStyle = (theme: Theme) => css`
   }
 
   @media screen and (max-width: ${theme.breakpoints.medium}) {
+    padding-inline: 0;
+
     button {
       display: none;
     }
 
     .slider-content {
       flex-direction: column-reverse;
-      margin: 0 calc(-1 * var(${theme.variables.gutter}));
     }
 
     aside {
