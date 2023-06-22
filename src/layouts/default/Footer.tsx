@@ -7,57 +7,53 @@ import { Sprite } from '../../components/Sprite';
 
 const footerStyle = (theme: Theme) => css`
   display: flex;
-  justify-content: space-between;
   min-height: 10rem;
   background-color: ${theme.primaryColor};
   color: ${theme.backgroundColor};
-  overflow: hidden;
 
-  .address-section {
+  > svg {
+    width: 4rem;
+    height: auto;
+    margin-right: 1rem;
+    align-self: flex-end;
+  }
+
+  > div {
     display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: var(${theme.variables.gutter});
 
-    div {
+    nav {
       display: flex;
-      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      gap: var(${theme.variables.gutter});
 
-      ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        margin-bottom: 1rem;
+      &:first-child {
+        flex-wrap: wrap;
       }
-    }
 
-    svg {
-      width: 4rem;
-      height: auto;
-      margin-right: 1rem;
-      align-self: flex-end;
-    }
-  }
+      &:last-child {
+        flex: 1;
+      }
 
-  nav {
-    display: flex;
-    align-items: center;
-    gap: var(${theme.variables.gutter});
-    font-size: 1.4rem;
+      .social-media {
+        display: flex;
+        gap: var(${theme.variables.gutter});
+        border-left: 2px solid ${theme.backgroundColor};
+        padding-left: var(${theme.variables.gutter});
 
-    ul {
-      list-style: none;
-      display: flex;
-    }
-  }
+        a {
+          display: flex;
 
-  .social-media {
-    border-left: 2px solid ${theme.backgroundColor};
-    padding-left: var(${theme.variables.gutter});
-    display: flex;
-    align-items: center;
-    gap: var(${theme.variables.gutter});
-
-    svg {
-      width: 2rem;
-      height: auto;
+          svg {
+            width: 2rem;
+            height: auto;
+          }
+        }
+      }
     }
   }
 `;
@@ -71,35 +67,41 @@ type FooterProps = {
 export function Footer({ address, phone, email }: FooterProps) {
   return (
     <footer css={footerStyle}>
-      <div className="address-section">
-        <Arrow rotation={300} />
-        <div>
+      <Arrow rotation={300} />
+      <div>
+        <nav>
           <Markup content={address} />
-          <Markup content={phone} />
-          <Markup content={email} />
-        </div>
+          <ul>
+            <li>
+              <Markup content={phone} />
+            </li>
+            <li>
+              <Markup content={email} />
+            </li>
+          </ul>
+        </nav>
+        <nav>
+          <ul>
+            <li>
+              <LocalizedLink to="/imprint">
+                <FormattedMessage id="menu.imprint" />
+              </LocalizedLink>
+            </li>
+          </ul>
+          <ul className="social-media">
+            <li>
+              <a href="https://github.com/openscript-ch">
+                <Sprite name="github" />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/company/openscript/">
+                <Sprite name="linkedin" />
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <nav>
-        <ul className="links">
-          <li>
-            <LocalizedLink to="/imprint">
-              <FormattedMessage id="menu.imprint" />
-            </LocalizedLink>
-          </li>
-        </ul>
-        <ul className="social-media">
-          <li>
-            <a href="https://github.com/openscript-ch">
-              <Sprite name="github" />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/company/openscript/">
-              <Sprite name="linkedin" />
-            </a>
-          </li>
-        </ul>
-      </nav>
     </footer>
   );
 }

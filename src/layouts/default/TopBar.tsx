@@ -52,6 +52,10 @@ const topBarStyle = (theme: Theme) =>
       gap: 0.8rem;
       font-size: 1rem;
 
+      ul {
+        display: flex;
+      }
+
       @media screen and (max-width: ${theme.breakpoints.small}) {
         display: none;
       }
