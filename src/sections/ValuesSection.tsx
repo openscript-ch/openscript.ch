@@ -62,11 +62,13 @@ const sectionStyle = (theme: Theme) => css`
 
     aside {
       width: 100%;
-      margin: 0;
-
       button {
+        margin-inline: calc(var(${theme.variables.gutter}));
         display: block;
-        margin-inline: var(${theme.variables.gutter});
+
+        @media screen and (max-width: ${theme.breakpoints.tiny}) {
+          margin-inline: calc(var(${theme.variables.gutter}) / 4) !important;
+        }
       }
     }
   }
