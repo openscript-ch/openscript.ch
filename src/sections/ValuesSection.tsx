@@ -50,22 +50,25 @@ const sectionStyle = (theme: Theme) => css`
   }
 
   @media screen and (max-width: ${theme.breakpoints.medium}) {
+    padding-inline: 0;
+
     button {
       display: none;
     }
 
     .slider-content {
       flex-direction: column-reverse;
-      margin: 0 calc(-1 * var(${theme.variables.gutter}));
     }
 
     aside {
       width: 100%;
-      margin: 0;
-
       button {
+        margin-inline: calc(var(${theme.variables.gutter}));
         display: block;
-        margin-inline: var(${theme.variables.gutter});
+
+        @media screen and (max-width: ${theme.breakpoints.tiny}) {
+          margin-inline: calc(var(${theme.variables.gutter}) / 4) !important;
+        }
       }
     }
   }
