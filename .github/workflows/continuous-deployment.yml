@@ -82,7 +82,7 @@ jobs:
           CI: true
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v2
         if: steps.build-website.outcome == 'success' || steps.build-website-without-cache.outcome == 'success'
         with:
           path: ./public
