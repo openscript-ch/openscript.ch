@@ -30,12 +30,14 @@ export default function FormationPage({ data }: PageProps<Queries.FormationPageQ
               children: <Markup content={node.html} />,
             }))}
           styleConfig={{
-            gap: '6rem',
-            offset: {
-              right: '6rem',
+            item: {
+              gap: '6rem',
+              startOffset: {
+                right: '6rem',
+              },
             },
             pointer: {
-              offset: '3rem',
+              minOffset: '3rem',
             },
           }}
         />
