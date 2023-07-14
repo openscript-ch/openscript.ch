@@ -27,7 +27,9 @@ export const defaultStyles = (theme: Theme) => css`
 
   @font-face {
     font-family: '2MASS J1808';
-    src: url(${TwoMASSJ1808NormalWOFF2}) format('woff2'), url(${TwoMASSJ1808NormalWOFF}) format('woff'),
+    src:
+      url(${TwoMASSJ1808NormalWOFF2}) format('woff2'),
+      url(${TwoMASSJ1808NormalWOFF}) format('woff'),
       url(${TwoMASSJ1808NormalTTF}) format('truetype');
     font-weight: normal;
     font-style: normal;
@@ -36,7 +38,10 @@ export const defaultStyles = (theme: Theme) => css`
 
   @font-face {
     font-family: '2MASS J1808';
-    src: url(${TwoMASSJ1808HeavyWOFF2}) format('woff2'), url(${TwoMASSJ1808HeavyWOFF}) format('woff'), url(${TwoMASSJ1808HeavyTTF}) format('truetype');
+    src:
+      url(${TwoMASSJ1808HeavyWOFF2}) format('woff2'),
+      url(${TwoMASSJ1808HeavyWOFF}) format('woff'),
+      url(${TwoMASSJ1808HeavyTTF}) format('truetype');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -44,7 +49,10 @@ export const defaultStyles = (theme: Theme) => css`
 
   @font-face {
     font-family: 'PT Sans';
-    src: url(${PTSansregularWOFF2}) format('woff2'), url(${PTSansregularWOFF}) format('woff'), url(${PTSansregularTTF}) format('truetype');
+    src:
+      url(${PTSansregularWOFF2}) format('woff2'),
+      url(${PTSansregularWOFF}) format('woff'),
+      url(${PTSansregularTTF}) format('truetype');
     font-style: normal;
     font-weight: 400;
     font-display: swap;
@@ -52,7 +60,10 @@ export const defaultStyles = (theme: Theme) => css`
 
   @font-face {
     font-family: 'PT Sans';
-    src: url(${PTSansitalicWOFF2}) format('woff2'), url(${PTSansitalicWOFF}) format('woff'), url(${PTSansitalicTTF}) format('truetype');
+    src:
+      url(${PTSansitalicWOFF2}) format('woff2'),
+      url(${PTSansitalicWOFF}) format('woff'),
+      url(${PTSansitalicTTF}) format('truetype');
     font-style: italic;
     font-weight: 400;
     font-display: swap;
@@ -60,7 +71,10 @@ export const defaultStyles = (theme: Theme) => css`
 
   @font-face {
     font-family: 'PT Sans';
-    src: url(${PTSans700WOFF2}) format('woff2'), url(${PTSans700WOFF}) format('woff'), url(${PTSans700TTF}) format('truetype');
+    src:
+      url(${PTSans700WOFF2}) format('woff2'),
+      url(${PTSans700WOFF}) format('woff'),
+      url(${PTSans700TTF}) format('truetype');
     font-style: normal;
     font-weight: 700;
     font-display: swap;
@@ -68,7 +82,10 @@ export const defaultStyles = (theme: Theme) => css`
 
   @font-face {
     font-family: 'PT Sans';
-    src: url(${PTSans700italicWOFF2}) format('woff2'), url(${PTSans700italicWOFF}) format('woff'), url(${PTSans700italicTTF}) format('truetype');
+    src:
+      url(${PTSans700italicWOFF2}) format('woff2'),
+      url(${PTSans700italicWOFF}) format('woff'),
+      url(${PTSans700italicTTF}) format('truetype');
     font-style: italic;
     font-weight: 700;
     font-display: swap;

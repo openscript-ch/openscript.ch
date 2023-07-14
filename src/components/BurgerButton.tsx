@@ -19,7 +19,10 @@ const burgerButtonStyles = (theme: Theme) => css`
     height: 0.3rem;
     border-radius: 0.1rem;
     background-color: ${theme.backgroundColor};
-    transition: top 0.05s 0.1s, bottom 0.05s 0.1s, transform 0.1s;
+    transition:
+      top 0.05s 0.1s,
+      bottom 0.05s 0.1s,
+      transform 0.1s;
     content: '';
     display: block;
     position: absolute;
@@ -58,7 +61,10 @@ const burgerButtonStyles = (theme: Theme) => css`
       bottom: 40%;
       background-color: ${theme.secondaryColor};
       // reverse transition
-      transition: transform 0.1s 0.05s, top 0.05s, bottom 0.05s;
+      transition:
+        transform 0.1s 0.05s,
+        top 0.05s,
+        bottom 0.05s;
     }
 
     &::before {
