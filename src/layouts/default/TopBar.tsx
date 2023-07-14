@@ -7,66 +7,67 @@ import { useWindowScroll } from 'react-use';
 import LanguageSelector from './LanguageSelector';
 import { Sprite } from '../../components/Sprite';
 
-const topBarStyle = (theme: Theme) =>
-  css`
-    position: sticky;
-    z-index: 20;
-    top: 0;
+const topBarStyle = (theme: Theme) => css`
+  position: sticky;
+  z-index: 20;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 2rem;
+  background-color: ${darken(0.05, theme.primaryColor)};
+  font-weight: bold;
+  color: ${theme.backgroundColor};
+
+  @media (max-width: ${theme.breakpoints.medium}) {
+    padding: 0 1rem;
+  }
+
+  > a {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 2rem;
-    background-color: ${darken(0.05, theme.primaryColor)};
-    font-weight: bold;
-    color: ${theme.backgroundColor};
+    gap: 0.5rem;
 
-    @media (max-width: ${theme.breakpoints.medium}) {
-      padding: 0 1rem;
+    #company-name {
+      font-size: 0.8rem;
+      transform: translateX(-2.5rem);
+      transition: transform 0.2s;
     }
 
-    > a {
+    svg {
+      fill: ${theme.backgroundColor};
+      width: 2rem;
+      height: auto;
+      transition:
+        transform 0.2s,
+        opacity 0.2s;
+      transition-delay: 0.1s;
+      opacity: 0;
+      transform: translateY(-1rem);
+    }
+  }
+
+  & > nav {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1rem;
+
+    ul {
       display: flex;
-      align-items: center;
-      gap: 0.5rem;
-
-      #company-name {
-        font-size: 0.8rem;
-        transform: translateX(-2.5rem);
-        transition: transform 0.2s;
-      }
-
-      svg {
-        fill: ${theme.backgroundColor};
-        width: 2rem;
-        height: auto;
-        transition: transform 0.2s, opacity 0.2s;
-        transition-delay: 0.1s;
-        opacity: 0;
-        transform: translateY(-1rem);
-      }
     }
 
-    & > nav {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      font-size: 1rem;
-
-      ul {
-        display: flex;
-      }
-
-      @media screen and (max-width: ${theme.breakpoints.small}) {
-        display: none;
-      }
+    @media screen and (max-width: ${theme.breakpoints.small}) {
+      display: none;
     }
+  }
 
-    & > nav > ul > li:not(:last-of-type)::after {
-      content: '/';
-      margin: 0 0.8rem;
-      color: ${theme.secondaryColor};
-    }
-  `;
+  & > nav > ul > li:not(:last-of-type)::after {
+    content: '/';
+    margin: 0 0.8rem;
+    color: ${theme.secondaryColor};
+  }
+`;
 
 const showBrandStyle = css`
   && {
