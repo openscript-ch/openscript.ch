@@ -1,5 +1,5 @@
-import { GatsbyConfig } from 'gatsby';
 import path from 'path';
+import { GatsbyConfig } from 'gatsby';
 import deCHMessages from './content/i18n/de-CH.json';
 import enUSMessages from './content/i18n/en-US.json';
 import packageJson from './package.json';
