@@ -1,5 +1,5 @@
-import { CreatePagesArgs } from 'gatsby';
 import { resolve } from 'path';
+import { CreatePagesArgs } from 'gatsby';
 
 const genericPageTemplate = resolve('./src/templates/GenericPage.tsx');
 
