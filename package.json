@@ -37,8 +37,8 @@
     "type-fest": "^4.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.22.11",
-    "@babel/eslint-parser": "7.22.11",
+    "@babel/core": "7.22.15",
+    "@babel/eslint-parser": "7.22.15",
     "@babel/preset-typescript": "^7.22.5",
     "@testing-library/jest-dom": "^6.0.0",
     "@testing-library/react": "^14.0.0",
@@ -47,8 +47,8 @@
     "@types/node": "20.5.9",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
-    "@typescript-eslint/eslint-plugin": "6.5.0",
-    "@typescript-eslint/parser": "6.5.0",
+    "@typescript-eslint/eslint-plugin": "6.6.0",
+    "@typescript-eslint/parser": "6.6.0",
     "babel-jest": "^29.6.1",
     "babel-preset-gatsby": "^3.6.0",
     "eslint": "8.48.0",
