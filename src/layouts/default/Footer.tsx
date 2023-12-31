@@ -87,6 +87,11 @@ export function Footer({ address, phone, email }: FooterProps) {
                 <FormattedMessage id="menu.imprint" />
               </LocalizedLink>
             </li>
+            <li>
+              <LocalizedLink to="/data-protection">
+                <FormattedMessage id="menu.data-protection" />
+              </LocalizedLink>
+            </li>
           </ul>
           <ul className="social-media">
             <li>

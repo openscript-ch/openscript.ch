@@ -129,6 +129,7 @@ const configuration: GatsbyConfig = {
               '/future/collaboration': '/zukunft/zusammenarbeit',
               '/future/participation': '/zukunft/mitarbeit',
               '/imprint': '/impressum',
+              '/data-protection': '/datenschutz',
             },
             messages: deCHMessages,
           },
