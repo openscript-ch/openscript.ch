@@ -152,13 +152,13 @@ export function ValuesSection({ values }: Props) {
   });
 
   const renderPrevButton = () => (
-    <button type="button" onClick={() => emblaApi?.scrollPrev()}>
+    <button aria-label="scroll to the previous" type="button" onClick={() => emblaApi?.scrollPrev()}>
       <Arrow rotation={90} />
     </button>
   );
 
   const renderNextButton = () => (
-    <button type="button" onClick={() => emblaApi?.scrollNext()}>
+    <button aria-label="scroll to the next" type="button" onClick={() => emblaApi?.scrollNext()}>
       <Arrow rotation={270} />
     </button>
   );

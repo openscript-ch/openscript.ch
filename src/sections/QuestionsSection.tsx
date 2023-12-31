@@ -77,7 +77,7 @@ export function QuestionsSection({ questions }: Props) {
 
   return (
     <section css={sectionStyle}>
-      <button type="button" onClick={() => emblaApi?.scrollPrev()}>
+      <button aria-label="scroll to the previous" type="button" onClick={() => emblaApi?.scrollPrev()}>
         <Arrow rotation={90} />
       </button>
       <div css={carouselStyle} ref={emblaRef}>
@@ -93,7 +93,7 @@ export function QuestionsSection({ questions }: Props) {
           ))}
         </div>
       </div>
-      <button type="button" onClick={() => emblaApi?.scrollNext()}>
+      <button aria-label="scroll to the next" type="button" onClick={() => emblaApi?.scrollNext()}>
         <Arrow rotation={270} />
       </button>
     </section>

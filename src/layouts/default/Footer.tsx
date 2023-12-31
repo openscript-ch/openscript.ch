@@ -90,12 +90,12 @@ export function Footer({ address, phone, email }: FooterProps) {
           </ul>
           <ul className="social-media">
             <li>
-              <a href="https://github.com/openscript-ch">
+              <a aria-label="Link to our GitHub profile" href="https://github.com/openscript-ch">
                 <Sprite name="github" />
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/company/openscript/">
+              <a aria-label="Link to our LinkedIn profile" href="https://www.linkedin.com/company/openscript/">
                 <Sprite name="linkedin" />
               </a>
             </li>
