@@ -98,25 +98,22 @@ const getCloseToCenterScore = (index: number, cols = 5, rows = 3) => {
 };
 
 export function TechnologiesSection({ exchange }: Props) {
-  const sprites: { name: keyof typeof SpriteData; url: string }[] = [
-    //
-    { name: 'logo-k0s', url: 'https://k0sproject.io/' },
-    { name: 'logo-gatsby', url: 'https://gatsbyjs.com' },
-    { name: 'logo-nestjs', url: 'https://nestjs.com' },
-    { name: 'logo-graphql', url: 'https://grapqhl.org' },
-    { name: 'logo-supabase', url: 'https://supabase.com' },
-    //
-    { name: 'logo-docker', url: 'https://docker.com' },
-    { name: 'logo-ts', url: 'https://typescriptlang.org' },
-    { name: 'logo-react', url: 'https://reactjs.org' },
-    { name: 'logo-ruby', url: 'https://ruby-lang.org' },
-    { name: 'logo-postgres', url: 'https://postgresql.org' },
-    //
-    { name: 'logo-vscode', url: 'https://code.visualstudio.com' },
-    { name: 'logo-html', url: 'https://developer.mozilla.org/en-US/docs/Web/HTML' },
-    { name: 'logo-css', url: 'https://developer.mozilla.org/en-US/docs/Web/CSS' },
-    { name: 'logo-rails', url: 'https://rubyonrails.org' },
-    { name: 'logo-gitea', url: 'https://gitea.io' },
+  const sprites: { label: string; name: keyof typeof SpriteData; url: string }[] = [
+    { label: 'k0s Project - Lightweight Kubernetes Distribution', name: 'logo-k0s', url: 'https://k0sproject.io/' },
+    { label: 'GatsbyJS - Blazing Fast Modern Site Generator for React', name: 'logo-gatsby', url: 'https://gatsbyjs.com' },
+    { label: 'NestJS - A Progressive Node.js Framework', name: 'logo-nestjs', url: 'https://nestjs.com' },
+    { label: 'GraphQL - A Query Language for APIs', name: 'logo-graphql', url: 'https://graphql.org' },
+    { label: 'Supabase - Open Source Firebase Alternative', name: 'logo-supabase', url: 'https://supabase.com' },
+    { label: 'Docker - Develop, Ship and Run Anywhere', name: 'logo-docker', url: 'https://docker.com' },
+    { label: 'TypeScript - Typed Superset of JavaScript', name: 'logo-ts', url: 'https://typescriptlang.org' },
+    { label: 'React - A JavaScript Library for Building User Interfaces', name: 'logo-react', url: 'https://reactjs.org' },
+    { label: 'Ruby - A Programmers Best Friend', name: 'logo-ruby', url: 'https://ruby-lang.org' },
+    { label: 'PostgreSQL - The Worlds Most Advanced Open Source Relational Database', name: 'logo-postgres', url: 'https://postgresql.org' },
+    { label: 'Visual Studio Code - Code Editing. Redefined.', name: 'logo-vscode', url: 'https://code.visualstudio.com' },
+    { label: 'HTML Developer Guide - Mozilla Developer Network', name: 'logo-html', url: 'https://developer.mozilla.org/en-US/docs/Web/HTML' },
+    { label: 'CSS Developer Guide - Mozilla Developer Network', name: 'logo-css', url: 'https://developer.mozilla.org/en-US/docs/Web/CSS' },
+    { label: 'Ruby on Rails - A Web-Application Framework', name: 'logo-rails', url: 'https://rubyonrails.org' },
+    { label: 'Gitea - A Painless Self-Hosted Git Service', name: 'logo-gitea', url: 'https://gitea.io' },
   ];
 
   const getRandomNumberBetween = (min: number, max: number) => Math.random() * (max - min) + min;
@@ -128,6 +125,7 @@ export function TechnologiesSection({ exchange }: Props) {
           const scaling = 0.7 + getCloseToCenterScore(index) ** 4 * 1.1;
           return (
             <a
+              aria-label={sprite.label}
               key={sprite.name}
               href={sprite.url}
               css={css`

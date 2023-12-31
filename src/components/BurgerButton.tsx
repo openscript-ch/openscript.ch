@@ -83,7 +83,7 @@ type BurgerButtonProps = {
 
 export function BurgerButton({ isOpen, onClick }: BurgerButtonProps) {
   return (
-    <button type="button" css={burgerButtonStyles} className={isOpen ? 'open' : ''} onClick={onClick}>
+    <button aria-label="burger button" type="button" css={burgerButtonStyles} className={isOpen ? 'open' : ''} onClick={onClick}>
       <div />
     </button>
   );
