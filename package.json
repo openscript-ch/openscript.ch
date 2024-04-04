@@ -67,7 +67,7 @@
     "prettier": "3.2.5",
     "svg-sprite": "^2.0.2",
     "ts-node": "10.9.2",
-    "typescript": "5.4.3"
+    "typescript": "5.4.4"
   },
   "keywords": [
     "gatsby"
