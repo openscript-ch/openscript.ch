@@ -6,8 +6,8 @@
   "version": "0.2.0",
   "author": "openscript",
   "dependencies": {
-    "@emotion/react": "11.11.4",
-    "@emotion/styled": "11.11.5",
+    "@emotion/react": "11.12.0",
+    "@emotion/styled": "11.12.0",
     "@mdx-js/mdx": "3.0.1",
     "@mdx-js/react": "3.0.1",
     "embla-carousel-autoplay": "^8.0.0-rc17",
