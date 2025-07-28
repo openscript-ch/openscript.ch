@@ -34,7 +34,7 @@ jobs:
         run: yarn test
 
       - name: Submit coverage
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v5
 
       - name: Try to build
         run: yarn build
