@@ -13,9 +13,11 @@
   "repository": "github:openscript/r.obin.ch",
   "packageManager": "pnpm@10.15.1",
   "scripts": {
+    "predev": "pnpm build:sprite",
+    "prebuild": "pnpm build:sprite",
     "dev": "astro dev --host",
-    "start": "astro dev --host",
     "build": "astro check && astro build",
+    "build:sprite": "svg-sprite -S --Ss sprite.svg --stack-dest . --Sx --stack-example-template res/sprite/sprite.json.mustache --stack-example-dest ../res/sprite/sprite.json -l verbose -D public res/sprite/*.svg",
     "preview": "astro preview --host",
     "astro": "astro",
     "test": "vitest",
@@ -42,6 +44,7 @@
     "rehype-slug": "^6.0.0",
     "sharp": "^0.34.3",
     "simple-git": "^3.28.0",
+    "svg-sprite": "^2.0.4",
     "unplugin-icons": "^22.2.0",
     "vfile": "^6.0.3"
   },

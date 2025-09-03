@@ -368,3 +368,4 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/windows,linux,macos,node,react,visualstudiocode,intellij,astro
 
 .pnpm-store
+public/sprite.svg

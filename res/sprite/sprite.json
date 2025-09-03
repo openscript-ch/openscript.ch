@@ -1,0 +1,106 @@
+{
+  "arrow": {
+    "width": "9.387",
+    "height": "10"
+  },
+  "brand": {
+    "width": "52.089",
+    "height": "35.334"
+  },
+  "consulting": {
+    "width": "711",
+    "height": "655"
+  },
+  "cooperation": {
+    "width": "279.47",
+    "height": "271.35"
+  },
+  "education": {
+    "width": "788",
+    "height": "640"
+  },
+  "github": {
+    "width": "66.234",
+    "height": "64.4"
+  },
+  "illustration": {
+    "width": "2000",
+    "height": "668.01"
+  },
+  "linkedin": {
+    "width": "63.928",
+    "height": "63.848"
+  },
+  "logo-css": {
+    "width": "1753.6",
+    "height": "2000"
+  },
+  "logo-docker": {
+    "width": "335",
+    "height": "233"
+  },
+  "logo-gatsby": {
+    "width": "20",
+    "height": "20"
+  },
+  "logo-gitea": {
+    "width": "65",
+    "height": "40"
+  },
+  "logo-graphql": {
+    "width": "89",
+    "height": "99"
+  },
+  "logo-html": {
+    "width": "865",
+    "height": "981"
+  },
+  "logo-k0s": {
+    "width": "480",
+    "height": "482"
+  },
+  "logo-nestjs": {
+    "width": "256",
+    "height": "255"
+  },
+  "logo-postgres": {
+    "width": "488",
+    "height": "506"
+  },
+  "logo-rails": {
+    "width": "924",
+    "height": "325"
+  },
+  "logo-react": {
+    "width": "23",
+    "height": "21"
+  },
+  "logo-ruby": {
+    "width": "752",
+    "height": "746"
+  },
+  "logo-supabase": {
+    "width": "126",
+    "height": "130"
+  },
+  "logo-ts": {
+    "width": "512",
+    "height": "512"
+  },
+  "logo-vscode": {
+    "width": "21",
+    "height": "20"
+  },
+  "single-color-divider": {
+    "width": "1600",
+    "height": "40"
+  },
+  "software-development": {
+    "width": "128",
+    "height": "67"
+  },
+  "two-color-divider": {
+    "width": "1600",
+    "height": "46"
+  }
+}
