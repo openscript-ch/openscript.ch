@@ -21,7 +21,9 @@
 }
 
 :root {
+  --color-primary-95: hsl(from var(--color-white) h s calc(l * 0.95));
   --color-primary: #539350;
+  --color-primary-105: hsl(from var(--color-white) h s calc(l * 0.105));
   --color-secondary: #fa5100;
   --color-background: #ede9df;
   --color-black: #231f20;

@@ -7,6 +7,7 @@ import Head from "./groups/Head.astro";
 import Header from "./groups/Header.astro";
 import Footer from "./groups/Footer.astro";
 import Meta from "./groups/Meta.astro";
+import Ribbon from "./groups/Ribbon.astro";
 
 type Props = {
   translations?: Record<string, string>;
@@ -24,6 +25,7 @@ const { translations, bodyClasses, mainClasses } = Astro.props;
     </slot>
   </Head>
   <body class:list={[bodyClasses]}>
+    <Ribbon translations={translations} />
     <Header />
     <main data-pagefind-body transition:animate="fade" class:list={[mainClasses]}>
       <slot />

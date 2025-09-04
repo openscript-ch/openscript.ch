@@ -1,0 +1,32 @@
+---
+import Sprite from "../../components/Sprite.astro";
+import { resolvePath } from "../../utils/paths";
+import { currentLocale } from "astro-nanostores-i18n:runtime";
+import { C } from "../../site.config";
+import LanguageSwitcher from "../../components/LanguageSwitcher.astro";
+
+type Props = {
+  translations?: Record<string, string>;
+};
+
+const { translations } = Astro.props;
+const locale = currentLocale.get();
+---
+
+<div id="ribbon">
+  <a href={resolvePath(`${locale === C.DEFAULT_LOCALE ? "" : locale}`)}>
+    <Sprite name="brand" />
+    <span>{C.SETTINGS.META.TITLE}</span>
+  </a>
+  <nav>
+    <ul>
+      <li>
+        <a href={`tel:${C.SETTINGS.META.PHONE.replaceAll(" ", "")}`}>{C.SETTINGS.META.PHONE}</a>
+      </li>
+      <li>
+        <a href={`mailto:${C.SETTINGS.META.EMAIL}`}>{C.SETTINGS.META.EMAIL}</a>
+      </li>
+      <LanguageSwitcher locale={locale} translations={translations} />
+    </ul>
+  </nav>
+</div>

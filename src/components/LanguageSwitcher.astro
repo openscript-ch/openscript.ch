@@ -1,0 +1,26 @@
+---
+import { getNameFromLocale } from "../utils/i18n";
+
+type Props = {
+  locale: string;
+  translations?: Record<string, string>;
+};
+
+const { translations, locale: currentLocale } = Astro.props;
+---
+
+<nav class="language-switcher">
+  <ul>
+    {
+      Object.entries(translations || {})
+        .filter(([locale]) => locale !== currentLocale)
+        .map(([locale, path]) => (
+          <li>
+            <a href={path} lang={locale} hreflang={locale}>
+              {getNameFromLocale(locale)}
+            </a>
+          </li>
+        ))
+    }
+  </ul>
+</nav>
