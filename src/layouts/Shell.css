@@ -21,9 +21,9 @@
 }
 
 :root {
-  --color-primary-95: hsl(from var(--color-white) h s calc(l * 0.95));
+  --color-primary-90: color-mix(in srgb, var(--color-primary), black 10%);
   --color-primary: #539350;
-  --color-primary-105: hsl(from var(--color-white) h s calc(l * 0.105));
+  --color-primary-110: color-mix(in srgb, var(--color-primary), white 10%);
   --color-secondary: #fa5100;
   --color-background: #ede9df;
   --color-black: #231f20;
@@ -36,8 +36,20 @@
   --fonts-heading: "2MASS J1808", sans-serif;
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
   font-family: var(--fonts-text);
+  margin: 0;
+}
+
+main {
+  flex-grow: 1;
 }
 
 code,

@@ -9,6 +9,12 @@ const messages = useI18n("layouts/groups/Footer.astro", {
 });
 ---
 
+<style>
+  footer {
+    background-color: var(--color-primary);
+  }
+</style>
+
 <footer>
   <ul class="copyright">
     <li>{messages.copyright}</li>

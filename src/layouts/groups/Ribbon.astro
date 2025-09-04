@@ -13,6 +13,15 @@ const { translations } = Astro.props;
 const locale = currentLocale.get();
 ---
 
+<style>
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-primary-90);
+  }
+</style>
+
 <div id="ribbon">
   <a href={resolvePath(`${locale === C.DEFAULT_LOCALE ? "" : locale}`)}>
     <Sprite name="brand" />
