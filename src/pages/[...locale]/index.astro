@@ -1,8 +1,13 @@
 ---
 import Sprite from "../../components/Sprite.astro";
 import Shell from "../../layouts/Shell.astro";
+import { generateGetStaticIndexPaths } from "../../utils/paths";
+
+export const getStaticPaths = generateGetStaticIndexPaths("[...locale]");
+
+const { translations } = Astro.props;
 ---
 
-<Shell>
+<Shell translations={translations}>
   <Sprite name="arrow" />
 </Shell>
