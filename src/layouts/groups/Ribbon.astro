@@ -20,6 +20,39 @@ const locale = currentLocale.get();
     align-items: center;
     background-color: var(--color-primary-90);
   }
+
+  div :global(a) {
+    font-weight: 900;
+    color: var(--color-white);
+    text-decoration: none;
+  }
+
+  div :global(svg) {
+    fill: var(--color-white);
+    width: 2rem;
+  }
+
+  div :global(ul) {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  div ul li:not(:last-of-type)::after {
+    content: "/";
+    margin: 0 0.8rem;
+    color: var(--color-secondary);
+    font-weight: bold;
+  }
+
+  div > a {
+    display: flex;
+    align-items: center;
+    font-family: var(--fonts-heading);
+    gap: var(--space-gutter);
+    font-size: 0.8rem;
+  }
 </style>
 
 <div id="ribbon">
@@ -35,7 +68,9 @@ const locale = currentLocale.get();
       <li>
         <a href={`mailto:${C.SETTINGS.META.EMAIL}`}>{C.SETTINGS.META.EMAIL}</a>
       </li>
-      <LanguageSwitcher locale={locale} translations={translations} />
+      <li>
+        <LanguageSwitcher locale={locale} translations={translations} />
+      </li>
     </ul>
   </nav>
 </div>
