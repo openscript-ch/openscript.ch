@@ -1,0 +1,17 @@
+---
+import { useI18n } from "astro-nanostores-i18n:runtime";
+import { version } from "../../../package.json";
+import { params } from "@nanostores/i18n";
+
+const messages = useI18n("layouts/groups/Footer.astro", {
+  copyright: "© 2025 Code for Humans. All rights reserved.",
+  version: params("Version {version}"),
+});
+---
+
+<footer>
+  <ul class="copyright">
+    <li>{messages.copyright}</li>
+    <li>{messages.version({ version })}</li>
+  </ul>
+</footer>

@@ -1,0 +1,33 @@
+---
+import "@fontsource-variable/nunito";
+import "@fontsource-variable/montserrat";
+import "./Shell.css";
+import "../components/_global.css";
+import Head from "./groups/Head.astro";
+import Header from "./groups/Header.astro";
+import Footer from "./groups/Footer.astro";
+import Meta from "./groups/Meta.astro";
+
+type Props = {
+  translations?: Record<string, string>;
+  bodyClasses?: string | string[];
+  mainClasses?: string | string[];
+};
+
+const { translations, bodyClasses, mainClasses } = Astro.props;
+---
+
+<html>
+  <Head translations={translations}>
+    <slot name="meta" slot="meta">
+      <Meta />
+    </slot>
+  </Head>
+  <body class:list={[bodyClasses]}>
+    <Header />
+    <main data-pagefind-body transition:animate="fade" class:list={[mainClasses]}>
+      <slot />
+    </main>
+    <Footer translations={translations} />
+  </body>
+</html>

@@ -20,6 +20,11 @@ export const C = {
   },
   // Page settings
   SETTINGS: {
+    META: {
+      TITLE: "openscript GmbH",
+      EMAIL: "hi@openscript.ch",
+      PHONE: "+41 44 520 54 67",
+    },
     BROWSER: {
       THEME_COLOR: "#663399",
     },
