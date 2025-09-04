@@ -1,4 +1,56 @@
+@font-face {
+  font-family: "2MASS J1808";
+  src:
+    url("./fonts/2MASSJ1808-Normal.woff2") format("woff2"),
+    url("./fonts/2MASSJ1808-Normal.woff") format("woff"),
+    url("./fonts/2MASSJ1808-Normal.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "2MASS J1808";
+  src:
+    url("./fonts/2MASSJ1808-Heavy.woff2") format("woff2"),
+    url("./fonts/2MASSJ1808-Heavy.woff") format("woff"),
+    url("./fonts/2MASSJ1808-Heavy.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --color-primary: #058e84;
-  --color-secondary: #fe7e40;
+  --color-primary: #539350;
+  --color-secondary: #fa5100;
+  --color-background: #ede9df;
+  --color-black: #231f20;
+  --color-white: #fbfffb;
+
+  --space-gutter: 2rem;
+
+  --fonts-text: "PT Sans", sans-serif;
+  --fonts-mono: "Fira Mono", monospace;
+  --fonts-heading: "2MASS J1808", sans-serif;
+}
+
+body {
+  font-family: var(--fonts-text);
+}
+
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--fonts-mono);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--fonts-heading);
+  font-weight: 900;
 }

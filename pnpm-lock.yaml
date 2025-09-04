@@ -23,13 +23,10 @@ importers:
       '@astrojs/sitemap':
         specifier: ^3.5.1
         version: 3.5.1
-      '@fontsource/ibm-plex-mono':
+      '@fontsource/fira-mono':
         specifier: ^5.2.6
         version: 5.2.6
-      '@fontsource/poppins':
-        specifier: ^5.2.6
-        version: 5.2.6
-      '@fontsource/rajdhani':
+      '@fontsource/pt-sans':
         specifier: ^5.2.6
         version: 5.2.6
       '@nanostores/i18n':
@@ -512,14 +509,11 @@ packages:
     resolution: {integrity: sha512-Z5kJ+wU3oA7MMIqVR9tyZRtjYPr4OC004Q4Rw7pgOKUOKkJfZ3O24nz3WYfGRpMDNmcOi3TwQOmgm7B7Tpii0w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@fontsource/ibm-plex-mono@5.2.6':
-    resolution: {integrity: sha512-LTZJNTcpoT19fmwERZNMDI+ljHueuyhF2Qn+bICJ4Y4hxBLAAoJ2MRsGnyp0QNutW6t/25eyZpvaUK1LDrCo7Q==}
+  '@fontsource/fira-mono@5.2.6':
+    resolution: {integrity: sha512-6pyiGeFH+5DP5sICSwx5wu+9BlTEMTKki7bTppsEqXJysi1MiK82n6oSUaYkQWRLH51+DK7zv2JJsi82cOIS3g==}
 
-  '@fontsource/poppins@5.2.6':
-    resolution: {integrity: sha512-NFr0121+vWCfzLDVvSZOzwAjRUaNj6QHA9gtUh/KHHoWf1Qn23EkwVFs63XZ6UtF5K1b3UNmCx77YEMGgV7BOQ==}
-
-  '@fontsource/rajdhani@5.2.6':
-    resolution: {integrity: sha512-B9hBDcwKf4VMM3Pc1WLlomIsaBpWReH5j8GZFy2sIfHCz4cwOLbyxQQ40PsKD6zmLVlvU17zCmfAZGX4+qB6Dw==}
+  '@fontsource/pt-sans@5.2.6':
+    resolution: {integrity: sha512-II32bzPO+jDXkiDakb2SlsPv7EHa7+NBzvzPOzOaOneNnyht2h2JgF5uxRZ+dCsV/35/hvDam1kuGYyFqcqUbA==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -4811,11 +4805,9 @@ snapshots:
       '@eslint/core': 0.15.2
       levn: 0.4.1
 
-  '@fontsource/ibm-plex-mono@5.2.6': {}
+  '@fontsource/fira-mono@5.2.6': {}
 
-  '@fontsource/poppins@5.2.6': {}
-
-  '@fontsource/rajdhani@5.2.6': {}
+  '@fontsource/pt-sans@5.2.6': {}
 
   '@humanfs/core@0.19.1': {}
 
