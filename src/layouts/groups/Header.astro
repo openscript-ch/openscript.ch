@@ -1,11 +1,29 @@
 ---
+import { currentLocale } from "astro-nanostores-i18n:runtime";
+import Sprite from "../../components/Sprite.astro";
+import { resolvePath } from "../../utils/paths";
+import { C } from "../../site.config";
 
+const locale = currentLocale.get();
 ---
 
 <style>
   header {
+    display: flex;
+    align-items: center;
     background-color: var(--color-primary);
+    height: 6rem;
+  }
+
+  header a :global(svg) {
+    fill: var(--color-background);
+    width: 4.5rem;
+    height: auto;
   }
 </style>
 
-<header>Test</header>
+<header>
+  <a href={resolvePath(`${locale === C.DEFAULT_LOCALE ? "" : locale}`)}>
+    <Sprite name="brand" />
+  </a>
+</header>
