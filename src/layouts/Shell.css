@@ -30,10 +30,36 @@
   --color-white: #fbfffb;
 
   --space-gutter: 1rem;
+  --space-height-divider: 3vw;
+  --space-page-padding: 0 1rem;
 
   --fonts-text: "PT Sans", sans-serif;
   --fonts-mono: "Fira Mono", monospace;
   --fonts-heading: "2MASS J1808", sans-serif;
+}
+
+@media screen and (max-width: 400px) {
+  :root {
+    --space-page-padding: 0 1rem;
+  }
+}
+
+@media screen and (min-width: 640px) {
+}
+
+@media screen and (min-width: 1024px) {
+  :root {
+    --space-page-padding: 0 clamp(10%, 15vw, 25%);
+  }
+}
+
+@media screen and (min-width: 1600px) {
+}
+
+@media screen and (min-width: 1920px) {
+}
+
+@media screen and (min-width: 2560px) {
 }
 
 html {
@@ -50,6 +76,13 @@ body {
 
 main {
   flex-grow: 1;
+}
+
+.page-padding,
+#ribbon,
+header,
+footer {
+  padding: var(--space-page-padding);
 }
 
 code,

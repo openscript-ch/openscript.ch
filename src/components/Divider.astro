@@ -1,0 +1,61 @@
+---
+type Props = {
+  flipVertical?: boolean;
+  flipHorizontal?: boolean;
+  kind?: "multi" | "single";
+  firstSegmentColor?: string;
+  secondSegmentColor?: string;
+  height?: string;
+};
+
+const {
+  flipVertical = false,
+  flipHorizontal = false,
+  kind = "single",
+  firstSegmentColor = "",
+  secondSegmentColor = "",
+  height = "",
+} = Astro.props;
+---
+
+<style define:vars={{ firstSegmentColor, secondSegmentColor, height }}>
+  div {
+    width: 100%;
+    max-height: var(--height, var(--space-height-divider));
+  }
+
+  div :global(svg) {
+    --first-segment: var(--firstSegmentColor, var(--color-primary));
+    --second-segment: var(--secondSegmentColor, var(--color-primary-110));
+
+    width: 100%;
+    min-height: 1.5rem;
+    max-height: var(--height, var(--space-height-divider));
+  }
+</style>
+
+<div style={flipVertical ? "margin-block-end: -1px;" : ""}>
+  {
+    kind === "single" ? (
+      <svg
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+        style={`transform: scaleX(${flipHorizontal ? -1 : 1}) scaleY(${flipVertical ? -1 : 1})`}
+      >
+        <path style="fill: var(--first-segment);" d="M100,100 L83.5,0 L0,100 Z" />
+      </svg>
+    ) : null
+  }
+  {
+    kind === "multi" ? (
+      <svg
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+        style={`transform: scaleX(${flipHorizontal ? -1 : 1}) scaleY(${flipVertical ? -1 : 1})`}
+      >
+        <path fill="var(--second-segment)" d="M100,100 L16.5,13 L0,100 L0,0 L16.5,0 L100,0 L100,100 Z" />
+        <path fill="var(--first-segment)" d="M16.5,0 L0,87 L0,0 L16.5,0 Z" />
+      </svg>
+    ) : null
+  }
+</div>

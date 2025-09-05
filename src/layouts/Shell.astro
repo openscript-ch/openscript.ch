@@ -9,6 +9,7 @@ import Header from "./groups/Header.astro";
 import Footer from "./groups/Footer.astro";
 import Meta from "./groups/Meta.astro";
 import Ribbon from "./groups/Ribbon.astro";
+import Divider from "../components/Divider.astro";
 
 type Props = {
   translations?: Record<string, string>;
@@ -28,9 +29,11 @@ const { translations, bodyClasses, mainClasses } = Astro.props;
   <body class:list={[bodyClasses]}>
     <Ribbon translations={translations} />
     <Header />
+    <Divider kind="multi" />
     <main data-pagefind-body transition:animate="fade" class:list={[mainClasses]}>
       <slot />
     </main>
+    <Divider kind="multi" flipVertical />
     <Footer translations={translations} />
   </body>
 </html>
