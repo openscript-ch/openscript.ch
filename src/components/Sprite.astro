@@ -3,12 +3,12 @@ import SpriteData from "../../res/sprite/sprite.json";
 
 export type Props = {
   name: keyof typeof SpriteData;
-  className?: string;
+  class?: string;
   viewBox?: string;
 };
 
 const dimensions = SpriteData[Astro.props.name];
-const { className, viewBox, name: spriteName } = Astro.props;
+const { class: className, viewBox, name: spriteName } = Astro.props;
 ---
 
 <svg

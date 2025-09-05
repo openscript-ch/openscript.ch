@@ -10,7 +10,7 @@
   "bugs": {
     "url": "https://github.com/openscript-ch/openscript.ch/issues"
   },
-  "repository": "github:openscript/r.obin.ch",
+  "repository": "github:openscript-ch/openscript.ch",
   "packageManager": "pnpm@10.15.1",
   "scripts": {
     "predev": "pnpm build:sprite",

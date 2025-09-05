@@ -91,16 +91,8 @@
     "width": "21",
     "height": "20"
   },
-  "single-color-divider": {
-    "width": "1600",
-    "height": "40"
-  },
   "software-development": {
     "width": "128",
     "height": "67"
-  },
-  "two-color-divider": {
-    "width": "1600",
-    "height": "46"
   }
 }

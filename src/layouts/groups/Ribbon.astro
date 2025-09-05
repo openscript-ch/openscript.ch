@@ -15,6 +15,9 @@ const locale = currentLocale.get();
 
 <style>
   div {
+    position: sticky;
+    top: 0;
+    z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,13 +26,33 @@ const locale = currentLocale.get();
 
   div :global(a) {
     font-weight: 900;
-    color: var(--color-white);
+    color: var(--color-background);
     text-decoration: none;
   }
 
   div :global(svg) {
-    fill: var(--color-white);
+    fill: var(--color-background);
     width: 2rem;
+    transition:
+      transform 0.2s,
+      opacity 0.2s;
+    transition-delay: 0.1s;
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+
+  div.show-brand :global(svg) {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  div a span {
+    transform: translateX(-2.5rem);
+    transition: transform 0.2s;
+  }
+
+  div.show-brand a span {
+    transform: translateX(0.5rem);
   }
 
   div :global(ul) {
@@ -51,7 +74,6 @@ const locale = currentLocale.get();
     display: flex;
     align-items: center;
     font-family: var(--fonts-heading);
-    gap: var(--space-gutter);
     font-size: 0.8rem;
   }
 </style>
@@ -75,3 +97,28 @@ const locale = currentLocale.get();
     </ul>
   </nav>
 </div>
+
+<script>
+  function register() {
+    const ribbon = document.getElementById("ribbon");
+    if (!ribbon) return;
+    const header = document.querySelector("header");
+    if (!header) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) {
+          ribbon.classList.remove("show-brand");
+        } else {
+          ribbon.classList.add("show-brand");
+        }
+      },
+      { threshold: 0, rootMargin: `${-ribbon.clientHeight}px 0px 0px 0px` },
+    );
+
+    observer.observe(header);
+  }
+
+  register();
+  document.addEventListener("astro:after-swap", register);
+</script>
