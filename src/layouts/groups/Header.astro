@@ -21,13 +21,14 @@ const navigation = await prepareNavigation(`main/${locale}`);
   header a :global(svg) {
     fill: var(--color-background);
     width: 4.5rem;
+    margin-inline-start: 1.8rem;
     height: auto;
   }
 
   header nav > :global(ul) {
     display: flex;
     font-size: 1.4rem;
-    gap: var(--space-gutter);
+    gap: var(--space-gutter-big);
 
     > li {
       position: relative;
@@ -37,6 +38,7 @@ const navigation = await prepareNavigation(`main/${locale}`);
         margin-left: 0.5rem;
         width: 1rem;
         height: 1rem;
+        fill: var(--color-secondary);
       }
 
       > ul {
@@ -51,7 +53,6 @@ const navigation = await prepareNavigation(`main/${locale}`);
         white-space: nowrap;
 
         &::before {
-          /* triangle */
           content: "";
           display: block;
           position: absolute;
@@ -61,12 +62,13 @@ const navigation = await prepareNavigation(`main/${locale}`);
           width: 0;
           height: 0;
           border-inline: 0.7rem solid transparent;
-          border-bottom: 0.7rem solid var(--color-background);
+          border-block-end: 0.7rem solid var(--color-background);
         }
 
         a {
           display: block;
           padding: 1rem;
+          color: var(--color-black) !important;
         }
       }
 

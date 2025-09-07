@@ -30,6 +30,7 @@
   --color-white: #fbfffb;
 
   --space-gutter: 1rem;
+  --space-gutter-big: 2rem;
   --space-height-divider: 3vw;
   --space-page-padding: 0 1rem;
 
@@ -83,6 +84,16 @@ main {
 header,
 footer {
   padding: var(--space-page-padding);
+}
+
+:is(header, footer, #ribbon) a {
+  text-decoration: none;
+  color: var(--color-background);
+  font-weight: bold;
+
+  &:hover {
+    color: var(--color-white);
+  }
 }
 
 code,
