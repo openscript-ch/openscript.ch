@@ -24,6 +24,8 @@ export const C = {
       TITLE: "openscript GmbH",
       EMAIL: "hi@openscript.ch",
       PHONE: "+41 44 520 54 67",
+      ADDRESS: "Europa-Strasse 30",
+      TOWN: "8152 Glattbrugg",
     },
     BROWSER: {
       THEME_COLOR: "#663399",

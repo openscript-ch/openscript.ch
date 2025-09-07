@@ -1,29 +1,29 @@
 items:
   de:
-    - path: pages://de/vergangenheit
+    - path: pages://de/past
       title: Vergangenheit
       children:
-        - path: pages://de/vergangenheit/entstehung
+        - path: pages://de/past/formation
           title: Entstehung
-        - path: pages://de/vergangenheit/referenzen
+        - path: pages://de/past/references
           title: Referenzen
-    - path: pages://de/gegenwart
+    - path: pages://de/present
       title: Gegenwart
       children:
-        - path: pages://de/gegenwart/staerken
+        - path: pages://de/present/strengths
           title: Stärken
-        - path: pages://de/gegenwart/werte
+        - path: pages://de/present/values
           title: Werte
-        - path: pages://de/gegenwart/team
+        - path: pages://de/present/team
           title: Team
-    - path: pages://de/zukunft
+    - path: pages://de/future
       title: Zukunft
       children:
-        - path: pages://de/zukunft/zusammenarbeit
+        - path: pages://de/future/collaboration
           title: Zusammenarbeit
-        - path: pages://de/zukunft/jobs
+        - path: pages://de/future/jobs
           title: Jobs
-        - path: pages://de/zukunft/dienstleistungen
+        - path: pages://de/future/services
           title: Dienstleistungen
   en:
     - path: pages://en/past

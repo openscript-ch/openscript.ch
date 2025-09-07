@@ -2,6 +2,10 @@ items:
   de:
     - path: pages://de/imprint
       title: Impressum
+    - path: pages://de/privacy
+      title: Datenschutz
   en:
     - path: pages://en/imprint
       title: Imprint
+    - path: pages://de/privacy
+      title: Privacy Policy

@@ -1,10 +1,17 @@
 ---
-import { useI18n } from "astro-nanostores-i18n:runtime";
+import { currentLocale, useI18n } from "astro-nanostores-i18n:runtime";
 import { version } from "../../../package.json";
 import { params } from "@nanostores/i18n";
+import Sprite from "../../components/Sprite.astro";
+import { C } from "../../site.config";
+import Contact from "./Contact.astro";
+import { prepareNavigation } from "../../utils/paths";
+import Navigation from "../../components/Navigation.astro";
 
+const locale = currentLocale.get();
+const navigation = await prepareNavigation(`footer/${locale}`);
 const messages = useI18n("layouts/groups/Footer.astro", {
-  copyright: "© 2025 Code for Humans. All rights reserved.",
+  copyright: "© 2025 openscript GmbH",
   version: params("Version {version}"),
 });
 ---
@@ -16,8 +23,19 @@ const messages = useI18n("layouts/groups/Footer.astro", {
 </style>
 
 <footer>
-  <ul class="copyright">
-    <li>{messages.copyright}</li>
-    <li>{messages.version({ version })}</li>
-  </ul>
+  <div>
+    <Sprite name="arrow" rotation="300deg" />
+    <ul class="address">
+      <li>{C.SETTINGS.META.TITLE}</li>
+      <li>{C.SETTINGS.META.ADDRESS}</li>
+      <li>{C.SETTINGS.META.TOWN}</li>
+    </ul>
+    <Contact withoutLanguageSwitcher />
+  </div>
+  <span>{messages.copyright} / {messages.version({ version })}</span>
+  <div>
+    <nav>
+      <Navigation items={navigation} />
+    </nav>
+  </div>
 </footer>
