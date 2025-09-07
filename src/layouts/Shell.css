@@ -29,10 +29,11 @@
   --color-black: #231f20;
   --color-white: #fbfffb;
 
-  --space-gutter: 1rem;
-  --space-gutter-big: 2rem;
-  --space-height-divider: 3vw;
-  --space-page-padding: 0 1rem;
+  --size-gutter: 1rem;
+  --size-gutter-big: 2rem;
+  --size-height-divider: 3vw;
+  --size-page-padding: 0 1rem;
+  --size-burger: 2rem;
 
   --fonts-text: "PT Sans", sans-serif;
   --fonts-mono: "Fira Mono", monospace;
@@ -41,7 +42,7 @@
 
 @media screen and (max-width: 400px) {
   :root {
-    --space-page-padding: 0 1rem;
+    --size-page-padding: 0 1rem;
   }
 }
 
@@ -50,7 +51,7 @@
 
 @media screen and (min-width: 1024px) {
   :root {
-    --space-page-padding: 0 clamp(10%, 15vw, 25%);
+    --size-page-padding: 0 clamp(10%, 15vw, 25%);
   }
 }
 
@@ -83,7 +84,7 @@ main {
 #ribbon,
 header,
 footer {
-  padding: var(--space-page-padding);
+  padding: var(--size-page-padding);
 }
 
 :is(header, footer, #ribbon) a {
@@ -94,6 +95,10 @@ footer {
   &:hover {
     color: var(--color-white);
   }
+}
+
+body.burger-active {
+  overflow: hidden;
 }
 
 code,

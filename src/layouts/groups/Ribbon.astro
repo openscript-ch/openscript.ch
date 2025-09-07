@@ -3,7 +3,7 @@ import Sprite from "../../components/Sprite.astro";
 import { resolvePath } from "../../utils/paths";
 import { currentLocale } from "astro-nanostores-i18n:runtime";
 import { C } from "../../site.config";
-import LanguageSwitcher from "../../components/LanguageSwitcher.astro";
+import Contact from "./Contact.astro";
 
 type Props = {
   translations?: Record<string, string>;
@@ -64,7 +64,7 @@ const locale = currentLocale.get();
     white-space: nowrap;
   }
 
-  div ul li:not(:last-of-type)::after {
+  div nav :global(ul li:not(:last-of-type)::after) {
     content: "/";
     margin: 0 0.8rem;
     color: var(--color-secondary);
@@ -77,6 +77,12 @@ const locale = currentLocale.get();
     font-family: var(--fonts-heading);
     font-size: 0.8rem;
   }
+
+  @media screen and (max-width: 800px) {
+    div nav {
+      display: none;
+    }
+  }
 </style>
 
 <div id="ribbon">
@@ -85,17 +91,7 @@ const locale = currentLocale.get();
     <span>{C.SETTINGS.META.TITLE}</span>
   </a>
   <nav>
-    <ul>
-      <li>
-        <a href={`tel:${C.SETTINGS.META.PHONE.replaceAll(" ", "")}`}>{C.SETTINGS.META.PHONE}</a>
-      </li>
-      <li>
-        <a href={`mailto:${C.SETTINGS.META.EMAIL}`}>{C.SETTINGS.META.EMAIL}</a>
-      </li>
-      <li>
-        <LanguageSwitcher locale={locale} translations={translations} />
-      </li>
-    </ul>
+    <Contact translations={translations} />
   </nav>
 </div>
 

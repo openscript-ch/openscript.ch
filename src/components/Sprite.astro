@@ -5,11 +5,18 @@ export type Props = {
   name: keyof typeof SpriteData;
   class?: string;
   viewBox?: string;
+  rotation?: string;
 };
 
 const dimensions = SpriteData[Astro.props.name];
-const { class: className, viewBox, name: spriteName } = Astro.props;
+const { class: className, viewBox, name: spriteName, rotation } = Astro.props;
 ---
+
+<style define:vars={{ rotation }}>
+  svg {
+    transform: rotate(var(--rotation, 0deg));
+  }
+</style>
 
 <svg
   class={className ?? undefined}

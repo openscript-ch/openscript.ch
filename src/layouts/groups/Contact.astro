@@ -1,0 +1,24 @@
+---
+import { currentLocale } from "astro-nanostores-i18n:runtime";
+import LanguageSwitcher from "../../components/LanguageSwitcher.astro";
+import { C } from "../../site.config";
+
+type Props = {
+  translations?: Record<string, string>;
+};
+
+const { translations } = Astro.props;
+const locale = currentLocale.get();
+---
+
+<ul>
+  <li>
+    <a href={`tel:${C.SETTINGS.META.PHONE.replaceAll(" ", "")}`}>{C.SETTINGS.META.PHONE}</a>
+  </li>
+  <li>
+    <a href={`mailto:${C.SETTINGS.META.EMAIL}`}>{C.SETTINGS.META.EMAIL}</a>
+  </li>
+  <li>
+    <LanguageSwitcher locale={locale} translations={translations} />
+  </li>
+</ul>

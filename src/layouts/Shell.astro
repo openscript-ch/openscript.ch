@@ -28,7 +28,7 @@ const { translations, bodyClasses, mainClasses } = Astro.props;
   </Head>
   <body class:list={[bodyClasses]}>
     <Ribbon translations={translations} />
-    <Header />
+    <Header translations={translations} />
     <Divider kind="multi" />
     <main data-pagefind-body transition:animate="fade" class:list={[mainClasses]}>
       <slot />
