@@ -1,16 +1,19 @@
 ---
 import { currentLocale } from "astro-nanostores-i18n:runtime";
 import Sprite from "../../components/Sprite.astro";
-import { resolvePath } from "../../utils/paths";
+import { prepareNavigation, resolvePath } from "../../utils/paths";
 import { C } from "../../site.config";
+import Navigation from "../../components/Navigation.astro";
 
 const locale = currentLocale.get();
+const navigation = await prepareNavigation(`main/${locale}`);
 ---
 
 <style>
   header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background-color: var(--color-primary);
     height: 6rem;
   }
@@ -20,10 +23,146 @@ const locale = currentLocale.get();
     width: 4.5rem;
     height: auto;
   }
+
+  header nav > :global(ul) {
+    display: flex;
+    font-size: 1.4rem;
+    gap: var(--space-gutter);
+
+    > li {
+      position: relative;
+      padding: 1rem 0;
+
+      svg {
+        margin-left: 0.5rem;
+        width: 1rem;
+        height: 1rem;
+      }
+
+      > ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 50%;
+        transform: translateX(50%);
+        z-index: 20;
+        background-color: var(--color-background);
+        box-shadow: 2px 2px 0 var(--color-primary);
+        white-space: nowrap;
+
+        &::before {
+          /* triangle */
+          content: "";
+          display: block;
+          position: absolute;
+          top: -0.7rem;
+          right: 50%;
+          transform: translateX(50%);
+          width: 0;
+          height: 0;
+          border-inline: 0.7rem solid transparent;
+          border-bottom: 0.7rem solid var(--color-background);
+        }
+
+        a {
+          display: block;
+          padding: 1rem;
+        }
+      }
+
+      &:hover {
+        > ul {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .bottom-section {
+    display: none;
+  }
+
+  &.open {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--color-background);
+
+    ul {
+      display: block;
+    }
+
+    > ul {
+      margin-top: 9rem;
+
+      > li {
+        width: 100%;
+        background-color: white;
+        padding: 0;
+
+        a {
+          width: 100%;
+          padding: 1rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          svg {
+            transform: rotate(270deg);
+          }
+        }
+
+        > ul {
+          position: static;
+          transform: unset;
+          background-color: var(--color-background);
+          box-shadow: none;
+
+          &::before {
+            content: unset;
+          }
+
+          li {
+            margin-left: 1rem;
+
+            a {
+              padding: 0.8rem;
+              background-color: var(--color-background);
+            }
+          }
+        }
+      }
+    }
+
+    .bottom-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding: 1rem;
+
+      svg {
+        height: auto;
+        width: 4rem;
+      }
+
+      li {
+        margin: 0;
+      }
+    }
+  }
 </style>
 
 <header>
   <a href={resolvePath(`${locale === C.DEFAULT_LOCALE ? "" : locale}`)}>
     <Sprite name="brand" />
   </a>
+  <nav>
+    <Navigation items={navigation}>
+      <Sprite slot="nesting-indicator" name="arrow" />
+    </Navigation>
+  </nav>
 </header>

@@ -1,0 +1,45 @@
+---
+import { Image } from "astro:assets";
+import Link from "./Link.astro";
+import type { ImageMetadata } from "astro";
+
+type Props = {
+  iconSize?: number;
+  items: Array<{
+    path: string;
+    title: string;
+    icon?: ImageMetadata;
+    children?: Array<Props["items"][number]>;
+  }>;
+};
+
+const { iconSize = 16, items } = Astro.props;
+---
+
+<style>
+  ul,
+  ul li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+</style>
+
+<ul>
+  {
+    items.map((item) => (
+      <li>
+        <Link href={item.path}>
+          {item.icon ? <Image src={item.icon} alt={`${item.title} Icon`} width={iconSize} /> : null}
+          {item.title}
+          {Array.isArray(item.children) ? <slot name="nesting-indicator" /> : null}
+        </Link>
+        {item.children ? (
+          <Astro.self items={item.children} iconSize={iconSize}>
+            <slot name="nesting-indicator" slot="nesting-indicator" />
+          </Astro.self>
+        ) : null}
+      </li>
+    ))
+  }
+</ul>

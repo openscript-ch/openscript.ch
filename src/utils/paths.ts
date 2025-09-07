@@ -1,6 +1,7 @@
 import { createI18nCollection, i18nPropsAndParams, resolvePath as originalResolvePath } from "astro-loader-i18n";
 import { C, localeSlugs } from "../site.config";
 import { getEntry, type CollectionKey, type DataEntryMap } from "astro:content";
+import type { ImageMetadata } from "astro";
 
 const PROTOCOL_DELIMITER = "://";
 
@@ -43,21 +44,33 @@ export const convertReferenceToPath = async (path: string) => {
   return originalResolvePath(localeSlug, entry.data.contentPath, entry.data.path);
 };
 
-export const prepareNavigation = async <E extends keyof DataEntryMap["navigation"] | (string & {})>(id: E) => {
-  const navigation = await getEntry("navigation", id);
-
-  if (!navigation) throw new Error(`Navigation entry not found`);
-
-  return Array.isArray(navigation.data.items)
+type NavigationItems = DataEntryMap["navigation"]["data"]["data"]["items"];
+type NavigationItem = {
+  path: string;
+  title: string;
+  icon?: ImageMetadata;
+  children?: NavigationItem[];
+};
+const processNavigationItems = async (items: NavigationItems): Promise<NavigationItem[]> => {
+  return Array.isArray(items)
     ? await Promise.all(
-        navigation.data.items.map(async (item) => {
-          const { title, path, icon } = item;
+        items.map(async (item) => {
+          const { path, children, ...rest } = item;
+          const processedChildren = children ? await processNavigationItems(children) : undefined;
           return {
-            title,
-            icon,
+            ...rest,
+            children: processedChildren,
             path: await convertReferenceToPath(path),
           };
         }),
       )
     : [];
+};
+
+export const prepareNavigation = async <E extends keyof DataEntryMap["navigation"] | (string & {})>(id: E) => {
+  const navigation = await getEntry("navigation", id);
+
+  if (!navigation) throw new Error(`Navigation entry not found`);
+
+  return await processNavigationItems(navigation.data.items);
 };
