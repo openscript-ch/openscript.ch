@@ -18,24 +18,69 @@ const messages = useI18n("layouts/groups/Footer.astro", {
 
 <style>
   footer {
+    display: flex;
+    justify-content: space-between;
     background-color: var(--color-primary);
+    padding-block: var(--size-gutter-big);
+  }
+
+  .footer-contact {
+    display: flex;
+    gap: var(--size-gutter-big);
+
+    svg {
+      fill: var(--color-secondary);
+      height: auto;
+      width: 4rem;
+      transform: rotate(300deg);
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .copyright {
+    font-size: 0.8rem;
+    color: var(--color-background);
+  }
+
+  .footer-further-links {
+    display: flex;
+    align-items: center;
+    gap: var(--size-gutter-big);
+
+    svg {
+      fill: var(--color-background);
+      width: 2.4rem;
+    }
   }
 </style>
 
 <footer>
-  <div>
-    <Sprite name="arrow" rotation="300deg" />
-    <ul class="address">
-      <li>{C.SETTINGS.META.TITLE}</li>
-      <li>{C.SETTINGS.META.ADDRESS}</li>
-      <li>{C.SETTINGS.META.TOWN}</li>
-    </ul>
+  <div class="footer-contact">
+    <Sprite name="arrow" />
+    <a href={C.SETTINGS.META.MAPS_LINK} target="_blank" rel="noopener">
+      <ul class="address">
+        <li>{C.SETTINGS.META.TITLE}</li>
+        <li>{C.SETTINGS.META.ADDRESS}</li>
+        <li>{C.SETTINGS.META.TOWN}</li>
+      </ul>
+    </a>
     <Contact withoutLanguageSwitcher />
   </div>
-  <span>{messages.copyright} / {messages.version({ version })}</span>
-  <div>
+  <span class="copyright">{messages.copyright} / {messages.version({ version })}</span>
+  <div class="footer-further-links">
     <nav>
       <Navigation items={navigation} />
     </nav>
+    <a href={C.SETTINGS.META.LINKEDIN} target="_blank" rel="noopener" aria-label="LinkedIn">
+      <Sprite name="linkedin" />
+    </a>
+    <a href={C.SETTINGS.META.GITHUB} target="_blank" rel="noopener" aria-label="GitHub">
+      <Sprite name="github" />
+    </a>
   </div>
 </footer>

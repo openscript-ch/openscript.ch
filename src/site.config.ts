@@ -26,6 +26,9 @@ export const C = {
       PHONE: "+41 44 520 54 67",
       ADDRESS: "Europa-Strasse 30",
       TOWN: "8152 Glattbrugg",
+      MAPS_LINK: "https://www.openstreetmap.org/node/9428042241",
+      LINKEDIN: "https://www.linkedin.com/company/openscript/",
+      GITHUB: "https://github.com/openscript-ch",
     },
     BROWSER: {
       THEME_COLOR: "#663399",

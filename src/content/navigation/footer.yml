@@ -7,5 +7,5 @@ items:
   en:
     - path: pages://en/imprint
       title: Imprint
-    - path: pages://de/privacy
+    - path: pages://en/privacy
       title: Privacy Policy

@@ -164,6 +164,7 @@ const navigation = await prepareNavigation(`main/${locale}`);
       svg {
         height: auto;
         width: 4rem;
+        transform: rotate(300deg);
         fill: var(--color-secondary);
       }
     }
@@ -204,7 +205,7 @@ const navigation = await prepareNavigation(`main/${locale}`);
       <Sprite slot="nesting-indicator" name="arrow" />
     </Navigation>
     <div class="contact">
-      <Sprite name="arrow" rotation="300deg" />
+      <Sprite name="arrow" />
       <Contact translations={translations} />
     </div>
   </nav>
