@@ -25,5 +25,10 @@ const { Content } = await render(Astro.props);
 
 <Shell translations={translations}>
   <Meta slot="meta" title={title} />
-  <Content />
+  <article>
+    <header>
+      <h1>{title}</h1>
+    </header>
+    <Content />
+  </article>
 </Shell>
