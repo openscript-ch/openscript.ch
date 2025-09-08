@@ -24,7 +24,7 @@ const messages = useI18n("layouts/groups/Footer.astro", {
     padding-block: var(--size-gutter-big);
   }
 
-  .footer-contact {
+  .contact {
     display: flex;
     gap: var(--size-gutter-big);
 
@@ -47,7 +47,7 @@ const messages = useI18n("layouts/groups/Footer.astro", {
     color: var(--color-background);
   }
 
-  .footer-further-links {
+  .links {
     display: flex;
     align-items: center;
     gap: var(--size-gutter-big);
@@ -60,7 +60,7 @@ const messages = useI18n("layouts/groups/Footer.astro", {
 </style>
 
 <footer>
-  <div class="footer-contact">
+  <div class="contact">
     <Sprite name="arrow" />
     <a href={C.SETTINGS.META.MAPS_LINK} target="_blank" rel="noopener">
       <ul class="address">
@@ -72,7 +72,7 @@ const messages = useI18n("layouts/groups/Footer.astro", {
     <Contact withoutLanguageSwitcher />
   </div>
   <span class="copyright">{messages.copyright} / {messages.version({ version })}</span>
-  <div class="footer-further-links">
+  <div class="links">
     <nav>
       <Navigation items={navigation} />
     </nav>

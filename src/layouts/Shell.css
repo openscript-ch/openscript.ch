@@ -65,7 +65,9 @@
 }
 
 html {
+  scrollbar-color: var(--color-primary) var(--color-background);
   height: 100%;
+  background-color: var(--color-primary);
 }
 
 body {
@@ -74,6 +76,11 @@ body {
   flex-direction: column;
   font-family: var(--fonts-text);
   margin: 0;
+  background-color: var(--color-background);
+
+  > .divider {
+    background-color: var(--color-background);
+  }
 }
 
 main {
