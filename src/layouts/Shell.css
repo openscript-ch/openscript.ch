@@ -89,8 +89,7 @@ main {
 
 .page-padding,
 #ribbon,
-header,
-footer {
+body > :is(header, footer) {
   padding: var(--size-page-padding);
 }
 

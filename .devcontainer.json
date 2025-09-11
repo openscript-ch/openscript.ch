@@ -7,7 +7,7 @@
         "astro-build.astro-vscode",
         "vitest.explorer",
         "streetsidesoftware.code-spell-checker",
-        "streetsidesoftware.code-spell-checker-german",
+        "streetsidesoftware.code-spell-checker-swiss-german",
         "esbenp.prettier-vscode",
         "mgmcdermott.vscode-language-babel",
         "dbaeumer.vscode-eslint",
@@ -15,7 +15,7 @@
         "unifiedjs.vscode-mdx",
         "github.vscode-github-actions",
         "GitHub.vscode-pull-request-github",
-        "vunguyentuan.vscode-css-variables"
+        "vunguyentuan.vscode-css-variables",
       ]
     }
   },

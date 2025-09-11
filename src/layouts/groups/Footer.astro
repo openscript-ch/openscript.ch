@@ -7,6 +7,7 @@ import { C } from "../../site.config";
 import Contact from "./Contact.astro";
 import { prepareNavigation } from "../../utils/paths";
 import Navigation from "../../components/Navigation.astro";
+import Address from "./Address.astro";
 
 const locale = currentLocale.get();
 const navigation = await prepareNavigation(`footer/${locale}`);
@@ -62,13 +63,7 @@ const messages = useI18n("layouts/groups/Footer.astro", {
 <footer>
   <div class="contact">
     <Sprite name="arrow" />
-    <a href={C.SETTINGS.META.MAPS_LINK} target="_blank" rel="noopener">
-      <ul class="address">
-        <li>{C.SETTINGS.META.TITLE}</li>
-        <li>{C.SETTINGS.META.ADDRESS}</li>
-        <li>{C.SETTINGS.META.TOWN}</li>
-      </ul>
-    </a>
+    <Address />
     <Contact withoutLanguageSwitcher />
   </div>
   <span class="copyright">{messages.copyright} / {messages.version({ version })}</span>
