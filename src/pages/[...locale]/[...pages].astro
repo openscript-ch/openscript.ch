@@ -4,6 +4,7 @@ import { getCollection, render } from "astro:content";
 import { i18nPropsAndParams } from "astro-loader-i18n";
 import { defaultPropsAndParamsOptions } from "../../utils/paths";
 import Shell from "../../layouts/Shell.astro";
+import Article from "../../layouts/templates/Article.astro";
 
 export const getStaticPaths = async () => {
   const routePattern = "[...locale]/[...pages]";
@@ -25,10 +26,7 @@ const { Content } = await render(Astro.props);
 
 <Shell translations={translations}>
   <Meta slot="meta" title={title} />
-  <article class="page-padding">
-    <header>
-      <h1>{title}</h1>
-    </header>
+  <Article title={title}>
     <Content />
-  </article>
+  </Article>
 </Shell>

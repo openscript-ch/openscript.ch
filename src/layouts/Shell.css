@@ -31,13 +31,15 @@
 
   --size-gutter: 1rem;
   --size-gutter-big: 2rem;
+  --size-gutter-huge: 4rem;
   --size-height-divider: 3vw;
   --size-page-padding: 0 1rem;
   --size-burger: 2rem;
 
-  --fonts-text: "PT Sans", sans-serif;
-  --fonts-mono: "Fira Mono", monospace;
-  --fonts-heading: "2MASS J1808", sans-serif;
+  --font-size: 16px;
+  --font-text: "PT Sans", sans-serif;
+  --font-mono: "Fira Mono", monospace;
+  --font-heading: "2MASS J1808", sans-serif;
 }
 
 @media screen and (max-width: 400px) {
@@ -56,25 +58,46 @@
 }
 
 @media screen and (min-width: 1600px) {
+  :root {
+    --font-size: 18px;
+  }
 }
 
 @media screen and (min-width: 1920px) {
+  :root {
+    --font-size: 20px;
+  }
 }
 
 @media screen and (min-width: 2560px) {
+  :root {
+    --font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 2800px) {
+  :root {
+    --font-size: 28px;
+  }
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-white);
 }
 
 html {
   scrollbar-color: var(--color-primary) var(--color-background);
   height: 100%;
   background-color: var(--color-primary);
+  font-size: var(--font-size);
 }
 
 body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  font-family: var(--fonts-text);
+  font-family: var(--font-text);
   margin: 0;
   background-color: var(--color-background);
 
@@ -83,14 +106,16 @@ body {
   }
 }
 
-main {
-  flex-grow: 1;
-}
-
 .page-padding,
 #ribbon,
 body > :is(header, footer) {
   padding: var(--size-page-padding);
+}
+
+#ribbon ::selection,
+body > :is(header, footer) ::selection {
+  background-color: var(--color-white);
+  color: var(--color-primary);
 }
 
 :is(header, footer, #ribbon) a {
@@ -99,6 +124,10 @@ body > :is(header, footer) {
   font-weight: bold;
 
   &:hover {
+    color: var(--color-white);
+  }
+
+  &.active {
     color: var(--color-white);
   }
 }
@@ -111,7 +140,7 @@ code,
 pre,
 kbd,
 samp {
-  font-family: var(--fonts-mono);
+  font-family: var(--font-mono);
 }
 
 h1,
@@ -120,6 +149,50 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--fonts-heading);
+  font-family: var(--font-heading);
   font-weight: 900;
+  margin-top: 2.2em;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 1.7rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.3rem;
+}
+
+h5 {
+  font-size: 1.2rem;
+}
+
+h5 {
+  font-size: 1.1rem;
+}
+
+main {
+  flex-grow: 1;
+
+  a {
+    color: var(--color-primary-90);
+    text-decoration: none;
+
+    :hover {
+      color: var(--color-primary-110);
+      text-decoration: underline;
+    }
+  }
+  :is(h1, h2, h3, h4, h5, h6) a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
