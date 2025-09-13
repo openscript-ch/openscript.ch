@@ -1,17 +1,26 @@
 ---
-import Sprite from "../../components/Sprite.astro";
+import { currentLocale } from "astro-nanostores-i18n:runtime";
 import Shell from "../../layouts/Shell.astro";
 import { generateGetStaticIndexPaths } from "../../utils/paths";
+import { render } from "astro:content";
+import { getEntry } from "astro:content";
 
 export const getStaticPaths = generateGetStaticIndexPaths("[...locale]");
 
+const locale = currentLocale.get();
 const { translations } = Astro.props;
+const { Content: SpotlightSection } = await render(await getEntry("sections", `${locale}/spotlight`)!);
 ---
 
+<style>
+  :global(section) {
+    padding: var(--size-page-padding) 0;
+    margin-top: -5rem;
+  }
+</style>
+
 <Shell translations={translations}>
-  <Sprite name="arrow" />
-  <h1>Welcome!!!!</h1>
-  <code>Juhui</code>
+  <SpotlightSection class="spotlight-section" />
   <p>
     <span
       >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo consequatur veritatis voluptatum dicta, iusto aut

@@ -112,6 +112,11 @@ body > :is(header, footer) {
   padding: var(--size-page-padding);
 }
 
+#ribbon,
+body > :is(header, footer) {
+  z-index: 10;
+}
+
 #ribbon ::selection,
 body > :is(header, footer) ::selection {
   background-color: var(--color-white);

@@ -1,6 +1,7 @@
 import { extendI18nLoaderSchema, i18nContentLoader, i18nLoader, localized as localizedSchema } from "astro-loader-i18n";
 import { defineCollection, z, type ImageFunction } from "astro:content";
 import { localeSlugs } from "./site.config";
+import { glob } from "astro/loaders";
 
 const localized = <T extends z.ZodTypeAny>(schema: T) => localizedSchema(schema, localeSlugs);
 
@@ -43,7 +44,13 @@ const pagesCollection = defineCollection({
   ),
 });
 
+const sectionsCollection = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/sections" }),
+  schema: z.object({}),
+});
+
 export const collections = {
   navigation: navigationCollection,
   pages: pagesCollection,
+  sections: sectionsCollection,
 };
