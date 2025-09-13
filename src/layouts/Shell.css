@@ -102,7 +102,7 @@ body {
   background-color: var(--color-background);
 
   > .divider {
-    background-color: var(--color-background);
+    z-index: 5;
   }
 }
 
@@ -112,7 +112,6 @@ body > :is(header, footer) {
   padding: var(--size-page-padding);
 }
 
-#ribbon,
 body > :is(header, footer) {
   z-index: 10;
 }
