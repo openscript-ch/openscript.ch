@@ -1,5 +1,19 @@
-<section>
+import SpotlightSection from '../../../layouts/groups/SpotlightSection.astro';
+import VideoCard from '../../../components/VideoCard.astro';
+import ValuesVideo from '../../../../res/values.mp4';
 
-Hello
+<SpotlightSection>
 
-</section>
+<VideoCard
+  title="Our Values"
+  description="An overview of our core values."
+  videoSrc={ValuesVideo}
+  videoType="mp4" />
+<div>
+  Slide 2
+</div>
+<div>
+  Slide 3
+</div>
+
+</SpotlightSection>

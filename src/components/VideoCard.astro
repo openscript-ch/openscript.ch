@@ -1,0 +1,26 @@
+---
+type Props = {
+  title: string;
+  description?: string;
+  videoSrc: string;
+  videoType?: "mp4" | "webm" | "ogg";
+};
+
+const { title, description, videoSrc, videoType = "mp4" } = Astro.props;
+---
+
+<div class="video-card">
+  <h3>{title}</h3>
+  {description ? <p>{description}</p> : null}
+  <video autoplay muted loop playsinline>
+    <source src={videoSrc} type=`video/${videoType}` />
+  </video>
+</div>
+
+<style>
+  video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+</style>

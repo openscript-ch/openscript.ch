@@ -22,5 +22,5 @@
   "containerEnv": {
     "ASTRO_TELEMETRY_DISABLED": "1"
   },
-  "postCreateCommand": "npm install -g npm@11.5.2 pnpm@10.15.1"
+  "postCreateCommand": "npm install -g npm@11.5.2 pnpm@10.16.1"
 }

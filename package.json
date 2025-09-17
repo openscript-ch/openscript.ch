@@ -11,7 +11,7 @@
     "url": "https://github.com/openscript-ch/openscript.ch/issues"
   },
   "repository": "github:openscript-ch/openscript.ch",
-  "packageManager": "pnpm@10.15.1",
+  "packageManager": "pnpm@10.16.1",
   "scripts": {
     "predev": "pnpm build:sprite",
     "prebuild": "pnpm build:sprite",
@@ -39,6 +39,8 @@
     "astro": "^5.13.7",
     "astro-loader-i18n": "^0.7.9",
     "astro-nanostores-i18n": "^0.1.6",
+    "embla-carousel": "^8.6.0",
+    "embla-carousel-autoplay": "^8.6.0",
     "limax": "^4.1.0",
     "pagefind": "^1.4.0",
     "rehype-autolink-headings": "^7.1.0",
@@ -52,11 +54,11 @@
   "devDependencies": {
     "@changesets/cli": "^2.29.7",
     "@eslint/js": "^9.35.0",
-    "@iconify/json": "^2.2.383",
+    "@iconify/json": "^2.2.385",
     "@openscript/unplugin-favicons": "^1.1.7",
     "@types/mdast": "^4.0.4",
-    "@types/node": "^24.3.3",
-    "@typescript-eslint/parser": "^8.43.0",
+    "@types/node": "^24.5.1",
+    "@typescript-eslint/parser": "^8.44.0",
     "@vitest/coverage-v8": "3.2.4",
     "astro-eslint-parser": "^1.2.2",
     "eslint": "^9.35.0",
@@ -71,7 +73,7 @@
     "prettier-plugin-astro": "^0.14.1",
     "sirv": "^3.0.2",
     "typescript": "^5.9.2",
-    "typescript-eslint": "^8.43.0",
+    "typescript-eslint": "^8.44.0",
     "vitest": "3.2.4"
   },
   "pnpm": {

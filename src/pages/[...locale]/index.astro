@@ -4,6 +4,7 @@ import Shell from "../../layouts/Shell.astro";
 import { generateGetStaticIndexPaths } from "../../utils/paths";
 import { render } from "astro:content";
 import { getEntry } from "astro:content";
+import Divider from "../../components/Divider.astro";
 
 export const getStaticPaths = generateGetStaticIndexPaths("[...locale]");
 
@@ -15,12 +16,12 @@ const { Content: SpotlightSection } = await render(await getEntry("sections", `$
 <style>
   :global(section) {
     padding: var(--size-page-padding) 0;
-    margin-top: -5rem;
   }
 </style>
 
 <Shell translations={translations}>
-  <SpotlightSection class="spotlight-section" />
+  <SpotlightSection />
+  <Divider kind="single" firstSegmentColor="var(--color-white)" />
   <p>
     <span
       >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo consequatur veritatis voluptatum dicta, iusto aut

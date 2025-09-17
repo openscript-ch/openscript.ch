@@ -1,0 +1,38 @@
+<section>
+  <div class="carousel">
+    <div class="carousel-container">
+      <slot />
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    margin-top: calc(var(--size-height-divider) * -1);
+  }
+
+  .carousel {
+    overflow: hidden;
+    height: 60vh;
+  }
+  .carousel-container {
+    display: flex;
+  }
+  .carousel-container > :global(*) {
+    flex: 0 0 100%;
+    min-width: 0;
+  }
+</style>
+
+<script>
+  import EmblaCarousel from "embla-carousel";
+  import Autoplay from "embla-carousel-autoplay";
+
+  const emblaNode = document.querySelector(".carousel") as HTMLElement;
+  if (!emblaNode) throw new Error("Embla node not found");
+  const options = { loop: true };
+  const plugins = [Autoplay()];
+  const emblaApi = EmblaCarousel(emblaNode, options, plugins);
+
+  console.log(emblaApi.slideNodes());
+</script>
