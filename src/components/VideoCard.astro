@@ -1,26 +1,53 @@
 ---
 type Props = {
-  title: string;
-  description?: string;
   videoSrc: string;
   videoType?: "mp4" | "webm" | "ogg";
 };
 
-const { title, description, videoSrc, videoType = "mp4" } = Astro.props;
+const { videoSrc, videoType = "mp4" } = Astro.props;
 ---
 
 <div class="video-card">
-  <h3>{title}</h3>
-  {description ? <p>{description}</p> : null}
-  <video autoplay muted loop playsinline>
-    <source src={videoSrc} type=`video/${videoType}` />
+  <video class="video-bg" autoplay muted loop playsinline>
+    <source src={videoSrc} type={`video/${videoType}`} />
   </video>
+  <div class="video-card-content">
+    <div class="video-card-box">
+      <slot />
+    </div>
+  </div>
 </div>
 
 <style>
-  video {
+  .video-card {
+    position: relative;
     width: 100%;
-    max-width: 100%;
-    height: auto;
+    height: 100%;
+    overflow: hidden;
+  }
+  .video-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .video-card-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    width: 100%;
+  }
+  .video-card-box {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
+    max-width: 90%;
   }
 </style>
