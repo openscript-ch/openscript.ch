@@ -32,9 +32,10 @@
   --size-gutter: 1rem;
   --size-gutter-big: 2rem;
   --size-gutter-huge: 4rem;
-  --size-height-divider: 3vw;
+  --size-height-divider: max(1.5rem, 2.5vw);
   --size-page-padding: 0 1rem;
   --size-burger: 2rem;
+  --size-carousel-buttons: 2rem;
 
   --font-size: 16px;
   --font-text: "PT Sans", sans-serif;
@@ -184,6 +185,8 @@ h5 {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
 
   a {

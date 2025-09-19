@@ -17,30 +17,39 @@ const { Content: SpotlightSection } = await render(await getEntry("sections", `$
   :global(section) {
     padding: var(--size-page-padding) 0;
   }
+
+  .other {
+    background-color: var(--color-white);
+    z-index: 1;
+  }
 </style>
 
 <Shell translations={translations}>
   <SpotlightSection />
-  <Divider kind="single" firstSegmentColor="var(--color-white)" />
-  <p>
-    <span
-      >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo consequatur veritatis voluptatum dicta, iusto aut
-      beatae corrupti, non dolore quisquam esse ut nihil autem ex repellat debitis rem dolorum! Esse.</span
-    ><span
-      >Repudiandae, cupiditate sequi adipisci itaque qui aliquid porro. Rerum porro distinctio earum iure voluptates non
-      ullam, aliquid assumenda repellat doloribus, minus asperiores quo ab aut! Quidem voluptates aut voluptas iusto!</span
-    >
-  </p>
-  <p>
-    <span
-      >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis nihil repudiandae est dolor laborum suscipit,
-      necessitatibus labore reprehenderit aut nulla, ipsa quae quisquam ratione quaerat ipsum soluta eaque voluptatum
-      facilis.</span
-    ><span
-      >Ex officia unde natus dolor aperiam, labore tempora, neque molestias illo facere dolores nihil fugiat eius
-      accusamus corrupti dolorum expedita placeat ullam aliquid sit deserunt quisquam vel! Distinctio, nihil nisi.</span
-    >
-  </p>
+  <Divider kind="single" firstSegmentColor="var(--color-white)" fixAntialiasingBottom />
+  <section class="other">
+    <p>
+      <span
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo consequatur veritatis voluptatum dicta, iusto
+        aut beatae corrupti, non dolore quisquam esse ut nihil autem ex repellat debitis rem dolorum! Esse.</span
+      ><span
+        >Repudiandae, cupiditate sequi adipisci itaque qui aliquid porro. Rerum porro distinctio earum iure voluptates
+        non ullam, aliquid assumenda repellat doloribus, minus asperiores quo ab aut! Quidem voluptates aut voluptas
+        iusto!</span
+      >
+    </p>
+    <p>
+      <span
+        >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis nihil repudiandae est dolor laborum
+        suscipit, necessitatibus labore reprehenderit aut nulla, ipsa quae quisquam ratione quaerat ipsum soluta eaque
+        voluptatum facilis.</span
+      ><span
+        >Ex officia unde natus dolor aperiam, labore tempora, neque molestias illo facere dolores nihil fugiat eius
+        accusamus corrupti dolorum expedita placeat ullam aliquid sit deserunt quisquam vel! Distinctio, nihil nisi.</span
+      >
+    </p>
+  </section>
+  <Divider kind="single" firstSegmentColor="var(--color-white)" flipVertical fixAntialiasingTop />
   <p>
     <span
       >Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem expedita nisi facilis quidem temporibus magni

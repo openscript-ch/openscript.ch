@@ -2,6 +2,8 @@
 type Props = {
   flipVertical?: boolean;
   flipHorizontal?: boolean;
+  fixAntialiasingBottom?: boolean;
+  fixAntialiasingTop?: boolean;
   kind?: "multi" | "single";
   firstSegmentColor?: string;
   secondSegmentColor?: string;
@@ -11,13 +13,15 @@ type Props = {
 const {
   flipVertical = false,
   flipHorizontal = false,
+  fixAntialiasingTop = false,
+  fixAntialiasingBottom = false,
   kind = "single",
   firstSegmentColor = "",
   secondSegmentColor = "",
   height = "",
 } = Astro.props;
 
-const style = `transform: scaleX(${flipHorizontal ? -1 : 1}) scaleY(${flipVertical ? -1 : 1})${flipVertical ? "; margin-block-end: -1px;" : ""}`;
+const style = `transform: scaleX(${flipHorizontal ? -1 : 1}) scaleY(${flipVertical ? -1 : 1})${fixAntialiasingTop ? "; margin-block-start: -1px;" : ""}${fixAntialiasingBottom ? "; margin-block-end: -1px;" : ""}`;
 ---
 
 <style define:vars={{ firstSegmentColor, secondSegmentColor, height }}>
@@ -25,8 +29,7 @@ const style = `transform: scaleX(${flipHorizontal ? -1 : 1}) scaleY(${flipVertic
     --first-segment: var(--firstSegmentColor, var(--color-primary));
     --second-segment: var(--secondSegmentColor, var(--color-primary-110));
     width: 100%;
-    min-height: 1.5rem;
-    max-height: var(--height, var(--size-height-divider));
+    height: var(--height, var(--size-height-divider));
   }
 </style>
 

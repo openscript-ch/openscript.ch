@@ -33,7 +33,7 @@ const { translations, bodyClasses, mainClasses } = Astro.props;
     <main data-pagefind-body transition:animate="fade" class:list={[mainClasses]}>
       <slot />
     </main>
-    <Divider kind="multi" flipVertical />
+    <Divider kind="multi" flipVertical fixAntialiasingBottom />
     <Footer translations={translations} />
   </body>
 </html>
