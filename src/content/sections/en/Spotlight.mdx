@@ -1,20 +1,23 @@
-import SpotlightSection from '../../../layouts/groups/SpotlightSection.astro';
-import VideoCard from '../../../components/VideoCard.astro';
+import Carousel from '../../../components/Carousel.astro';
+import BackgroundVideo from '../../../components/BackgroundVideo.astro';
 import ValuesVideo from '../../../../res/values.mp4';
 
-<SpotlightSection>
+<Carousel>
 
-<VideoCard
-  videoSrc={ValuesVideo}
-  videoType="mp4">
-  <h3>Seamless</h3>
-  <p>We build software that integrates seamlessly into your existing workflow.</p>
-</VideoCard>
-<div>
-  Slide 2
-</div>
-<div>
-  Slide 3
-</div>
+  <BackgroundVideo videoSrc={ValuesVideo} videoType="mp4" />
+  <div slot="overlay" data-slide-id="0">
+    <h3>Seamless</h3>
+    <p>We build software that integrates seamlessly into your existing workflow.</p>
+  </div>
+  <div>
+    Slide 2
+  </div>
+  <div slot="overlay" data-slide-id="1">
+    <h3>Seamless</h3>
+    <p>We build software that integrates seamlessly into your existing workflow.</p>
+  </div>
+  <div>
+    Slide 3
+  </div>
 
-</SpotlightSection>
+</Carousel>

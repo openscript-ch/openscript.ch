@@ -14,8 +14,8 @@ const { Content: SpotlightSection } = await render(await getEntry("sections", `$
 ---
 
 <style>
-  :global(section) {
-    padding: var(--size-page-padding) 0;
+  :global(section):not(.carousel) {
+    padding: 0 var(--size-page-padding);
   }
 
   .other {

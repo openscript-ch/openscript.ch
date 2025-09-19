@@ -1,9 +1,9 @@
 @font-face {
   font-family: "2MASS J1808";
   src:
-    url("./fonts/2MASSJ1808-Normal.woff2") format("woff2"),
-    url("./fonts/2MASSJ1808-Normal.woff") format("woff"),
-    url("./fonts/2MASSJ1808-Normal.ttf") format("truetype");
+    url("/fonts/2MASSJ1808-Normal.woff2") format("woff2"),
+    url("/fonts/2MASSJ1808-Normal.woff") format("woff"),
+    url("/fonts/2MASSJ1808-Normal.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -12,9 +12,9 @@
 @font-face {
   font-family: "2MASS J1808";
   src:
-    url("./fonts/2MASSJ1808-Heavy.woff2") format("woff2"),
-    url("./fonts/2MASSJ1808-Heavy.woff") format("woff"),
-    url("./fonts/2MASSJ1808-Heavy.ttf") format("truetype");
+    url("/fonts/2MASSJ1808-Heavy.woff2") format("woff2"),
+    url("/fonts/2MASSJ1808-Heavy.woff") format("woff"),
+    url("/fonts/2MASSJ1808-Heavy.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -33,7 +33,7 @@
   --size-gutter-big: 2rem;
   --size-gutter-huge: 4rem;
   --size-height-divider: max(1.5rem, 2.5vw);
-  --size-page-padding: 0 1rem;
+  --size-page-padding: 1rem;
   --size-burger: 2rem;
   --size-carousel-buttons: 2rem;
 
@@ -45,7 +45,7 @@
 
 @media screen and (max-width: 400px) {
   :root {
-    --size-page-padding: 0 1rem;
+    --size-page-padding: 1rem;
   }
 }
 
@@ -54,7 +54,7 @@
 
 @media screen and (min-width: 1024px) {
   :root {
-    --size-page-padding: 0 clamp(10%, 15vw, 25%);
+    --size-page-padding: clamp(10%, 15vw, 25%);
   }
 }
 
@@ -110,7 +110,7 @@ body {
 .page-padding,
 #ribbon,
 body > :is(header, footer) {
-  padding: var(--size-page-padding);
+  padding: 0 var(--size-page-padding);
 }
 
 body > :is(header, footer) {

@@ -29,7 +29,7 @@ const { translations, bodyClasses, mainClasses } = Astro.props;
   <body class:list={[bodyClasses]}>
     <Ribbon translations={translations} />
     <Header translations={translations} />
-    <Divider kind="multi" />
+    <Divider kind="multi" transition:persist />
     <main data-pagefind-body transition:animate="fade" class:list={[mainClasses]}>
       <slot />
     </main>
