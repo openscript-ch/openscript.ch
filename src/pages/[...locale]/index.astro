@@ -14,10 +14,6 @@ const { Content: SpotlightSection } = await render(await getEntry("sections", `$
 ---
 
 <style>
-  :global(section):not(.carousel) {
-    padding: 0 var(--size-page-padding);
-  }
-
   .other {
     background-color: var(--color-white);
     z-index: 1;
@@ -27,7 +23,7 @@ const { Content: SpotlightSection } = await render(await getEntry("sections", `$
 <Shell translations={translations}>
   <SpotlightSection />
   <Divider kind="single" firstSegmentColor="var(--color-white)" fixAntialiasingBottom />
-  <section class="other">
+  <section class="other page-padding">
     <p>
       <span
         >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo consequatur veritatis voluptatum dicta, iusto

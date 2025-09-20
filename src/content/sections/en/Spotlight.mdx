@@ -1,11 +1,11 @@
-import Carousel from '../../../components/Carousel.astro';
+import SpotlightSection from '../../../layouts/sections/SpotlightSection.astro';
 import BackgroundVideo from '../../../components/BackgroundVideo.astro';
 import ValuesVideo from '../../../../res/values.mp4';
 
-<Carousel>
+<SpotlightSection>
 
   <BackgroundVideo videoSrc={ValuesVideo} videoType="mp4" />
-  <div slot="overlay" data-slide-id="0">
+  <div slot="overlay" data-slide-id="0" class="centered">
     <h3>Seamless</h3>
     <p>We build software that integrates seamlessly into your existing workflow.</p>
   </div>
@@ -20,4 +20,4 @@ import ValuesVideo from '../../../../res/values.mp4';
     Slide 3
   </div>
 
-</Carousel>
+</SpotlightSection>

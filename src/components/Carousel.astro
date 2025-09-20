@@ -2,7 +2,7 @@
 import Sprite from "./Sprite.astro";
 ---
 
-<section class="carousel">
+<div class="carousel">
   <div class="carousel-viewport">
     <div class="carousel-container">
       <slot />
@@ -21,7 +21,7 @@ import Sprite from "./Sprite.astro";
   <button class="carousel-button next" aria-label="Next Slide">
     <Sprite name="arrow" />
   </button>
-</section>
+</div>
 
 <style>
   @property --size-carousel-buttons {
@@ -41,15 +41,10 @@ import Sprite from "./Sprite.astro";
     inset: 0;
     pointer-events: none;
     height: 100%;
+    width: 100%;
 
     > *:not(.active) {
       display: none;
-    }
-
-    > * {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
     }
   }
 
