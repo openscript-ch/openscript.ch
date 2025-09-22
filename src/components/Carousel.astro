@@ -33,7 +33,6 @@ import Sprite from "./Sprite.astro";
   .carousel {
     position: relative;
     margin: calc(var(--size-height-divider) * -1) 0;
-    height: 45rem;
   }
 
   .carousel-overlay {
@@ -41,7 +40,7 @@ import Sprite from "./Sprite.astro";
     inset: 0;
     pointer-events: none;
     height: 100%;
-    width: 100%;
+    padding: 0 calc(var(--size-carousel-buttons) + var(--size-gutter-big));
 
     > *:not(.active) {
       display: none;
@@ -81,7 +80,7 @@ import Sprite from "./Sprite.astro";
     }
 
     &.prev {
-      left: calc(var(--size-page-padding) - var(--size-carousel-buttons) - 1rem);
+      left: var(--size-page-padding);
 
       svg {
         rotate: 0.25turn;
@@ -89,7 +88,7 @@ import Sprite from "./Sprite.astro";
     }
 
     &.next {
-      right: calc(var(--size-page-padding) - var(--size-carousel-buttons) - 1rem);
+      right: var(--size-page-padding);
 
       svg {
         rotate: 0.75turn;

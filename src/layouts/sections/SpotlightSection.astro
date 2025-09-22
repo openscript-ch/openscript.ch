@@ -11,6 +11,9 @@ import Carousel from "../../components/Carousel.astro";
 
 <style>
   section :global(.carousel) {
+    height: 60rem;
+    max-height: 80vh;
+
     .active.centered {
       display: flex;
       flex-direction: column;
@@ -18,12 +21,17 @@ import Carousel from "../../components/Carousel.astro";
       justify-content: center;
       height: 100%;
       color: var(--color-white);
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: bold;
       padding: 0 var(--size-page-padding);
 
+      .button {
+        font-size: 1.2rem;
+        color: var(--color-white);
+      }
+
       h3 {
-        margin-top: 0;
+        margin: 0;
       }
     }
   }
