@@ -11,7 +11,7 @@
     "url": "https://github.com/openscript-ch/openscript.ch/issues"
   },
   "repository": "github:openscript-ch/openscript.ch",
-  "packageManager": "pnpm@10.17.0",
+  "packageManager": "pnpm@10.17.1",
   "scripts": {
     "predev": "pnpm build:sprite",
     "prebuild": "pnpm build:sprite",
@@ -55,7 +55,7 @@
   "devDependencies": {
     "@changesets/cli": "^2.29.7",
     "@eslint/js": "^9.36.0",
-    "@iconify/json": "^2.2.386",
+    "@iconify/json": "^2.2.387",
     "@openscript/unplugin-favicons": "^1.1.8",
     "@types/mdast": "^4.0.4",
     "@types/node": "^24.5.2",
