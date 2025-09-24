@@ -3,10 +3,10 @@ items:
     - path: pages://de/past
       title: Vergangenheit
       children:
-        - path: pages://de/past/formation
-          title: Entstehung
         - path: pages://de/past/references
           title: Referenzen
+        - path: pages://de/past/formation
+          title: Entstehung
     - path: pages://de/present
       title: Gegenwart
       children:
@@ -21,18 +21,18 @@ items:
       children:
         - path: pages://de/future/collaboration
           title: Zusammenarbeit
-        - path: pages://de/future/jobs
-          title: Jobs
         - path: pages://de/future/services
           title: Dienstleistungen
+        - path: pages://de/future/jobs
+          title: Jobs
   en:
     - path: pages://en/past
       title: Past
       children:
-        - path: pages://en/past/formation
-          title: Formation
         - path: pages://en/past/references
           title: References
+        - path: pages://en/past/formation
+          title: Formation
     - path: pages://en/present
       title: Present
       children:
@@ -47,7 +47,7 @@ items:
       children:
         - path: pages://en/future/collaboration
           title: Collaboration
-        - path: pages://en/future/jobs
-          title: Jobs
         - path: pages://en/future/services
           title: Services
+        - path: pages://en/future/jobs
+          title: Jobs
