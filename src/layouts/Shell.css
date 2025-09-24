@@ -54,31 +54,31 @@
 
 @media screen and (min-width: 1024px) {
   :root {
-    --size-page-padding: clamp(10%, 15vw, 25%);
+    --size-page-padding: clamp(10%, 20vw, 25%);
   }
 }
 
 @media screen and (min-width: 1600px) {
   :root {
-    --font-size: 18px;
+    --font-size: 16px;
   }
 }
 
 @media screen and (min-width: 1920px) {
   :root {
-    --font-size: 20px;
+    --font-size: 18px;
   }
 }
 
 @media screen and (min-width: 2560px) {
   :root {
-    --font-size: 24px;
+    --font-size: 20px;
   }
 }
 
 @media screen and (min-width: 2800px) {
   :root {
-    --font-size: 28px;
+    --font-size: 26px;
   }
 }
 
