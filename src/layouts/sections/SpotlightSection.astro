@@ -14,16 +14,41 @@ import Carousel from "../../components/Carousel.astro";
     height: 60rem;
     max-height: 80vh;
 
-    .active.centered {
+    .background-icon img {
+      margin-inline-end: calc(var(--size-page-padding) + 7rem);
+    }
+
+    .active {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
       height: 100%;
       color: var(--color-white);
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       font-weight: bold;
       padding: 0 var(--size-page-padding);
+
+      &.align-center {
+        align-items: center;
+        justify-content: center;
+      }
+
+      &.align-end {
+        align-items: flex-end;
+        justify-content: center;
+
+        > * {
+          width: 45%;
+        }
+      }
+
+      &.align-start {
+        align-items: flex-start;
+        justify-content: center;
+
+        > * {
+          width: 60%;
+        }
+      }
 
       .button {
         font-size: 1.2rem;
