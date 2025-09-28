@@ -12,6 +12,9 @@ const locale = currentLocale.get();
 const { translations } = Astro.props;
 const { Content: SpotlightSection } = await render(await getEntry("sections", `${locale}/spotlight`)!);
 const { Content: ServicesSection } = await render(await getEntry("sections", `${locale}/services`)!);
+const { Content: ToolsSection } = await render(await getEntry("sections", `${locale}/tools`)!);
+const { Content: ReferencesSection } = await render(await getEntry("sections", `${locale}/references`)!);
+const { Content: QuestionsSection } = await render(await getEntry("sections", `${locale}/questions`)!);
 ---
 
 <style>
@@ -25,84 +28,9 @@ const { Content: ServicesSection } = await render(await getEntry("sections", `${
   <SpotlightSection />
   <Divider kind="single" firstSegmentColor="var(--color-white)" fixAntialiasingBottom />
   <ServicesSection />
+  <ToolsSection />
   <Divider kind="single" firstSegmentColor="var(--color-white)" flipVertical fixAntialiasingTop />
-  <p>
-    <span
-      >Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem expedita nisi facilis quidem temporibus magni
-      corporis ducimus voluptatem explicabo nesciunt asperiores, quas aspernatur hic accusantium reiciendis,
-      consequuntur cum ut laudantium.</span
-    ><span
-      >Architecto quia molestias sapiente, facilis repudiandae, iusto voluptatem nobis natus, illo quibusdam dolor magni
-      dolorum. Aspernatur, illo laudantium nostrum voluptatibus officiis suscipit libero aliquid, laborum, vel omnis nam
-      repudiandae fugit?</span
-    >
-  </p>
-  <p>
-    <span
-      >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam consequatur omnis dolorum amet quae reiciendis et
-      aut odit natus illum expedita est quas nesciunt ipsum consectetur, rerum pariatur incidunt ratione.</span
-    ><span
-      >Quisquam qui harum ratione et suscipit odit laborum ab at dolor fuga impedit ducimus consequatur minima eos
-      molestias saepe, doloremque exercitationem officia ut possimus officiis nemo consectetur. Nesciunt, eum adipisci?</span
-    >
-  </p>
-  <p>
-    <span
-      >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis molestiae alias dolore, est nulla facere debitis.
-      Doloribus, totam! Totam facilis sequi vero reprehenderit enim, consequatur nulla? Perspiciatis saepe eaque cum?</span
-    ><span
-      >Totam ex minima quasi nobis, laboriosam asperiores vitae illo cupiditate nisi ad. Quod rerum aspernatur aliquam
-      numquam explicabo, illo praesentium suscipit architecto neque dolor voluptate placeat ipsa facere. Sunt, nobis.</span
-    >
-  </p>
-  <p>
-    <span
-      >Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore dignissimos porro esse minima optio facilis
-      cupiditate officia nobis soluta culpa dolorem, illum at minus pariatur excepturi quae! Veniam, minus eos?</span
-    ><span
-      >Dolor illum ab pariatur delectus esse voluptas eius hic assumenda, obcaecati, ducimus, eveniet explicabo sint!
-      Laborum mollitia, sed repellendus consectetur facere sapiente eum? In sint cumque inventore sapiente commodi
-      corrupti.</span
-    >
-  </p>
-  <p>
-    <span
-      >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil rem vitae omnis est ratione neque accusamus quam
-      labore modi vel totam et nam, laudantium incidunt sunt impedit, distinctio repudiandae consectetur?</span
-    ><span
-      >Vel eum eaque perspiciatis voluptatum ipsum omnis eius nostrum, officia aspernatur minima? Magnam ex quibusdam
-      molestias odit molestiae minus eius impedit necessitatibus, accusantium, ad amet? Earum aliquam repellat magnam
-      ratione.</span
-    >
-  </p>
-  <p>
-    <span
-      >Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta voluptates quis cumque, reiciendis eius eaque
-      aspernatur et doloremque saepe quasi numquam nemo quia eveniet sapiente minus cum, rem dignissimos ullam?</span
-    ><span
-      >Facere autem obcaecati veritatis, perferendis eos animi hic! Illo, doloribus. Eaque, quam sint! Similique esse ab
-      ullam tempora, necessitatibus modi sed reiciendis obcaecati culpa inventore maiores expedita consectetur aliquam!
-      Repellendus?</span
-    >
-  </p>
-  <p>
-    <span
-      >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab at id quod tempora, voluptas dignissimos? Ipsa quo
-      repellat sint unde, delectus alias laboriosam numquam quasi totam exercitationem? Enim, minima illo.</span
-    ><span
-      >Quidem vitae labore illum, itaque non quisquam fuga maxime fugit dolores deleniti quo enim distinctio laboriosam
-      voluptas! Maiores nemo quod excepturi illo, perferendis provident culpa! Cumque fugiat iste et vel.</span
-    >
-  </p>
-  <p>
-    <span
-      >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, minus vitae fugit sit, voluptatum ullam
-      dolorum architecto distinctio, provident autem explicabo eos facilis saepe voluptates suscipit nam? Ratione,
-      deleniti voluptate!</span
-    ><span
-      >Voluptatum libero error laboriosam perspiciatis provident fuga ipsum explicabo? Voluptatibus perferendis esse
-      vitae hic autem, labore dignissimos, neque corporis modi, quae harum ex iusto id dolores repellat reprehenderit
-      commodi culpa.</span
-    >
-  </p>
+  <ReferencesSection />
+  <Divider kind="single" firstSegmentColor="var(--color-white)" fixAntialiasingBottom />
+  <QuestionsSection />
 </Shell>

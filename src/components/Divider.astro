@@ -21,17 +21,8 @@ const {
   height = "",
 } = Astro.props;
 
-const style = `transform: scaleX(${flipHorizontal ? -1 : 1}) scaleY(${flipVertical ? -1 : 1})${fixAntialiasingTop ? "; margin-block-start: -1px;" : ""}${fixAntialiasingBottom ? "; margin-block-end: -1px;" : ""}`;
+const style = `transform: scaleX(${flipHorizontal ? -1 : 1}) scaleY(${flipVertical ? -1 : 1})${fixAntialiasingTop ? "; margin-block-start: -1.1px;" : ""}${fixAntialiasingBottom ? "; margin-block-end: -1.1px;" : ""}`;
 ---
-
-<style define:vars={{ firstSegmentColor, secondSegmentColor, height }}>
-  svg {
-    --first-segment: var(--firstSegmentColor, var(--color-primary));
-    --second-segment: var(--secondSegmentColor, var(--color-primary-110));
-    width: 100%;
-    height: var(--height, var(--size-height-divider));
-  }
-</style>
 
 {
   kind === "single" ? (
@@ -48,3 +39,12 @@ const style = `transform: scaleX(${flipHorizontal ? -1 : 1}) scaleY(${flipVertic
     </svg>
   ) : null
 }
+
+<style define:vars={{ firstSegmentColor, secondSegmentColor, height }}>
+  svg {
+    --first-segment: var(--firstSegmentColor, var(--color-primary));
+    --second-segment: var(--secondSegmentColor, var(--color-primary-110));
+    width: 100%;
+    height: var(--height, var(--size-height-divider));
+  }
+</style>
