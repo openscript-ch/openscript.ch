@@ -1,0 +1,112 @@
+---
+/**
+ * Tabs Component
+ *
+ * @description A fully accessible tabs component that follows WAI-ARIA guidelines
+ */
+
+type Props = {
+  /**
+   * Additional classes to apply to the tabs container
+   */
+  class?: string;
+  /**
+   * HTML attributes to spread on the tabs container
+   */
+  [key: string]: string | number | boolean | undefined;
+};
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<div class:list={["tabs", className]} {...rest}>
+  <slot />
+</div>
+
+<script>
+  interface TabElement extends HTMLElement {
+    setAttribute(name: string, value: string): void;
+    getAttribute(name: string): string | null;
+    focus(): void;
+  }
+
+  function register() {
+    document.querySelectorAll<HTMLElement>(".tabs").forEach(initializeTabComponent);
+  }
+
+  function initializeTabComponent(component: HTMLElement) {
+    const tabList = component.querySelector<HTMLElement>('[role="tablist"]');
+    const tabs = [...component.querySelectorAll<TabElement>('[role="tab"]')];
+    const tabPanels = [...component.querySelectorAll<HTMLElement>('[role="tabpanel"]')];
+
+    let tabsIndex = tabs.findIndex(
+      (tab) => tab.getAttribute("tabindex") === "0" || tab.getAttribute("aria-selected") === "true",
+    );
+
+    if (tabsIndex === -1) {
+      tabsIndex = 0;
+    }
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        changeTabs(tab);
+      });
+    });
+
+    tabList?.addEventListener("keydown", (event: KeyboardEvent) => {
+      if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") {
+        return;
+      }
+
+      tabs[tabsIndex]?.setAttribute("tabindex", "-1");
+
+      if (event.key === "ArrowRight") {
+        tabsIndex++;
+        if (tabsIndex >= tabs.length) {
+          tabsIndex = 0;
+        }
+      }
+
+      if (event.key === "ArrowLeft") {
+        tabsIndex--;
+        if (tabsIndex < 0) {
+          tabsIndex = tabs.length - 1;
+        }
+      }
+
+      const tab = tabs[tabsIndex];
+
+      if (tab) {
+        tab.setAttribute("tabindex", "0");
+        tab.focus();
+        changeTabs(tab);
+      }
+    });
+
+    /**
+     * Switch active tab and show corresponding panel
+     * @param nextTab - The tab element to activate
+     */
+    function changeTabs(nextTab: TabElement): void {
+      tabsIndex = tabs.indexOf(nextTab);
+
+      tabs.forEach((tab) => {
+        const isSelected = tab === nextTab;
+        tab.setAttribute("aria-selected", String(isSelected));
+        tab.setAttribute("tabindex", isSelected ? "0" : "-1");
+      });
+
+      tabPanels.forEach((panel) => {
+        panel.setAttribute("aria-hidden", "true");
+      });
+
+      const targetPanel = component.querySelector<HTMLElement>(`#${nextTab.getAttribute("aria-controls")}`);
+      targetPanel?.setAttribute("aria-hidden", "false");
+    }
+  }
+
+  register();
+  document.addEventListener("astro:after-swap", () => {
+    register();
+  });
+</script>

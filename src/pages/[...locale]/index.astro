@@ -11,6 +11,7 @@ export const getStaticPaths = generateGetStaticIndexPaths("[...locale]");
 const locale = currentLocale.get();
 const { translations } = Astro.props;
 const { Content: SpotlightSection } = await render(await getEntry("sections", `${locale}/spotlight`)!);
+const { Content: ServicesSection } = await render(await getEntry("sections", `${locale}/services`)!);
 ---
 
 <style>
@@ -23,28 +24,7 @@ const { Content: SpotlightSection } = await render(await getEntry("sections", `$
 <Shell translations={translations}>
   <SpotlightSection />
   <Divider kind="single" firstSegmentColor="var(--color-white)" fixAntialiasingBottom />
-  <section class="other page-padding">
-    <p>
-      <span
-        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo consequatur veritatis voluptatum dicta, iusto
-        aut beatae corrupti, non dolore quisquam esse ut nihil autem ex repellat debitis rem dolorum! Esse.</span
-      ><span
-        >Repudiandae, cupiditate sequi adipisci itaque qui aliquid porro. Rerum porro distinctio earum iure voluptates
-        non ullam, aliquid assumenda repellat doloribus, minus asperiores quo ab aut! Quidem voluptates aut voluptas
-        iusto!</span
-      >
-    </p>
-    <p>
-      <span
-        >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis nihil repudiandae est dolor laborum
-        suscipit, necessitatibus labore reprehenderit aut nulla, ipsa quae quisquam ratione quaerat ipsum soluta eaque
-        voluptatum facilis.</span
-      ><span
-        >Ex officia unde natus dolor aperiam, labore tempora, neque molestias illo facere dolores nihil fugiat eius
-        accusamus corrupti dolorum expedita placeat ullam aliquid sit deserunt quisquam vel! Distinctio, nihil nisi.</span
-      >
-    </p>
-  </section>
+  <ServicesSection />
   <Divider kind="single" firstSegmentColor="var(--color-white)" flipVertical fixAntialiasingTop />
   <p>
     <span

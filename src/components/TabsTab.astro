@@ -1,0 +1,78 @@
+---
+/**
+ * TabsTab Component
+ *
+ * @description A tab within a Tabs component
+ */
+
+type Props = {
+  /**
+   * Additional classes to apply to the tab
+   */
+  class?: string;
+  /**
+   * Unique identifier for the tab
+   */
+  id: string;
+  /**
+   * ID of the panel this tab controls
+   */
+  controls: string;
+  /**
+   * Whether this tab is currently selected
+   * @default false
+   */
+  selected?: boolean;
+  /**
+   * HTML attributes to spread on the tab
+   */
+  [key: string]: string | number | boolean | undefined;
+};
+
+const { class: className, id, controls, selected = false, ...rest } = Astro.props;
+---
+
+<button
+  id={id}
+  role="tab"
+  class:list={["tab", className]}
+  aria-controls={controls}
+  aria-selected={selected}
+  tabindex={selected ? 0 : -1}
+  {...rest}
+>
+  <slot />
+</button>
+
+<style>
+  :where(.tab) {
+    --transition-duration: 0.2s;
+    --transition-easing: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--size-gutter);
+    flex-grow: 1;
+    flex-basis: 0;
+    cursor: pointer;
+    background-color: transparent;
+    padding: var(--size-gutter-big);
+    color: inherit;
+    text-align: center;
+    border: none;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    :where(.tab) {
+      transition: all var(--transition-duration) var(--transition-easing);
+    }
+  }
+
+  :where(.tab[aria-selected="true"]),
+  :where(.tab:hover),
+  :where(.tab:focus-visible) {
+    background-color: var(--color-background);
+    color: var(--color-secondary);
+  }
+</style>

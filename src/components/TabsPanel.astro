@@ -1,0 +1,65 @@
+---
+/**
+ * TabsPanel Component
+ *
+ * @description A panel within a Tabs component
+ */
+
+type Props = {
+  /**
+   * Additional classes to apply to the panel
+   */
+  class?: string;
+  /**
+   * Unique identifier for the panel
+   */
+  id: string;
+  /**
+   * ID of the tab that labels this panel
+   */
+  labelledby: string;
+  /**
+   * Whether this panel is currently selected
+   * @default false
+   */
+  selected?: boolean;
+  /**
+   * HTML attributes to spread on the panel
+   */
+  [key: string]: string | number | boolean | undefined;
+};
+
+const { class: className, id, labelledby, selected = false, ...rest } = Astro.props;
+---
+
+<div
+  class:list={["tab-panel", className]}
+  role="tabpanel"
+  id={id}
+  aria-labelledby={labelledby}
+  aria-hidden={!selected}
+  {...rest}
+>
+  <slot />
+</div>
+
+<style>
+  :where(.tab-panel) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 2rem;
+    min-block-size: 10rem;
+    background-color: var(--color-background);
+  }
+
+  :where(.tab-panel[aria-hidden="true"]) {
+    display: none;
+  }
+
+  :where(.tab-panel > :not(:first-child)) {
+    margin-block-start: 0.5rem;
+  }
+</style>

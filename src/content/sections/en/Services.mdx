@@ -1,0 +1,55 @@
+import ServicesSection from '../../../layouts/sections/ServicesSection.astro';
+import Tabs from '../../../components/Tabs.astro';
+import TabsList from '../../../components/TabsList.astro';
+import TabsTab from '../../../components/TabsTab.astro';
+import TabsPanel from '../../../components/TabsPanel.astro';
+import Sprite from '../../../components/Sprite.astro';
+
+<ServicesSection>
+
+  <Tabs>
+    <TabsList>
+      <TabsTab id="software" controls="software-panel" selected>
+        <Sprite name="software-development" />
+        <h3>Software development</h3>
+      </TabsTab>
+      <TabsTab id="education" controls="education-panel">
+        <Sprite name="education" />
+        <h3>Education</h3>
+      </TabsTab>
+      <TabsTab id="consulting" controls="consulting-panel">
+        <Sprite name="consulting" />
+        <h3>Consulting</h3>
+      </TabsTab>
+    </TabsList>
+
+    <TabsPanel id="software-panel" labelledby="software" selected>
+      <p>We build robust software solutions tailored to diverse needs.</p>
+      <ul>
+        <li>Web applications</li>
+        <li>Mobile applications</li>
+        <li>Identity and access management systems</li>
+        <li>Custom APIs</li>
+        <li>Calendaring solutions</li>
+        <li>Development operations</li>
+      </ul>
+    </TabsPanel>
+    <TabsPanel id="education-panel" labelledby="education">
+      <p>We share our expertise to empower your learning journey.</p>
+      <ul>
+        <li>Courses</li>
+        <li>Workshops</li>
+        <li>Presentations</li>
+      </ul>
+    </TabsPanel>
+    <TabsPanel id="consulting-panel" labelledby="consulting">
+      <p>We guide you through technical challenges with practical advice.</p>
+      <ul>
+        <li>Technical strategy</li>
+        <li>System architecture</li>
+        <li>Code reviews</li>
+      </ul>
+    </TabsPanel>
+  </Tabs>
+
+</ServicesSection>
