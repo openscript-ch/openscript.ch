@@ -20,6 +20,28 @@
 
     .tab-panel {
       font-size: 1.125rem;
+
+      ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        gap: var(--size-gutter-big);
+
+        li a {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          min-width: 10rem;
+
+          svg {
+            width: 2rem;
+            height: auto;
+          }
+        }
+      }
     }
   }
 </style>

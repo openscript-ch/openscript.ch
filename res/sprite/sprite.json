@@ -1,4 +1,12 @@
 {
+  "api": {
+    "width": "24",
+    "height": "24"
+  },
+  "architecture": {
+    "width": "24",
+    "height": "24"
+  },
   "arrow": {
     "width": "9.387",
     "height": "10"
@@ -6,6 +14,10 @@
   "brand": {
     "width": "52.089",
     "height": "35.334"
+  },
+  "calendar": {
+    "width": "24",
+    "height": "24"
   },
   "consulting": {
     "width": "24",
@@ -15,6 +27,10 @@
     "width": "279.47",
     "height": "271.35"
   },
+  "course": {
+    "width": "24",
+    "height": "24"
+  },
   "education": {
     "width": "24",
     "height": "24"
@@ -22,6 +38,10 @@
   "github": {
     "width": "66.234",
     "height": "64.4"
+  },
+  "iam": {
+    "width": "24",
+    "height": "24"
   },
   "illustration": {
     "width": "2000",
@@ -91,7 +111,35 @@
     "width": "21",
     "height": "20"
   },
+  "mobile": {
+    "width": "24",
+    "height": "24"
+  },
+  "presentation": {
+    "width": "24",
+    "height": "24"
+  },
+  "review": {
+    "width": "24",
+    "height": "24"
+  },
+  "server": {
+    "width": "24",
+    "height": "24"
+  },
   "software-development": {
+    "width": "24",
+    "height": "24"
+  },
+  "strategy": {
+    "width": "24",
+    "height": "24"
+  },
+  "web": {
+    "width": "24",
+    "height": "24"
+  },
+  "workshop": {
     "width": "24",
     "height": "24"
   }
