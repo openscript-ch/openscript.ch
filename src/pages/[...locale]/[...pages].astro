@@ -5,9 +5,9 @@ import { i18nPropsAndParams } from "astro-loader-i18n";
 import { defaultPropsAndParamsOptions } from "../../utils/paths";
 import Shell from "../../layouts/Shell.astro";
 import Article from "../../layouts/templates/Article.astro";
+import type { GetStaticPathsOptions } from "astro";
 
-export const getStaticPaths = async () => {
-  const routePattern = "[...locale]/[...pages]";
+export const getStaticPaths = async ({ routePattern }: GetStaticPathsOptions) => {
   const collection = await getCollection("pages");
 
   return i18nPropsAndParams(collection, {
