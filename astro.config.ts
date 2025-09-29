@@ -6,7 +6,6 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import search from "./src/integrations/search";
 import sitemap from "@astrojs/sitemap";
-import Icons from "unplugin-icons/vite";
 import nanostoresI18n from "astro-nanostores-i18n";
 import de from "./src/translations/de.json";
 import en from "./src/translations/en.json";
@@ -46,7 +45,6 @@ export default defineConfig({
           },
         },
       }),
-      Icons({ compiler: "astro" }),
     ],
   },
   integrations: [
