@@ -51,65 +51,69 @@
     "width": "63.928",
     "height": "63.848"
   },
+  "logo-astro": {
+    "width": "24",
+    "height": "24"
+  },
   "logo-css": {
-    "width": "1753.6",
-    "height": "2000"
+    "width": "24",
+    "height": "24"
   },
   "logo-docker": {
-    "width": "335",
-    "height": "233"
+    "width": "24",
+    "height": "24"
   },
-  "logo-gatsby": {
-    "width": "20",
-    "height": "20"
-  },
-  "logo-gitea": {
-    "width": "65",
-    "height": "40"
+  "logo-forgejo": {
+    "width": "24",
+    "height": "24"
   },
   "logo-graphql": {
-    "width": "89",
-    "height": "99"
+    "width": "24",
+    "height": "24"
   },
-  "logo-html": {
-    "width": "865",
-    "height": "981"
+  "logo-html5": {
+    "width": "24",
+    "height": "24"
   },
-  "logo-k0s": {
-    "width": "480",
-    "height": "482"
+  "logo-kubernetes": {
+    "width": "24",
+    "height": "24"
+  },
+  "logo-mantine": {
+    "width": "24",
+    "height": "24"
   },
   "logo-nestjs": {
-    "width": "256",
-    "height": "255"
+    "width": "24",
+    "height": "24"
   },
-  "logo-postgres": {
-    "width": "488",
-    "height": "506"
+  "logo-php": {
+    "width": "24",
+    "height": "24"
   },
-  "logo-rails": {
-    "width": "924",
-    "height": "325"
+  "logo-postgresql": {
+    "width": "24",
+    "height": "24"
   },
   "logo-react": {
-    "width": "23",
-    "height": "21"
+    "width": "24",
+    "height": "24"
   },
   "logo-ruby": {
-    "width": "752",
-    "height": "746"
+    "width": "24",
+    "height": "24"
+  },
+  "logo-rubyonrails": {
+    "width": "24",
+    "height": "24"
   },
   "logo-supabase": {
-    "width": "126",
-    "height": "130"
+    "width": "24",
+    "height": "24"
   },
-  "logo-ts": {
-    "width": "512",
-    "height": "512"
-  },
-  "logo-vscode": {
-    "width": "21",
-    "height": "20"
+  "logo-typescript": {
+    "width": "24",
+    "height": "24"
   },
   "mobile": {
     "width": "24",
