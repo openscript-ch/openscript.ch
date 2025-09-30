@@ -1,7 +1,7 @@
 import { extendI18nLoaderSchema, i18nContentLoader, i18nLoader, localized as localizedSchema } from "astro-loader-i18n";
 import { defineCollection, z, type ImageFunction } from "astro:content";
 import { localeSlugs } from "./site.config";
-import { glob } from "astro/loaders";
+import { glob, file } from "astro/loaders";
 
 const localized = <T extends z.ZodTypeAny>(schema: T) => localizedSchema(schema, localeSlugs);
 
@@ -24,7 +24,7 @@ const createNavigationItem = (image: ImageFunction) => {
 };
 
 const navigationCollection = defineCollection({
-  loader: i18nContentLoader({ pattern: "**/[^_]*.yml", base: "./src/content/navigation" }),
+  loader: i18nContentLoader({ pattern: "**/[^_]*.yaml", base: "./src/content/navigation" }),
   schema: ({ image }) =>
     extendI18nLoaderSchema(
       z.object({
@@ -49,8 +49,34 @@ const sectionsCollection = defineCollection({
   schema: z.object({}),
 });
 
+const referenceCompaniesCollection = defineCollection({
+  loader: file("./src/content/references/companies/index.yaml"),
+  schema: ({ image }) =>
+    z.object({
+      id: z.string(),
+      companyName: z.string(),
+      logo: image(),
+      url: z.string().url().optional(),
+    }),
+});
+
+const referenceProjectsCollection = defineCollection({
+  loader: i18nLoader({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/references/projects" }),
+  schema: ({ image }) =>
+    extendI18nLoaderSchema(
+      z.object({
+        softwareName: z.string(),
+        title: z.string(),
+        logo: image(),
+        path: z.string().url().optional(),
+      }),
+    ),
+});
+
 export const collections = {
   navigation: navigationCollection,
   pages: pagesCollection,
   sections: sectionsCollection,
+  referenceCompanies: referenceCompaniesCollection,
+  referenceProjects: referenceProjectsCollection,
 };
