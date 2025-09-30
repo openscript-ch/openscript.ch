@@ -2,6 +2,10 @@
   companyName: Bundesamt für Strassen ASTRA
   logo: ./astra.svg
   url: https://www.astra.admin.ch
+- id: dogli
+  companyName: DOGLi GmbH
+  logo: ./dogli.svg
+  url: https://dogli.app
 - id: haslerrail
   companyName: HaslerRail AG
   logo: ./haslerrail.svg
@@ -18,6 +22,11 @@
   companyName: STO Innenausbau AG
   logo: ./sto.svg
   url: https://sto-innenausbau.ch
+  archived: true
+- id: uzh
+  companyName: Universität Zürich
+  logo: ./uzh.svg
+  url: https://www.uzh.ch
 - id: wagner
   companyName: Wagner Unternehmungen AG
   logo: ./wagner.svg
@@ -26,10 +35,12 @@
   companyName: Wiegand AG
   logo: ./wiegand.png
   url: https://wiegand.ch
+  archived: true
 - id: yaver
   companyName: YAVER Infrastructure & Services GmbH
   logo: ./yaver.svg
   url: https://yaver.ch
+  archived: true
 - id: zli
   companyName: Zürcher Lehrbetriebsverband ICT
   logo: ./zli.svg

@@ -57,6 +57,7 @@ const referenceCompaniesCollection = defineCollection({
       companyName: z.string(),
       logo: image(),
       url: z.string().url().optional(),
+      archived: z.boolean().optional().default(false),
     }),
 });
 

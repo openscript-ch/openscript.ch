@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
 const locale = currentLocale.get();
-const companies = await getCollection("referenceCompanies");
+const companies = await getCollection("referenceCompanies", (entry) => !entry.data.archived);
 const projects = await getCollection("referenceProjects", (entry) => entry.data.locale === locale);
 ---
 
@@ -39,10 +39,34 @@ const projects = await getCollection("referenceProjects", (entry) => entry.data.
     z-index: 1;
   }
 
+  img {
+    height: 4rem;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
   :where(.references-projects) {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--size-gutter-big);
     margin-block-end: var(--size-gutter-big);
+
+    img {
+      height: 8rem;
+    }
+
+    div:first-child {
+      grid-column: span 2;
+
+      h3 {
+        min-height: 3rem;
+      }
+    }
+
+    h3 {
+      min-height: 5rem;
+    }
 
     div {
       background-color: var(--color-background);
@@ -50,14 +74,12 @@ const projects = await getCollection("referenceProjects", (entry) => entry.data.
       display: flex;
       flex-direction: column;
       align-items: center;
-      flex-grow: 1;
-      width: 100%;
     }
   }
 
   :where(.references-companies) {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--size-gutter-big);
 
     a {
@@ -69,17 +91,28 @@ const projects = await getCollection("referenceProjects", (entry) => entry.data.
       padding: var(--size-gutter-big);
       gap: var(--size-gutter);
       color: inherit;
-      text-decoration: none;
-      font-size: 0.875rem;
       font-weight: 600;
       background-color: var(--color-background);
     }
+  }
 
-    img {
-      height: 4rem;
-      width: auto;
-      max-width: 100%;
-      object-fit: contain;
+  @media screen and (max-width: 1600px) {
+    .references-companies {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .references-companies {
+      grid-template-columns: 1fr;
+    }
+
+    .references-projects {
+      grid-template-columns: 1fr;
+
+      div:first-child {
+        grid-column: span 1;
+      }
     }
   }
 </style>
