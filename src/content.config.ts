@@ -75,10 +75,28 @@ const referenceProjectsCollection = defineCollection({
     ),
 });
 
+const questionsCollection = defineCollection({
+  loader: i18nContentLoader({ pattern: "**/[^_]*.yaml", base: "./src/content/questions" }),
+  schema: extendI18nLoaderSchema(
+    z.object({
+      author: z.string(),
+      items: localized(
+        z.array(
+          z.object({
+            question: z.string(),
+            answer: z.string(),
+          }),
+        ),
+      ),
+    }),
+  ),
+});
+
 export const collections = {
   navigation: navigationCollection,
   pages: pagesCollection,
   sections: sectionsCollection,
   referenceCompanies: referenceCompaniesCollection,
   referenceProjects: referenceProjectsCollection,
+  questions: questionsCollection,
 };

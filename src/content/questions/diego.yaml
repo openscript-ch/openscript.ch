@@ -1,0 +1,13 @@
+author: Diego Steiner
+items:
+  de:
+    - question: Was ist der beste Editor und welches Erweiterung darf nicht fehlen?
+      answer: Ich arbeite am effektivsten mit Visual Studio Code mit der Vim-Erweiterung.
+    - question: Was braucht es, um einen guten Teamgeist aufzubauen?
+      answer: Dafür braucht es zunächst mal ein tolles Team aus Personen, die sich gegenseitig respektieren und sich selbst in die Gemeinschaft einbringen wollen. Auf diesem Fundament entsteht ein guter Teamgeist, wenn man ein gemeinsames Ziel vor Augen hat.
+
+  en:
+    - question: What is the best editor and which extension is a must-have?
+      answer: I work most effectively with Visual Studio Code with the Vim extension.
+    - question: What does it take to build a good team spirit?
+      answer: First of all, it takes a great team of people who respect each other and want to contribute to the community. On this foundation, a good team spirit arises when you have a common goal in mind.

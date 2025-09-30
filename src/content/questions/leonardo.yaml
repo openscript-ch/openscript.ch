@@ -1,0 +1,12 @@
+author: Leonardo Olivo
+items:
+  de:
+    - question: Was ist die beste Programmiersprache?
+      answer: Keine Antwort.
+    - question: Ein Gadget, das an deinem Arbeitsplatz nicht fehlen darf?
+      answer: Keine Antwort.
+  en:
+    - question: What is the best programming language?
+      answer: No answer.
+    - question: A gadget that must not be missing at your workplace?
+      answer: No answer.

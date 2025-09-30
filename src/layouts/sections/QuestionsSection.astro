@@ -1,9 +1,43 @@
+---
+import { currentLocale } from "astro-nanostores-i18n:runtime";
+import { getCollection } from "astro:content";
+import Carousel from "../../components/Carousel.astro";
+
+const locale = currentLocale.get();
+const questionsCollection = await getCollection("questions", (entry) => entry.data.locale === locale);
+const questions = questionsCollection.flatMap((q) => {
+  if (Array.isArray(q.data.items)) {
+    return q.data.items.map((item) => ({ ...item, author: q.data.author }));
+  }
+  return [];
+});
+questions.sort(() => Math.random() - 0.5);
+---
+
 <section>
-  <slot />
+  <Carousel>
+    {
+      questions.map((q) => (
+        <div>
+          <h3>{q.question}</h3>
+          <p>{q.answer}</p>
+          <p>
+            <em>- {q.author}</em>
+          </p>
+        </div>
+      ))
+    }
+  </Carousel>
 </section>
+
 <style>
   section {
     background-color: var(--color-background);
     padding: 8rem var(--size-page-padding);
+    user-select: none;
+
+    .carousel .carousel-viewport {
+      margin: 0 var(--size-gutter-huge);
+    }
   }
 </style>
