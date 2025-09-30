@@ -1,10 +1,85 @@
+---
+import { currentLocale } from "astro-nanostores-i18n:runtime";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+const locale = currentLocale.get();
+const companies = await getCollection("referenceCompanies");
+const projects = await getCollection("referenceProjects", (entry) => entry.data.locale === locale);
+---
+
 <section>
-  <slot />
+  <slot name="title" />
+  <div class="references-projects">
+    {
+      projects.map((p) => (
+        <div>
+          <Image src={p.data.logo} alt={p.data.softwareName} />
+          <h3>{p.data.title}</h3>
+          <p>{p.data.summary}</p>
+        </div>
+      ))
+    }
+  </div>
+  <div class="references-companies">
+    {
+      companies.map((c) => (
+        <a href={c.data.url || "#"} target="_blank" rel="noopener" aria-label={c.data.companyName}>
+          <Image src={c.data.logo} alt={c.data.companyName} />
+          {c.data.companyName}
+        </a>
+      ))
+    }
+  </div>
 </section>
 <style>
   section {
     background-color: var(--color-white);
     padding: 8rem var(--size-page-padding);
     z-index: 1;
+  }
+
+  :where(.references-projects) {
+    display: flex;
+    gap: var(--size-gutter-big);
+    margin-block-end: var(--size-gutter-big);
+
+    div {
+      background-color: var(--color-background);
+      padding: var(--size-gutter-big);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-grow: 1;
+      width: 100%;
+    }
+  }
+
+  :where(.references-companies) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: var(--size-gutter-big);
+
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: var(--size-gutter-big);
+      gap: var(--size-gutter);
+      color: inherit;
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 600;
+      background-color: var(--color-background);
+    }
+
+    img {
+      height: 4rem;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+    }
   }
 </style>

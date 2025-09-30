@@ -67,6 +67,7 @@ const referenceProjectsCollection = defineCollection({
       z.object({
         softwareName: z.string(),
         title: z.string(),
+        summary: z.string(),
         logo: image(),
         path: z.string().url().optional(),
       }),
