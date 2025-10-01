@@ -1,0 +1,57 @@
+---
+import { currentLocale } from "astro-nanostores-i18n:runtime";
+import Image from "astro/components/Image.astro";
+import { getCollection } from "astro:content";
+
+type Props = {
+  class?: string;
+};
+
+const { class: className } = Astro.props;
+const locale = currentLocale.get();
+const team = await getCollection("team", (entry) => entry.data.locale === locale);
+---
+
+<section class:list={[className]}>
+  <slot name="title" />
+  <div>
+    {
+      team.map(({ data: member }) => (
+        <div>
+          <Image src={member.avatar} alt={member.name} />
+          <span class="name">{member.name}</span>
+          <span class="role">{member.role}</span>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  section {
+    & > div {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--size-gutter-huge);
+      justify-items: center;
+
+      .name {
+        font-weight: bold;
+      }
+
+      & > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      img {
+        height: 12rem;
+        width: auto;
+        object-fit: cover;
+        margin-block-end: var(--size-gutter);
+      }
+    }
+  }
+</style>

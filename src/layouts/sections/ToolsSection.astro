@@ -92,9 +92,15 @@ const logos: LogoItem[] = [
 ];
 
 const randomNumber = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+type Props = {
+  class?: string;
+};
+
+const { class: className } = Astro.props;
 ---
 
-<section>
+<section class:list={[className]}>
   <header>
     <slot name="title" />
   </header>
@@ -118,7 +124,6 @@ const randomNumber = (min: number, max: number) => Math.floor(Math.random() * (m
     display: grid;
     grid-template-areas: "header header" "tools main";
     grid-template-columns: 2fr minmax(20rem, 1fr);
-    background-color: var(--color-background);
     padding: var(--size-gutter-big) var(--size-page-padding) 8rem var(--size-page-padding);
     z-index: 1;
     gap: var(--size-gutter-big);

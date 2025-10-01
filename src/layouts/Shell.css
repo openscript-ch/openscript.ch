@@ -32,6 +32,7 @@
   --size-gutter: 1rem;
   --size-gutter-big: 2rem;
   --size-gutter-huge: 4rem;
+  --size-gutter-massive: 8rem;
   --size-height-divider: max(1.5rem, 2.5vw);
   --size-page-padding: 1rem;
   --size-burger: 2rem;
@@ -160,7 +161,7 @@ h6 {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2em;
   margin-top: 0;
 }
 
@@ -202,4 +203,12 @@ main {
     text-decoration: none;
     color: inherit;
   }
+}
+
+.white-background {
+  background-color: var(--color-white);
+}
+
+.dark-background {
+  background-color: var(--color-background);
 }

@@ -1,4 +1,10 @@
-import { extendI18nLoaderSchema, i18nContentLoader, i18nLoader, localized as localizedSchema } from "astro-loader-i18n";
+import {
+  extendI18nLoaderSchema,
+  i18nContentLoader,
+  i18nFileLoader,
+  i18nLoader,
+  localized as localizedSchema,
+} from "astro-loader-i18n";
 import { defineCollection, z, type ImageFunction } from "astro:content";
 import { localeSlugs } from "./site.config";
 import { glob, file } from "astro/loaders";
@@ -92,6 +98,19 @@ const questionsCollection = defineCollection({
   ),
 });
 
+const teamCollection = defineCollection({
+  loader: i18nFileLoader("./src/content/team/index.yaml"),
+  schema: ({ image }) =>
+    extendI18nLoaderSchema(
+      z.object({
+        id: z.string(),
+        name: z.string(),
+        avatar: image(),
+        role: localized(z.string()),
+      }),
+    ),
+});
+
 export const collections = {
   navigation: navigationCollection,
   pages: pagesCollection,
@@ -99,4 +118,5 @@ export const collections = {
   referenceCompanies: referenceCompaniesCollection,
   referenceProjects: referenceProjectsCollection,
   questions: questionsCollection,
+  team: teamCollection,
 };

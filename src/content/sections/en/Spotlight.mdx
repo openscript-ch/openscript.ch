@@ -9,17 +9,17 @@ import ReferenceIcon from '../../../../res/dogli.svg';
 
 <SpotlightSection>
 
-  <BackgroundVideo videoSrc={ValuesVideo} videoType="mp4" />
-  <div slot="overlay" data-slide-id="0" class="align-center">
-    <h3>Seamless</h3>
-    <p>We build software that integrates seamlessly into your existing workflow.</p>
-    <Button href="/present/values" withArrow>Discover our values</Button>
-  </div>
   <BackgroundImage image={CollaborationImage} />
-  <div slot="overlay" data-slide-id="1" class="align-end">
+  <div slot="overlay" data-slide-id="0" class="align-end">
     <h3>Together on the right path</h3>
     <p>Let's find together the right path to bring your software to reality.</p>
     <Button href="/future/collaboration" withArrow>Collaborate with us</Button>
+  </div>
+  <BackgroundVideo videoSrc={ValuesVideo} videoType="mp4" />
+  <div slot="overlay" data-slide-id="1" class="align-center">
+    <h3>Seamless</h3>
+    <p>We build software that integrates seamlessly into your existing workflow.</p>
+    <Button href="/present/values" withArrow>Discover our values</Button>
   </div>
   <BackgroundIcon image={ReferenceIcon} dominantColor="#155263" otherColor="#0D2F39" />
   <div slot="overlay" data-slide-id="2" class="align-start">
