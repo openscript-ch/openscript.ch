@@ -1,21 +1,18 @@
 ---
 import { currentLocale } from "astro-nanostores-i18n:runtime";
 import Image from "astro/components/Image.astro";
-import { getCollection } from "astro:content";
 import { getEntry } from "astro:content";
 
 type Props = {
   class?: string;
-  title: string;
+  gallery: string;
 };
 
-const { class: className, title } = Astro.props;
+const { class: className, gallery } = Astro.props;
 const locale = currentLocale.get();
-console.log(className);
-console.log(await getCollection("galleries"));
-const gallery = await getEntry("galleries", `${title}/${locale}`);
-if (!gallery) {
-  throw new Error(`Gallery not found: ${title} (${locale})`);
+const galleryEntry = await getEntry("galleries", `${gallery}/${locale}`);
+if (!galleryEntry) {
+  throw new Error(`Gallery not found: ${gallery} (${locale})`);
 }
 ---
 
@@ -23,11 +20,32 @@ if (!gallery) {
   <slot name="title" />
   <div>
     {
-      gallery.data.items.map((item) => (
-        <div>
-          <Image src={item.photo} alt={typeof item.label === "string" ? item.label : ""} />
-        </div>
+      galleryEntry.data.items.map((item) => (
+        <Image src={item.photo} width={800} alt={typeof item.label === "string" ? item.label : ""} />
       ))
     }
   </div>
 </section>
+
+<style>
+  section {
+    & > div {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
+
+      img {
+        height: auto;
+        width: 100%;
+        object-fit: cover;
+        border-radius: var(--size-border-radius);
+        filter: saturate(0.2);
+        transition: 1s;
+
+        &:hover {
+          filter: saturate(1);
+        }
+      }
+    }
+  }
+</style>
