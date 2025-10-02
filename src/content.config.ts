@@ -111,6 +111,21 @@ const teamCollection = defineCollection({
     ),
 });
 
+const galleriesCollection = defineCollection({
+  loader: i18nContentLoader({ pattern: "**/[^_]*.yaml", base: "./src/content/galleries" }),
+  schema: ({ image }) =>
+    extendI18nLoaderSchema(
+      z.object({
+        items: z.array(
+          z.object({
+            photo: image(),
+            label: localized(z.string()),
+          }),
+        ),
+      }),
+    ),
+});
+
 export const collections = {
   navigation: navigationCollection,
   pages: pagesCollection,
@@ -119,4 +134,5 @@ export const collections = {
   referenceProjects: referenceProjectsCollection,
   questions: questionsCollection,
   team: teamCollection,
+  galleries: galleriesCollection,
 };
