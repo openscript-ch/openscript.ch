@@ -3,7 +3,7 @@
   "private": true,
   "description": "Our organizations website.",
   "type": "module",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "license": "0BSD",
   "author": "openscript Ltd.",
   "homepage": "https://github.com/openscript-ch/openscript.ch",
