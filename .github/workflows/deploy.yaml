@@ -29,9 +29,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
         with:
-          ref: main
+          ref: master
           # Fetch all history for tags
           # https://github.com/actions/checkout/issues/1471#issuecomment-1755639487
+          filter: tree:0
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
