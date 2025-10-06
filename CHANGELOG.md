@@ -1,5 +1,11 @@
 # openscript-ch-website
 
+## 0.7.2
+
+### Patch Changes
+
+- b99a0e7: Ref master in deploy workflow
+
 ## 0.7.1
 
 ### Patch Changes
