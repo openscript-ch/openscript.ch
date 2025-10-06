@@ -1,5 +1,11 @@
 # openscript-ch-website
 
+## 0.7.4
+
+### Patch Changes
+
+- a35fb84: Change default locale to de
+
 ## 0.7.3
 
 ### Patch Changes
