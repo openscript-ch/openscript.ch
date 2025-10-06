@@ -17,56 +17,13 @@ const messages = useI18n("layouts/groups/Footer.astro", {
 });
 ---
 
-<style>
-  footer {
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--color-primary);
-    padding-block: var(--size-gutter-big);
-  }
-
-  .contact {
-    display: flex;
-    gap: var(--size-gutter-big);
-
-    svg {
-      fill: var(--color-secondary);
-      height: auto;
-      width: 4rem;
-      transform: rotate(300deg);
-    }
-
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-  }
-
-  .copyright {
-    font-size: 0.8rem;
-    color: var(--color-background);
-  }
-
-  .links {
-    display: flex;
-    align-items: center;
-    gap: var(--size-gutter-big);
-
-    svg {
-      fill: var(--color-background);
-      width: 2.4rem;
-    }
-  }
-</style>
-
 <footer>
+  <Sprite class="arrow" name="arrow" />
   <div class="contact">
-    <Sprite name="arrow" />
     <Address />
     <Contact withoutLanguageSwitcher />
   </div>
-  <span class="copyright">{messages.copyright} / {messages.version({ version })}</span>
+  <span class="copyright">{messages.copyright}<br />{messages.version({ version })}</span>
   <div class="links">
     <nav>
       <Navigation items={navigation} />
@@ -79,3 +36,78 @@ const messages = useI18n("layouts/groups/Footer.astro", {
     </a>
   </div>
 </footer>
+
+<style>
+  footer {
+    display: grid;
+    grid-template-columns: min-content 1fr 1fr;
+    grid-template-areas:
+      "arrow contact links"
+      "copyright copyright copyright";
+    gap: var(--size-gutter-big);
+    background-color: var(--color-primary);
+    padding-block: var(--size-gutter-big);
+
+    .arrow {
+      grid-area: arrow;
+      fill: var(--color-secondary);
+      height: auto;
+      width: 4rem;
+      transform: rotate(300deg) translateX(-0.7rem);
+    }
+
+    .contact {
+      grid-area: contact;
+      align-self: flex-end;
+      display: flex;
+      gap: var(--size-gutter-big);
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    .links {
+      grid-area: links;
+      justify-content: flex-end;
+      align-self: flex-end;
+      display: flex;
+      gap: var(--size-gutter-big);
+      width: 100%;
+
+      svg {
+        fill: var(--color-background);
+        width: 2.4rem;
+      }
+    }
+
+    .copyright {
+      grid-area: copyright;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--color-background);
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    footer {
+      grid-template-areas:
+        "contact"
+        "links"
+        "copyright";
+      grid-template-columns: repeat(1, 1fr);
+
+      .arrow {
+        display: none;
+      }
+
+      .contact,
+      .links {
+        margin: 0 auto;
+        justify-content: center;
+      }
+    }
+  }
+</style>
