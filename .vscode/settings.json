@@ -1,43 +1,16 @@
 {
-  "i18n-ally.localesPaths": [
-    "content/i18n"
-  ],
-  "editor.formatOnSave": true,
-  "eslint.options": {
-    "extensions": [
-      ".md",
-      ".mdx",
-      ".js",
-      ".jsx",
-      ".ts",
-      ".tsx",
-    ]
-  },
-  "eslint.validate": [
-    "markdown",
-    "mdx",
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
-  "i18n-ally.enabledFrameworks": [
-    "react"
-  ],
-  "i18n-ally.keystyle": "flat",
-  "i18n-ally.sortKeys": true,
-  "i18n-ally.sourceLanguage": "de-CH",
-  "i18n-ally.displayLanguage": "de-CH",
+  "cSpell.language": "en,de-ch",
   "cSpell.words": [
-    "Bühler",
-    "Europastrasse",
-    "frontmatter",
-    "gatsby",
-    "Glattbrugg",
-    "Micael",
-    "openscript",
-    "Stampa",
-    "Stäubli"
+    "Astro"
   ],
-  "cSpell.language": "de-de, en"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.rulers": [
+    120
+  ],
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 }

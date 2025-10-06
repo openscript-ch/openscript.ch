@@ -1,5 +1,10 @@
-# Created by https://www.toptal.com/developers/gitignore/api/windows,linux,macos,node,react,visualstudiocode,intellij
-# Edit at https://www.toptal.com/developers/gitignore?templates=windows,linux,macos,node,react,visualstudiocode,intellij
+# Created by https://www.toptal.com/developers/gitignore/api/windows,linux,macos,node,react,visualstudiocode,intellij,astro
+# Edit at https://www.toptal.com/developers/gitignore?templates=windows,linux,macos,node,react,visualstudiocode,intellij,astro
+
+### Astro ###
+# Gitignore template for Astro projects
+# Ignore content collection generated files
+.astro
 
 ### Intellij ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
@@ -360,8 +365,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/windows,linux,macos,node,react,visualstudiocode,intellij
+# End of https://www.toptal.com/developers/gitignore/api/windows,linux,macos,node,react,visualstudiocode,intellij,astro
 
-# Gatsby
-public
-static/sprite.svg
+.pnpm-store
+public/sprite.svg

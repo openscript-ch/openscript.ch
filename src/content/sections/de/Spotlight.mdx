@@ -1,0 +1,31 @@
+import SpotlightSection from '../../../layouts/sections/SpotlightSection.astro';
+import BackgroundVideo from '../../../components/BackgroundVideo.astro';
+import BackgroundImage from '../../../components/BackgroundImage.astro';
+import BackgroundIcon from '../../../components/BackgroundIcon.astro';
+import Button from '../../../components/Button.astro';
+import ValuesVideo from '../../../../res/values.mp4';
+import CollaborationImage from '../../../../res/collaboration.jpg';
+import ReferenceIcon from '../../../../res/dogli.svg';
+
+<SpotlightSection>
+
+  <BackgroundImage image={CollaborationImage} />
+  <div slot="overlay" data-slide-id="0" class="align-end">
+    <h3>Gemeinsam auf dem richtigen Weg</h3>
+    <p>Finden wir gemeinsam den richtigen Weg, um Ihre Software Wirklichkeit werden zu lassen.</p>
+    <Button href="/future/collaboration" withArrow>Mit uns zusammenarbeiten</Button>
+  </div>
+  <BackgroundVideo videoSrc={ValuesVideo} videoType="mp4" />
+  <div slot="overlay" data-slide-id="1" class="align-center">
+    <h3>Nahtlos</h3>
+    <p>Wir entwickeln Software, die sich nahtlos in Ihren bestehenden Arbeitsablauf integriert.</p>
+    <Button href="/present/values" withArrow>Unsere Werte entdecken</Button>
+  </div>
+  <BackgroundIcon image={ReferenceIcon} dominantColor="#155263" otherColor="#0D2F39" />
+  <div slot="overlay" data-slide-id="2" class="align-start">
+    <h3>Die ultimative Hunde-Bereicherungs-App</h3>
+    <p>Eine Smartphone-App mit Social-Media-Funktionen, um das Leben Ihres besten Freundes zu bereichern.</p>
+    <Button href="/past/references/dogli" withArrow>DOGLi entdecken</Button>
+  </div>
+
+</SpotlightSection>

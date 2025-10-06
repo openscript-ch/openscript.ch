@@ -1,0 +1,150 @@
+{
+  "api": {
+    "width": "24",
+    "height": "24"
+  },
+  "architecture": {
+    "width": "24",
+    "height": "24"
+  },
+  "arrow": {
+    "width": "9.387",
+    "height": "10"
+  },
+  "brand": {
+    "width": "52.089",
+    "height": "35.334"
+  },
+  "calendar": {
+    "width": "24",
+    "height": "24"
+  },
+  "consulting": {
+    "width": "24",
+    "height": "24"
+  },
+  "cooperation": {
+    "width": "279.47",
+    "height": "271.35"
+  },
+  "course": {
+    "width": "24",
+    "height": "24"
+  },
+  "education": {
+    "width": "24",
+    "height": "24"
+  },
+  "github": {
+    "width": "66.234",
+    "height": "64.4"
+  },
+  "iam": {
+    "width": "24",
+    "height": "24"
+  },
+  "illustration": {
+    "width": "2000",
+    "height": "668.01"
+  },
+  "linkedin": {
+    "width": "63.928",
+    "height": "63.848"
+  },
+  "logo-astro": {
+    "width": "24",
+    "height": "24"
+  },
+  "logo-css": {
+    "width": "24",
+    "height": "24"
+  },
+  "logo-docker": {
+    "width": "24",
+    "height": "24"
+  },
+  "logo-forgejo": {
+    "width": "24",
+    "height": "24"
+  },
+  "logo-graphql": {
+    "width": "24",
+    "height": "24"
+  },
+  "logo-html5": {
+    "width": "24",
+    "height": "24"
+  },
+  "logo-kubernetes": {
+    "width": "24",
+    "height": "24"
+  },
+  "logo-mantine": {
+    "width": "24",
+    "height": "24"
+  },
+  "logo-nestjs": {
+    "width": "24",
+    "height": "24"
+  },
+  "logo-php": {
+    "width": "24",
+    "height": "24"
+  },
+  "logo-postgresql": {
+    "width": "24",
+    "height": "24"
+  },
+  "logo-react": {
+    "width": "24",
+    "height": "24"
+  },
+  "logo-ruby": {
+    "width": "24",
+    "height": "24"
+  },
+  "logo-rubyonrails": {
+    "width": "24",
+    "height": "24"
+  },
+  "logo-supabase": {
+    "width": "24",
+    "height": "24"
+  },
+  "logo-typescript": {
+    "width": "24",
+    "height": "24"
+  },
+  "mobile": {
+    "width": "24",
+    "height": "24"
+  },
+  "presentation": {
+    "width": "24",
+    "height": "24"
+  },
+  "review": {
+    "width": "24",
+    "height": "24"
+  },
+  "server": {
+    "width": "24",
+    "height": "24"
+  },
+  "software-development": {
+    "width": "24",
+    "height": "24"
+  },
+  "strategy": {
+    "width": "24",
+    "height": "24"
+  },
+  "web": {
+    "width": "24",
+    "height": "24"
+  },
+  "workshop": {
+    "width": "24",
+    "height": "24"
+  }
+}

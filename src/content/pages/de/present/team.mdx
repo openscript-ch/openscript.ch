@@ -1,0 +1,24 @@
+---
+path: team
+title: Team
+---
+
+import Divider from "../../../../components/Divider.astro";
+import TeamSection from "../../../../layouts/sections/TeamSection.astro";
+import ImpressionsSection from "../../../../layouts/sections/ImpressionsSection.astro";
+
+<section class="spotlight">
+  Lernen Sie das Team hinter unserem Unternehmen kennen - eine Gruppe von engagierten und qualifizierten Fachleuten, die mit Leidenschaft massgeschneiderte Softwarelösungen entwickeln, die auf die spezifischen Bedürfnisse unserer Kunden zugeschnitten sind. Neben unserer Expertise in der Softwareentwicklung engagieren wir uns auch für die Förderung der Berufsbildung in der Schweiz. Wir sind ein aufgeschlossenes, ganzheitliches und vertrauenswürdiges Team und freuen uns darauf, bald mit Ihnen gemeinsam in die Welt der Bits und Bytes einzutauchen.
+</section>
+
+<Divider firstSegmentColor="var(--color-white)" />
+
+<TeamSection class="white-background">
+  <h2 slot="title">Porträts</h2>
+</TeamSection>
+
+<Divider firstSegmentColor="var(--color-white)" flipVertical />
+
+<ImpressionsSection gallery="team" class="dark-background">
+  <h2 slot="title">Impressionen</h2>
+</ImpressionsSection>

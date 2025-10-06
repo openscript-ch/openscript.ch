@@ -1,0 +1,118 @@
+---
+import { currentLocale } from "astro-nanostores-i18n:runtime";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+const locale = currentLocale.get();
+const companies = await getCollection("referenceCompanies", (entry) => !entry.data.archived);
+const projects = await getCollection("referenceProjects", (entry) => entry.data.locale === locale);
+---
+
+<section>
+  <slot name="title" />
+  <div class="references-projects">
+    {
+      projects.map((p) => (
+        <div>
+          <Image src={p.data.logo} alt={p.data.softwareName} />
+          <h3>{p.data.title}</h3>
+          <p>{p.data.summary}</p>
+        </div>
+      ))
+    }
+  </div>
+  <div class="references-companies">
+    {
+      companies.map((c) => (
+        <a href={c.data.url || "#"} target="_blank" rel="noopener" aria-label={c.data.companyName}>
+          <Image src={c.data.logo} alt={c.data.companyName} />
+          {c.data.companyName}
+        </a>
+      ))
+    }
+  </div>
+</section>
+<style>
+  section {
+    background-color: var(--color-white);
+    padding: 8rem var(--size-page-padding);
+    z-index: 1;
+  }
+
+  img {
+    height: 4rem;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  :where(.references-projects) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--size-gutter-big);
+    margin-block-end: var(--size-gutter-big);
+
+    img {
+      height: 8rem;
+    }
+
+    div:first-child {
+      grid-column: span 2;
+
+      h3 {
+        min-height: 3rem;
+      }
+    }
+
+    h3 {
+      min-height: 5rem;
+    }
+
+    div {
+      background-color: var(--color-background);
+      padding: var(--size-gutter-big);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  :where(.references-companies) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--size-gutter-big);
+
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: var(--size-gutter-big);
+      gap: var(--size-gutter);
+      color: inherit;
+      font-weight: 600;
+      background-color: var(--color-background);
+    }
+  }
+
+  @media screen and (max-width: 1600px) {
+    .references-companies {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .references-companies {
+      grid-template-columns: 1fr;
+    }
+
+    .references-projects {
+      grid-template-columns: 1fr;
+
+      div:first-child {
+        grid-column: span 1;
+      }
+    }
+  }
+</style>

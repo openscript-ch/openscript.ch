@@ -1,0 +1,37 @@
+---
+import { currentLocale } from "astro-nanostores-i18n:runtime";
+import Shell from "../../layouts/Shell.astro";
+import { generateGetStaticIndexPaths } from "../../utils/paths";
+import { render } from "astro:content";
+import { getEntry } from "astro:content";
+import Divider from "../../components/Divider.astro";
+
+export const getStaticPaths = generateGetStaticIndexPaths("[...locale]");
+
+const locale = currentLocale.get();
+const { translations } = Astro.props;
+const { Content: SpotlightSection } = await render(await getEntry("sections", `${locale}/spotlight`)!);
+const { Content: ServicesSection } = await render(await getEntry("sections", `${locale}/services`)!);
+const { Content: ToolsSection } = await render(await getEntry("sections", `${locale}/tools`)!);
+const { Content: ReferencesSection } = await render(await getEntry("sections", `${locale}/references`)!);
+const { Content: QuestionsSection } = await render(await getEntry("sections", `${locale}/questions`)!);
+---
+
+<style>
+  .other {
+    background-color: var(--color-white);
+    z-index: 1;
+  }
+</style>
+
+<Shell translations={translations}>
+  <SpotlightSection />
+  <Divider kind="single" firstSegmentColor="var(--color-white)" fixAntialiasingBottom />
+  <ServicesSection />
+  <Divider kind="single" firstSegmentColor="var(--color-white)" flipVertical fixAntialiasingTop />
+  <ToolsSection />
+  <Divider kind="single" firstSegmentColor="var(--color-white)" fixAntialiasingBottom />
+  <ReferencesSection />
+  <Divider kind="single" firstSegmentColor="var(--color-white)" flipVertical fixAntialiasingTop />
+  <QuestionsSection />
+</Shell>

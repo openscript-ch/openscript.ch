@@ -1,0 +1,212 @@
+---
+import { currentLocale } from "astro-nanostores-i18n:runtime";
+import Sprite from "../../components/Sprite.astro";
+import { prepareNavigation, resolvePath } from "../../utils/paths";
+import { C } from "../../site.config";
+import Navigation from "../../components/Navigation.astro";
+import Burger from "../../components/Burger.astro";
+import Contact from "./Contact.astro";
+
+type Props = {
+  translations?: Record<string, string>;
+};
+
+const { translations } = Astro.props;
+const locale = currentLocale.get();
+const navigation = await prepareNavigation(`main/${locale}`);
+---
+
+<style>
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-primary);
+    height: 6rem;
+  }
+
+  header a :global(svg) {
+    fill: var(--color-background);
+    width: 4.5rem;
+    margin-inline-start: 1.8rem;
+    height: auto;
+  }
+
+  header :global(.burger) {
+    display: none;
+    z-index: 200;
+  }
+
+  header nav > :global(ul) {
+    display: flex;
+    font-size: 1.4rem;
+    gap: var(--size-gutter-big);
+
+    > li {
+      position: relative;
+      padding: 1rem 0;
+
+      svg {
+        margin-left: 0.5rem;
+        width: 1rem;
+        height: 1rem;
+        fill: var(--color-secondary);
+      }
+
+      > ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 50%;
+        transform: translateX(50%);
+        z-index: 20;
+        background-color: var(--color-white);
+        box-shadow: 2px 2px 0 var(--color-primary);
+        white-space: nowrap;
+
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: -0.7rem;
+          right: 50%;
+          transform: translateX(50%);
+          width: 0;
+          height: 0;
+          border-inline: 0.7rem solid transparent;
+          border-block-end: 0.7rem solid var(--color-white);
+        }
+
+        a {
+          display: block;
+          padding: 1rem;
+          color: var(--color-black) !important;
+        }
+      }
+
+      &:hover {
+        > ul {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .contact {
+    display: none;
+  }
+
+  :global(.burger-active) header nav {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--color-background);
+
+    a:hover {
+      color: var(--color-secondary) !important;
+    }
+
+    ul {
+      display: block;
+    }
+
+    > ul {
+      margin-top: 9rem;
+
+      > li {
+        width: 100%;
+        background-color: var(--color-white);
+        padding: 0;
+
+        a {
+          padding: 1rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          color: var(--color-black) !important;
+
+          svg {
+            transform: rotate(270deg);
+          }
+        }
+
+        > ul {
+          position: static;
+          transform: unset;
+          background-color: var(--color-background);
+          box-shadow: none;
+
+          &::before {
+            content: unset;
+          }
+
+          li {
+            margin-left: 1rem;
+
+            a {
+              padding: 0.8rem;
+            }
+          }
+        }
+      }
+    }
+
+    .contact {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding: 1rem;
+
+      svg {
+        height: auto;
+        width: 4rem;
+        transform: rotate(300deg);
+        fill: var(--color-secondary);
+      }
+    }
+  }
+
+  .contact :global(ul) {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      padding: 0;
+    }
+
+    a {
+      color: var(--color-black) !important;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    header :global(.burger) {
+      display: block;
+    }
+
+    header nav {
+      display: none;
+    }
+  }
+</style>
+
+<header>
+  <a href={resolvePath(`${locale === C.DEFAULT_LOCALE ? "" : locale}`)}>
+    <Sprite name="brand" />
+  </a>
+  <Burger />
+  <nav>
+    <Navigation items={navigation}>
+      <Sprite slot="nesting-indicator" name="arrow" />
+    </Navigation>
+    <div class="contact">
+      <Sprite name="arrow" />
+      <Contact translations={translations} />
+    </div>
+  </nav>
+</header>

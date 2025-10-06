@@ -1,0 +1,18 @@
+- id: diego-steiner
+  name: Diego Steiner
+  avatar: ./diego-steiner.svg
+  role:
+    de: Mitgründer und Softwareentwickler
+    en: Co-founder and Software Developer
+- id: leonardo-olivo
+  name: Leonardo Olivo
+  avatar: ./leonardo-olivo.svg
+  role:
+    de: Softwareentwickler
+    en: Software Developer
+- id: robin-buehler
+  name: Robin Bühler
+  avatar: ./robin-buehler.svg
+  role:
+    de: Mitgründer und Softwareentwickler
+    en: Co-founder and Software Developer

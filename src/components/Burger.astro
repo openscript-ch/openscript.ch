@@ -1,0 +1,87 @@
+---
+
+---
+
+<button aria-label="burger button" type="button" class="burger">
+  <div class="icon"></div>
+</button>
+
+<style>
+  @property --size-burger {
+    syntax: "<length>";
+    inherits: true;
+    initial-value: 2rem;
+  }
+
+  button {
+    position: relative;
+    background: transparent;
+    border: none;
+    height: var(--size-burger);
+    width: var(--size-burger);
+    cursor: pointer;
+  }
+
+  button:hover .icon,
+  button:hover .icon::before,
+  button:hover .icon::after,
+  :global(.burger-active) button .icon,
+  :global(.burger-active) button .icon::before,
+  :global(.burger-active) button .icon::after {
+    background-color: var(--color-secondary);
+  }
+
+  .icon,
+  .icon::before,
+  .icon::after {
+    display: block;
+    transform-origin: center center;
+    transition: 0.3s;
+    position: absolute;
+    content: "";
+    background-color: var(--color-background);
+    height: round(nearest, calc(var(--size-burger) / 7.5), 1px);
+    width: var(--size-burger);
+    left: 0;
+    opacity: 1;
+  }
+
+  .active .icon {
+    transform: rotateZ(-180deg);
+    height: 0;
+  }
+
+  .icon::before {
+    top: calc(var(--size-burger) / -3);
+  }
+
+  .active .icon::before {
+    transform: rotateZ(-45deg) scaleX(0.9) translate(calc(var(--size-burger) / -4), calc(var(--size-burger) / 4));
+  }
+
+  .icon::after {
+    top: calc(var(--size-burger) / 3);
+  }
+
+  .active .icon::after {
+    transform: rotateZ(45deg) scaleX(0.9) translate(calc(var(--size-burger) / -4), calc(var(--size-burger) / -4));
+  }
+
+  .icon {
+    top: calc(var(--size-burger) / 2);
+  }
+</style>
+
+<script>
+  function register() {
+    const button = document.querySelector(".burger")!;
+
+    button.addEventListener("click", () => {
+      button.classList.toggle("active");
+      document.body.classList.toggle("burger-active");
+    });
+  }
+
+  register();
+  document.addEventListener("astro:after-swap", register);
+</script>

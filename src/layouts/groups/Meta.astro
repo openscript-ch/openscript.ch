@@ -1,0 +1,27 @@
+---
+import { author as packageAuthor } from "../../../package.json";
+import { useI18n } from "astro-nanostores-i18n:runtime";
+import { C } from "../../site.config";
+
+type Props = {
+  title?: string;
+  author?: string;
+  description?: string;
+  keywords?: string;
+};
+
+const props = Astro.props;
+const messages = useI18n("layouts/groups/Meta.astro", {
+  description: "Companions for adventures in the world of bits and bytes.",
+});
+
+const title = props.title ? `${props.title} - ${C.SETTINGS.META.TITLE}` : C.SETTINGS.META.TITLE;
+const author = props.author || packageAuthor;
+const description = props.description || messages.description;
+const keywords = props.keywords;
+---
+
+<title>{title}</title>
+<meta name="author" content={author} />
+<meta name="description" content={description} />
+{keywords && <meta name="keywords" content={keywords} />}

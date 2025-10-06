@@ -1,0 +1,215 @@
+@font-face {
+  font-family: "2MASS J1808";
+  src:
+    url("/fonts/2MASSJ1808-Normal.woff2") format("woff2"),
+    url("/fonts/2MASSJ1808-Normal.woff") format("woff"),
+    url("/fonts/2MASSJ1808-Normal.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "2MASS J1808";
+  src:
+    url("/fonts/2MASSJ1808-Heavy.woff2") format("woff2"),
+    url("/fonts/2MASSJ1808-Heavy.woff") format("woff"),
+    url("/fonts/2MASSJ1808-Heavy.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --color-primary-90: color-mix(in srgb, var(--color-primary), black 10%);
+  --color-primary: #539350;
+  --color-primary-110: color-mix(in srgb, var(--color-primary), white 10%);
+  --color-secondary: #fa5100;
+  --color-background: #ede9df;
+  --color-black: #231f20;
+  --color-white: #fbfffb;
+
+  --size-gutter: 1rem;
+  --size-gutter-big: 2rem;
+  --size-gutter-huge: 4rem;
+  --size-gutter-massive: 8rem;
+  --size-height-divider: max(1.5rem, 2.5vw);
+  --size-page-padding: 1rem;
+  --size-burger: 2rem;
+  --size-carousel-buttons: 2rem;
+
+  --font-size: 16px;
+  --font-text: "PT Sans", sans-serif;
+  --font-mono: "Fira Mono", monospace;
+  --font-heading: "2MASS J1808", sans-serif;
+}
+
+@media screen and (max-width: 400px) {
+  :root {
+    --size-page-padding: 1rem;
+  }
+}
+
+@media screen and (min-width: 640px) {
+}
+
+@media screen and (min-width: 1025px) {
+  :root {
+    --size-page-padding: clamp(10%, 12.5vw, 25%);
+  }
+}
+
+@media screen and (min-width: 1601px) {
+  :root {
+    --font-size: 16px;
+    --size-page-padding: clamp(10%, 20vw, 25%);
+  }
+}
+
+@media screen and (min-width: 1921px) {
+  :root {
+    --font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 2561px) {
+  :root {
+    --font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 2801px) {
+  :root {
+    --font-size: 26px;
+  }
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+html {
+  scrollbar-color: var(--color-primary) var(--color-background);
+  height: 100%;
+  background-color: var(--color-primary);
+  font-size: var(--font-size);
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-text);
+  margin: 0;
+  background-color: var(--color-background);
+
+  > .divider {
+    z-index: 5;
+  }
+}
+
+.page-padding,
+#ribbon,
+body > :is(header, footer) {
+  padding: 0 var(--size-page-padding);
+}
+
+body > :is(header, footer) {
+  z-index: 10;
+}
+
+#ribbon ::selection,
+body > :is(header, footer) ::selection {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+}
+
+:is(header, footer, #ribbon) a {
+  text-decoration: none;
+  color: var(--color-background);
+  font-weight: bold;
+
+  &:hover {
+    color: var(--color-white);
+  }
+
+  &.active {
+    color: var(--color-white);
+  }
+}
+
+body.burger-active {
+  overflow: hidden;
+}
+
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--font-mono);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  margin-top: 2.2em;
+}
+
+h1 {
+  font-size: 2em;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 1.7em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.3em;
+}
+
+h5 {
+  font-size: 1.2em;
+}
+
+h5 {
+  font-size: 1.1em;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  a {
+    color: var(--color-primary-90);
+    text-decoration: none;
+
+    :hover {
+      color: var(--color-primary-110);
+      text-decoration: underline;
+    }
+  }
+  :is(h1, h2, h3, h4, h5, h6) a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.white-background {
+  background-color: var(--color-white);
+}
+
+.dark-background {
+  background-color: var(--color-background);
+}

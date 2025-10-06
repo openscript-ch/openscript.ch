@@ -1,0 +1,21 @@
+---
+import SpriteData from "../../res/sprite/sprite.json";
+
+type Props = {
+  name: keyof typeof SpriteData;
+  class?: string;
+  viewBox?: string;
+};
+
+const dimensions = SpriteData[Astro.props.name];
+const { class: className, viewBox, name: spriteName } = Astro.props;
+---
+
+<svg
+  class={className ?? undefined}
+  width={viewBox ? undefined : dimensions.width}
+  height={viewBox ? undefined : dimensions.height}
+  viewBox={viewBox}
+>
+  <use href={`/sprite.svg#${spriteName}`}></use>
+</svg>

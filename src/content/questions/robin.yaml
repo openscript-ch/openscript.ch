@@ -1,0 +1,16 @@
+author: Robin Bühler
+items:
+  de:
+    - question: Was ist zurzeit das beste Javascript Framework?
+      answer: Je nach vorhaben unterschiedlich! Mir gefällt Astro für die Entwicklung von statischen Webseiten sehr gut. Fürs Beschreiben von UI-Komponenten ist meiner Meinung nach React schwer zu schlagen.
+    - question: Welches ist das beste Betriebssystem?
+      answer: Ich mag auf Linux basierte Betriebssysteme sehr, insbesondere Arch Linux, weil diese Systeme es einem ermöglichen alles anzusehen und zu verändern, wie es einem gefällt.
+    - question: Welche Werte sind wichtig für das funktionieren einer Firma?
+      answer: Offenheit, Ehrlichkeit, ein gesundes Mass für die Einschätzung der eigenen Fähig- und Möglichkeiten, sowie das stete Lernen aus Fehlern und suchen nach Verbesserungen.
+  en:
+    - question: What is currently the best Javascript framework?
+      answer: It depends on the project! I really like Astro for developing static websites. For describing UI components, in my opinion, React is hard to beat.
+    - question: What is the best operating system?
+      answer: I really like Linux-based operating systems, especially Arch Linux, because these systems allow you to view and modify everything as you like.
+    - question: Which values are important for a company to function?
+      answer: Openness, honesty, a healthy sense of one's own abilities and possibilities, as well as constantly learning from mistakes and seeking improvements.

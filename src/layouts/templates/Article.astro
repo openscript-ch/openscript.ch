@@ -1,0 +1,43 @@
+---
+type Props = {
+  title: string;
+};
+
+const { title } = Astro.props;
+---
+
+<article>
+  <header>
+    <h1>{title}</h1>
+  </header>
+  <slot />
+</article>
+
+<style>
+  article {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 1.2rem;
+    padding-block: var(--size-gutter-huge);
+
+    header {
+      padding: 0 var(--size-page-padding);
+      text-align: center;
+    }
+
+    section {
+      padding: 0 var(--size-page-padding);
+      font-size: 1.4rem;
+      padding-block: var(--size-gutter-massive);
+
+      &:first-of-type {
+        padding-block-start: var(--size-gutter-big);
+      }
+
+      & > *:first-child {
+        margin-block-start: 0;
+      }
+    }
+  }
+</style>

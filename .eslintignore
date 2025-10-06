@@ -1,7 +1,0 @@
-node_modules
-public
-dist
-.cache
-*.js
-__mock__
-graphql-types.ts

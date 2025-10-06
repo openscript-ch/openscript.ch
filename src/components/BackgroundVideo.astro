@@ -1,0 +1,33 @@
+---
+type Props = {
+  videoSrc: string;
+  videoType?: "mp4" | "webm" | "ogg";
+};
+
+const { videoSrc, videoType = "mp4" } = Astro.props;
+---
+
+<div class="background-video">
+  <video class="background-video-player" autoplay muted loop playsinline>
+    <source src={videoSrc} type={`video/${videoType}`} />
+  </video>
+</div>
+
+<style>
+  .background-video {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .background-video-player {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
+  }
+</style>

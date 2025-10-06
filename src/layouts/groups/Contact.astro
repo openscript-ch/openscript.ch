@@ -1,0 +1,30 @@
+---
+import { currentLocale } from "astro-nanostores-i18n:runtime";
+import LanguageSwitcher from "../../components/LanguageSwitcher.astro";
+import Phone from "./Phone.astro";
+import Email from "./Email.astro";
+
+type Props = {
+  translations?: Record<string, string>;
+  withoutLanguageSwitcher?: boolean;
+};
+
+const { translations, withoutLanguageSwitcher } = Astro.props;
+const locale = currentLocale.get();
+---
+
+<ul>
+  <li>
+    <Phone />
+  </li>
+  <li>
+    <Email />
+  </li>
+  {
+    withoutLanguageSwitcher ? null : (
+      <li>
+        <LanguageSwitcher locale={locale} translations={translations} />
+      </li>
+    )
+  }
+</ul>

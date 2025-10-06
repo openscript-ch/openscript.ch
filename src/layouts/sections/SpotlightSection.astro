@@ -1,0 +1,71 @@
+---
+import Carousel from "../../components/Carousel.astro";
+---
+
+<section>
+  <Carousel>
+    <slot />
+    <slot name="overlay" slot="overlay" />
+  </Carousel>
+</section>
+
+<style>
+  section :global(.carousel) {
+    height: 60rem;
+    max-height: 80vh;
+
+    .background-icon img {
+      margin-inline-end: calc(var(--size-page-padding) + 7rem);
+    }
+
+    .prev {
+      left: var(--size-page-padding);
+    }
+
+    .next {
+      right: var(--size-page-padding);
+    }
+
+    .active {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      color: var(--color-white);
+      font-size: 1.6rem;
+      font-weight: bold;
+      padding: 0 var(--size-page-padding);
+
+      &.align-center {
+        align-items: center;
+        justify-content: center;
+      }
+
+      &.align-end {
+        align-items: flex-end;
+        justify-content: center;
+
+        > * {
+          width: 45%;
+        }
+      }
+
+      &.align-start {
+        align-items: flex-start;
+        justify-content: center;
+
+        > * {
+          width: 60%;
+        }
+      }
+
+      .button {
+        font-size: 1.2rem;
+        color: var(--color-white);
+      }
+
+      h3 {
+        margin: 0;
+      }
+    }
+  }
+</style>

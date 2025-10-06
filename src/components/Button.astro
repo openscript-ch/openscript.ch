@@ -1,0 +1,31 @@
+---
+import Sprite from "./Sprite.astro";
+
+type Props = {
+  href: string;
+  withArrow?: boolean;
+};
+
+const { href, withArrow } = Astro.props;
+---
+
+<a href={href} class="button">
+  <slot />
+  {withArrow && <Sprite name="arrow" />}
+</a>
+
+<style>
+  a {
+    display: flex;
+    pointer-events: all;
+    align-items: center;
+
+    svg {
+      padding: var(--size-gutter);
+      rotate: 0.75turn;
+      fill: var(--color-secondary);
+      height: 1em;
+      width: auto;
+    }
+  }
+</style>

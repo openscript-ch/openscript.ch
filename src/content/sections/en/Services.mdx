@@ -1,0 +1,117 @@
+import ServicesSection from '../../../layouts/sections/ServicesSection.astro';
+import Tabs from '../../../components/Tabs.astro';
+import TabsList from '../../../components/TabsList.astro';
+import TabsTab from '../../../components/TabsTab.astro';
+import TabsPanel from '../../../components/TabsPanel.astro';
+import Sprite from '../../../components/Sprite.astro';
+
+<ServicesSection>
+
+  <h2>What we offer</h2>
+
+  <Tabs>
+    <TabsList>
+      <TabsTab id="software" controls="software-panel" selected>
+        <Sprite name="software-development" />
+        <h3>Software development</h3>
+      </TabsTab>
+      <TabsTab id="education" controls="education-panel">
+        <Sprite name="education" />
+        <h3>Education</h3>
+      </TabsTab>
+      <TabsTab id="consulting" controls="consulting-panel">
+        <Sprite name="consulting" />
+        <h3>Consulting</h3>
+      </TabsTab>
+    </TabsList>
+
+    <TabsPanel id="software-panel" labelledby="software" selected>
+      <p>We build robust software solutions tailored to diverse needs.</p>
+      <ul>
+        <li>
+          <a href="#">
+            <Sprite name="web" />
+            Web applications
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <Sprite name="mobile" />
+            Mobile applications
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <Sprite name="iam" />
+            Identity and access management systems
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <Sprite name="api" />
+            Custom APIs
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <Sprite name="calendar" />
+            Calendaring solutions
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <Sprite name="server" />
+            DevOps and hosting solutions
+          </a>
+        </li>
+      </ul>
+    </TabsPanel>
+    <TabsPanel id="education-panel" labelledby="education">
+      <p>We share our expertise to empower your learning journey.</p>
+      <ul>
+        <li>
+          <a href="#">
+            <Sprite name="course" />
+            Courses
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <Sprite name="workshop" />
+            Workshops
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <Sprite name="presentation" />
+            Presentations
+          </a>
+        </li>
+      </ul>
+    </TabsPanel>
+    <TabsPanel id="consulting-panel" labelledby="consulting">
+      <p>We guide you through technical challenges with practical advice.</p>
+      <ul>
+        <li>
+          <a href="#">
+            <Sprite name="strategy" />
+            Technical strategy
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <Sprite name="architecture" />
+            System architecture
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <Sprite name="review" />
+            Code reviews
+          </a>
+        </li>
+      </ul>
+    </TabsPanel>
+  </Tabs>
+
+</ServicesSection>

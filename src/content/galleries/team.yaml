@@ -1,0 +1,17 @@
+items:
+  - photo: ./team/diego-at-work.jpg
+    label:
+      de: Diego improvisiert beim Arbeiten
+      en: Diego improvising while working
+  - photo: ./team/diego-presents.jpeg
+    label:
+      de: Diego präsentiert beim RailsHöck
+      en: Diego presenting at RailsHöck
+  - photo: ./team/our-lab.jpg
+    label:
+      de: Unser Labor
+      en: Our lab
+  - photo: ./team/retraite-2024.jpg
+    label:
+      de: Team-Retreat 2024
+      en: Team retreat 2024

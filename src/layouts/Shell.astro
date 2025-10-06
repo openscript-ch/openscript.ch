@@ -1,0 +1,39 @@
+---
+import "@fontsource/pt-sans/400.css";
+import "@fontsource/pt-sans/700.css";
+import "@fontsource/fira-mono";
+import "./Shell.css";
+import "../components/_global.css";
+import Head from "./groups/Head.astro";
+import Header from "./groups/Header.astro";
+import Footer from "./groups/Footer.astro";
+import Meta from "./groups/Meta.astro";
+import Ribbon from "./groups/Ribbon.astro";
+import Divider from "../components/Divider.astro";
+
+type Props = {
+  translations?: Record<string, string>;
+  bodyClasses?: string | string[];
+  mainClasses?: string | string[];
+};
+
+const { translations, bodyClasses, mainClasses } = Astro.props;
+---
+
+<html>
+  <Head translations={translations}>
+    <slot name="meta" slot="meta">
+      <Meta />
+    </slot>
+  </Head>
+  <body class:list={[bodyClasses]}>
+    <Ribbon translations={translations} />
+    <Header translations={translations} />
+    <Divider kind="multi" transition:persist />
+    <main data-pagefind-body transition:animate="fade" class:list={[mainClasses]}>
+      <slot />
+    </main>
+    <Divider kind="multi" flipVertical fixAntialiasingBottom />
+    <Footer translations={translations} />
+  </body>
+</html>
