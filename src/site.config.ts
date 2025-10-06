@@ -2,7 +2,7 @@ export const C = {
   // Key is the locale slug, value is the locale code
   LOCALES: { en: "en-US", de: "de-CH" },
   // Default locale referencing one of the keys in LOCALES
-  DEFAULT_LOCALE: "en" as const,
+  DEFAULT_LOCALE: "de" as const,
   // Segment translations
   SEGMENT_TRANSLATIONS: {
     de: {
