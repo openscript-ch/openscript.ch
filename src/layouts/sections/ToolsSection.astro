@@ -1,103 +1,18 @@
 ---
+import { currentLocale } from "astro-nanostores-i18n:runtime";
+import { getCollection } from "astro:content";
 import Sprite from "../../components/Sprite.astro";
 import SpriteData from "../../../res/sprite/sprite.json";
-
-type LogoItem = {
-  logo: keyof typeof SpriteData;
-  url: string;
-  label: string;
-};
-
-const logos: LogoItem[] = [
-  {
-    logo: "logo-astro",
-    url: "https://astro.build",
-    label: "Astro - The web framework for content-driven sites",
-  },
-  {
-    logo: "logo-css",
-    url: "https://www.w3.org/Style/CSS/Overview.en.html",
-    label: "CSS - Cascading Style Sheets for styling the web",
-  },
-  {
-    logo: "logo-docker",
-    url: "https://www.docker.com",
-    label: "Docker - Develop, ship, and run applications in containers",
-  },
-  {
-    logo: "logo-forgejo",
-    url: "https://forgejo.org",
-    label: "Forgejo - Beyond coding. We forge.",
-  },
-  {
-    logo: "logo-graphql",
-    url: "https://graphql.org",
-    label: "GraphQL - A query language for your API",
-  },
-  {
-    logo: "logo-html5",
-    url: "https://developer.mozilla.org/en-US/docs/Web/HTML",
-    label: "HTML5 - The standard markup language for the web",
-  },
-  {
-    logo: "logo-kubernetes",
-    url: "https://kubernetes.io",
-    label: "Kubernetes - Production-grade container orchestration",
-  },
-  {
-    logo: "logo-mantine",
-    url: "https://mantine.dev",
-    label: "Mantine - React components and hooks library",
-  },
-  {
-    logo: "logo-nestjs",
-    url: "https://nestjs.com",
-    label: "NestJS - A progressive Node.js framework",
-  },
-  {
-    logo: "logo-php",
-    url: "https://www.php.net",
-    label: "PHP - Popular general-purpose scripting language",
-  },
-  {
-    logo: "logo-postgresql",
-    url: "https://www.postgresql.org",
-    label: "PostgreSQL - The world's most advanced open-source database",
-  },
-  {
-    logo: "logo-react",
-    url: "https://react.dev",
-    label: "React - A JavaScript library for building user interfaces",
-  },
-  {
-    logo: "logo-ruby",
-    url: "https://www.ruby-lang.org",
-    label: "Ruby - A dynamic, open-source programming language",
-  },
-  {
-    logo: "logo-rubyonrails",
-    url: "https://rubyonrails.org",
-    label: "Ruby on Rails - A web application framework for Ruby",
-  },
-  {
-    logo: "logo-supabase",
-    url: "https://supabase.com",
-    label: "Supabase - Open-source Firebase alternative",
-  },
-  {
-    logo: "logo-typescript",
-    url: "https://www.typescriptlang.org",
-    label: "TypeScript - JavaScript with syntax for types",
-  },
-];
-
-const randomNumber = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 type Props = {
   class?: string;
 };
 
 const { class: className } = Astro.props;
+const locale = currentLocale.get();
+const technologies = await getCollection("technologies", (entry) => entry.data.locale === locale);
+
+const randomNumber = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1)) + min;
 ---
 
 <section class:list={[className]}>
@@ -106,9 +21,13 @@ const { class: className } = Astro.props;
   </header>
   <div class="tools-grid">
     {
-      logos.map((item) => (
-        <a href={item.url} aria-label={item.label} style={`rotate: ${randomNumber(-45, 45)}deg`}>
-          <Sprite name={item.logo} />
+      technologies.map(({ data: item }) => (
+        <a
+          href={item.url}
+          aria-label={typeof item.label === "string" ? item.label : ""}
+          style={`rotate: ${randomNumber(-45, 45)}deg`}
+        >
+          <Sprite name={item.logo as keyof typeof SpriteData} />
         </a>
       ))
     }

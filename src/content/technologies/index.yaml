@@ -1,0 +1,96 @@
+- id: astro
+  label:
+    en: Astro - The web framework for content-driven sites
+    de: Astro - Das Web-Framework für inhaltsorientierte Seiten
+  logo: logo-astro
+  url: https://astro.build
+- id: css
+  label:
+    en: CSS - Cascading Style Sheets for styling the web
+    de: CSS - Cascading Style Sheets für das Webdesign
+  logo: logo-css
+  url: https://www.w3.org/Style/CSS/Overview.en.html
+- id: docker
+  label:
+    en: Docker - Develop, ship, and run applications in containers
+    de: Docker - Anwendungen in Containern entwickeln, ausliefern und betreiben
+  logo: logo-docker
+  url: https://www.docker.com
+- id: forgejo
+  label:
+    en: Forgejo - Beyond coding. We forge.
+    de: Forgejo - Mehr als Programmieren. Wir schmieden.
+  logo: logo-forgejo
+  url: https://forgejo.org
+- id: graphql
+  label:
+    en: GraphQL - A query language for your API
+    de: GraphQL - Eine Abfragesprache für Ihre API
+  logo: logo-graphql
+  url: https://graphql.org
+- id: html5
+  label:
+    en: HTML5 - The standard markup language for the web
+    de: HTML5 - Die Standard-Auszeichnungssprache fürs Web
+  logo: logo-html5
+  url: https://developer.mozilla.org/en-US/docs/Web/HTML
+- id: kubernetes
+  label:
+    en: Kubernetes - Production-grade container orchestration
+    de: Kubernetes - Container-Orchestrierung für den produktiven Einsatz
+  logo: logo-kubernetes
+  url: https://kubernetes.io
+- id: mantine
+  label:
+    en: Mantine - React components and hooks library
+    de: Mantine - Komponenten- und Hook-Bibliothek für React
+  logo: logo-mantine
+  url: https://mantine.dev
+- id: nestjs
+  label:
+    en: NestJS - A progressive Node.js framework
+    de: NestJS - Ein fortschrittliches Node.js-Framework
+  logo: logo-nestjs
+  url: https://nestjs.com
+- id: php
+  label:
+    en: PHP - Popular general-purpose scripting language
+    de: PHP - Beliebte universelle Skriptsprache
+  logo: logo-php
+  url: https://www.php.net
+- id: postgresql
+  label:
+    en: PostgreSQL - The world's most advanced open-source database
+    de: PostgreSQL - Die fortschrittlichste Open-Source-Datenbank
+  logo: logo-postgresql
+  url: https://www.postgresql.org
+- id: react
+  label:
+    en: React - A JavaScript library for building user interfaces
+    de: React - JavaScript-Bibliothek für Benutzeroberflächen
+  logo: logo-react
+  url: https://react.dev
+- id: ruby
+  label:
+    en: Ruby - A dynamic, open-source programming language
+    de: Ruby - Dynamische, quelloffene Programmiersprache
+  logo: logo-ruby
+  url: https://www.ruby-lang.org
+- id: rubyonrails
+  label:
+    en: Ruby on Rails - A web application framework for Ruby
+    de: Ruby on Rails - Webframework für Ruby
+  logo: logo-rubyonrails
+  url: https://rubyonrails.org
+- id: supabase
+  label:
+    en: Supabase - Open-source Firebase alternative
+    de: Supabase - Open-Source-Alternative zu Firebase
+  logo: logo-supabase
+  url: https://supabase.com
+- id: typescript
+  label:
+    en: TypeScript - JavaScript with syntax for types
+    de: TypeScript - JavaScript mit Syntax für Typen
+  logo: logo-typescript
+  url: https://www.typescriptlang.org
