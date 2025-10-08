@@ -57,7 +57,7 @@
     "@openscript/unplugin-favicons": "^1.1.8",
     "@types/mdast": "^4.0.4",
     "@types/node": "^24.7.0",
-    "@typescript-eslint/parser": "^8.45.0",
+    "@typescript-eslint/parser": "^8.46.0",
     "@vitest/coverage-v8": "3.2.4",
     "astro-eslint-parser": "^1.2.2",
     "eslint": "^9.37.0",
@@ -72,7 +72,7 @@
     "prettier-plugin-astro": "^0.14.1",
     "sirv": "^3.0.2",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.45.0",
+    "typescript-eslint": "^8.46.0",
     "vitest": "3.2.4"
   },
   "pnpm": {

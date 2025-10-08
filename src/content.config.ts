@@ -98,6 +98,18 @@ const questionsCollection = defineCollection({
   ),
 });
 
+const technologiesCollection = defineCollection({
+  loader: i18nFileLoader("./src/content/technologies/index.yaml"),
+  schema: extendI18nLoaderSchema(
+    z.object({
+      id: z.string(),
+      label: localized(z.string()),
+      logo: z.string(),
+      url: z.string().url(),
+    }),
+  ),
+});
+
 const teamCollection = defineCollection({
   loader: i18nFileLoader("./src/content/team/index.yaml"),
   schema: ({ image }) =>
@@ -133,6 +145,7 @@ export const collections = {
   referenceCompanies: referenceCompaniesCollection,
   referenceProjects: referenceProjectsCollection,
   questions: questionsCollection,
+  technologies: technologiesCollection,
   team: teamCollection,
   galleries: galleriesCollection,
 };

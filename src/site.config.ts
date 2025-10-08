@@ -31,7 +31,7 @@ export const C = {
       GITHUB: "https://github.com/openscript-ch",
     },
     BROWSER: {
-      THEME_COLOR: "#663399",
+      THEME_COLOR: "#fa5100",
     },
   },
 } as const;
