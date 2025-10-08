@@ -169,6 +169,7 @@ const { class: className } = Astro.props;
     font-size: 1.125rem;
 
     svg {
+      margin-block-start: var(--size-gutter-big);
       width: 4rem;
       height: auto;
       fill: var(--color-secondary);
@@ -181,6 +182,27 @@ const { class: className } = Astro.props;
   }
 
   @media screen and (max-width: 800px) {
+    section {
+      grid-template-areas:
+        "header"
+        "main"
+        "tools";
+      grid-template-columns: 1fr;
+    }
+
+    .tools-content {
+      svg {
+        align-self: center;
+        rotate: 0deg;
+      }
+    }
+
+    .tools-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 600px) {
     .tools-grid {
       grid-template-columns: repeat(2, 1fr);
     }
