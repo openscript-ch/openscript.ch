@@ -1,5 +1,11 @@
 # openscript-ch-website
 
+## 0.7.5
+
+### Patch Changes
+
+- a2dd657: Enhance technologies section responsiveness
+
 ## 0.7.4
 
 ### Patch Changes
