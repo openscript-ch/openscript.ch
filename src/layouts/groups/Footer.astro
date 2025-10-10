@@ -72,14 +72,16 @@ const messages = useI18n("layouts/groups/Footer.astro", {
     .links {
       grid-area: links;
       justify-content: flex-end;
-      align-self: flex-end;
+      align-self: flex-start;
       display: flex;
       gap: var(--size-gutter-big);
       width: 100%;
 
       svg {
         fill: var(--color-background);
+        margin-top: 0.4rem;
         width: 2.4rem;
+        height: auto;
       }
     }
 
