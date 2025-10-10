@@ -1,5 +1,12 @@
 # openscript-ch-website
 
+## 0.7.6
+
+### Patch Changes
+
+- e0e522f: Enhance spotlight responsiveness
+- 9768cdf: Localize content paths
+
 ## 0.7.5
 
 ### Patch Changes
