@@ -2,11 +2,11 @@ author: Leonardo Olivo
 items:
   de:
     - question: Was ist die beste Programmiersprache?
-      answer: Keine Antwort.
+      answer: Ich denke es gibt keine falsche Antwort, es ist schliesslich eine sehr subjektive Frage. Meine persönliche Favoriten sind TypeScript sowie Java.
     - question: Ein Gadget, das an deinem Arbeitsplatz nicht fehlen darf?
-      answer: Keine Antwort.
+      answer: Meine Wasserflasche ist nicht wirklich ein Gadet aber sie ist ein wichtiger Bestandteil meines Arbeitsplatz.
   en:
     - question: What is the best programming language?
-      answer: No answer.
+      answer: "I don't think there is a wrong answer, after all it's a very subjective question. My personal favorites are TypeScript and Java."
     - question: A gadget that must not be missing at your workplace?
-      answer: No answer.
+      answer: My waterbottle is not really a gadet but she is an important part of my workstation.
