@@ -26,14 +26,17 @@ import Carousel from "../../components/Carousel.astro";
       right: var(--size-page-padding);
     }
 
-    .active {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
+    .carousel-overlay > div {
       color: var(--color-white);
       font-size: 1.6rem;
       font-weight: bold;
+      height: 100%;
       padding: 0 var(--size-page-padding);
+
+      &.active {
+        display: flex;
+        flex-direction: column;
+      }
 
       &.align-center {
         align-items: center;
@@ -65,6 +68,31 @@ import Carousel from "../../components/Carousel.astro";
 
       h3 {
         margin: 0;
+      }
+    }
+
+    @media screen and (max-width: 1025px) {
+      .background-icon {
+        align-items: flex-start;
+        justify-content: center;
+
+        img {
+          margin-inline-end: 0;
+          margin-block-start: 10%;
+        }
+      }
+      .carousel-overlay {
+        padding-block-end: 10%;
+      }
+
+      .carousel-overlay > div:is(.align-start, .align-center, .align-end) {
+        align-items: center;
+        justify-content: flex-end;
+        font-size: 1.2rem;
+
+        > * {
+          width: 90%;
+        }
       }
     }
   }
