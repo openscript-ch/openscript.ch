@@ -36,11 +36,11 @@ importers:
         specifier: ^5.14.3
         version: 5.14.3(@types/node@24.7.1)(jiti@2.6.1)(rollup@4.52.4)(typescript@5.9.3)(yaml@2.8.1)
       astro-loader-i18n:
-        specifier: ^0.9.0
-        version: 0.9.0(astro@5.14.3(@types/node@24.7.1)(jiti@2.6.1)(rollup@4.52.4)(typescript@5.9.3)(yaml@2.8.1))
+        specifier: ^0.9.1
+        version: 0.9.1(astro@5.14.3(@types/node@24.7.1)(jiti@2.6.1)(rollup@4.52.4)(typescript@5.9.3)(yaml@2.8.1))
       astro-nanostores-i18n:
-        specifier: ^0.2.0
-        version: 0.2.0(@nanostores/i18n@1.2.2(nanostores@1.0.1))(astro@5.14.3(@types/node@24.7.1)(jiti@2.6.1)(rollup@4.52.4)(typescript@5.9.3)(yaml@2.8.1))(nanostores@1.0.1)
+        specifier: ^0.2.1
+        version: 0.2.1(@nanostores/i18n@1.2.2(nanostores@1.0.1))(astro@5.14.3(@types/node@24.7.1)(jiti@2.6.1)(rollup@4.52.4)(typescript@5.9.3)(yaml@2.8.1))(nanostores@1.0.1)
       embla-carousel:
         specifier: ^8.6.0
         version: 8.6.0
@@ -1491,13 +1491,13 @@ packages:
     peerDependencies:
       astro: ^4.14.0 || ^5.0.0
 
-  astro-loader-i18n@0.9.0:
-    resolution: {integrity: sha512-iIIiJ4d1pTt9L0t+RQwqmbVoZbWj5uQiQM8uD1hog3Fj3eOeFgXxpLLjUwu5Z3ctmH8znYYlr4SFheH+fuUyLQ==}
+  astro-loader-i18n@0.9.1:
+    resolution: {integrity: sha512-av8gWAwA4g/VtspTQkTtdDzyi4/6lBcTzJQcw7hdDBDv6svS8IkUjy7U5U9BcFg8Xu/VFdbdF+tTY9rR6KaRvg==}
     peerDependencies:
       astro: ^5.5.0
 
-  astro-nanostores-i18n@0.2.0:
-    resolution: {integrity: sha512-RaxN6ywRe8QhrMZjZfrV9+9xsoLfak5jtHn2EJvtsJ8iVikC1ecMSdzaoOYleVBA4Skjnl1L+5USaP7JpFkU4g==}
+  astro-nanostores-i18n@0.2.1:
+    resolution: {integrity: sha512-lF5c95tTprU/KO/eKm80NAStO32M2ysSaNlXbs4PNhKi6ocl3FVpnZFivcYYA1lB6hIaKhTE+ZEUhqDlWxAaCg==}
     hasBin: true
     peerDependencies:
       '@nanostores/i18n': ^1.2.0
@@ -5698,11 +5698,11 @@ snapshots:
       astro: 5.14.3(@types/node@24.7.1)(jiti@2.6.1)(rollup@4.52.4)(typescript@5.9.3)(yaml@2.8.1)
       pathe: 1.1.2
 
-  astro-loader-i18n@0.9.0(astro@5.14.3(@types/node@24.7.1)(jiti@2.6.1)(rollup@4.52.4)(typescript@5.9.3)(yaml@2.8.1)):
+  astro-loader-i18n@0.9.1(astro@5.14.3(@types/node@24.7.1)(jiti@2.6.1)(rollup@4.52.4)(typescript@5.9.3)(yaml@2.8.1)):
     dependencies:
       astro: 5.14.3(@types/node@24.7.1)(jiti@2.6.1)(rollup@4.52.4)(typescript@5.9.3)(yaml@2.8.1)
 
-  astro-nanostores-i18n@0.2.0(@nanostores/i18n@1.2.2(nanostores@1.0.1))(astro@5.14.3(@types/node@24.7.1)(jiti@2.6.1)(rollup@4.52.4)(typescript@5.9.3)(yaml@2.8.1))(nanostores@1.0.1):
+  astro-nanostores-i18n@0.2.1(@nanostores/i18n@1.2.2(nanostores@1.0.1))(astro@5.14.3(@types/node@24.7.1)(jiti@2.6.1)(rollup@4.52.4)(typescript@5.9.3)(yaml@2.8.1))(nanostores@1.0.1):
     dependencies:
       '@astrojs/compiler': 2.13.0
       '@nanostores/i18n': 1.2.2(nanostores@1.0.1)
