@@ -1,13 +1,21 @@
 import { createI18nCollection, i18nPropsAndParams, resolvePath as originalResolvePath } from "astro-loader-i18n";
-import { C, localeSlugs } from "../site.config";
+import { C, localeSlugs, type Locale } from "../site.config";
 import { getEntry, type CollectionKey, type DataEntryMap } from "astro:content";
 import type { ImageMetadata } from "astro";
+import { parseLocale } from "./i18n";
 
 const PROTOCOL_DELIMITER = "://";
 
 export const defaultPropsAndParamsOptions = {
   defaultLocale: C.DEFAULT_LOCALE,
   segmentTranslations: C.SEGMENT_TRANSLATIONS,
+};
+
+export const replaceSegmentsInPath = (path: string, locale: Locale) => {
+  Object.entries(C.SEGMENT_TRANSLATIONS[locale]).forEach(([key, value]) => {
+    path = path.replace(key, value);
+  });
+  return path;
 };
 
 export const resolvePath = (...path: Array<string | number | undefined>) => {
@@ -40,8 +48,9 @@ export const convertReferenceToPath = async (path: string) => {
   if (typeof entry.data.path !== "string") throw new Error("Entry title is not a string");
 
   const localeSlug = entry.data.locale === C.DEFAULT_LOCALE ? undefined : entry.data.locale;
+  const contentPath = replaceSegmentsInPath(entry.data.contentPath, parseLocale(entry.data.locale));
 
-  return originalResolvePath(localeSlug, entry.data.contentPath, entry.data.path);
+  return originalResolvePath(localeSlug, contentPath, entry.data.path);
 };
 
 type NavigationItems = DataEntryMap["navigation"]["data"]["data"]["items"];

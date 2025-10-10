@@ -2,10 +2,11 @@
 import Meta from "../../layouts/groups/Meta.astro";
 import { getCollection, render } from "astro:content";
 import { i18nPropsAndParams } from "astro-loader-i18n";
-import { defaultPropsAndParamsOptions } from "../../utils/paths";
+import { defaultPropsAndParamsOptions, replaceSegmentsInPath } from "../../utils/paths";
 import Shell from "../../layouts/Shell.astro";
 import Article from "../../layouts/templates/Article.astro";
 import type { GetStaticPathsOptions } from "astro";
+import { parseLocale } from "../../utils/i18n";
 
 export const getStaticPaths = async ({ routePattern }: GetStaticPathsOptions) => {
   const collection = await getCollection("pages");
@@ -13,7 +14,10 @@ export const getStaticPaths = async ({ routePattern }: GetStaticPathsOptions) =>
   return i18nPropsAndParams(collection, {
     ...defaultPropsAndParamsOptions,
     routePattern,
-    generateSegments: (entry) => ({ pages: `${entry.data.contentPath}/${entry.data.path}` }),
+    generateSegments: (entry) => {
+      const contentPath = replaceSegmentsInPath(entry.data.contentPath, parseLocale(entry.data.locale));
+      return { pages: `${contentPath}/${entry.data.path}` };
+    },
   });
 };
 
