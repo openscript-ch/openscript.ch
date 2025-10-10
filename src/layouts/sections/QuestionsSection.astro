@@ -14,7 +14,7 @@ const questions = questionsCollection.flatMap((q) => {
 questions.sort(() => Math.random() - 0.5);
 ---
 
-<section>
+<section class="page-padding">
   <Carousel>
     {
       questions.map((q) => (
@@ -33,7 +33,6 @@ questions.sort(() => Math.random() - 0.5);
 <style>
   section {
     background-color: var(--color-background);
-    padding: 8rem var(--size-page-padding);
     user-select: none;
 
     .carousel .carousel-viewport {

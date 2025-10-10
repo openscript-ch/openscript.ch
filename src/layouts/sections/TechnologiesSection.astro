@@ -15,7 +15,7 @@ const technologies = await getCollection("technologies", (entry) => entry.data.l
 const randomNumber = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1)) + min;
 ---
 
-<section class:list={[className]}>
+<section class:list={[className, "page-padding"]}>
   <header>
     <slot name="title" />
   </header>
@@ -43,14 +43,12 @@ const randomNumber = (min: number, max: number) => Math.floor(Math.random() * (m
     display: grid;
     grid-template-areas: "header header" "tools main";
     grid-template-columns: 2fr minmax(20rem, 1fr);
-    padding: var(--size-gutter-big) var(--size-page-padding) 8rem var(--size-page-padding);
     z-index: 1;
     gap: var(--size-gutter-big);
   }
 
   header {
     grid-area: header;
-    text-align: center;
     margin-block-end: var(--size-gutter-big);
   }
 

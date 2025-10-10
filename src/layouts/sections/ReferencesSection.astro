@@ -8,8 +8,10 @@ const companies = await getCollection("referenceCompanies", (entry) => !entry.da
 const projects = await getCollection("referenceProjects", (entry) => entry.data.locale === locale);
 ---
 
-<section>
-  <slot name="title" />
+<section class="page-padding">
+  <header>
+    <slot name="title" />
+  </header>
   <div class="references-projects">
     {
       projects.map((p) => (
@@ -35,7 +37,6 @@ const projects = await getCollection("referenceProjects", (entry) => entry.data.
 <style>
   section {
     background-color: var(--color-white);
-    padding: 8rem var(--size-page-padding);
     z-index: 1;
   }
 
@@ -48,7 +49,8 @@ const projects = await getCollection("referenceProjects", (entry) => entry.data.
 
   :where(.references-projects) {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto auto 1fr;
     gap: var(--size-gutter-big);
     margin-block-end: var(--size-gutter-big);
 
@@ -58,28 +60,26 @@ const projects = await getCollection("referenceProjects", (entry) => entry.data.
 
     div:first-child {
       grid-column: span 2;
-
-      h3 {
-        min-height: 3rem;
-      }
     }
 
     h3 {
-      min-height: 5rem;
+      margin: 0;
     }
 
-    div {
+    > div {
+      display: grid;
+      grid-row: span 3;
+      grid-template-rows: subgrid;
       background-color: var(--color-background);
       padding: var(--size-gutter-big);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      justify-items: center;
+      align-items: start;
     }
   }
 
   :where(.references-companies) {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: var(--size-gutter-big);
 
     a {
@@ -98,7 +98,7 @@ const projects = await getCollection("referenceProjects", (entry) => entry.data.
 
   @media screen and (max-width: 1600px) {
     .references-companies {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 

@@ -68,6 +68,7 @@ import Carousel from "../../components/Carousel.astro";
 
       h3 {
         margin: 0;
+        font-size: 1.7rem;
       }
     }
 
@@ -89,10 +90,22 @@ import Carousel from "../../components/Carousel.astro";
         align-items: center;
         justify-content: flex-end;
         font-size: 1.2rem;
+        padding: 0;
 
         > * {
-          width: 90%;
+          width: 95%;
         }
+      }
+    }
+
+    @media screen and (max-width: 640px) {
+      .background-icon {
+        img {
+          margin-block-start: 20%;
+        }
+      }
+      .carousel-overlay {
+        padding-block-end: 20%;
       }
     }
   }

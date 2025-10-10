@@ -46,11 +46,28 @@
 
 @media screen and (max-width: 400px) {
   :root {
+    --font-size: 12px;
+    --size-page-padding: 1rem;
+  }
+}
+
+@media screen and (min-width: 401px) {
+  :root {
+    --font-size: 12px;
     --size-page-padding: 1rem;
   }
 }
 
 @media screen and (min-width: 640px) {
+  :root {
+    --font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  :root {
+    --font-size: 14px;
+  }
 }
 
 @media screen and (min-width: 1025px) {
@@ -162,34 +179,50 @@ h6 {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 1.7rem;
   margin-top: 0;
 }
 
 h2 {
-  font-size: 1.7em;
+  font-size: 1.5rem;
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 1.3rem;
 }
 
 h4 {
-  font-size: 1.3em;
+  font-size: 1.2rem;
 }
 
 h5 {
-  font-size: 1.2em;
+  font-size: 1.1rem;
 }
 
 h5 {
-  font-size: 1.1em;
+  font-size: 1.05rem;
 }
 
 main {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  hyphens: auto;
+
+  section {
+    &.page-padding {
+      padding-block: var(--size-gutter-massive);
+    }
+
+    header {
+      text-align: center;
+
+      > * {
+        margin: 0;
+        margin-bottom: var(--size-gutter-big);
+      }
+    }
+  }
 
   a {
     color: var(--color-primary-90);
