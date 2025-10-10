@@ -6,16 +6,14 @@ export const C = {
   // Segment translations
   SEGMENT_TRANSLATIONS: {
     de: {
-      gallery: "galerie",
-      projects: "projekte",
-      blog: "blog",
-      notes: "notizen",
+      past: "vergangenheit",
+      present: "gegenwart",
+      future: "zukunft",
     },
     en: {
-      gallery: "gallery",
-      projects: "projects",
-      blog: "blog",
-      notes: "notes",
+      past: "past",
+      present: "present",
+      future: "future",
     },
   },
   // Page settings
