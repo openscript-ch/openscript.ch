@@ -12,7 +12,7 @@ const locale = currentLocale.get();
 const { translations } = Astro.props;
 const { Content: SpotlightSection } = await render(await getEntry("sections", `${locale}/spotlight`)!);
 const { Content: ServicesSection } = await render(await getEntry("sections", `${locale}/services`)!);
-const { Content: ToolsSection } = await render(await getEntry("sections", `${locale}/tools`)!);
+const { Content: TechnologiesSection } = await render(await getEntry("sections", `${locale}/technologies`)!);
 const { Content: ReferencesSection } = await render(await getEntry("sections", `${locale}/references`)!);
 const { Content: QuestionsSection } = await render(await getEntry("sections", `${locale}/questions`)!);
 ---
@@ -29,7 +29,7 @@ const { Content: QuestionsSection } = await render(await getEntry("sections", `$
   <Divider kind="single" firstSegmentColor="var(--color-white)" fixAntialiasingBottom />
   <ServicesSection />
   <Divider kind="single" firstSegmentColor="var(--color-white)" flipVertical fixAntialiasingTop />
-  <ToolsSection />
+  <TechnologiesSection />
   <Divider kind="single" firstSegmentColor="var(--color-white)" fixAntialiasingBottom />
   <ReferencesSection />
   <Divider kind="single" firstSegmentColor="var(--color-white)" flipVertical fixAntialiasingTop />
