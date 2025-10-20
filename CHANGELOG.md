@@ -1,5 +1,11 @@
 # openscript-ch-website
 
+## 0.7.7
+
+### Patch Changes
+
+- ae592a8: Upgrade dependencies
+
 ## 0.7.6
 
 ### Patch Changes
