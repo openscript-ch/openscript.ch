@@ -1,0 +1,41 @@
+---
+import { currentLocale } from "astro-nanostores-i18n:runtime";
+import Timeline from "../../components/Timeline.astro";
+import { getCollection } from "astro:content";
+
+type Props = {
+  key: string;
+  class?: string;
+};
+
+const { key, class: className } = Astro.props;
+
+const locale = currentLocale.get();
+
+const timelineCollection = await getCollection("formation", (entry) => entry.data.locale === locale);
+
+const formationData = timelineCollection
+  .filter((t) => t.id.includes(key))
+  .flatMap((t) => {
+    if (Array.isArray(t.data.items)) {
+      return t.data.items.map((item) => ({ ...item }));
+    }
+    return [];
+  });
+---
+
+<section class:list={[className]}>
+  <div>
+    <slot name="title" />
+    <slot />
+  </div>
+  <Timeline elements={formationData} />
+</section>
+
+<style>
+  section {
+    display: grid;
+    column-gap: 1.5rem;
+    grid-template-columns: 60% 40%;
+  }
+</style>

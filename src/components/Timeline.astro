@@ -1,0 +1,88 @@
+---
+type Props = {
+  elements: {
+    text: string;
+    title: string;
+  }[];
+};
+
+const { elements } = Astro.props;
+---
+
+<div class="timeline">
+  <ol>
+    {
+      elements.map((element) => (
+        <li>
+          <h6>{element.title}</h6>
+          <p>{element.text}</p>
+        </li>
+      ))
+    }
+  </ol>
+</div>
+
+<style>
+  .timeline {
+    position: relative;
+  }
+
+  h6 {
+    margin-top: 0;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--timeline-gap);
+  }
+
+  /* spine of the timeline */
+  .timeline::before {
+    content: "";
+    width: 4px;
+    height: 200%; /* TODO: find better solution to span spine over the sections */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-primary);
+    z-index: 3; /* above potential dividers */
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 1rem;
+    background: #fcfaf3;
+    width: 45%;
+    box-shadow: 0px 15px 30px -25px rgba(0, 0, 0, 0.5);
+  }
+
+  li::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border-width: 4px;
+    border-style: solid;
+    border-color: var(--color-primary);
+    background: var(--color-white);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5; /* above spine */
+  }
+
+  ol li:nth-child(even) {
+    align-self: flex-end;
+  }
+</style>
