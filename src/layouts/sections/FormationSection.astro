@@ -6,9 +6,10 @@ import { getCollection } from "astro:content";
 type Props = {
   key: string;
   class?: string;
+  last?: boolean;
 };
 
-const { key, class: className } = Astro.props;
+const { key, class: className, last } = Astro.props;
 
 const locale = currentLocale.get();
 
@@ -29,7 +30,7 @@ const formationData = timelineCollection
     <slot name="title" />
     <slot />
   </div>
-  <Timeline elements={formationData} />
+  <Timeline elements={formationData} shortSpine={last} />
 </section>
 
 <style>

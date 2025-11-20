@@ -4,9 +4,12 @@ type Props = {
     text: string;
     title: string;
   }[];
+  shortSpine?: boolean;
 };
 
-const { elements } = Astro.props;
+const { elements, shortSpine = false } = Astro.props;
+
+const spineHeight = shortSpine ? "100%" : "calc(100% + var(--size-height-divider) + (2 * var(--size-gutter-massive)))";
 ---
 
 <div class="timeline">
@@ -22,7 +25,7 @@ const { elements } = Astro.props;
   </ol>
 </div>
 
-<style>
+<style define:vars={{ spineHeight }}>
   .timeline {
     position: relative;
   }
@@ -49,7 +52,7 @@ const { elements } = Astro.props;
   .timeline::before {
     content: "";
     width: 4px;
-    height: 200%; /* TODO: find better solution to span spine over the sections */
+    height: var(--spineHeight);
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -62,9 +65,10 @@ const { elements } = Astro.props;
     flex-direction: column;
     box-sizing: border-box;
     padding: 1rem;
-    background: #fcfaf3;
+    /* background: #fcfaf3; */
+    background: var(--color-overlay);
     width: 45%;
-    box-shadow: 0px 15px 30px -25px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 15px 30px -15px rgba(0, 0, 0, 0.5);
   }
 
   li::after {
