@@ -1,5 +1,11 @@
 # openscript-ch-website
 
+## 0.7.8
+
+### Patch Changes
+
+- 82d500a: Upgrade dependencies
+
 ## 0.7.7
 
 ### Patch Changes
