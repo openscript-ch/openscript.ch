@@ -1,6 +1,6 @@
 {
   "name": "openscript.ch",
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:4-22-bookworm",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:24-bookworm",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -21,6 +21,5 @@
   },
   "containerEnv": {
     "ASTRO_TELEMETRY_DISABLED": "1"
-  },
-  "postCreateCommand": "npm install -g npm@11.5.2 pnpm@10.18.3"
+  }
 }
