@@ -1,42 +1,24 @@
 ---
 type Props = {
-  elements: {
-    text: string;
-    title: string;
-  }[];
   shortSpine?: boolean;
 };
 
-const { elements, shortSpine = false } = Astro.props;
+const { shortSpine = false } = Astro.props;
 
-const spineHeight = shortSpine ? "100%" : "calc(100% + var(--size-height-divider) + (2 * var(--size-gutter-massive)))";
 const displayTriangle = shortSpine ? "none" : "absolute";
 ---
 
-<div class="timeline">
+<div class="dot"></div>
+<div class="timeline" data-short-spine={shortSpine}>
   <ol>
-    {
-      elements.map((element) => (
-        <li>
-          <h6>{element.title}</h6>
-          <p>{element.text}</p>
-        </li>
-      ))
-    }
+    <slot />
   </ol>
 </div>
 
-<style define:vars={{ spineHeight, displayTriangle }}>
+<style define:vars={{ displayTriangle }}>
   .timeline {
     position: relative;
-  }
-
-  h6 {
-    margin-top: 0;
-  }
-
-  p {
-    font-size: 15px;
+    margin-top: 10px;
   }
 
   ol {
@@ -49,11 +31,27 @@ const displayTriangle = shortSpine ? "none" : "absolute";
     gap: var(--timeline-gap);
   }
 
+  .dot {
+    position: relative;
+  }
+
+  .dot::before {
+    content: "";
+    width: 4px;
+    height: 8px;
+    background-color: var(--color-primary);
+    left: 50%;
+    top: 0;
+    position: absolute;
+    z-index: 3;
+    transform: translateX(-50%);
+  }
+
   /* spine of the timeline */
   .timeline::before {
     content: "";
     width: 4px;
-    height: var(--spineHeight);
+    height: calc(100% + var(--size-height-divider) + (3 * var(--size-gutter-massive)));
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -61,43 +59,16 @@ const displayTriangle = shortSpine ? "none" : "absolute";
     z-index: 3; /* above potential dividers */
   }
 
-  li {
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    padding: 1rem;
-    background: var(--color-overlay);
-    width: 45%;
-    box-shadow: 0px 15px 30px -15px rgba(0, 0, 0, 0.5);
-  }
-
-  li::after {
-    content: "";
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border-width: 4px;
-    border-style: solid;
-    border-color: var(--color-primary);
-    background: var(--color-white);
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 5; /* above spine */
-  }
-
-  @media screen and (min-width: 1025px) {
-    ol li:nth-child(even) {
-      align-self: flex-end;
-    }
+  .timeline[data-short-spine="true"]::before {
+    height: 100%;
   }
 
   @media screen and (max-width: 1025px) {
-    li::after {
+    .timeline::before {
       left: 90%;
     }
 
-    .timeline::before {
+    .dot::before {
       left: 90%;
     }
 
@@ -108,17 +79,13 @@ const displayTriangle = shortSpine ? "none" : "absolute";
       clip-path: polygon(0 0, 50% 100%, 100% 0);
       background-color: var(--color-primary);
       left: calc(90% - 10px);
-      bottom: calc(-1 * (5px + var(--size-height-divider) + (2 * var(--size-gutter-massive))));
+      bottom: -5px;
       position: var(--displayTriangle);
       z-index: 3; /* above potential dividers */
     }
 
-    li {
-      width: 85%;
-    }
-
-    li:not(:last-child) {
-      margin-bottom: 4rem;
+    .timeline::before {
+      height: 100%;
     }
   }
 </style>
