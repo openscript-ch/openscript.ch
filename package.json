@@ -37,7 +37,7 @@
     "@fontsource/pt-sans": "^5.2.8",
     "@nanostores/i18n": "^1.2.2",
     "astro": "^5.16.3",
-    "astro-loader-i18n": "^0.9.1",
+    "astro-loader-i18n": "^0.10.0",
     "astro-nanostores-i18n": "^0.2.1",
     "embla-carousel": "^8.6.0",
     "embla-carousel-autoplay": "^8.6.0",
@@ -58,7 +58,7 @@
     "@types/mdast": "^4.0.4",
     "@types/node": "^24.10.1",
     "@typescript-eslint/parser": "^8.48.0",
-    "@vitest/coverage-v8": "4.0.14",
+    "@vitest/coverage-v8": "4.0.15",
     "astro-eslint-parser": "^1.2.2",
     "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.8",
@@ -73,7 +73,7 @@
     "sirv": "^3.0.2",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.48.0",
-    "vitest": "4.0.14"
+    "vitest": "4.0.15"
   },
   "pnpm": {
     "overrides": {
