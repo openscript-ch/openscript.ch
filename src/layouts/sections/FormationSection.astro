@@ -1,0 +1,72 @@
+---
+import { currentLocale } from "astro-nanostores-i18n:runtime";
+import Timeline from "../../components/Timeline.astro";
+import { getCollection } from "astro:content";
+import TimelineEntry from "../../components/TimelineEntry.astro";
+
+type Props = {
+  key: string;
+  class?: string;
+  last?: boolean;
+  start?: boolean;
+};
+
+const { key, class: className, last } = Astro.props;
+
+const locale = currentLocale.get();
+
+const timelineCollection = await getCollection("formation", (entry) => entry.data.locale === locale);
+
+const formationData = timelineCollection
+  .filter((t) => t.id.includes(key))
+  .flatMap((t) => {
+    if (Array.isArray(t.data.items)) {
+      return t.data.items.map((item) => ({ ...item }));
+    }
+    return [];
+  });
+---
+
+<section class:list={[className]}>
+  <div>
+    <slot />
+  </div>
+  <div class="timeline">
+    <Timeline shortSpine={last}>
+      {
+        formationData.map((element) => (
+          <TimelineEntry>
+            <div class="title">{element.title}</div>
+            <p>{element.text}</p>
+          </TimelineEntry>
+        ))
+      }
+    </Timeline>
+  </div>
+</section>
+
+<style>
+  section {
+    display: grid;
+    column-gap: 1.5rem;
+    grid-template-columns: 55% 45%;
+  }
+
+  @media screen and (max-width: 1025px) {
+    section {
+      grid-template-columns: 100%;
+      row-gap: 1rem;
+    }
+  }
+
+  .title {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  @media screen and (min-width: 1025px) {
+    .timeline {
+      margin-top: 2.2em;
+    }
+  }
+</style>

@@ -138,6 +138,22 @@ const galleriesCollection = defineCollection({
     ),
 });
 
+const formationCollection = defineCollection({
+  loader: i18nContentLoader({ pattern: "**/[^_]*.yaml", base: "./src/content/formation" }),
+  schema: extendI18nLoaderSchema(
+    z.object({
+      items: localized(
+        z.array(
+          z.object({
+            title: z.string(),
+            text: z.string(),
+          }),
+        ),
+      ),
+    }),
+  ),
+});
+
 export const collections = {
   navigation: navigationCollection,
   pages: pagesCollection,
@@ -148,4 +164,5 @@ export const collections = {
   technologies: technologiesCollection,
   team: teamCollection,
   galleries: galleriesCollection,
+  formation: formationCollection,
 };
