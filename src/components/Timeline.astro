@@ -8,7 +8,6 @@ const { shortSpine = false } = Astro.props;
 const displayTriangle = shortSpine ? "none" : "absolute";
 ---
 
-<div class="dot"></div>
 <div class="timeline" data-short-spine={shortSpine}>
   <ol>
     <slot />
@@ -18,7 +17,6 @@ const displayTriangle = shortSpine ? "none" : "absolute";
 <style define:vars={{ displayTriangle }}>
   .timeline {
     position: relative;
-    margin-top: 10px;
   }
 
   ol {
@@ -29,22 +27,6 @@ const displayTriangle = shortSpine ? "none" : "absolute";
     display: flex;
     flex-direction: column;
     gap: var(--timeline-gap);
-  }
-
-  .dot {
-    position: relative;
-  }
-
-  .dot::before {
-    content: "";
-    width: 4px;
-    height: 8px;
-    background-color: var(--color-primary);
-    left: 50%;
-    top: 0;
-    position: absolute;
-    z-index: 3;
-    transform: translateX(-50%);
   }
 
   /* spine of the timeline */
@@ -65,10 +47,6 @@ const displayTriangle = shortSpine ? "none" : "absolute";
 
   @media screen and (max-width: 1025px) {
     .timeline::before {
-      left: 90%;
-    }
-
-    .dot::before {
       left: 90%;
     }
 
