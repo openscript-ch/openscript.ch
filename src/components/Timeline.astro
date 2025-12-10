@@ -37,7 +37,13 @@ const displayTriangle = shortSpine ? "none" : "absolute";
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    background-color: var(--color-primary);
+    background: linear-gradient(
+      to bottom,
+      var(--color-primary) 0.4rem,
+      transparent 0.4rem,
+      transparent 0.55rem,
+      var(--color-primary) 0.55rem
+    );
     z-index: 3; /* above potential dividers */
   }
 
