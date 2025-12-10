@@ -29,18 +29,16 @@ const formationData = timelineCollection
   <div>
     <slot />
   </div>
-  <div class="timeline">
-    <Timeline>
-      {
-        formationData.map((element) => (
-          <TimelineEntry>
-            <div class="title">{element.title}</div>
-            <p>{element.text}</p>
-          </TimelineEntry>
-        ))
-      }
-    </Timeline>
-  </div>
+  <Timeline>
+    {
+      formationData.map((element) => (
+        <TimelineEntry>
+          <div class="title">{element.title}</div>
+          <p>{element.text}</p>
+        </TimelineEntry>
+      ))
+    }
+  </Timeline>
 </section>
 
 <style>
@@ -63,7 +61,7 @@ const formationData = timelineCollection
   }
 
   @media screen and (min-width: 1025px) {
-    .timeline {
+    :global(.timeline) {
       margin-top: var(--heading-margin);
     }
   }
