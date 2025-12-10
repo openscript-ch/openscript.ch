@@ -1,20 +1,14 @@
 ---
-type Props = {
-  shortSpine?: boolean;
-};
 
-const { shortSpine = false } = Astro.props;
-
-const displayTriangle = shortSpine ? "none" : "absolute";
 ---
 
-<div class="timeline" data-short-spine={shortSpine}>
+<div class="timeline">
   <ol>
     <slot />
   </ol>
 </div>
 
-<style define:vars={{ displayTriangle }}>
+<style>
   .timeline {
     position: relative;
   }
@@ -47,7 +41,7 @@ const displayTriangle = shortSpine ? "none" : "absolute";
     z-index: 3; /* above potential dividers */
   }
 
-  .timeline[data-short-spine="true"]::before {
+  :global(article section:last-of-type .timeline::before) {
     height: 100%;
   }
 
@@ -64,7 +58,7 @@ const displayTriangle = shortSpine ? "none" : "absolute";
       background-color: var(--color-primary);
       left: calc(90% - 10px);
       bottom: -5px;
-      position: var(--displayTriangle);
+      position: absolute;
       z-index: 3; /* above potential dividers */
     }
 

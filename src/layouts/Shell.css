@@ -31,6 +31,7 @@
   --color-overlay: #f7f9f3;
 
   --size-gutter: 1rem;
+  --size-gutter: 1.5rem;
   --size-gutter-big: 2rem;
   --size-gutter-huge: 4rem;
   --size-gutter-massive: 8rem;
@@ -38,6 +39,8 @@
   --size-page-padding: 1rem;
   --size-burger: 2rem;
   --size-carousel-buttons: 2rem;
+
+  --heading-margin: 2.2em;
 
   --font-size: 16px;
   --font-text: "PT Sans", sans-serif;
@@ -176,7 +179,7 @@ h5,
 h6 {
   font-family: var(--font-heading);
   font-weight: 900;
-  margin-top: 2.2em;
+  margin-top: var(--heading-margin);
 }
 
 h1 {
