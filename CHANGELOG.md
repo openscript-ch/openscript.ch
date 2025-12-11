@@ -1,5 +1,11 @@
 # openscript-ch-website
 
+## 0.7.11
+
+### Patch Changes
+
+- cffe8ec: Use pull request target to trigger deployment
+
 ## 0.7.10
 
 ### Patch Changes
