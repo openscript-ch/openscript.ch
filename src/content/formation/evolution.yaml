@@ -1,15 +1,11 @@
 items:
   de:
-    - title: Lorem
-      text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    - title: Lorem
-      text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    - title: Lorem
-      text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    - title: Praktikumsplatz
+      text: Im Jahr 2023 absolvierte Micael sein einjähriges Praktikum bei uns.
+    - title: Weitere Unterstützung
+      text: Seit Anfang 2025 programmiert Leonardo bei uns fleissig mit.
   en:
-    - title: Lorem
-      text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    - title: Lorem
-      text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    - title: Lorem
-      text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    - title: Internship Position
+      text: In 2023, Micael completed his one-year internship with us.
+    - title: Further Support
+      text: Since early 2025, Leonardo has been programming diligently with us.

@@ -14,6 +14,7 @@
     padding: 1rem;
     background: var(--color-overlay);
     width: 45%;
+    font-size: 1.2rem;
   }
 
   li::after {
@@ -27,6 +28,10 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 5; /* above spine */
+  }
+
+  li :global(*:last-child) {
+    margin-block-end: 0;
   }
 
   @media screen and (min-width: 1025px) {
