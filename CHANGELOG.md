@@ -1,5 +1,11 @@
 # openscript-ch-website
 
+## 0.7.10
+
+### Patch Changes
+
+- bf60e45: Remove environment from build job
+
 ## 0.7.9
 
 ### Patch Changes
