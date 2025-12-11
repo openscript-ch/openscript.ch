@@ -47,3 +47,6 @@ jobs:
       - name: Check with Astro
         run: |
           pnpm astro check
+
+      - name: Build
+        run: pnpm build
