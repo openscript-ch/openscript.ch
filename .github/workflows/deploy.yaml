@@ -29,7 +29,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
         with:
-          ref: master
+          ref: ${{ inputs.ref }}
           # Fetch all history for tags
           # https://github.com/actions/checkout/issues/1471#issuecomment-1755639487
           filter: tree:0
