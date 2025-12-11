@@ -11,7 +11,7 @@
     "url": "https://github.com/openscript-ch/openscript.ch/issues"
   },
   "repository": "github:openscript-ch/openscript.ch",
-  "packageManager": "pnpm@10.24.0",
+  "packageManager": "pnpm@10.25.0",
   "scripts": {
     "predev": "pnpm build:sprite",
     "prebuild": "pnpm build:sprite",
@@ -30,15 +30,15 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.6",
-    "@astrojs/mdx": "^4.3.12",
+    "@astrojs/mdx": "^4.3.13",
     "@astrojs/rss": "^4.0.14",
     "@astrojs/sitemap": "^3.6.0",
     "@fontsource/fira-mono": "^5.2.7",
     "@fontsource/pt-sans": "^5.2.8",
     "@nanostores/i18n": "^1.2.2",
-    "astro": "^5.16.4",
-    "astro-loader-i18n": "^0.10.7",
-    "astro-nanostores-i18n": "^0.2.3",
+    "astro": "^5.16.5",
+    "astro-loader-i18n": "^0.10.9",
+    "astro-nanostores-i18n": "^0.2.4",
     "embla-carousel": "^8.6.0",
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-class-names": "^8.6.0",
@@ -57,7 +57,7 @@
     "@openscript/unplugin-favicons": "^1.1.8",
     "@types/mdast": "^4.0.4",
     "@types/node": "^24.10.1",
-    "@typescript-eslint/parser": "^8.48.1",
+    "@typescript-eslint/parser": "^8.49.0",
     "@vitest/coverage-v8": "4.0.15",
     "astro-eslint-parser": "^1.2.2",
     "eslint": "^9.39.1",
@@ -72,7 +72,7 @@
     "prettier-plugin-astro": "^0.14.1",
     "sirv": "^3.0.2",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.48.1",
+    "typescript-eslint": "^8.49.0",
     "vitest": "4.0.15"
   },
   "pnpm": {
