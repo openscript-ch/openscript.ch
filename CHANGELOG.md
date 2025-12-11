@@ -1,5 +1,12 @@
 # openscript-ch-website
 
+## 0.7.8
+
+### Patch Changes
+
+- 985e6f3: Add formation page
+- 82d500a: Upgrade dependencies
+
 ## 0.7.7
 
 ### Patch Changes
