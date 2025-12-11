@@ -21,15 +21,12 @@ env:
 
 jobs:
   build:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v6
         with:
-          ref: ${{ inputs.ref }}
+          ref: master
           # Fetch all history for tags
           # https://github.com/actions/checkout/issues/1471#issuecomment-1755639487
           filter: tree:0
