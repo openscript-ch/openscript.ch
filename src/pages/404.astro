@@ -35,23 +35,14 @@ import Article from "../layouts/templates/Article.astro";
   <script>
     function register() {
       const localeElements = document.querySelectorAll("[data-translation]");
+      const pathname = window.location.pathname;
+      const activeElement =
+        Array.from(localeElements).find(
+          (el) => el instanceof HTMLElement && pathname.startsWith(`/${el.dataset.translation}/`),
+        ) || document.querySelector('[data-translation="de"]');
 
-      for (const element of localeElements) {
-        if (!(element instanceof HTMLElement)) continue;
-        const { translation } = element.dataset;
-        if (!translation) continue;
-
-        if (window.location.pathname.startsWith(`/${translation}/`)) {
-          element.classList.add("active");
-          break;
-        }
-      }
-
-      if (!Array.from(localeElements).some((el) => el instanceof HTMLElement && el.classList.contains("active"))) {
-        const defaultElement = document.querySelector(`[data-translation="de"]`);
-        if (defaultElement instanceof HTMLElement) {
-          defaultElement.classList.add("active");
-        }
+      if (activeElement instanceof HTMLElement) {
+        activeElement.classList.add("active");
       }
     }
 
