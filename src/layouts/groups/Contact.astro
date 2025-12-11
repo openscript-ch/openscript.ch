@@ -21,7 +21,7 @@ const locale = currentLocale.get();
     <Email />
   </li>
   {
-    withoutLanguageSwitcher ? null : (
+    withoutLanguageSwitcher || !translations ? null : (
       <li>
         <LanguageSwitcher locale={locale} translations={translations} />
       </li>
