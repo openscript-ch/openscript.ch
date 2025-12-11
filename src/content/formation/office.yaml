@@ -1,0 +1,15 @@
+items:
+  de:
+    - title: Temporäres Büro
+      text: Im Februar 2021 sind wir in ein temporäres Büro im ehemaligen Swissôtel Zürich gezogen.
+    - title: Unterstützung
+      text: Ab Frühjahr 2021 unterstützte uns Aaron als Softwareentwickler.
+    - title: Zweites Büro
+      text: Seit Anfang 2022 mieten wir ein Büro in Glattbrugg.
+  en:
+    - title: Temporary Office
+      text: In February 2021, we moved into a temporary office in the former Swissôtel Zürich.
+    - title: Support
+      text: From spring 2021, Aaron supported us as a software developer.
+    - title: Second Office
+      text: Since early 2022, we have been renting an office in Glattbrugg.

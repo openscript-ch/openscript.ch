@@ -1,0 +1,73 @@
+---
+
+---
+
+<div class="timeline">
+  <ol>
+    <slot />
+  </ol>
+</div>
+
+<style>
+  .timeline {
+    position: relative;
+  }
+
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-gutter-big);
+  }
+
+  /* spine of the timeline */
+  .timeline::before {
+    content: "";
+    width: 4px;
+    height: calc(100% + var(--size-height-divider) + (3 * var(--size-gutter-massive)));
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(
+      to bottom,
+      var(--color-primary) 0.2rem,
+      transparent 0.2rem,
+      transparent 0.4rem,
+      var(--color-primary) 0.4rem,
+      var(--color-primary) 0.6rem,
+      transparent 0.6rem,
+      transparent 0.8rem,
+      var(--color-primary) 0.8rem
+    );
+    z-index: 3; /* above potential dividers */
+  }
+
+  :global(article section:last-of-type .timeline::before) {
+    height: 100%;
+  }
+
+  @media screen and (max-width: 1025px) {
+    .timeline::before {
+      left: 90%;
+    }
+
+    .timeline::after {
+      content: "";
+      width: 20px;
+      aspect-ratio: 1;
+      clip-path: polygon(0 0, 50% 100%, 100% 0);
+      background-color: var(--color-primary);
+      left: calc(90% - 10px);
+      bottom: -5px;
+      position: absolute;
+      z-index: 3; /* above potential dividers */
+    }
+
+    .timeline::before {
+      height: 100%;
+    }
+  }
+</style>
