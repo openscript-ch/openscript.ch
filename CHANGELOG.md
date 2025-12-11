@@ -1,5 +1,11 @@
 # openscript-ch-website
 
+## 0.7.9
+
+### Patch Changes
+
+- 561e9e1: Fix deploy workflow
+
 ## 0.7.8
 
 ### Patch Changes
