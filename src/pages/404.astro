@@ -31,22 +31,22 @@ import Article from "../layouts/templates/Article.astro";
       </section>
     </Article>
   </div>
-
-  <script>
-    function register() {
-      const localeElements = document.querySelectorAll("[data-translation]");
-      const pathname = window.location.pathname;
-      const activeElement =
-        Array.from(localeElements).find(
-          (el) => el instanceof HTMLElement && pathname.startsWith(`/${el.dataset.translation}/`),
-        ) || document.querySelector('[data-translation="de"]');
-
-      if (activeElement instanceof HTMLElement) {
-        activeElement.classList.add("active");
-      }
-    }
-
-    register();
-    document.addEventListener("astro:after-swap", register);
-  </script>
 </Shell>
+
+<script>
+  function register() {
+    const localeElements = document.querySelectorAll("[data-translation]");
+    const pathname = window.location.pathname;
+    const activeElement =
+      Array.from(localeElements).find(
+        (el) => el instanceof HTMLElement && pathname.startsWith(`/${el.dataset.translation}/`),
+      ) || document.querySelector('[data-translation="de"]');
+
+    if (activeElement instanceof HTMLElement) {
+      activeElement.classList.add("active");
+    }
+  }
+
+  register();
+  document.addEventListener("astro:after-swap", register);
+</script>
