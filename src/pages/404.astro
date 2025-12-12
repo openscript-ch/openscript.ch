@@ -1,0 +1,52 @@
+---
+import Button from "../components/Button.astro";
+import Shell from "../layouts/Shell.astro";
+import Article from "../layouts/templates/Article.astro";
+---
+
+<style>
+  [data-translation] {
+    display: none;
+  }
+
+  .active[data-translation] {
+    display: block;
+  }
+</style>
+
+<Shell>
+  <div data-translation="en">
+    <Article title="Page not found">
+      <section>
+        <p>Sorry, the page you are looking for does not exist.</p>
+        <Button href="/en" withArrow>Go to home page</Button>
+      </section>
+    </Article>
+  </div>
+  <div data-translation="de">
+    <Article title="Seite nicht gefunden">
+      <section>
+        <p>Entschuldigung, die von Ihnen gesuchte Seite existiert nicht.</p>
+        <Button href="/" withArrow>Startseite aufrufen</Button>
+      </section>
+    </Article>
+  </div>
+</Shell>
+
+<script>
+  function register() {
+    const localeElements = document.querySelectorAll("[data-translation]");
+    const pathname = window.location.pathname;
+    const activeElement =
+      Array.from(localeElements).find(
+        (el) => el instanceof HTMLElement && pathname.startsWith(`/${el.dataset.translation}/`),
+      ) || document.querySelector('[data-translation="de"]');
+
+    if (activeElement instanceof HTMLElement) {
+      activeElement.classList.add("active");
+    }
+  }
+
+  register();
+  document.addEventListener("astro:after-swap", register);
+</script>
