@@ -13,7 +13,7 @@ importers:
         version: 0.9.6(prettier-plugin-astro@0.14.1)(prettier@3.7.4)(typescript@5.9.3)
       '@astrojs/mdx':
         specifier: ^4.3.13
-        version: 4.3.13(astro@5.16.7(@types/node@24.10.4)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2))
+        version: 4.3.13(astro@5.16.8(@types/node@24.10.4)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2))
       '@astrojs/rss':
         specifier: ^4.0.14
         version: 4.0.14
@@ -31,13 +31,13 @@ importers:
         version: 1.2.2(nanostores@1.0.1)
       astro:
         specifier: ^5.16.5
-        version: 5.16.7(@types/node@24.10.4)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2)
+        version: 5.16.8(@types/node@24.10.4)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2)
       astro-loader-i18n:
         specifier: ^0.10.9
-        version: 0.10.9(astro@5.16.7(@types/node@24.10.4)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2))
+        version: 0.10.11(astro@5.16.8(@types/node@24.10.4)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2))
       astro-nanostores-i18n:
         specifier: ^0.2.4
-        version: 0.2.4(@nanostores/i18n@1.2.2(nanostores@1.0.1))(astro@5.16.7(@types/node@24.10.4)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2))(nanostores@1.0.1)
+        version: 0.2.6(@nanostores/i18n@1.2.2(nanostores@1.0.1))(astro@5.16.8(@types/node@24.10.4)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2))(nanostores@1.0.1)
       embla-carousel:
         specifier: ^8.6.0
         version: 8.6.0
@@ -49,7 +49,7 @@ importers:
         version: 8.6.0(embla-carousel@8.6.0)
       limax:
         specifier: ^4.2.1
-        version: 4.2.1
+        version: 4.2.2
       pagefind:
         specifier: ^1.4.0
         version: 1.4.0
@@ -1521,21 +1521,21 @@ packages:
     peerDependencies:
       astro: ^4.14.0 || ^5.0.0
 
-  astro-loader-i18n@0.10.9:
-    resolution: {integrity: sha512-/zo9sjbZQKQe4gMuwU/AC5Wwm15zN/WjW2F1OMY4rfM8hP7CJGwazRK2uRvEC5YW9/qG7kkkKv5LP4MG+hNy0w==}
+  astro-loader-i18n@0.10.11:
+    resolution: {integrity: sha512-jzkc0PP4+Ziam1fwdsgA2wXYXrTRW4wDVZREabf0Niv1+x6DNsjwLlbJUeEIu8ONz1qd4JxIH7YlI+igHlyxsw==}
     peerDependencies:
       astro: ^5.5.0
 
-  astro-nanostores-i18n@0.2.4:
-    resolution: {integrity: sha512-x9wR0qQM3gJp1014MNyCNjKGQdFSpPDXQ9TiEyGPhLG6m21eUlGy+NRdpscs2q145Xo61U02V60Fx7p99EOxiA==}
+  astro-nanostores-i18n@0.2.6:
+    resolution: {integrity: sha512-QODf2XvjUfgn+Wi1LOoI317XjaHdEBjF8mFepCji/8zQlRIIw9N51nvZtv/wQJCHkwoG92FgJhUvYhaK4PJ8uQ==}
     hasBin: true
     peerDependencies:
       '@nanostores/i18n': ^1.2.0
       astro: ^5.5.0
       nanostores: ^1.0.1
 
-  astro@5.16.7:
-    resolution: {integrity: sha512-Kfv7FKisFR+THvmojXWtvJGRCvQ4D9przguE9XdeUtS464ned6hvbgmyFDvPzyaNmDtkHGNpPwAQ9tgFcVqp+Q==}
+  astro@5.16.8:
+    resolution: {integrity: sha512-gzZE+epuCrNuxOa8/F1dzkllDOFvxWhGeobQKeBRIAef5sUpUKMHZo/8clse+02rYnKJCgwXBgjW4uTu9mqUUw==}
     engines: {node: 18.20.8 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -2162,8 +2162,8 @@ packages:
     resolution: {integrity: sha512-n8v8b6p4Z1sMgqRmqLJm3awW4NX7NkaKPfb3uJIBTSH7Pdvufi3PQ3/lJLQrvxcMYl7JI2jnDO90siPEpD8JBA==}
     hasBin: true
 
-  fastq@1.19.1:
-    resolution: {integrity: sha512-GwLTyxkCXjXbxqIhTsMI2Nui8huMPtnxg7krajPJAjnEG/iiOS7i+zCtWGZR9G0NBKbXKh6X9m9UIsYX/N6vvQ==}
+  fastq@1.20.1:
+    resolution: {integrity: sha512-GGToxJ/w1x32s/D2EKND7kTil4n8OVk/9mycTc4VDza13lOvpUZTGX3mFSCtV9ksdGBVzvsyAVLM6mHFThxXxw==}
 
   favicons@7.2.0:
     resolution: {integrity: sha512-k/2rVBRIRzOeom3wI9jBPaSEvoTSQEW4iM0EveBmBBKFxO8mSyyRWtDlfC3VnEfu0avmjrMzy8/ZFPSe6F71Hw==}
@@ -2689,8 +2689,8 @@ packages:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
     engines: {node: '>= 0.8.0'}
 
-  limax@4.2.1:
-    resolution: {integrity: sha512-7YeQ8dV9XIjYIjBSFUSOfoxQFAtG2ckD0FGKYCuRaPJKc3IKXZwqsSLD5PnlPklp4y5ncPWhiL142ijAtHGNgw==}
+  limax@4.2.2:
+    resolution: {integrity: sha512-HhCTNSqrNHj2hZzFn2gNbdOukxSbsw7nSZ9cmn1TpvjvHvE1TuT523fgMpLTwzRdoNMujdyTeSNcs6TwiFa5aQ==}
     engines: {node: '>=14'}
 
   locate-path@5.0.0:
@@ -2700,9 +2700,6 @@ packages:
   locate-path@6.0.0:
     resolution: {integrity: sha512-iPZK6eYjbxRu3uB4/WZ3EsEIMJFMqAoopl3R+zuq0UjcAm/MO6KCweDgPfP3elTztoKP3KtnVHxTn2NHBSDVUw==}
     engines: {node: '>=10'}
-
-  lodash.deburr@4.1.0:
-    resolution: {integrity: sha512-m/M1U1f3ddMCs6Hq2tAsYThTBDaAKFDX3dwDo97GEYzamXi9SqUpjWi/Rrj/gf3X2n8ktwgZrlP1z6E3v/IExQ==}
 
   lodash.escape@4.0.1:
     resolution: {integrity: sha512-nXEOnb/jK9g0DYMr1/Xvq6l5xMD7GDG55+GSYIYmS0G4tBk/hURD4JR9WCavs04t33WmJx9kCyp9vJ+mr4BOUw==}
@@ -3439,6 +3436,10 @@ packages:
 
   sax@1.4.3:
     resolution: {integrity: sha512-yqYn1JhPczigF94DMS+shiDMjDowYO6y9+wB/4WgO0Y19jWYk0lQ4tuG5KI7kj4FTp1wxPj5IFfcrz/s1c3jjQ==}
+
+  sax@1.4.4:
+    resolution: {integrity: sha512-1n3r/tGXO6b6VXMdFT54SHzT9ytu9yr7TaELowdYpMqY/Ao7EnlQGmAQ1+RatX7Tkkdm6hONI2owqNx2aZj5Sw==}
+    engines: {node: '>=11.0.0'}
 
   semver@7.7.3:
     resolution: {integrity: sha512-SdsKMrI9TdgjdweUSR9MweHA4EJ8YxHn8DFaDisvhVlUOe4BF1tLD7GAj0lIqWVl+dPb/rExr0Btby5loQm20Q==}
@@ -4324,12 +4325,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/mdx@4.3.13(astro@5.16.7(@types/node@24.10.4)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2))':
+  '@astrojs/mdx@4.3.13(astro@5.16.8(@types/node@24.10.4)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2))':
     dependencies:
       '@astrojs/markdown-remark': 6.3.10
       '@mdx-js/mdx': 3.1.1
       acorn: 8.15.0
-      astro: 5.16.7(@types/node@24.10.4)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2)
+      astro: 5.16.8(@types/node@24.10.4)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2)
       es-module-lexer: 1.7.0
       estree-util-visit: 2.0.0
       hast-util-to-html: 9.0.5
@@ -5018,7 +5019,7 @@ snapshots:
   '@nodelib/fs.walk@1.2.8':
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
-      fastq: 1.19.1
+      fastq: 1.20.1
 
   '@npmcli/fs@5.0.0':
     dependencies:
@@ -5666,26 +5667,26 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  astro-integration-kit@0.19.1(astro@5.16.7(@types/node@24.10.4)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2)):
+  astro-integration-kit@0.19.1(astro@5.16.8(@types/node@24.10.4)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2)):
     dependencies:
-      astro: 5.16.7(@types/node@24.10.4)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2)
+      astro: 5.16.8(@types/node@24.10.4)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2)
       pathe: 1.1.2
 
-  astro-loader-i18n@0.10.9(astro@5.16.7(@types/node@24.10.4)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2)):
+  astro-loader-i18n@0.10.11(astro@5.16.8(@types/node@24.10.4)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2)):
     dependencies:
-      astro: 5.16.7(@types/node@24.10.4)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2)
+      astro: 5.16.8(@types/node@24.10.4)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2)
 
-  astro-nanostores-i18n@0.2.4(@nanostores/i18n@1.2.2(nanostores@1.0.1))(astro@5.16.7(@types/node@24.10.4)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2))(nanostores@1.0.1):
+  astro-nanostores-i18n@0.2.6(@nanostores/i18n@1.2.2(nanostores@1.0.1))(astro@5.16.8(@types/node@24.10.4)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2))(nanostores@1.0.1):
     dependencies:
       '@astrojs/compiler': 2.13.0
       '@nanostores/i18n': 1.2.2(nanostores@1.0.1)
-      astro: 5.16.7(@types/node@24.10.4)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2)
-      astro-integration-kit: 0.19.1(astro@5.16.7(@types/node@24.10.4)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2))
+      astro: 5.16.8(@types/node@24.10.4)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2)
+      astro-integration-kit: 0.19.1(astro@5.16.8(@types/node@24.10.4)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2))
       fast-glob: 3.3.3
       nanostores: 1.0.1
       typescript: 5.9.3
 
-  astro@5.16.7(@types/node@24.10.4)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2):
+  astro@5.16.8(@types/node@24.10.4)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2):
     dependencies:
       '@astrojs/compiler': 2.13.0
       '@astrojs/internal-helpers': 0.7.5
@@ -6507,7 +6508,7 @@ snapshots:
     dependencies:
       strnum: 2.1.1
 
-  fastq@1.19.1:
+  fastq@1.20.1:
     dependencies:
       reusify: 1.1.0
 
@@ -7118,10 +7119,9 @@ snapshots:
       prelude-ls: 1.2.1
       type-check: 0.4.0
 
-  limax@4.2.1:
+  limax@4.2.2:
     dependencies:
       hepburn: 1.2.2
-      lodash.deburr: 4.1.0
       pinyin-pro: 3.27.0
       speakingurl: 14.0.1
 
@@ -7132,8 +7132,6 @@ snapshots:
   locate-path@6.0.0:
     dependencies:
       p-locate: 5.0.0
-
-  lodash.deburr@4.1.0: {}
 
   lodash.escape@4.0.1: {}
 
@@ -8246,6 +8244,8 @@ snapshots:
 
   sax@1.4.3: {}
 
+  sax@1.4.4: {}
+
   semver@7.7.3: {}
 
   set-function-length@1.2.2:
@@ -8583,7 +8583,7 @@ snapshots:
       css-what: 6.2.2
       csso: 5.0.5
       picocolors: 1.1.1
-      sax: 1.4.3
+      sax: 1.4.4
 
   synckit@0.11.11:
     dependencies:
