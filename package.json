@@ -11,7 +11,7 @@
     "url": "https://github.com/openscript-ch/openscript.ch/issues"
   },
   "repository": "github:openscript-ch/openscript.ch",
-  "packageManager": "pnpm@10.27.0",
+  "packageManager": "pnpm@10.28.0",
   "scripts": {
     "predev": "pnpm build:sprite",
     "prebuild": "pnpm build:sprite",
