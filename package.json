@@ -38,7 +38,7 @@
     "@nanostores/i18n": "^1.2.2",
     "astro": "^5.16.5",
     "astro-loader-i18n": "^0.10.9",
-    "astro-nanostores-i18n": "^0.2.4",
+    "astro-nanostores-i18n": "^0.3.0",
     "embla-carousel": "^8.6.0",
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-class-names": "^8.6.0",
