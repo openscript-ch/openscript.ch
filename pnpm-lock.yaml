@@ -13,7 +13,7 @@ importers:
         version: 0.9.6(prettier-plugin-astro@0.14.1)(prettier@3.8.0)(typescript@5.9.3)
       '@astrojs/mdx':
         specifier: ^4.3.13
-        version: 4.3.13(astro@5.16.10(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2))
+        version: 4.3.13(astro@5.16.11(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2))
       '@astrojs/rss':
         specifier: ^4.0.14
         version: 4.0.15
@@ -31,13 +31,13 @@ importers:
         version: 1.2.2(nanostores@1.0.1)
       astro:
         specifier: ^5.16.5
-        version: 5.16.10(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2)
+        version: 5.16.11(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2)
       astro-loader-i18n:
         specifier: ^0.10.9
-        version: 0.10.11(astro@5.16.10(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2))
+        version: 0.10.11(astro@5.16.11(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2))
       astro-nanostores-i18n:
         specifier: ^0.3.0
-        version: 0.3.0(@nanostores/i18n@1.2.2(nanostores@1.0.1))(astro@5.16.10(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2))(nanostores@1.0.1)
+        version: 0.3.0(@nanostores/i18n@1.2.2(nanostores@1.0.1))(astro@5.16.11(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2))(nanostores@1.0.1)
       embla-carousel:
         specifier: ^8.6.0
         version: 8.6.0
@@ -1534,8 +1534,8 @@ packages:
       astro: ^5.5.0
       nanostores: ^1.0.1
 
-  astro@5.16.10:
-    resolution: {integrity: sha512-mBaRwFrqwCHiKDvvfNW2rRRkLAqnkj3lbkte6Vg4OzeUiDyEsdU4oOqTZxHJf/mxzZvBiU37BxG1oeh+tq1IUA==}
+  astro@5.16.11:
+    resolution: {integrity: sha512-Z7kvkTTT5n6Hn5lCm6T3WU6pkxx84Hn25dtQ6dR7ATrBGq9eVa8EuB/h1S8xvaoVyCMZnIESu99Z9RJfdLRLDA==}
     engines: {node: 18.20.8 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -2218,9 +2218,9 @@ packages:
   fontace@0.4.0:
     resolution: {integrity: sha512-moThBCItUe2bjZip5PF/iZClpKHGLwMvR79Kp8XpGRBrvoRSnySN4VcILdv3/MJzbhvUA5WeiUXF5o538m5fvg==}
 
-  fontkitten@1.0.1:
-    resolution: {integrity: sha512-m+/cO+/kAU9farlejecXLgQH20+UXyH0K6oosGtogAz7BWco+KTYE60epKwMt8eVxqlOE2Fs+GoHVlGDUbKOoA==}
-    engines: {node: '>=24.12.0'}
+  fontkitten@1.0.2:
+    resolution: {integrity: sha512-piJxbLnkD9Xcyi7dWJRnqszEURixe7CrF/efBfbffe2DPyabmuIuqraruY8cXTs19QoM8VJzx47BDRVNXETM7Q==}
+    engines: {node: '>=20'}
 
   for-each@0.3.5:
     resolution: {integrity: sha512-dKx12eRCVIzqCxFGplyFKJMPvLEWgmNtUrpTiJIR5u97zEhRG8ySrtboPHZXx7daLxQVrl643cTzbab2tkQjxg==}
@@ -4326,12 +4326,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/mdx@4.3.13(astro@5.16.10(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2))':
+  '@astrojs/mdx@4.3.13(astro@5.16.11(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2))':
     dependencies:
       '@astrojs/markdown-remark': 6.3.10
       '@mdx-js/mdx': 3.1.1
       acorn: 8.15.0
-      astro: 5.16.10(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2)
+      astro: 5.16.11(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2)
       es-module-lexer: 1.7.0
       estree-util-visit: 2.0.0
       hast-util-to-html: 9.0.5
@@ -4395,7 +4395,7 @@ snapshots:
 
   '@capsizecss/unpack@4.0.0':
     dependencies:
-      fontkitten: 1.0.1
+      fontkitten: 1.0.2
 
   '@changesets/apply-release-plan@7.0.14':
     dependencies:
@@ -5665,26 +5665,26 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  astro-integration-kit@0.19.1(astro@5.16.10(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2)):
+  astro-integration-kit@0.19.1(astro@5.16.11(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2)):
     dependencies:
-      astro: 5.16.10(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2)
+      astro: 5.16.11(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2)
       pathe: 1.1.2
 
-  astro-loader-i18n@0.10.11(astro@5.16.10(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2)):
+  astro-loader-i18n@0.10.11(astro@5.16.11(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2)):
     dependencies:
-      astro: 5.16.10(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2)
+      astro: 5.16.11(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2)
 
-  astro-nanostores-i18n@0.3.0(@nanostores/i18n@1.2.2(nanostores@1.0.1))(astro@5.16.10(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2))(nanostores@1.0.1):
+  astro-nanostores-i18n@0.3.0(@nanostores/i18n@1.2.2(nanostores@1.0.1))(astro@5.16.11(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2))(nanostores@1.0.1):
     dependencies:
       '@astrojs/compiler': 2.13.0
       '@nanostores/i18n': 1.2.2(nanostores@1.0.1)
-      astro: 5.16.10(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2)
-      astro-integration-kit: 0.19.1(astro@5.16.10(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2))
+      astro: 5.16.11(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2)
+      astro-integration-kit: 0.19.1(astro@5.16.11(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2))
       fast-glob: 3.3.3
       nanostores: 1.0.1
       typescript: 5.9.3
 
-  astro@5.16.10(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2):
+  astro@5.16.11(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2):
     dependencies:
       '@astrojs/compiler': 2.13.0
       '@astrojs/internal-helpers': 0.7.5
@@ -6557,9 +6557,9 @@ snapshots:
 
   fontace@0.4.0:
     dependencies:
-      fontkitten: 1.0.1
+      fontkitten: 1.0.2
 
-  fontkitten@1.0.1:
+  fontkitten@1.0.2:
     dependencies:
       tiny-inflate: 1.0.3
 
