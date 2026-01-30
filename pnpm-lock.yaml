@@ -36,8 +36,8 @@ importers:
         specifier: ^0.10.9
         version: 0.10.11(astro@5.17.1(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.57.0)(typescript@5.9.3)(yaml@2.8.2))
       astro-nanostores-i18n:
-        specifier: ^0.3.0
-        version: 0.3.1(@nanostores/i18n@1.2.2(nanostores@1.0.1))(astro@5.17.1(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.57.0)(typescript@5.9.3)(yaml@2.8.2))(nanostores@1.0.1)
+        specifier: ^0.4.0
+        version: 0.4.0(@nanostores/i18n@1.2.2(nanostores@1.0.1))(astro@5.17.1(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.57.0)(typescript@5.9.3)(yaml@2.8.2))(nanostores@1.0.1)
       embla-carousel:
         specifier: ^8.6.0
         version: 8.6.0
@@ -1571,8 +1571,8 @@ packages:
     peerDependencies:
       astro: ^5.5.0
 
-  astro-nanostores-i18n@0.3.1:
-    resolution: {integrity: sha512-GiiR3vIZ4fIVbdMoQXQYFE/5vWBHz7wzoYWLcowXvNWpvheC9VhXYgCQ4cgH+I2Smc4IM4jLUhQOhchTV45pYw==}
+  astro-nanostores-i18n@0.4.0:
+    resolution: {integrity: sha512-vxN2+I3K1dqmKFjlCuVnvhxXqOeKK37oPws3L9PoMzVZ3piB2fprH8i1OTO6jCON666uHVUKkD0Gqg525dZyrQ==}
     hasBin: true
     peerDependencies:
       '@nanostores/i18n': ^1.2.0
@@ -5726,7 +5726,7 @@ snapshots:
     dependencies:
       astro: 5.17.1(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.57.0)(typescript@5.9.3)(yaml@2.8.2)
 
-  astro-nanostores-i18n@0.3.1(@nanostores/i18n@1.2.2(nanostores@1.0.1))(astro@5.17.1(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.57.0)(typescript@5.9.3)(yaml@2.8.2))(nanostores@1.0.1):
+  astro-nanostores-i18n@0.4.0(@nanostores/i18n@1.2.2(nanostores@1.0.1))(astro@5.17.1(@types/node@24.10.9)(jiti@2.6.1)(rollup@4.57.0)(typescript@5.9.3)(yaml@2.8.2))(nanostores@1.0.1):
     dependencies:
       '@astrojs/compiler': 2.13.0
       '@nanostores/i18n': 1.2.2(nanostores@1.0.1)
