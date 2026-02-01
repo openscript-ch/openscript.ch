@@ -1,5 +1,11 @@
 # openscript-ch-website
 
+## 0.7.12
+
+### Patch Changes
+
+- e7b1a38: Add 404 page
+
 ## 0.7.11
 
 ### Patch Changes
