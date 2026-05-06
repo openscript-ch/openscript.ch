@@ -1,0 +1,44 @@
+---
+import type { AccordionItem } from "../../types/AccordionItem";
+
+/**
+ * Accordion Component
+ *
+ * @description A fully accessible accordion component that follows WAI-ARIA guidelines
+ */
+
+interface Props {
+  /**
+   * Additional classes to apply to the accordion container
+   */
+  class?: string;
+  /**
+   * Accordion items to render
+   */
+  children: AccordionItem | AccordionItem[];
+  /**
+   * HTML attributes to spread on the accordion
+   */
+  [key: string]: string | number | boolean | undefined | AccordionItem | AccordionItem[];
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ul class:list={["accordion", className]} {...rest}>
+  <slot />
+</ul>
+
+<style>
+  :where(.accordion) {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  :global(:where(.accordion > .item:first-child .wrapper)) {
+    border-block-start: none !important;
+  }
+</style>

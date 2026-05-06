@@ -2,3 +2,81 @@
 path: references
 title: References
 ---
+import Divider from "../../../../components/Divider.astro";
+import Accordion from "../../../../components/accordion/Accordion.astro";
+import AccordionItem from "../../../../components/accordion/AccordionItem.astro";
+import AxaImage from "../../../references/projects/axa.placeholder.png";
+import DogliImage from "../../../references/projects/dogil.placeholder.png";
+import DocportalImage1 from "../../../references/projects/docportal.placeholder.1.png";
+import DocportalImage2 from "../../../references/projects/docportal.placeholder.2.png";
+import { Image } from "astro:assets";
+
+<section class="spotlight">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec risus sit amet nisl consectetur suscipit. Duis diam
+  dui, ultricies ut dolor vel, venenatis egestas ex. Ut vitae nibh arcu. Suspendisse varius risus id blandit fermentum.
+  Pellentesque dictum viverra nisi, id congue ex elementum sed. Donec bibendum libero vitae dui accumsan, ac rhoncus mi
+  pellentesque. Aliquam erat volutpat. Morbi bibendum feugiat dolor non tristique. Aliquam erat volutpat.
+</section>
+
+<Divider firstSegmentColor="var(--color-white)" fixAntialiasingBottom />
+
+<section class="white-background">
+<Accordion>
+  <AccordionItem
+    name="dogli"
+    title="Dogli"
+    variant="chevron"
+    open
+  >
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec risus sit amet nisl consectetur suscipit. Duis diam
+  dui, ultricies ut dolor vel, venenatis egestas ex. Ut vitae nibh arcu. Suspendisse varius risus id blandit fermentum.
+  
+  <Image layout="constrained" src={DogliImage} alt="Dogli App" loading="lazy" />
+
+  </AccordionItem>
+  <AccordionItem
+    name="docportal"
+    title="'name' - DocPortal"
+    variant="chevron"
+  >
+    The DocPortal was developed for the "name" and serves as a platform for managing data as well as for the automated generation of PDF documents.
+    In addition, the application supports digital signatures, allowing documents to be processed and signed completely paperless.
+    
+    With the help of configurable document templates, the documents can be adapted from year to year according to requirements.
+  
+    The following example shows the data entry of an education report within the DocPortal.
+
+    <Image layout="constrained" src={DocportalImage1} alt="Datenerfassung eines Bildungsberichtes" loading="lazy"/>
+
+    This results in a completed PDF document.
+
+    <Image layout="constrained" src={DocportalImage2} alt="Generiertes PDF" loading="lazy"/>
+
+  </AccordionItem>
+
+    <AccordionItem
+    name="axa"
+    title="Axa - Ausbildungskurse"
+    variant="chevron"
+    >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec risus sit amet nisl consectetur suscipit. Duis diam
+    dui, ultricies ut dolor vel, venenatis egestas ex. Ut vitae nibh arcu. Suspendisse varius risus id blandit fermentum.
+
+  <Image layout="constrained" src={AxaImage} alt="Axa Kurse" loading="lazy" />
+  </AccordionItem>
+</Accordion>
+</section>
+
+<Divider
+  firstSegmentColor="var(--color-white)"
+  secondSegmentColor="var(--color-primary)"
+  flipVertical
+  fixAntialiasingBottom
+/>
+
+<section>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec risus sit amet nisl consectetur suscipit. Duis diam
+  dui, ultricies ut dolor vel, venenatis egestas ex. Ut vitae nibh arcu. Suspendisse varius risus id blandit fermentum.
+  Pellentesque dictum viverra nisi, id congue ex elementum sed. Donec bibendum libero vitae dui accumsan, ac rhoncus mi
+  pellentesque. Aliquam erat volutpat. Morbi bibendum feugiat dolor non tristique. Aliquam erat volutpat.
+</section>
