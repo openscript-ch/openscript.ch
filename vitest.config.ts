@@ -1,4 +1,5 @@
-/// <reference types="vitest" />
+// eslint-disable-next-line @typescript-eslint/triple-slash-reference
+/// <reference types="vitest/config" />
 import { getViteConfig } from "astro/config";
 import { coverageConfigDefaults } from "vitest/config";
 
