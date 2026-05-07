@@ -2,3 +2,47 @@
 path: gegenwart
 title: Gegenwart
 ---
+
+import GridCards from "../../../layouts/groups/GridCards.astro";
+import Button from "../../../components/Button.astro";
+
+<section>
+  <GridCards>
+    <div>
+      <header>
+        <h3>Unsere Stärken</h3>
+      </header>
+      <main>
+        Was zeichnet die openscript GmbH aus?
+      </main>
+      <footer>
+        <Button href="./gegenwart/staerken" withArrow>Stärken</Button>
+      </footer>
+    </div>
+
+    <div>
+      <header>
+        <h3>Unser Team</h3>
+      </header>
+      <main>
+        Wer sind die hellen Köpfe hinter den Bildschirmen?
+      </main>
+      <footer>
+        <Button href="./gegenwart/team" withArrow>Team</Button>
+      </footer>
+    </div>
+
+    <div>
+      <header>
+        <h3>Unsere Werte</h3>
+      </header>
+      <main>
+        Für was steht die openscript GmbH ein?
+      </main>
+      <footer>
+        <Button href="./gegenwart/werte" withArrow>Werte</Button>
+      </footer>
+    </div>
+
+  </GridCards>
+</section>

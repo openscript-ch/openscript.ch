@@ -2,3 +2,35 @@
 path: vergangenheit
 title: Vergangenheit
 ---
+
+import GridCards from "../../../layouts/groups/GridCards.astro";
+import Button from "../../../components/Button.astro";
+
+<section>
+  <GridCards>
+    <div>
+      <header>
+        <h3>Unsere Entstehung</h3>
+      </header>
+      <main>
+        Wie ist die openscript GmbH entstanden?
+      </main>
+      <footer>
+        <Button href="./vergangenheit/entstehung" withArrow>Entstehung</Button>
+      </footer>
+    </div>
+
+    <div>
+      <header>
+        <h3>Unsere Referenzen</h3>
+      </header>
+      <main>
+        Welche Projekte hat die openscript GmbH bereits erfolgreich umgesetzt?
+      </main>
+      <footer>
+        <Button href="./vergangenheit/referenzen" withArrow>Referenzen</Button>
+      </footer>
+    </div>
+
+  </GridCards>
+</section>

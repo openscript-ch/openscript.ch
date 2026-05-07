@@ -1,0 +1,35 @@
+---
+
+---
+
+<div class="grid-cards">
+  <slot />
+</div>
+
+<style>
+  .grid-cards {
+    /* width: 100%; */
+    height: 100%;
+    display: grid;
+    align-items: stretch;
+    gap: var(--size-gutter-big);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+    > div {
+      background-color: var(--color-white);
+      padding: var(--size-gutter-medium);
+      display: grid;
+      /* grid-column: span 2; */
+      grid-template-columns: subgrid;
+      grid-template-rows: auto 1fr auto;
+
+      > header :where(h1, h2, h3, h4, h5, h6) {
+        margin: 0;
+      }
+
+      > footer {
+        grid-column: 1/ -1;
+      }
+    }
+  }
+</style>
