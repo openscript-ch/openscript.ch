@@ -15,7 +15,7 @@
         "unifiedjs.vscode-mdx",
         "github.vscode-github-actions",
         "GitHub.vscode-pull-request-github",
-        "vunguyentuan.vscode-css-variables",
+        "vunguyentuan.vscode-css-variables"
       ]
     }
   },
