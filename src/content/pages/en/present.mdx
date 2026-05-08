@@ -2,3 +2,44 @@
 path: present
 title: Present
 ---
+
+import GridCards from "../../../layouts/groups/GridCards.astro";
+import Button from "../../../components/Button.astro";
+
+<section>
+  <GridCards>
+    <div>
+      <header>
+        <h3>Our strengths</h3>
+      </header>
+      <main>
+        What sets openscript GmbH apart?
+      </main>
+      <footer>
+        <Button href="./present/strengths" withArrow>Strengths</Button>
+      </footer>
+    </div>
+    <div>
+      <header>
+        <h3>Our Team</h3>
+      </header>
+      <main>
+        Who are the bright minds behind the screens?
+      </main>
+      <footer>
+        <Button href="./present/team" withArrow>Team</Button>
+      </footer>
+    </div>
+    <div>
+      <header>
+        <h3>Our Values</h3>
+      </header>
+      <main>
+        What does openscript GmbH stand for?
+      </main>
+      <footer>
+        <Button href="./present/values" withArrow>Values</Button>
+      </footer>
+    </div>
+  </GridCards>
+</section>

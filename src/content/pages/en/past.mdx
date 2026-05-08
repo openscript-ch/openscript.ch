@@ -2,3 +2,33 @@
 path: past
 title: Past
 ---
+
+import GridCards from "../../../layouts/groups/GridCards.astro";
+import Button from "../../../components/Button.astro";
+
+<section>
+  <GridCards>
+    <div>
+      <header>
+        <h3>Our Formation</h3>
+      </header>
+      <main>
+        How did openscript GmbH come to be?
+      </main>
+      <footer>
+        <Button href="./past/entstehung" withArrow>Formation</Button>
+      </footer>
+    </div>
+    <div>
+      <header>
+        <h3>Our References</h3>
+      </header>
+      <main>
+        What projects has openscript GmbH already successfully completed?
+      </main>
+      <footer>
+        <Button href="./past/references" withArrow>References</Button>
+      </footer>
+    </div>
+  </GridCards>
+</section>

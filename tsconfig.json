@@ -10,8 +10,5 @@
   "compilerOptions": {
     "moduleResolution": "bundler",
     "exactOptionalPropertyTypes": false,
-    "types": [
-      "unplugin-icons/types/astro"
-    ],
   }
 }
