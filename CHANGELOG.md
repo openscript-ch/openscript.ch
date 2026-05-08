@@ -1,5 +1,15 @@
 # openscript-ch-website
 
+## 0.8.0
+
+### Minor Changes
+
+- e822df4: Added new content and sections
+
+### Patch Changes
+
+- f4d022c: Upgrade to Astro 6
+
 ## 0.7.12
 
 ### Patch Changes
