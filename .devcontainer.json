@@ -1,6 +1,6 @@
 {
   "name": "openscript.ch",
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:24-bookworm",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:24-trixie",
   "customizations": {
     "vscode": {
       "extensions": [
