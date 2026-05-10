@@ -28,16 +28,16 @@ importers:
         version: 5.2.8
       '@nanostores/i18n':
         specifier: ^1.3.2
-        version: 1.3.2(nanostores@1.3.0)
+        version: 1.3.3(nanostores@1.3.0)
       astro:
         specifier: ^6.3.1
         version: 6.3.1(@types/node@25.6.2)(jiti@2.7.0)(rollup@4.60.3)(yaml@2.8.4)
       astro-loader-i18n:
-        specifier: ^0.11.1
-        version: 0.11.1(astro@6.3.1(@types/node@25.6.2)(jiti@2.7.0)(rollup@4.60.3)(yaml@2.8.4))
+        specifier: ^0.12.0
+        version: 0.12.0(astro@6.3.1(@types/node@25.6.2)(jiti@2.7.0)(rollup@4.60.3)(yaml@2.8.4))
       astro-nanostores-i18n:
-        specifier: ^0.5.1
-        version: 0.5.1(@nanostores/i18n@1.3.2(nanostores@1.3.0))(astro@6.3.1(@types/node@25.6.2)(jiti@2.7.0)(rollup@4.60.3)(yaml@2.8.4))(nanostores@1.3.0)
+        specifier: ^0.6.0
+        version: 0.6.0(@nanostores/i18n@1.3.3(nanostores@1.3.0))(astro@6.3.1(@types/node@25.6.2)(jiti@2.7.0)(rollup@4.60.3)(yaml@2.8.4))(nanostores@1.3.0)
       embla-carousel:
         specifier: ^8.6.0
         version: 8.6.0
@@ -886,8 +886,8 @@ packages:
   '@mdx-js/mdx@3.1.1':
     resolution: {integrity: sha512-f6ZO2ifpwAQIpzGWaBQT2TXxPv6z3RBzQKpVftEWN78Vl/YweF1uwussDx8ECAXVtr3Rs89fKyG9YlzUs9DyGQ==}
 
-  '@nanostores/i18n@1.3.2':
-    resolution: {integrity: sha512-+9bQeBjOkRzGKtBn+mjZx8G9I2TmXQCs+UO5Cf34KYHgHSCbOcS8yTXl0GCe065QLrKAASDdsOUi4JNJfgBKJA==}
+  '@nanostores/i18n@1.3.3':
+    resolution: {integrity: sha512-hwuTKJ+DKCOuszmmOuNfDeA8j86WJWLLzjzE1BYm+mabMcD5JYDnTd0wPMwgGJ+U//ApRaxviRvOtvk50F+RCg==}
     engines: {node: ^20.0.0 || >=22.0.0}
     peerDependencies:
       nanostores: ^0.9.0 || ^0.10.0 || ^0.11.0 || ^1.0.0
@@ -1569,19 +1569,13 @@ packages:
     resolution: {integrity: sha512-+QDcgc7e+au6EZ0YjMmRRjNoQo5bDMlaR45aWDoFsuxQTCM9qmCHRoiKJPELgckJ8Wmr7vcfpa9eCDHBFh6G4w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  astro-integration-kit@0.20.0:
-    resolution: {integrity: sha512-VQQs7hS9M3XrJtxSLHVDhvHzgqwZuhot3sMoYImBJSvL7fMnleSVgkZhoEeRJd1+Qh96eb469nRnn5mdjIJJMQ==}
-    deprecated: 'Check the migration guide: https://astro-integration-kit.netlify.app/migration-guide/'
-    peerDependencies:
-      astro: ^4.14.0 || ^5.0.0 || ^6.0.0
-
-  astro-loader-i18n@0.11.1:
-    resolution: {integrity: sha512-JLrfUR0EsQb/dKPBRsuGkbXyQIBGSGNwB7vcf8lQF9e28lW2+YVfGXfRZSPzrmP/iZjkIuD44sGgO0DD2e7vWQ==}
+  astro-loader-i18n@0.12.0:
+    resolution: {integrity: sha512-dACMDudFdPQhpKX7w2pZnqHA1jNQ6fYqEfMepijeBIr7m92EflYa1J4Re/MQAoqUpHaW3rDp0miEt59goKyjVg==}
     peerDependencies:
       astro: ^5.5.0 || ^6.0.0
 
-  astro-nanostores-i18n@0.5.1:
-    resolution: {integrity: sha512-1IgZRGG5qx68Txcp2hPvAVyEveQgE+Jqc/JVAYdZ5Qq1u/LXbMyXKktwV85Mwi4fYpkUaJNI8mD1YQyCBjT5FA==}
+  astro-nanostores-i18n@0.6.0:
+    resolution: {integrity: sha512-WfUPwR1/c7h5Mf9bBW8Uor6f2mvp/ICNzi4s1x+I5HSfkXQNfsNMA8udy2bjyRwOJvDGhCreERkYE8B/f7hD6Q==}
     hasBin: true
     peerDependencies:
       '@nanostores/i18n': ^1.2.0
@@ -3784,11 +3778,6 @@ packages:
       eslint: ^8.57.0 || ^9.0.0 || ^10.0.0
       typescript: '>=4.8.4 <6.1.0'
 
-  typescript@5.9.3:
-    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
-    engines: {node: '>=14.17'}
-    hasBin: true
-
   typescript@6.0.3:
     resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
     engines: {node: '>=14.17'}
@@ -4992,7 +4981,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@nanostores/i18n@1.3.2(nanostores@1.3.0)':
+  '@nanostores/i18n@1.3.3(nanostores@1.3.0)':
     dependencies:
       nanostores: 1.3.0
 
@@ -5654,24 +5643,18 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  astro-integration-kit@0.20.0(astro@6.3.1(@types/node@25.6.2)(jiti@2.7.0)(rollup@4.60.3)(yaml@2.8.4)):
-    dependencies:
-      astro: 6.3.1(@types/node@25.6.2)(jiti@2.7.0)(rollup@4.60.3)(yaml@2.8.4)
-      pathe: 2.0.3
-
-  astro-loader-i18n@0.11.1(astro@6.3.1(@types/node@25.6.2)(jiti@2.7.0)(rollup@4.60.3)(yaml@2.8.4)):
+  astro-loader-i18n@0.12.0(astro@6.3.1(@types/node@25.6.2)(jiti@2.7.0)(rollup@4.60.3)(yaml@2.8.4)):
     dependencies:
       astro: 6.3.1(@types/node@25.6.2)(jiti@2.7.0)(rollup@4.60.3)(yaml@2.8.4)
 
-  astro-nanostores-i18n@0.5.1(@nanostores/i18n@1.3.2(nanostores@1.3.0))(astro@6.3.1(@types/node@25.6.2)(jiti@2.7.0)(rollup@4.60.3)(yaml@2.8.4))(nanostores@1.3.0):
+  astro-nanostores-i18n@0.6.0(@nanostores/i18n@1.3.3(nanostores@1.3.0))(astro@6.3.1(@types/node@25.6.2)(jiti@2.7.0)(rollup@4.60.3)(yaml@2.8.4))(nanostores@1.3.0):
     dependencies:
-      '@astrojs/compiler': 3.0.1
-      '@nanostores/i18n': 1.3.2(nanostores@1.3.0)
+      '@astrojs/compiler': 4.0.0
+      '@nanostores/i18n': 1.3.3(nanostores@1.3.0)
       astro: 6.3.1(@types/node@25.6.2)(jiti@2.7.0)(rollup@4.60.3)(yaml@2.8.4)
-      astro-integration-kit: 0.20.0(astro@6.3.1(@types/node@25.6.2)(jiti@2.7.0)(rollup@4.60.3)(yaml@2.8.4))
       fast-glob: 3.3.3
       nanostores: 1.3.0
-      typescript: 5.9.3
+      typescript: 6.0.3
 
   astro@6.3.1(@types/node@25.6.2)(jiti@2.7.0)(rollup@4.60.3)(yaml@2.8.4):
     dependencies:
@@ -8622,8 +8605,6 @@ snapshots:
       typescript: 6.0.3
     transitivePeerDependencies:
       - supports-color
-
-  typescript@5.9.3: {}
 
   typescript@6.0.3: {}
 
