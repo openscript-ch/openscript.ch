@@ -12,7 +12,7 @@ import Address from "./Address.astro";
 const locale = currentLocale.get();
 const navigation = await prepareNavigation(`footer/${locale}`);
 const messages = useI18n("layouts/groups/Footer.astro", {
-  copyright: "© 2025 openscript GmbH",
+  copyright: params("© {year} openscript GmbH"),
   version: params("Version {version}"),
 });
 ---
@@ -23,7 +23,9 @@ const messages = useI18n("layouts/groups/Footer.astro", {
     <Address />
     <Contact withoutLanguageSwitcher />
   </div>
-  <span class="copyright">{messages.copyright}<br />{messages.version({ version })}</span>
+  <span class="copyright"
+    >{messages.copyright({ year: new Date().getFullYear() })}<br />{messages.version({ version })}</span
+  >
   <div class="links">
     <nav>
       <Navigation items={navigation} />

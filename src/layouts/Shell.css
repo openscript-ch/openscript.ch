@@ -125,28 +125,28 @@ body {
   margin: 0;
   background-color: var(--color-background);
 
-  > .divider {
+  >.divider {
     z-index: 5;
   }
 }
 
 .page-padding,
 #ribbon,
-body > :is(header, footer) {
+body> :is(header, footer) {
   padding: 0 var(--size-page-padding);
 }
 
-body > :is(header, footer) {
+body> :is(header, footer) {
   z-index: 10;
 }
 
 #ribbon ::selection,
-body > :is(header, footer) ::selection {
+body> :is(header, footer) ::selection {
   background-color: var(--color-white);
   color: var(--color-primary);
 }
 
-:is(header, footer, #ribbon) a {
+body> :is(header, footer, #ribbon) a {
   text-decoration: none;
   color: var(--color-background);
   font-weight: bold;
@@ -207,21 +207,21 @@ h5 {
   font-size: 1.05rem;
 }
 
-main {
+body>main {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   hyphens: auto;
 
-  section {
+  >section {
     &.page-padding {
       padding-block: var(--size-gutter-massive);
     }
 
-    header {
+    >header {
       text-align: center;
 
-      > * {
+      >* {
         margin: 0;
         margin-bottom: var(--size-gutter-big);
       }
@@ -237,6 +237,7 @@ main {
       text-decoration: underline;
     }
   }
+
   :is(h1, h2, h3, h4, h5, h6) a {
     text-decoration: none;
     color: inherit;

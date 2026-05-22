@@ -1,6 +1,6 @@
 {
   "name": "openscript.ch",
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:24-bookworm",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:24-trixie",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -15,7 +15,7 @@
         "unifiedjs.vscode-mdx",
         "github.vscode-github-actions",
         "GitHub.vscode-pull-request-github",
-        "vunguyentuan.vscode-css-variables",
+        "vunguyentuan.vscode-css-variables"
       ]
     }
   },

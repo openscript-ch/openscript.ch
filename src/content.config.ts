@@ -5,9 +5,10 @@ import {
   i18nLoader,
   localized as localizedSchema,
 } from "astro-loader-i18n";
-import { defineCollection, z, type ImageFunction } from "astro:content";
+import { defineCollection, type ImageFunction } from "astro:content";
 import { localeSlugs } from "./site.config";
 import { glob, file } from "astro/loaders";
+import { z } from "astro/zod";
 
 const localized = <T extends z.ZodTypeAny>(schema: T) => localizedSchema(schema, localeSlugs);
 
@@ -19,7 +20,7 @@ const Category: z.ZodType<unknown> = z.object({
 const createNavigationItem = (image: ImageFunction) => {
   const Item = z.object({
     title: z.string(),
-    path: z.string().url().or(z.string()),
+    path: z.url().or(z.string()),
     icon: image().optional(),
   });
 
@@ -62,7 +63,7 @@ const referenceCompaniesCollection = defineCollection({
       id: z.string(),
       companyName: z.string(),
       logo: image(),
-      url: z.string().url().optional(),
+      url: z.url().optional(),
       archived: z.boolean().optional().default(false),
     }),
 });
@@ -76,7 +77,7 @@ const referenceProjectsCollection = defineCollection({
         title: z.string(),
         summary: z.string(),
         logo: image(),
-        path: z.string().url().optional(),
+        path: z.url().optional(),
       }),
     ),
 });
@@ -105,7 +106,7 @@ const technologiesCollection = defineCollection({
       id: z.string(),
       label: localized(z.string()),
       logo: z.string(),
-      url: z.string().url(),
+      url: z.url(),
     }),
   ),
 });
