@@ -1,5 +1,11 @@
 # openscript-ch-website
 
+## 0.8.1
+
+### Patch Changes
+
+- b7bed8c: Update year of copyright
+
 ## 0.8.0
 
 ### Minor Changes
