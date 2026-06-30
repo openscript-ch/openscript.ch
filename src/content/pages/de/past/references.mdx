@@ -13,10 +13,8 @@ import DocportalImage2 from "../../../references/projects/docportal.placeholder.
 import { Image } from "astro:assets";
 
 <section class="spotlight">
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec risus sit amet nisl consectetur suscipit. Duis diam
-  dui, ultricies ut dolor vel, venenatis egestas ex. Ut vitae nibh arcu. Suspendisse varius risus id blandit fermentum.
-  Pellentesque dictum viverra nisi, id congue ex elementum sed. Donec bibendum libero vitae dui accumsan, ac rhoncus mi
-  pellentesque. Aliquam erat volutpat. Morbi bibendum feugiat dolor non tristique. Aliquam erat volutpat.
+  Als Firma haben wir bereits mit vielen Kunden in verschiedensten Projekten gearbeitet. Wir haben daher bereits
+  Erfahrung mit Webapplikationen, Handy-Apps, Kurse im Bereich IT und weiteres.
 </section>
 
 <Divider firstSegmentColor="var(--color-white)" fixAntialiasingBottom />
@@ -24,18 +22,22 @@ import { Image } from "astro:assets";
 <section class="white-background">
 <Accordion>
   <AccordionItem
+    id="dogli"
     name="dogli"
     title="Dogli"
     variant="chevron"
     open
   >
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec risus sit amet nisl consectetur suscipit. Duis diam
-  dui, ultricies ut dolor vel, venenatis egestas ex. Ut vitae nibh arcu. Suspendisse varius risus id blandit fermentum.
+  Mit dem Team Dogli konnten wir eine App für Hundeliebhaber ins Leben rufen.
+  Die Dogli-App bietet über 300 video basierte bereichernde Lerninhalte für Zuhause ohne teures Zubehör.
   
-  <Image layout="constrained" src={DogliImage} alt="Dogli App" loading="lazy" />
+  Teile deine Hundeerlebnisse mit der Dogli-Community oder verfolge die Posts des neusten Social Media Hunde-Star.
+
+<Image layout="constrained" src={DogliImage} alt="Dogli App" loading="lazy" />
 
   </AccordionItem>
   <AccordionItem
+    id="docportal"
     name="docportal"
     title="'name' - DocPortal"
     variant="chevron"
@@ -55,13 +57,15 @@ import { Image } from "astro:assets";
 
   </AccordionItem>
 
-    <AccordionItem
+  <AccordionItem
+    id="axa"
     name="axa"
     title="Axa - Ausbildungskurse"
     variant="chevron"
     >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec risus sit amet nisl consectetur suscipit. Duis diam
-    dui, ultricies ut dolor vel, venenatis egestas ex. Ut vitae nibh arcu. Suspendisse varius risus id blandit fermentum.
+    openscript hat für die Axa einige Ausbildungskurse erstellt und führt diese Jährlich durch.
+    Diese Ausbildungskurse dienen als spezielle Weiterbildung für die Lernende der Axa bei denen Sie wichtige IT Themen kennenlernen.
+    Der Themenbereich deckt sich von Webtechnologien bis zu der Java persistence API und Linux in verschiedenen Kursen ab.
 
   <Image layout="constrained" src={AxaImage} alt="Axa Kurse" loading="lazy" />
   </AccordionItem>

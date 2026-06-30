@@ -5,6 +5,7 @@ import type { ImageMetadata } from "astro";
 import { parseLocale } from "./i18n";
 
 const PROTOCOL_DELIMITER = "://";
+const ID_DELIMITER = "#";
 
 export const defaultPropsAndParamsOptions = {
   defaultLocale: C.DEFAULT_LOCALE,
@@ -20,6 +21,52 @@ export const replaceSegmentsInPath = (path: string, locale: Locale) => {
 
 export const resolvePath = (...path: Array<string | number | undefined>) => {
   return originalResolvePath(import.meta.env.BASE_URL, ...path);
+};
+
+export const resolveSimplePath = async <E extends keyof DataEntryMap["navigation"] | (string & {})>(
+  id: E,
+  path: string,
+  currentLocale: Locale,
+) => {
+  const navigation = await getEntry("navigation", `${id}/${currentLocale}`);
+  if (!navigation) throw new Error(`Navigation entry not found`);
+
+  const items = navigation.data.items;
+
+  if (!Array.isArray(items)) {
+    throw new Error(`Navigation entry not found`);
+  }
+
+  const [cleansedPath, param] = path.split(ID_DELIMITER);
+
+  for (const item of items) {
+    const reference = findReference(item, `${currentLocale}${cleansedPath}`);
+
+    if (reference) {
+      const resolved = await convertReferenceToPath(reference);
+
+      return param ? `${resolved}#${param}` : resolved;
+    }
+  }
+
+  throw new Error(`Path could not be resolved`);
+};
+
+const findReference = (item: NavigationItem, path: string): string | undefined => {
+  const [collection, reference] = item.path.split(PROTOCOL_DELIMITER);
+  if (!collection || !reference) throw new Error("Invalid path");
+
+  if (reference === path) {
+    return item.path;
+  }
+
+  if (item.children) {
+    for (const child of item.children) {
+      const result = findReference(child, path);
+      if (result) return result;
+    }
+  }
+  return undefined;
 };
 
 export const generateGetStaticIndexPaths = (routePattern: string) => {

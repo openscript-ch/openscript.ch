@@ -1,15 +1,26 @@
 ---
+import { resolveSimplePath } from "../utils/paths";
 import Sprite from "./Sprite.astro";
+import { currentLocale } from "astro-nanostores-i18n:runtime";
 
 type Props = {
   href: string;
   withArrow?: boolean;
+  resolvePath?: boolean;
+  navigationSpace?: "main" | "footer";
 };
 
-const { href, withArrow } = Astro.props;
+const { href, resolvePath = false, navigationSpace = "main", withArrow } = Astro.props;
+
+let path;
+
+if (resolvePath) {
+  const locale = currentLocale.get();
+  path = await resolveSimplePath(navigationSpace, href, locale);
+}
 ---
 
-<a href={href} class="button">
+<a href={path ?? href} class="button">
   <slot />
   {withArrow && <Sprite name="arrow" />}
 </a>

@@ -9,6 +9,11 @@ import Heading from "./Heading.astro";
 
 interface Props {
   /**
+   * Id of the item
+   */
+  id: string;
+
+  /**
    * Additional classes to apply to the item
    */
   class?: string;
@@ -44,9 +49,15 @@ interface Props {
    * HTML attributes to spread on the accordion item
    */
   [key: string]: string | number | boolean | undefined;
+
+  /**
+   * Allow item to be opened by the id in the url
+   */
+  openOnUrlReference?: boolean;
 }
 
 const {
+  id,
   class: className,
   title,
   name,
@@ -54,11 +65,12 @@ const {
   headingSize = "h6",
   variant = "default",
   open = false,
+  openOnUrlReference = true,
   ...rest
 } = Astro.props;
 ---
 
-<li class:list={["item", className]} {...rest}>
+<li id={id} class:list={["item", className]} {...rest} data-dynamic={openOnUrlReference}>
   <details class:list={["wrapper", `variant-${variant}`]} name={name} {...open ? { open } : {}}>
     <summary class="title">
       <Heading level={headingLevel} size={headingSize}>
@@ -223,3 +235,30 @@ const {
     transform: scaleY(-1);
   }
 </style>
+
+<script>
+  const setInitialOpenAccordion = () => {
+    const hash = window.location.hash;
+
+    if (!hash) return;
+
+    const id = hash.split("#")[1];
+
+    if (!id) return;
+    const element = document.getElementById(id);
+
+    if (!element) return;
+
+    const dynamicOpening = element.dataset.dynamic;
+
+    if (!dynamicOpening) return;
+
+    const details = element.getElementsByTagName("details");
+
+    if (details.length === 1) {
+      details[0]?.setAttribute("open", "");
+    }
+  };
+
+  setInitialOpenAccordion();
+</script>
