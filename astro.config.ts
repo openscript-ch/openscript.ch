@@ -1,5 +1,5 @@
 import { defineConfig } from "astro/config";
-import unpluginFavicons from "@openscript/unplugin-favicons/vite";
+import unpluginFavicons from "@anolilab/unplugin-favicons/vite";
 import { C } from "./src/site.config";
 import mdx from "@astrojs/mdx";
 import rehypeSlug from "rehype-slug";

@@ -72,15 +72,15 @@ importers:
         specifier: ^6.0.3
         version: 6.0.3
     devDependencies:
+      '@anolilab/unplugin-favicons':
+        specifier: ^3.0.0
+        version: 3.0.0(@types/node@25.9.3)(esbuild@0.27.7)(favicons@7.3.0)(vite@7.3.5(@types/node@25.9.3)(jiti@2.7.0)(yaml@2.8.4))
       '@changesets/cli':
         specifier: ^2.31.0
         version: 2.31.0(@types/node@25.9.3)
       '@eslint/js':
         specifier: ^10.0.1
         version: 10.0.1(eslint@10.4.1(jiti@2.7.0))
-      '@openscript/unplugin-favicons':
-        specifier: ^1.1.8
-        version: 1.1.8(@types/node@25.9.3)(favicons@7.3.0)(rollup@4.61.1)(vite@7.3.5(@types/node@25.9.3)(jiti@2.7.0)(yaml@2.8.4))(yaml@2.8.4)
       '@types/mdast':
         specifier: ^4.0.4
         version: 4.0.4
@@ -140,6 +140,40 @@ importers:
         version: 4.1.8(@types/node@25.9.3)(@vitest/coverage-v8@4.1.8)(vite@7.3.5(@types/node@25.9.3)(jiti@2.7.0)(yaml@2.8.4))
 
 packages:
+
+  '@anolilab/unplugin-favicons@3.0.0':
+    resolution: {integrity: sha512-h8xKkIFyG/xnJXrfChPY8E7SWuh4KS6BDgIBJoaVh2Tt7MrMk04FFfz3xuzufzymGNSUZg4UCy/vS09dmmvc2Q==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      '@nuxt/kit': ^3
+      '@nuxt/schema': ^3
+      '@rspack/cli': ^1.1.8
+      '@sveltejs/kit': '*'
+      esbuild: '*'
+      favicons: ^7.2.0
+      rollup: ^3.0.1
+      vite: ^8.0.16
+      webpack: ^4 || ^5
+    peerDependenciesMeta:
+      '@nuxt/kit':
+        optional: true
+      '@nuxt/schema':
+        optional: true
+      '@rspack/cli':
+        optional: true
+      '@sveltejs/kit':
+        optional: true
+      esbuild:
+        optional: true
+      rollup:
+        optional: true
+      vite:
+        optional: true
+      webpack:
+        optional: true
+
+  '@antfu/install-pkg@1.1.0':
+    resolution: {integrity: sha512-MGQsmw10ZyI+EJo45CdSER4zEb+p31LpDAFp2Z3gkSd1yqVZGi0Ebx++YTEMonJy4oChEMLsxZ64j8FH6sSqtQ==}
 
   '@astrojs/check@0.9.9':
     resolution: {integrity: sha512-A5UW8uIuErLWEoRQvzgXpO1gTjUFtK8r7nU2Z7GewAMxUb7bPvpk11qaKKgxqXlHJWlAvaaxy+Xg28A6bmQ1Tg==}
@@ -954,40 +988,9 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@npmcli/fs@5.0.0':
-    resolution: {integrity: sha512-7OsC1gNORBEawOa5+j2pXN9vsicaIOH5cPXxoR6fJOmH6/EXpJB2CajXOu1fPRFun2m1lktEFX11+P89hqO/og==}
-    engines: {node: ^20.17.0 || >=22.9.0}
-
-  '@openscript/unplugin-favicons@1.1.8':
-    resolution: {integrity: sha512-AEKKZawbSCJ7JsgRVRrlnPWh80sBMfTViKqmD76L6sAKTy9ZjyVSc8Nt0jdY2nXLPl7rBeDEHhVkWUXSA3I+Cg==}
-    engines: {node: '>=22.0.0'}
-    peerDependencies:
-      '@nuxt/kit': ^3 || ^4.0.0
-      '@nuxt/schema': ^3 || ^4.0.0
-      '@rspack/cli': ^1.3.15
-      '@sveltejs/kit': '*'
-      esbuild: ^0.25.5
-      favicons: ^7.2.0
-      rollup: ^3.0.0 || ^4.0.0
-      vite: ^4 || ^5 || ^6 || ^7
-      webpack: ^4 || ^5
-    peerDependenciesMeta:
-      '@nuxt/kit':
-        optional: true
-      '@nuxt/schema':
-        optional: true
-      '@rspack/cli':
-        optional: true
-      '@sveltejs/kit':
-        optional: true
-      esbuild:
-        optional: true
-      rollup:
-        optional: true
-      vite:
-        optional: true
-      webpack:
-        optional: true
+  '@npmcli/fs@6.0.0':
+    resolution: {integrity: sha512-AheOs4swKka/XLtht6xxJDPezlQ7K2IYQ9Y8lST4JLDjnralnWuMM9AE2CdVcgQJ5omrXhsRzM7F7aYmeZBvKQ==}
+    engines: {node: ^22.22.2 || ^24.15.0 || >=26.0.0}
 
   '@oslojs/encoding@1.1.0':
     resolution: {integrity: sha512-70wQhgYmndg4GCPxPPxPGevRKqTIJ2Nh4OkiMWmDAVYsTQ+Ta7Sq+rPevXyXGdzr30/qZBnyOalCszoMxlyldQ==}
@@ -1435,28 +1438,28 @@ packages:
   '@ungap/structured-clone@1.3.1':
     resolution: {integrity: sha512-mUFwbeTqrVgDQxFveS+df2yfap6iuP20NAKAsBt5jDEoOTDew+zwLAOilHCeQJOVSvmgCX4ogqIrA0mnyr08yQ==}
 
-  '@visulima/find-cache-dir@1.0.35':
-    resolution: {integrity: sha512-z686U0T/l+ZizdxLmvIxdS1YiP60bhsz3+U6hLxHgMhaHABgfsXnJUvExwovxg/us473CTtxA/eAImdNAruTAg==}
-    engines: {node: '>=18.0.0 <=23.x'}
+  '@visulima/find-cache-dir@2.0.7':
+    resolution: {integrity: sha512-70JKCdm5p5iEBnJpvq1eEKFe8CcJx/RnHB9/LyfmuJjxHZVa1cbT4PhccRNGtzoPsg/l73gu09CJHjLt135B0g==}
+    engines: {node: '>=20.19 <=25.x'}
 
-  '@visulima/fs@3.1.9':
-    resolution: {integrity: sha512-0D9iREfekQmjAgOq+L3CU9TgpeunIwQ4BISq0vxEZuv2CjOLqqHGlkgFRlEgh2pBrHO3azF0OUGbPoK/1QmCUQ==}
-    engines: {node: '>=18.0.0 <=23.x'}
+  '@visulima/fs@4.1.0':
+    resolution: {integrity: sha512-9bb7oupbXXXc++m8Ypj+VUBF+P1j/Y3gadoT2HQHPHqDMrpMt8pcZyXjofitw/DaYSB3EeQOvGqHdgvsY646sw==}
+    engines: {node: '>=20.19 <=25.x'}
     os: [darwin, linux, win32]
     peerDependencies:
-      yaml: ^2.7.0
+      yaml: ^2.7.1
     peerDependenciesMeta:
       yaml:
         optional: true
 
-  '@visulima/package@3.6.1':
-    resolution: {integrity: sha512-dl36K1Y1clZbk0ouomnZbUxAE+ELAi2WgQeqSyxCRgY+HesbXgZBKDsJ811l3WWXJsaTv5m4oopfGzTJI34sUg==}
-    engines: {node: '>=18.0.0 <=23.x'}
+  '@visulima/package@4.1.7':
+    resolution: {integrity: sha512-xGzw2GFlHBleNgLYip6ZULKMZZAZrLGE5RJ2shKj4MUcAsv7IQzafyGa3m2PRw6HJSYeEpboobPVxf8SbCfm+w==}
+    engines: {node: '>=20.19 <=25.x'}
     os: [darwin, linux, win32]
 
-  '@visulima/path@1.4.0':
-    resolution: {integrity: sha512-lhtA4woh4KsXWyn3BJ/qYE/HSt+agsHeSGb7j3UeHpRyf3R4ErObR25snvt+Rc4Xlqb1T68U38wjqZ2YpmUGNw==}
-    engines: {node: '>=18.0.0 <=23.x'}
+  '@visulima/path@2.0.5':
+    resolution: {integrity: sha512-DBQe4IeEn1Yx03HQUlxog4sDJEQiVKnr2Kdm1acK6CgdcNN0fveoTfSvPsrxTKmMqdTgBbvB6UMUFh53cV+jgg==}
+    engines: {node: '>=20.19 <=25.x'}
     os: [darwin, linux, win32]
 
   '@vitest/coverage-v8@4.1.8':
@@ -1700,9 +1703,9 @@ packages:
     resolution: {integrity: sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==}
     engines: {node: '>=8'}
 
-  cacache@20.0.4:
-    resolution: {integrity: sha512-M3Lab8NPYlZU2exsL3bMVvMrMqgwCnMWfdZbK28bn3pK6APT/Te/I8hjRPNu1uwORY9a1eEQoifXbKPQMfMTOA==}
-    engines: {node: ^20.17.0 || >=22.9.0}
+  cacache@21.0.1:
+    resolution: {integrity: sha512-pTwz/uj3Jyp6WXdJ6fWhR+7LVxVs6RyroQSn7KJwHsSxXuyGSp0pcMVcwSwTpCFq1X2YG8QBe0W+vN+cr0SwzA==}
+    engines: {node: ^22.22.2 || ^24.15.0 || >=26.0.0}
 
   call-bind-apply-helpers@1.0.2:
     resolution: {integrity: sha512-Sp1ablJ0ivDkSzjcaJdxEunN5/XvksFJ2sMBFfq6x0ryhQV/2b/KwFe21cMpmHtPOSij8K99/wSfoEuTObmuMQ==}
@@ -2747,6 +2750,11 @@ packages:
   json-stable-stringify-without-jsonify@1.0.1:
     resolution: {integrity: sha512-Bdboy+l7tA3OGW6FjyFHWkP5LuByj1Tk33Ljyq0axyzdk9//JSi2u3fP1QSmd1KNwq6VOKYGlAu87CisVir6Pw==}
 
+  json5@2.2.3:
+    resolution: {integrity: sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==}
+    engines: {node: '>=6'}
+    hasBin: true
+
   jsonc-parser@2.3.1:
     resolution: {integrity: sha512-H8jvkz1O50L3dMZCsLqiuB2tA7muqbSg1AtGEkN0leAqGjsUzDJir3Zwr02BhqdcITPg3ei3mZ+HjMocAknhhg==}
 
@@ -2809,16 +2817,9 @@ packages:
   longest-streak@3.1.0:
     resolution: {integrity: sha512-9Ri+o0JYgehTaVBBDoMqIl8GXtbWg711O3srftcHhZ0dqnETqLaoIK0x17fUw9rFSlK/0NlsKe0Ahhyl5pXE2g==}
 
-  lru-cache@11.3.6:
-    resolution: {integrity: sha512-Gf/KoL3C/MlI7Bt0PGI9I+TeTC/I6r/csU58N4BSNc4lppLBeKsOdFYkK+dX0ABDUMJNfCHTyPpzwwO21Awd3A==}
-    engines: {node: 20 || >=22}
-
   lru-cache@11.5.1:
     resolution: {integrity: sha512-RPimw/7aMdv2oqRrxKwvZXcPfwBrn/JZ2xYcY9Hus/6LaS3VOAKVWKWgNLCFSiOm1ESXinjsDlidVU7JlnCN2A==}
     engines: {node: 20 || >=22}
-
-  magic-string@0.30.19:
-    resolution: {integrity: sha512-2N21sPY9Ws53PZvsEpVtNuSW+ScYbQdp4b9qUaL+9QkHUrGFKo56Lg9Emg5s9V/qrtNBmiR01sYhUOwu3H+VOw==}
 
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
@@ -3048,6 +3049,9 @@ packages:
 
   mlly@1.8.0:
     resolution: {integrity: sha512-l8D9ODSRWLe2KHJSifWGwBqpTZXIXTeo8mlKjY+E2HAakaTeNpqAyBZ8GSqLzHgw4XmHmC8whvpjJNMbFZN7/g==}
+
+  mlly@1.8.2:
+    resolution: {integrity: sha512-d+ObxMQFmbt10sretNDytwt85VrbkhhUA/JBGm1MPaWJ65Cl4wOgLaB1NYvJSZ0Ef03MMEU/0xpPMXUIQ29UfA==}
 
   mri@1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
@@ -3656,13 +3660,9 @@ packages:
   sprintf-js@1.0.3:
     resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
 
-  ssri@12.0.0:
-    resolution: {integrity: sha512-S7iGNosepx9RadX82oimUkvr0Ct7IjJbEbs4mJcTxst8um95J3sDYU1RBEOvdu6oL1Wek2ODI5i4MAw+dZ6cAQ==}
-    engines: {node: ^18.17.0 || >=20.5.0}
-
-  ssri@13.0.1:
-    resolution: {integrity: sha512-QUiRf1+u9wPTL/76GTYlKttDEBWV1ga9ZXW8BG6kfdeyyM8LGPix9gROyg9V2+P0xNyF3X2Go526xKFdMZrHSQ==}
-    engines: {node: ^20.17.0 || >=22.9.0}
+  ssri@14.0.0:
+    resolution: {integrity: sha512-jQxKI0yx0ZnTKrqjKkLDV2DXkBQn3k49JVmVqDGcDwKDtGDbImD/GXsq04KD0VVzCQQ9wZJYal3RwR1GzWTSow==}
+    engines: {node: ^22.22.2 || ^24.15.0 || >=26.0.0}
 
   stable@0.1.8:
     resolution: {integrity: sha512-ji9qxRnOVfcuLDySj9qzhGSEFVobyt1kIOSkj1qZzYLzq7Tos/oUUWvotUPQLlrsidqsK6tBH89Bc9kL5zHA6w==}
@@ -3756,6 +3756,10 @@ packages:
     resolution: {integrity: sha512-eNRKgb3z66Yp3D2CixVujOUvXLFUTij/zVnV8KRyvFdQwpz7I5DS8UfRkTeLzb64u+dkzDSdelE24izu+zSSUg==}
     engines: {node: ^14.18.0 || >=16.0.0}
 
+  tagged-tag@1.0.0:
+    resolution: {integrity: sha512-yEFYrVhod+hdNyx7g5Bnkkb0G6si8HJurOoOEgC8B/O0uXLHlaey/65KRv6cuWBNhBgHKAROVpc7QyYqE5gFng==}
+    engines: {node: '>=20'}
+
   term-size@2.2.1:
     resolution: {integrity: sha512-wK0Ri4fOGjv/XPy8SBHZChl8CM7uMc5VML7SqiQ0zG7+J5Vr+RMQDoHa2CNT6KHUnTGIXH34UDMkPzAUyapBZg==}
     engines: {node: '>=8'}
@@ -3823,6 +3827,10 @@ packages:
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
     engines: {node: '>= 0.8.0'}
+
+  type-fest@5.7.0:
+    resolution: {integrity: sha512-1URUxUqfHFM1c+zfSPsa3gnkO7Aq21qyH75SIduNYz4SzY964rn1X2vCMQaHSHhktiw+0kPa2iyb6PUpXqB6Vg==}
+    engines: {node: '>=20'}
 
   typed-array-buffer@1.0.3:
     resolution: {integrity: sha512-nAYYwfY3qnzX30IkA6AQZjVbtK6duGontcQm1WSG1MD94YLqK0515GNApXkoxKOWMusVssAHWLh9SeaoefYFGw==}
@@ -3917,9 +3925,38 @@ packages:
     resolution: {integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==}
     engines: {node: '>= 4.0.0'}
 
-  unplugin@2.3.11:
-    resolution: {integrity: sha512-5uKD0nqiYVzlmCRs01Fhs2BdkEgBS3SAVP6ndrBsuK42iC2+JHyxM05Rm9G8+5mkmRtzMZGY8Ct5+mliZxU/Ww==}
-    engines: {node: '>=18.12.0'}
+  unplugin@3.3.0:
+    resolution: {integrity: sha512-qa66K+crbfyE6JK10GjvbJeRrOsuC/JpbnHctfyp/i4oBTxWOzJfRZyDiOk1PtErMFRu8JhsU/wPvOdBNWe5Rg==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    peerDependencies:
+      '@farmfe/core': '*'
+      '@rspack/core': '*'
+      bun-types-no-globals: '*'
+      esbuild: '*'
+      rolldown: '*'
+      rollup: '*'
+      unloader: '*'
+      vite: '*'
+      webpack: '*'
+    peerDependenciesMeta:
+      '@farmfe/core':
+        optional: true
+      '@rspack/core':
+        optional: true
+      bun-types-no-globals:
+        optional: true
+      esbuild:
+        optional: true
+      rolldown:
+        optional: true
+      rollup:
+        optional: true
+      unloader:
+        optional: true
+      vite:
+        optional: true
+      webpack:
+        optional: true
 
   unstorage@1.17.5:
     resolution: {integrity: sha512-0i3iqvRfx29hkNntHyQvJTpf5W9dQ9ZadSoRU8+xVlhVtT7jAX57fazYO9EHvcRCfBCyi5YRya7XCDOsbTgkPg==}
@@ -4312,6 +4349,37 @@ packages:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
 
 snapshots:
+
+  '@anolilab/unplugin-favicons@3.0.0(@types/node@25.9.3)(esbuild@0.27.7)(favicons@7.3.0)(vite@7.3.5(@types/node@25.9.3)(jiti@2.7.0)(yaml@2.8.4))':
+    dependencies:
+      '@visulima/find-cache-dir': 2.0.7
+      '@visulima/package': 4.1.7(@types/node@25.9.3)
+      cacache: 21.0.1
+      consola: 3.4.2
+      fast-json-stable-stringify: 2.1.0
+      favicons: 7.3.0
+      magic-string: 0.30.21
+      mime: 4.1.0
+      mlly: 1.8.2
+      parse-author: 2.0.0
+      parse5: 8.0.1
+      ssri: 14.0.0
+      unplugin: 3.3.0(esbuild@0.27.7)(vite@7.3.5(@types/node@25.9.3)(jiti@2.7.0)(yaml@2.8.4))
+    optionalDependencies:
+      esbuild: 0.27.7
+      vite: 7.3.5(@types/node@25.9.3)(jiti@2.7.0)(yaml@2.8.4)
+    transitivePeerDependencies:
+      - '@farmfe/core'
+      - '@rspack/core'
+      - '@types/node'
+      - bun-types-no-globals
+      - rolldown
+      - unloader
+
+  '@antfu/install-pkg@1.1.0':
+    dependencies:
+      package-manager-detector: 1.6.0
+      tinyexec: 1.2.4
 
   '@astrojs/check@0.9.9(prettier-plugin-astro@0.14.1)(prettier@3.8.4)(typescript@6.0.3)':
     dependencies:
@@ -5136,31 +5204,9 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.20.1
 
-  '@npmcli/fs@5.0.0':
+  '@npmcli/fs@6.0.0':
     dependencies:
       semver: 7.8.4
-
-  '@openscript/unplugin-favicons@1.1.8(@types/node@25.9.3)(favicons@7.3.0)(rollup@4.61.1)(vite@7.3.5(@types/node@25.9.3)(jiti@2.7.0)(yaml@2.8.4))(yaml@2.8.4)':
-    dependencies:
-      '@visulima/find-cache-dir': 1.0.35(yaml@2.8.4)
-      '@visulima/package': 3.6.1(@types/node@25.9.3)(yaml@2.8.4)
-      cacache: 20.0.4
-      consola: 3.4.2
-      fast-json-stable-stringify: 2.1.0
-      favicons: 7.3.0
-      magic-string: 0.30.19
-      mime: 4.1.0
-      mlly: 1.8.0
-      parse-author: 2.0.0
-      parse5: 8.0.1
-      ssri: 12.0.0
-      unplugin: 2.3.11
-    optionalDependencies:
-      rollup: 4.61.1
-      vite: 7.3.5(@types/node@25.9.3)(jiti@2.7.0)(yaml@2.8.4)
-    transitivePeerDependencies:
-      - '@types/node'
-      - yaml
 
   '@oslojs/encoding@1.1.0': {}
 
@@ -5538,30 +5584,28 @@ snapshots:
 
   '@ungap/structured-clone@1.3.1': {}
 
-  '@visulima/find-cache-dir@1.0.35(yaml@2.8.4)':
-    dependencies:
-      '@visulima/fs': 3.1.9(yaml@2.8.4)
-      '@visulima/path': 1.4.0
-    transitivePeerDependencies:
-      - yaml
+  '@visulima/find-cache-dir@2.0.7': {}
 
-  '@visulima/fs@3.1.9(yaml@2.8.4)':
+  '@visulima/fs@4.1.0(yaml@2.8.4)':
     dependencies:
-      '@visulima/path': 1.4.0
+      '@visulima/path': 2.0.5
+      type-fest: 5.7.0
     optionalDependencies:
       yaml: 2.8.4
 
-  '@visulima/package@3.6.1(@types/node@25.9.3)(yaml@2.8.4)':
+  '@visulima/package@4.1.7(@types/node@25.9.3)':
     dependencies:
+      '@antfu/install-pkg': 1.1.0
       '@inquirer/confirm': 5.1.21(@types/node@25.9.3)
-      '@visulima/fs': 3.1.9(yaml@2.8.4)
-      '@visulima/path': 1.4.0
+      '@visulima/fs': 4.1.0(yaml@2.8.4)
+      '@visulima/path': 2.0.5
+      json5: 2.2.3
       normalize-package-data: 8.0.0
+      yaml: 2.8.4
     transitivePeerDependencies:
       - '@types/node'
-      - yaml
 
-  '@visulima/path@1.4.0': {}
+  '@visulima/path@2.0.5': {}
 
   '@vitest/coverage-v8@4.1.8(vitest@4.1.8)':
     dependencies:
@@ -5940,18 +5984,18 @@ snapshots:
     dependencies:
       fill-range: 7.1.1
 
-  cacache@20.0.4:
+  cacache@21.0.1:
     dependencies:
-      '@npmcli/fs': 5.0.0
+      '@npmcli/fs': 6.0.0
       fs-minipass: 3.0.3
       glob: 13.0.6
-      lru-cache: 11.3.6
+      lru-cache: 11.5.1
       minipass: 7.1.3
       minipass-collect: 2.0.1
       minipass-flush: 1.0.7
       minipass-pipeline: 1.2.4
       p-map: 7.0.4
-      ssri: 13.0.1
+      ssri: 14.0.0
 
   call-bind-apply-helpers@1.0.2:
     dependencies:
@@ -7175,6 +7219,8 @@ snapshots:
 
   json-stable-stringify-without-jsonify@1.0.1: {}
 
+  json5@2.2.3: {}
+
   jsonc-parser@2.3.1: {}
 
   jsonc-parser@3.3.1: {}
@@ -7240,13 +7286,7 @@ snapshots:
 
   longest-streak@3.1.0: {}
 
-  lru-cache@11.3.6: {}
-
   lru-cache@11.5.1: {}
-
-  magic-string@0.30.19:
-    dependencies:
-      '@jridgewell/sourcemap-codec': 1.5.5
 
   magic-string@0.30.21:
     dependencies:
@@ -7749,6 +7789,13 @@ snapshots:
       pkg-types: 1.3.1
       ufo: 1.6.4
 
+  mlly@1.8.2:
+    dependencies:
+      acorn: 8.16.0
+      pathe: 2.0.3
+      pkg-types: 1.3.1
+      ufo: 1.6.4
+
   mri@1.2.0: {}
 
   mrmime@2.0.1: {}
@@ -7957,7 +8004,7 @@ snapshots:
 
   path-scurry@2.0.2:
     dependencies:
-      lru-cache: 11.3.6
+      lru-cache: 11.5.1
       minipass: 7.1.3
 
   path-type@4.0.0: {}
@@ -8530,11 +8577,7 @@ snapshots:
 
   sprintf-js@1.0.3: {}
 
-  ssri@12.0.0:
-    dependencies:
-      minipass: 7.1.3
-
-  ssri@13.0.1:
+  ssri@14.0.0:
     dependencies:
       minipass: 7.1.3
 
@@ -8669,6 +8712,8 @@ snapshots:
     dependencies:
       '@pkgr/core': 0.3.6
 
+  tagged-tag@1.0.0: {}
+
   term-size@2.2.1: {}
 
   text-hex@1.0.0: {}
@@ -8717,6 +8762,10 @@ snapshots:
   type-check@0.4.0:
     dependencies:
       prelude-ls: 1.2.1
+
+  type-fest@5.7.0:
+    dependencies:
+      tagged-tag: 1.0.0
 
   typed-array-buffer@1.0.3:
     dependencies:
@@ -8851,12 +8900,14 @@ snapshots:
 
   universalify@0.1.2: {}
 
-  unplugin@2.3.11:
+  unplugin@3.3.0(esbuild@0.27.7)(vite@7.3.5(@types/node@25.9.3)(jiti@2.7.0)(yaml@2.8.4)):
     dependencies:
       '@jridgewell/remapping': 2.3.5
-      acorn: 8.16.0
       picomatch: 4.0.4
       webpack-virtual-modules: 0.6.2
+    optionalDependencies:
+      esbuild: 0.27.7
+      vite: 7.3.5(@types/node@25.9.3)(jiti@2.7.0)(yaml@2.8.4)
 
   unstorage@1.17.5:
     dependencies:
