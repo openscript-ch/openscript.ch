@@ -80,7 +80,7 @@ importers:
         version: 10.0.1(eslint@10.7.0(jiti@2.7.0)(supports-color@7.2.0))
       '@openscript/unplugin-favicons':
         specifier: ^1.1.8
-        version: 1.1.8(@types/node@25.9.5)(favicons@7.3.0)(rollup@4.62.2)(vite@7.3.6(@types/node@25.9.5)(jiti@2.7.0)(yaml@2.8.4))(yaml@2.8.4)
+        version: 1.1.8(@types/node@25.9.5)(favicons@7.3.1(@types/node@25.9.5))(rollup@4.62.2)(vite@7.3.6(@types/node@25.9.5)(jiti@2.7.0)(yaml@2.8.4))(yaml@2.8.4)
       '@types/mdast':
         specifier: ^4.0.4
         version: 4.0.4
@@ -113,7 +113,7 @@ importers:
         version: 5.5.6(eslint-config-prettier@10.1.8(eslint@10.7.0(jiti@2.7.0)(supports-color@7.2.0)))(eslint@10.7.0(jiti@2.7.0)(supports-color@7.2.0))(prettier@3.9.6)
       favicons:
         specifier: ^7.2.0
-        version: 7.3.0
+        version: 7.3.1(@types/node@25.9.5)
       globals:
         specifier: ^17.6.0
         version: 17.7.0
@@ -2305,8 +2305,8 @@ packages:
   fastq@1.20.1:
     resolution: {integrity: sha512-GGToxJ/w1x32s/D2EKND7kTil4n8OVk/9mycTc4VDza13lOvpUZTGX3mFSCtV9ksdGBVzvsyAVLM6mHFThxXxw==}
 
-  favicons@7.3.0:
-    resolution: {integrity: sha512-4v42LShwdrw059EpUOhUiehMD3mEfzqo1w92GvN5FSJlursP5H0NhUskTvxxbSWiYUctOg3qpLL/onQ+JwBVYg==}
+  favicons@7.3.1:
+    resolution: {integrity: sha512-P3PO0Ca2dI0vDyFkpnBv50PEDXyVPSw9TkYoosjrohv8QBDYmY5HGML4gIjFHQNnbQki8tR4w0J7xee5WxwElQ==}
     engines: {node: '>=20.0.0'}
 
   fdir@6.5.0:
@@ -5192,14 +5192,14 @@ snapshots:
     dependencies:
       semver: 7.8.5
 
-  '@openscript/unplugin-favicons@1.1.8(@types/node@25.9.5)(favicons@7.3.0)(rollup@4.62.2)(vite@7.3.6(@types/node@25.9.5)(jiti@2.7.0)(yaml@2.8.4))(yaml@2.8.4)':
+  '@openscript/unplugin-favicons@1.1.8(@types/node@25.9.5)(favicons@7.3.1(@types/node@25.9.5))(rollup@4.62.2)(vite@7.3.6(@types/node@25.9.5)(jiti@2.7.0)(yaml@2.8.4))(yaml@2.8.4)':
     dependencies:
       '@visulima/find-cache-dir': 1.0.35(yaml@2.8.4)
       '@visulima/package': 3.6.1(@types/node@25.9.5)(yaml@2.8.4)
       cacache: 20.0.4
       consola: 3.4.2
       fast-json-stable-stringify: 2.1.0
-      favicons: 7.3.0
+      favicons: 7.3.1(@types/node@25.9.5)
       magic-string: 0.30.19
       mime: 4.1.0
       mlly: 1.8.0
@@ -6718,11 +6718,13 @@ snapshots:
     dependencies:
       reusify: 1.1.0
 
-  favicons@7.3.0:
+  favicons@7.3.1(@types/node@25.9.5):
     dependencies:
       escape-html: 1.0.3
-      sharp: 0.34.5
+      sharp: 0.35.3(@types/node@25.9.5)
       xml2js: 0.6.2
+    transitivePeerDependencies:
+      - '@types/node'
 
   fdir@6.5.0(picomatch@4.0.5):
     optionalDependencies:
@@ -8497,6 +8499,7 @@ snapshots:
       '@img/sharp-win32-arm64': 0.34.5
       '@img/sharp-win32-ia32': 0.34.5
       '@img/sharp-win32-x64': 0.34.5
+    optional: true
 
   sharp@0.35.3(@types/node@25.9.5):
     dependencies:
