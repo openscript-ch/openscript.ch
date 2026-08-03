@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
-import unpluginFavicons from "@openscript/unplugin-favicons/vite";
+import unpluginFavicons from "@anolilab/unplugin-favicons/vite";
+import { unified } from "@astrojs/markdown-remark";
 import { C } from "./src/site.config";
 import mdx from "@astrojs/mdx";
 import rehypeSlug from "rehype-slug";
@@ -26,7 +27,9 @@ export default defineConfig({
         dark: "github-dark",
       },
     },
-    rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: "wrap" }]],
+    processor: unified({
+      rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: "wrap" }]],
+    }),
   },
   vite: {
     plugins: [
