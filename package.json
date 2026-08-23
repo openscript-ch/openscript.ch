@@ -11,7 +11,7 @@
     "url": "https://github.com/openscript-ch/openscript.ch/issues"
   },
   "repository": "github:openscript-ch/openscript.ch",
-  "packageManager": "pnpm@11.22.0",
+  "packageManager": "pnpm@11.23.0",
   "scripts": {
     "predev": "pnpm build:sprite",
     "prebuild": "pnpm build:sprite",
@@ -60,7 +60,7 @@
     "@types/mdast": "^4.0.4",
     "@types/node": "^26.1.2",
     "@typescript-eslint/parser": "^8.65.0",
-    "@vitest/coverage-v8": "4.1.10",
+    "@vitest/coverage-v8": "4.1.11",
     "astro-eslint-parser": "^3.0.0",
     "eslint": "^10.8.0",
     "eslint-config-prettier": "^10.1.8",
@@ -75,6 +75,6 @@
     "sirv": "^3.0.2",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.65.0",
-    "vitest": "4.1.10"
+    "vitest": "4.1.11"
   }
 }
