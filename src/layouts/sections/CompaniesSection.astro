@@ -1,0 +1,64 @@
+---
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import Tile from "../../components/Tile.astro";
+
+const companies = await getCollection("referenceCompanies", (entry) => !entry.data.archived && entry.data.details);
+---
+
+<div class="grid">
+  {
+    companies.map((c, i) => (
+      <Tile variant="turnable" id={c.data.id} crease={i === 0}>
+        <div slot="front">
+          <div class="card front-card">
+            <Image src={c.data.logo} alt={c.data.companyName} />
+            <span>{c.data.companyName}</span>
+          </div>
+        </div>
+        <div class="card" slot="back">
+          {c.data.details}
+        </div>
+      </Tile>
+    ))
+  }
+</div>
+
+<style>
+  .grid {
+    min-height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--size-gutter-big);
+
+    .front-card {
+      display: flex;
+      flex-direction: column;
+      gap: var(--size-gutter);
+    }
+
+    .card {
+      font-weight: 600;
+      font-size: var(--font-size);
+    }
+  }
+
+  img {
+    height: 4rem;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  @media screen and (max-width: 1600px) {
+    .grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

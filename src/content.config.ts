@@ -65,6 +65,7 @@ const referenceCompaniesCollection = defineCollection({
       logo: image(),
       url: z.url().optional(),
       archived: z.boolean().optional().default(false),
+      details: z.string().optional(),
     }),
 });
 
@@ -76,6 +77,7 @@ const referenceProjectsCollection = defineCollection({
         softwareName: z.string(),
         title: z.string(),
         summary: z.string(),
+        details: z.string().optional(),
         logo: image(),
         path: z.url().optional(),
         featured: z.boolean().optional().default(false),

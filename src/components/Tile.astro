@@ -1,0 +1,114 @@
+---
+type Props = {
+  id: string;
+  variant: "default" | "turnable";
+  crease?: boolean;
+  color?: "white" | "beige";
+};
+
+const { id, variant, color = "white", crease = false }: Props = Astro.props;
+---
+
+<turnable-tile {id} class:list={["tile", color]} data-crease={crease} data-id={id} data-variant={variant}>
+  <div class="tile-front">
+    <slot name="front" />
+  </div>
+  {
+    variant === "turnable" && (
+      <div class="tile-back">
+        <slot name="back" />
+      </div>
+    )
+  }
+</turnable-tile>
+
+<style>
+  .tile {
+    color: inherit;
+    font-weight: 600;
+    display: grid;
+    grid-template-areas: "stack";
+    position: relative;
+    cursor: pointer;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: rotate 500ms linear;
+  }
+
+  .tile.show {
+    rotate: y 180deg;
+  }
+
+  .tile-front,
+  .tile-back {
+    grid-area: stack;
+    padding: var(--size-gutter);
+    display: grid;
+    place-content: center;
+    backface-visibility: hidden;
+    text-align: center;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .white .tile-front,
+  .white .tile-back {
+    background-color: var(--color-white);
+  }
+
+  .beige .tile-front,
+  .beige .tile-back {
+    background-color: var(--color-background);
+  }
+
+  .tile-back {
+    rotate: y 180deg;
+  }
+
+  .tile-front {
+    grid-area: stack;
+    padding: var(--size-gutter-big);
+    display: grid;
+    place-content: center;
+    backface-visibility: hidden;
+    text-align: center;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .tile[data-crease="true"] .tile-front {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 13px), calc(100% - 13px) 100%, 0 100%);
+  }
+
+  .tile[data-crease="true"] .tile-front::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+
+    border-style: solid;
+    border-width: 13px 13px 0 0;
+    border-color: #d0d0d0 transparent transparent transparent;
+  }
+</style>
+
+<script>
+  class Tile extends HTMLElement {
+    connectedCallback() {
+      const id = this.dataset.id;
+      if (!id) return;
+
+      const tile = document.getElementById(id);
+
+      tile?.addEventListener("click", function () {
+        tile?.classList.toggle("show");
+      });
+    }
+  }
+
+  if (!customElements.get("turnable-tile")) {
+    customElements.define("turnable-tile", Tile);
+  }
+</script>

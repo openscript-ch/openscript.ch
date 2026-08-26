@@ -1,4 +1,5 @@
 ---
+import type { HTMLAttributes } from "astro/types";
 import Heading from "./Heading.astro";
 
 /**
@@ -7,7 +8,7 @@ import Heading from "./Heading.astro";
  * @description An individual accordion item that can be expanded/collapsed with smooth animations
  */
 
-interface Props {
+type Props = HTMLAttributes<"li"> & {
   /**
    * Id of the item
    */
@@ -45,16 +46,12 @@ interface Props {
    * @default false
    */
   open?: boolean;
-  /**
-   * HTML attributes to spread on the accordion item
-   */
-  [key: string]: string | number | boolean | undefined;
 
   /**
    * Allow item to be opened by the id in the url
    */
   openOnUrlReference?: boolean;
-}
+};
 
 const {
   id,
@@ -67,44 +64,49 @@ const {
   open = false,
   openOnUrlReference = true,
   ...rest
-} = Astro.props;
+}: Props = Astro.props;
 ---
 
 <li id={id} class:list={["item", className]} {...rest} data-dynamic={openOnUrlReference}>
   <details class:list={["wrapper", `variant-${variant}`]} name={name} {...open ? { open } : {}}>
-    <summary class="title">
-      <Heading level={headingLevel} size={headingSize}>
-        {
-          variant === "chevron" ? (
-            <>
-              {title}
-              <span class="icon-chevron">
-                <svg aria-hidden="true" width="12" height="8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M1.4 1.6L6 6.2l4.6-4.6"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </span>
-            </>
-          ) : (
-            <>
-              <span class="icon-plus">
-                <svg aria-hidden="true" width="20" height="2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill="currentColor" d="M20 .5v1H0v-1z" />
-                </svg>
-                <svg width="2" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill="currentColor" d="M1.5 20h-1V0h1z" />
-                </svg>
-              </span>
-              {title}
-            </>
-          )
-        }
-      </Heading>
+    <summary class="header">
+      <div class="title">
+        <Heading level={headingLevel} size={headingSize}>
+          {
+            variant === "chevron" ? (
+              <>
+                {title}
+                <span class="icon-chevron">
+                  <svg aria-hidden="true" width="12" height="8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M1.4 1.6L6 6.2l4.6-4.6"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+              </>
+            ) : (
+              <>
+                <span class="icon-plus">
+                  <svg aria-hidden="true" width="20" height="2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="currentColor" d="M20 .5v1H0v-1z" />
+                  </svg>
+                  <svg width="2" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="currentColor" d="M1.5 20h-1V0h1z" />
+                  </svg>
+                </span>
+                {title}
+              </>
+            )
+          }
+        </Heading>
+      </div>
+      <div class="preview">
+        <slot name="preview" />
+      </div>
     </summary>
     <div class="content">
       <slot />
@@ -150,7 +152,7 @@ const {
     padding: 0 0 1.5rem 2.2rem;
   }
 
-  .wrapper.variant-chevron .title :global(.heading) {
+  .wrapper.variant-chevron .header :global(.heading) {
     justify-content: space-between;
   }
 
@@ -158,21 +160,22 @@ const {
     padding-block-end: 2.2rem;
   }
 
-  :where(.title) {
+  :where(.header) {
     display: flex;
-    cursor: pointer;
+    flex-direction: column;
     padding-block: 0.75rem;
     list-style: none;
   }
 
-  :where(.title)::marker,
-  :where(.title)::-webkit-details-marker {
+  :where(header)::marker,
+  :where(.header)::-webkit-details-marker {
     display: none;
     content: "";
   }
 
-  :where(.title:hover),
-  :where(.title:focus-visible) {
+  :where(.header .title:hover),
+  :where(.header .title:focus-visible) {
+    cursor: pointer;
     color: var(--color-secondary);
   }
 

@@ -1,3 +1,38 @@
 ---
+import { currentLocale } from "astro-nanostores-i18n:runtime";
+import { getCollection } from "astro:content";
+import Accordion from "../../components/accordion/Accordion.astro";
+import AccordionItem from "../../components/accordion/AccordionItem.astro";
+import { Image } from "astro:assets";
 
+const locale = currentLocale.get();
+const projects = await getCollection("referenceProjects", (entry) => entry.data.locale === locale);
 ---
+
+<Accordion>
+  {
+    projects.map((project, i) => (
+      <AccordionItem
+        id={project.id}
+        name={project.data.softwareName}
+        title={project.data.softwareName}
+        variant="chevron"
+        open={i === 0}
+      >
+        <div class="preview" slot="preview">
+          <Image src={project.data.logo} alt={project.data.softwareName} />
+          {project.data.summary}
+        </div>
+
+        <div>{project.data.details}</div>
+      </AccordionItem>
+    ))
+  }
+</Accordion>
+
+<style>
+  .preview {
+    display: flex;
+    gap: 2rem;
+  }
+</style>
