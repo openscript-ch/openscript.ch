@@ -1,18 +1,24 @@
 - id: diego-steiner
   name: Diego Steiner
-  avatar: ./diego-steiner.svg
+  avatar: ./diego-steiner.webp
   role:
     de: Mitgründer und Softwareentwickler
     en: Co-founder and Software Developer
+- id: java-steiner
+  name: Java
+  avatar: ./java-steiner.webp
+  role:
+    de: Störfallmanagerin
+    en: Exception Handler
 - id: leonardo-olivo
   name: Leonardo Olivo
-  avatar: ./leonardo-olivo.svg
+  avatar: ./leonardo-olivo.webp
   role:
     de: Softwareentwickler
     en: Software Developer
 - id: robin-buehler
   name: Robin Bühler
-  avatar: ./robin-buehler.svg
+  avatar: ./robin-buehler.webp
   role:
     de: Mitgründer und Softwareentwickler
     en: Co-founder and Software Developer
