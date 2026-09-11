@@ -10,7 +10,7 @@ import { localeSlugs } from "./site.config";
 import { glob, file } from "astro/loaders";
 import { z } from "astro/zod";
 
-const localized = <T extends z.ZodTypeAny>(schema: T) => localizedSchema(schema, localeSlugs);
+const localized = <T extends z.ZodType>(schema: T) => localizedSchema(schema, localeSlugs);
 
 const Category: z.ZodType<unknown> = z.object({
   name: z.string(),
