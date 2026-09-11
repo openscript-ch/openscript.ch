@@ -30,14 +30,12 @@ const formationData = timelineCollection
     <slot />
   </div>
   <Timeline>
-    {
-      formationData.map((element) => (
-        <TimelineEntry>
-          <div class="title">{element.title}</div>
-          <p>{element.text}</p>
-        </TimelineEntry>
-      ))
-    }
+    {formationData.map((element) => (
+      <TimelineEntry>
+        <div class="title">{element.title}</div>
+        <p>{element.text}</p>
+      </TimelineEntry>
+    ))}
   </Timeline>
 </section>
 

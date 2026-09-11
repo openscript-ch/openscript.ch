@@ -19,11 +19,9 @@ if (!galleryEntry) {
 <section class:list={[className]}>
   <slot name="title" />
   <div>
-    {
-      galleryEntry.data.items.map((item) => (
-        <Image src={item.photo} width={800} alt={typeof item.label === "string" ? item.label : ""} />
-      ))
-    }
+    {galleryEntry.data.items.map((item) => (
+      <Image src={item.photo} width={800} alt={typeof item.label === "string" ? item.label : ""} />
+    ))}
   </div>
 </section>
 

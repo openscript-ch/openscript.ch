@@ -13,25 +13,21 @@ const projects = await getCollection("referenceProjects", (entry) => entry.data.
     <slot name="title" />
   </header>
   <div class="references-projects">
-    {
-      projects.map((p) => (
-        <div>
-          <Image src={p.data.logo} alt={p.data.softwareName} />
-          <h3>{p.data.title}</h3>
-          <p>{p.data.summary}</p>
-        </div>
-      ))
-    }
+    {projects.map((p) => (
+      <div>
+        <Image src={p.data.logo} alt={p.data.softwareName} />
+        <h3>{p.data.title}</h3>
+        <p>{p.data.summary}</p>
+      </div>
+    ))}
   </div>
   <div class="references-companies">
-    {
-      companies.map((c) => (
-        <a href={c.data.url || "#"} target="_blank" rel="noopener" aria-label={c.data.companyName}>
-          <Image src={c.data.logo} alt={c.data.companyName} />
-          {c.data.companyName}
-        </a>
-      ))
-    }
+    {companies.map((c) => (
+      <a href={c.data.url || "#"} target="_blank" rel="noopener" aria-label={c.data.companyName}>
+        <Image src={c.data.logo} alt={c.data.companyName} />
+        {c.data.companyName}
+      </a>
+    ))}
   </div>
 </section>
 <style>

@@ -15,15 +15,13 @@ const team = await getCollection("team", (entry) => entry.data.locale === locale
 <section class:list={[className]}>
   <slot name="title" />
   <div>
-    {
-      team.map(({ data: member }) => (
-        <div>
-          <Image src={member.avatar} alt={member.name} />
-          <span class="name">{member.name}</span>
-          <span class="role">{member.role}</span>
-        </div>
-      ))
-    }
+    {team.map(({ data: member }) => (
+      <div>
+        <Image src={member.avatar} alt={member.name} />
+        <span class="name">{member.name}</span>
+        <span class="role">{member.role}</span>
+      </div>
+    ))}
   </div>
 </section>
 

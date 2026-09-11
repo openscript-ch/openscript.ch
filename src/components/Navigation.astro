@@ -26,20 +26,18 @@ const { iconSize = 16, items } = Astro.props;
 </style>
 
 <ul>
-  {
-    items.map((item) => (
-      <li>
-        <Link href={item.path}>
-          {item.icon ? <Image src={item.icon} alt={`${item.title} Icon`} width={iconSize} /> : null}
-          {item.title}
-          {Array.isArray(item.children) ? <slot name="nesting-indicator" /> : null}
-        </Link>
-        {item.children ? (
-          <Astro.self items={item.children} iconSize={iconSize}>
-            <slot name="nesting-indicator" slot="nesting-indicator" />
-          </Astro.self>
-        ) : null}
-      </li>
-    ))
-  }
+  {items.map((item) => (
+    <li>
+      <Link href={item.path}>
+        {item.icon ? <Image src={item.icon} alt={`${item.title} Icon`} width={iconSize} /> : null}
+        {item.title}
+        {Array.isArray(item.children) ? <slot name="nesting-indicator" /> : null}
+      </Link>
+      {item.children ? (
+        <Astro.self items={item.children} iconSize={iconSize}>
+          <slot name="nesting-indicator" slot="nesting-indicator" />
+        </Astro.self>
+      ) : null}
+    </li>
+  ))}
 </ul>

@@ -8,13 +8,11 @@ import Sprite from "./Sprite.astro";
       <slot />
     </div>
   </div>
-  {
-    Astro.slots.has("overlay") && (
-      <div class="carousel-overlay">
-        <slot name="overlay" />
-      </div>
-    )
-  }
+  {Astro.slots.has("overlay") && (
+    <div class="carousel-overlay">
+      <slot name="overlay" />
+    </div>
+  )}
   <button class="carousel-button prev" aria-label="Previous Slide">
     <Sprite name="arrow" />
   </button>

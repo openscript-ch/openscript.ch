@@ -73,7 +73,8 @@
     "prettier": "^3.9.6",
     "prettier-plugin-astro": "^1.0.0",
     "sirv": "^3.0.2",
-    "typescript": "^7.0.2",
+    "@typescript/native": "npm:typescript@^7.0.2",
+    "typescript": "npm:@typescript/typescript6@^6.0.2",
     "typescript-eslint": "^8.70.0",
     "vitest": "5.0.0"
   }

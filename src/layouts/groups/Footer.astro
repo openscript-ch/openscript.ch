@@ -23,9 +23,11 @@ const messages = useI18n("layouts/groups/Footer.astro", {
     <Address />
     <Contact withoutLanguageSwitcher />
   </div>
-  <span class="copyright"
-    >{messages.copyright({ year: new Date().getFullYear() })}<br />{messages.version({ version })}</span
-  >
+  <span class="copyright">
+    {messages.copyright({ year: new Date().getFullYear() })}
+    <br />
+    {messages.version({ version })}
+  </span>
   <div class="links">
     <nav>
       <Navigation items={navigation} />
