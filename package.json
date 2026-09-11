@@ -53,7 +53,7 @@
     "vfile": "^6.0.3"
   },
   "devDependencies": {
-    "@anolilab/unplugin-favicons": "^3.0.0",
+    "@anolilab/unplugin-favicons": "^4.0.0",
     "@changesets/cli": "^2.31.1",
     "@eslint/js": "^10.0.1",
     "@openscript/unplugin-favicons": "^1.1.8",
