@@ -1,5 +1,13 @@
 # openscript-ch-website
 
+## 0.8.1
+
+### Patch Changes
+
+- b7bed8c: Update year of copyright
+- 90c9aed: Upgrade dependencies.
+- 1ebcf2c: Add Java the exception handler to the team.
+
 ## 0.8.0
 
 ### Minor Changes
