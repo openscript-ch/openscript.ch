@@ -1,5 +1,11 @@
 # openscript-ch-website
 
+## 0.8.2
+
+### Patch Changes
+
+- 67e6b4a: Improve slider.
+
 ## 0.8.1
 
 ### Patch Changes
