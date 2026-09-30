@@ -39,7 +39,7 @@ import Sprite from "./Sprite.astro";
     pointer-events: none;
     padding: 0 calc(var(--size-carousel-buttons) + var(--size-gutter-big));
 
-    > *:not(.active) {
+    :global([data-slide-id]:not(.active)) {
       display: none;
     }
   }

@@ -26,7 +26,11 @@ import Carousel from "../../components/Carousel.astro";
       right: var(--size-page-padding);
     }
 
-    :global(.carousel-overlay > div) {
+    :global(.spotlight-overlays) {
+      height: 100%;
+    }
+
+    :global(.spotlight-overlays > div) {
       color: var(--color-white);
       font-size: 1.6rem;
       font-weight: bold;
@@ -86,7 +90,7 @@ import Carousel from "../../components/Carousel.astro";
         padding-block-end: 10%;
       }
 
-      :global(.carousel-overlay > div:is(.align-start, .align-center, .align-end)) {
+      :global(.spotlight-overlays > div:is(.align-start, .align-center, .align-end)) {
         align-items: center;
         justify-content: flex-end;
         font-size: 1.2rem;
