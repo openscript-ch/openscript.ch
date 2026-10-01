@@ -2,37 +2,44 @@
 path: values
 title: Our Values
 ---
+
 import Sprite from "../../../../components/Sprite.astro";
 import MainAside from "../../../../layouts/groups/MainAside.astro";
 
 <MainAside>
   <slot>
-    ### Adaptability
+    We are ...
 
-    We take pragmatic approaches and sometimes go unconventional ways.
-    We always keep our clients' goals in mind and adapt our approach accordingly.
+    ## pragmatic and curious
 
-    ### Companionship
+    We pursue pragmatic approaches and sometimes take unconventional paths.
+    We keep our clients' goals in mind and adapt our way of working accordingly.
 
-    We approach challenges together, because it is always better as a team.
-    For us, people and collaboration are at the center.
+    ## companionship and humanity
 
-    ### Sustainability
+    We approach projects like adventures together, because things are always better as a team.
+    People and collaboration are important to us and are always at the center.
 
-    We look for sustainability in cooperation and projects.
-    We solutions that are sustainable in the long run for both our clients and our work together.
+    ## sustainable and close
 
-    ## Reliability
-    
+    We focus on close collaboration with our clients.
+    Our solutions are designed for long-term maintainability and stability.
+
+    ## reliable and responsible
+
     We take responsibility for our work and stand by our clients in every challenge.
-    We address emerging issues proactively and with commitment.
+    We see AI as a tool to improve the quality of our work, not to increase output quantitatively.
+
   </slot>
 
-  <Sprite name="map" slot="aside" />
+  <Sprite
+    name="map"
+    slot="aside"
+    style={{
+      width: "100%",
+      transform: "scaleX(-1)",
+      transformBox: "fill-box",
+      transformOrigin: "center",
+    }}
+  />
 </MainAside>
-
-
-<section>
-
-
-</section>

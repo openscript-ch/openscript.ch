@@ -7,27 +7,39 @@ import MainAside from "../../../../layouts/groups/MainAside.astro";
 
 <MainAside>
   <slot>
-    ### Anpassungsfähigkeit
+    Wir sind ...
 
-    Wir verfolgen pragmatische Ansätze und gehen manchmal auch unkonventionelle Wege. 
+    ## pragmatisch und neugierig
+
+    Wir verfolgen pragmatische Ansätze und gehen manchmal auch neue, unkonventionelle Wege. 
     Dabei haben wir stets die Ziele unser Kunden im Auge und passen unsere Vorgehensweise daran an.
 
-    ### Kameradschaftlichkeit
+    ## kameradschaftlich und menschlich
 
-    Wir gehen Abenteuer kameradschaftlich an, denn gemeinsam geht's immer am besten. 
-    Bei uns steht der Mensch und die Zusammenarbeit im Vordergrund.
+    Wir gehen Projekte wie Abenteuer kameradschaftlich an, denn gemeinsam geht's immer am besten. 
+    Der Mensch und die Zusammenarbeit sind uns wichtig und stehen stets im Vordergrund.
 
-    ### Nachhaltigkeit
+    ## nachhaltig und nah
 
-    Wir setzen in der Zusammenarbeit und in Projekten auf Nachhaltigkeit. Unsere Kunden 
-    sollen auch sich auch langfristig auf unsere Wertsarbeit verlassen können.
+    Wir setzen auf eine enge Zusammenarbeit mit unseren Kunden. Unsere Lösungen sind auf langfristige Wartbarkeit und
+    Stabilität ausgelegt.
 
-    ## Zuverlässigkeit 
+    ## zuverlässig und verantwortungsbewusst
 
     Wir übernehmen Verantwortung für unsere Arbeit und stehen unseren Kunden bei jeder Herausforderung
-    zur Seite. Aufkommende Probleme zeigen wir proaktiv auf.
+    zur Seite. KI sehen wir als Werkzeug um unsere Arbeit qualitativ noch besser zu machen, nicht um quantitativ 
+    mehr zu leisten.
   </slot>
 
 
-  <Sprite name="map" slot="aside" />
+  <Sprite
+    name="map"
+    slot="aside"
+    style={{
+      width: "100%",
+      transform: "scaleX(-1)",
+      transformBox: "fill-box",
+      transformOrigin: "center",
+    }}
+  />
 </MainAside>
