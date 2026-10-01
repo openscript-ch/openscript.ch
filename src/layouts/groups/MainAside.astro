@@ -1,0 +1,27 @@
+---
+// import Sprite from "../../components/Sprite.astro";
+---
+
+<section>
+  <main>
+    <slot />
+  </main>
+  <aside>
+    <slot name="aside" />
+  </aside>
+</section>
+
+<style>
+  section {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: var(--size-gutter-big);
+    justify-items: center;
+
+    > aside {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+</style>

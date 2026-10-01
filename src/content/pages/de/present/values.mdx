@@ -2,19 +2,32 @@
 path: werte
 title: Unsere Werte
 ---
+import Sprite from "../../../../components/Sprite.astro";
+import MainAside from "../../../../layouts/groups/MainAside.astro";
 
-<section>
+<MainAside>
+  <slot>
+    ### Anpassungsfähigkeit
 
-  ### Anpassungsfähig
+    Wir verfolgen pragmatische Ansätze und gehen manchmal auch unkonventionelle Wege. 
+    Dabei haben wir stets die Ziele unser Kunden im Auge und passen unsere Vorgehensweise daran an.
 
-  Wir verfolgen pragmatische Ansätze und gehen manchmal auch unkonventionelle Wege.
+    ### Kameradschaftlichkeit
 
-  ### Kameradschaftlich
+    Wir gehen Abenteuer kameradschaftlich an, denn gemeinsam geht's immer am besten. 
+    Bei uns steht der Mensch und die Zusammenarbeit im Vordergrund.
 
-  Wir gehen Abenteuer kameradschaftlich an.
+    ### Nachhaltigkeit
 
-  ### Nachhaltig
+    Wir setzen in der Zusammenarbeit und in Projekten auf Nachhaltigkeit. Unsere Kunden 
+    sollen auch sich auch langfristig auf unsere Wertsarbeit verlassen können.
 
-  Wir suchen in der Zusammenarbeit und in Projekten die Nachhaltigkeit.
+    ## Zuverlässigkeit 
 
-</section>
+    Wir übernehmen Verantwortung für unsere Arbeit und stehen unseren Kunden bei jeder Herausforderung
+    zur Seite. Aufkommende Probleme zeigen wir proaktiv auf.
+  </slot>
+
+
+  <Sprite name="map" slot="aside" />
+</MainAside>
