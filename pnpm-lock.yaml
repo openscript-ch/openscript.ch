@@ -191,8 +191,8 @@ importers:
         specifier: ^1.3.3
         version: 1.3.3(nanostores@1.5.3)
       '@openscript/svg-sprite-ng':
-        specifier: ^3.9.2
-        version: 3.9.2
+        specifier: ^4.0.0
+        version: 4.0.0
       astro:
         specifier: ^7.3.2
         version: 7.3.5(@astrojs/markdown-remark@7.3.1)(@types/node@26.6.4)(jiti@2.7.0)(yaml@2.9.0)
@@ -239,9 +239,6 @@ importers:
       '@eslint/js':
         specifier: ^10.0.1
         version: 10.0.1(eslint@10.12.0(jiti@2.7.0))
-      '@openscript/unplugin-favicons':
-        specifier: ^1.1.8
-        version: 1.1.8(@types/node@26.6.4)(esbuild@0.28.2)(favicons@7.3.1(@types/node@26.6.4))(vite@8.2.2(@types/node@26.6.4)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(yaml@2.9.0)
       '@types/mdast':
         specifier: ^4.0.4
         version: 4.0.4
@@ -1217,49 +1214,14 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@npmcli/fs@5.0.0':
-    resolution: {integrity: sha512-7OsC1gNORBEawOa5+j2pXN9vsicaIOH5cPXxoR6fJOmH6/EXpJB2CajXOu1fPRFun2m1lktEFX11+P89hqO/og==}
-    engines: {node: ^20.17.0 || >=22.9.0}
-
   '@npmcli/fs@6.0.0':
     resolution: {integrity: sha512-AheOs4swKka/XLtht6xxJDPezlQ7K2IYQ9Y8lST4JLDjnralnWuMM9AE2CdVcgQJ5omrXhsRzM7F7aYmeZBvKQ==}
     engines: {node: ^22.22.2 || ^24.15.0 || >=26.0.0}
 
-  '@openscript/svg-sprite-ng@3.9.2':
-    resolution: {integrity: sha512-ZurH5x3cocg0cXPJh9ok/14xqHsqPPtQuSz25kFoq6MpdrNdSWdaI7BSSekaKBKP104TcIUjJncuMX6BUlPzIA==}
+  '@openscript/svg-sprite-ng@4.0.0':
+    resolution: {integrity: sha512-vFjCb8x8YuzeIgCeh9lQWb4WH+y4BVipBLACNrXGGruAXXtPrrqaH2f2xCbfQWZFLHnnolgtGKLBh7tHW1Iyng==}
     engines: {node: '>=22.12'}
     hasBin: true
-
-  '@openscript/unplugin-favicons@1.1.8':
-    resolution: {integrity: sha512-AEKKZawbSCJ7JsgRVRrlnPWh80sBMfTViKqmD76L6sAKTy9ZjyVSc8Nt0jdY2nXLPl7rBeDEHhVkWUXSA3I+Cg==}
-    engines: {node: '>=22.0.0'}
-    peerDependencies:
-      '@nuxt/kit': ^3 || ^4.0.0
-      '@nuxt/schema': ^3 || ^4.0.0
-      '@rspack/cli': ^1.3.15
-      '@sveltejs/kit': '*'
-      esbuild: ^0.25.5
-      favicons: ^7.2.0
-      rollup: ^3.0.0 || ^4.0.0
-      vite: ^4 || ^5 || ^6 || ^7
-      webpack: ^4 || ^5
-    peerDependenciesMeta:
-      '@nuxt/kit':
-        optional: true
-      '@nuxt/schema':
-        optional: true
-      '@rspack/cli':
-        optional: true
-      '@sveltejs/kit':
-        optional: true
-      esbuild:
-        optional: true
-      rollup:
-        optional: true
-      vite:
-        optional: true
-      webpack:
-        optional: true
 
   '@oslojs/encoding@1.1.0':
     resolution: {integrity: sha512-70wQhgYmndg4GCPxPPxPGevRKqTIJ2Nh4OkiMWmDAVYsTQ+Ta7Sq+rPevXyXGdzr30/qZBnyOalCszoMxlyldQ==}
@@ -1778,23 +1740,9 @@ packages:
   '@ungap/structured-clone@1.4.0':
     resolution: {integrity: sha512-1mEZtMKPM09vDmQt5y7YvmN2+DFTP7Tg0EWXdic8/C6VRnpb33e4ghisCIE3WZjsE2N8mf+QV1Zqh7ZFYLWInQ==}
 
-  '@visulima/find-cache-dir@1.0.35':
-    resolution: {integrity: sha512-z686U0T/l+ZizdxLmvIxdS1YiP60bhsz3+U6hLxHgMhaHABgfsXnJUvExwovxg/us473CTtxA/eAImdNAruTAg==}
-    engines: {node: '>=18.0.0 <=23.x'}
-
   '@visulima/find-cache-dir@2.0.7':
     resolution: {integrity: sha512-70JKCdm5p5iEBnJpvq1eEKFe8CcJx/RnHB9/LyfmuJjxHZVa1cbT4PhccRNGtzoPsg/l73gu09CJHjLt135B0g==}
     engines: {node: '>=20.19 <=25.x'}
-
-  '@visulima/fs@3.1.9':
-    resolution: {integrity: sha512-0D9iREfekQmjAgOq+L3CU9TgpeunIwQ4BISq0vxEZuv2CjOLqqHGlkgFRlEgh2pBrHO3azF0OUGbPoK/1QmCUQ==}
-    engines: {node: '>=18.0.0 <=23.x'}
-    os: [darwin, linux, win32]
-    peerDependencies:
-      yaml: ^2.7.0
-    peerDependenciesMeta:
-      yaml:
-        optional: true
 
   '@visulima/fs@4.1.0':
     resolution: {integrity: sha512-9bb7oupbXXXc++m8Ypj+VUBF+P1j/Y3gadoT2HQHPHqDMrpMt8pcZyXjofitw/DaYSB3EeQOvGqHdgvsY646sw==}
@@ -1806,19 +1754,9 @@ packages:
       yaml:
         optional: true
 
-  '@visulima/package@3.6.1':
-    resolution: {integrity: sha512-dl36K1Y1clZbk0ouomnZbUxAE+ELAi2WgQeqSyxCRgY+HesbXgZBKDsJ811l3WWXJsaTv5m4oopfGzTJI34sUg==}
-    engines: {node: '>=18.0.0 <=23.x'}
-    os: [darwin, linux, win32]
-
   '@visulima/package@4.1.7':
     resolution: {integrity: sha512-xGzw2GFlHBleNgLYip6ZULKMZZAZrLGE5RJ2shKj4MUcAsv7IQzafyGa3m2PRw6HJSYeEpboobPVxf8SbCfm+w==}
     engines: {node: '>=20.19 <=25.x'}
-    os: [darwin, linux, win32]
-
-  '@visulima/path@1.4.0':
-    resolution: {integrity: sha512-lhtA4woh4KsXWyn3BJ/qYE/HSt+agsHeSGb7j3UeHpRyf3R4ErObR25snvt+Rc4Xlqb1T68U38wjqZ2YpmUGNw==}
-    engines: {node: '>=18.0.0 <=23.x'}
     os: [darwin, linux, win32]
 
   '@visulima/path@2.0.5':
@@ -2079,10 +2017,6 @@ packages:
   cac@7.0.0:
     resolution: {integrity: sha512-tixWYgm5ZoOD+3g6UTea91eow5z6AAHaho3g0V9CNSNb45gM8SmflpAc+GRd1InC4AqN/07Unrgp56Y94N9hJQ==}
     engines: {node: '>=20.19.0'}
-
-  cacache@20.0.4:
-    resolution: {integrity: sha512-M3Lab8NPYlZU2exsL3bMVvMrMqgwCnMWfdZbK28bn3pK6APT/Te/I8hjRPNu1uwORY9a1eEQoifXbKPQMfMTOA==}
-    engines: {node: ^20.17.0 || >=22.9.0}
 
   cacache@21.0.1:
     resolution: {integrity: sha512-pTwz/uj3Jyp6WXdJ6fWhR+7LVxVs6RyroQSn7KJwHsSxXuyGSp0pcMVcwSwTpCFq1X2YG8QBe0W+vN+cr0SwzA==}
@@ -3091,9 +3025,6 @@ packages:
     resolution: {integrity: sha512-4pfM1Ff0x50o0tQwb5ucw/RzNyD0/YJME6IVcStalZuMWxdt3sR3huStTtxz4PUmvZfRguvDejasvQ2kifR11g==}
     engines: {node: 20 || >=22}
 
-  magic-string@0.30.19:
-    resolution: {integrity: sha512-2N21sPY9Ws53PZvsEpVtNuSW+ScYbQdp4b9qUaL+9QkHUrGFKo56Lg9Emg5s9V/qrtNBmiR01sYhUOwu3H+VOw==}
-
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
 
@@ -3315,9 +3246,6 @@ packages:
   minipass@7.1.3:
     resolution: {integrity: sha512-tEBHqDnIoM/1rXME1zgka9g6Q2lcoCkxHLuc7ODJ5BxbP5d4c2Z5cGgtXAku59200Cx7diuHTOYfSBD8n6mm8A==}
     engines: {node: '>=16 || 14 >=14.17'}
-
-  mlly@1.8.0:
-    resolution: {integrity: sha512-l8D9ODSRWLe2KHJSifWGwBqpTZXIXTeo8mlKjY+E2HAakaTeNpqAyBZ8GSqLzHgw4XmHmC8whvpjJNMbFZN7/g==}
 
   mlly@1.8.2:
     resolution: {integrity: sha512-d+ObxMQFmbt10sretNDytwt85VrbkhhUA/JBGm1MPaWJ65Cl4wOgLaB1NYvJSZ0Ef03MMEU/0xpPMXUIQ29UfA==}
@@ -3810,14 +3738,6 @@ packages:
     resolution: {integrity: sha512-1POYv7uv2gXoyGFpBCmpDVSNV74IfsWlDW216UPjbWufNf+bSU6GdbDsxdcxtfwb4xlI3yxzOTKClUosxARYrQ==}
     engines: {node: '>=0.10.0'}
 
-  ssri@12.0.0:
-    resolution: {integrity: sha512-S7iGNosepx9RadX82oimUkvr0Ct7IjJbEbs4mJcTxst8um95J3sDYU1RBEOvdu6oL1Wek2ODI5i4MAw+dZ6cAQ==}
-    engines: {node: ^18.17.0 || >=20.5.0}
-
-  ssri@13.0.1:
-    resolution: {integrity: sha512-QUiRf1+u9wPTL/76GTYlKttDEBWV1ga9ZXW8BG6kfdeyyM8LGPix9gROyg9V2+P0xNyF3X2Go526xKFdMZrHSQ==}
-    engines: {node: ^20.17.0 || >=22.9.0}
-
   ssri@14.0.0:
     resolution: {integrity: sha512-jQxKI0yx0ZnTKrqjKkLDV2DXkBQn3k49JVmVqDGcDwKDtGDbImD/GXsq04KD0VVzCQQ9wZJYal3RwR1GzWTSow==}
     engines: {node: ^22.22.2 || ^24.15.0 || >=26.0.0}
@@ -4044,10 +3964,6 @@ packages:
 
   unist-util-visit@5.1.0:
     resolution: {integrity: sha512-m+vIdyeCOpdr/QeQCu2EzxX/ohgS8KbnPDgFni4dQsfSCtpz8UqDyY5GjRru8PDKuYn7Fq19j1CQ+nJSsGKOzg==}
-
-  unplugin@2.3.11:
-    resolution: {integrity: sha512-5uKD0nqiYVzlmCRs01Fhs2BdkEgBS3SAVP6ndrBsuK42iC2+JHyxM05Rm9G8+5mkmRtzMZGY8Ct5+mliZxU/Ww==}
-    engines: {node: '>=18.12.0'}
 
   unplugin@3.3.0:
     resolution: {integrity: sha512-qa66K+crbfyE6JK10GjvbJeRrOsuC/JpbnHctfyp/i4oBTxWOzJfRZyDiOk1PtErMFRu8JhsU/wPvOdBNWe5Rg==}
@@ -5349,15 +5265,11 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.20.3
 
-  '@npmcli/fs@5.0.0':
-    dependencies:
-      semver: 7.8.5
-
   '@npmcli/fs@6.0.0':
     dependencies:
       semver: 7.8.5
 
-  '@openscript/svg-sprite-ng@3.9.2':
+  '@openscript/svg-sprite-ng@4.0.0':
     dependencies:
       '@resvg/resvg-js': 2.6.2
       '@xmldom/xmldom': 0.9.12
@@ -5370,28 +5282,6 @@ snapshots:
       tinyglobby: 0.2.17
       xpath: 0.0.34
       yargs: 18.2.0
-
-  '@openscript/unplugin-favicons@1.1.8(@types/node@26.6.4)(esbuild@0.28.2)(favicons@7.3.1(@types/node@26.6.4))(vite@8.2.2(@types/node@26.6.4)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(yaml@2.9.0)':
-    dependencies:
-      '@visulima/find-cache-dir': 1.0.35(yaml@2.9.0)
-      '@visulima/package': 3.6.1(@types/node@26.6.4)(yaml@2.9.0)
-      cacache: 20.0.4
-      consola: 3.4.2
-      fast-json-stable-stringify: 2.1.0
-      favicons: 7.3.1(@types/node@26.6.4)
-      magic-string: 0.30.19
-      mime: 4.1.0
-      mlly: 1.8.0
-      parse-author: 2.0.0
-      parse5: 8.0.1
-      ssri: 12.0.0
-      unplugin: 2.3.11
-    optionalDependencies:
-      esbuild: 0.28.2
-      vite: 8.2.2(@types/node@26.6.4)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0)
-    transitivePeerDependencies:
-      - '@types/node'
-      - yaml
 
   '@oslojs/encoding@1.1.0': {}
 
@@ -5791,20 +5681,7 @@ snapshots:
 
   '@ungap/structured-clone@1.4.0': {}
 
-  '@visulima/find-cache-dir@1.0.35(yaml@2.9.0)':
-    dependencies:
-      '@visulima/fs': 3.1.9(yaml@2.9.0)
-      '@visulima/path': 1.4.0
-    transitivePeerDependencies:
-      - yaml
-
   '@visulima/find-cache-dir@2.0.7': {}
-
-  '@visulima/fs@3.1.9(yaml@2.9.0)':
-    dependencies:
-      '@visulima/path': 1.4.0
-    optionalDependencies:
-      yaml: 2.9.0
 
   '@visulima/fs@4.1.0(yaml@2.9.0)':
     dependencies:
@@ -5812,16 +5689,6 @@ snapshots:
       type-fest: 5.9.0
     optionalDependencies:
       yaml: 2.9.0
-
-  '@visulima/package@3.6.1(@types/node@26.6.4)(yaml@2.9.0)':
-    dependencies:
-      '@inquirer/confirm': 5.1.21(@types/node@26.6.4)
-      '@visulima/fs': 3.1.9(yaml@2.9.0)
-      '@visulima/path': 1.4.0
-      normalize-package-data: 8.0.0
-    transitivePeerDependencies:
-      - '@types/node'
-      - yaml
 
   '@visulima/package@4.1.7(@types/node@26.6.4)':
     dependencies:
@@ -5834,8 +5701,6 @@ snapshots:
       yaml: 2.9.0
     transitivePeerDependencies:
       - '@types/node'
-
-  '@visulima/path@1.4.0': {}
 
   '@visulima/path@2.0.5': {}
 
@@ -6188,19 +6053,6 @@ snapshots:
       fill-range: 7.1.1
 
   cac@7.0.0: {}
-
-  cacache@20.0.4:
-    dependencies:
-      '@npmcli/fs': 5.0.0
-      fs-minipass: 3.0.3
-      glob: 13.0.6
-      lru-cache: 11.5.2
-      minipass: 7.1.3
-      minipass-collect: 2.0.1
-      minipass-flush: 1.0.7
-      minipass-pipeline: 1.2.4
-      p-map: 7.0.7
-      ssri: 13.0.1
 
   cacache@21.0.1:
     dependencies:
@@ -7384,10 +7236,6 @@ snapshots:
 
   lru-cache@11.5.2: {}
 
-  magic-string@0.30.19:
-    dependencies:
-      '@jridgewell/sourcemap-codec': 1.6.0
-
   magic-string@0.30.21:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.6.0
@@ -7879,13 +7727,6 @@ snapshots:
       yallist: 4.0.0
 
   minipass@7.1.3: {}
-
-  mlly@1.8.0:
-    dependencies:
-      acorn: 8.18.0
-      pathe: 2.0.3
-      pkg-types: 1.3.1
-      ufo: 1.6.4
 
   mlly@1.8.2:
     dependencies:
@@ -8534,14 +8375,6 @@ snapshots:
 
   speakingurl@14.0.1: {}
 
-  ssri@12.0.0:
-    dependencies:
-      minipass: 7.1.3
-
-  ssri@13.0.1:
-    dependencies:
-      minipass: 7.1.3
-
   ssri@14.0.0:
     dependencies:
       minipass: 7.1.3
@@ -8840,13 +8673,6 @@ snapshots:
       '@types/unist': 3.0.3
       unist-util-is: 6.0.1
       unist-util-visit-parents: 6.0.2
-
-  unplugin@2.3.11:
-    dependencies:
-      '@jridgewell/remapping': 2.3.5
-      acorn: 8.18.0
-      picomatch: 4.0.7
-      webpack-virtual-modules: 0.6.2
 
   unplugin@3.3.0(esbuild@0.28.2)(rolldown@1.2.8)(vite@8.2.2(@types/node@26.6.4)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0)):
     dependencies:
