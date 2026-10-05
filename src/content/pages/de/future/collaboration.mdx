@@ -4,7 +4,9 @@ title: Zusammenarbeit
 ---
 
 import Button from "../../../../components/Button.astro";
+import Sprite from "../../../../components/Sprite.astro";
 import Divider from "../../../../components/Divider.astro";
+import MainAside from "../../../../layouts/groups/MainAside.astro";
 
 <section>
 
@@ -59,10 +61,28 @@ import Divider from "../../../../components/Divider.astro";
   gemäss den vereinbarten Servicezeiten. Nach Releases prüfen wir die wichtigsten Funktionen und 
   dokumentieren die Ergebnisse.
 </section>
-<section class="white-background">
 
-  Stimmt dieses Vorgehen mit Ihren Vorstellungen überein?
+<section class="white-background" style={{ paddingTop: "0" }} >
+  <Sprite name="birdhouse" style={{ width: "100%", height: "auto", marginBottom: "3rem" }} />
 
-  <Button href="mailto:hi@openscript.ch" withArrow>Kontakt aufnehmen</Button>
-
+    Stimmt dieses Vorgehen mit Ihren Vorstellungen überein?
+    
+    <Button href="mailto:hi@openscript.ch" withArrow>Dann nehmen Sie Kontakt mit uns auf</Button>
 </section>
+  
+<Divider kind="single" firstSegmentColor="var(--color-white)" flipHorizontal flipVertical />
+{/* <MainAside class="white-background">
+  <slot> 
+
+  </slot>
+  <Sprite
+    name="map"
+    slot="aside"
+    style={{
+      width: "100%",
+      transform: "scaleX(-1)",
+      transformBox: "fill-box",
+      transformOrigin: "center",
+    }}
+  />
+</MainAside> */}
