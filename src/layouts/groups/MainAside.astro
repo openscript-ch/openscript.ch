@@ -2,17 +2,17 @@
 // import Sprite from "../../components/Sprite.astro";
 ---
 
-<section {...Astro.props}>
+<div class="main-aside" {...Astro.props}>
   <main>
     <slot />
   </main>
   <aside>
     <slot name="aside" />
   </aside>
-</section>
+</div>
 
 <style>
-  section {
+  .main-aside {
     display: grid;
     grid-template-columns: 3fr 1fr;
     gap: var(--size-gutter-big);

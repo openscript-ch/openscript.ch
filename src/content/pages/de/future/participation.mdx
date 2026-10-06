@@ -1,0 +1,39 @@
+---
+path: mitarbeit
+title: Mitarbeit
+---
+
+import Sprite from "../../../../components/Sprite.astro";
+import MainAside from "../../../../layouts/groups/MainAside.astro";
+
+<section>
+  Wir sind ein kleines Team mit starken Werten, hohen Idealen und grossem Stolz an unserem Fach. 
+  Bei uns zu arbeiten bedeutet alles andere als einen 9-to-5 Job:
+<MainAside>
+  <slot>
+
+  ### Mitbestimmen können
+
+  Wir verstehen uns als holokratisch organisierte Firma; Strategische Entscheidungen treffen wir gemeinsam
+  als Team. Uns ist die Meinung und Mitarbeit jedes einzelnen wichtig. Wir sind Menschen, nicht nur Angestellte. 
+
+  ### Verantwortung tragen 
+
+  Jeder von uns übernimmt Verantwortung für seine Arbeit und darüber hinaus. Wir haben Freude daran die besten 
+  Lösungen für die Probleme unserer Kunden zu finden.
+
+  ### Neue Wege gehen 
+
+  Wir scheuen uns nicht davon, Neues auszuprobieren. Interne Projekte sehen wir auch
+  als Labor um und unerforschte Wege zu gehen, auch wenn mal etwas nicht funktioniert.
+
+
+  </slot>
+  <Sprite
+    name="dig"
+    slot="aside"
+    style={{ width: "100%" }}
+  />
+</MainAside>
+
+</section>
