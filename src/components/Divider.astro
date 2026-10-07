@@ -8,6 +8,7 @@ type Props = {
   firstSegmentColor?: string;
   secondSegmentColor?: string;
   height?: string;
+  background?: string;
 };
 
 const {
@@ -15,13 +16,19 @@ const {
   flipHorizontal = false,
   fixAntialiasingTop = false,
   fixAntialiasingBottom = false,
+  background = "transparent",
   kind = "single",
   firstSegmentColor = "",
   secondSegmentColor = "",
   height = "",
 } = Astro.props;
 
-const style = `transform: scaleX(${flipHorizontal ? -1 : 1}) scaleY(${flipVertical ? -1 : 1})${fixAntialiasingTop ? "; margin-block-start: -1.1px;" : ""}${fixAntialiasingBottom ? "; margin-block-end: -1.1px;" : ""}`;
+const style = `
+  transform: scaleX(${flipHorizontal ? -1 : 1}) scaleY(${flipVertical ? -1 : 1});
+  margin-block-start: ${fixAntialiasingTop ? "-1.1px;" : "initial"};
+  margin-block-end: ${fixAntialiasingBottom ? "-1.1px;" : "initial"};
+  background: ${background};
+`;
 ---
 
 {kind === "single" ? (
