@@ -1,45 +1,49 @@
 ---
 path: werte
-title: Unsere Werte
+title: Werte
 ---
 import Sprite from "../../../../components/Sprite.astro";
 import MainAside from "../../../../layouts/groups/MainAside.astro";
 
-<MainAside>
-  <slot>
-    Wir sind ...
+<section>
+  Werte werden bei uns gross geschrieben. Sie leiten uns bei der Auswahl von Mitarbeitern, Parntern und Kunden und
+  sind der Grundstein, auf dem unsere Firma aufgebaut ist.
 
-    ## pragmatisch und neugierig
+  <MainAside>
+    <slot>
 
-    Wir verfolgen pragmatische Ansätze und gehen manchmal auch neue, unkonventionelle Wege. 
-    Dabei haben wir stets die Ziele unser Kunden im Auge und passen unsere Vorgehensweise daran an.
+      ## pragmatisch und neugierig
 
-    ## kameradschaftlich und menschlich
+      Wir verfolgen pragmatische Ansätze und gehen manchmal auch neue, unkonventionelle Wege. 
+      Dabei haben wir stets die Ziele unser Kunden im Auge und passen unsere Vorgehensweise daran an.
 
-    Wir gehen Projekte wie Abenteuer kameradschaftlich an, denn gemeinsam geht's immer am besten. 
-    Der Mensch und die Zusammenarbeit sind uns wichtig und stehen stets im Vordergrund.
+      ## kameradschaftlich und menschlich
 
-    ## nachhaltig und nah
+      Wir gehen Projekte wie Abenteuer kameradschaftlich an, denn gemeinsam geht's immer am besten. 
+      Der Mensch und die Zusammenarbeit sind uns wichtig und stehen stets im Vordergrund.
 
-    Wir setzen auf eine enge Zusammenarbeit mit unseren Kunden. Unsere Lösungen sind auf langfristige Wartbarkeit und
-    Stabilität ausgelegt.
+      ## nachhaltig und nah
 
-    ## zuverlässig und verantwortungsbewusst
+      Wir setzen auf eine enge Zusammenarbeit mit unseren Kunden. Unsere Lösungen sind auf langfristige Wartbarkeit und
+      Stabilität ausgelegt.
 
-    Wir übernehmen Verantwortung für unsere Arbeit und stehen unseren Kunden bei jeder Herausforderung
-    zur Seite. KI sehen wir als Werkzeug um unsere Arbeit qualitativ noch besser zu machen, nicht um quantitativ 
-    mehr zu leisten.
-  </slot>
+      ## zuverlässig und verantwortungsbewusst
+
+      Wir übernehmen Verantwortung für unsere Arbeit und stehen unseren Kunden bei jeder Herausforderung
+      zur Seite. KI sehen wir als Werkzeug um unsere Arbeit qualitativ noch besser zu machen, nicht um quantitativ 
+      mehr zu leisten.
+    </slot>
 
 
-  <Sprite
-    name="map"
-    slot="aside"
-    style={{
-      width: "100%",
-      transform: "scaleX(-1)",
-      transformBox: "fill-box",
-      transformOrigin: "center",
-    }}
-  />
-</MainAside>
+    <Sprite
+      name="map"
+      slot="aside"
+      style={{
+        width: "100%",
+        transform: "scaleX(-1)",
+        transformBox: "fill-box",
+        transformOrigin: "center",
+      }}
+    />
+  </MainAside>
+</section>
