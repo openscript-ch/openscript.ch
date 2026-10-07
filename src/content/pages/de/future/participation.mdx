@@ -4,36 +4,43 @@ title: Mitarbeit
 ---
 
 import Sprite from "../../../../components/Sprite.astro";
+import Button from "../../../../components/Button.astro";
+import Divider from "../../../../components/Divider.astro";
 import MainAside from "../../../../layouts/groups/MainAside.astro";
 
 <section>
-  Wir sind ein kleines Team mit starken Werten, hohen Idealen und grossem Stolz an unserem Fach. 
-  Bei uns zu arbeiten bedeutet alles andere als einen 9-to-5 Job:
-<MainAside>
-  <slot>
+  Wir sind ein kleines Team mit klaren Werten, hohen Ansprüchen und grossem Stolz auf unser Handwerk. 
+  Bei uns zu arbeiten bedeutet, mitzugestalten, Verantwortung zu übernehmen und neue Wege auszuprobieren, keinen 08:15 Job zu haben:
 
-  ### Mitbestimmen können
+  <MainAside>
+    <slot>
+      ### Mitbestimmen können
+    
+      Wir verstehen uns als holokratisch organisierte Firma. Strategische Entscheidungen treffen wir gemeinsam als Team. Wir wollen, dass alle nicht nur ihre Aufgaben erledigen, sondern aktiv mitdenken und die Entwicklung des Unternehmens mitgestalten und mittragen.
+    
+      ### Verantwortung tragen 
+    
+      Jeder von uns übernimmt Verantwortung für sich selbst, seine Arbeit und die Firma. Wir suchen nach den besten Lösungen für die Herausforderungen unserer Kunden.
+    
+      ### Neues Lernen und weitergeben 
+    
+      Wir scheuen uns nicht davor, Neues auszuprobieren. Interne Projekte verstehen wir als Experimentierfeld: als Raum, in dem wir neue Ideen testen, unbekannte Wege erkunden und auch einmal scheitern dürfen. Wichtig ist, dass wir daraus lernen und weiterkommen. Die neuen Erfahrungen geben wir einander, unseren Kunden und den Teilnehmenden in unseren Kursen weiter.
+    
+      ### Spass haben
+    
+      Wir haben Freude daran, richtig gute Software zu schreiben und damit für unsere Kunden passendensten Lösungen zu finden. Wir nehmen unsere Arbeit ernst, uns selbst aber nicht immer. Ein gemeinsames Spiel nach dem Mittagessen, eine Partie Schach in der Pause und eine grosse Portion Humor gehören bei uns daze. 
+    </slot>
+    <Sprite
+      name="dig"
+      slot="aside"
+      style={{ width: "100%" }}
+    />
+  </MainAside>
 
-  Wir verstehen uns als holokratisch organisierte Firma; Strategische Entscheidungen treffen wir gemeinsam
-  als Team. Uns ist die Meinung und Mitarbeit jedes einzelnen wichtig. Wir sind Menschen, nicht nur Angestellte. 
-
-  ### Verantwortung tragen 
-
-  Jeder von uns übernimmt Verantwortung für seine Arbeit und darüber hinaus. Wir haben Freude daran die besten 
-  Lösungen für die Probleme unserer Kunden zu finden.
-
-  ### Neue Wege gehen 
-
-  Wir scheuen uns nicht davon, Neues auszuprobieren. Interne Projekte sehen wir auch
-  als Labor um und unerforschte Wege zu gehen, auch wenn mal etwas nicht funktioniert.
-
-
-  </slot>
-  <Sprite
-    name="dig"
-    slot="aside"
-    style={{ width: "100%" }}
-  />
-</MainAside>
-
+</section>
+<Divider kind="single" firstSegmentColor="var(--color-white)"  fixAntialiasingBottom={true} background="var(--color-background)" />
+<section class="white-background" >
+  Hast du Lust auch Teil des Teams zu werden?
+    
+  <Button href="mailto:hi@openscript.ch" withArrow>Dann nimm Kontakt mit uns auf</Button>
 </section>
