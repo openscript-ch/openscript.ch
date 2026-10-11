@@ -1,5 +1,11 @@
 # openscript-ch-website
 
+## 0.8.3
+
+### Patch Changes
+
+- 1b47f84: Flesh out values
+
 ## 0.8.2
 
 ### Patch Changes
