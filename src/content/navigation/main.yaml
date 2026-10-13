@@ -19,12 +19,12 @@ items:
     - path: pages://de/future
       title: Zukunft
       children:
-        - path: pages://de/future/collaboration
-          title: Zusammenarbeit
         - path: pages://de/future/services
           title: Dienstleistungen
-        - path: pages://de/future/jobs
-          title: Jobs
+        - path: pages://de/future/collaboration
+          title: Zusammenarbeit
+        - path: pages://de/future/participation
+          title: Mitarbeit
   en:
     - path: pages://en/past
       title: Past
@@ -45,9 +45,9 @@ items:
     - path: pages://en/future
       title: Future
       children:
-        - path: pages://en/future/collaboration
-          title: Collaboration
         - path: pages://en/future/services
           title: Services
-        - path: pages://en/future/jobs
-          title: Jobs
+        - path: pages://en/future/collaboration
+          title: Collaboration
+        - path: pages://en/future/participation
+          title: Participation
