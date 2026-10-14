@@ -271,7 +271,7 @@ importers:
         version: 6.10.2(eslint@10.12.0(jiti@2.7.0))
       eslint-plugin-prettier:
         specifier: ^5.5.6
-        version: 5.5.6(eslint-config-prettier@10.1.8(eslint@10.12.0(jiti@2.7.0)))(eslint@10.12.0(jiti@2.7.0))(prettier@3.9.10)
+        version: 5.5.7(eslint-config-prettier@10.1.8(eslint@10.12.0(jiti@2.7.0)))(eslint@10.12.0(jiti@2.7.0))(prettier@3.9.10)
       favicons:
         specifier: ^7.3.1
         version: 7.3.1(@types/node@26.6.5)
@@ -689,6 +689,9 @@ packages:
   '@clack/prompts@1.8.1':
     resolution: {integrity: sha512-dlT1m5e/0yUL0kRNcQn7yGLVThkgbB0Ga/1AmfDDC/8ik6AIiSf2QLQO2zPYvefsHP0aFgxO93cVLCCfDp7kzQ==}
     engines: {node: '>= 20.12.0'}
+
+  '@dual-bundle/import-meta-resolve@4.2.1':
+    resolution: {integrity: sha512-id+7YRUgoUX6CgV0DtuhirQWodeeA7Lf4i2x71JS/vtA5pRb/hIGWlw+G6MeXvsM+MXrz0VAydTGElX1rAfgPg==}
 
   '@emmetio/abbreviation@2.3.3':
     resolution: {integrity: sha512-mgv58UrU3rh4YgbE/TzgLQwJ3pFsHHhCLqY20aJq+9comytTXUDNGG/SMtSeMJdkpxgXSXunBGLD8Boka3JyVA==}
@@ -2378,8 +2381,8 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9
 
-  eslint-plugin-prettier@5.5.6:
-    resolution: {integrity: sha512-ifetmTcxWfz+4qRW3pH/ujdTq2jQIj59AxJMIN26K5avYgU8dxycUETQonWiW+wPrYXA0j3Try0l1CnwVQtDqQ==}
+  eslint-plugin-prettier@5.5.7:
+    resolution: {integrity: sha512-WjHyn3GrFd+ZR0rzsLiM4zJZ35PZMOE0SUIxzGmnWNG0126yNfJKJzObmmkYDwHJfGlkz3PSlzyG9ez/LJntwg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       '@types/eslint': '>=8.0.0'
@@ -3816,6 +3819,10 @@ packages:
     resolution: {integrity: sha512-eNRKgb3z66Yp3D2CixVujOUvXLFUTij/zVnV8KRyvFdQwpz7I5DS8UfRkTeLzb64u+dkzDSdelE24izu+zSSUg==}
     engines: {node: ^14.18.0 || >=16.0.0}
 
+  synckit@0.12.3:
+    resolution: {integrity: sha512-U+/AXT6LWsxnj2vz9HeUuPWBNgdWxjyIEjEPdbJARC9txmgPzo2VEdqnFo4hHaNyMPtycyVJrSaQYeQv/PoyyA==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+
   tagged-tag@1.0.0:
     resolution: {integrity: sha512-yEFYrVhod+hdNyx7g5Bnkkb0G6si8HJurOoOEgC8B/O0uXLHlaey/65KRv6cuWBNhBgHKAROVpc7QyYqE5gFng==}
     engines: {node: '>=20'}
@@ -4859,6 +4866,8 @@ snapshots:
       fast-string-width: 3.0.2
       fast-wrap-ansi: 0.2.2
       sisteransi: 1.0.5
+
+  '@dual-bundle/import-meta-resolve@4.2.1': {}
 
   '@emmetio/abbreviation@2.3.3':
     dependencies:
@@ -6518,12 +6527,12 @@ snapshots:
       safe-regex-test: 1.1.0
       string.prototype.includes: 2.0.1
 
-  eslint-plugin-prettier@5.5.6(eslint-config-prettier@10.1.8(eslint@10.12.0(jiti@2.7.0)))(eslint@10.12.0(jiti@2.7.0))(prettier@3.9.10):
+  eslint-plugin-prettier@5.5.7(eslint-config-prettier@10.1.8(eslint@10.12.0(jiti@2.7.0)))(eslint@10.12.0(jiti@2.7.0))(prettier@3.9.10):
     dependencies:
       eslint: 10.12.0(jiti@2.7.0)
       prettier: 3.9.10
       prettier-linter-helpers: 1.0.1
-      synckit: 0.11.13
+      synckit: 0.12.3
     optionalDependencies:
       eslint-config-prettier: 10.1.8(eslint@10.12.0(jiti@2.7.0))
 
@@ -8500,6 +8509,11 @@ snapshots:
 
   synckit@0.11.13:
     dependencies:
+      '@pkgr/core': 0.3.6
+
+  synckit@0.12.3:
+    dependencies:
+      '@dual-bundle/import-meta-resolve': 4.2.1
       '@pkgr/core': 0.3.6
 
   tagged-tag@1.0.0: {}
