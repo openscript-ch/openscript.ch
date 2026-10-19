@@ -20,17 +20,15 @@ const randomNumber = (min: number, max: number) => Math.floor(Math.random() * (m
     <slot name="title" />
   </header>
   <div class="tools-grid">
-    {
-      technologies.map(({ data: item }) => (
-        <a
-          href={item.url}
-          aria-label={typeof item.label === "string" ? item.label : ""}
-          style={`rotate: ${randomNumber(-45, 45)}deg`}
-        >
-          <Sprite name={item.logo as keyof typeof SpriteData} />
-        </a>
-      ))
-    }
+    {technologies.map(({ data: item }) => (
+      <a
+        href={item.url}
+        aria-label={typeof item.label === "string" ? item.label : ""}
+        style={`rotate: ${randomNumber(-45, 45)}deg`}
+      >
+        <Sprite name={item.logo as keyof typeof SpriteData} />
+      </a>
+    ))}
   </div>
   <div class="tools-content">
     <slot />

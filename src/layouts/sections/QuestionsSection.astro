@@ -16,17 +16,15 @@ questions.sort(() => Math.random() - 0.5);
 
 <section class="page-padding">
   <Carousel>
-    {
-      questions.map((q) => (
-        <div>
-          <h3>{q.question}</h3>
-          <p>{q.answer}</p>
-          <p>
-            <em>- {q.author}</em>
-          </p>
-        </div>
-      ))
-    }
+    {questions.map((q) => (
+      <div>
+        <h3>{q.question}</h3>
+        <p>{q.answer}</p>
+        <p>
+          <em>- {q.author}</em>
+        </p>
+      </div>
+    ))}
   </Carousel>
 </section>
 

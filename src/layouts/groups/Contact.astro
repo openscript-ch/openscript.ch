@@ -20,11 +20,9 @@ const locale = currentLocale.get();
   <li>
     <Email />
   </li>
-  {
-    withoutLanguageSwitcher || !translations ? null : (
-      <li>
-        <LanguageSwitcher locale={locale} translations={translations} />
-      </li>
-    )
-  }
+  {withoutLanguageSwitcher || !translations ? null : (
+    <li>
+      <LanguageSwitcher locale={locale} translations={translations} />
+    </li>
+  )}
 </ul>

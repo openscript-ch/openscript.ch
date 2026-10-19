@@ -1,18 +1,21 @@
 ---
+import type { HTMLAttributes } from "astro/types";
 import SpriteData from "../../res/sprite/sprite.json";
 
 type Props = {
   name: keyof typeof SpriteData;
   class?: string;
+  style?: HTMLAttributes<"svg">["style"];
   viewBox?: string;
 };
 
 const dimensions = SpriteData[Astro.props.name];
-const { class: className, viewBox, name: spriteName } = Astro.props;
+const { class: className, style, viewBox, name: spriteName } = Astro.props;
 ---
 
 <svg
   class={className ?? undefined}
+  style={style}
   width={viewBox ? undefined : dimensions.width}
   height={viewBox ? undefined : dimensions.height}
   viewBox={viewBox}
