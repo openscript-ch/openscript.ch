@@ -29,10 +29,13 @@ const { id, variant, color = "white", crease = false }: Props = Astro.props;
     display: grid;
     grid-template-areas: "stack";
     position: relative;
-    cursor: pointer;
     perspective: 1000px;
     transform-style: preserve-3d;
     transition: rotate 500ms linear;
+  }
+
+  .tile[data-variant="turnable"] {
+    cursor: pointer;
   }
 
   .tile.show {
@@ -103,7 +106,9 @@ const { id, variant, color = "white", crease = false }: Props = Astro.props;
       const tile = document.getElementById(id);
 
       tile?.addEventListener("click", function () {
-        tile?.classList.toggle("show");
+        if (tile?.dataset.variant === "turnable") {
+          tile?.classList.toggle("show");
+        }
       });
     }
   }

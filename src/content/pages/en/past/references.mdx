@@ -11,6 +11,8 @@ import DogliImage from "../../../references/projects/dogil.placeholder.png";
 import DocportalImage1 from "../../../references/projects/docportal.placeholder.1.png";
 import DocportalImage2 from "../../../references/projects/docportal.placeholder.2.png";
 import { Image } from "astro:assets";
+import ReferencesSection from "../../../../layouts/sections/ReferencesSection.astro";
+import CompaniesSection from "../../../../layouts/sections/CompaniesSection.astro";
 
 <section class="spotlight">
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec risus sit amet nisl consectetur suscipit. Duis diam
@@ -22,7 +24,7 @@ import { Image } from "astro:assets";
 <Divider firstSegmentColor="var(--color-white)" fixAntialiasingBottom />
 
 <section class="white-background">
-<Accordion>
+{/* <Accordion>
   <AccordionItem
     name="dogli"
     title="Dogli"
@@ -65,7 +67,8 @@ import { Image } from "astro:assets";
 
   <Image layout="constrained" src={AxaImage} alt="Axa Kurse" loading="lazy" />
   </AccordionItem>
-</Accordion>
+</Accordion> */}
+<ReferencesSection />
 </section>
 
 <Divider
@@ -75,9 +78,13 @@ import { Image } from "astro:assets";
   fixAntialiasingBottom
 />
 
-<section>
+{/* <section>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec risus sit amet nisl consectetur suscipit. Duis diam
   dui, ultricies ut dolor vel, venenatis egestas ex. Ut vitae nibh arcu. Suspendisse varius risus id blandit fermentum.
   Pellentesque dictum viverra nisi, id congue ex elementum sed. Donec bibendum libero vitae dui accumsan, ac rhoncus mi
   pellentesque. Aliquam erat volutpat. Morbi bibendum feugiat dolor non tristique. Aliquam erat volutpat.
+</section> */}
+
+<section>
+<CompaniesSection />
 </section>
