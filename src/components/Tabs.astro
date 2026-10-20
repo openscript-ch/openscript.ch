@@ -19,7 +19,7 @@ type Props = {
 const { class: className, ...rest } = Astro.props;
 ---
 
-<div class:list={["tabs", className]} {...rest}>
+<div class:list={['tabs', className]} {...rest}>
   <slot />
 </div>
 
@@ -31,7 +31,7 @@ const { class: className, ...rest } = Astro.props;
   }
 
   function register() {
-    document.querySelectorAll<HTMLElement>(".tabs").forEach(initializeTabComponent);
+    document.querySelectorAll<HTMLElement>('.tabs').forEach(initializeTabComponent);
   }
 
   function initializeTabComponent(component: HTMLElement) {
@@ -40,7 +40,7 @@ const { class: className, ...rest } = Astro.props;
     const tabPanels = [...component.querySelectorAll<HTMLElement>('[role="tabpanel"]')];
 
     let tabsIndex = tabs.findIndex(
-      (tab) => tab.getAttribute("tabindex") === "0" || tab.getAttribute("aria-selected") === "true",
+      (tab) => tab.getAttribute('tabindex') === '0' || tab.getAttribute('aria-selected') === 'true',
     );
 
     if (tabsIndex === -1) {
@@ -48,26 +48,26 @@ const { class: className, ...rest } = Astro.props;
     }
 
     tabs.forEach((tab) => {
-      tab.addEventListener("click", () => {
+      tab.addEventListener('click', () => {
         changeTabs(tab);
       });
     });
 
-    tabList?.addEventListener("keydown", (event: KeyboardEvent) => {
-      if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") {
+    tabList?.addEventListener('keydown', (event: KeyboardEvent) => {
+      if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') {
         return;
       }
 
-      tabs[tabsIndex]?.setAttribute("tabindex", "-1");
+      tabs[tabsIndex]?.setAttribute('tabindex', '-1');
 
-      if (event.key === "ArrowRight") {
+      if (event.key === 'ArrowRight') {
         tabsIndex++;
         if (tabsIndex >= tabs.length) {
           tabsIndex = 0;
         }
       }
 
-      if (event.key === "ArrowLeft") {
+      if (event.key === 'ArrowLeft') {
         tabsIndex--;
         if (tabsIndex < 0) {
           tabsIndex = tabs.length - 1;
@@ -77,7 +77,7 @@ const { class: className, ...rest } = Astro.props;
       const tab = tabs[tabsIndex];
 
       if (tab) {
-        tab.setAttribute("tabindex", "0");
+        tab.setAttribute('tabindex', '0');
         tab.focus();
         changeTabs(tab);
       }
@@ -92,21 +92,23 @@ const { class: className, ...rest } = Astro.props;
 
       tabs.forEach((tab) => {
         const isSelected = tab === nextTab;
-        tab.setAttribute("aria-selected", String(isSelected));
-        tab.setAttribute("tabindex", isSelected ? "0" : "-1");
+        tab.setAttribute('aria-selected', String(isSelected));
+        tab.setAttribute('tabindex', isSelected ? '0' : '-1');
       });
 
       tabPanels.forEach((panel) => {
-        panel.setAttribute("aria-hidden", "true");
+        panel.setAttribute('aria-hidden', 'true');
       });
 
-      const targetPanel = component.querySelector<HTMLElement>(`#${nextTab.getAttribute("aria-controls")}`);
-      targetPanel?.setAttribute("aria-hidden", "false");
+      const targetPanel = component.querySelector<HTMLElement>(
+        `#${nextTab.getAttribute('aria-controls')}`,
+      );
+      targetPanel?.setAttribute('aria-hidden', 'false');
     }
   }
 
   register();
-  document.addEventListener("astro:after-swap", () => {
+  document.addEventListener('astro:after-swap', () => {
     register();
   });
 </script>

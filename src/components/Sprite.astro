@@ -1,11 +1,11 @@
 ---
-import type { HTMLAttributes } from "astro/types";
-import SpriteData from "../../res/sprite/sprite.json";
+import type { HTMLAttributes } from 'astro/types';
+import SpriteData from '../../res/sprite/sprite.json';
 
 type Props = {
   name: keyof typeof SpriteData;
   class?: string;
-  style?: HTMLAttributes<"svg">["style"];
+  style?: HTMLAttributes<'svg'>['style'];
   viewBox?: string;
 };
 

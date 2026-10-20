@@ -1,16 +1,7 @@
 {
   "cSpell.language": "en,de-ch",
-  "cSpell.words": [
-    "Astro"
-  ],
+  "cSpell.words": ["Astro"],
   "typescript.tsdk": "node_modules/typescript/lib",
-  "editor.rulers": [
-    120
-  ],
-  "[astro]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+  "editor.rulers": [120],
+  "editor.defaultFormatter": "oxc.oxc-vscode"
 }

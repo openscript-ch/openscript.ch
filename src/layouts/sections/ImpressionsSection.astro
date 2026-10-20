@@ -1,7 +1,7 @@
 ---
-import { currentLocale } from "astro-nanostores-i18n:runtime";
-import Image from "astro/components/Image.astro";
-import { getEntry } from "astro:content";
+import { currentLocale } from 'astro-nanostores-i18n:runtime';
+import Image from 'astro/components/Image.astro';
+import { getEntry } from 'astro:content';
 
 type Props = {
   class?: string;
@@ -10,7 +10,7 @@ type Props = {
 
 const { class: className, gallery } = Astro.props;
 const locale = currentLocale.get();
-const galleryEntry = await getEntry("galleries", `${gallery}/${locale}`);
+const galleryEntry = await getEntry('galleries', `${gallery}/${locale}`);
 if (!galleryEntry) {
   throw new Error(`Gallery not found: ${gallery} (${locale})`);
 }
@@ -20,7 +20,7 @@ if (!galleryEntry) {
   <slot name="title" />
   <div>
     {galleryEntry.data.items.map((item) => (
-      <Image src={item.photo} width={800} alt={typeof item.label === "string" ? item.label : ""} />
+      <Image src={item.photo} width={800} alt={typeof item.label === 'string' ? item.label : ''} />
     ))}
   </div>
 </section>
