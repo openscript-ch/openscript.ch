@@ -8,8 +8,8 @@ const companies = await getCollection("referenceCompanies", (entry) => !entry.da
 
 <div class="grid">
   {
-    companies.map((c, i) => (
-      <Tile variant="turnable" id={c.data.id} crease={i === 0}>
+    companies.map((c) => (
+      <Tile variant="turnable" id={c.data.id} crease>
         <div slot="front">
           <div class="card front-card">
             <Image src={c.data.logo} alt={c.data.companyName} />
@@ -37,6 +37,10 @@ const companies = await getCollection("referenceCompanies", (entry) => !entry.da
       gap: var(--size-gutter);
     }
 
+    :global(.tile) {
+      aspect-ratio: 6 / 3;
+    }
+
     .card {
       font-weight: 600;
       font-size: var(--font-size);
@@ -50,15 +54,25 @@ const companies = await getCollection("referenceCompanies", (entry) => !entry.da
     object-fit: contain;
   }
 
-  @media screen and (max-width: 1600px) {
+  @media screen and (max-width: 2200px) {
+    .grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
     .grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 500px) {
     .grid {
       grid-template-columns: 1fr;
+    }
+
+    img {
+      width: 100%;
     }
   }
 </style>

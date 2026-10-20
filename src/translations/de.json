@@ -1,1 +1,6 @@
-{}
+{
+  "accordion.item": {
+    "more": "Mehr anzeigen",
+    "less": "Weniger anzeigen"
+  }
+}

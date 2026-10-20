@@ -3,6 +3,7 @@ import { currentLocale } from "astro-nanostores-i18n:runtime";
 import { getCollection } from "astro:content";
 import Accordion from "../../components/accordion/Accordion.astro";
 import AccordionItem from "../../components/accordion/AccordionItem.astro";
+import Heading from "../../components/accordion/Heading.astro";
 import { Image } from "astro:assets";
 
 const locale = currentLocale.get();
@@ -15,16 +16,22 @@ const projects = await getCollection("referenceProjects", (entry) => entry.data.
       <AccordionItem
         id={project.id}
         name={project.data.softwareName}
-        title={project.data.softwareName}
-        variant="chevron"
+        variant="minimal"
         open={i === 0}
       >
-        <div class="preview" slot="preview">
-          <Image src={project.data.logo} alt={project.data.softwareName} />
-          {project.data.summary}
+        <div slot="pretext">
+          <Heading level = "h3" size = "h6" class="accordion-title" slot="title">
+            {project.data.softwareName}
+            <Image height="30" src={project.data.logo} alt={project.data.softwareName} />
+          </Heading>
+          <div class="preview">
+            <span>{project.data.summary}</span>
+            <div class="image">
+              <Image src={project.data.logo} alt={project.data.softwareName} />
+            </div>
+          </div>
         </div>
-
-        <div>{project.data.details}</div>
+        <div class="content">{project.data.summary}</div>
       </AccordionItem>
     ))
   }
@@ -33,6 +40,50 @@ const projects = await getCollection("referenceProjects", (entry) => entry.data.
 <style>
   .preview {
     display: flex;
-    gap: 2rem;
+    gap: 5rem;
+    justify-content: space-between;
+
+    span {
+      width: 80%;
+    }
+
+    .image {
+      width: 20%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .content {
+    width: 80%;
+  }
+
+  .accordion-title {
+    display: flex;
+    justify-content: space-between;
+
+    img {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .accordion-title img {
+      display: block;
+    }
+
+    .preview {
+      span {
+        width: 100%;
+      }
+
+      .image {
+        display: none;
+      }
+    }
+
+    .content {
+      width: 100%;
+    }
   }
 </style>
