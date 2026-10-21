@@ -1,11 +1,11 @@
 ---
-import { currentLocale } from "astro-nanostores-i18n:runtime";
-import Sprite from "../../components/Sprite.astro";
-import { prepareNavigation, resolvePath } from "../../utils/paths";
-import { C } from "../../site.config";
-import Navigation from "../../components/Navigation.astro";
-import Burger from "../../components/Burger.astro";
-import Contact from "./Contact.astro";
+import { currentLocale } from 'astro-nanostores-i18n:runtime';
+import Sprite from '../../components/Sprite.astro';
+import { prepareNavigation, resolvePath } from '../../utils/paths';
+import { C } from '../../site.config';
+import Navigation from '../../components/Navigation.astro';
+import Burger from '../../components/Burger.astro';
+import Contact from './Contact.astro';
 
 type Props = {
   translations?: Record<string, string>;
@@ -65,7 +65,7 @@ const navigation = await prepareNavigation(`main/${locale}`);
         white-space: nowrap;
 
         &::before {
-          content: "";
+          content: '';
           display: block;
           position: absolute;
           top: -0.7rem;
@@ -196,7 +196,7 @@ const navigation = await prepareNavigation(`main/${locale}`);
 </style>
 
 <header>
-  <a href={resolvePath(`${locale === C.DEFAULT_LOCALE ? "" : locale}`)}>
+  <a href={resolvePath(`${locale === C.DEFAULT_LOCALE ? '' : locale}`)}>
     <Sprite name="brand" />
   </a>
   <Burger />
