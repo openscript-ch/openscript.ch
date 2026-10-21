@@ -33,7 +33,7 @@ const projects = await getCollection("referenceProjects", (entry) => entry.data.
           <Image
             src={project.data.image}
             alt={project.data.softwareName}
-            widths={[300, 400, 800, 1200, 1800]}
+            widths={[300, 400, 800, 1200, 1800, 2200]}
             sizes="(max-width: 800px) 100vw, 75vw"
           />
         )}
@@ -66,7 +66,7 @@ const projects = await getCollection("referenceProjects", (entry) => entry.data.
     gap: var(--size-gutter-medium);
 
     img {
-      max-width: 75%;
+      max-width: 100%;
       height: auto;
     }
   }
@@ -103,11 +103,6 @@ const projects = await getCollection("referenceProjects", (entry) => entry.data.
 
     .content {
       width: 100%;
-
-      img {
-        max-width: 100%;
-        height: auto;
-      }
     }
   }
 </style>
