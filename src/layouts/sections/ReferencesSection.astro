@@ -11,64 +11,65 @@ const projects = await getCollection("referenceProjects", (entry) => entry.data.
 ---
 
 <Accordion>
-  {
-    projects.map((project, i) => (
-      <AccordionItem
-        id={project.id}
-        name={project.data.softwareName}
-        variant="minimal"
-        open={i === 0}
-      >
-        <div slot="pretext">
-          <Heading level = "h3" size = "h6" class="accordion-title" slot="title">
-            {project.data.softwareName}
+  {projects.map((project, i) => (
+    <AccordionItem id={project.id} name={project.data.softwareName} variant="minimal" open={i === 0}>
+      <div slot="pretext">
+        <Heading level="h3" size="h6" class="title" slot="title">
+          {project.data.softwareName}
+          <div class="title-icon">
             <Image height="30" src={project.data.logo} alt={project.data.softwareName} />
-          </Heading>
-          <div class="preview">
-            <span>{project.data.summary}</span>
-            <div class="image">
-              <Image src={project.data.logo} alt={project.data.softwareName} />
-            </div>
+          </div>
+        </Heading>
+        <div class="preview">
+          <span>{project.data.summary}</span>
+          <div class="image">
+            <Image height={120} src={project.data.logo} alt={project.data.softwareName} />
           </div>
         </div>
-        <div class="content">{project.data.summary}</div>
-      </AccordionItem>
-    ))
-  }
+      </div>
+      <div class="content">{project.data.summary}</div>
+    </AccordionItem>
+  ))}
 </Accordion>
 
 <style>
   .preview {
     display: flex;
-    gap: 5rem;
     justify-content: space-between;
+    gap: var(--size-gutter-huge);
 
     span {
-      width: 80%;
+      width: 75%;
     }
 
     .image {
-      width: 20%;
       display: flex;
+      flex-grow: 1;
       justify-content: center;
     }
   }
 
   .content {
-    width: 80%;
+    width: 75%;
   }
 
-  .accordion-title {
+  .title {
     display: flex;
     justify-content: space-between;
 
-    img {
-      display: none;
+    .title-icon {
+      display: flex;
+      justify-content: center;
+      width: 30px;
+
+      img {
+        display: none;
+      }
     }
   }
 
   @media screen and (max-width: 800px) {
-    .accordion-title img {
+    .title .title-icon img {
       display: block;
     }
 
