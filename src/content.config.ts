@@ -81,6 +81,7 @@ const referenceProjectsCollection = defineCollection({
         logo: image(),
         path: z.url().optional(),
         featured: z.boolean().optional().default(false),
+        image: image().optional(),
       }),
     ),
 });
