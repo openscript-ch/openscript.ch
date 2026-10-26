@@ -1,7 +1,7 @@
 {
   "cSpell.language": "en,de-ch",
   "cSpell.words": ["Astro"],
-  "typescript.tsdk": "node_modules/typescript/lib",
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
   "editor.rulers": [120],
   "editor.defaultFormatter": "oxc.oxc-vscode"
 }
