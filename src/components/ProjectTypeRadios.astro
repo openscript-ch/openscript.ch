@@ -39,21 +39,21 @@ const { labels } = Astro.props;
       align-items: center;
       cursor: pointer;
 
-      & input[type="radio"] {
+      & input[type='radio'] {
         display: none;
       }
 
-      &:has(input[type="radio"]:checked) {
+      &:has(input[type='radio']:checked) {
         outline: 3px solid var(--color-secondary);
       }
 
-      &:has([value="rescue"]) {
+      &:has([value='rescue']) {
         transform-origin: 1em 1em;
         transform: rotate(4deg);
         transition-duration: 300ms;
       }
 
-      &:has([value="rescue"]):hover {
+      &:has([value='rescue']):hover {
         transform: rotate(0deg);
       }
     }
@@ -61,7 +61,7 @@ const { labels } = Astro.props;
 
   :global(h3::before) {
     counter-increment: h3-counter;
-    content: counter(h3-counter) ". ";
+    content: counter(h3-counter) '. ';
   }
 
   :global([data-project-type-greenfield]),
@@ -70,9 +70,11 @@ const { labels } = Astro.props;
     display: none;
   }
 
-  :global(:has(input[name="project-type"][value="greenfield"]:checked) [data-project-type-greenfield]),
-  :global(:has(input[name="project-type"][value="rescue"]:checked) [data-project-type-rescue]),
-  :global(:has(input[name="project-type"][value="existing"]:checked) [data-project-type-existing]) {
+  :global(
+    :has(input[name='project-type'][value='greenfield']:checked) [data-project-type-greenfield]
+  ),
+  :global(:has(input[name='project-type'][value='rescue']:checked) [data-project-type-rescue]),
+  :global(:has(input[name='project-type'][value='existing']:checked) [data-project-type-existing]) {
     display: block;
   }
 </style>
