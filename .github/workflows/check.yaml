@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
 
 env:
-  BUILD_PATH: "."
+  BUILD_PATH: '.'
 
 jobs:
   build:
@@ -40,9 +40,9 @@ jobs:
         run: pnpm install --frozen-lockfile
         working-directory: ${{ env.BUILD_PATH }}
 
-      - name: Check with ESLint and Prettier
+      - name: Check with oxc
         run: |
-          pnpm check
+          pnpm run check
 
       - name: Check with Astro
         run: |

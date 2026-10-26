@@ -1,8 +1,8 @@
 ---
-import { currentLocale } from "astro-nanostores-i18n:runtime";
-import Timeline from "../../components/Timeline.astro";
-import { getCollection } from "astro:content";
-import TimelineEntry from "../../components/TimelineEntry.astro";
+import { currentLocale } from 'astro-nanostores-i18n:runtime';
+import Timeline from '../../components/Timeline.astro';
+import { getCollection } from 'astro:content';
+import TimelineEntry from '../../components/TimelineEntry.astro';
 
 type Props = {
   key: string;
@@ -13,7 +13,10 @@ const { key, class: className } = Astro.props;
 
 const locale = currentLocale.get();
 
-const timelineCollection = await getCollection("formation", (entry) => entry.data.locale === locale);
+const timelineCollection = await getCollection(
+  'formation',
+  (entry) => entry.data.locale === locale,
+);
 
 const formationData = timelineCollection
   .filter((t) => t.id.includes(key))

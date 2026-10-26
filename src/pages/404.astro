@@ -1,7 +1,7 @@
 ---
-import Button from "../components/Button.astro";
-import Shell from "../layouts/Shell.astro";
-import Article from "../layouts/templates/Article.astro";
+import Button from '../components/Button.astro';
+import Shell from '../layouts/Shell.astro';
+import Article from '../layouts/templates/Article.astro';
 ---
 
 <style>
@@ -39,7 +39,7 @@ import Article from "../layouts/templates/Article.astro";
 
 <script>
   function register() {
-    const localeElements = document.querySelectorAll("[data-translation]");
+    const localeElements = document.querySelectorAll('[data-translation]');
     const pathname = window.location.pathname;
     const activeElement =
       Array.from(localeElements).find(
@@ -47,10 +47,10 @@ import Article from "../layouts/templates/Article.astro";
       ) || document.querySelector('[data-translation="de"]');
 
     if (activeElement instanceof HTMLElement) {
-      activeElement.classList.add("active");
+      activeElement.classList.add('active');
     }
   }
 
   register();
-  document.addEventListener("astro:after-swap", register);
+  document.addEventListener('astro:after-swap', register);
 </script>

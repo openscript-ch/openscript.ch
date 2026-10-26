@@ -1,21 +1,24 @@
 ---
-import Meta from "../../layouts/groups/Meta.astro";
-import { getCollection, render } from "astro:content";
-import { i18nPropsAndParams } from "astro-loader-i18n";
-import { defaultPropsAndParamsOptions, replaceSegmentsInPath } from "../../utils/paths";
-import Shell from "../../layouts/Shell.astro";
-import Article from "../../layouts/templates/Article.astro";
-import type { GetStaticPathsOptions } from "astro";
-import { parseLocale } from "../../utils/i18n";
+import Meta from '../../layouts/groups/Meta.astro';
+import { getCollection, render } from 'astro:content';
+import { i18nPropsAndParams } from 'astro-loader-i18n';
+import { defaultPropsAndParamsOptions, replaceSegmentsInPath } from '../../utils/paths';
+import Shell from '../../layouts/Shell.astro';
+import Article from '../../layouts/templates/Article.astro';
+import type { GetStaticPathsOptions } from 'astro';
+import { parseLocale } from '../../utils/i18n';
 
 export const getStaticPaths = async ({ routePattern }: GetStaticPathsOptions) => {
-  const collection = await getCollection("pages");
+  const collection = await getCollection('pages');
 
   return i18nPropsAndParams(collection, {
     ...defaultPropsAndParamsOptions,
     routePattern,
     generateSegments: (entry) => {
-      const contentPath = replaceSegmentsInPath(entry.data.contentPath, parseLocale(entry.data.locale));
+      const contentPath = replaceSegmentsInPath(
+        entry.data.contentPath,
+        parseLocale(entry.data.locale),
+      );
       return { pages: `${contentPath}/${entry.data.path}` };
     },
   });

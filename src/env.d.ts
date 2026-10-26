@@ -1,1 +1,1 @@
-declare module "@fontsource/fira-mono";
+declare module '@fontsource/fira-mono';

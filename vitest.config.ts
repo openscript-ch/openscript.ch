@@ -1,6 +1,6 @@
-import { getViteConfig } from "astro/config";
-import { coverageConfigDefaults, mergeConfig } from "vitest/config";
-import type { ConfigEnv } from "vitest/config";
+import { getViteConfig } from 'astro/config';
+import { coverageConfigDefaults, mergeConfig } from 'vitest/config';
+import type { ConfigEnv } from 'vitest/config';
 
 const astroConfig = getViteConfig({});
 
@@ -10,7 +10,7 @@ export default async (env: ConfigEnv) => {
     test: {
       unstubEnvs: true,
       coverage: {
-        exclude: ["astro.config.ts", "**/*.astro", ...coverageConfigDefaults.exclude],
+        exclude: ['astro.config.ts', '**/*.astro', ...coverageConfigDefaults.exclude],
       },
     },
   });
