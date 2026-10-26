@@ -1,27 +1,30 @@
 ---
+import { currentLocale } from "astro-nanostores-i18n:runtime";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 import Tile from "../../components/Tile.astro";
 
-const companies = await getCollection("referenceCompanies", (entry) => !entry.data.archived && entry.data.details);
+const locale = currentLocale.get();
+const companies = await getCollection(
+  "referenceCompanies",
+  (entry) => entry.data.locale === locale && !entry.data.archived && entry.data.details,
+);
 ---
 
 <div class="grid">
-  {
-    companies.map((c) => (
-      <Tile variant="turnable" id={c.data.id} crease>
-        <div slot="front">
-          <div class="card front-card">
-            <Image src={c.data.logo} alt={c.data.companyName} />
-            <span>{c.data.companyName}</span>
-          </div>
+  {companies.map((c) => (
+    <Tile variant="turnable" id={c.data.id} crease>
+      <div slot="front">
+        <div class="card front-card">
+          <Image src={c.data.logo} alt={c.data.companyName} />
+          <span>{c.data.companyName}</span>
         </div>
-        <div class="card" slot="back">
-          {c.data.details}
-        </div>
-      </Tile>
-    ))
-  }
+      </div>
+      <div class="card" slot="back">
+        {c.data.details}
+      </div>
+    </Tile>
+  ))}
 </div>
 
 <style>

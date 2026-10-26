@@ -1,42 +1,45 @@
 ---
 import { currentLocale } from "astro-nanostores-i18n:runtime";
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import Accordion from "../../components/accordion/Accordion.astro";
 import AccordionItem from "../../components/accordion/AccordionItem.astro";
 import Heading from "../../components/accordion/Heading.astro";
 import { Image } from "astro:assets";
 
 const locale = currentLocale.get();
-const projects = await getCollection("referenceProjects", (entry) => entry.data.locale === locale);
+const rawProjects = await getCollection("referenceProjects", (entry) => entry.data.locale === locale);
+
+const projects = await Promise.all(
+  rawProjects.map(async (project) => {
+    const { Content, headings } = await render(project);
+    return {
+      ...project,
+      Content,
+      headings,
+    };
+  }),
+);
 ---
 
 <Accordion>
-  {projects.map((project, i) => (
-    <AccordionItem id={project.id} name={project.data.softwareName} variant="minimal" open={i === 0}>
+  {projects.map(({ id, data, Content }, i) => (
+    <AccordionItem id={id} name={data.softwareName} variant="minimal" open={i === 0}>
       <div slot="pretext">
         <Heading level="h3" size="h6" class="title" slot="title">
-          {project.data.softwareName}
+          {data.softwareName}
           <div class="title-icon">
-            <Image height="30" src={project.data.logo} alt={project.data.softwareName} />
+            <Image height="30" src={data.logo} alt={data.softwareName} />
           </div>
         </Heading>
         <div class="preview">
-          <span>{project.data.summary}</span>
+          <span>{data.summary}</span>
           <div class="image">
-            <Image height={120} src={project.data.logo} alt={project.data.softwareName} />
+            <Image height={120} src={data.logo} alt={data.softwareName} />
           </div>
         </div>
       </div>
       <div class="content">
-        {project.data.summary}
-        {project.data.image && (
-          <Image
-            src={project.data.image}
-            alt={project.data.softwareName}
-            widths={[300, 400, 800, 1200, 1800, 2200]}
-            sizes="(max-width: 800px) 100vw, 75vw"
-          />
-        )}
+        <Content />
       </div>
     </AccordionItem>
   ))}

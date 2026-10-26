@@ -1,0 +1,19 @@
+---
+softwareName: ViaLibera
+title: Mobile protocol management tool for a government organization
+logo: ./vialibera.svg
+summary: It's a progressive web application, which has offline capabilities. After the device which runs the application comes back online the data is synchronized. It helps you to log street condition and makes statistics out of it.
+featured: true
+---
+
+import { Image } from "astro:assets";
+import image from "./placeholder.png"
+
+<p>It's a progressive web application, which has offline capabilities. After the device which runs the application comes back online the data is synchronized. It helps you to log street condition and makes statistics out of it.</p>
+
+<Image
+  src={image}
+  alt="ViaLibera"
+  widths={[300, 400, 800, 1200, 1800, 2200]}
+  sizes="(max-width: 800px) 100vw, 75vw"
+/>

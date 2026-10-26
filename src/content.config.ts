@@ -7,7 +7,7 @@ import {
 } from "astro-loader-i18n";
 import { defineCollection, type ImageFunction } from "astro:content";
 import { localeSlugs } from "./site.config";
-import { glob, file } from "astro/loaders";
+import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 
 const localized = <T extends z.ZodType>(schema: T) => localizedSchema(schema, localeSlugs);
@@ -57,16 +57,18 @@ const sectionsCollection = defineCollection({
 });
 
 const referenceCompaniesCollection = defineCollection({
-  loader: file("./src/content/references/companies/index.yaml"),
+  loader: i18nLoader({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/references/companies" }),
   schema: ({ image }) =>
-    z.object({
-      id: z.string(),
-      companyName: z.string(),
-      logo: image(),
-      url: z.url().optional(),
-      archived: z.boolean().optional().default(false),
-      details: z.string().optional(),
-    }),
+    extendI18nLoaderSchema(
+      z.object({
+        id: z.string(),
+        companyName: z.string(),
+        logo: image(),
+        url: z.url().optional(),
+        archived: z.boolean().optional().default(false),
+        details: z.string().optional(),
+      }),
+    ),
 });
 
 const referenceProjectsCollection = defineCollection({
@@ -77,11 +79,9 @@ const referenceProjectsCollection = defineCollection({
         softwareName: z.string(),
         title: z.string(),
         summary: z.string(),
-        details: z.string().optional(),
         logo: image(),
         path: z.url().optional(),
         featured: z.boolean().optional().default(false),
-        image: image().optional(),
       }),
     ),
 });
