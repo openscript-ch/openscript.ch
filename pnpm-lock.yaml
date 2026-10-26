@@ -231,8 +231,8 @@ importers:
         version: 6.0.3
     devDependencies:
       '@anolilab/unplugin-favicons':
-        specifier: ^4.0.1
-        version: 4.0.1(@types/node@26.6.5)(esbuild@0.28.2)(favicons@7.3.1(@types/node@26.6.5))(rolldown@1.2.14)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))
+        specifier: ^6.0.0
+        version: 6.0.0(@types/node@26.6.5)(esbuild@0.28.2)(favicons@7.3.1(@types/node@26.6.5))(rolldown@1.2.14)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))
       '@astrojs/compiler-rs':
         specifier: ^0.5.2
         version: 0.5.2
@@ -281,16 +281,16 @@ importers:
 
 packages:
 
-  '@anolilab/unplugin-favicons@4.0.1':
-    resolution: {integrity: sha512-GUiUOzGDZjWao3DGPGPcieTqNCp3GwynOPHTZlJXRmR8c3Hj1iNJhwZV9xoOK8oAxsVPzzFRXWo/8RK23x7h2Q==}
+  '@anolilab/unplugin-favicons@6.0.0':
+    resolution: {integrity: sha512-TiKvHfOoHu78/SRnBwwKEyC0dtbtXR2k3yfKTVPdiSEk81A3J3A3Q5ZmSWQFH6p5v9ykLHRtPfi0NOs89SRHmA==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
-      '@nuxt/kit': ^3
-      '@nuxt/schema': ^3
-      '@rspack/cli': ^1.1.8
+      '@nuxt/kit': ^4.6.1
+      '@nuxt/schema': ^4.6.1
+      '@rspack/cli': ^1.7.12
       '@sveltejs/kit': '*'
       esbuild: '*'
-      favicons: ^7.2.0
+      favicons: ^7.3.1
       rollup: ^3.0.1
       vite: ^8.0.16
       webpack: ^4 || ^5
@@ -3400,11 +3400,12 @@ packages:
   unist-util-visit@5.1.0:
     resolution: {integrity: sha512-m+vIdyeCOpdr/QeQCu2EzxX/ohgS8KbnPDgFni4dQsfSCtpz8UqDyY5GjRru8PDKuYn7Fq19j1CQ+nJSsGKOzg==}
 
-  unplugin@3.3.0:
-    resolution: {integrity: sha512-qa66K+crbfyE6JK10GjvbJeRrOsuC/JpbnHctfyp/i4oBTxWOzJfRZyDiOk1PtErMFRu8JhsU/wPvOdBNWe5Rg==}
+  unplugin@3.4.0:
+    resolution: {integrity: sha512-9skdIFlCsPdFV7wUfZxNsFInlW+7nJmGu2gkTu0OUhF56aXGsHab9x52/QhdJ4lC7ZDPWTxbiC4ANqVlsuaW3w==}
     engines: {node: ^20.19.0 || >=22.12.0}
     peerDependencies:
       '@farmfe/core': '*'
+      '@rsbuild/core': '*'
       '@rspack/core': '*'
       bun-types-no-globals: '*'
       esbuild: '*'
@@ -3415,6 +3416,8 @@ packages:
       webpack: '*'
     peerDependenciesMeta:
       '@farmfe/core':
+        optional: true
+      '@rsbuild/core':
         optional: true
       '@rspack/core':
         optional: true
@@ -3794,7 +3797,7 @@ packages:
 
 snapshots:
 
-  '@anolilab/unplugin-favicons@4.0.1(@types/node@26.6.5)(esbuild@0.28.2)(favicons@7.3.1(@types/node@26.6.5))(rolldown@1.2.14)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))':
+  '@anolilab/unplugin-favicons@6.0.0(@types/node@26.6.5)(esbuild@0.28.2)(favicons@7.3.1(@types/node@26.6.5))(rolldown@1.2.14)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))':
     dependencies:
       '@visulima/find-cache-dir': 2.0.7
       '@visulima/package': 4.1.7(@types/node@26.6.5)
@@ -3808,12 +3811,13 @@ snapshots:
       parse-author: 2.0.0
       parse5: 8.0.1
       ssri: 14.0.0
-      unplugin: 3.3.0(esbuild@0.28.2)(rolldown@1.2.14)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))
+      unplugin: 3.4.0(esbuild@0.28.2)(rolldown@1.2.14)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))
     optionalDependencies:
       esbuild: 0.28.2
       vite: 8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)
     transitivePeerDependencies:
       - '@farmfe/core'
+      - '@rsbuild/core'
       - '@rspack/core'
       - '@types/node'
       - bun-types-no-globals
@@ -7151,7 +7155,7 @@ snapshots:
       unist-util-is: 6.0.1
       unist-util-visit-parents: 6.0.2
 
-  unplugin@3.3.0(esbuild@0.28.2)(rolldown@1.2.14)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)):
+  unplugin@3.4.0(esbuild@0.28.2)(rolldown@1.2.14)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)):
     dependencies:
       '@jridgewell/remapping': 2.3.5
       picomatch: 4.0.7
