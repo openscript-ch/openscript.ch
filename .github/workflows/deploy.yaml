@@ -13,11 +13,11 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: true
 
 env:
-  BUILD_PATH: "."
+  BUILD_PATH: '.'
 
 jobs:
   build:
