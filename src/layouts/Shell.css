@@ -140,6 +140,10 @@ body > :is(header, footer) {
   z-index: 10;
 }
 
+::view-transition-group(header-divider) {
+  z-index: 5;
+}
+
 #ribbon ::selection,
 body > :is(header, footer) ::selection {
   background-color: var(--color-white);
