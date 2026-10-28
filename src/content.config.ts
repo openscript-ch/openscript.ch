@@ -151,6 +151,27 @@ const sections = defineCollection({
   schema: z.object({}),
 });
 
+const services = defineCollection({
+  loader: i18nLoader({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/services' }),
+  schema: extendI18nLoaderSchema(
+    z.object({
+      serviceName: z.string(),
+      sprite: z.string(),
+    }),
+  ),
+});
+
+const strengths = defineCollection({
+  loader: i18nLoader({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/strengths' }),
+  schema: extendI18nLoaderSchema(
+    z.object({
+      strengthName: z.string(),
+      sprite: z.string(),
+      service: i18nReference('services'),
+    }),
+  ),
+});
+
 const team = defineCollection({
   loader: i18nFileLoader('./src/content/team/index.yaml'),
   schema: ({ image }) =>
@@ -186,6 +207,8 @@ export const collections = {
   referenceCompanies,
   referenceProjects,
   sections,
+  services,
+  strengths,
   team,
   technologies,
 };

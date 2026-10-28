@@ -1,0 +1,4 @@
+---
+serviceName: Education
+sprite: education
+---

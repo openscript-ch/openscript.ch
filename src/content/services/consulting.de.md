@@ -1,0 +1,4 @@
+---
+serviceName: Beratung
+sprite: consulting
+---

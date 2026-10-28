@@ -1,0 +1,4 @@
+---
+serviceName: Bildung
+sprite: education
+---
