@@ -1,11 +1,11 @@
 ---
-import { currentLocale } from "astro-nanostores-i18n:runtime";
-import { Image } from "astro:assets";
-import { getCollection } from "astro:content";
+import { currentLocale } from 'astro-nanostores-i18n:runtime';
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
 
 const locale = currentLocale.get();
-const companies = await getCollection("referenceCompanies", (entry) => !entry.data.archived);
-const projects = await getCollection("referenceProjects", (entry) => entry.data.locale === locale);
+const companies = await getCollection('referenceCompanies', (entry) => !entry.data.archived);
+const projects = await getCollection('referenceProjects', (entry) => entry.data.locale === locale);
 ---
 
 <section class="page-padding">
@@ -23,7 +23,7 @@ const projects = await getCollection("referenceProjects", (entry) => entry.data.
   </div>
   <div class="references-companies">
     {companies.map((c) => (
-      <a href={c.data.url || "#"} target="_blank" rel="noopener" aria-label={c.data.companyName}>
+      <a href={c.data.url || '#'} target="_blank" rel="noopener" aria-label={c.data.companyName}>
         <Image src={c.data.logo} alt={c.data.companyName} />
         {c.data.companyName}
       </a>

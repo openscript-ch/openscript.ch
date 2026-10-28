@@ -1,9 +1,9 @@
 ---
-import Sprite from "../../components/Sprite.astro";
-import { resolvePath } from "../../utils/paths";
-import { currentLocale } from "astro-nanostores-i18n:runtime";
-import { C } from "../../site.config";
-import Contact from "./Contact.astro";
+import Sprite from '../../components/Sprite.astro';
+import { resolvePath } from '../../utils/paths';
+import { currentLocale } from 'astro-nanostores-i18n:runtime';
+import { C } from '../../site.config';
+import Contact from './Contact.astro';
 
 type Props = {
   translations?: Record<string, string>;
@@ -65,7 +65,7 @@ const locale = currentLocale.get();
   }
 
   div nav :global(ul li:not(:last-of-type)::after) {
-    content: "/";
+    content: '/';
     margin: 0 0.8rem;
     color: var(--color-secondary);
     font-weight: bold;
@@ -86,7 +86,7 @@ const locale = currentLocale.get();
 </style>
 
 <div id="ribbon">
-  <a href={resolvePath(`${locale === C.DEFAULT_LOCALE ? "" : locale}`)}>
+  <a href={resolvePath(`${locale === C.DEFAULT_LOCALE ? '' : locale}`)}>
     <Sprite name="brand" />
     <span>{C.SETTINGS.META.TITLE}</span>
   </a>
@@ -97,17 +97,17 @@ const locale = currentLocale.get();
 
 <script>
   function register() {
-    const ribbon = document.getElementById("ribbon");
+    const ribbon = document.getElementById('ribbon');
     if (!ribbon) return;
-    const header = document.querySelector("header");
+    const header = document.querySelector('header');
     if (!header) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry?.isIntersecting) {
-          ribbon.classList.remove("show-brand");
+          ribbon.classList.remove('show-brand');
         } else {
-          ribbon.classList.add("show-brand");
+          ribbon.classList.add('show-brand');
         }
       },
       { threshold: 0, rootMargin: `${-ribbon.clientHeight}px 0px 0px 0px` },
@@ -117,5 +117,5 @@ const locale = currentLocale.get();
   }
 
   register();
-  document.addEventListener("astro:after-swap", register);
+  document.addEventListener('astro:after-swap', register);
 </script>
