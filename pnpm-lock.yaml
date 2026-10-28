@@ -405,7 +405,7 @@ importers:
         specifier: ^0.75.0
         version: 0.75.0(@astrojs/compiler-rs@0.5.2)
       oxlint:
-        specifier: ^1.89.0
+        specifier: ^1.90.0
         version: 1.90.0
       prettier-plugin-astro:
         specifier: ^1.1.2

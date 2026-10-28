@@ -67,7 +67,7 @@
     "globals": "^17.13.0",
     "jiti": "^2.7.0",
     "oxfmt": "^0.75.0",
-    "oxlint": "^1.89.0",
+    "oxlint": "^1.90.0",
     "prettier-plugin-astro": "^1.1.2",
     "sirv": "^3.0.2",
     "typescript": "npm:@typescript/typescript6@^6.0.2",
