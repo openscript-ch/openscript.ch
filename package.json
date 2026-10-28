@@ -26,6 +26,7 @@
     "lint:fix": "oxlint --fix",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
+    "fix": "pnpm run lint:fix && pnpm run fmt",
     "check": "pnpm run lint && pnpm run fmt:check && pnpm run astro:check",
     "version": "changeset version",
     "release": "changeset publish",
