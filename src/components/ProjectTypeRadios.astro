@@ -1,0 +1,80 @@
+---
+type Props = {
+  labels: { existing: string; greenfield: string; rescue: string };
+};
+
+const { labels } = Astro.props;
+---
+
+<div class="project-types">
+  <fieldset>
+    <label>
+      <input type="radio" name="project-type" value="greenfield" /> {labels.greenfield}
+    </label>
+    <label>
+      <input type="radio" name="project-type" value="existing" /> {labels.existing}
+    </label>
+    <label>
+      <input type="radio" name="project-type" value="rescue" /> {labels.rescue}
+    </label>
+  </fieldset>
+  <slot />
+</div>
+
+<style>
+  fieldset {
+    margin: 3em 0;
+    padding: 0;
+    border: none;
+    display: flex;
+    gap: 2em;
+    flex: 1 1;
+    counter-reset: h3-counter;
+
+    & > label {
+      background: var(--color-overlay);
+      padding: 1em;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      & input[type='radio'] {
+        display: none;
+      }
+
+      &:has(input[type='radio']:checked) {
+        outline: 3px solid var(--color-secondary);
+      }
+
+      &:has([value='rescue']) {
+        transform-origin: 1em 1em;
+        transform: rotate(4deg);
+        transition-duration: 300ms;
+      }
+
+      &:has([value='rescue']):hover {
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  :global(h3::before) {
+    counter-increment: h3-counter;
+    content: counter(h3-counter) '. ';
+  }
+
+  :global([data-project-type-greenfield]),
+  :global([data-project-type-rescue]),
+  :global([data-project-type-existing]) {
+    display: none;
+  }
+
+  :global(
+    :has(input[name='project-type'][value='greenfield']:checked) [data-project-type-greenfield]
+  ),
+  :global(:has(input[name='project-type'][value='rescue']:checked) [data-project-type-rescue]),
+  :global(:has(input[name='project-type'][value='existing']:checked) [data-project-type-existing]) {
+    display: block;
+  }
+</style>

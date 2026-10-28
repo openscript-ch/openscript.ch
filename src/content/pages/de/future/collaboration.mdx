@@ -4,15 +4,101 @@ title: Zusammenarbeit
 ---
 
 import Button from '../../../../components/Button.astro';
+import Sprite from '../../../../components/Sprite.astro';
+import Divider from '../../../../components/Divider.astro';
+import MainAside from '../../../../layouts/groups/MainAside.astro';
+import ProjectTypeRadios from '../../../../components/ProjectTypeRadios.astro';
 
 <section>
 
-Sie haben ein spannendes Softwareprojekt und suchen einen nachhaltigen Partner für die Realisierung?
+Bei uns gehört deine aktive Mitarbeit zur Zusammenarbeit dazu. So gehen wir vor ...
 
-Nur gemeinsam können wir grossartige Software programmieren, ob als externer Partner oder Kollege. Wir freuen uns darauf Sie kennenzulernen.
+  <ProjectTypeRadios
+    labels={{
+      greenfield: "Bei einem neuen Projekt",
+      existing: "Bei einem bestehenden Projekt",
+      rescue: "Bei einem in Schieflage geratenem Projekt",
+    }}
+  >
+    <div data-project-type-rescue>
+
+    ### Erste Hilfe
+
+    Für dringende Anliegen leisten wir schnell und unkompliziert erste Hilfe, z.B. in Form von Beratung, Bugfixes oder
+    bei der Sicherung und Administration eurer Infrastruktur.
+
+    </div>
+
+    ### Persönliches Kennenlernen
+
+    Wir lernen dich am liebsten persönlich und bei dir vor Ort kennen, um dich und deine Bedürfnisse zu
+    verstehen. Wir wollen zuerst herausfinden, was du wirklich brauchst und wie die Zusammenarbeit für beide Seiten
+    am fruchtbarsten gestaltet werden kann.
+
+    <div data-project-type-existing data-project-type-rescue>
+
+    ### Bestandesaufnahme
+
+    Wir sichten Dokumentation, Quellcode, Infrastruktur, Abhängigkeiten, Datenflüsse und bestehende Deployments.
+    Dabei prüfen wir unter anderem Sicherheit, Wartbarkeit, Performance, Backup- und Wiederherstellungsverfahren
+    Drittanbieter-Integrationen. Fehlende Informationen und Risiken halten wir als Issues fest.
+
+    </div>
+
+    ### Vorbereitung
+
+    Wir klären Zugänge, Verantwortlichkeiten und die verfügbaren Artefakte. Der Quellcode, die Dokumentation,
+    Konfigurationen und Deployments sollen möglichst in deinem Besitz liegen und versioniert und
+    nachvollziehbar abgelegt sein.
+
+    Wir setzen bei allen Entwicklern die lokale Entwicklungsumgebung nachvollziehbar so auf, dass sie die
+    Gegebenheiten der Produktivumgebung möglichst gut abbildet und dennoch eine effiziente und
+    effektive Arbeitsweise ermöglicht und wir Anpassungen zeitnah umsetzen können.
+
+    <div data-project-type-existing data-project-type-greenfield>
+
+    ### Anforderungen und Umsetzung
+
+    Wir schneiden Arbeitspakete möglichst klein, schätzen sie gemeinsam und setzen sie erst nach Absprache mit dir um.
+    Deine Mitarbeit ist uns gerade in dieser Phase sehr wichtig.
+
+    Vor grösseren Änderungen schaffen wir, soweit erforderlich, eine reproduzierbare Test- oder Staging-Umgebung
+    und überprüfen Backups sowie einen möglichen Rollback. Anschliessend erstellen und priorisieren wir gemeinsam
+    einen Massnahmenplan.
+
+    Bestehende Funktionen oder Konstrukte werden nur ersetzt, wenn dies technisch oder wirtschaftlich begründet ist.
+
+    </div>
+
+    ### Prüfung und Abnahme
+
+    Änderungen werden von uns automatisiert und manuell getestet. Auf dem Testsystem prüfst du anschliessend die
+    Anpassungen selbst und gibst sie frei. Rückmeldungen werden dokumentiert und vor der Produktivschaltung bearbeitet.
+
+    ### Produktivschaltung
+
+    Wir planen Releases nachvollziehbar, führen sie schrittweise durch und stellen sicher,
+    dass ein Rollback oder eine geeignete Wiederherstellung möglich ist.
+
+    ### Überwachung und Nachbereitung
+
+    Wir überwachen die vereinbarten Systeme und informieren bei relevanten Fehlern oder Sicherheitsproblemen
+    gemäss den vereinbarten Servicezeiten. Nach Releases prüfen wir die wichtigsten Funktionen und
+    dokumentieren die Ergebnisse.
+
+  </ProjectTypeRadios>
+</section>
+
+<Sprite name="birdhouse" style={{ width: '100%', height: 'auto', marginBottom: '3rem' }} />
+
+<section class="white-background" style={{ paddingTop: "0" }} >
+
+Stimmt dieses Vorgehen mit deinen Vorstellungen überein?
 
 <Button href="mailto:hi@openscript.ch" withArrow>
-  Kontakt aufnehmen
+  Dann nehmen Sie Kontakt mit uns auf
 </Button>
 
 </section>
+
+<Divider kind="single" firstSegmentColor="var(--color-white)" flipHorizontal flipVertical />

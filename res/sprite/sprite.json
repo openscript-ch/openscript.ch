@@ -11,6 +11,14 @@
     "width": "9.387",
     "height": "10"
   },
+  "binoculars": {
+    "width": "390.416",
+    "height": "681.343"
+  },
+  "birdhouse": {
+    "width": "674",
+    "height": "255"
+  },
   "brand": {
     "width": "52.089",
     "height": "35.334"
@@ -31,6 +39,10 @@
     "width": "24",
     "height": "24"
   },
+  "dig": {
+    "width": "821.213",
+    "height": "780.535"
+  },
   "education": {
     "width": "24",
     "height": "24"
@@ -46,6 +58,10 @@
   "illustration": {
     "width": "2000",
     "height": "668.01"
+  },
+  "illustration_grouped": {
+    "width": "2000",
+    "height": "666.67"
   },
   "linkedin": {
     "width": "63.928",
@@ -116,8 +132,8 @@
     "height": "24"
   },
   "map": {
-    "width": "296",
-    "height": "420"
+    "width": "148",
+    "height": "210"
   },
   "mobile": {
     "width": "24",
