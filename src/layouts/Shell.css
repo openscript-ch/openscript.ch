@@ -1,20 +1,20 @@
 @font-face {
-  font-family: "2MASS J1808";
+  font-family: '2MASS J1808';
   src:
-    url("/fonts/2MASSJ1808-Normal.woff2") format("woff2"),
-    url("/fonts/2MASSJ1808-Normal.woff") format("woff"),
-    url("/fonts/2MASSJ1808-Normal.ttf") format("truetype");
+    url('/fonts/2MASSJ1808-Normal.woff2') format('woff2'),
+    url('/fonts/2MASSJ1808-Normal.woff') format('woff'),
+    url('/fonts/2MASSJ1808-Normal.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "2MASS J1808";
+  font-family: '2MASS J1808';
   src:
-    url("/fonts/2MASSJ1808-Heavy.woff2") format("woff2"),
-    url("/fonts/2MASSJ1808-Heavy.woff") format("woff"),
-    url("/fonts/2MASSJ1808-Heavy.ttf") format("truetype");
+    url('/fonts/2MASSJ1808-Heavy.woff2') format('woff2'),
+    url('/fonts/2MASSJ1808-Heavy.woff') format('woff'),
+    url('/fonts/2MASSJ1808-Heavy.ttf') format('truetype');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -43,9 +43,9 @@
   --heading-margin: 2.2em;
 
   --font-size: 16px;
-  --font-text: "PT Sans", sans-serif;
-  --font-mono: "Fira Mono", monospace;
-  --font-heading: "2MASS J1808", sans-serif;
+  --font-text: 'PT Sans', sans-serif;
+  --font-mono: 'Fira Mono', monospace;
+  --font-heading: '2MASS J1808', sans-serif;
 }
 
 @media screen and (max-width: 400px) {

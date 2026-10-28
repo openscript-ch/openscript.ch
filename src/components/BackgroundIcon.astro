@@ -1,5 +1,5 @@
 ---
-import type { ImageMetadata } from "astro";
+import type { ImageMetadata } from 'astro';
 
 type Props = {
   image: ImageMetadata;
@@ -10,7 +10,10 @@ type Props = {
 const { image, dominantColor, otherColor } = Astro.props;
 ---
 
-<div class="background-icon" style={`background: linear-gradient(90deg, ${dominantColor}, ${otherColor});`}>
+<div
+  class="background-icon"
+  style={`background: linear-gradient(90deg, ${dominantColor}, ${otherColor});`}
+>
   <img src={image.src} alt="" />
 </div>
 

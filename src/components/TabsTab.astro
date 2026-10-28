@@ -35,7 +35,7 @@ const { class: className, id, controls, selected = false, ...rest } = Astro.prop
 <button
   id={id}
   role="tab"
-  class:list={["tab", className]}
+  class:list={['tab', className]}
   aria-controls={controls}
   aria-selected={selected}
   tabindex={selected ? 0 : -1}
@@ -69,7 +69,7 @@ const { class: className, id, controls, selected = false, ...rest } = Astro.prop
     }
   }
 
-  :where(.tab[aria-selected="true"]),
+  :where(.tab[aria-selected='true']),
   :where(.tab:hover),
   :where(.tab:focus-visible) {
     background-color: var(--color-background);

@@ -7,7 +7,7 @@
 
 <style>
   @property --size-burger {
-    syntax: "<length>";
+    syntax: '<length>';
     inherits: true;
     initial-value: 2rem;
   }
@@ -37,7 +37,7 @@
     transform-origin: center center;
     transition: 0.3s;
     position: absolute;
-    content: "";
+    content: '';
     background-color: var(--color-background);
     height: round(nearest, calc(var(--size-burger) / 7.5), 1px);
     width: var(--size-burger);
@@ -55,7 +55,8 @@
   }
 
   .active .icon::before {
-    transform: rotateZ(-45deg) scaleX(0.9) translate(calc(var(--size-burger) / -4), calc(var(--size-burger) / 4));
+    transform: rotateZ(-45deg) scaleX(0.9)
+      translate(calc(var(--size-burger) / -4), calc(var(--size-burger) / 4));
   }
 
   .icon::after {
@@ -63,7 +64,8 @@
   }
 
   .active .icon::after {
-    transform: rotateZ(45deg) scaleX(0.9) translate(calc(var(--size-burger) / -4), calc(var(--size-burger) / -4));
+    transform: rotateZ(45deg) scaleX(0.9)
+      translate(calc(var(--size-burger) / -4), calc(var(--size-burger) / -4));
   }
 
   .icon {
@@ -73,14 +75,14 @@
 
 <script>
   function register() {
-    const button = document.querySelector(".burger")!;
+    const button = document.querySelector('.burger')!;
 
-    button.addEventListener("click", () => {
-      button.classList.toggle("active");
-      document.body.classList.toggle("burger-active");
+    button.addEventListener('click', () => {
+      button.classList.toggle('active');
+      document.body.classList.toggle('burger-active');
     });
   }
 
   register();
-  document.addEventListener("astro:after-swap", register);
+  document.addEventListener('astro:after-swap', register);
 </script>

@@ -1,20 +1,20 @@
-import { defineConfig } from "astro/config";
-import unpluginFavicons from "@anolilab/unplugin-favicons/vite";
-import { unified } from "@astrojs/markdown-remark";
-import { C } from "./src/site.config";
-import mdx from "@astrojs/mdx";
-import rehypeSlug from "rehype-slug";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import search from "./src/integrations/search";
-import sitemap from "@astrojs/sitemap";
-import nanostoresI18n from "astro-nanostores-i18n";
-import de from "./src/translations/de.json";
-import en from "./src/translations/en.json";
+import { defineConfig } from 'astro/config';
+import unpluginFavicons from '@anolilab/unplugin-favicons/vite';
+import { unified } from '@astrojs/markdown-remark';
+import { C } from './src/site.config';
+import mdx from '@astrojs/mdx';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import search from './src/integrations/search';
+import sitemap from '@astrojs/sitemap';
+import nanostoresI18n from 'astro-nanostores-i18n';
+import de from './src/translations/de.json';
+import en from './src/translations/en.json';
 
 export default defineConfig({
   prefetch: true,
   build: {
-    format: "file",
+    format: 'file',
   },
   i18n: {
     defaultLocale: C.DEFAULT_LOCALE,
@@ -23,18 +23,18 @@ export default defineConfig({
   markdown: {
     shikiConfig: {
       themes: {
-        light: "github-light",
-        dark: "github-dark",
+        light: 'github-light',
+        dark: 'github-dark',
       },
     },
     processor: unified({
-      rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: "wrap" }]],
+      rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'wrap' }]],
     }),
   },
   vite: {
     plugins: [
       unpluginFavicons({
-        logo: "res/icon.png",
+        logo: 'res/icon.png',
         inject: true,
         favicons: {
           theme_color: C.SETTINGS.BROWSER.THEME_COLOR,

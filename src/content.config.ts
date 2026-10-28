@@ -31,7 +31,7 @@ const createNavigationItem = (image: ImageFunction) => {
 };
 
 const navigationCollection = defineCollection({
-  loader: i18nContentLoader({ pattern: "**/[^_]*.yaml", base: "./src/content/navigation" }),
+  loader: i18nContentLoader({ pattern: '**/[^_]*.yaml', base: './src/content/navigation' }),
   schema: ({ image }) =>
     extendI18nLoaderSchema(
       z.object({
@@ -41,18 +41,18 @@ const navigationCollection = defineCollection({
 });
 
 const pagesCollection = defineCollection({
-  loader: i18nLoader({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/pages" }),
+  loader: i18nLoader({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/pages' }),
   schema: extendI18nLoaderSchema(
     z.object({
       path: z.string(),
       title: z.string(),
-      template: z.enum(["article"]).optional().default("article"),
+      template: z.enum(['article']).optional().default('article'),
     }),
   ),
 });
 
 const sectionsCollection = defineCollection({
-  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/sections" }),
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/sections' }),
   schema: z.object({}),
 });
 
@@ -72,7 +72,7 @@ const referenceCompaniesCollection = defineCollection({
 });
 
 const referenceProjectsCollection = defineCollection({
-  loader: i18nLoader({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/references/projects" }),
+  loader: i18nLoader({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/references/projects' }),
   schema: ({ image }) =>
     extendI18nLoaderSchema(
       z.object({
@@ -87,7 +87,7 @@ const referenceProjectsCollection = defineCollection({
 });
 
 const questionsCollection = defineCollection({
-  loader: i18nContentLoader({ pattern: "**/[^_]*.yaml", base: "./src/content/questions" }),
+  loader: i18nContentLoader({ pattern: '**/[^_]*.yaml', base: './src/content/questions' }),
   schema: extendI18nLoaderSchema(
     z.object({
       author: z.string(),
@@ -104,7 +104,7 @@ const questionsCollection = defineCollection({
 });
 
 const technologiesCollection = defineCollection({
-  loader: i18nFileLoader("./src/content/technologies/index.yaml"),
+  loader: i18nFileLoader('./src/content/technologies/index.yaml'),
   schema: extendI18nLoaderSchema(
     z.object({
       id: z.string(),
@@ -116,7 +116,7 @@ const technologiesCollection = defineCollection({
 });
 
 const teamCollection = defineCollection({
-  loader: i18nFileLoader("./src/content/team/index.yaml"),
+  loader: i18nFileLoader('./src/content/team/index.yaml'),
   schema: ({ image }) =>
     extendI18nLoaderSchema(
       z.object({
@@ -129,7 +129,7 @@ const teamCollection = defineCollection({
 });
 
 const galleriesCollection = defineCollection({
-  loader: i18nContentLoader({ pattern: "**/[^_]*.yaml", base: "./src/content/galleries" }),
+  loader: i18nContentLoader({ pattern: '**/[^_]*.yaml', base: './src/content/galleries' }),
   schema: ({ image }) =>
     extendI18nLoaderSchema(
       z.object({
@@ -144,7 +144,7 @@ const galleriesCollection = defineCollection({
 });
 
 const formationCollection = defineCollection({
-  loader: i18nContentLoader({ pattern: "**/[^_]*.yaml", base: "./src/content/formation" }),
+  loader: i18nContentLoader({ pattern: '**/[^_]*.yaml', base: './src/content/formation' }),
   schema: extendI18nLoaderSchema(
     z.object({
       items: localized(

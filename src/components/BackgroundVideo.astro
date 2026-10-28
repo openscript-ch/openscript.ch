@@ -1,10 +1,10 @@
 ---
 type Props = {
   videoSrc: string;
-  videoType?: "mp4" | "webm" | "ogg";
+  videoType?: 'mp4' | 'webm' | 'ogg';
 };
 
-const { videoSrc, videoType = "mp4" } = Astro.props;
+const { videoSrc, videoType = 'mp4' } = Astro.props;
 ---
 
 <div class="background-video">

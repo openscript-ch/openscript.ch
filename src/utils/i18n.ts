@@ -1,7 +1,7 @@
-import { C } from "../site.config";
+import { C } from '../site.config';
 
 export function getNameFromLocale(locale: string) {
-  const displayNames = new Intl.DisplayNames([locale], { type: "language" });
+  const displayNames = new Intl.DisplayNames([locale], { type: 'language' });
   return displayNames.of(locale);
 }
 

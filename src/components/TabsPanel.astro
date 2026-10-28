@@ -33,7 +33,7 @@ const { class: className, id, labelledby, selected = false, ...rest } = Astro.pr
 ---
 
 <div
-  class:list={["tab-panel", className]}
+  class:list={['tab-panel', className]}
   role="tabpanel"
   id={id}
   aria-labelledby={labelledby}
@@ -55,7 +55,7 @@ const { class: className, id, labelledby, selected = false, ...rest } = Astro.pr
     background-color: var(--color-background);
   }
 
-  :where(.tab-panel[aria-hidden="true"]) {
+  :where(.tab-panel[aria-hidden='true']) {
     display: none;
   }
 

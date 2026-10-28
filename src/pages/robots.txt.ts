@@ -1,12 +1,12 @@
-import type { APIRoute } from "astro";
+import type { APIRoute } from 'astro';
 
 const sitemapUrl = [
   import.meta.env.SITE,
-  import.meta.env.BASE_URL !== "/" ? import.meta.env.BASE_URL : "",
-  "sitemap-index.xml",
+  import.meta.env.BASE_URL !== '/' ? import.meta.env.BASE_URL : '',
+  'sitemap-index.xml',
 ]
   .filter(Boolean)
-  .join("/");
+  .join('/');
 
 const robotsTxt = `
 User-agent: *
@@ -18,7 +18,7 @@ Sitemap: ${sitemapUrl}
 export const GET: APIRoute = () => {
   return new Response(robotsTxt, {
     headers: {
-      "Content-Type": "text/plain; charset=utf-8",
+      'Content-Type': 'text/plain; charset=utf-8',
     },
   });
 };

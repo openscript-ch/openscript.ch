@@ -1,13 +1,16 @@
 ---
-import { currentLocale } from "astro-nanostores-i18n:runtime";
-import { getCollection, render } from "astro:content";
-import Accordion from "../../components/accordion/Accordion.astro";
-import AccordionItem from "../../components/accordion/AccordionItem.astro";
-import Heading from "../../components/accordion/Heading.astro";
-import { Image } from "astro:assets";
+import { currentLocale } from 'astro-nanostores-i18n:runtime';
+import { getCollection, render } from 'astro:content';
+import Accordion from '../../components/accordion/Accordion.astro';
+import AccordionItem from '../../components/accordion/AccordionItem.astro';
+import Heading from '../../components/accordion/Heading.astro';
+import { Image } from 'astro:assets';
 
 const locale = currentLocale.get();
-const rawProjects = await getCollection("referenceProjects", (entry) => entry.data.locale === locale);
+const rawProjects = await getCollection(
+  'referenceProjects',
+  (entry) => entry.data.locale === locale,
+);
 
 const projects = await Promise.all(
   rawProjects.map(async (project) => {
