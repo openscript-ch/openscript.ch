@@ -3,6 +3,7 @@ import {
   i18nContentLoader,
   i18nFileLoader,
   i18nLoader,
+  i18nReference,
   localized as localizedSchema,
 } from 'astro-loader-i18n';
 import { defineCollection, type ImageFunction } from 'astro:content';
@@ -30,7 +31,38 @@ const createNavigationItem = (image: ImageFunction) => {
   });
 };
 
-const navigationCollection = defineCollection({
+const formation = defineCollection({
+  loader: i18nContentLoader({ pattern: '**/[^_]*.yaml', base: './src/content/formation' }),
+  schema: extendI18nLoaderSchema(
+    z.object({
+      items: localized(
+        z.array(
+          z.object({
+            title: z.string(),
+            text: z.string(),
+          }),
+        ),
+      ),
+    }),
+  ),
+});
+
+const galleries = defineCollection({
+  loader: i18nContentLoader({ pattern: '**/[^_]*.yaml', base: './src/content/galleries' }),
+  schema: ({ image }) =>
+    extendI18nLoaderSchema(
+      z.object({
+        items: z.array(
+          z.object({
+            photo: image(),
+            label: localized(z.string()),
+          }),
+        ),
+      }),
+    ),
+});
+
+const navigation = defineCollection({
   loader: i18nContentLoader({ pattern: '**/[^_]*.yaml', base: './src/content/navigation' }),
   schema: ({ image }) =>
     extendI18nLoaderSchema(
@@ -40,7 +72,7 @@ const navigationCollection = defineCollection({
     ),
 });
 
-const pagesCollection = defineCollection({
+const pages = defineCollection({
   loader: i18nLoader({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/pages' }),
   schema: extendI18nLoaderSchema(
     z.object({
@@ -51,28 +83,8 @@ const pagesCollection = defineCollection({
   ),
 });
 
-const sectionsCollection = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/sections' }),
-  schema: z.object({}),
-});
-
-const referenceCompaniesCollection = defineCollection({
-  loader: i18nLoader({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/references/companies' }),
-  schema: ({ image }) =>
-    extendI18nLoaderSchema(
-      z.object({
-        id: z.string(),
-        companyName: z.string(),
-        logo: image(),
-        url: z.url().optional(),
-        archived: z.boolean().optional().default(false),
-        details: z.string().optional(),
-      }),
-    ),
-});
-
-const referenceProjectsCollection = defineCollection({
-  loader: i18nLoader({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/references/projects' }),
+const products = defineCollection({
+  loader: i18nLoader({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/products' }),
   schema: ({ image }) =>
     extendI18nLoaderSchema(
       z.object({
@@ -86,7 +98,7 @@ const referenceProjectsCollection = defineCollection({
     ),
 });
 
-const questionsCollection = defineCollection({
+const questions = defineCollection({
   loader: i18nContentLoader({ pattern: '**/[^_]*.yaml', base: './src/content/questions' }),
   schema: extendI18nLoaderSchema(
     z.object({
@@ -103,19 +115,43 @@ const questionsCollection = defineCollection({
   ),
 });
 
-const technologiesCollection = defineCollection({
-  loader: i18nFileLoader('./src/content/technologies/index.yaml'),
-  schema: extendI18nLoaderSchema(
-    z.object({
-      id: z.string(),
-      label: localized(z.string()),
-      logo: z.string(),
-      url: z.url(),
-    }),
-  ),
+const referenceCompanies = defineCollection({
+  loader: i18nLoader({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/references/companies' }),
+  schema: ({ image }) =>
+    extendI18nLoaderSchema(
+      z.object({
+        id: z.string(),
+        companyName: z.string(),
+        logo: image(),
+        url: z.url().optional(),
+        archived: z.boolean().optional().default(false),
+        details: z.string().optional(),
+      }),
+    ),
 });
 
-const teamCollection = defineCollection({
+const referenceProjects = defineCollection({
+  loader: i18nLoader({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/references/projects' }),
+  schema: ({ image }) =>
+    extendI18nLoaderSchema(
+      z.object({
+        softwareName: z.string(),
+        title: z.string(),
+        summary: z.string(),
+        logo: image(),
+        path: z.url().optional(),
+        featured: z.boolean().optional().default(false),
+        company: i18nReference('referenceCompanies'),
+      }),
+    ),
+});
+
+const sections = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/sections' }),
+  schema: z.object({}),
+});
+
+const team = defineCollection({
   loader: i18nFileLoader('./src/content/team/index.yaml'),
   schema: ({ image }) =>
     extendI18nLoaderSchema(
@@ -128,46 +164,28 @@ const teamCollection = defineCollection({
     ),
 });
 
-const galleriesCollection = defineCollection({
-  loader: i18nContentLoader({ pattern: '**/[^_]*.yaml', base: './src/content/galleries' }),
-  schema: ({ image }) =>
-    extendI18nLoaderSchema(
-      z.object({
-        items: z.array(
-          z.object({
-            photo: image(),
-            label: localized(z.string()),
-          }),
-        ),
-      }),
-    ),
-});
-
-const formationCollection = defineCollection({
-  loader: i18nContentLoader({ pattern: '**/[^_]*.yaml', base: './src/content/formation' }),
+const technologies = defineCollection({
+  loader: i18nFileLoader('./src/content/technologies/index.yaml'),
   schema: extendI18nLoaderSchema(
     z.object({
-      items: localized(
-        z.array(
-          z.object({
-            title: z.string(),
-            text: z.string(),
-          }),
-        ),
-      ),
+      id: z.string(),
+      label: localized(z.string()),
+      logo: z.string(),
+      url: z.url(),
     }),
   ),
 });
 
 export const collections = {
-  navigation: navigationCollection,
-  pages: pagesCollection,
-  sections: sectionsCollection,
-  referenceCompanies: referenceCompaniesCollection,
-  referenceProjects: referenceProjectsCollection,
-  questions: questionsCollection,
-  technologies: technologiesCollection,
-  team: teamCollection,
-  galleries: galleriesCollection,
-  formation: formationCollection,
+  formation,
+  galleries,
+  navigation,
+  pages,
+  products,
+  questions,
+  referenceCompanies,
+  referenceProjects,
+  sections,
+  team,
+  technologies,
 };

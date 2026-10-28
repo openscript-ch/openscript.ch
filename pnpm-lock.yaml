@@ -338,11 +338,11 @@ importers:
         specifier: ^7.4.2
         version: 7.4.2(@astrojs/markdown-remark@7.3.4)(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1)
       astro-loader-i18n:
-        specifier: ^1.0.2
-        version: 1.0.2(astro@7.4.2(@astrojs/markdown-remark@7.3.4)(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1))
+        specifier: ^1.1.0
+        version: 1.1.0(astro@7.4.2(@astrojs/markdown-remark@7.3.4)(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1))
       astro-nanostores-i18n:
-        specifier: ^1.0.2
-        version: 1.0.2(@nanostores/i18n@1.3.3(nanostores@1.5.5))(astro@7.4.2(@astrojs/markdown-remark@7.3.4)(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1))(nanostores@1.5.5)
+        specifier: ^1.0.3
+        version: 1.0.3(@nanostores/i18n@1.3.3(nanostores@1.5.5))(astro@7.4.2(@astrojs/markdown-remark@7.3.4)(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1))(nanostores@1.5.5)
       embla-carousel:
         specifier: ^8.6.0
         version: 8.6.0
@@ -1906,13 +1906,13 @@ packages:
     resolution: {integrity: sha512-LElXdjswlqjWrPpJFg1Fx4wpkOCxj1TDHlSV4PlaRxHGWko024xICaa97ZkMfs6DRKlCguiAI+rbXv5GWwXIkg==}
     hasBin: true
 
-  astro-loader-i18n@1.0.2:
-    resolution: {integrity: sha512-rXxA29ObEr8Z25lg9jk4IXxiSIrXWnRfj+zKil5uuLp9MAeUP93vaaGB7vp8JGxkuKEc54omD5rQ/CMKyZSwGg==}
+  astro-loader-i18n@1.1.0:
+    resolution: {integrity: sha512-vpe1mPtxslh7WKncOvbRNs/Rk7WtvKicGdPaLTmaB/svzvysgEbgZqSUrBF61zRoQ6yTEDNxavS0eko8cy1+cg==}
     peerDependencies:
       astro: ^5.5.0 || ^6.0.0 || ^7.0.0
 
-  astro-nanostores-i18n@1.0.2:
-    resolution: {integrity: sha512-20+ct1TawFYW678InjbOoye6YV7pQMuBLc3qBtr37V8aZ+ocLszkQZzk+rBXvHEIpR+GXivIaX/ptKS8mjAjFw==}
+  astro-nanostores-i18n@1.0.3:
+    resolution: {integrity: sha512-DWCssDjyVSgJd9kA82I2x60Qbv46Knz4HYQ8Gi6+3FIzQvtZ2JuDV9kNIYpDnyvD5O/asDDM1ookTc9ZTKt6Qw==}
     hasBin: true
     peerDependencies:
       '@nanostores/i18n': ^1.2.0
@@ -4970,11 +4970,11 @@ snapshots:
 
   astring@1.9.0: {}
 
-  astro-loader-i18n@1.0.2(astro@7.4.2(@astrojs/markdown-remark@7.3.4)(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1)):
+  astro-loader-i18n@1.1.0(astro@7.4.2(@astrojs/markdown-remark@7.3.4)(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1)):
     dependencies:
       astro: 7.4.2(@astrojs/markdown-remark@7.3.4)(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1)
 
-  astro-nanostores-i18n@1.0.2(@nanostores/i18n@1.3.3(nanostores@1.5.5))(astro@7.4.2(@astrojs/markdown-remark@7.3.4)(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1))(nanostores@1.5.5):
+  astro-nanostores-i18n@1.0.3(@nanostores/i18n@1.3.3(nanostores@1.5.5))(astro@7.4.2(@astrojs/markdown-remark@7.3.4)(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1))(nanostores@1.5.5):
     dependencies:
       '@astrojs/compiler': 4.0.0
       '@nanostores/i18n': 1.3.3(nanostores@1.5.5)
