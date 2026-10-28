@@ -1,7 +1,7 @@
 ---
-import type { HTMLAttributes } from "astro/types";
-import Heading from "./Heading.astro";
-import { useI18n } from "astro-nanostores-i18n:runtime";
+import type { HTMLAttributes } from 'astro/types';
+import Heading from './Heading.astro';
+import { useI18n } from 'astro-nanostores-i18n:runtime';
 
 /**
  * Accordion Item Component
@@ -9,7 +9,7 @@ import { useI18n } from "astro-nanostores-i18n:runtime";
  * @description An individual accordion item that can be expanded/collapsed with smooth animations
  */
 
-type Props = HTMLAttributes<"li"> & {
+type Props = HTMLAttributes<'li'> & {
   /**
    * Id of the item
    */
@@ -27,17 +27,17 @@ type Props = HTMLAttributes<"li"> & {
    * Heading level for the title (h1-h6)
    * @default 'h3'
    */
-  headingLevel?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  headingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   /**
    * Visual size of the heading (can differ from semantic level)
    * @default 'h6'
    */
-  headingSize?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  headingSize?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   /**
    * Visual style variant of the accordion
    * @default 'chevron'
    */
-  variant?: "minimal" | "chevron";
+  variant?: 'minimal' | 'chevron';
   /**
    * Whether the accordion item is initially open
    * @default false
@@ -50,42 +50,54 @@ type Props = HTMLAttributes<"li"> & {
   openOnUrlReference?: boolean;
 };
 
-const translations = useI18n("accordion.item", {
-  more: "Mehr anzeigen",
-  less: "Weniger anzeigen",
+const translations = useI18n('accordion.item', {
+  more: 'Mehr anzeigen',
+  less: 'Weniger anzeigen',
 });
 
 const {
   id,
   class: className,
   name,
-  headingLevel = "h3",
-  headingSize = "h6",
-  variant = "chevron",
+  headingLevel = 'h3',
+  headingSize = 'h6',
+  variant = 'chevron',
   open = false,
   openOnUrlReference = true,
   ...rest
 }: Props = Astro.props;
 ---
 
-<li id={id} class:list={["item", className]} {...rest} data-dynamic={openOnUrlReference}>
+<li id={id} class:list={['item', className]} {...rest} data-dynamic={openOnUrlReference}>
   <slot name="pretext" />
-  <details class:list={["wrapper", `variant-${variant}`]} name={name} {...open ? { open } : {}}>
+  <details class:list={['wrapper', `variant-${variant}`]} name={name} {...(open ? { open } : {})}>
     <summary class="header">
       <div class="title">
-        {variant === "chevron" && (
+        {variant === 'chevron' && (
           <Heading level={headingLevel} size={headingSize}>
             <>
               <slot name="title" />
               <span class="icon-chevron">
-                <svg aria-hidden="true" width="12" height="8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1.4 1.6L6 6.2l4.6-4.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
+                <svg
+                  aria-hidden="true"
+                  width="12"
+                  height="8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.4 1.6L6 6.2l4.6-4.6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
               </span>
             </>
           </Heading>
         )}
-        {variant === "minimal" && (
+        {variant === 'minimal' && (
           <>
             <span class="toggle-text more">{translations.more}</span>
             <span class="toggle-text less">{translations.less}</span>
@@ -191,7 +203,7 @@ const {
   :where(header)::marker,
   :where(.header)::-webkit-details-marker {
     display: none;
-    content: "";
+    content: '';
   }
 
   :where(.header .title:hover),
@@ -232,7 +244,7 @@ const {
 
     if (!hash) return;
 
-    const id = hash.split("#")[1];
+    const id = hash.split('#')[1];
 
     if (!id) return;
     const element = document.getElementById(id);
@@ -243,10 +255,10 @@ const {
 
     if (!dynamicOpening) return;
 
-    const details = element.getElementsByTagName("details");
+    const details = element.getElementsByTagName('details');
 
     if (details.length === 1) {
-      details[0]?.setAttribute("open", "");
+      details[0]?.setAttribute('open', '');
     }
   };
 

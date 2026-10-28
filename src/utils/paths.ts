@@ -8,8 +8,8 @@ import { getEntry, type CollectionKey, type DataEntryMap } from 'astro:content';
 import type { ImageMetadata } from 'astro';
 import { parseLocale } from './i18n';
 
-const PROTOCOL_DELIMITER = "://";
-const ID_DELIMITER = "#";
+const PROTOCOL_DELIMITER = '://';
+const ID_DELIMITER = '#';
 
 export const defaultPropsAndParamsOptions = {
   defaultLocale: C.DEFAULT_LOCALE,
@@ -27,12 +27,12 @@ export const resolvePath = (...path: Array<string | number | undefined>) => {
   return originalResolvePath(import.meta.env.BASE_URL, ...path);
 };
 
-export const resolveSimplePath = async <E extends keyof DataEntryMap["navigation"] | (string & {})>(
+export const resolveSimplePath = async <E extends keyof DataEntryMap['navigation'] | (string & {})>(
   id: E,
   path: string,
   currentLocale: Locale,
 ) => {
-  const navigation = await getEntry("navigation", `${id}/${currentLocale}`);
+  const navigation = await getEntry('navigation', `${id}/${currentLocale}`);
   if (!navigation) throw new Error(`Navigation entry not found`);
 
   const items = navigation.data.items;
@@ -58,7 +58,7 @@ export const resolveSimplePath = async <E extends keyof DataEntryMap["navigation
 
 const findReference = (item: NavigationItem, path: string): string | undefined => {
   const [collection, reference] = item.path.split(PROTOCOL_DELIMITER);
-  if (!collection || !reference) throw new Error("Invalid path");
+  if (!collection || !reference) throw new Error('Invalid path');
 
   if (reference === path) {
     return item.path;

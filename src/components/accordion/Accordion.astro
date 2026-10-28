@@ -1,5 +1,5 @@
 ---
-import type { AccordionItem } from "../../types/AccordionItem";
+import type { AccordionItem } from '../../types/AccordionItem';
 
 /**
  * Accordion Component
@@ -25,7 +25,7 @@ interface Props {
 const { class: className, ...rest } = Astro.props;
 ---
 
-<ul class:list={["accordion", className]} {...rest}>
+<ul class:list={['accordion', className]} {...rest}>
   <slot />
 </ul>
 

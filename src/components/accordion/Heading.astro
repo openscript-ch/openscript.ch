@@ -4,17 +4,17 @@
  * @description A versatile heading component that handles all heading levels with proper accessibility
  */
 const headingOptions = {
-  h1: "h1",
-  h2: "h2",
-  h3: "h3",
-  h4: "h4",
-  h5: "h5",
-  h6: "h6",
+  h1: 'h1',
+  h2: 'h2',
+  h3: 'h3',
+  h4: 'h4',
+  h5: 'h5',
+  h6: 'h6',
 };
 
-import type { HTMLAttributes } from "astro/types";
+import type { HTMLAttributes } from 'astro/types';
 
-interface Props extends HTMLAttributes<"h1" | "h2" | "h3" | "h4" | "h5" | "h6"> {
+interface Props extends HTMLAttributes<'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'> {
   /**
    * The tag name of the heading
    */
@@ -25,11 +25,11 @@ interface Props extends HTMLAttributes<"h1" | "h2" | "h3" | "h4" | "h5" | "h6"> 
   size?: keyof typeof headingOptions;
 }
 
-const { level = "h2", size = level, ...rest } = Astro.props;
+const { level = 'h2', size = level, ...rest } = Astro.props;
 const Tag = headingOptions[level];
 ---
 
-<Tag class:list={["heading", size]} {...rest}>
+<Tag class:list={['heading', size]} {...rest}>
   <slot />
 </Tag>
 

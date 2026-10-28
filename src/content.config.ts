@@ -4,11 +4,11 @@ import {
   i18nFileLoader,
   i18nLoader,
   localized as localizedSchema,
-} from "astro-loader-i18n";
-import { defineCollection, type ImageFunction } from "astro:content";
-import { localeSlugs } from "./site.config";
-import { glob } from "astro/loaders";
-import { z } from "astro/zod";
+} from 'astro-loader-i18n';
+import { defineCollection, type ImageFunction } from 'astro:content';
+import { localeSlugs } from './site.config';
+import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
 
 const localized = <T extends z.ZodType>(schema: T) => localizedSchema(schema, localeSlugs);
 
@@ -57,7 +57,7 @@ const sectionsCollection = defineCollection({
 });
 
 const referenceCompaniesCollection = defineCollection({
-  loader: i18nLoader({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/references/companies" }),
+  loader: i18nLoader({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/references/companies' }),
   schema: ({ image }) =>
     extendI18nLoaderSchema(
       z.object({
