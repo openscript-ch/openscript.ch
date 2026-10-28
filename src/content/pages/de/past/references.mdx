@@ -2,3 +2,29 @@
 path: referenzen
 title: Referenzen
 ---
+
+import Divider from '../../../../components/Divider.astro';
+import ReferencesSection from '../../../../layouts/sections/ReferencesSection.astro';
+import CompaniesSection from '../../../../layouts/sections/CompaniesSection.astro';
+
+<section class="spotlight">
+  Als Firma haben wir bereits mit vielen Kunden in verschiedensten Projekten gearbeitet. Wir haben
+  daher bereits Erfahrung mit Webapplikationen, Handy-Apps, Kurse im Bereich IT und weiteres.
+</section>
+
+<Divider firstSegmentColor="var(--color-white)" fixAntialiasingBottom />
+
+<section class="white-background">
+  <ReferencesSection />
+</section>
+
+<Divider
+  firstSegmentColor="var(--color-white)"
+  secondSegmentColor="var(--color-primary)"
+  flipVertical
+  fixAntialiasingBottom
+/>
+
+<section>
+  <CompaniesSection />
+</section>

@@ -62,4 +62,7 @@ export default defineConfig({
     mdx(),
     sitemap({ i18n: { defaultLocale: C.DEFAULT_LOCALE, locales: C.LOCALES } }),
   ],
+  image: {
+    responsiveStyles: true,
+  },
 });

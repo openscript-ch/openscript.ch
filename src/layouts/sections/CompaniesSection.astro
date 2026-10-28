@@ -1,0 +1,81 @@
+---
+import { currentLocale } from 'astro-nanostores-i18n:runtime';
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import Tile from '../../components/Tile.astro';
+
+const locale = currentLocale.get();
+const companies = await getCollection(
+  'referenceCompanies',
+  (entry) => entry.data.locale === locale && !entry.data.archived && entry.data.details,
+);
+---
+
+<div class="grid">
+  {companies.map((c) => (
+    <Tile variant="turnable" id={c.data.id} crease>
+      <div slot="front">
+        <div class="card front-card">
+          <Image src={c.data.logo} alt={c.data.companyName} />
+          <span>{c.data.companyName}</span>
+        </div>
+      </div>
+      <div class="card" slot="back">
+        {c.data.details}
+      </div>
+    </Tile>
+  ))}
+</div>
+
+<style>
+  .grid {
+    min-height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--size-gutter-big);
+
+    .front-card {
+      display: flex;
+      flex-direction: column;
+      gap: var(--size-gutter);
+    }
+
+    :global(.tile) {
+      aspect-ratio: 6 / 3;
+    }
+
+    .card {
+      font-weight: 600;
+      font-size: var(--font-size);
+    }
+  }
+
+  img {
+    height: 4rem;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  @media screen and (max-width: 2200px) {
+    .grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    .grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+</style>

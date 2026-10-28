@@ -1,1 +1,6 @@
-{}
+{
+  "accordion.item": {
+    "more": "Show more",
+    "less": "Show less"
+  }
+}

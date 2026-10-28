@@ -1,0 +1,266 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import Heading from './Heading.astro';
+import { useI18n } from 'astro-nanostores-i18n:runtime';
+
+/**
+ * Accordion Item Component
+ *
+ * @description An individual accordion item that can be expanded/collapsed with smooth animations
+ */
+
+type Props = HTMLAttributes<'li'> & {
+  /**
+   * Id of the item
+   */
+  id: string;
+
+  /**
+   * Additional classes to apply to the item
+   */
+  class?: string;
+  /**
+   * Optional name attribute for the details element
+   */
+  name?: string;
+  /**
+   * Heading level for the title (h1-h6)
+   * @default 'h3'
+   */
+  headingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  /**
+   * Visual size of the heading (can differ from semantic level)
+   * @default 'h6'
+   */
+  headingSize?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  /**
+   * Visual style variant of the accordion
+   * @default 'chevron'
+   */
+  variant?: 'minimal' | 'chevron';
+  /**
+   * Whether the accordion item is initially open
+   * @default false
+   */
+  open?: boolean;
+
+  /**
+   * Allow item to be opened by the id in the url
+   */
+  openOnUrlReference?: boolean;
+};
+
+const translations = useI18n('accordion.item', {
+  more: 'Mehr anzeigen',
+  less: 'Weniger anzeigen',
+});
+
+const {
+  id,
+  class: className,
+  name,
+  headingLevel = 'h3',
+  headingSize = 'h6',
+  variant = 'chevron',
+  open = false,
+  openOnUrlReference = true,
+  ...rest
+}: Props = Astro.props;
+---
+
+<li id={id} class:list={['item', className]} {...rest} data-dynamic={openOnUrlReference}>
+  <slot name="pretext" />
+  <details class:list={['wrapper', `variant-${variant}`]} name={name} {...(open ? { open } : {})}>
+    <summary class="header">
+      <div class="title">
+        {variant === 'chevron' && (
+          <Heading level={headingLevel} size={headingSize}>
+            <>
+              <slot name="title" />
+              <span class="icon-chevron">
+                <svg
+                  aria-hidden="true"
+                  width="12"
+                  height="8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.4 1.6L6 6.2l4.6-4.6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </>
+          </Heading>
+        )}
+        {variant === 'minimal' && (
+          <>
+            <span class="toggle-text more">{translations.more}</span>
+            <span class="toggle-text less">{translations.less}</span>
+          </>
+        )}
+      </div>
+      <div class="preview">
+        <slot name="preview" />
+      </div>
+    </summary>
+    <div class="content">
+      <slot />
+    </div>
+  </details>
+</li>
+
+<style>
+  :where(.wrapper) {
+    --transition-duration: 0.3s;
+    --transition-easing: cubic-bezier(0.165, 0.84, 0.44, 1);
+    padding-block: 0;
+  }
+
+  .title :global(.heading) {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-inline-size: 100%;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    :where(.wrapper) {
+      interpolate-size: allow-keywords;
+    }
+  }
+
+  details::details-content {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition:
+      max-height var(--transition-duration) var(--transition-easing),
+      opacity var(--transition-duration) var(--transition-easing);
+  }
+
+  details[open]::details-content {
+    max-height: 10000px;
+    opacity: 1;
+  }
+
+  details summary .toggle-text {
+    color: var(--color-primary);
+
+    &:hover {
+      color: var(--color-primary-90);
+      text-decoration: underline;
+    }
+  }
+
+  details summary .less {
+    display: none;
+  }
+
+  details[open] summary {
+    .more {
+      display: none;
+    }
+
+    .less {
+      display: block;
+    }
+  }
+
+  .wrapper.variant-chevron .header :global(.heading) {
+    justify-content: space-between;
+  }
+
+  .wrapper.variant-chevron .content {
+    padding-block-end: 2.2rem;
+  }
+
+  .wrapper.variant-minimal {
+    display: flex;
+    flex-direction: column;
+    padding-top: calc(var(--size-gutter-medium) / 2);
+
+    .content {
+      order: 2;
+    }
+
+    summary {
+      order: 1;
+    }
+  }
+
+  :where(.header) {
+    display: flex;
+    flex-direction: column;
+    padding-block: 0.75rem;
+    list-style: none;
+  }
+
+  :where(header)::marker,
+  :where(.header)::-webkit-details-marker {
+    display: none;
+    content: '';
+  }
+
+  :where(.header .title:hover),
+  :where(.header .title:focus-visible) {
+    cursor: pointer;
+    color: var(--color-secondary);
+  }
+
+  :where(.icon-chevron) {
+    flex-shrink: 0;
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    :where(.icon-chevron svg) {
+      transition: transform var(--transition-duration) var(--transition-easing);
+    }
+  }
+
+  :where(.content a) {
+    display: inline-block;
+  }
+
+  :where(.content > *:not(:first-child)) {
+    margin-block-start: 0.75rem;
+  }
+
+  :where(.wrapper[open] .icon-chevron svg) {
+    transform: scaleY(-1);
+  }
+</style>
+
+<script>
+  const setInitialOpenAccordion = () => {
+    const hash = window.location.hash;
+
+    if (!hash) return;
+
+    const id = hash.split('#')[1];
+
+    if (!id) return;
+    const element = document.getElementById(id);
+
+    if (!element) return;
+
+    const dynamicOpening = element.dataset.dynamic;
+
+    if (!dynamicOpening) return;
+
+    const details = element.getElementsByTagName('details');
+
+    if (details.length === 1) {
+      details[0]?.setAttribute('open', '');
+    }
+  };
+
+  setInitialOpenAccordion();
+</script>

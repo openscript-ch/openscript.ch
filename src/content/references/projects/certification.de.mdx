@@ -1,0 +1,23 @@
+---
+softwareName: Zertifizierungstool
+title: Unbeaufsichtigtes Online-Zertifizierungstool für eine internationale Organisation
+logo: ./certification.svg
+summary: Mit diesem Tool können Sie Ihren Zertifizierungsprozess organisieren. Es ermöglicht Personen periodisch zur Zertifizierung einzuladen, es führt den Zertifizierungsprozess durch und übergibt Ihnen nach erfolgreicher Zertifizierung schön formatierte PDF-Dokumente.
+featured: true
+---
+
+import { Image } from 'astro:assets';
+import image from './placeholder.png';
+
+<p>
+  Mit diesem Tool können Sie Ihren Zertifizierungsprozess organisieren. Es ermöglicht Personen
+  periodisch zur Zertifizierung einzuladen, es führt den Zertifizierungsprozess durch und übergibt
+  Ihnen nach erfolgreicher Zertifizierung schön formatierte PDF-Dokumente.
+</p>
+
+<Image
+  src={image}
+  alt="Zertifizierungstool"
+  widths={[300, 400, 800, 1200, 1800, 2200]}
+  sizes="(max-width: 800px) 100vw, 75vw"
+/>
