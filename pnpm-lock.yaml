@@ -171,10 +171,10 @@ importers:
         version: 0.9.12(@emnapi/runtime@1.11.3)(@typescript/typescript6@6.0.2)(prettier-plugin-astro@1.1.2(prettier@3.9.10))(prettier@3.9.10)
       '@astrojs/markdown-remark':
         specifier: ^7.3.4
-        version: 7.3.4
+        version: 7.3.5
       '@astrojs/mdx':
         specifier: ^8.1.1
-        version: 8.1.1(@astrojs/markdown-remark@7.3.4)(@astrojs/markdown-satteri@0.4.5)(astro@7.4.2(@astrojs/markdown-remark@7.3.4)(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1))
+        version: 8.1.2(@astrojs/markdown-remark@7.3.5)(@astrojs/markdown-satteri@0.4.6)(astro@7.4.4(@astrojs/markdown-remark@7.3.5)(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.1))
       '@astrojs/rss':
         specifier: ^4.0.19
         version: 4.0.19
@@ -195,13 +195,13 @@ importers:
         version: 4.0.0
       astro:
         specifier: ^7.4.2
-        version: 7.4.2(@astrojs/markdown-remark@7.3.4)(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1)
+        version: 7.4.4(@astrojs/markdown-remark@7.3.5)(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.1)
       astro-loader-i18n:
         specifier: ^1.0.2
-        version: 1.0.2(astro@7.4.2(@astrojs/markdown-remark@7.3.4)(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1))
+        version: 1.1.0(astro@7.4.4(@astrojs/markdown-remark@7.3.5)(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.1))
       astro-nanostores-i18n:
         specifier: ^1.0.2
-        version: 1.0.2(@nanostores/i18n@1.3.3(nanostores@1.5.5))(astro@7.4.2(@astrojs/markdown-remark@7.3.4)(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1))(nanostores@1.5.5)
+        version: 1.0.3(@nanostores/i18n@1.3.3(nanostores@1.5.5))(astro@7.4.4(@astrojs/markdown-remark@7.3.5)(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.1))(nanostores@1.5.5)
       embla-carousel:
         specifier: ^8.6.0
         version: 8.6.0
@@ -225,14 +225,14 @@ importers:
         version: 6.0.0
       sharp:
         specifier: ^0.35.5
-        version: 0.35.5(@types/node@26.6.5)
+        version: 0.35.5(@types/node@26.6.6)
       vfile:
         specifier: ^6.0.3
         version: 6.0.3
     devDependencies:
       '@anolilab/unplugin-favicons':
         specifier: ^6.0.0
-        version: 6.0.0(@types/node@26.6.5)(favicons@7.3.1(@types/node@26.6.5))(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1))
+        version: 6.0.0(@types/node@26.6.6)(favicons@7.3.1(@types/node@26.6.6))(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.1))
       '@astrojs/compiler-rs':
         specifier: ^0.5.2
         version: 0.5.2
@@ -244,7 +244,7 @@ importers:
         version: 4.0.4
       '@types/node':
         specifier: ^26.6.5
-        version: 26.6.5
+        version: 26.6.6
       '@typescript/native':
         specifier: npm:typescript@^7.0.2
         version: typescript@7.0.2
@@ -253,7 +253,7 @@ importers:
         version: 5.0.5(vitest@5.0.5)
       favicons:
         specifier: ^7.3.1
-        version: 7.3.1(@types/node@26.6.5)
+        version: 7.3.1(@types/node@26.6.6)
       globals:
         specifier: ^17.13.0
         version: 17.13.0
@@ -277,7 +277,7 @@ importers:
         version: '@typescript/typescript6@6.0.2'
       vitest:
         specifier: 5.0.5
-        version: 5.0.5(@types/node@26.6.5)(@vitest/coverage-v8@5.0.5)(vite@8.3.5(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1))
+        version: 5.0.5(@types/node@26.6.6)(@vitest/coverage-v8@5.0.5)(vite@8.3.5(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.1))
 
 packages:
 
@@ -414,14 +414,14 @@ packages:
       prettier-plugin-astro:
         optional: true
 
-  '@astrojs/markdown-remark@7.3.4':
-    resolution: {integrity: sha512-AB8S4EQKSryzH624iMDtvC+1AD5nSPzYpCXxc7e1H5ydXhv9B5Td2QfCPA0JyEwqsJpsIsPlW0iOqiy1imdqYw==}
+  '@astrojs/markdown-remark@7.3.5':
+    resolution: {integrity: sha512-Xk0gvOMEpBul2zj5jZXS5WH2Gng/6dW7c3WWLXgip+LZGpY64frwTvBChznMtpnNIqVgFXSsu44RYrISojcodQ==}
 
-  '@astrojs/markdown-satteri@0.4.5':
-    resolution: {integrity: sha512-0IeGdoFbv0f+442KJhYS44Wg8F3MuHmRsxIEYuFyqkjRubc6dPBFZ7azor5t4AeXLQoT5A5h9HyViKpd70Dl9w==}
+  '@astrojs/markdown-satteri@0.4.6':
+    resolution: {integrity: sha512-6biKp2lEAYycF3jhv91br+Otyf4EgDFkF1oRL9ks0u/m/YRGmI7XkGQ2MgaM35DslT03f7NtozKtlqfBNkp6bw==}
 
-  '@astrojs/mdx@8.1.1':
-    resolution: {integrity: sha512-jEJUJsO2KqmKfBXaKeDHDCCj+Kerj1Fj+XndHznF9wxahvs+1onYCBeKmieM28N2+uA6mW57DOQQw5YaDLdBnA==}
+  '@astrojs/mdx@8.1.2':
+    resolution: {integrity: sha512-ZIUVfosVtK4SKcFrGOH+1+HwG0encjxQOxu76M9VuTqeQNZWQ//2eY2Iz+W1eq87AOT5JD4wOHyZ8xFwlcFteg==}
     engines: {node: '>=22.23.4'}
     peerDependencies:
       '@astrojs/markdown-remark': ^7.3.0
@@ -431,8 +431,8 @@ packages:
       '@astrojs/markdown-remark':
         optional: true
 
-  '@astrojs/prism@4.1.1':
-    resolution: {integrity: sha512-sXlAXJX6t4QfuLg+CuCDzpg7NoxWcyb4paFprgtFppLeisCBmh935h+tJ5CWXfsXEoW2IDy/ihbRMtiu28Chjw==}
+  '@astrojs/prism@4.1.2':
+    resolution: {integrity: sha512-jMrUEpFDarDO1KWPvVc9eSa8DSfwBlwEOHwX+8zvZQpiqXRGDxFnOXHsYqV6DP7w+0qIgTr98gS1GdQlm8ypWg==}
     engines: {node: '>=22.23.4'}
 
   '@astrojs/rss@4.0.19':
@@ -441,8 +441,8 @@ packages:
   '@astrojs/sitemap@3.7.4':
     resolution: {integrity: sha512-LbKNC24bdUWcQf/pThB6qLlSqHojxGjZDURIzFocY8rlWnAn2t74nnhnK6S5x0NHriHoAduLEpVjRykmeGiVvA==}
 
-  '@astrojs/telemetry@3.4.1':
-    resolution: {integrity: sha512-SMkvMsGOpM0FMAoT5pzhgI3LZC0JSPWf7Evwop+fZ3N6UkusPM7lI+sOJjMNI5OJrVoiei1/AGo1cY7sikTc5A==}
+  '@astrojs/telemetry@3.4.2':
+    resolution: {integrity: sha512-2JOMRUxJrBSfiVDfeKLv1wBmvSIx1Y6u2YEO8awZ9qSq3u/rNAiUyFdOYi8dHv91kHrmYEQX7pRDw0J4xyj3UA==}
     engines: {node: '>=22.23.4'}
 
   '@astrojs/yaml2ts@0.2.4':
@@ -1449,8 +1449,8 @@ packages:
   '@types/node@24.19.2':
     resolution: {integrity: sha512-93d49wCWJkCyN87MxLpNN6KXPCwFw7bVUg79mGUV1OS40JGWwVCr8n61DXCSqz7CV6/VfPkb7xec7uP2M+QHWQ==}
 
-  '@types/node@26.6.5':
-    resolution: {integrity: sha512-uMzsv9stDdofIZBx4UGh4Z9ZgXnGC9seRDscilBcTHAeOFk67MZg/k9bWVfO+bk4qZmG+l52hRnLwUiH2LnJTg==}
+  '@types/node@26.6.6':
+    resolution: {integrity: sha512-MzQj+8Kx3XI40OmUAE6Qoh58ZMNstNNMwn2nfd3qWsfe7nDNSqJNzes4njhz6AHwrSHOffSLwXU6yb474Q4aog==}
 
   '@types/sax@1.2.7':
     resolution: {integrity: sha512-rO73L89PJxeYM3s3pPPjiPgVVcymqU490g0YO5n5By0k2Erzj6tay/4lr1CHAAU4JyOWd1rpQ8bCf6cZfHU96A==}
@@ -1765,21 +1765,21 @@ packages:
     resolution: {integrity: sha512-LElXdjswlqjWrPpJFg1Fx4wpkOCxj1TDHlSV4PlaRxHGWko024xICaa97ZkMfs6DRKlCguiAI+rbXv5GWwXIkg==}
     hasBin: true
 
-  astro-loader-i18n@1.0.2:
-    resolution: {integrity: sha512-rXxA29ObEr8Z25lg9jk4IXxiSIrXWnRfj+zKil5uuLp9MAeUP93vaaGB7vp8JGxkuKEc54omD5rQ/CMKyZSwGg==}
+  astro-loader-i18n@1.1.0:
+    resolution: {integrity: sha512-vpe1mPtxslh7WKncOvbRNs/Rk7WtvKicGdPaLTmaB/svzvysgEbgZqSUrBF61zRoQ6yTEDNxavS0eko8cy1+cg==}
     peerDependencies:
       astro: ^5.5.0 || ^6.0.0 || ^7.0.0
 
-  astro-nanostores-i18n@1.0.2:
-    resolution: {integrity: sha512-20+ct1TawFYW678InjbOoye6YV7pQMuBLc3qBtr37V8aZ+ocLszkQZzk+rBXvHEIpR+GXivIaX/ptKS8mjAjFw==}
+  astro-nanostores-i18n@1.0.3:
+    resolution: {integrity: sha512-DWCssDjyVSgJd9kA82I2x60Qbv46Knz4HYQ8Gi6+3FIzQvtZ2JuDV9kNIYpDnyvD5O/asDDM1ookTc9ZTKt6Qw==}
     hasBin: true
     peerDependencies:
       '@nanostores/i18n': ^1.2.0
       astro: ^5.5.0 || ^6.0.0 || ^7.0.0
       nanostores: ^1.0.1
 
-  astro@7.4.2:
-    resolution: {integrity: sha512-FAH4cdDlFaVnQGjazLTEIC5vJqGlo5XANc1wIbzQHIqAjJTll/RWTUs+SPNW1JdezG4YGxMZllaE5A41T2kzhA==}
+  astro@7.4.4:
+    resolution: {integrity: sha512-e+BzhGCaIY/H1tV/BQPTbOPZVZ8wuu6+bbpc+3oSMH2UgoB1l9peSGASk6nswtYra9PO9OoMREhldKtQkZ5TVw==}
     engines: {node: '>=22.23.4', npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
     peerDependencies:
@@ -3571,23 +3571,23 @@ packages:
 
 snapshots:
 
-  '@anolilab/unplugin-favicons@6.0.0(@types/node@26.6.5)(favicons@7.3.1(@types/node@26.6.5))(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1))':
+  '@anolilab/unplugin-favicons@6.0.0(@types/node@26.6.6)(favicons@7.3.1(@types/node@26.6.6))(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.1))':
     dependencies:
       '@visulima/find-cache-dir': 2.0.7
-      '@visulima/package': 4.1.7(@types/node@26.6.5)
+      '@visulima/package': 4.1.7(@types/node@26.6.6)
       cacache: 21.0.1
       consola: 3.4.2
       fast-json-stable-stringify: 2.1.0
-      favicons: 7.3.1(@types/node@26.6.5)
+      favicons: 7.3.1(@types/node@26.6.6)
       magic-string: 0.30.21
       mime: 4.1.1
       mlly: 1.8.2
       parse-author: 2.0.0
       parse5: 8.0.1
       ssri: 14.0.0
-      unplugin: 3.5.0(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1))
+      unplugin: 3.5.0(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.1))
     optionalDependencies:
-      vite: 8.3.5(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1)
+      vite: 8.3.5(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.1)
     transitivePeerDependencies:
       - '@farmfe/core'
       - '@rsbuild/core'
@@ -3711,10 +3711,10 @@ snapshots:
       - '@emnapi/runtime'
       - typescript
 
-  '@astrojs/markdown-remark@7.3.4':
+  '@astrojs/markdown-remark@7.3.5':
     dependencies:
       '@astrojs/internal-helpers': 0.13.0
-      '@astrojs/prism': 4.1.1
+      '@astrojs/prism': 4.1.2
       '@mdx-js/mdx': 3.1.1
       acorn: 8.19.0
       estree-util-visit: 2.0.0
@@ -3738,23 +3738,23 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/markdown-satteri@0.4.5':
+  '@astrojs/markdown-satteri@0.4.6':
     dependencies:
       '@astrojs/internal-helpers': 0.13.0
-      '@astrojs/prism': 4.1.1
+      '@astrojs/prism': 4.1.2
       github-slugger: 2.0.0
       satteri: 0.10.5
 
-  '@astrojs/mdx@8.1.1(@astrojs/markdown-remark@7.3.4)(@astrojs/markdown-satteri@0.4.5)(astro@7.4.2(@astrojs/markdown-remark@7.3.4)(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1))':
+  '@astrojs/mdx@8.1.2(@astrojs/markdown-remark@7.3.5)(@astrojs/markdown-satteri@0.4.6)(astro@7.4.4(@astrojs/markdown-remark@7.3.5)(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.1))':
     dependencies:
       '@astrojs/internal-helpers': 0.13.0
-      '@astrojs/markdown-satteri': 0.4.5
-      astro: 7.4.2(@astrojs/markdown-remark@7.3.4)(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1)
+      '@astrojs/markdown-satteri': 0.4.6
+      astro: 7.4.4(@astrojs/markdown-remark@7.3.5)(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.1)
       es-module-lexer: 3.0.4
     optionalDependencies:
-      '@astrojs/markdown-remark': 7.3.4
+      '@astrojs/markdown-remark': 7.3.5
 
-  '@astrojs/prism@4.1.1':
+  '@astrojs/prism@4.1.2':
     dependencies:
       prismjs: 1.30.0
 
@@ -3769,7 +3769,7 @@ snapshots:
       sitemap: 9.0.1
       zod: 4.6.7
 
-  '@astrojs/telemetry@3.4.1':
+  '@astrojs/telemetry@3.4.2':
     dependencies:
       ci-info: 4.4.0
       dset: 3.1.4
@@ -4110,31 +4110,31 @@ snapshots:
 
   '@inquirer/ansi@1.0.2': {}
 
-  '@inquirer/confirm@5.1.21(@types/node@26.6.5)':
+  '@inquirer/confirm@5.1.21(@types/node@26.6.6)':
     dependencies:
-      '@inquirer/core': 10.3.2(@types/node@26.6.5)
-      '@inquirer/type': 3.0.10(@types/node@26.6.5)
+      '@inquirer/core': 10.3.2(@types/node@26.6.6)
+      '@inquirer/type': 3.0.10(@types/node@26.6.6)
     optionalDependencies:
-      '@types/node': 26.6.5
+      '@types/node': 26.6.6
 
-  '@inquirer/core@10.3.2(@types/node@26.6.5)':
+  '@inquirer/core@10.3.2(@types/node@26.6.6)':
     dependencies:
       '@inquirer/ansi': 1.0.2
       '@inquirer/figures': 1.0.15
-      '@inquirer/type': 3.0.10(@types/node@26.6.5)
+      '@inquirer/type': 3.0.10(@types/node@26.6.6)
       cli-width: 4.1.0
       mute-stream: 2.0.0
       signal-exit: 4.1.0
       wrap-ansi: 6.2.0
       yoctocolors-cjs: 2.1.3
     optionalDependencies:
-      '@types/node': 26.6.5
+      '@types/node': 26.6.6
 
   '@inquirer/figures@1.0.15': {}
 
-  '@inquirer/type@3.0.10(@types/node@26.6.5)':
+  '@inquirer/type@3.0.10(@types/node@26.6.6)':
     optionalDependencies:
-      '@types/node': 26.6.5
+      '@types/node': 26.6.6
 
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
@@ -4580,13 +4580,13 @@ snapshots:
     dependencies:
       undici-types: 7.24.6
 
-  '@types/node@26.6.5':
+  '@types/node@26.6.6':
     dependencies:
       undici-types: 8.9.0
 
   '@types/sax@1.2.7':
     dependencies:
-      '@types/node': 26.6.5
+      '@types/node': 26.6.6
 
   '@types/unist@2.0.11': {}
 
@@ -4667,10 +4667,10 @@ snapshots:
     optionalDependencies:
       yaml: 2.9.1
 
-  '@visulima/package@4.1.7(@types/node@26.6.5)':
+  '@visulima/package@4.1.7(@types/node@26.6.6)':
     dependencies:
       '@antfu/install-pkg': 1.1.0
-      '@inquirer/confirm': 5.1.21(@types/node@26.6.5)
+      '@inquirer/confirm': 5.1.21(@types/node@26.6.6)
       '@visulima/fs': 4.1.0(yaml@2.9.1)
       '@visulima/path': 2.0.5
       json5: 2.2.3
@@ -4691,7 +4691,7 @@ snapshots:
       obug: 3.0.0
       std-env: 4.3.0
       tinyrainbow: 3.2.0
-      vitest: 5.0.5(@types/node@26.6.5)(@vitest/coverage-v8@5.0.5)(vite@8.3.5(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1))
+      vitest: 5.0.5(@types/node@26.6.6)(@vitest/coverage-v8@5.0.5)(vite@8.3.5(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.1))
 
   '@vitest/istanbul-lib-coverage@1.0.2': {}
 
@@ -4699,14 +4699,14 @@ snapshots:
     dependencies:
       '@vitest/istanbul-lib-coverage': 1.0.2
 
-  '@vitest/mocker@5.0.5(vite@8.3.5(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1))':
+  '@vitest/mocker@5.0.5(vite@8.3.5(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.1))':
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
       '@vitest/spy': 5.0.5
       estree-walker: 3.0.3
       magic-string: 1.4.5
     optionalDependencies:
-      vite: 8.3.5(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1)
+      vite: 8.3.5(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.1)
 
   '@vitest/spy@5.0.5': {}
 
@@ -4829,25 +4829,25 @@ snapshots:
 
   astring@1.9.0: {}
 
-  astro-loader-i18n@1.0.2(astro@7.4.2(@astrojs/markdown-remark@7.3.4)(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1)):
+  astro-loader-i18n@1.1.0(astro@7.4.4(@astrojs/markdown-remark@7.3.5)(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.1)):
     dependencies:
-      astro: 7.4.2(@astrojs/markdown-remark@7.3.4)(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1)
+      astro: 7.4.4(@astrojs/markdown-remark@7.3.5)(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.1)
 
-  astro-nanostores-i18n@1.0.2(@nanostores/i18n@1.3.3(nanostores@1.5.5))(astro@7.4.2(@astrojs/markdown-remark@7.3.4)(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1))(nanostores@1.5.5):
+  astro-nanostores-i18n@1.0.3(@nanostores/i18n@1.3.3(nanostores@1.5.5))(astro@7.4.4(@astrojs/markdown-remark@7.3.5)(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.1))(nanostores@1.5.5):
     dependencies:
       '@astrojs/compiler': 4.0.0
       '@nanostores/i18n': 1.3.3(nanostores@1.5.5)
-      astro: 7.4.2(@astrojs/markdown-remark@7.3.4)(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1)
+      astro: 7.4.4(@astrojs/markdown-remark@7.3.5)(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.1)
       fast-glob: 3.3.3
       nanostores: 1.5.5
       typescript: 6.0.3
 
-  astro@7.4.2(@astrojs/markdown-remark@7.3.4)(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1):
+  astro@7.4.4(@astrojs/markdown-remark@7.3.5)(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.1):
     dependencies:
       '@astrojs/compiler-rs': 0.5.2
       '@astrojs/internal-helpers': 0.13.0
-      '@astrojs/markdown-satteri': 0.4.5
-      '@astrojs/telemetry': 3.4.1
+      '@astrojs/markdown-satteri': 0.4.6
+      '@astrojs/telemetry': 3.4.2
       '@capsizecss/unpack': 4.0.1
       '@clack/prompts': 1.8.1
       '@oslojs/encoding': 1.1.0
@@ -4891,14 +4891,14 @@ snapshots:
       unifont: 1.0.3
       unstorage: 1.17.6
       verkit: 0.5.0
-      vite: 8.3.5(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1)
-      vitefu: 1.1.3(vite@8.3.5(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1))
+      vite: 8.3.5(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.1)
+      vitefu: 1.1.3(vite@8.3.5(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.1))
       xxhash-wasm: 1.1.0
       yargs-parser: 22.0.0
       zod: 4.6.7
     optionalDependencies:
-      '@astrojs/markdown-remark': 7.3.4
-      sharp: 0.35.5(@types/node@26.6.5)
+      '@astrojs/markdown-remark': 7.3.5
+      sharp: 0.35.5(@types/node@26.6.6)
     transitivePeerDependencies:
       - '@azure/app-configuration'
       - '@azure/cosmos'
@@ -5221,10 +5221,10 @@ snapshots:
     dependencies:
       reusify: 1.1.0
 
-  favicons@7.3.1(@types/node@26.6.5):
+  favicons@7.3.1(@types/node@26.6.6):
     dependencies:
       escape-html: 1.0.3
-      sharp: 0.35.5(@types/node@26.6.5)
+      sharp: 0.35.5(@types/node@26.6.6)
       xml2js: 0.6.2
     transitivePeerDependencies:
       - '@types/node'
@@ -6475,7 +6475,7 @@ snapshots:
 
   semver@7.8.5: {}
 
-  sharp@0.35.5(@types/node@26.6.5):
+  sharp@0.35.5(@types/node@26.6.6):
     dependencies:
       '@img/colour': 1.1.0
       detect-libc: 2.1.2
@@ -6506,7 +6506,7 @@ snapshots:
       '@img/sharp-win32-arm64': 0.35.5
       '@img/sharp-win32-ia32': 0.35.5
       '@img/sharp-win32-x64': 0.35.5
-      '@types/node': 26.6.5
+      '@types/node': 26.6.6
 
   shell-quote@1.12.0: {}
 
@@ -6764,14 +6764,14 @@ snapshots:
       unist-util-is: 6.0.1
       unist-util-visit-parents: 6.1.0
 
-  unplugin@3.5.0(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1)):
+  unplugin@3.5.0(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.1)):
     dependencies:
       '@jridgewell/remapping': 2.3.5
       picomatch: 4.0.7
       webpack-virtual-modules: 0.6.2
     optionalDependencies:
       rolldown: 1.2.15
-      vite: 8.3.5(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1)
+      vite: 8.3.5(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.1)
 
   unstorage@1.17.6:
     dependencies:
@@ -6806,7 +6806,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
-  vite@8.3.5(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1):
+  vite@8.3.5(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.1):
     dependencies:
       lightningcss: 1.33.0
       picomatch: 4.0.7
@@ -6814,19 +6814,19 @@ snapshots:
       rolldown: 1.2.15
       tinyglobby: 0.2.17
     optionalDependencies:
-      '@types/node': 26.6.5
+      '@types/node': 26.6.6
       fsevents: 2.3.3
       jiti: 2.7.0
       yaml: 2.9.1
 
-  vitefu@1.1.3(vite@8.3.5(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1)):
+  vitefu@1.1.3(vite@8.3.5(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.1)):
     optionalDependencies:
-      vite: 8.3.5(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1)
+      vite: 8.3.5(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.1)
 
-  vitest@5.0.5(@types/node@26.6.5)(@vitest/coverage-v8@5.0.5)(vite@8.3.5(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1)):
+  vitest@5.0.5(@types/node@26.6.6)(@vitest/coverage-v8@5.0.5)(vite@8.3.5(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.1)):
     dependencies:
       '@types/chai': 5.2.3
-      '@vitest/mocker': 5.0.5(vite@8.3.5(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1))
+      '@vitest/mocker': 5.0.5(vite@8.3.5(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.1))
       chai: 6.3.0
       es-module-lexer: 2.3.2
       expect-type: 1.4.0
@@ -6837,10 +6837,10 @@ snapshots:
       tinybench: 6.2.2
       tinyexec: 1.3.1
       tinyglobby: 0.2.17
-      vite: 8.3.5(@types/node@26.6.5)(jiti@2.7.0)(yaml@2.9.1)
+      vite: 8.3.5(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.1)
       why-is-node-running: 3.2.1
     optionalDependencies:
-      '@types/node': 26.6.5
+      '@types/node': 26.6.6
       '@vitest/coverage-v8': 5.0.5(vitest@5.0.5)
     transitivePeerDependencies:
       - msw
