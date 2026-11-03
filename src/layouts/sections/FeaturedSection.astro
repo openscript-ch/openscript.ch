@@ -22,7 +22,7 @@ const projects = await getCollection(
   <div class="references-projects">
     {projects.map((p) => (
       <div>
-        <Image src={p.data.logo} alt={p.data.softwareName} />
+        <Image src={p.data.logo} alt={p.data.projectName} />
         <h3>{p.data.title}</h3>
         <p>{p.data.summary}</p>
       </div>

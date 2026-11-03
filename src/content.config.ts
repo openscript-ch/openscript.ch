@@ -88,7 +88,7 @@ const products = defineCollection({
   schema: ({ image }) =>
     extendI18nLoaderSchema(
       z.object({
-        softwareName: z.string(),
+        projectName: z.string(),
         title: z.string(),
         summary: z.string(),
         logo: image(),
@@ -135,7 +135,7 @@ const referenceProjects = defineCollection({
   schema: ({ image }) =>
     extendI18nLoaderSchema(
       z.object({
-        softwareName: z.string(),
+        projectName: z.string(),
         title: z.string(),
         summary: z.string(),
         logo: image(),

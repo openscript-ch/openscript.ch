@@ -26,18 +26,18 @@ const projects = await Promise.all(
 
 <Accordion>
   {projects.map(({ id, data, Content }, i) => (
-    <AccordionItem id={id} name={data.softwareName} variant="minimal" open={i === 0}>
+    <AccordionItem id={id} name={data.projectName} variant="minimal" open={i === 0}>
       <div slot="pretext">
         <Heading level="h3" size="h6" class="title" slot="title">
-          {data.softwareName}
+          {data.projectName}
           <div class="title-icon">
-            <Image height="30" src={data.logo} alt={data.softwareName} />
+            <Image height="30" src={data.logo} alt={data.projectName} />
           </div>
         </Heading>
         <div class="preview">
           <span>{data.summary}</span>
           <div class="image">
-            <Image height={120} src={data.logo} alt={data.softwareName} />
+            <Image height={120} src={data.logo} alt={data.projectName} />
           </div>
         </div>
       </div>
