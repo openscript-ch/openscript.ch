@@ -120,7 +120,6 @@ const referenceCompanies = defineCollection({
   schema: ({ image }) =>
     extendI18nLoaderSchema(
       z.object({
-        id: z.string(),
         companyName: z.string(),
         logo: image(),
         url: z.url().optional(),
