@@ -1,8 +1,60 @@
+---
+import { currentLocale, useI18n } from 'astro-nanostores-i18n:runtime';
+import { getCollection } from 'astro:content';
+import type { ComponentProps } from 'astro/types';
+import Tabs from '../../components/Tabs.astro';
+import TabsList from '../../components/TabsList.astro';
+import TabsTab from '../../components/TabsTab.astro';
+import TabsPanel from '../../components/TabsPanel.astro';
+import Sprite from '../../components/Sprite.astro';
+
+type SpriteName = ComponentProps<typeof Sprite>['name'];
+
+const locale = currentLocale.get();
+const translations = useI18n('services.section', { title: 'Was wir anbieten' });
+const services = await getCollection('services', (entry) => entry.data.locale === locale);
+const strengths = await getCollection('strengths', (entry) => entry.data.locale === locale);
+strengths.sort((first, second) =>
+  first.data.strengthName.localeCompare(second.data.strengthName, locale),
+);
+const tabs = services
+  .sort((first, second) => first.data.order - second.data.order)
+  .map((service) => ({
+    id: service.data.sprite === 'software-development' ? 'software' : service.data.sprite,
+    service: service.data,
+    strengths: strengths.filter((strength) => strength.data.service.id === service.id),
+  }));
+---
+
 <section class="page-padding">
   <header>
-    <slot name="title" />
+    <h2>{translations.title}</h2>
   </header>
-  <slot />
+  <Tabs>
+    <TabsList>
+      {tabs.map(({ id, service }, index) => (
+        <TabsTab id={id} controls={`${id}-panel`} selected={index === 0}>
+          <Sprite name={service.sprite as SpriteName} />
+          <h3>{service.serviceName}</h3>
+        </TabsTab>
+      ))}
+    </TabsList>
+    {tabs.map(({ id, service, strengths: serviceStrengths }, index) => (
+      <TabsPanel id={`${id}-panel`} labelledby={id} selected={index === 0}>
+        <p>{service.description}</p>
+        <ul>
+          {serviceStrengths.map(({ data: strength }) => (
+            <li>
+              <a href="#">
+                <Sprite name={strength.sprite as SpriteName} />
+                <p>{strength.strengthName}</p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </TabsPanel>
+    ))}
+  </Tabs>
 </section>
 
 <style>

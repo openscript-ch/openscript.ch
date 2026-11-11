@@ -1,4 +1,7 @@
 {
+  "services.section": {
+    "title": "What we offer"
+  },
   "accordion.item": {
     "more": "Show more",
     "less": "Show less"

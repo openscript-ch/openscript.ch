@@ -156,6 +156,8 @@ const services = defineCollection({
     z.object({
       serviceName: z.string(),
       sprite: z.string(),
+      description: z.string(),
+      order: z.number().int().nonnegative(),
     }),
   ),
 });
