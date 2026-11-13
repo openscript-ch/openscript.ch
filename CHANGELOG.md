@@ -1,5 +1,14 @@
 # openscript-ch-website
 
+## 0.8.3
+
+### Patch Changes
+
+- d52d64e: Add references page
+- 163abbd: Add content for jobs
+- 64360d3: Add collaboration content (de)
+- 1b47f84: Flesh out values
+
 ## 0.8.2
 
 ### Patch Changes
