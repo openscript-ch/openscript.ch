@@ -1,0 +1,30 @@
+---
+projectName: HeimV
+title: The management tool for scout and group houses
+logo: ./heimv.svg
+summary: HeimV simplifies reservation and billing management for Swiss scout and group houses, from inquiry to payment.
+featured: true
+---
+
+import { Image } from 'astro:assets';
+import image from './placeholder.png';
+
+<p>
+  HeimV is a management tool for Swiss scout and group houses. It supports the entire reservation
+  and billing process, from inquiries and bookings to contracts, invoices and payment tracking.
+  Custom booking rules, reusable text templates, and website and calendar integrations help make
+  day-to-day administration easier.
+</p>
+
+<p>
+  HeimV is developed and operated in Switzerland, and data is hosted on servers in Switzerland.
+  Clubs can self-host the software for their own use, with the source code available on GitHub.
+  Hosted plans are available for scout homes and other rental properties.
+</p>
+
+<Image
+  src={image}
+  alt="HeimV"
+  widths={[300, 400, 800, 1200, 1800, 2200]}
+  sizes="(max-width: 800px) 100vw, 75vw"
+/>

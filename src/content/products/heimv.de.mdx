@@ -1,0 +1,31 @@
+---
+projectName: HeimV
+title: Das Verwaltungswerkzeug für Pfadi- und Gruppenhäuser
+logo: ./heimv.svg
+summary: HeimV vereinfacht die Verwaltung von Reservationen und Abrechnungen für Schweizer Pfadi- und Gruppenhäuser, von der Anfrage bis zur Zahlung.
+featured: true
+---
+
+import { Image } from 'astro:assets';
+import image from './placeholder.png';
+
+<p>
+  HeimV ist ein Verwaltungswerkzeug für Schweizer Pfadi- und Gruppenhäuser. Es unterstützt den
+  gesamten Reservations- und Abrechnungsprozess, von Reservationsanfragen über Buchungen und
+  Verträge bis zu Rechnungen und Zahlungseingängen. Individuelle Buchungsregeln, anpassbare
+  Textvorlagen sowie Integrationen mit Webseiten und Kalendern helfen, die Verwaltung im Alltag zu
+  vereinfachen.
+</p>
+
+<p>
+  HeimV wird in der Schweiz entwickelt und betrieben; die Daten werden auf Servern in der Schweiz
+  gehostet. Vereine können die Software für den Eigengebrauch selbst hosten und den Quellcode auf
+  GitHub nutzen. Für gehostete Angebote gibt es Tarife für Pfadiheime und weitere Mietobjekte.
+</p>
+
+<Image
+  src={image}
+  alt="HeimV"
+  widths={[300, 400, 800, 1200, 1800, 2200]}
+  sizes="(max-width: 800px) 100vw, 75vw"
+/>
