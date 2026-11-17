@@ -2,5 +2,4 @@
 
 ## Verification
 
-1. Run the checks with `pnpm run check`.
-2. Fix formatting and linting issues with `pnpm run fix`.
+1. Fix, format, and linting issues with `pnpm run fix && pnpm run check`.

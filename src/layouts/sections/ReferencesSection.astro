@@ -31,13 +31,13 @@ const projects = await Promise.all(
         <Heading level="h3" size="h6" class="title" slot="title">
           {data.projectName}
           <div class="title-icon">
-            <Image height="30" src={data.logo} alt={data.projectName} />
+            {data.logo && <Image height="30" src={data.logo} alt={data.projectName} />}
           </div>
         </Heading>
         <div class="preview">
           <span>{data.summary}</span>
           <div class="image">
-            <Image height={120} src={data.logo} alt={data.projectName} />
+            {data.logo && <Image height={120} src={data.logo} alt={data.projectName} />}
           </div>
         </div>
       </div>

@@ -1,0 +1,23 @@
+---
+projectName: DocPortal
+title: Communication portal for a cantonal training center
+summary: During the foundational apprenticeship year, the communication portal supports information exchange between the training center, apprentices, and instructors. It enables structured communication, the recording of training reports, and the tracking of events.
+featured: false
+company: zli
+---
+
+import { Image } from 'astro:assets';
+import image from './placeholder.png';
+
+<p>
+  The communication portal supports apprentices and instructors during the foundational
+  apprenticeship year. It enables structured communication, the recording of training reports, and
+  the tracking of events.
+</p>
+
+<Image
+  src={image}
+  alt="Communication portal"
+  widths={[300, 400, 800, 1200, 1800, 2200]}
+  sizes="(max-width: 800px) 100vw, 75vw"
+/>

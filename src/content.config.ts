@@ -137,7 +137,7 @@ const referenceProjects = defineCollection({
         projectName: z.string(),
         title: z.string(),
         summary: z.string(),
-        logo: image(),
+        logo: image().optional(),
         path: z.url().optional(),
         featured: z.boolean().optional().default(false),
         company: i18nReference('referenceCompanies'),
