@@ -7,6 +7,7 @@ import TabsList from '../../components/TabsList.astro';
 import TabsTab from '../../components/TabsTab.astro';
 import TabsPanel from '../../components/TabsPanel.astro';
 import Sprite from '../../components/Sprite.astro';
+import { getContentAnchor, resolveSimplePath } from '../../utils/paths';
 
 type SpriteName = ComponentProps<typeof Sprite>['name'];
 
@@ -14,6 +15,7 @@ const locale = currentLocale.get();
 const translations = useI18n('services.section', { title: 'Was wir anbieten' });
 const services = await getCollection('services', (entry) => entry.data.locale === locale);
 const strengths = await getCollection('strengths', (entry) => entry.data.locale === locale);
+const strengthsPath = await resolveSimplePath('main', '/present/strengths', locale);
 strengths.sort((first, second) =>
   first.data.strengthName.localeCompare(second.data.strengthName, locale),
 );
@@ -45,7 +47,7 @@ const tabs = services
         <ul>
           {serviceStrengths.map(({ data: strength }) => (
             <li>
-              <a href="#">
+              <a href={`${strengthsPath}#${getContentAnchor(strength.translationId)}`}>
                 <Sprite name={strength.sprite as SpriteName} />
                 <p>{strength.strengthName}</p>
               </a>

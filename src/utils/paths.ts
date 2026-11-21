@@ -7,9 +7,13 @@ import { C, localeSlugs, type Locale } from '../site.config';
 import { getEntry, type CollectionKey, type DataEntryMap } from 'astro:content';
 import type { ImageMetadata } from 'astro';
 import { parseLocale } from './i18n';
+import { basename, extname } from 'node:path';
 
 const PROTOCOL_DELIMITER = '://';
 const ID_DELIMITER = '#';
+
+export const getContentAnchor = (translationId: string) =>
+  basename(translationId, extname(translationId));
 
 export const defaultPropsAndParamsOptions = {
   defaultLocale: C.DEFAULT_LOCALE,
