@@ -1,0 +1,34 @@
+---
+import { currentLocale } from 'astro-nanostores-i18n:runtime';
+import { getCollection, render } from 'astro:content';
+import Divider from '../../components/Divider.astro';
+
+const locale = currentLocale.get();
+const services = await getCollection('services', (entry) => entry.data.locale === locale);
+services.sort((first, second) => first.data.order - second.data.order);
+
+const sections = await Promise.all(
+  services.map(async (service) => {
+    const { Content } = await render(service);
+    return { data: service.data, Content };
+  }),
+);
+---
+
+{sections.map(({ data, Content }, index) => (
+  <>
+    {index > 0 && (
+      <Divider
+        firstSegmentColor="var(--color-white)"
+        flipVertical={index % 2 === 0}
+        fixAntialiasingTop={index % 2 === 0}
+        fixAntialiasingBottom={index % 2 === 1}
+      />
+    )}
+    <section class:list={{ 'white-background': index % 2 === 1 }}>
+      <h2>{data.serviceName}</h2>
+      <p>{data.description}</p>
+      <Content />
+    </section>
+  </>
+))}
