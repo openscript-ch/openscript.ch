@@ -1,4 +1,6 @@
 ---
+import type { HTMLAttributes } from 'astro/types';
+
 /**
  * TabsPanel Component
  *
@@ -26,8 +28,7 @@ type Props = {
   /**
    * HTML attributes to spread on the panel
    */
-  [key: string]: string | number | boolean | undefined;
-};
+} & HTMLAttributes<'div'>;
 
 const { class: className, id, labelledby, selected = false, ...rest } = Astro.props;
 ---

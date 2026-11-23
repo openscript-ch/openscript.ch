@@ -1,0 +1,25 @@
+---
+projectName: DOGLi
+title: Android and iOS app for dog enrichment and activities
+logo: ./dogli.svg
+summary: The DOGLi app offers a wide range of activity ideas for dogs, along with a space to connect with the community.
+featured: true
+company: dogli
+strengths:
+  - mobile-applications
+---
+
+import { Image } from 'astro:assets';
+import image from './placeholder.png';
+
+<p>
+  The DOGLi app offers a wide range of activity ideas for dogs, along with a space to connect with
+  the community.
+</p>
+
+<Image
+  src={image}
+  alt="DOGLi app"
+  widths={[300, 400, 800, 1200, 1800, 2200]}
+  sizes="(max-width: 800px) 100vw, 75vw"
+/>

@@ -1,4 +1,6 @@
 ---
+import type { HTMLAttributes } from 'astro/types';
+
 /**
  * TabsList Component
  *
@@ -13,8 +15,7 @@ type Props = {
   /**
    * HTML attributes to spread on the tabs list
    */
-  [key: string]: string | number | boolean | undefined;
-};
+} & HTMLAttributes<'div'>;
 
 const { class: className, ...rest } = Astro.props;
 ---

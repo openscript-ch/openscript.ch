@@ -1,4 +1,6 @@
 ---
+import type { HTMLAttributes } from 'astro/types';
+
 /**
  * TabsTab Component
  *
@@ -26,8 +28,7 @@ type Props = {
   /**
    * HTML attributes to spread on the tab
    */
-  [key: string]: string | number | boolean | undefined;
-};
+} & HTMLAttributes<'button'>;
 
 const { class: className, id, controls, selected = false, ...rest } = Astro.props;
 ---

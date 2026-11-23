@@ -1,4 +1,10 @@
 {
+  "services.section": {
+    "title": "Was wir anbieten"
+  },
+  "strengths.view": {
+    "references": "Passende Referenzen"
+  },
   "accordion.item": {
     "more": "Mehr anzeigen",
     "less": "Weniger anzeigen"

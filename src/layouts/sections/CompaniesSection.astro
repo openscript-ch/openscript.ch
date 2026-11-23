@@ -13,7 +13,7 @@ const companies = await getCollection(
 
 <div class="grid">
   {companies.map((c) => (
-    <Tile variant="turnable" id={c.data.id} crease>
+    <Tile variant="turnable" id={c.id} crease>
       <div slot="front">
         <div class="card front-card">
           <Image src={c.data.logo} alt={c.data.companyName} />

@@ -1,0 +1,25 @@
+---
+projectName: DocPortal
+title: Kommunikationsportal für ein kantonales Ausbildungszentrum
+summary: Im Basislehrjahr unterstützt das Kommunikationsportal den Informationsaustausch zwischen Ausbildungszentrum, Lernenden und Ausbildnern. Es ermöglicht eine strukturierte Kommunikation, das Erfassen von Ausbildungsberichten und die Nachverfolgung von Ereignissen.
+featured: false
+company: zli
+strengths:
+  - web-applications
+---
+
+import { Image } from 'astro:assets';
+import image from './placeholder.png';
+
+<p>
+  Das Kommunikationsportal unterstützt die Lernenden und Ausbildner im Basislehrjahr. Es ermöglicht
+  eine strukturierte Kommunikation, das Erfassen von Ausbildungsberichten und die Nachverfolgung von
+  Ereignissen.
+</p>
+
+<Image
+  src={image}
+  alt="Kommunikationsportal"
+  widths={[300, 400, 800, 1200, 1800, 2200]}
+  sizes="(max-width: 800px) 100vw, 75vw"
+/>
