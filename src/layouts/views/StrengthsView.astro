@@ -1,28 +1,30 @@
 ---
-import { currentLocale, useI18n } from 'astro-nanostores-i18n:runtime';
-import { getCollection, render } from 'astro:content';
-import type { ComponentProps } from 'astro/types';
-import Button from '../../components/Button.astro';
-import Divider from '../../components/Divider.astro';
-import Sprite from '../../components/Sprite.astro';
-import SpriteData from '../../../res/sprite/sprite.json';
-import { getContentAnchor, resolveSimplePath } from '../../utils/paths';
+import { currentLocale, useI18n } from "astro-nanostores-i18n:runtime";
+import { getCollection, render } from "astro:content";
+import type { ComponentProps } from "astro/types";
+import Button from "../../components/Button.astro";
+import Divider from "../../components/Divider.astro";
+import Sprite from "../../components/Sprite.astro";
+import SpriteData from "../../../res/sprite/sprite.json";
+import { getContentAnchor, resolveSimplePath } from "../../utils/paths";
 
-type SpriteName = ComponentProps<typeof Sprite>['name'];
+type SpriteName = ComponentProps<typeof Sprite>["name"];
 
-const isSpriteName = (name: string): name is SpriteName => Object.hasOwn(SpriteData, name);
+const isSpriteName = (name: string): name is SpriteName =>
+  Object.hasOwn(SpriteData, name);
 
 const locale = currentLocale.get();
-const translations = useI18n('strengths.view', {
-  references: 'Passende Referenzen',
+const translations = useI18n("strengths.view", {
+  references: "Passende Referenzen",
 });
-const [services, strengths, projects, servicesPath, referencesPath] = await Promise.all([
-  getCollection('services', (entry) => entry.data.locale === locale),
-  getCollection('strengths', (entry) => entry.data.locale === locale),
-  getCollection('referenceProjects', (entry) => entry.data.locale === locale),
-  resolveSimplePath('main', '/future/services', locale),
-  resolveSimplePath('main', '/past/references', locale),
-]);
+const [services, strengths, projects, servicesPath, referencesPath] =
+  await Promise.all([
+    getCollection("services", (entry) => entry.data.locale === locale),
+    getCollection("strengths", (entry) => entry.data.locale === locale),
+    getCollection("referenceProjects", (entry) => entry.data.locale === locale),
+    resolveSimplePath("main", "/future/services", locale),
+    resolveSimplePath("main", "/past/references", locale),
+  ]);
 
 services.sort((first, second) => first.data.order - second.data.order);
 strengths.sort((first, second) =>
@@ -36,9 +38,11 @@ const serviceIds = new Set(services.map((service) => service.id));
 const strengthIds = new Set(strengths.map((strength) => strength.id));
 
 for (const project of projects) {
-  for (const reference of project.data.strengths) {
-    if (reference.collection !== 'strengths' || !strengthIds.has(reference.id)) {
-      throw new Error(`Unknown strength ${reference.id} referenced by project ${project.id}`);
+  for (const { strength } of project.data.strengths) {
+    if (strength.collection !== "strengths" || !strengthIds.has(strength.id)) {
+      throw new Error(
+        `Unknown strength ${JSON.stringify(Array.from(strengthIds))} referenced by project ${project.id}`,
+      );
     }
   }
 }
@@ -46,8 +50,10 @@ for (const project of projects) {
 const renderedStrengths = await Promise.all(
   strengths.map(async (strength) => {
     const { service, sprite } = strength.data;
-    if (service.collection !== 'services' || !serviceIds.has(service.id)) {
-      throw new Error(`Unknown service ${service.id} referenced by strength ${strength.id}`);
+    if (service.collection !== "services" || !serviceIds.has(service.id)) {
+      throw new Error(
+        `Unknown service ${service.id} referenced by strength ${strength.id}`,
+      );
     }
     if (!isSpriteName(sprite)) {
       throw new Error(`Unknown sprite ${sprite} for strength ${strength.id}`);
@@ -58,7 +64,9 @@ const renderedStrengths = await Promise.all(
       sprite,
       Content,
       relatedProjects: projects.filter((project) =>
-        project.data.strengths.some((reference) => reference.id === strength.id),
+        project.data.strengths.some(
+          (projectStrength) => projectStrength.strength.id === strength.id,
+        ),
       ),
     };
   }),
@@ -66,7 +74,9 @@ const renderedStrengths = await Promise.all(
 
 const groups = services.map((service) => ({
   data: service.data,
-  strengths: renderedStrengths.filter((strength) => strength.data.service.id === service.id),
+  strengths: renderedStrengths.filter(
+    (strength) => strength.data.service.id === service.id,
+  ),
 }));
 ---
 
@@ -80,38 +90,55 @@ const groups = services.map((service) => ({
         fixAntialiasingBottom={index % 2 === 1}
       />
     )}
-    <section class:list={{ 'white-background': index % 2 === 1 }}>
+    <section class:list={{ "white-background": index % 2 === 1 }}>
       <h2>
-        <Button href={`${servicesPath}#${getContentAnchor(service.translationId)}`} withArrow>
+        <Button
+          href={`${servicesPath}#${getContentAnchor(service.translationId)}`}
+          withArrow
+        >
           {service.serviceName}
         </Button>
       </h2>
       <ul class="strengths-grid">
-        {serviceStrengths.map(({ data, sprite, Content, relatedProjects }) => (
-          <li id={getContentAnchor(data.translationId)} class="strength-card">
-            <header>
-              <span aria-hidden="true">
-                <Sprite name={sprite} />
-              </span>
-              <h3>
-                <a href={`#${getContentAnchor(data.translationId)}`}>{data.strengthName}</a>
-              </h3>
-            </header>
-            <Content />
-            {relatedProjects.length > 0 && (
-              <div class="references">
-                <h4>{translations.references}</h4>
-                <ul>
-                  {relatedProjects.map((project) => (
-                    <li>
-                      <a href={`${referencesPath}#${project.id}`}>{project.data.projectName}</a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </li>
-        ))}
+        {serviceStrengths.map(
+          ({ id, data, sprite, Content, relatedProjects }) => (
+            <li id={getContentAnchor(data.translationId)} class="strength-card">
+              <header>
+                <span aria-hidden="true">
+                  <Sprite name={sprite} />
+                </span>
+                <h3>
+                  <a href={`#${getContentAnchor(data.translationId)}`}>
+                    {data.strengthName}
+                  </a>
+                </h3>
+              </header>
+              <Content />
+              {relatedProjects.length > 0 && (
+                <div class="references">
+                  <h4>{translations.references}</h4>
+                  <ul>
+                    {relatedProjects.map((project) =>
+                      project.data.strengths
+                        .filter(
+                          (projectStrength) =>
+                            projectStrength.strength.id === id,
+                        )
+                        .map((projectStrength) => (
+                          <li>
+                            <a href={`${referencesPath}#${project.id}`}>
+                              {project.data.projectName}
+                            </a>
+                            : {projectStrength.description}
+                          </li>
+                        )),
+                    )}
+                  </ul>
+                </div>
+              )}
+            </li>
+          ),
+        )}
       </ul>
     </section>
   </>
@@ -120,7 +147,7 @@ const groups = services.map((service) => ({
 <style>
   .strengths-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    grid-template-columns: 1fr;
     gap: var(--size-gutter-big);
     padding: 0;
     margin: 0;

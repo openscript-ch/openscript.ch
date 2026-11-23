@@ -141,7 +141,8 @@ const referenceProjects = defineCollection({
         path: z.url().optional(),
         featured: z.boolean().optional().default(false),
         company: i18nReference('referenceCompanies'),
-        strengths: z.array(i18nReference('strengths')).default([]),
+        strengths: z.array(
+          z.object({ strength: i18nReference('strengths'), description: z.string().optional() }))
       }),
     ),
 });
