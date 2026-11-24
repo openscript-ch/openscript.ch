@@ -5,4 +5,3 @@ order: 0
 sprite: software-development
 callToAction: Haben Sie eine Idee? Legen wir los!
 ---
-

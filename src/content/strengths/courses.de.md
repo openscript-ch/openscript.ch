@@ -4,10 +4,10 @@ sprite: course
 service: education
 ---
 
-Wissen weitergeben zu können ist für uns eine Herzensangelegenheit. Wir engagieren uns seit vielen 
+Wissen weitergeben zu können ist für uns eine Herzensangelegenheit. Wir engagieren uns seit vielen
 Jahren in der Berufsbildung, speziell bei den Informatikberufen sowie im neuen EDB-Beruf.
 
-Gerne bereiten wir einen massgeschneiderten Kurs für die Bedürfnisse Ihrer Lernenden vor. 
+Gerne bereiten wir einen massgeschneiderten Kurs für die Bedürfnisse Ihrer Lernenden vor.
 
 #### Durchgeführte Kurse
 

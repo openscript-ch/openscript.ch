@@ -50,7 +50,11 @@ const sections = await Promise.all(
       <h2>{data.serviceName}</h2>
       <p>{data.description}</p>
       <Content />
-      {data.callToAction && <Button href="mailto:hi@openscript.ch" withArrow>{data.callToAction}</Button>}
+      {data.callToAction && (
+        <Button href="mailto:hi@openscript.ch" withArrow>
+          {data.callToAction}
+        </Button>
+      )}
       {relatedStrengths.length > 0 && (
         <div class="strengths">
           <h4>{translations.strengths}</h4>
