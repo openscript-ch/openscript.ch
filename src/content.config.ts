@@ -160,6 +160,7 @@ const services = defineCollection({
       sprite: z.string(),
       description: z.string(),
       order: z.number().int().nonnegative(),
+      callToAction: z.string().optional()
     }),
   ),
 });

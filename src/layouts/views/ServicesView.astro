@@ -1,22 +1,39 @@
 ---
-import { currentLocale } from 'astro-nanostores-i18n:runtime';
+import { currentLocale, useI18n } from 'astro-nanostores-i18n:runtime';
 import { getCollection, render } from 'astro:content';
 import Divider from '../../components/Divider.astro';
-import { getContentAnchor } from '../../utils/paths';
+import { getContentAnchor, resolveSimplePath } from '../../utils/paths';
+import Button from '../../components/Button.astro';
 
 const locale = currentLocale.get();
-const services = await getCollection('services', (entry) => entry.data.locale === locale);
+const translations = useI18n('services.view', {
+  strengths: 'Passende Stärken',
+});
+
+const [services, strengths, strengthsPath] = await Promise.all([
+  getCollection('services', (entry) => entry.data.locale === locale),
+  getCollection('strengths', (entry) => entry.data.locale === locale),
+  resolveSimplePath('main', '/present/strengths', locale),
+]);
+
 services.sort((first, second) => first.data.order - second.data.order);
+strengths.sort((first, second) =>
+  first.data.strengthName.localeCompare(second.data.strengthName, locale),
+);
 
 const sections = await Promise.all(
   services.map(async (service) => {
     const { Content } = await render(service);
-    return { data: service.data, Content };
+    const relatedStrengths = strengths.filter(
+      (strength) =>
+        strength.data.service.collection === 'services' && strength.data.service.id == service.id,
+    );
+    return { data: service.data, Content, relatedStrengths };
   }),
 );
 ---
 
-{sections.map(({ data, Content }, index) => (
+{sections.map(({ data, Content, relatedStrengths }, index) => (
   <>
     {index > 0 && (
       <Divider
@@ -33,6 +50,19 @@ const sections = await Promise.all(
       <h2>{data.serviceName}</h2>
       <p>{data.description}</p>
       <Content />
+      {data.callToAction && <Button href="mailto:hi@openscript.ch" withArrow>{data.callToAction}</Button>}
+      {relatedStrengths.length > 0 && (
+        <div class="strengths">
+          <h4>{translations.strengths}</h4>
+          <ul>
+            {relatedStrengths.map((strength) => (
+              <li>
+                <a href={`${strengthsPath}#${strength.id}`}>{strength.data.strengthName}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </section>
   </>
 ))}
