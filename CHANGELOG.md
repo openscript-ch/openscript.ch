@@ -1,5 +1,19 @@
 # openscript-ch-website
 
+## 0.9.0
+
+### Minor Changes
+
+- 8a70c6c: Add strengths content
+
+### Patch Changes
+
+- d52d64e: Add references page
+- 163abbd: Add content for jobs
+- 64360d3: Add collaboration content (de)
+- 1b47f84: Flesh out values
+- 445e6ed: Add strengths collection as interlude between references and services
+
 ## 0.8.2
 
 ### Patch Changes
