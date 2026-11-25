@@ -36,9 +36,11 @@ const serviceIds = new Set(services.map((service) => service.id));
 const strengthIds = new Set(strengths.map((strength) => strength.id));
 
 for (const project of projects) {
-  for (const reference of project.data.strengths) {
-    if (reference.collection !== 'strengths' || !strengthIds.has(reference.id)) {
-      throw new Error(`Unknown strength ${reference.id} referenced by project ${project.id}`);
+  for (const { strength } of project.data.strengths) {
+    if (strength.collection !== 'strengths' || !strengthIds.has(strength.id)) {
+      throw new Error(
+        `Unknown strength ${JSON.stringify(Array.from(strengthIds))} referenced by project ${project.id}`,
+      );
     }
   }
 }
@@ -58,7 +60,9 @@ const renderedStrengths = await Promise.all(
       sprite,
       Content,
       relatedProjects: projects.filter((project) =>
-        project.data.strengths.some((reference) => reference.id === strength.id),
+        project.data.strengths.some(
+          (projectStrength) => projectStrength.strength.id === strength.id,
+        ),
       ),
     };
   }),
@@ -86,8 +90,8 @@ const groups = services.map((service) => ({
           {service.serviceName}
         </Button>
       </h2>
-      <ul class="strengths-grid">
-        {serviceStrengths.map(({ data, sprite, Content, relatedProjects }) => (
+      <ul class="strengths-list">
+        {serviceStrengths.map(({ id, data, sprite, Content, relatedProjects }) => (
           <li id={getContentAnchor(data.translationId)} class="strength-card">
             <header>
               <span aria-hidden="true">
@@ -102,11 +106,16 @@ const groups = services.map((service) => ({
               <div class="references">
                 <h4>{translations.references}</h4>
                 <ul>
-                  {relatedProjects.map((project) => (
-                    <li>
-                      <a href={`${referencesPath}#${project.id}`}>{project.data.projectName}</a>
-                    </li>
-                  ))}
+                  {relatedProjects.map((project) =>
+                    project.data.strengths
+                      .filter((projectStrength) => projectStrength.strength.id === id)
+                      .map((projectStrength) => (
+                        <li>
+                          <a href={`${referencesPath}#${project.id}`}>{project.data.projectName}</a>
+                          : {projectStrength.description}
+                        </li>
+                      )),
+                  )}
                 </ul>
               </div>
             )}
@@ -118,9 +127,9 @@ const groups = services.map((service) => ({
 ))}
 
 <style>
-  .strengths-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  .strengths-list {
+    display: flex;
+    flex-direction: column;
     gap: var(--size-gutter-big);
     padding: 0;
     margin: 0;
